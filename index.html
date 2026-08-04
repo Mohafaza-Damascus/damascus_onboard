@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>محافظة دمشق</title>
-    <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/global.css" />
   </head>
-  <body>
+  <body style="background-color: #ede7d9">
     <header class="header">
       <div class="container header__grid">
         <a href="index.html" class="logo" aria-label="محافظة دمشق">
@@ -85,7 +85,7 @@
       <!-- <section class="hero">
         <img class="hero__img" src="images/Damascus.png" alt="مدينة دمشق" />
       </section> -->
-      <section class="hero">
+      <!-- <section class="hero">
         <video
           class="hero__img"
           src="/assets/new_mohafez.mp4"
@@ -174,6 +174,99 @@
             </li>
           </ul>
         </div>
+      </section> -->
+
+      <section class="hero-stats">
+        <div class="hero">
+          <video
+            class="hero__img"
+            id="heroVideo"
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="images/Damascus.png"
+          >
+            <source src="assets/new_mohafez.mp4" type="video/mp4" />
+          </video>
+          <div class="hero__overlay"></div>
+
+          <!-- عنوان الإحصائيات فوق الفيديو -->
+          <div class="stats-header">
+            <h2 class="stats-header__title">إحصائيات و أرقام</h2>
+            <p class="stats-header__sub">مؤشرات تطور المدينة</p>
+          </div>
+        </div>
+
+        <!-- شريط الإحصائيات المتداخل -->
+        <div class="container">
+          <ul class="stats__grid">
+            <li class="stat">
+              <img
+                class="stat__icon"
+                src="images/Frame 4.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <span class="stat__label">عدد السكان</span>
+              <strong
+                class="stat__value"
+                data-count="2.92"
+                data-decimals="2"
+                data-suffix=" مليون"
+                >0</strong
+              >
+            </li>
+            <li class="stat">
+              <img
+                class="stat__icon"
+                src="images/Home Page.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <span class="stat__label">المناطق الادارية</span>
+              <strong class="stat__value" data-count="16" data-suffix=" منطقة"
+                >0</strong
+              >
+            </li>
+            <li class="stat">
+              <img
+                class="stat__icon"
+                src="images/Address.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <span class="stat__label">المساحة الجغرافية</span>
+              <strong class="stat__value" data-count="105" data-suffix=" كم"
+                >0</strong
+              >
+            </li>
+            <li class="stat">
+              <img
+                class="stat__icon"
+                src="images/Cameras.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <span class="stat__label">المعالم السياحية</span>
+              <strong class="stat__value" data-count="125" data-suffix=" موقع"
+                >0</strong
+              >
+            </li>
+            <li class="stat">
+              <img
+                class="stat__icon"
+                src="images/Person.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <span class="stat__label">عدد الزوار</span>
+              <strong class="stat__value" data-count="3500" data-suffix=" زائر"
+                >0</strong
+              >
+            </li>
+          </ul>
+        </div>
       </section>
       <section class="governor">
         <div class="governor__card pattern" style="border: none">
@@ -192,7 +285,7 @@
         </div>
       </section>
 
-      <section class="districts">
+      <!-- <section class="districts">
         <div class="container">
           <header class="section-head">
             <h2 class="section-title">أحياء مدينة دمشق</h2>
@@ -231,11 +324,29 @@
             </figure>
           </div>
         </div>
+      </section> -->
+
+      <section class="discover">
+        <img
+          class="discover__bg"
+          src="images/Damascus.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <div class="discover__overlay"></div>
+        <div class="discover__content">
+          <h2 class="discover__title">اكتشف دمشق</h2>
+          <p class="discover__sub">تاريخ عريض ... حاضر نابض ... مستقبل واعد.</p>
+          <a href="pages/Cultural.html" class="discover__btn">اكتشف الان</a>
+        </div>
       </section>
 
       <section class="cta">
         <div class="container">
-          <div class="cta__card pattern">
+          <h2 class="services-cta__heading">
+            كل ما تحتاجه لانجاز معاملتك في مكان واحد!
+          </h2>
+          <div class="cta__card pattern" style="background-color: #e9e0cf">
             <div class="cta__collage">
               <img
                 class="cta__img cta__img--1"
@@ -256,10 +367,14 @@
             </div>
 
             <div class="cta__content">
-              <h2 class="cta__title">
+              <!-- <h2 class="cta__title">
                 كل ما تحتاجه لانجاز معاملتك<br />
                 في مكان واحد!
-              </h2>
+              </h2> -->
+              <p class="services-cta__text">
+                من خدمات الكترونية, وطلبات واستعلامات<br />
+                كلها متاحة بسهولة وسرعة.
+              </p>
               <a
                 href="services.html"
                 style="width: 200px"
