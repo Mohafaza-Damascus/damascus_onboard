@@ -1,0 +1,218 @@
+:root {
+  --dir-green: #3a6962;
+  --dir-dark: #064239;
+}
+
+.bg-vector-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 750px;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("../assets/Vector.png");
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: 450px auto;
+  opacity: 0.35;
+}
+
+.dir-hero,
+.dir-main {
+  position: relative;
+  z-index: 2;
+}
+.dir-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 35px auto 50px;
+  padding-inline: 20px;
+}
+
+.dir-hero__text {
+  max-width: 805px;
+  text-align: center;
+  color: var(--dir-green);
+  margin-bottom: 25px;
+}
+
+.dir-hero__text h1 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.dir-hero__text p {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.dir-search {
+  width: 100%;
+  max-width: 897px;
+  height: 90px;
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #dcd6c8;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.dir-search__btn {
+  width: 65px;
+  height: 60px;
+  background-color: var(--dir-green);
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  transition: opacity 0.2s;
+}
+
+.dir-search__btn:hover {
+  opacity: 0.9;
+}
+
+.dir-search__field {
+  flex: 1;
+  height: 60px;
+  background-color: #fcf9f2;
+  border: 1px solid #eae3d2;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.dir-search__field input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  text-align: right;
+  font-family: inherit;
+}
+
+.dir-search__field input::placeholder {
+  color: var(--dir-green);
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.dir-main {
+  max-width: 1440px;
+  margin: 0 auto 60px;
+  padding: 20px 60px;
+}
+
+.dir-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px 20px;
+  justify-content: center;
+}
+
+.dir-card {
+  height: 225px;
+  background-image:
+    url("../assets/Vector.png"),
+    radial-gradient(circle at 50% 25%, #116858 0%, #064036 50%, #02231d 100%);
+  background-repeat: repeat, no-repeat;
+  background-position: center;
+  background-size: 300px auto, cover;
+  background-blend-mode: overlay;
+  border-radius: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.dir-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.3);
+}
+
+.dir-card__badge {
+  width: 313px;
+  max-width: 85%;
+  height: 110px;
+  border-radius: 20px;
+  background: linear-gradient(114.26deg, #d1b87d 62.92%, #988561 71.61%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  z-index: 1;
+}
+
+.dir-card__badge span {
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.4;
+  text-align: center;
+  color: #f8f5ee;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .dir-main {
+    padding: 20px 30px;
+  }
+
+  .dir-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dir-main {
+    padding: 20px 16px;
+  }
+
+  .dir-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  .dir-card {
+    height: 180px;
+  }
+
+  .dir-card__badge {
+    width: 260px;
+    height: 90px;
+  }
+
+  .dir-search {
+    height: auto;
+    padding: 12px;
+  }
+}
