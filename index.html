@@ -6,176 +6,253 @@
     <title>محافظة دمشق</title>
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/global.css" />
+    <style>
+      /* ═══ MAP EXPLORER ═══ */
+      .map-explorer {
+        padding-block: var(--sp-5);
+        overflow: hidden;
+      }
+      .map-explorer__inner {
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        align-items: center;
+        gap: var(--sp-5);
+      }
+
+      /* ── Card ── */
+      .map-explorer__card {
+        background: var(--green-800);
+        color: #fff;
+        border-radius: var(--r-md);
+        padding: var(--sp-2);
+        box-shadow: var(--shadow-md);
+        min-height: 420px;
+        display: flex;
+        flex-direction: column;
+      }
+      .map-explorer__card-img {
+        border-radius: var(--r-sm);
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        background: rgba(255,255,255,.1);
+        margin-bottom: var(--sp-2);
+      }
+      .map-explorer__card-img img {
+        width: 100%; height: 100%; object-fit: cover;
+      }
+      .map-explorer__card-name {
+        font-size: 22px; font-weight: 700; margin-bottom: var(--sp-2);
+      }
+      .map-explorer__card-meta {
+        display: flex; flex-direction: column; gap: 6px;
+        font-size: 13px; padding-bottom: var(--sp-2);
+        border-bottom: 1px solid rgba(255,255,255,.15);
+      }
+      .map-explorer__card-row {
+        display: flex; justify-content: space-between; gap: var(--sp-1);
+      }
+      .map-explorer__card-row dt { color: rgba(255,255,255,.65); }
+      .map-explorer__card-row dd { font-weight: 600; }
+      .map-explorer__card-desc {
+        font-size: 13px; line-height: 1.9;
+        color: rgba(255,255,255,.7);
+        padding-top: var(--sp-2); flex: 1;
+      }
+      .map-explorer__card-hint {
+        font-size: 12px; color: rgba(255,255,255,.4);
+        text-align: center; padding-top: var(--sp-2);
+      }
+      .map-explorer__card.is-updating .map-explorer__card-img img,
+      .map-explorer__card.is-updating .map-explorer__card-name,
+      .map-explorer__card.is-updating .map-explorer__card-meta,
+      .map-explorer__card.is-updating .map-explorer__card-desc {
+        opacity: 0; transform: translateY(8px);
+      }
+      .map-explorer__card-img img,
+      .map-explorer__card-name,
+      .map-explorer__card-meta,
+      .map-explorer__card-desc {
+        transition: opacity .25s, transform .25s;
+      }
+
+      /* ── SVG Map ── */
+      .map-explorer__map { user-select: none; }
+      .map-explorer__map svg { width: 100%; height: auto; display: block; }
+
+      /* district shapes */
+      .district { cursor: pointer; }
+      .district__shape {
+        fill: #d4c9a8;
+        stroke: var(--green-800);
+        stroke-width: 2.5;
+        stroke-linejoin: round;
+        transform-origin: var(--cx) var(--cy);
+        transition: fill .25s, transform .25s, filter .25s;
+      }
+      .district:hover .district__shape {
+        fill: #c9b88e;
+        transform: scale(1.04);
+        filter: drop-shadow(0 4px 12px rgba(0,0,0,.2));
+      }
+      .district.is-active .district__shape {
+        fill: var(--gold);
+        transform: scale(1.03);
+        filter: drop-shadow(0 4px 16px rgba(201,162,74,.35));
+      }
+
+      /* district labels */
+      .district__label {
+        fill: var(--green-900);
+        font-size: 22px;
+        font-weight: 700;
+        font-family: "ITF Qomra Arabic", system-ui, sans-serif;
+        text-anchor: middle;
+        dominant-baseline: central;
+        pointer-events: none;
+        transition: fill .25s;
+      }
+      .district.is-active .district__label {
+        fill: var(--green-900);
+      }
+
+      /* ── Back button ── */
+      .map-explorer__back {
+        display: inline-flex; align-items: center; gap: 8px;
+        margin-top: var(--sp-3);
+        padding: 10px 24px;
+        border-radius: var(--r-full);
+        font-size: 14px; font-weight: 600;
+        color: var(--green-800);
+        border: 1.5px solid var(--green-800);
+        background: transparent;
+        transition: background .2s, color .2s, transform .15s;
+      }
+      .map-explorer__back:hover {
+        background: var(--green-800); color: #fff;
+        transform: translateY(-1px);
+      }
+
+      /* ── Section transitions ── */
+      .discover { transition: opacity .4s, transform .4s; }
+      .discover.is-hidden {
+        opacity: 0; transform: translateY(-20px);
+        pointer-events: none; position: absolute; visibility: hidden;
+      }
+      .map-explorer {
+        animation: fadeSlideUp .5s ease both;
+      }
+      @keyframes fadeSlideUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      /* ═══ LATEST NEWS ═══ */
+      .latest-news { padding-block: var(--sp-5); }
+
+      .news-tabs {
+        display: flex; gap: 8px;
+        margin-bottom: var(--sp-4);
+      }
+      .news-tab {
+        padding: 10px 24px;
+        border-radius: var(--r-full);
+        font-size: 14px; font-weight: 600;
+        color: var(--green-800);
+        border: 1.5px solid var(--border);
+        background: transparent;
+        transition: all .2s;
+      }
+      .news-tab:hover { border-color: var(--teal-600); color: var(--teal-600); }
+      .news-tab.is-active {
+        background: var(--green-800); color: #fff; border-color: var(--green-800);
+      }
+
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--sp-3);
+      }
+
+      .news-card {
+        display: flex; gap: var(--sp-2);
+        background: var(--surface);
+        border-radius: var(--r-md);
+        padding: var(--sp-2);
+        border: 1px solid var(--border);
+        transition: transform .2s, box-shadow .2s;
+      }
+      .news-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .news-card__img {
+        width: 120px; min-height: 110px;
+        border-radius: var(--r-sm);
+        overflow: hidden; flex-shrink: 0;
+        background: var(--cream-200);
+      }
+      .news-card__img img {
+        width: 100%; height: 100%; object-fit: cover;
+      }
+
+      .news-card__body {
+        display: flex; flex-direction: column; gap: 6px; flex: 1;
+      }
+      .news-card__date {
+        font-size: 12px; color: var(--muted);
+        display: flex; align-items: center; gap: 4px;
+      }
+      .news-card__date::before {
+        content: ""; display: inline-block;
+        width: 6px; height: 6px; border-radius: 50%;
+        background: var(--teal-600);
+      }
+      .news-card__title {
+        font-size: 15px; font-weight: 700;
+        color: var(--green-900); line-height: 1.6;
+      }
+      .news-card__excerpt {
+        font-size: 13px; color: var(--muted);
+        line-height: 1.7;
+        display: -webkit-box; -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical; overflow: hidden;
+      }
+
+      .news-more {
+        display: inline-flex; align-items: center; gap: 6px;
+        margin-top: var(--sp-3);
+        font-size: 14px; font-weight: 600;
+        color: var(--teal-600);
+        transition: gap .2s;
+      }
+      .news-more:hover { gap: 10px; }
+
+      /* hidden panels */
+      .news-panel { display: none; }
+      .news-panel.is-active { display: grid; }
+
+      @media (max-width: 700px) {
+        .news-grid { grid-template-columns: 1fr; }
+        .news-card__img { width: 90px; min-height: 90px; }
+        .news-tabs { flex-wrap: wrap; }
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 900px) {
+        .map-explorer__inner {
+          grid-template-columns: 1fr;
+          gap: var(--sp-3);
+        }
+        .map-explorer__card { min-height: auto; order: 2; }
+        .map-explorer__map  { order: 1; }
+      }
+    </style>
   </head>
   <body style="background-color: #ede7d9">
-    <header class="header">
-      <div class="container header__grid">
-        <a href="index.html" class="logo" aria-label="محافظة دمشق">
-          <img src="images/logo.png" alt="شعار محافظة دمشق" />
-        </a>
-
-        <div class="header__main">
-          <div class="topbar">
-            <span class="topbar__date" id="today"></span>
-          </div>
-
-          <div class="header__bar">
-            <button
-              class="burger"
-              id="burger"
-              aria-label="القائمة"
-              aria-expanded="false"
-            >
-              <span></span><span></span><span></span>
-            </button>
-
-            <nav class="nav" id="nav">
-              <ul class="nav__list">
-                <li>
-                  <a class="nav__link is-active" href="index.html">الرئيسية</a>
-                </li>
-                <li><a class="nav__link" href="pages/news.html">الأخبار</a></li>
-                <li>
-                  <a class="nav__link" href="pages/Cultural.html"
-                    >النظرة الثقافية</a
-                  >
-                </li>
-                <li>
-                  <a class="nav__link" href="pages/services.html">خدمات</a>
-                </li>
-                <li>
-                  <a class="nav__link" href="pages/Directorates.html"
-                    >دليل دمشق</a
-                  >
-                </li>
-                <li>
-                  <a class="nav__link" href="pages/Investments.html"
-                    >الأستثمارات</a
-                  >
-                </li>
-                <li>
-                  <a class="nav__link" href="pages/projects.html">المشاريع</a>
-                </li>
-              </ul>
-
-              <div class="nav__actions">
-                <a href="login.html" class="btn-login">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                  <span>تسجيل الدخول</span>
-                </a>
-                <button class="btn-lang" id="langBtn">En</button>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
+    <div id="site-header" data-active="الرئيسية"></div>
 
     <main>
-      <!-- <section class="hero">
-        <img class="hero__img" src="images/Damascus.png" alt="مدينة دمشق" />
-      </section> -->
-      <!-- <section class="hero">
-        <video
-          class="hero__img"
-          src="/assets/new_mohafez.mp4"
-          autoplay
-          muted
-          loop
-          playsinline
-          poster="images/Damascus.png"
-        ></video>
-      </section>
-      <section class="stats">
-        <div class="container">
-          <header class="section-head">
-            <h2 class="section-title">إحصائيات و أرقام</h2>
-            <p class="section-sub">مؤشرات تطور المدينة</p>
-          </header>
-
-          <ul class="stats__grid">
-            <li class="stat">
-              <img
-                class="stat__icon"
-                src="images/Frame 4.png"
-                alt=""
-                aria-hidden="true"
-              />
-              <span class="stat__label">عدد السكان</span>
-              <strong
-                class="stat__value"
-                data-count="2.92"
-                data-decimals="2"
-                data-suffix=" مليون"
-                >0</strong
-              >
-            </li>
-
-            <li class="stat">
-              <img
-                class="stat__icon"
-                src="images/Home Page.png"
-                alt=""
-                aria-hidden="true"
-              />
-              <span class="stat__label">المناطق الادارية</span>
-              <strong class="stat__value" data-count="16" data-suffix=" منطقة"
-                >0</strong
-              >
-            </li>
-
-            <li class="stat">
-              <img
-                class="stat__icon"
-                src="images/Address.png"
-                alt=""
-                aria-hidden="true"
-              />
-              <span class="stat__label">المساحة الجغرافية</span>
-              <strong class="stat__value" data-count="105" data-suffix=" كم"
-                >0</strong
-              >
-            </li>
-
-            <li class="stat">
-              <img
-                class="stat__icon"
-                src="images/Cameras.png"
-                alt=""
-                aria-hidden="true"
-              />
-              <span class="stat__label">المعالم السياحية</span>
-              <strong class="stat__value" data-count="125" data-suffix=" موقع"
-                >0</strong
-              >
-            </li>
-
-            <li class="stat">
-              <img
-                class="stat__icon"
-                src="images/Person.png"
-                alt=""
-                aria-hidden="true"
-              />
-              <span class="stat__label">عدد الزوار</span>
-              <strong class="stat__value" data-count="3500" data-suffix=" زائر"
-                >0</strong
-              >
-            </li>
-          </ul>
-        </div>
-      </section> -->
-
       <section class="hero-stats">
         <div class="hero">
           <video
@@ -190,84 +267,39 @@
             <source src="assets/new_mohafez.mp4" type="video/mp4" />
           </video>
           <div class="hero__overlay"></div>
-
-          <!-- عنوان الإحصائيات فوق الفيديو -->
-          <div class="stats-header">
-            <h2 class="stats-header__title">إحصائيات و أرقام</h2>
-            <p class="stats-header__sub">مؤشرات تطور المدينة</p>
-          </div>
         </div>
 
-        <!-- شريط الإحصائيات المتداخل -->
         <div class="container">
           <ul class="stats__grid">
             <li class="stat">
-              <img
-                class="stat__icon"
-                src="images/Frame 4.png"
-                alt=""
-                aria-hidden="true"
-              />
+              <img class="stat__icon" src="images/Frame 4.png" alt="" aria-hidden="true" />
               <span class="stat__label">عدد السكان</span>
-              <strong
-                class="stat__value"
-                data-count="2.92"
-                data-decimals="2"
-                data-suffix=" مليون"
-                >0</strong
-              >
+              <strong class="stat__value" data-count="2.92" data-decimals="2" data-suffix=" مليون">0</strong>
             </li>
             <li class="stat">
-              <img
-                class="stat__icon"
-                src="images/Home Page.png"
-                alt=""
-                aria-hidden="true"
-              />
+              <img class="stat__icon" src="images/Home Page.png" alt="" aria-hidden="true" />
               <span class="stat__label">المناطق الادارية</span>
-              <strong class="stat__value" data-count="16" data-suffix=" منطقة"
-                >0</strong
-              >
+              <strong class="stat__value" data-count="16" data-suffix=" منطقة">0</strong>
             </li>
             <li class="stat">
-              <img
-                class="stat__icon"
-                src="images/Address.png"
-                alt=""
-                aria-hidden="true"
-              />
+              <img class="stat__icon" src="images/Address.png" alt="" aria-hidden="true" />
               <span class="stat__label">المساحة الجغرافية</span>
-              <strong class="stat__value" data-count="105" data-suffix=" كم"
-                >0</strong
-              >
+              <strong class="stat__value" data-count="105" data-suffix=" كم">0</strong>
             </li>
             <li class="stat">
-              <img
-                class="stat__icon"
-                src="images/Cameras.png"
-                alt=""
-                aria-hidden="true"
-              />
+              <img class="stat__icon" src="images/Cameras.png" alt="" aria-hidden="true" />
               <span class="stat__label">المعالم السياحية</span>
-              <strong class="stat__value" data-count="125" data-suffix=" موقع"
-                >0</strong
-              >
+              <strong class="stat__value" data-count="125" data-suffix=" موقع">0</strong>
             </li>
             <li class="stat">
-              <img
-                class="stat__icon"
-                src="images/Person.png"
-                alt=""
-                aria-hidden="true"
-              />
+              <img class="stat__icon" src="images/Person.png" alt="" aria-hidden="true" />
               <span class="stat__label">عدد الزوار</span>
-              <strong class="stat__value" data-count="3500" data-suffix=" زائر"
-                >0</strong
-              >
+              <strong class="stat__value" data-count="3500" data-suffix=" زائر">0</strong>
             </li>
           </ul>
         </div>
       </section>
+
       <section class="governor">
         <div class="governor__card pattern" style="border: none">
           <div class="container governor__inner">
@@ -290,35 +322,19 @@
           <header class="section-head">
             <h2 class="section-title">أحياء مدينة دمشق</h2>
           </header>
-
           <div class="districts__inner">
             <article class="district-card">
               <figure class="district-card__media">
                 <img src="images/Damascus.png" alt="حي دمر" />
               </figure>
-
               <h3 class="district-card__name">دمر</h3>
-
               <dl class="district-card__meta">
-                <div class="district-card__row">
-                  <dt>السكان:</dt>
-                  <dd>120,000</dd>
-                </div>
-                <div class="district-card__row">
-                  <dt>المساحة:</dt>
-                  <dd>18 كم</dd>
-                </div>
-                <div class="district-card__row">
-                  <dt>الطابع:</dt>
-                  <dd>سكني/ضاحية</dd>
-                </div>
+                <div class="district-card__row"><dt>السكان:</dt><dd>120,000</dd></div>
+                <div class="district-card__row"><dt>المساحة:</dt><dd>18 كم</dd></div>
+                <div class="district-card__row"><dt>الطابع:</dt><dd>سكني/ضاحية</dd></div>
               </dl>
-
-              <p class="district-card__desc">
-                ضاحية غرب دمشق تشتهر بالمساحات الخضراء.
-              </p>
+              <p class="district-card__desc">ضاحية غرب دمشق تشتهر بالمساحات الخضراء.</p>
             </article>
-
             <figure class="districts__map">
               <img src="images/map.png" alt="خريطة أحياء مدينة دمشق" />
             </figure>
@@ -326,166 +342,168 @@
         </div>
       </section> -->
 
-      <section class="discover">
-        <img
-          class="discover__bg"
-          src="images/Damascus.png"
-          alt=""
-          aria-hidden="true"
-        />
+      <!-- ── Discover CTA ── -->
+      <section class="discover" id="discoverSection">
+        <img class="discover__bg" src="images/Damascus.png" alt="" aria-hidden="true" />
         <div class="discover__overlay"></div>
         <div class="discover__content">
           <h2 class="discover__title">اكتشف دمشق</h2>
           <p class="discover__sub">تاريخ عريض ... حاضر نابض ... مستقبل واعد.</p>
-          <a href="pages/Cultural.html" class="discover__btn">اكتشف الان</a>
+          <button class="discover__btn" id="openExplorer">اكتشف الان</button>
+        </div>
+      </section>
+
+      <!-- ── Interactive Map Explorer (hidden by default) ── -->
+      <section class="map-explorer" id="mapExplorer" style="display:none">
+        <div class="container">
+          <header class="section-head">
+            <h2 class="section-title">استكشف أحياء دمشق</h2>
+            <p class="section-sub">اضغط على أي حي في الخريطة لمعرفة المزيد</p>
+          </header>
+
+          <div class="map-explorer__inner">
+            <!-- Info Card -->
+            <article class="map-explorer__card" id="explorerCard">
+              <figure class="map-explorer__card-img">
+                <img id="cardImg" src="images/Damascus.png" alt="" />
+              </figure>
+              <h3 class="map-explorer__card-name" id="cardName">دمر</h3>
+              <dl class="map-explorer__card-meta" id="cardMeta">
+                <div class="map-explorer__card-row"><dt>السكان:</dt><dd id="cardPop">120,000</dd></div>
+                <div class="map-explorer__card-row"><dt>المساحة:</dt><dd id="cardArea">18 كم²</dd></div>
+                <div class="map-explorer__card-row"><dt>الطابع:</dt><dd id="cardType">سكني / ضاحية</dd></div>
+              </dl>
+              <p class="map-explorer__card-desc" id="cardDesc">ضاحية غرب دمشق تشتهر بالمساحات الخضراء والطبيعة الجبلية الخلابة.</p>
+              <p class="map-explorer__card-hint">← اضغط على حي في الخريطة</p>
+            </article>
+
+            <!-- SVG Interactive Map -->
+            <div class="map-explorer__map">
+              <svg id="svgMap" viewBox="0 0 1030 960" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة أحياء دمشق التفاعلية">
+                <!-- districts injected by JS -->
+              </svg>
+            </div>
+          </div>
+
+          <button class="map-explorer__back" id="explorerBack">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
+            العودة
+          </button>
+        </div>
+      </section>
+
+      <!-- ── آخر الأخبار ── -->
+      <section class="latest-news">
+        <div class="container">
+          <header class="section-head">
+            <h2 class="section-title">آخر الأخبار</h2>
+            <p class="section-sub">تابع أحدث الأخبار والتعاميم والقرارات الصادرة عن محافظة دمشق</p>
+          </header>
+
+          <div class="news-tabs">
+            <button class="news-tab is-active" data-tab="activities">الأنشطة</button>
+            <button class="news-tab" data-tab="circulars">التعاميم</button>
+            <button class="news-tab" data-tab="decisions">القرارات</button>
+          </div>
+
+          <!-- الأنشطة -->
+          <div class="news-panel news-grid is-active" data-panel="activities">
+            <a href="pages/news.html" class="news-card">
+              <figure class="news-card__img">
+                <img src="images/Damascus.png" alt="" />
+              </figure>
+              <div class="news-card__body">
+                <span class="news-card__date">15 آب 2026</span>
+                <h3 class="news-card__title">افتتاح حديقة تشرين العامة بعد إعادة التأهيل</h3>
+                <p class="news-card__excerpt">افتتح السيد المحافظ حديقة تشرين العامة بعد إتمام أعمال إعادة التأهيل الشاملة التي تضمنت تجديد المساحات الخضراء وإضافة مرافق ترفيهية جديدة.</p>
+              </div>
+            </a>
+            <a href="pages/news.html" class="news-card">
+              <figure class="news-card__img">
+                <img src="images/Damascus.png" alt="" />
+              </figure>
+              <div class="news-card__body">
+                <span class="news-card__date">12 آب 2026</span>
+                <h3 class="news-card__title">محافظ دمشق يلتقي وفداً من المستثمرين العرب</h3>
+                <p class="news-card__excerpt">استقبل السيد المحافظ وفداً من المستثمرين العرب لمناقشة فرص الاستثمار في مشاريع إعادة الإعمار والبنية التحتية.</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- التعاميم -->
+          <div class="news-panel news-grid" data-panel="circulars">
+            <a href="pages/news.html" class="news-card">
+              <figure class="news-card__img">
+                <img src="images/Damascus.png" alt="" />
+              </figure>
+              <div class="news-card__body">
+                <span class="news-card__date">14 آب 2026</span>
+                <h3 class="news-card__title">تعميم بشأن تنظيم ساعات العمل في الدوائر الحكومية</h3>
+                <p class="news-card__excerpt">صدر تعميم عن محافظة دمشق يتضمن تنظيم ساعات العمل الرسمية في كافة الدوائر والمؤسسات التابعة للمحافظة.</p>
+              </div>
+            </a>
+            <a href="pages/news.html" class="news-card">
+              <figure class="news-card__img">
+                <img src="images/Damascus.png" alt="" />
+              </figure>
+              <div class="news-card__body">
+                <span class="news-card__date">10 آب 2026</span>
+                <h3 class="news-card__title">إعلان عن مسابقة توظيف في المحافظة</h3>
+                <p class="news-card__excerpt">أعلنت محافظة دمشق عن مسابقة توظيف لعدد من الشواغر في الفئات الأولى والثانية ضمن ملاك المحافظة.</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- القرارات -->
+          <div class="news-panel news-grid" data-panel="decisions">
+            <a href="pages/news.html" class="news-card">
+              <figure class="news-card__img">
+                <img src="images/Damascus.png" alt="" />
+              </figure>
+              <div class="news-card__body">
+                <span class="news-card__date">13 آب 2026</span>
+                <h3 class="news-card__title">قرار بتخصيص أراضٍ لمشاريع سكنية جديدة في المزة</h3>
+                <p class="news-card__excerpt">صدر قرار عن المحافظة بتخصيص أراضٍ في منطقة المزة لإنشاء مجمعات سكنية حديثة تلبي احتياجات المواطنين.</p>
+              </div>
+            </a>
+            <a href="pages/news.html" class="news-card">
+              <figure class="news-card__img">
+                <img src="images/Damascus.png" alt="" />
+              </figure>
+              <div class="news-card__body">
+                <span class="news-card__date">8 آب 2026</span>
+                <h3 class="news-card__title">قرار تنظيم حركة المرور في المنطقة المركزية</h3>
+                <p class="news-card__excerpt">أصدرت محافظة دمشق قراراً بتنظيم حركة المرور وإحداث مسارات جديدة في منطقة وسط المدينة لتخفيف الازدحام.</p>
+              </div>
+            </a>
+          </div>
+
+          <a href="pages/news.html" class="news-more">
+            جميع الأخبار
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5m-2 0l7-7m-7 7l7 7"/></svg>
+          </a>
         </div>
       </section>
 
       <section class="cta">
         <div class="container">
-          <h2 class="services-cta__heading">
-            كل ما تحتاجه لانجاز معاملتك في مكان واحد!
-          </h2>
+          <h2 class="services-cta__heading">كل ما تحتاجه لانجاز معاملتك في مكان واحد!</h2>
           <div class="cta__card pattern" style="background-color: #e9e0cf">
             <div class="cta__collage">
-              <img
-                class="cta__img cta__img--1"
-                src="images/Service_1.png"
-                alt=""
-              />
-              <img
-                class="cta__img cta__img--2"
-                src="images/Service_1.png"
-                alt=""
-              />
-              <img
-                class="cta__img cta__img--3"
-                src="images/Service_1.png"
-                alt=""
-              />
-              <!-- <img class="cta__img cta__img--4" src="images/Service_2.png" alt="" /> -->
+              <img class="cta__img cta__img--1" src="images/Service_1.png" alt="" />
+              <img class="cta__img cta__img--2" src="images/Service_1.png" alt="" />
+              <img class="cta__img cta__img--3" src="images/Service_1.png" alt="" />
             </div>
-
             <div class="cta__content">
-              <!-- <h2 class="cta__title">
-                كل ما تحتاجه لانجاز معاملتك<br />
-                في مكان واحد!
-              </h2> -->
-              <p class="services-cta__text">
-                من خدمات الكترونية, وطلبات واستعلامات<br />
-                كلها متاحة بسهولة وسرعة.
-              </p>
-              <a
-                href="services.html"
-                style="width: 200px"
-                class="btn btn--primary"
-                >قدم الآن</a
-              >
+              <p class="services-cta__text">من خدمات الكترونية, وطلبات واستعلامات<br />كلها متاحة بسهولة وسرعة.</p>
+              <a href="services.html" style="width:200px;font-size:20px;font-weight:bold" class="btn btn--primary">قدم الآن</a>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <footer class="footer pattern">
-      <div class="container">
-        <div class="footer__grid">
-          <div class="footer__brand">
-            <img
-              class="footer__logo"
-              src="images/footer_logo.png"
-              alt="محافظة دمشق"
-            />
-            <p class="footer__about">
-              تسعى محافظة دمشق إلى الارتقاء بجودة الخدمات المقدمة للمواطنين
-              وتلبية تطلعاتهم، مستندة إلى معايير السرعة، والكفاءة، والمصداقية في
-              الإنجاز.
-            </p>
-          </div>
-          <nav class="footer__col">
-            <h3 class="footer__title">روابط مهمة</h3>
-            <ul class="footer__list">
-              <li><a href="news.html">الأخبار</a></li>
-              <li><a href="projects.html">المشاريع</a></li>
-              <li><a href="services.html">خدمات</a></li>
-              <li><a href="guide.html">دليل دمشق</a></li>
-              <li><a href="directory.html">دليل مواقع الجهات الحكومية</a></li>
-            </ul>
-          </nav>
-          <nav class="footer__col">
-            <h3 class="footer__title">خدمات المواطنين</h3>
-            <ul class="footer__list">
-              <li><a href="services.html">الخدمات</a></li>
-              <li><a href="contact.html">تواصل معنا</a></li>
-            </ul>
-          </nav>
-          <div class="footer__col">
-            <h3 class="footer__title">تابعنا:</h3>
-            <ul class="socials">
-              <li>
-                <a href="#" class="social" aria-label="انستغرام">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                  >
-                    <rect x="2" y="2" width="20" height="20" rx="5" />
-                    <circle cx="12" cy="12" r="4" />
-                    <circle
-                      cx="17.5"
-                      cy="6.5"
-                      r="1.2"
-                      fill="currentColor"
-                      stroke="none"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="social" aria-label="فيسبوك">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="social" aria-label="تويتر">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M22 5.9c-.7.3-1.5.5-2.4.6.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5a4.1 4.1 0 0 0 3.3 4c-.6.2-1.2.2-1.8.1a4.1 4.1 0 0 0 3.8 2.9A8.2 8.2 0 0 1 2 18.3a11.6 11.6 0 0 0 6.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2z"
-                    />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer__bottom">
-          <p class="footer__copy">جميع الحقوق محفوظة - محافظة دمشق © 2026</p>
-          <ul class="footer__legal">
-            <li><a href="terms.html">الشروط والأحكام</a></li>
-            <li><a href="privacy.html">سياسة الخصوصية</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-    <button class="a11y-btn" aria-label="إمكانية الوصول">
-      <img src="images/Standing Man.png" alt="محافظة دمشق" />
-    </button>
+
+    <div id="site-footer"></div>
     <script src="js/global.js"></script>
     <script src="js/index.js"></script>
   </body>

@@ -158,7 +158,7 @@
 .cards-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 402px));
+  grid-template-columns: repeat(4, minmax(0, 402px));
   row-gap: 65px;
   column-gap: 35px;
   justify-content: center;
