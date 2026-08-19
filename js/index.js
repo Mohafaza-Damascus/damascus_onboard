@@ -1,3 +1,4 @@
+
 (function () {
   const statsGrid = document.querySelector(".stats__grid");
   if (!statsGrid) return;
@@ -42,6 +43,40 @@
 
   observer.observe(statsGrid);
 })();
+
+/* ═══════════════════════════════════════════
+   GOVERNOR — Staggered Fade-Up
+   ═══════════════════════════════════════════ */
+(function () {
+  const section = document.querySelector(".governor");
+  if (!section) return;
+
+  const outerBox = section.querySelector(":scope > .governor__card");
+  const photo    = section.querySelector(".governor__photo");
+  const textCard = section.querySelector(".governor__inner > .governor__card");
+
+  const steps = [outerBox, photo, textCard].filter(Boolean);
+  const DELAY = 600;
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        steps.forEach((el, i) => {
+          setTimeout(() => el.classList.add("is-visible"), DELAY * i);
+        });
+        obs.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(section);
+})();
+
+/* ═══════════════════════════════════════════
+   INTERACTIVE MAP — Click districts to update card
+   ═══════════════════════════════════════════ */
 (function () {
   const districtData = {
     dummar:     { name:"دمر",         pop:"120,000", area:"18 كم²", type:"سكني / ضاحية",   desc:"ضاحية غرب دمشق تشتهر بالمساحات الخضراء والطبيعة الجبلية الخلابة، وتضم مناطق سكنية حديثة ومرافق خدمية متنوعة." },
@@ -98,24 +133,36 @@
     });
   }
 
+  /* Click on district */
   svgMap.addEventListener("click", (e) => {
     const hood = e.target.closest(".dm-hood");
     if (!hood) return;
     updateCard(hood.dataset.id);
   });
+
+  /* Select first district on load */
   updateCard("dummar");
 })();
 
+/* ═══════════════════════════════════════════
+   BOTTOM VIDEO — Sequential rotation
+   ═══════════════════════════════════════════ */
 (function () {
-  const tabs   = document.querySelectorAll(".news-tab");
-  const panels = document.querySelectorAll(".news-panel");
-  if (!tabs.length) return;
+  const video = document.getElementById("bottomVideo");
+  if (!video) return;
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const target = tab.dataset.tab;
-      tabs.forEach((t) => t.classList.toggle("is-active", t === tab));
-      panels.forEach((p) => p.classList.toggle("is-active", p.dataset.panel === target));
-    });
+  /* ── Add your video paths here ── */
+  const sources = [
+    "assets/new_mohafez.mp4",
+    /* "assets/video2.mp4", */
+    /* "assets/video3.mp4", */
+  ];
+
+  let current = 0;
+
+  video.addEventListener("ended", () => {
+    current = (current + 1) % sources.length;
+    video.src = sources[current];
+    video.play();
   });
 })();
