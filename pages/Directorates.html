@@ -3,221 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>دليل دمشق - محافظة دمشق</title>
-    <link rel="stylesheet" href="../css/global.css" />
-    <link rel="stylesheet" href="../css/Directorates.css" />
-  </head>
-  <body>
-    <div class="bg-vector-top"></div>
+    <title>محافظة دمشق</title>
 
-    <header class="header">
-      <div class="container header__grid">
-        <a href="../index.html" class="logo" aria-label="محافظة دمشق">
-          <img src="../images/logo.png" alt="شعار محافظة دمشق" />
-        </a>
-        <div class="header__main">
-          <div class="topbar">
-            <span class="topbar__date" id="today"></span>
+    <script
+      src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"
+      onerror="this.onerror = null; this.src = 'https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.js';"
+    ></script>
+    <link
+      href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css"
+      rel="stylesheet"
+      onerror="this.onerror = null; this.href = 'https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.css';"
+    />
+
+    <link rel="stylesheet" href="../css/Directorates.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+
+    <link href="../Bwork/Styles/bworkMessage.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/default.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/viewer.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/bwork.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/workflow.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/login.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/fileviewer/archivePnl.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/fileviewer/imgViewer.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/widgets/widgets.css" rel="stylesheet" type="text/css" />
+    <link href="./services-styles.css" rel="stylesheet" type="text/css" />
+
+    <script src="../Bwork/Scripts/multilang.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkRequests.js?v34"></script>
+    <script src="../Bwork/Scripts/bwork.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkMain.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkFrames.js?v34"></script>
+    <script src="../Bwork/Scripts/editableTable.js?v34"></script>
+    <script src="../Bwork/Scripts/primascript.js?v34"></script>
+    <script src="../Bwork/Scripts/fileviewer/archivePnl.js?v34"></script>
+    <script src="../Bwork/Scripts/fileviewer/imgViewer.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkComperable.js?v34"></script>
+    <script src="../Bwork/Scripts/bowrkIntervals.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkMessages.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkPrivileges.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkDepartments.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkComponent.js?v34"></script>
+    <script src="../Bwork/Scripts/numbers.js?v34"></script>
+    <script src="../Bwork/Scripts/handleWindowSize.js?v34"></script>
+    <script src="../Bwork/Scripts/sockets.js?v34"></script>
+    <script src="../Bwork/Scripts/shortcuts.js?v34"></script>
+    <script src="../Bwork/Scripts/user-account.js?v34"></script>
+    <script src="../Bwork/Scripts/workflow/functions.js?v34"></script>
+    <script src="../Bwork/Scripts/dewan/dewan.js?v34"></script>
+    <script src="../Bwork/Scripts/log/db-log.js?v34"></script>
+    <script src="../Bwork/Scripts/log/wf-logs.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkCache.js?v34"></script>
+    <script src="../Bwork/Scripts/report/report-functions.js?v34"></script>
+    <script src="../Bwork/Scripts/scan/scan-cycle.js?v34"></script>
+    <script src="../Bwork/Scripts/widget-info.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkFilesSearch.js?v34"></script>
+    <script src="../Bwork/Scripts/fileviewer/image-element.js?v34"></script>
+    <script src="../Bwork/Scripts/log/wf-action.js?v34"></script>
+    <script src="./services-functions.js"></script>
+    <script src="./license/licenses-functions.js"></script>
+    <script src="./license/license-preview.js"></script>
+    <script src="../Bwork/Scripts/loginLoad.js?v34"></script>
+  </head>
+  <body dir="rtl">
+    <div class="thirdsec">
+      <div class="map_container">
+        <!-- الناف بار الجانبي (قائمة قابلة للتمدد والطي) -->
+        <div class="map_left_side_menu" id="main-container">
+          <div class="accordion_nav_wrapper" id="categoryAccordion"></div>
+        </div>
+
+        <div class="map_main_container">
+          <!-- شريط الفلاتر العلوي (المنطقة + الحالة لقسم الصحة) -->
+          <div class="top_filters_bar" id="topFiltersBar"></div>
+
+          <!-- مساحة الخريطة -->
+          <div class="map_wrapper" id="map-container">
+            <div id="map" style="width: 100%; height: 100%"></div>
           </div>
-          <div class="header__bar">
-            <button
-              class="burger"
-              id="burger"
-              aria-label="القائمة"
-              aria-expanded="false"
-            >
-              <span></span><span></span><span></span>
-            </button>
-            <nav class="nav" id="nav">
-              <ul class="nav__list">
-                <li><a class="nav__link" href="../index.html">الرئيسية</a></li>
-                <li><a class="nav__link" href="news.html">الأخبار</a></li>
-                <li>
-                  <a class="nav__link" href="Cultural.html">النظرة الثقافية</a>
-                </li>
-                <li><a class="nav__link" href="services.html">خدمات</a></li>
-                <li>
-                  <a class="nav__link is-active" href="Directorates.html"
-                    >دليل دمشق</a
-                  >
-                </li>
-                <li>
-                  <a class="nav__link" href="Investments.html">الأستثمارات</a>
-                </li>
-                <li><a class="nav__link" href="projects.html">المشاريع</a></li>
-              </ul>
-              <div class="nav__actions">
-                <a href="login.html" class="btn-login">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                  <span>تسجيل الدخول</span>
-                </a>
-                <button class="btn-lang" id="langBtn">En</button>
-              </div>
-            </nav>
-          </div>
+
+          <!-- حاوية الكروت السفلية -->
+          <div
+            class="map_down_side_Image_details_container"
+            id="imageCardsContainer"
+          ></div>
         </div>
       </div>
-    </header>
-    <section class="dir-hero">
-      <div class="dir-hero__text">
-        <h1>أي خدمة ؟</h1>
-        <p>استثمر وقتك بفعالية، واستفد من خدماتنا المتميزة في دقائق معدودة</p>
-      </div>
-      <div class="dir-search">
-        <button class="dir-search__btn" aria-label="بحث">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#fff"
-            stroke-width="2.5"
-          >
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-        </button>
-        <div class="dir-search__field">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="ابحث عن خدمة، وزارة أو فئة"
-          />
-        </div>
-      </div>
-    </section>
-    <main class="dir-main">
-      <div class="dir-grid">
-        <div class="dir-card">
-          <div class="dir-card__badge"><span>مديرية الشكاوى</span></div>
-        </div>
-        <div class="dir-card">
-          <div class="dir-card__badge"><span>مديرية المالية</span></div>
-        </div>
-        <div class="dir-card">
-          <div class="dir-card__badge"><span>مديرية المهن والرخص</span></div>
-        </div>
-        <div class="dir-card">
-          <div class="dir-card__badge">
-            <span>مديرية التخطيط العمراني</span>
-          </div>
-        </div>
-        <div class="dir-card">
-          <div class="dir-card__badge"><span>مديرية السجل المؤقت</span></div>
-        </div>
-        <div class="dir-card">
-          <div class="dir-card__badge"><span>مديرية المرسوم 66</span></div>
-        </div>
-      </div>
-    </main>
-    <footer class="footer pattern">
-      <div class="container">
-        <div class="footer__grid">
-          <div class="footer__brand">
-            <img
-              class="footer__logo"
-              src="../images/footer_logo.png"
-              alt="محافظة دمشق"
-            />
-            <p class="footer__about">
-              تسعى محافظة دمشق إلى الارتقاء بجودة الخدمات المقدمة للمواطنين
-              وتلبية تطلعاتهم، مستندة إلى معايير السرعة، والكفاءة، والمصداقية في
-              الإنجاز.
-            </p>
-          </div>
-          <nav class="footer__col">
-            <h3 class="footer__title">روابط مهمة</h3>
-            <ul class="footer__list">
-              <li><a href="news.html">الأخبار</a></li>
-              <li><a href="projects.html">المشاريع</a></li>
-              <li><a href="services.html">خدمات</a></li>
-              <li><a href="Directorates.html">دليل دمشق</a></li>
-              <li><a href="#">دليل مواقع الجهات الحكومية</a></li>
-            </ul>
-          </nav>
-          <nav class="footer__col">
-            <h3 class="footer__title">خدمات المواطنين</h3>
-            <ul class="footer__list">
-              <li><a href="services.html">الخدمات</a></li>
-              <li><a href="#">تواصل معنا</a></li>
-            </ul>
-          </nav>
-          <div class="footer__col">
-            <h3 class="footer__title">تابعنا:</h3>
-            <ul class="socials">
-              <li>
-                <a href="#" class="social" aria-label="انستغرام"
-                  ><svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                  >
-                    <rect x="2" y="2" width="20" height="20" rx="5" />
-                    <circle cx="12" cy="12" r="4" />
-                    <circle
-                      cx="17.5"
-                      cy="6.5"
-                      r="1.2"
-                      fill="currentColor"
-                      stroke="none"
-                    /></svg
-                ></a>
-              </li>
-              <li>
-                <a href="#" class="social" aria-label="فيسبوك"
-                  ><svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"
-                    /></svg
-                ></a>
-              </li>
-              <li>
-                <a href="#" class="social" aria-label="تويتر"
-                  ><svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M22 5.9c-.7.3-1.5.5-2.4.6.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5a4.1 4.1 0 0 0 3.3 4c-.6.2-1.2.2-1.8.1a4.1 4.1 0 0 0 3.8 2.9A8.2 8.2 0 0 1 2 18.3a11.6 11.6 0 0 0 6.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2z"
-                    /></svg
-                ></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer__bottom">
-          <p class="footer__copy">جميع الحقوق محفوظة - محافظة دمشق © 2026</p>
-          <ul class="footer__legal">
-            <li><a href="#">الشروط والأحكام</a></li>
-            <li><a href="#">سياسة الخصوصية</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-    <button class="a11y-btn" aria-label="إمكانية الوصول">
-      <img src="../images/Standing Man.png" alt="" />
-    </button>
-    <script src="../js/global.js"></script>
+    </div>
+
+ <script src="../js/navbar.js"></script>
     <script src="../js/Directorates.js"></script>
   </body>
 </html>
