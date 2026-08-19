@@ -6,9 +6,6 @@
   const base = inPages ? "../" : "";
   const pagesPrefix = inPages ? "" : "pages/";
 
-  /* ═══════════════════════════════════════
-     1. RENDER HEADER
-     ═══════════════════════════════════════ */
   function renderHeader() {
     const el = document.getElementById("site-header");
     if (!el) return;
@@ -73,9 +70,6 @@
     </header>`;
   }
 
-  /* ═══════════════════════════════════════
-     2. RENDER FOOTER
-     ═══════════════════════════════════════ */
   function renderFooter() {
     const el = document.getElementById("site-footer");
     if (!el) return;
@@ -128,9 +122,6 @@
     </button>`;
   }
 
-  /* ═══════════════════════════════════════
-     3. RENDER AUTH MODALS
-     ═══════════════════════════════════════ */
   function renderModals() {
     const wrapper = document.createElement("div");
     wrapper.innerHTML = `
@@ -247,14 +238,9 @@
     document.body.appendChild(wrapper.firstElementChild);
   }
 
-  /* ═══════════════════════════════════════
-     4. RENDER ALL, THEN INIT
-     ═══════════════════════════════════════ */
   renderHeader();
   renderFooter();
   renderModals();
-
-  /* ─── Today's date ─── */
   const todayEl = document.getElementById("today");
   if (todayEl) {
     todayEl.textContent = new Date().toLocaleDateString("ar-SY", {
@@ -264,8 +250,6 @@
       year: "numeric",
     });
   }
-
-  /* ─── Burger menu ─── */
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
 
@@ -284,8 +268,6 @@
       }
     });
   }
-
-  /* ─── Sticky header + height var ─── */
   const header = document.querySelector(".header");
 
   const setHeaderHeight = () => {
@@ -320,8 +302,6 @@
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
   }
-
-  /* ─── Stat counters ─── */
   const counters = document.querySelectorAll(".stat__value");
 
   const animate = (el) => {
@@ -357,9 +337,6 @@
     counters.forEach((el) => io.observe(el));
   }
 
-  /* ═══════════════════════════════════════
-     5. AUTH MODAL LOGIC
-     ═══════════════════════════════════════ */
   const authOverlay = document.getElementById("authOverlay");
   const authWelcome = document.getElementById("authWelcome");
   const authLogin = document.getElementById("authLogin");
@@ -382,7 +359,6 @@
     setTimeout(() => showView(authWelcome), 300);
   }
 
-  /* Open from navbar */
   const openAuthBtn = document.getElementById("openAuth");
   if (openAuthBtn) {
     openAuthBtn.addEventListener("click", (e) => {
@@ -391,7 +367,6 @@
     });
   }
 
-  /* Switch views */
   const goLogin = document.getElementById("goLogin");
   const goLogin2 = document.getElementById("goLogin2");
   const goRegister = document.getElementById("goRegister");
@@ -402,24 +377,20 @@
   if (goRegister) goRegister.addEventListener("click", () => showView(authRegister));
   if (goRegister2) goRegister2.addEventListener("click", (e) => { e.preventDefault(); showView(authRegister); });
 
-  /* Close buttons */
   document.querySelectorAll("[data-close]").forEach((btn) => {
     btn.addEventListener("click", closeAuth);
   });
 
-  /* Click backdrop */
   if (authOverlay) {
     authOverlay.addEventListener("click", (e) => {
       if (e.target === authOverlay) closeAuth();
     });
   }
 
-  /* ESC key */
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeAuth();
   });
 
-  /* Role pills toggle */
   document.querySelectorAll(".role-selector").forEach((selector) => {
     selector.addEventListener("click", (e) => {
       const pill = e.target.closest(".role-pill");

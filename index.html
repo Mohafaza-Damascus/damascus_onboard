@@ -7,7 +7,28 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/global.css" />
     <style>
-      /* ═══ MAP EXPLORER ═══ */
+      .stats__grid {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .stats__grid.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .stats__grid .stat {
+        opacity: 0;
+        transform: translateY(25px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .stats__grid .stat.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
       .map-explorer {
         padding-block: var(--sp-5);
         overflow: hidden;
@@ -18,8 +39,6 @@
         align-items: center;
         gap: var(--sp-5);
       }
-
-      /* ── Card ── */
       .map-explorer__card {
         background: var(--green-800);
         color: #fff;
@@ -34,137 +53,149 @@
         border-radius: var(--r-sm);
         overflow: hidden;
         aspect-ratio: 16 / 9;
-        background: rgba(255,255,255,.1);
+        background: rgba(255, 255, 255, 0.1);
         margin-bottom: var(--sp-2);
       }
       .map-explorer__card-img img {
-        width: 100%; height: 100%; object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
       .map-explorer__card-name {
-        font-size: 22px; font-weight: 700; margin-bottom: var(--sp-2);
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: var(--sp-2);
       }
       .map-explorer__card-meta {
-        display: flex; flex-direction: column; gap: 6px;
-        font-size: 13px; padding-bottom: var(--sp-2);
-        border-bottom: 1px solid rgba(255,255,255,.15);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 13px;
+        padding-bottom: var(--sp-2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       }
       .map-explorer__card-row {
-        display: flex; justify-content: space-between; gap: var(--sp-1);
+        display: flex;
+        justify-content: space-between;
+        gap: var(--sp-1);
       }
-      .map-explorer__card-row dt { color: rgba(255,255,255,.65); }
-      .map-explorer__card-row dd { font-weight: 600; }
+      .map-explorer__card-row dt {
+        color: rgba(255, 255, 255, 0.65);
+      }
+      .map-explorer__card-row dd {
+        font-weight: 600;
+      }
       .map-explorer__card-desc {
-        font-size: 13px; line-height: 1.9;
-        color: rgba(255,255,255,.7);
-        padding-top: var(--sp-2); flex: 1;
+        font-size: 13px;
+        line-height: 1.9;
+        color: rgba(255, 255, 255, 0.7);
+        padding-top: var(--sp-2);
+        flex: 1;
       }
       .map-explorer__card-hint {
-        font-size: 12px; color: rgba(255,255,255,.4);
-        text-align: center; padding-top: var(--sp-2);
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.4);
+        text-align: center;
+        padding-top: var(--sp-2);
       }
       .map-explorer__card.is-updating .map-explorer__card-img img,
       .map-explorer__card.is-updating .map-explorer__card-name,
       .map-explorer__card.is-updating .map-explorer__card-meta,
       .map-explorer__card.is-updating .map-explorer__card-desc {
-        opacity: 0; transform: translateY(8px);
+        opacity: 0;
+        transform: translateY(8px);
       }
       .map-explorer__card-img img,
       .map-explorer__card-name,
       .map-explorer__card-meta,
       .map-explorer__card-desc {
-        transition: opacity .25s, transform .25s;
+        transition:
+          opacity 0.25s,
+          transform 0.25s;
       }
-
-      /* ── SVG Map ── */
-      .map-explorer__map { user-select: none; }
-      .map-explorer__map svg { width: 100%; height: auto; display: block; }
-
-      /* district shapes */
-      .district { cursor: pointer; }
-      .district__shape {
+      .map-explorer__map {
+        user-select: none;
+      }
+      .map-explorer__map svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .dm-hood {
+        cursor: pointer;
+      }
+      .dm-hood path {
         fill: #d4c9a8;
         stroke: var(--green-800);
-        stroke-width: 2.5;
+        stroke-width: 2;
         stroke-linejoin: round;
-        transform-origin: var(--cx) var(--cy);
-        transition: fill .25s, transform .25s, filter .25s;
+        transition:
+          fill 0.25s,
+          filter 0.25s;
       }
-      .district:hover .district__shape {
+      .dm-hood:hover path {
         fill: #c9b88e;
-        transform: scale(1.04);
-        filter: drop-shadow(0 4px 12px rgba(0,0,0,.2));
+        filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.18));
       }
-      .district.is-active .district__shape {
+      .dm-hood.is-active path {
         fill: var(--gold);
-        transform: scale(1.03);
-        filter: drop-shadow(0 4px 16px rgba(201,162,74,.35));
+        filter: drop-shadow(0 4px 14px rgba(201, 162, 74, 0.35));
       }
-
-      /* district labels */
-      .district__label {
+      .dm-lbl {
         fill: var(--green-900);
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 700;
         font-family: "ITF Qomra Arabic", system-ui, sans-serif;
         text-anchor: middle;
         dominant-baseline: central;
         pointer-events: none;
-        transition: fill .25s;
+        opacity: 0.8;
+        transition: opacity 0.25s;
       }
-      .district.is-active .district__label {
-        fill: var(--green-900);
+      .dm-hood:hover .dm-lbl,
+      .dm-hood.is-active .dm-lbl {
+        opacity: 1;
       }
-
-      /* ── Back button ── */
-      .map-explorer__back {
-        display: inline-flex; align-items: center; gap: 8px;
-        margin-top: var(--sp-3);
-        padding: 10px 24px;
-        border-radius: var(--r-full);
-        font-size: 14px; font-weight: 600;
-        color: var(--green-800);
-        border: 1.5px solid var(--green-800);
-        background: transparent;
-        transition: background .2s, color .2s, transform .15s;
+      .dm-hood[data-id="olddam"] .dm-lbl,
+      .dm-hood[data-id="qanawat"] .dm-lbl,
+      .dm-hood[data-id="sarouja"] .dm-lbl,
+      .dm-hood[data-id="yarmouk"] .dm-lbl {
+        font-size: 15px;
       }
-      .map-explorer__back:hover {
-        background: var(--green-800); color: #fff;
-        transform: translateY(-1px);
+      .dm-hint {
+        text-align: center;
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: var(--sp-2);
       }
 
-      /* ── Section transitions ── */
-      .discover { transition: opacity .4s, transform .4s; }
-      .discover.is-hidden {
-        opacity: 0; transform: translateY(-20px);
-        pointer-events: none; position: absolute; visibility: hidden;
+      .latest-news {
+        padding-block: var(--sp-5);
       }
-      .map-explorer {
-        animation: fadeSlideUp .5s ease both;
-      }
-      @keyframes fadeSlideUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-
-      /* ═══ LATEST NEWS ═══ */
-      .latest-news { padding-block: var(--sp-5); }
 
       .news-tabs {
-        display: flex; gap: 8px;
+        display: flex;
+        gap: 8px;
         margin-bottom: var(--sp-4);
       }
       .news-tab {
         padding: 10px 24px;
         border-radius: var(--r-full);
-        font-size: 14px; font-weight: 600;
+        font-size: 14px;
+        font-weight: 600;
         color: var(--green-800);
         border: 1.5px solid var(--border);
         background: transparent;
-        transition: all .2s;
+        transition: all 0.2s;
       }
-      .news-tab:hover { border-color: var(--teal-600); color: var(--teal-600); }
+      .news-tab:hover {
+        border-color: var(--teal-600);
+        color: var(--teal-600);
+      }
       .news-tab.is-active {
-        background: var(--green-800); color: #fff; border-color: var(--green-800);
+        background: var(--green-800);
+        color: #fff;
+        border-color: var(--green-800);
       }
 
       .news-grid {
@@ -174,12 +205,15 @@
       }
 
       .news-card {
-        display: flex; gap: var(--sp-2);
+        display: flex;
+        gap: var(--sp-2);
         background: var(--surface);
         border-radius: var(--r-md);
         padding: var(--sp-2);
         border: 1px solid var(--border);
-        transition: transform .2s, box-shadow .2s;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
       }
       .news-card:hover {
         transform: translateY(-3px);
@@ -187,65 +221,102 @@
       }
 
       .news-card__img {
-        width: 120px; min-height: 110px;
+        width: 120px;
+        min-height: 110px;
         border-radius: var(--r-sm);
-        overflow: hidden; flex-shrink: 0;
+        overflow: hidden;
+        flex-shrink: 0;
         background: var(--cream-200);
       }
       .news-card__img img {
-        width: 100%; height: 100%; object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       .news-card__body {
-        display: flex; flex-direction: column; gap: 6px; flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
       }
       .news-card__date {
-        font-size: 12px; color: var(--muted);
-        display: flex; align-items: center; gap: 4px;
+        font-size: 12px;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 4px;
       }
       .news-card__date::before {
-        content: ""; display: inline-block;
-        width: 6px; height: 6px; border-radius: 50%;
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
         background: var(--teal-600);
       }
       .news-card__title {
-        font-size: 15px; font-weight: 700;
-        color: var(--green-900); line-height: 1.6;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--green-900);
+        line-height: 1.6;
       }
       .news-card__excerpt {
-        font-size: 13px; color: var(--muted);
+        font-size: 13px;
+        color: var(--muted);
         line-height: 1.7;
-        display: -webkit-box; -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical; overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
 
       .news-more {
-        display: inline-flex; align-items: center; gap: 6px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
         margin-top: var(--sp-3);
-        font-size: 14px; font-weight: 600;
+        font-size: 14px;
+        font-weight: 600;
         color: var(--teal-600);
-        transition: gap .2s;
+        transition: gap 0.2s;
       }
-      .news-more:hover { gap: 10px; }
+      .news-more:hover {
+        gap: 10px;
+      }
 
-      /* hidden panels */
-      .news-panel { display: none; }
-      .news-panel.is-active { display: grid; }
+      .news-panel {
+        display: none;
+      }
+      .news-panel.is-active {
+        display: grid;
+      }
 
       @media (max-width: 700px) {
-        .news-grid { grid-template-columns: 1fr; }
-        .news-card__img { width: 90px; min-height: 90px; }
-        .news-tabs { flex-wrap: wrap; }
+        .news-grid {
+          grid-template-columns: 1fr;
+        }
+        .news-card__img {
+          width: 90px;
+          min-height: 90px;
+        }
+        .news-tabs {
+          flex-wrap: wrap;
+        }
       }
 
-      /* ── Responsive ── */
       @media (max-width: 900px) {
         .map-explorer__inner {
           grid-template-columns: 1fr;
           gap: var(--sp-3);
         }
-        .map-explorer__card { min-height: auto; order: 2; }
-        .map-explorer__map  { order: 1; }
+        .map-explorer__card {
+          min-height: auto;
+          order: 2;
+        }
+        .map-explorer__map {
+          order: 1;
+        }
       }
     </style>
   </head>
@@ -272,29 +343,68 @@
         <div class="container">
           <ul class="stats__grid">
             <li class="stat">
-              <img class="stat__icon" src="images/Frame 4.png" alt="" aria-hidden="true" />
+              <img
+                class="stat__icon"
+                src="images/Frame 4.png"
+                alt=""
+                aria-hidden="true"
+              />
               <span class="stat__label">عدد السكان</span>
-              <strong class="stat__value" data-count="2.92" data-decimals="2" data-suffix=" مليون">0</strong>
+              <strong
+                class="stat__value"
+                data-count="2.92"
+                data-decimals="2"
+                data-suffix=" مليون"
+                >0</strong
+              >
             </li>
             <li class="stat">
-              <img class="stat__icon" src="images/Home Page.png" alt="" aria-hidden="true" />
+              <img
+                class="stat__icon"
+                src="images/Home Page.png"
+                alt=""
+                aria-hidden="true"
+              />
               <span class="stat__label">المناطق الادارية</span>
-              <strong class="stat__value" data-count="16" data-suffix=" منطقة">0</strong>
+              <strong class="stat__value" data-count="16" data-suffix=" منطقة"
+                >0</strong
+              >
             </li>
             <li class="stat">
-              <img class="stat__icon" src="images/Address.png" alt="" aria-hidden="true" />
+              <img
+                class="stat__icon"
+                src="images/Address.png"
+                alt=""
+                aria-hidden="true"
+              />
               <span class="stat__label">المساحة الجغرافية</span>
-              <strong class="stat__value" data-count="105" data-suffix=" كم">0</strong>
+              <strong class="stat__value" data-count="105" data-suffix=" كم"
+                >0</strong
+              >
             </li>
             <li class="stat">
-              <img class="stat__icon" src="images/Cameras.png" alt="" aria-hidden="true" />
+              <img
+                class="stat__icon"
+                src="images/Cameras.png"
+                alt=""
+                aria-hidden="true"
+              />
               <span class="stat__label">المعالم السياحية</span>
-              <strong class="stat__value" data-count="125" data-suffix=" موقع">0</strong>
+              <strong class="stat__value" data-count="125" data-suffix=" موقع"
+                >0</strong
+              >
             </li>
             <li class="stat">
-              <img class="stat__icon" src="images/Person.png" alt="" aria-hidden="true" />
+              <img
+                class="stat__icon"
+                src="images/Person.png"
+                alt=""
+                aria-hidden="true"
+              />
               <span class="stat__label">عدد الزوار</span>
-              <strong class="stat__value" data-count="3500" data-suffix=" زائر">0</strong>
+              <strong class="stat__value" data-count="3500" data-suffix=" زائر"
+                >0</strong
+              >
             </li>
           </ul>
         </div>
@@ -317,44 +427,7 @@
         </div>
       </section>
 
-      <!-- <section class="districts">
-        <div class="container">
-          <header class="section-head">
-            <h2 class="section-title">أحياء مدينة دمشق</h2>
-          </header>
-          <div class="districts__inner">
-            <article class="district-card">
-              <figure class="district-card__media">
-                <img src="images/Damascus.png" alt="حي دمر" />
-              </figure>
-              <h3 class="district-card__name">دمر</h3>
-              <dl class="district-card__meta">
-                <div class="district-card__row"><dt>السكان:</dt><dd>120,000</dd></div>
-                <div class="district-card__row"><dt>المساحة:</dt><dd>18 كم</dd></div>
-                <div class="district-card__row"><dt>الطابع:</dt><dd>سكني/ضاحية</dd></div>
-              </dl>
-              <p class="district-card__desc">ضاحية غرب دمشق تشتهر بالمساحات الخضراء.</p>
-            </article>
-            <figure class="districts__map">
-              <img src="images/map.png" alt="خريطة أحياء مدينة دمشق" />
-            </figure>
-          </div>
-        </div>
-      </section> -->
-
-      <!-- ── Discover CTA ── -->
-      <section class="discover" id="discoverSection">
-        <img class="discover__bg" src="images/Damascus.png" alt="" aria-hidden="true" />
-        <div class="discover__overlay"></div>
-        <div class="discover__content">
-          <h2 class="discover__title">اكتشف دمشق</h2>
-          <p class="discover__sub">تاريخ عريض ... حاضر نابض ... مستقبل واعد.</p>
-          <button class="discover__btn" id="openExplorer">اكتشف الان</button>
-        </div>
-      </section>
-
-      <!-- ── Interactive Map Explorer (hidden by default) ── -->
-      <section class="map-explorer" id="mapExplorer" style="display:none">
+      <section class="map-explorer" id="mapExplorer">
         <div class="container">
           <header class="section-head">
             <h2 class="section-title">استكشف أحياء دمشق</h2>
@@ -362,51 +435,159 @@
           </header>
 
           <div class="map-explorer__inner">
-            <!-- Info Card -->
             <article class="map-explorer__card" id="explorerCard">
               <figure class="map-explorer__card-img">
                 <img id="cardImg" src="images/Damascus.png" alt="" />
               </figure>
               <h3 class="map-explorer__card-name" id="cardName">دمر</h3>
               <dl class="map-explorer__card-meta" id="cardMeta">
-                <div class="map-explorer__card-row"><dt>السكان:</dt><dd id="cardPop">120,000</dd></div>
-                <div class="map-explorer__card-row"><dt>المساحة:</dt><dd id="cardArea">18 كم²</dd></div>
-                <div class="map-explorer__card-row"><dt>الطابع:</dt><dd id="cardType">سكني / ضاحية</dd></div>
+                <div class="map-explorer__card-row">
+                  <dt>السكان:</dt>
+                  <dd id="cardPop">120,000</dd>
+                </div>
+                <div class="map-explorer__card-row">
+                  <dt>المساحة:</dt>
+                  <dd id="cardArea">18 كم²</dd>
+                </div>
+                <div class="map-explorer__card-row">
+                  <dt>الطابع:</dt>
+                  <dd id="cardType">سكني / ضاحية</dd>
+                </div>
               </dl>
-              <p class="map-explorer__card-desc" id="cardDesc">ضاحية غرب دمشق تشتهر بالمساحات الخضراء والطبيعة الجبلية الخلابة.</p>
+              <p class="map-explorer__card-desc" id="cardDesc">
+                ضاحية غرب دمشق تشتهر بالمساحات الخضراء والطبيعة الجبلية الخلابة.
+              </p>
               <p class="map-explorer__card-hint">← اضغط على حي في الخريطة</p>
             </article>
 
-            <!-- SVG Interactive Map -->
             <div class="map-explorer__map">
-              <svg id="svgMap" viewBox="0 0 1030 960" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة أحياء دمشق التفاعلية">
-                <!-- districts injected by JS -->
+              <svg
+                id="svgMap"
+                viewBox="0 0 1000 760"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="خريطة أحياء دمشق التفاعلية"
+              >
+                <g class="dm-hood" data-id="dummar">
+                  <path
+                    d="M 603.5,0.0 L 405.5,99.4 L 225.5,94.4 L 0.0,232.7 L 20.5,352.0 L 117.5,338.1 L 198.0,496.3 L 196.0,466.9 L 227.0,429.9 L 294.0,410.5 L 350.5,376.5 L 392.0,322.6 L 415.0,343.0 L 452.5,314.6 L 448.5,303.1 L 387.0,295.6 L 415.0,289.1 L 407.5,255.7 L 443.5,275.6 L 535.0,229.7 L 536.0,200.7 L 511.5,176.3 L 548.0,162.8 L 567.5,141.3 L 565.5,122.3 L 603.0,111.4 L 638.0,69.4 Z"
+                  />
+                  <text class="dm-lbl" x="290" y="295">دُمَّر</text>
+                </g>
+                <g class="dm-hood" data-id="mazza">
+                  <path
+                    d="M 506.5,369.5 L 425.0,350.5 L 393.0,326.1 L 352.5,378.5 L 292.5,414.5 L 230.0,431.4 L 197.5,470.4 L 200.0,499.8 L 219.0,540.3 L 65.0,614.7 L 30.5,672.6 L 68.0,708.6 L 282.5,615.2 L 312.5,628.2 L 325.0,599.2 L 331.5,538.3 L 316.0,534.3 L 363.0,466.9 L 435.5,419.9 L 475.0,434.9 L 550.5,440.9 L 515.5,396.5 Z"
+                  />
+                  <text class="dm-lbl" x="315" y="510">المزّة</text>
+                </g>
+                <g class="dm-hood" data-id="kafarsuseh">
+                  <path
+                    d="M 436.5,421.4 L 364.0,468.9 L 319.5,533.8 L 334.0,536.3 L 327.0,601.2 L 315.0,629.7 L 497.0,721.6 L 529.5,618.7 L 592.5,502.8 L 596.5,469.4 L 581.5,466.4 L 562.0,443.4 L 478.0,437.4 Z"
+                  />
+                  <text class="dm-lbl" x="453" y="572">كفرسوسة</text>
+                </g>
+                <g class="dm-hood" data-id="berze">
+                  <path
+                    d="M 673.0,277.1 L 707.5,272.1 L 818.5,214.7 L 826.5,151.3 L 823.5,97.9 L 870.0,55.9 L 914.5,69.9 L 862.0,2.0 L 604.5,0.0 L 626.0,32.5 L 641.5,75.9 L 657.0,86.9 L 687.5,87.9 L 713.5,110.9 L 719.0,127.3 L 707.0,136.8 L 704.5,202.2 L 684.5,220.7 Z"
+                  />
+                  <text class="dm-lbl" x="748" y="122">برزة</text>
+                </g>
+                <g class="dm-hood" data-id="qaboun">
+                  <path
+                    d="M 878.5,57.4 L 864.0,60.9 L 824.5,98.9 L 828.5,152.8 L 821.5,184.8 L 816.5,246.2 L 829.5,255.2 L 852.5,244.2 L 902.5,237.7 L 947.0,209.7 L 975.5,199.7 L 999.5,178.8 L 916.5,72.9 Z"
+                  />
+                  <text class="dm-lbl" x="884" y="166">القابون</text>
+                </g>
+                <g class="dm-hood" data-id="jobar">
+                  <path
+                    d="M 972.0,212.2 L 962.5,207.2 L 952.0,209.2 L 900.5,241.7 L 854.0,246.7 L 830.5,257.7 L 815.5,249.2 L 777.5,294.6 L 783.5,351.5 L 771.0,378.5 L 768.5,411.5 L 826.5,424.4 L 865.0,442.9 L 882.5,444.9 L 924.0,340.6 L 970.0,329.6 L 975.0,321.6 L 968.5,306.6 L 954.0,306.1 L 954.5,225.2 L 973.5,224.2 Z"
+                  />
+                  <text class="dm-lbl" x="885" y="340">جوبر</text>
+                </g>
+                <g class="dm-hood" data-id="shaghour">
+                  <path
+                    d="M 770.0,412.5 L 749.0,433.9 L 669.5,429.4 L 664.0,470.9 L 680.5,466.4 L 689.0,484.9 L 678.0,596.2 L 654.0,607.7 L 698.0,653.6 L 758.5,699.1 L 768.5,691.6 L 766.0,658.1 L 781.0,657.6 L 782.0,652.1 L 742.5,626.2 L 733.0,595.2 L 881.0,446.4 L 862.5,443.4 L 824.0,424.4 Z"
+                  />
+                  <text class="dm-lbl" x="755" y="530">الشاغور</text>
+                </g>
+                <g class="dm-hood" data-id="rukn">
+                  <path
+                    d="M 638.5,73.9 L 628.0,91.4 L 608.5,105.4 L 603.0,115.3 L 585.0,114.8 L 573.5,121.8 L 594.0,200.7 L 612.0,214.7 L 624.5,215.2 L 618.5,276.1 L 626.5,276.1 L 636.0,269.6 L 671.0,276.6 L 682.0,221.2 L 702.5,203.2 L 705.0,136.3 L 716.0,127.3 L 712.0,111.9 L 687.5,89.9 L 679.0,86.9 L 654.5,87.9 Z"
+                  />
+                  <text class="dm-lbl" x="646" y="185">ركن الدين</text>
+                </g>
+                <g class="dm-hood" data-id="salihiye">
+                  <path
+                    d="M 571.5,121.8 L 562.0,129.8 L 570.5,132.8 L 569.5,142.8 L 550.0,164.3 L 524.5,166.8 L 513.0,177.8 L 538.5,200.2 L 538.5,227.7 L 531.0,236.7 L 521.0,238.7 L 541.5,263.7 L 536.5,272.6 L 540.5,284.1 L 547.5,285.1 L 565.0,274.1 L 580.5,285.6 L 594.5,309.1 L 606.5,347.0 L 620.0,347.5 L 624.5,344.0 L 631.0,318.1 L 657.0,322.6 L 670.0,279.6 L 637.0,272.1 L 623.5,279.1 L 616.5,277.1 L 622.5,217.2 L 609.0,216.7 L 590.0,199.7 Z"
+                  />
+                  <text class="dm-lbl" x="590" y="260">الصالحية</text>
+                </g>
+                <g class="dm-hood" data-id="muhajireen">
+                  <path
+                    d="M 388.0,289.6 L 392.0,298.1 L 401.0,302.1 L 446.5,300.6 L 453.0,305.1 L 454.0,316.6 L 417.0,345.0 L 479.5,357.0 L 526.5,372.0 L 600.0,370.0 L 602.5,339.6 L 583.5,293.6 L 565.0,278.1 L 547.0,288.6 L 540.5,288.1 L 534.0,275.1 L 539.5,265.2 L 519.0,239.7 L 510.0,241.7 L 487.5,262.2 L 460.0,267.1 L 444.5,278.6 L 430.5,276.6 L 408.5,258.2 L 416.0,291.1 Z"
+                  />
+                  <text class="dm-lbl" x="505" y="318">المهاجرين</text>
+                </g>
+                <g class="dm-hood" data-id="sarouja">
+                  <path
+                    d="M 817.0,217.7 L 704.5,276.1 L 673.0,280.6 L 659.0,324.6 L 633.0,321.1 L 626.5,346.5 L 605.5,350.0 L 602.0,370.0 L 654.0,373.5 L 660.0,379.5 L 687.0,369.5 L 738.0,365.0 L 769.5,375.5 L 781.5,349.0 L 775.5,293.6 L 814.5,248.2 Z"
+                  />
+                  <text class="dm-lbl" x="710" y="320">ساروجة</text>
+                </g>
+                <g class="dm-hood" data-id="qanawat">
+                  <path
+                    d="M 508.5,370.0 L 516.5,394.5 L 537.0,423.4 L 553.0,440.4 L 563.0,441.9 L 582.5,464.4 L 642.5,476.4 L 653.5,475.9 L 662.5,470.9 L 663.0,441.9 L 668.0,426.4 L 655.5,400.5 L 656.5,379.5 L 654.5,376.0 L 636.5,377.5 L 622.5,371.5 L 527.0,374.5 Z"
+                  />
+                  <text class="dm-lbl" x="592" y="430">القنوات</text>
+                </g>
+                <g class="dm-hood" data-id="olddam">
+                  <path
+                    d="M 769.0,377.0 L 761.0,372.5 L 750.0,372.5 L 738.0,367.0 L 690.0,370.5 L 670.0,379.5 L 657.0,381.0 L 655.5,397.0 L 662.0,408.5 L 661.0,411.0 L 663.0,411.5 L 672.0,428.4 L 717.5,432.9 L 749.0,431.4 L 766.5,411.0 Z"
+                  />
+                  <text class="dm-lbl" x="712" y="405">دمشق القديمة</text>
+                </g>
+                <g class="dm-hood" data-id="midan">
+                  <path
+                    d="M 679.0,467.4 L 652.0,478.4 L 598.0,469.4 L 594.5,502.8 L 575.5,533.8 L 580.5,548.8 L 587.0,554.8 L 581.0,581.2 L 593.0,589.2 L 588.5,613.2 L 608.5,615.2 L 653.0,606.7 L 675.5,596.7 L 687.0,495.3 L 686.5,481.9 Z"
+                  />
+                  <text class="dm-lbl" x="635" y="545">الميدان</text>
+                </g>
+                <g class="dm-hood" data-id="qadam">
+                  <path
+                    d="M 575.0,535.8 L 556.5,566.8 L 525.5,634.2 L 505.0,691.1 L 499.0,720.6 L 572.5,759.5 L 627.5,703.6 L 634.5,613.7 L 607.5,617.2 L 586.5,614.2 L 591.0,589.7 L 579.5,583.7 L 579.0,572.2 L 585.0,555.3 L 578.5,548.8 Z"
+                  />
+                  <text class="dm-lbl" x="562" y="660">القدم</text>
+                </g>
+                <g class="dm-hood" data-id="yarmouk">
+                  <path
+                    d="M 637.0,610.2 L 629.5,702.6 L 661.0,707.6 L 666.0,725.0 L 685.0,720.1 L 701.0,745.5 L 726.0,736.5 L 734.0,720.6 L 726.0,676.6 L 677.5,637.7 L 652.5,609.2 Z"
+                  />
+                  <text class="dm-lbl" x="681" y="685">اليرموك</text>
+                </g>
               </svg>
+              <p class="dm-hint">اضغط على أي حي لعرض المعلومات</p>
             </div>
           </div>
-
-          <button class="map-explorer__back" id="explorerBack">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
-            العودة
-          </button>
         </div>
       </section>
 
-      <!-- ── آخر الأخبار ── -->
       <section class="latest-news">
         <div class="container">
           <header class="section-head">
             <h2 class="section-title">آخر الأخبار</h2>
-            <p class="section-sub">تابع أحدث الأخبار والتعاميم والقرارات الصادرة عن محافظة دمشق</p>
+            <p class="section-sub">
+              تابع أحدث الأخبار والتعاميم والقرارات الصادرة عن محافظة دمشق
+            </p>
           </header>
 
           <div class="news-tabs">
-            <button class="news-tab is-active" data-tab="activities">الأنشطة</button>
+            <button class="news-tab is-active" data-tab="activities">
+              الأنشطة
+            </button>
             <button class="news-tab" data-tab="circulars">التعاميم</button>
             <button class="news-tab" data-tab="decisions">القرارات</button>
           </div>
 
-          <!-- الأنشطة -->
           <div class="news-panel news-grid is-active" data-panel="activities">
             <a href="pages/news.html" class="news-card">
               <figure class="news-card__img">
@@ -414,8 +595,14 @@
               </figure>
               <div class="news-card__body">
                 <span class="news-card__date">15 آب 2026</span>
-                <h3 class="news-card__title">افتتاح حديقة تشرين العامة بعد إعادة التأهيل</h3>
-                <p class="news-card__excerpt">افتتح السيد المحافظ حديقة تشرين العامة بعد إتمام أعمال إعادة التأهيل الشاملة التي تضمنت تجديد المساحات الخضراء وإضافة مرافق ترفيهية جديدة.</p>
+                <h3 class="news-card__title">
+                  افتتاح حديقة تشرين العامة بعد إعادة التأهيل
+                </h3>
+                <p class="news-card__excerpt">
+                  افتتح السيد المحافظ حديقة تشرين العامة بعد إتمام أعمال إعادة
+                  التأهيل الشاملة التي تضمنت تجديد المساحات الخضراء وإضافة مرافق
+                  ترفيهية جديدة.
+                </p>
               </div>
             </a>
             <a href="pages/news.html" class="news-card">
@@ -424,13 +611,17 @@
               </figure>
               <div class="news-card__body">
                 <span class="news-card__date">12 آب 2026</span>
-                <h3 class="news-card__title">محافظ دمشق يلتقي وفداً من المستثمرين العرب</h3>
-                <p class="news-card__excerpt">استقبل السيد المحافظ وفداً من المستثمرين العرب لمناقشة فرص الاستثمار في مشاريع إعادة الإعمار والبنية التحتية.</p>
+                <h3 class="news-card__title">
+                  محافظ دمشق يلتقي وفداً من المستثمرين العرب
+                </h3>
+                <p class="news-card__excerpt">
+                  استقبل السيد المحافظ وفداً من المستثمرين العرب لمناقشة فرص
+                  الاستثمار في مشاريع إعادة الإعمار والبنية التحتية.
+                </p>
               </div>
             </a>
           </div>
 
-          <!-- التعاميم -->
           <div class="news-panel news-grid" data-panel="circulars">
             <a href="pages/news.html" class="news-card">
               <figure class="news-card__img">
@@ -438,8 +629,13 @@
               </figure>
               <div class="news-card__body">
                 <span class="news-card__date">14 آب 2026</span>
-                <h3 class="news-card__title">تعميم بشأن تنظيم ساعات العمل في الدوائر الحكومية</h3>
-                <p class="news-card__excerpt">صدر تعميم عن محافظة دمشق يتضمن تنظيم ساعات العمل الرسمية في كافة الدوائر والمؤسسات التابعة للمحافظة.</p>
+                <h3 class="news-card__title">
+                  تعميم بشأن تنظيم ساعات العمل في الدوائر الحكومية
+                </h3>
+                <p class="news-card__excerpt">
+                  صدر تعميم عن محافظة دمشق يتضمن تنظيم ساعات العمل الرسمية في
+                  كافة الدوائر والمؤسسات التابعة للمحافظة.
+                </p>
               </div>
             </a>
             <a href="pages/news.html" class="news-card">
@@ -448,13 +644,47 @@
               </figure>
               <div class="news-card__body">
                 <span class="news-card__date">10 آب 2026</span>
-                <h3 class="news-card__title">إعلان عن مسابقة توظيف في المحافظة</h3>
-                <p class="news-card__excerpt">أعلنت محافظة دمشق عن مسابقة توظيف لعدد من الشواغر في الفئات الأولى والثانية ضمن ملاك المحافظة.</p>
+                <h3 class="news-card__title">
+                  إعلان عن مسابقة توظيف في المحافظة
+                </h3>
+                <p class="news-card__excerpt">
+                  أعلنت محافظة دمشق عن مسابقة توظيف لعدد من الشواغر في الفئات
+                  الأولى والثانية ضمن ملاك المحافظة.
+                </p>
+              </div>
+            </a>
+             <a href="pages/news.html" class="news-card">
+              <figure class="news-card__img">
+                <img src="images/Damascus.png" alt="" />
+              </figure>
+              <div class="news-card__body">
+                <span class="news-card__date">10 آب 2026</span>
+                <h3 class="news-card__title">
+                  إعلان عن مسابقة توظيف في المحافظة
+                </h3>
+                <p class="news-card__excerpt">
+                  أعلنت محافظة دمشق عن مسابقة توظيف لعدد من الشواغر في الفئات
+                  الأولى والثانية ضمن ملاك المحافظة.
+                </p>
+              </div>
+            </a>
+             <a href="pages/news.html" class="news-card">
+              <figure class="news-card__img">
+                <img src="images/Damascus.png" alt="" />
+              </figure>
+              <div class="news-card__body">
+                <span class="news-card__date">10 آب 2026</span>
+                <h3 class="news-card__title">
+                  إعلان عن مسابقة توظيف في المحافظة
+                </h3>
+                <p class="news-card__excerpt">
+                  أعلنت محافظة دمشق عن مسابقة توظيف لعدد من الشواغر في الفئات
+                  الأولى والثانية ضمن ملاك المحافظة.
+                </p>
               </div>
             </a>
           </div>
 
-          <!-- القرارات -->
           <div class="news-panel news-grid" data-panel="decisions">
             <a href="pages/news.html" class="news-card">
               <figure class="news-card__img">
@@ -462,8 +692,13 @@
               </figure>
               <div class="news-card__body">
                 <span class="news-card__date">13 آب 2026</span>
-                <h3 class="news-card__title">قرار بتخصيص أراضٍ لمشاريع سكنية جديدة في المزة</h3>
-                <p class="news-card__excerpt">صدر قرار عن المحافظة بتخصيص أراضٍ في منطقة المزة لإنشاء مجمعات سكنية حديثة تلبي احتياجات المواطنين.</p>
+                <h3 class="news-card__title">
+                  قرار بتخصيص أراضٍ لمشاريع سكنية جديدة في المزة
+                </h3>
+                <p class="news-card__excerpt">
+                  صدر قرار عن المحافظة بتخصيص أراضٍ في منطقة المزة لإنشاء مجمعات
+                  سكنية حديثة تلبي احتياجات المواطنين.
+                </p>
               </div>
             </a>
             <a href="pages/news.html" class="news-card">
@@ -472,31 +707,67 @@
               </figure>
               <div class="news-card__body">
                 <span class="news-card__date">8 آب 2026</span>
-                <h3 class="news-card__title">قرار تنظيم حركة المرور في المنطقة المركزية</h3>
-                <p class="news-card__excerpt">أصدرت محافظة دمشق قراراً بتنظيم حركة المرور وإحداث مسارات جديدة في منطقة وسط المدينة لتخفيف الازدحام.</p>
+                <h3 class="news-card__title">
+                  قرار تنظيم حركة المرور في المنطقة المركزية
+                </h3>
+                <p class="news-card__excerpt">
+                  أصدرت محافظة دمشق قراراً بتنظيم حركة المرور وإحداث مسارات
+                  جديدة في منطقة وسط المدينة لتخفيف الازدحام.
+                </p>
               </div>
             </a>
           </div>
 
           <a href="pages/news.html" class="news-more">
             جميع الأخبار
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5m-2 0l7-7m-7 7l7 7"/></svg>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path d="M19 12H5m-2 0l7-7m-7 7l7 7" />
+            </svg>
           </a>
         </div>
       </section>
 
       <section class="cta">
         <div class="container">
-          <h2 class="services-cta__heading">كل ما تحتاجه لانجاز معاملتك في مكان واحد!</h2>
+          <h2 class="services-cta__heading">
+            كل ما تحتاجه لانجاز معاملتك في مكان واحد!
+          </h2>
           <div class="cta__card pattern" style="background-color: #e9e0cf">
             <div class="cta__collage">
-              <img class="cta__img cta__img--1" src="images/Service_1.png" alt="" />
-              <img class="cta__img cta__img--2" src="images/Service_1.png" alt="" />
-              <img class="cta__img cta__img--3" src="images/Service_1.png" alt="" />
+              <img
+                class="cta__img cta__img--1"
+                src="images/Service_1.png"
+                alt=""
+              />
+              <img
+                class="cta__img cta__img--2"
+                src="images/Service_1.png"
+                alt=""
+              />
+              <img
+                class="cta__img cta__img--3"
+                src="images/Service_1.png"
+                alt=""
+              />
             </div>
             <div class="cta__content">
-              <p class="services-cta__text">من خدمات الكترونية, وطلبات واستعلامات<br />كلها متاحة بسهولة وسرعة.</p>
-              <a href="services.html" style="width:200px;font-size:18px;font-weight:bold" class="btn btn--primary">ابدأ الخدمة</a>
+              <p class="services-cta__text">
+                من خدمات الكترونية, وطلبات واستعلامات<br />كلها متاحة بسهولة
+                وسرعة.
+              </p>
+              <a
+                href="services.html"
+                style="width: 200px; font-size: 18px; font-weight: bold"
+                class="btn btn--primary"
+                >ابدأ الخدمة</a
+              >
             </div>
           </div>
         </div>
