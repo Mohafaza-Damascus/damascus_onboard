@@ -44,9 +44,6 @@
   observer.observe(statsGrid);
 })();
 
-/* ═══════════════════════════════════════════
-   GOVERNOR — Staggered Fade-Up
-   ═══════════════════════════════════════════ */
 (function () {
   const section = document.querySelector(".governor");
   if (!section) return;
@@ -74,9 +71,6 @@
   observer.observe(section);
 })();
 
-/* ═══════════════════════════════════════════
-   INTERACTIVE MAP — Click districts to update card
-   ═══════════════════════════════════════════ */
 (function () {
   const districtData = {
     dummar:     { name:"دمر",         pop:"120,000", area:"18 كم²", type:"سكني / ضاحية",   desc:"ضاحية غرب دمشق تشتهر بالمساحات الخضراء والطبيعة الجبلية الخلابة، وتضم مناطق سكنية حديثة ومرافق خدمية متنوعة." },
@@ -133,29 +127,21 @@
     });
   }
 
-  /* Click on district */
   svgMap.addEventListener("click", (e) => {
     const hood = e.target.closest(".dm-hood");
     if (!hood) return;
     updateCard(hood.dataset.id);
   });
 
-  /* Select first district on load */
   updateCard("dummar");
 })();
 
-/* ═══════════════════════════════════════════
-   BOTTOM VIDEO — Sequential rotation
-   ═══════════════════════════════════════════ */
 (function () {
   const video = document.getElementById("bottomVideo");
   if (!video) return;
 
-  /* ── Add your video paths here ── */
   const sources = [
     "assets/new_mohafez.mp4",
-    /* "assets/video2.mp4", */
-    /* "assets/video3.mp4", */
   ];
 
   let current = 0;

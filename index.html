@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/global.css" />
     <style>
-      /* ═══ STATS STAGGER ANIMATION ═══ */
       .stats__grid {
         opacity: 0;
         transform: translateY(40px);
@@ -27,7 +26,6 @@
         transform: translateY(0);
       }
 
-      /* ═══ GOVERNOR FADE-UP ═══ */
       .governor > .governor__card {
         opacity: 0; transform: translateY(40px);
         transition: opacity .8s ease, transform .8s ease;
@@ -50,7 +48,6 @@
         opacity: 1; transform: translateY(0);
       }
 
-      /* ═══ MAP EXPLORER ═══ */
       .map-explorer {
         padding-block: var(--sp-5);
         overflow: hidden;
@@ -62,7 +59,6 @@
         gap: var(--sp-5);
       }
 
-      /* ── Card ── */
       .map-explorer__card {
         background: var(--green-800);
         color: #fff;
@@ -119,7 +115,6 @@
       }
 
 
-      /* ── SVG Map ── */
       .map-explorer__map { user-select: none; }
       .map-explorer__map svg { width: 100%; height: auto; display: block; }
       .dm-hood { cursor: pointer; }
@@ -157,7 +152,6 @@
         color: var(--muted); margin-top: var(--sp-2);
       }
 
-      /* ═══ LATEST NEWS ═══ */
       .latest-news { padding-block: var(--sp-5); }
 
       .news-grid {
@@ -231,7 +225,6 @@
       }
       .news-more:hover { gap: 10px; }
 
-      /* ═══ CTA ICONS ═══ */
       .cta__icons {
         display: flex;
         flex-direction: column;
@@ -263,7 +256,6 @@
         color: var(--green-900);
       }
 
-      /* ═══ BOTTOM VIDEO ═══ */
       .bottom-video {
         position: relative;
         height: 45vh;
@@ -292,7 +284,6 @@
         .news-card__img { width: 90px; min-height: 90px; }
       }
 
-      /* ── Responsive ── */
       @media (max-width: 900px) {
         .map-explorer__inner {
           grid-template-columns: 1fr;
@@ -371,7 +362,6 @@
         </div>
       </section>
 
-      <!-- ── Interactive Map Explorer ── -->
       <section class="map-explorer" id="mapExplorer">
         <div class="container">
           <header class="section-head">
@@ -380,7 +370,6 @@
           </header>
 
           <div class="map-explorer__inner">
-            <!-- Info Card -->
             <article class="map-explorer__card" id="explorerCard">
               <figure class="map-explorer__card-img">
                 <img id="cardImg" src="images/Damascus.png" alt="" />
@@ -395,7 +384,6 @@
               <p class="map-explorer__card-hint">← اضغط على حي في الخريطة</p>
             </article>
 
-            <!-- SVG Interactive Map -->
             <div class="map-explorer__map">
               <svg id="svgMap" viewBox="0 0 1000 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة أحياء دمشق التفاعلية">
                 <g class="dm-hood" data-id="dummar">
@@ -469,7 +457,6 @@
         </div>
       </section>
 
-      <!-- ── آخر الأخبار ── -->
       <section class="latest-news">
         <div class="container">
           <header class="section-head">
@@ -478,7 +465,6 @@
           </header>
 
           <div class="news-grid">
-            <!-- أنشطة -->
             <a href="pages/news.html" class="news-card">
               <figure class="news-card__img"><img src="images/Damascus.png" alt="" /></figure>
               <div class="news-card__body">
@@ -502,7 +488,6 @@
               </div>
             </a>
 
-            <!-- تعاميم -->
             <a href="pages/news.html" class="news-card">
               <figure class="news-card__img"><img src="images/Damascus.png" alt="" /></figure>
               <div class="news-card__body">
@@ -526,7 +511,6 @@
               </div>
             </a>
 
-            <!-- قرارات -->
             <a href="pages/news.html" class="news-card">
               <figure class="news-card__img"><img src="images/Damascus.png" alt="" /></figure>
               <div class="news-card__body">
@@ -597,7 +581,6 @@
         </div>
       </section>
 
-      <!-- ── Bottom Video ── -->
       <section class="bottom-video">
         <video class="bottom-video__el" id="bottomVideo" autoplay muted playsinline>
           <source src="assets/new_mohafez.mp4" type="video/mp4" />
