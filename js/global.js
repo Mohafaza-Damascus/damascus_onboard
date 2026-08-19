@@ -17,7 +17,16 @@
 
     const navItems = [
       { label: "الرئيسية", href: `${base}index.html` },
-      { label: "الأخبار", href: `${pagesPrefix}news.html` },
+      {
+        label: "الأخبار",
+        href: `${pagesPrefix}news.html`,
+        subItems: [
+          { label: "النموذج الأساسي", href: `${pagesPrefix}news.html` },
+          { label: "النموذج الثاني", href: `${pagesPrefix}news-model-2.html` },
+          { label: "النموذج الثالث", href: `${pagesPrefix}news-model-3.html` },
+          { label: "النموذج الرابع", href: `${pagesPrefix}news-model-4.html` },
+        ],
+      },
       { label: "النظرة الثقافية", href: `${pagesPrefix}Cultural.html` },
       { label: "خدمات", href: `${pagesPrefix}services.html` },
       { label: "دليل دمشق", href: `${pagesPrefix}Directorates.html` },
@@ -26,10 +35,37 @@
     ];
 
     const navLinks = navItems
-      .map(
-        (item) =>
-          `<li><a class="nav__link${item.label === activePage ? " is-active" : ""}" href="${item.href}">${item.label}</a></li>`,
-      )
+      .map((item) => {
+        const isActive = item.label === activePage;
+
+        if (!item.subItems) {
+          return `<li><a class="nav__link${isActive ? " is-active" : ""}" href="${item.href}">${item.label}</a></li>`;
+        }
+
+        const subLinks = item.subItems
+          .map(
+            (subItem) =>
+              `<li><a class="nav__submenu-link" href="${subItem.href}">${subItem.label}</a></li>`,
+          )
+          .join("");
+
+        return `
+          <li class="nav__item nav__item--has-menu${isActive ? " is-active" : ""}">
+            <button
+              class="nav__link nav__link--menu${isActive ? " is-active" : ""}"
+              type="button"
+              aria-expanded="false"
+              aria-haspopup="true"
+              data-news-menu-trigger
+            >
+              <span>${item.label}</span>
+              <svg class="nav__chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="m7 10 5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <ul class="nav__submenu" aria-label="نماذج الأخبار">${subLinks}</ul>
+          </li>`;
+      })
       .join("");
 
     el.outerHTML = `
@@ -282,6 +318,31 @@
         burger.classList.remove("is-open");
         burger.setAttribute("aria-expanded", "false");
       }
+    });
+  }
+
+  /* ─── News models menu ─── */
+  const newsMenuItem = document.querySelector(".nav__item--has-menu");
+  const newsMenuTrigger = document.querySelector("[data-news-menu-trigger]");
+
+  if (newsMenuItem && newsMenuTrigger) {
+    const closeNewsMenu = () => {
+      newsMenuItem.classList.remove("is-open");
+      newsMenuTrigger.setAttribute("aria-expanded", "false");
+    };
+
+    newsMenuTrigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = newsMenuItem.classList.toggle("is-open");
+      newsMenuTrigger.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!newsMenuItem.contains(e.target)) closeNewsMenu();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeNewsMenu();
     });
   }
 
