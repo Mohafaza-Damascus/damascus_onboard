@@ -133,8 +133,6 @@ button {
   margin-inline: auto;
   padding-inline: var(--sp-2);
 }
-
-/* ─── HEADER ─── */
 .header {
   position: sticky;
   top: 0;
@@ -159,8 +157,6 @@ button {
   margin-bottom: 6px;
   transition: color 0.25s;
 }
-
-/* ─── GREEN BAR (logo + nav inside) ─── */
 .header__bar {
   position: relative;
   display: flex;
@@ -175,8 +171,6 @@ button {
 .header.is-scrolled .header__bar {
   box-shadow: var(--shadow-md);
 }
-
-/* ─── LOGO (inside bar) ─── */
 .logo {
   flex-shrink: 0;
 }
@@ -184,8 +178,6 @@ button {
   height: 48px;
   width: auto;
 }
-
-/* ─── NAV (no own background — inherits from bar) ─── */
 .nav {
   flex: 1;
   display: flex;
@@ -268,8 +260,6 @@ button {
 .btn-lang:hover {
   transform: translateY(-1px);
 }
-
-/* ─── BURGER ─── */
 .burger {
   display: none;
   flex-direction: column;
@@ -295,8 +285,6 @@ button {
 .burger.is-open span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
-
-/* ─── PATTERN ─── */
 .pattern {
   position: relative;
   isolation: isolate;
@@ -663,7 +651,6 @@ button {
   padding-top: var(--sp-2);
 }
 
-/* ─── FOOTER ─── */
 .footer {
   --pattern-opacity: 0.08;
   --pattern-size: 380px;
@@ -779,7 +766,6 @@ button {
   --pattern-size: 300px;
 }
 
-/* ─── AUTH MODAL ─── */
 .auth-overlay {
   position: fixed;
   inset: 0;
@@ -873,7 +859,6 @@ button {
   margin-top: var(--sp-2);
 }
 
-/* divider */
 .auth-modal__divider {
   width: 100%;
   display: flex;
@@ -890,8 +875,6 @@ button {
   height: 1px;
   background: var(--border);
 }
-
-/* switch link */
 .auth-modal__switch {
   font-size: 13px;
   color: var(--muted);
@@ -901,7 +884,6 @@ button {
   font-weight: 600;
 }
 
-/* forms */
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -1132,8 +1114,6 @@ button {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-1px);
 }
-
-/* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
   .burger {
     display: flex;
