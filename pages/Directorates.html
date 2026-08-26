@@ -3,69 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>دليل دمشق - محافظة دمشق</title>
-    <link rel="stylesheet" href="../css/global.css" />
+    <title>محافظة دمشق</title>
+
+    <script
+      src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"
+      onerror="this.onerror = null; this.src = 'https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.js';"
+    ></script>
+    <link
+      href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css"
+      rel="stylesheet"
+      onerror="this.onerror = null; this.href = 'https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.css';"
+    />
+
     <link rel="stylesheet" href="../css/Directorates.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+
+    <link href="../Bwork/Styles/bworkMessage.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/default.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/viewer.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/bwork.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/workflow.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/login.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/fileviewer/archivePnl.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/fileviewer/imgViewer.css" rel="stylesheet" type="text/css" />
+    <link href="../Bwork/Styles/widgets/widgets.css" rel="stylesheet" type="text/css" />
+    <link href="./services-styles.css" rel="stylesheet" type="text/css" />
+
+    <script src="../Bwork/Scripts/multilang.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkRequests.js?v34"></script>
+    <script src="../Bwork/Scripts/bwork.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkMain.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkFrames.js?v34"></script>
+    <script src="../Bwork/Scripts/editableTable.js?v34"></script>
+    <script src="../Bwork/Scripts/primascript.js?v34"></script>
+    <script src="../Bwork/Scripts/fileviewer/archivePnl.js?v34"></script>
+    <script src="../Bwork/Scripts/fileviewer/imgViewer.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkComperable.js?v34"></script>
+    <script src="../Bwork/Scripts/bowrkIntervals.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkMessages.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkPrivileges.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkDepartments.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkComponent.js?v34"></script>
+    <script src="../Bwork/Scripts/numbers.js?v34"></script>
+    <script src="../Bwork/Scripts/handleWindowSize.js?v34"></script>
+    <script src="../Bwork/Scripts/sockets.js?v34"></script>
+    <script src="../Bwork/Scripts/shortcuts.js?v34"></script>
+    <script src="../Bwork/Scripts/user-account.js?v34"></script>
+    <script src="../Bwork/Scripts/workflow/functions.js?v34"></script>
+    <script src="../Bwork/Scripts/dewan/dewan.js?v34"></script>
+    <script src="../Bwork/Scripts/log/db-log.js?v34"></script>
+    <script src="../Bwork/Scripts/log/wf-logs.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkCache.js?v34"></script>
+    <script src="../Bwork/Scripts/report/report-functions.js?v34"></script>
+    <script src="../Bwork/Scripts/scan/scan-cycle.js?v34"></script>
+    <script src="../Bwork/Scripts/widget-info.js?v34"></script>
+    <script src="../Bwork/Scripts/bworkFilesSearch.js?v34"></script>
+    <script src="../Bwork/Scripts/fileviewer/image-element.js?v34"></script>
+    <script src="../Bwork/Scripts/log/wf-action.js?v34"></script>
+    <script src="./services-functions.js"></script>
+    <script src="./license/licenses-functions.js"></script>
+    <script src="./license/license-preview.js"></script>
+    <script src="../Bwork/Scripts/loginLoad.js?v34"></script>
   </head>
-  <body>
-    <div class="bg-vector-top"></div>
+  <body dir="rtl">
+    <div class="thirdsec">
+      <div class="map_container">
+        <!-- الناف بار الجانبي (قائمة قابلة للتمدد والطي) -->
+        <div class="map_left_side_menu" id="main-container">
+          <div class="accordion_nav_wrapper" id="categoryAccordion"></div>
+        </div>
 
-    <div id="site-header" data-active="دليل دمشق"></div>
+        <div class="map_main_container">
+          <!-- شريط الفلاتر العلوي (المنطقة + الحالة لقسم الصحة) -->
+          <div class="top_filters_bar" id="topFiltersBar"></div>
 
-    <section class="dir-hero">
-      <div class="dir-hero__text">
-        <p>استثمر وقتك بفعالية، واستفد من خدماتنا المتميزة في دقائق معدودة</p>
-      </div>
-      <div class="dir-search">
-        <button class="dir-search__btn" aria-label="بحث">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#fff"
-            stroke-width="2.5"
-          >
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-        </button>
-        <div class="dir-search__field">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="ابحث عن خدمة، وزارة أو فئة"
-          />
-        </div>
-      </div>
-    </section>
-    <main class="dir-main">
-      <div class="dir-grid">
-        <div class="dir-card">
-          <div class="dir-card__badge"><span>مديرية الشكاوى</span></div>
-        </div>
-        <div class="dir-card">
-          <div class="dir-card__badge"><span>مديرية المالية</span></div>
-        </div>
-        <div class="dir-card">
-          <div class="dir-card__badge"><span>مديرية المهن والرخص</span></div>
-        </div>
-        <div class="dir-card">
-          <div class="dir-card__badge">
-            <span>مديرية التخطيط العمراني</span>
+          <!-- مساحة الخريطة -->
+          <div class="map_wrapper" id="map-container">
+            <div id="map" style="width: 100%; height: 100%"></div>
           </div>
-        </div>
-        <div class="dir-card">
-          <div class="dir-card__badge"><span>مديرية السجل المؤقت</span></div>
-        </div>
-        <div class="dir-card">
-          <div class="dir-card__badge"><span>مديرية المرسوم 66</span></div>
+
+          <!-- حاوية الكروت السفلية -->
+          <div
+            class="map_down_side_Image_details_container"
+            id="imageCardsContainer"
+          ></div>
         </div>
       </div>
-    </main>
-    <div id="site-footer"></div>
-    <script src="../js/global.js"></script>
-    <script src="../js/index.js"></script>
+    </div>
+
+ <script src="../js/navbar.js"></script>
     <script src="../js/Directorates.js"></script>
   </body>
 </html>
