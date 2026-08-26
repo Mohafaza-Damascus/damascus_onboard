@@ -8,72 +8,10 @@
     <link rel="stylesheet" href="../css/projects.css" />
   </head>
   <body style="overflow-x: hidden;">
-    <header class="header">
-      <div class="container header__grid">
-        <a href="../index.html" class="logo" aria-label="محافظة دمشق">
-          <img src="../images/logo.png" alt="شعار محافظة دمشق" />
-        </a>
+    <div id="site-header" data-active="المشاريع"></div>
 
-        <div class="header__main">
-          <div class="topbar">
-            <span class="topbar__date" id="today"></span>
-          </div>
-
-          <div class="header__bar">
-            <button
-              class="burger"
-              id="burger"
-              aria-label="القائمة"
-              aria-expanded="false"
-            >
-              <span></span><span></span><span></span>
-            </button>
-
-            <nav class="nav" id="nav">
-              <ul class="nav__list">
-                <li>
-                  <a class="nav__link" href="../index.html">الرئيسية</a>
-                </li>
-                <li><a class="nav__link" href="news.html">الأخبار</a></li>
-                <li>
-                  <a class="nav__link" href="Cultural.html">النظرة الثقافية</a>
-                </li>
-                <li>
-                  <a class="nav__link" href="services.html">خدمات</a>
-                </li>
-                <li>
-                  <a class="nav__link" href="Directorates.html">دليل دمشق</a>
-                </li>
-                <li>
-                  <a class="nav__link" href="Investments.html">الأستثمارات</a>
-                </li>
-                <li>
-                  <a class="nav__link is-active" href="projects.html">المشاريع</a>
-                </li>
-              </ul>
-
-              <div class="nav__actions">
-                <a href="login.html" class="btn-login">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                  <span>تسجيل الدخول</span>
-                </a>
-                <button class="btn-lang" id="langBtn">En</button>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
     <div class="bg-vector-top"></div>
-    <img
-      src="../assets/ChatGPT Image Jul 23, 2026, 11_40_56 AM 1.png"
-      class="bg-monument-bottom"
-      alt=""
-      aria-hidden="true"
-    />
+    <img src="../assets/ChatGPT Image Jul 23, 2026, 11_40_56 AM 1.png" class="bg-monument-bottom" alt="" aria-hidden="true" />
 
     <main class="projects-container">
       <section class="sectors-section">
@@ -89,232 +27,195 @@
         </div>
         <div class="projects-count">عدد المشاريع (7)</div>
       </section>
+
       <section class="projects-grid">
-        <div class="project-card">
-          <div class="status-tag">نشط</div>
-          <div class="card-inner-border">
+
+        <div class="project-card" data-id="1">
+          <div class="card-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 5l-7 7 7 7"/></svg>
+          </div>
+          <svg class="card-watermark" viewBox="0 0 24 24" fill="currentColor"><path d="M16 6V2H8v4H2v16h20V6h-6zm-6-2h4v2h-4V4zM4 20V8h16v12H4zm5-6h2v4H9v-4zm4 0h2v4h-2v-4z"/></svg>
+          <div class="card-top">
+            <span class="category-badge">الصحة</span>
+            <span class="status-tag status-tag--active">نشط</span>
+          </div>
+          <div class="card-body">
             <h3 class="project-title">مبادرة الصحة الريفية</h3>
-            <div class="category-badge">الصحة</div>
+            <p class="project-desc">تطوير المراكز الصحية في المناطق الريفية المحيطة بدمشق وتزويدها بالتجهيزات الطبية الحديثة والكوادر المتخصصة.</p>
             <div class="project-budget">7.8 مليون ل.س</div>
-            <div class="progress-bar-container">
-              <div class="progress-fill" style="width: 65%"></div>
-            </div>
-            <div class="card-footer-info">
+          </div>
+          <div class="card-progress">
+            <div class="progress-bar-container"><div class="progress-fill" style="width:65%"></div></div>
+            <div class="card-footer">
               <div class="project-date">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                <span>يناير2024-ديسمبر2026</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>يناير 2024 – ديسمبر 2026</span>
               </div>
-              <div class="progress-percentage">65%</div>
+              <span class="progress-percentage">65%</span>
             </div>
           </div>
         </div>
-        <div class="project-card">
-          <div class="status-tag">مكتمل</div>
-          <div class="card-inner-border">
+
+        <div class="project-card" data-id="2">
+          <div class="card-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 5l-7 7 7 7"/></svg>
+          </div>
+          <svg class="card-watermark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 9v13h8v-6h4v6h8V9L12 2zm0 2.84L20 10v10h-4v-6H8v6H4V10l8-5.16z"/></svg>
+          <div class="card-top">
+            <span class="category-badge">الطاقة</span>
+            <span class="status-tag status-tag--complete">مكتمل</span>
+          </div>
+          <div class="card-body">
             <h3 class="project-title">مشروع الطاقة الشمسية</h3>
-            <div class="category-badge">الطاقة</div>
+            <p class="project-desc">تركيب ألواح طاقة شمسية على أسطح المباني الحكومية لتخفيض استهلاك الكهرباء وتعزيز الاعتماد على الطاقة المتجددة.</p>
             <div class="project-budget">12 مليون ل.س</div>
-            <div class="progress-bar-container">
-              <div class="progress-fill" style="width: 100%"></div>
-            </div>
-            <div class="card-footer-info">
+          </div>
+          <div class="card-progress">
+            <div class="progress-bar-container"><div class="progress-fill" style="width:100%"></div></div>
+            <div class="card-footer">
               <div class="project-date">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                <span>يناير2023-ديسمبر2024</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>يناير 2023 – ديسمبر 2024</span>
               </div>
-              <div class="progress-percentage">100%</div>
+              <span class="progress-percentage">100%</span>
             </div>
           </div>
         </div>
-        <div class="project-card">
-          <div class="status-tag">نشط</div>
-          <div class="card-inner-border">
+
+        <div class="project-card" data-id="3">
+          <div class="card-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 5l-7 7 7 7"/></svg>
+          </div>
+          <svg class="card-watermark" viewBox="0 0 24 24" fill="currentColor"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+          <div class="card-top">
+            <span class="category-badge">التعليم</span>
+            <span class="status-tag status-tag--active">نشط</span>
+          </div>
+          <div class="card-body">
             <h3 class="project-title">تطوير المدارس</h3>
-            <div class="category-badge">التعليم</div>
+            <p class="project-desc">إعادة تأهيل وترميم المدارس العامة في أحياء دمشق مع تحديث المختبرات العلمية والمكتبات وتوفير وسائل تعليمية حديثة.</p>
             <div class="project-budget">5 مليون ل.س</div>
-            <div class="progress-bar-container">
-              <div class="progress-fill" style="width: 65%"></div>
-            </div>
-            <div class="card-footer-info">
+          </div>
+          <div class="card-progress">
+            <div class="progress-bar-container"><div class="progress-fill" style="width:65%"></div></div>
+            <div class="card-footer">
               <div class="project-date">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                <span>يناير2024-ديسمبر2026</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>يناير 2024 – ديسمبر 2026</span>
               </div>
-              <div class="progress-percentage">65%</div>
+              <span class="progress-percentage">65%</span>
             </div>
           </div>
         </div>
-        <div class="project-card">
-          <div class="status-tag">لم يبدأ</div>
-          <div class="card-inner-border">
+
+        <div class="project-card" data-id="4">
+          <div class="card-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 5l-7 7 7 7"/></svg>
+          </div>
+          <svg class="card-watermark" viewBox="0 0 24 24" fill="currentColor"><path d="M22 22H2V10l7-3v2l5-2 5 2v2l3 1v10zm-2-2V12l-3-1v-1.97l-5-2-5 2V11l-3 1v8h16zM6 14h2v4H6v-4zm4 0h2v4h-2v-4zm4 0h2v4h-2v-4z"/></svg>
+          <div class="card-top">
+            <span class="category-badge">البنية</span>
+            <span class="status-tag status-tag--pending">لم يبدأ</span>
+          </div>
+          <div class="card-body">
             <h3 class="project-title">شبكة الصرف الصحي</h3>
-            <div class="category-badge">البنية</div>
+            <p class="project-desc">تجديد وتوسيع شبكة الصرف الصحي في المناطق القديمة لمواكبة النمو العمراني وتحسين البنية التحتية للمدينة.</p>
             <div class="project-budget">20 مليون ل.س</div>
-            <div class="progress-bar-container">
-              <div class="progress-fill" style="width: 0%"></div>
-            </div>
-            <div class="card-footer-info">
+          </div>
+          <div class="card-progress">
+            <div class="progress-bar-container"><div class="progress-fill" style="width:0%"></div></div>
+            <div class="card-footer">
               <div class="project-date">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                <span>يناير2024-ديسمبر2026</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>يناير 2024 – ديسمبر 2026</span>
               </div>
-              <div class="progress-percentage">0%</div>
+              <span class="progress-percentage">0%</span>
             </div>
           </div>
         </div>
-        <div class="project-card">
-          <div class="status-tag">نشط</div>
-          <div class="card-inner-border">
+
+        <div class="project-card" data-id="5">
+          <div class="card-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 5l-7 7 7 7"/></svg>
+          </div>
+          <svg class="card-watermark" viewBox="0 0 24 24" fill="currentColor"><path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+          <div class="card-top">
+            <span class="category-badge">التقنية</span>
+            <span class="status-tag status-tag--active">نشط</span>
+          </div>
+          <div class="card-body">
             <h3 class="project-title">منصة الخدمات الرقمية</h3>
-            <div class="category-badge">التقنية</div>
+            <p class="project-desc">بناء منصة رقمية موحدة تتيح للمواطنين إنجاز معاملاتهم الحكومية إلكترونياً بسهولة وسرعة دون الحاجة لزيارة الدوائر.</p>
             <div class="project-budget">3.5 مليون ل.س</div>
-            <div class="progress-bar-container">
-              <div class="progress-fill" style="width: 50%"></div>
-            </div>
-            <div class="card-footer-info">
+          </div>
+          <div class="card-progress">
+            <div class="progress-bar-container"><div class="progress-fill" style="width:50%"></div></div>
+            <div class="card-footer">
               <div class="project-date">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                <span>يناير2024-ديسمبر2025</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>يناير 2024 – ديسمبر 2025</span>
               </div>
-              <div class="progress-percentage">50%</div>
+              <span class="progress-percentage">50%</span>
             </div>
           </div>
         </div>
-        <div class="project-card">
-          <div class="status-tag">نشط</div>
-          <div class="card-inner-border">
+
+        <div class="project-card" data-id="6">
+          <div class="card-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 5l-7 7 7 7"/></svg>
+          </div>
+          <svg class="card-watermark" viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20c4 0 4-4 8-4 1.22 0 2.34.44 3.33 1.15L22 14.5C20 13 18 12 17 12V8zm-5 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM6 3v2c3.49 0 6.35 2.17 7.54 5.2l1.78-.66C13.83 5.98 10.24 3 6 3z"/></svg>
+          <div class="card-top">
+            <span class="category-badge">البيئة</span>
+            <span class="status-tag status-tag--active">نشط</span>
+          </div>
+          <div class="card-body">
             <h3 class="project-title">حدائق دمشق الخضراء</h3>
-            <div class="category-badge">البيئة</div>
+            <p class="project-desc">إنشاء وتأهيل حدائق عامة جديدة في عدة أحياء مع زراعة آلاف الأشجار لتحسين البيئة الحضرية وجودة الهواء.</p>
             <div class="project-budget">8 مليون ل.س</div>
-            <div class="progress-bar-container">
-              <div class="progress-fill" style="width: 40%"></div>
-            </div>
-            <div class="card-footer-info">
+          </div>
+          <div class="card-progress">
+            <div class="progress-bar-container"><div class="progress-fill" style="width:40%"></div></div>
+            <div class="card-footer">
               <div class="project-date">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                <span>يناير2024-ديسمبر2026</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>يناير 2024 – ديسمبر 2026</span>
               </div>
-              <div class="progress-percentage">40%</div>
+              <span class="progress-percentage">40%</span>
             </div>
           </div>
         </div>
-        <div class="project-card">
-          <div class="status-tag">مكتمل</div>
-          <div class="card-inner-border">
+
+        <div class="project-card" data-id="7">
+          <div class="card-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 5l-7 7 7 7"/></svg>
+          </div>
+          <svg class="card-watermark" viewBox="0 0 24 24" fill="currentColor"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+          <div class="card-top">
+            <span class="category-badge">التعليم</span>
+            <span class="status-tag status-tag--complete">مكتمل</span>
+          </div>
+          <div class="card-body">
             <h3 class="project-title">مدارس التميز</h3>
-            <div class="category-badge">التعليم</div>
+            <p class="project-desc">بناء مدارس نموذجية مجهزة بأحدث التقنيات التعليمية تستهدف تطوير المنظومة التربوية وتخريج كفاءات متميزة.</p>
             <div class="project-budget">8 مليون ل.س</div>
-            <div class="progress-bar-container">
-              <div class="progress-fill" style="width: 100%"></div>
-            </div>
-            <div class="card-footer-info">
+          </div>
+          <div class="card-progress">
+            <div class="progress-bar-container"><div class="progress-fill" style="width:100%"></div></div>
+            <div class="card-footer">
               <div class="project-date">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                <span>يناير2024-ديسمبر2026</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>يناير 2024 – ديسمبر 2026</span>
               </div>
-              <div class="progress-percentage">100%</div>
+              <span class="progress-percentage">100%</span>
             </div>
           </div>
         </div>
+
       </section>
     </main>
-    <footer class="footer pattern">
-      <div class="container">
-        <div class="footer__grid">
-          <div class="footer__brand">
-            <img class="footer__logo" src="../images/footer_logo.png" alt="محافظة دمشق" />
-            <p class="footer__about">
-              تسعى محافظة دمشق إلى الارتقاء بجودة الخدمات المقدمة للمواطنين
-              وتلبية تطلعاتهم، مستندة إلى معايير السرعة، والكفاءة، والمصداقية في الإنجاز.
-            </p>
-          </div>
-          <nav class="footer__col">
-            <h3 class="footer__title">روابط مهمة</h3>
-            <ul class="footer__list">
-              <li><a href="news.html">الأخبار</a></li>
-              <li><a href="projects.html">المشاريع</a></li>
-              <li><a href="services.html">خدمات</a></li>
-              <li><a href="Directorates.html">دليل دمشق</a></li>
-              <li><a href="#">دليل مواقع الجهات الحكومية</a></li>
-            </ul>
-          </nav>
-          <nav class="footer__col">
-            <h3 class="footer__title">خدمات المواطنين</h3>
-            <ul class="footer__list">
-              <li><a href="services.html">الخدمات</a></li>
-              <li><a href="#">تواصل معنا</a></li>
-            </ul>
-          </nav>
-          <div class="footer__col">
-            <h3 class="footer__title">تابعنا:</h3>
-            <ul class="socials">
-              <li>
-                <a href="#" class="social" aria-label="انستغرام">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                    <rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" />
-                    <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="social" aria-label="فيسبوك">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="social" aria-label="تويتر">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M22 5.9c-.7.3-1.5.5-2.4.6.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5a4.1 4.1 0 0 0 3.3 4c-.6.2-1.2.2-1.8.1a4.1 4.1 0 0 0 3.8 2.9A8.2 8.2 0 0 1 2 18.3a11.6 11.6 0 0 0 6.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2z" />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer__bottom">
-          <p class="footer__copy">جميع الحقوق محفوظة - محافظة دمشق © 2026</p>
-          <ul class="footer__legal">
-            <li><a href="#">الشروط والأحكام</a></li>
-            <li><a href="#">سياسة الخصوصية</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
 
-    <button class="a11y-btn" aria-label="إمكانية الوصول">
-      <img src="../images/Standing Man.png" alt="" />
-    </button>
-
+    <div id="site-footer"></div>
     <script src="../js/global.js"></script>
     <script src="../js/project.js"></script>
   </body>
