@@ -1,3 +1,5 @@
+/* ═══ INVESTMENTS PAGE ═══ */
+
 .inv-intro {
   padding-top: var(--sp-4);
   padding-bottom: var(--sp-3);
@@ -16,8 +18,11 @@
   line-height: 1.7;
   color: rgba(6, 66, 57, 0.79);
   max-width: 1173px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
+/* ── Hero ── */
 .inv-hero {
   width: 100%;
   max-width: 1430px;
@@ -28,7 +33,6 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  /* margin-bottom: var(--sp-4); */
 }
 
 .inv-hero__bg {
@@ -46,48 +50,89 @@
   display: flex;
   gap: 40px;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   padding-inline: var(--sp-2);
 }
 
 .inv-card {
-  width: 426px;
+  position: relative;
+  width: 460px;
   max-width: calc(50vw - 40px);
-  height: 265px;
-  background: rgba(248, 245, 238, 0.75);
-  border: 1px solid rgba(6, 66, 57, 0.2);
+  min-height: 280px;
+  background: rgba(248, 245, 238, 0.88);
+  border: 1px solid rgba(6, 66, 57, 0.15);
   border-radius: 20px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  padding: var(--sp-3);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .inv-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(6, 66, 57, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(6, 66, 57, 0.2);
 }
 
+.inv-card__arrow {
+  position: absolute;
+  top: var(--sp-2);
+  left: var(--sp-2);
+  width: 48px;
+  height: 48px;
+  /* background: var(--green-900); */
+  color: var(--green-900);
+  border-radius: var(--r-md);
+  display: grid;
+  place-items: center;
+  z-index: 3;
+  transition: background 0.2s, transform 0.2s;
+}
+.inv-card:hover .inv-card__arrow {
+  background: var(--green-900);
+  transform: translateX(-4px);
+  color:white;
+
+}
+
+/* background watermark icon */
+.inv-card__watermark {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  width: 150px;
+  height: 150px;
+  color: rgba(6, 66, 57, 0.06);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* card text */
 .inv-card__title {
+  position: relative;
+  z-index: 2;
   color: var(--green-900);
   font-weight: 700;
-  font-size: clamp(24px, 3vw, 36px);
-  text-align: center;
+  font-size: clamp(24px, 3vw, 32px);
   margin-bottom: 10px;
+  line-height: 1.4;
 }
 
-.inv-card__line {
-  display: block;
-  width: 140px;
-  height: 4px;
-  background-color: var(--green-900);
-  border-radius: 2px;
+.inv-card__desc {
+  position: relative;
+  z-index: 2;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(6, 66, 57, 0.65);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
+/* ── Responsive ── */
 @media (max-width: 768px) {
   .inv-hero {
     height: auto;
@@ -102,8 +147,8 @@
 
   .inv-card {
     width: 100%;
-    max-width: 360px;
-    height: 200px;
+    max-width: 400px;
+    min-height: 220px;
   }
 }
 
@@ -113,15 +158,21 @@
   }
 
   .inv-card {
-    height: 170px;
-    max-width: 300px;
+    min-height: 190px;
+    max-width: 340px;
   }
 
   .inv-card__title {
     font-size: 22px;
   }
 
-  .inv-card__line {
-    width: 100px;
+  .inv-card__watermark {
+    width: 140px;
+    height: 140px;
+  }
+
+  .inv-card__arrow {
+    width: 40px;
+    height: 40px;
   }
 }

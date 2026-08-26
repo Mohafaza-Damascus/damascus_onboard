@@ -6,9 +6,6 @@
   const base = inPages ? "../" : "";
   const pagesPrefix = inPages ? "" : "pages/";
 
-  /* ═══════════════════════════════════════
-     1. RENDER HEADER
-     ═══════════════════════════════════════ */
   function renderHeader() {
     const el = document.getElementById("site-header");
     if (!el) return;
@@ -109,9 +106,6 @@
     </header>`;
   }
 
-  /* ═══════════════════════════════════════
-     2. RENDER FOOTER
-     ═══════════════════════════════════════ */
   function renderFooter() {
     const el = document.getElementById("site-footer");
     if (!el) return;
@@ -122,7 +116,7 @@
         <div class="footer__grid">
           <div class="footer__brand">
             <img class="footer__logo" src="${base}images/footer_logo.png" alt="محافظة دمشق" />
-            <p class="footer__about">تسعى محافظة دمشق إلى الارتقاء بجودة الخدمات المقدمة للمواطنين وتلبية تطلعاتهم، مستندة إلى معايير السرعة، والكفاءة، والمصداقية في الإنجاز.</p>
+            <p class="footer__about">تسعى محافظة دمشق إلى الارتقاء بجودة الخدمات المقدمة للمواطنين وتلبية تطلعاتهم، مستندة إلى معايير السرعة، والكفـاءة، والمصــداقيــة فــي الإنجــــاز.</p>
           </div>
           <nav class="footer__col">
             <h3 class="footer__title">روابط مهمة</h3>
@@ -146,7 +140,6 @@
             <ul class="socials">
               <li><a href="#" class="social" aria-label="انستغرام"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a></li>
               <li><a href="#" class="social" aria-label="فيسبوك"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a></li>
-              <li><a href="#" class="social" aria-label="تويتر"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.5-2.4.6.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5a4.1 4.1 0 0 0 3.3 4c-.6.2-1.2.2-1.8.1a4.1 4.1 0 0 0 3.8 2.9A8.2 8.2 0 0 1 2 18.3a11.6 11.6 0 0 0 6.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2z"/></svg></a></li>
             </ul>
           </div>
         </div>
@@ -164,118 +157,99 @@
     </button>`;
   }
 
-  /* ═══════════════════════════════════════
-     3. RENDER AUTH MODALS
-     ═══════════════════════════════════════ */
   function renderModals() {
     const wrapper = document.createElement("div");
     wrapper.innerHTML = `
 
-    <!-- ── Welcome / Login / Register overlay ── -->
     <div class="auth-overlay" id="authOverlay">
 
       <!-- WELCOME VIEW -->
       <div class="auth-modal" id="authWelcome">
         <button class="auth-modal__close" data-close>&times;</button>
-        <div class="auth-modal__content">
-          <h2 class="auth-modal__title">مرحباً بك في<br>بوابة محافظة دمشق</h2>
-          <div class="auth-modal__actions">
-            <button class="auth-btn auth-btn--primary" id="goLogin">تسجيل الدخول</button>
-            <button class="auth-btn auth-btn--outline" id="goRegister">إنشاء حساب جديد</button>
-          </div>
-        </div>
-        <div class="auth-modal__brand">
-          <img src="${base}images/logo.png" alt="محافظة دمشق" />
-          <span>محافظة دمشق</span>
+        <img class="auth-modal__logo" src="${base}images/logo.png" alt="محافظة دمشق" />
+        <span class="auth-modal__brand-name">محافظة دمشق</span>
+        <h2 class="auth-modal__title">مرحباً بك في البوابة الإلكترونية</h2>
+        <p class="auth-modal__subtitle">سجّل دخولك أو أنشئ حساباً جديداً للوصول إلى جميع الخدمات</p>
+        <div class="auth-modal__actions">
+          <button class="auth-btn auth-btn--primary" id="goLogin">تسجيل الدخول</button>
+          <button class="auth-btn auth-btn--outline" id="goRegister">إنشاء حساب جديد</button>
         </div>
       </div>
 
       <!-- LOGIN FORM VIEW -->
       <div class="auth-modal" id="authLogin" style="display:none">
         <button class="auth-modal__close" data-close>&times;</button>
-        <div class="auth-modal__content">
-          <h2 class="auth-modal__title">تسجيل الدخول</h2>
-          <form class="auth-form" onsubmit="return false">
-            <div class="auth-field">
-              <label>البريد الإلكتروني</label>
-              <input type="email" placeholder="أدخل بريدك الإلكتروني" required />
-            </div>
-            <div class="auth-field">
-              <label>كلمة المرور</label>
-              <input type="password" placeholder="أدخل كلمة المرور" required />
-            </div>
+        <img class="auth-modal__logo" src="${base}images/logo.png" alt="محافظة دمشق" />
+        <h2 class="auth-modal__title">تسجيل الدخول</h2>
+        <form class="auth-form" onsubmit="return false">
+          <div class="auth-field">
+            <label>البريد الإلكتروني</label>
+            <input type="email" placeholder="أدخل بريدك الإلكتروني" required />
+          </div>
+          <div class="auth-field">
+            <label>كلمة المرور</label>
+            <input type="password" placeholder="أدخل كلمة المرور" required />
+          </div>
+          <div class="auth-form__row">
             <a href="#" class="auth-forgot">نسيت كلمة المرور؟</a>
-            <button type="submit" class="auth-btn auth-btn--primary">دخول</button>
-          </form>
-          <p style="text-align:center;margin-top:16px;font-size:13px;color:var(--muted)">
-            ليس لديك حساب؟
-            <a href="#" id="goRegister2" style="color:var(--teal-600);font-weight:600">إنشاء حساب</a>
-          </p>
-        </div>
-        <div class="auth-modal__brand">
-          <img src="${base}images/logo.png" alt="محافظة دمشق" />
-          <span>محافظة دمشق</span>
-        </div>
+          </div>
+          <button type="submit" class="auth-btn auth-btn--primary">دخول</button>
+        </form>
+        <div class="auth-modal__divider"><span>أو</span></div>
+        <p class="auth-modal__switch">ليس لديك حساب؟ <a href="#" id="goRegister2">إنشاء حساب</a></p>
       </div>
 
       <!-- REGISTER FORM VIEW -->
       <div class="auth-modal auth-modal--register" id="authRegister" style="display:none">
         <button class="auth-modal__close" data-close>&times;</button>
-        <div class="auth-modal__content">
-          <h2 class="auth-modal__title">إنشاء حساب جديد</h2>
-          <p class="auth-modal__subtitle">أدخل بياناتك لإنشاء حساب في بوابة محافظة دمشق</p>
-          <form class="auth-form auth-form--grid" onsubmit="return false">
-            <div class="auth-field">
-              <label>الاسم الأول <span class="req">*</span></label>
-              <input type="text" required />
+        <img class="auth-modal__logo" src="${base}images/logo.png" alt="محافظة دمشق" />
+        <h2 class="auth-modal__title">إنشاء حساب جديد</h2>
+        <p class="auth-modal__subtitle">أدخل بياناتك للتسجيل في بوابة محافظة دمشق</p>
+        <form class="auth-form auth-form--grid" onsubmit="return false">
+          <div class="auth-field">
+            <label>الاسم الأول <span class="req">*</span></label>
+            <input type="text" required />
+          </div>
+          <div class="auth-field">
+            <label>الاسم الأخير <span class="req">*</span></label>
+            <input type="text" required />
+          </div>
+          <div class="auth-field">
+            <label>البريد الإلكتروني <span class="req">*</span></label>
+            <input type="email" required />
+          </div>
+          <div class="auth-field">
+            <label>رقم الهاتف <span class="req">*</span></label>
+            <input type="tel" required />
+          </div>
+          <div class="auth-field auth-field-full">
+            <label>الصفة <span class="req">*</span></label>
+            <div class="role-selector">
+              <button type="button" class="role-pill">مواطن</button>
+              <button type="button" class="role-pill">موظف حكومي</button>
+              <button type="button" class="role-pill">مستثمر</button>
+              <button type="button" class="role-pill">إعلامي</button>
             </div>
-            <div class="auth-field">
-              <label>الاسم الأخير <span class="req">*</span></label>
-              <input type="text" required />
-            </div>
-            <div class="auth-field">
-              <label>البريد الإلكتروني <span class="req">*</span></label>
-              <input type="email" required />
-            </div>
-            <div class="auth-field">
-              <label>رقم الهاتف <span class="req">*</span></label>
-              <input type="tel" required />
-            </div>
-            <div class="auth-field auth-field-full">
-              <label>الصفة <span class="req">*</span></label>
-              <div class="role-selector">
-                <button type="button" class="role-pill">مواطن</button>
-                <button type="button" class="role-pill">موظف حكومي</button>
-                <button type="button" class="role-pill">مستثمر</button>
-                <button type="button" class="role-pill">إعلامي</button>
-              </div>
-            </div>
-            <div class="auth-field">
-              <label>كلمة المرور <span class="req">*</span></label>
-              <input type="password" required />
-            </div>
-            <div class="auth-field">
-              <label>تأكيد كلمة المرور <span class="req">*</span></label>
-              <input type="password" required />
-            </div>
-            <div class="auth-field auth-field-full">
-              <label>المنطقة</label>
-              <button type="button" class="auth-btn--location">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                تحديد الموقع تلقائياً
-              </button>
-            </div>
-            <button type="submit" class="auth-btn auth-btn--primary auth-btn--submit">إنشاء الحساب</button>
-          </form>
-          <p style="text-align:center;margin-top:16px;font-size:13px;color:var(--muted)">
-            لديك حساب؟
-            <a href="#" id="goLogin2" style="color:var(--teal-600);font-weight:600">تسجيل الدخول</a>
-          </p>
-        </div>
-        <div class="auth-modal__brand">
-          <img src="${base}images/logo.png" alt="محافظة دمشق" />
-          <span>محافظة دمشق</span>
-        </div>
+          </div>
+          <div class="auth-field">
+            <label>كلمة المرور <span class="req">*</span></label>
+            <input type="password" required />
+          </div>
+          <div class="auth-field">
+            <label>تأكيد كلمة المرور <span class="req">*</span></label>
+            <input type="password" required />
+          </div>
+          <div class="auth-field auth-field-full">
+            <label>المنطقة</label>
+            <button type="button" class="auth-btn--location">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              تحديد الموقع تلقائياً
+            </button>
+          </div>
+          <button type="submit" class="auth-btn auth-btn--primary auth-btn--submit">إنشاء الحساب</button>
+        </form>
+        <div class="auth-modal__divider"><span>أو</span></div>
+        <p class="auth-modal__switch">لديك حساب؟ <a href="#" id="goLogin2">تسجيل الدخول</a></p>
       </div>
 
     </div>`;
@@ -283,14 +257,9 @@
     document.body.appendChild(wrapper.firstElementChild);
   }
 
-  /* ═══════════════════════════════════════
-     4. RENDER ALL, THEN INIT
-     ═══════════════════════════════════════ */
   renderHeader();
   renderFooter();
   renderModals();
-
-  /* ─── Today's date ─── */
   const todayEl = document.getElementById("today");
   if (todayEl) {
     todayEl.textContent = new Date().toLocaleDateString("ar-SY", {
@@ -301,7 +270,6 @@
     });
   }
 
-  /* ─── Burger menu ─── */
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
 
@@ -382,7 +350,6 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  /* ─── Stat counters ─── */
   const counters = document.querySelectorAll(".stat__value");
 
   const animate = (el) => {
@@ -418,9 +385,6 @@
     counters.forEach((el) => io.observe(el));
   }
 
-  /* ═══════════════════════════════════════
-     5. AUTH MODAL LOGIC
-     ═══════════════════════════════════════ */
   const authOverlay = document.getElementById("authOverlay");
   const authWelcome = document.getElementById("authWelcome");
   const authLogin = document.getElementById("authLogin");
@@ -443,7 +407,6 @@
     setTimeout(() => showView(authWelcome), 300);
   }
 
-  /* Open from navbar */
   const openAuthBtn = document.getElementById("openAuth");
   if (openAuthBtn) {
     openAuthBtn.addEventListener("click", (e) => {
@@ -452,7 +415,6 @@
     });
   }
 
-  /* Switch views */
   const goLogin = document.getElementById("goLogin");
   const goLogin2 = document.getElementById("goLogin2");
   const goRegister = document.getElementById("goRegister");
@@ -463,24 +425,19 @@
   if (goRegister) goRegister.addEventListener("click", () => showView(authRegister));
   if (goRegister2) goRegister2.addEventListener("click", (e) => { e.preventDefault(); showView(authRegister); });
 
-  /* Close buttons */
   document.querySelectorAll("[data-close]").forEach((btn) => {
     btn.addEventListener("click", closeAuth);
   });
 
-  /* Click backdrop */
   if (authOverlay) {
     authOverlay.addEventListener("click", (e) => {
       if (e.target === authOverlay) closeAuth();
     });
   }
-
-  /* ESC key */
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeAuth();
   });
 
-  /* Role pills toggle */
   document.querySelectorAll(".role-selector").forEach((selector) => {
     selector.addEventListener("click", (e) => {
       const pill = e.target.closest(".role-pill");
