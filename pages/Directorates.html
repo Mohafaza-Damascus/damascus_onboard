@@ -7,26 +7,54 @@
 
     <script
       src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"
-      onerror="this.onerror = null; this.src = 'https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.js';"
+      onerror="
+        this.onerror = null;
+        this.src =
+          'https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.js';
+      "
     ></script>
     <link
       href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css"
       rel="stylesheet"
-      onerror="this.onerror = null; this.href = 'https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.css';"
+      onerror="
+        this.onerror = null;
+        this.href =
+          'https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.css';
+      "
     />
 
     <link rel="stylesheet" href="../css/Directorates.css" />
-    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/global.css" />
 
-    <link href="../Bwork/Styles/bworkMessage.css" rel="stylesheet" type="text/css" />
+    <link
+      href="../Bwork/Styles/bworkMessage.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <link href="../Bwork/Styles/default.css" rel="stylesheet" type="text/css" />
     <link href="../Bwork/Styles/viewer.css" rel="stylesheet" type="text/css" />
     <link href="../Bwork/Styles/bwork.css" rel="stylesheet" type="text/css" />
-    <link href="../Bwork/Styles/workflow.css" rel="stylesheet" type="text/css" />
+    <link
+      href="../Bwork/Styles/workflow.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <link href="../Bwork/Styles/login.css" rel="stylesheet" type="text/css" />
-    <link href="../Bwork/Styles/fileviewer/archivePnl.css" rel="stylesheet" type="text/css" />
-    <link href="../Bwork/Styles/fileviewer/imgViewer.css" rel="stylesheet" type="text/css" />
-    <link href="../Bwork/Styles/widgets/widgets.css" rel="stylesheet" type="text/css" />
+    <link
+      href="../Bwork/Styles/fileviewer/archivePnl.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="../Bwork/Styles/fileviewer/imgViewer.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="../Bwork/Styles/widgets/widgets.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <link href="./services-styles.css" rel="stylesheet" type="text/css" />
 
     <script src="../Bwork/Scripts/multilang.js?v34"></script>
@@ -66,23 +94,20 @@
     <script src="../Bwork/Scripts/loginLoad.js?v34"></script>
   </head>
   <body dir="rtl">
+    <div id="site-header" data-active="الرئيسية"></div>
     <div class="thirdsec">
       <div class="map_container">
-        <!-- الناف بار الجانبي (قائمة قابلة للتمدد والطي) -->
         <div class="map_left_side_menu" id="main-container">
           <div class="accordion_nav_wrapper" id="categoryAccordion"></div>
         </div>
 
         <div class="map_main_container">
-          <!-- شريط الفلاتر العلوي (المنطقة + الحالة لقسم الصحة) -->
           <div class="top_filters_bar" id="topFiltersBar"></div>
 
-          <!-- مساحة الخريطة -->
           <div class="map_wrapper" id="map-container">
             <div id="map" style="width: 100%; height: 100%"></div>
           </div>
 
-          <!-- حاوية الكروت السفلية -->
           <div
             class="map_down_side_Image_details_container"
             id="imageCardsContainer"
@@ -90,8 +115,9 @@
         </div>
       </div>
     </div>
-
- <script src="../js/navbar.js"></script>
     <script src="../js/Directorates.js"></script>
+    <div id="site-footer"></div>
+    <script src="../js/global.js"></script>
+    <script src="../js/index.js"></script>
   </body>
 </html>
