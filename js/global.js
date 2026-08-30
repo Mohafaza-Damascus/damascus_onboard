@@ -112,12 +112,17 @@
 
     el.outerHTML = `
     <footer class="footer pattern">
-      <div class="container">
+      <div class="">
         <div class="footer__grid">
           <div class="footer__brand">
-            <img class="footer__logo" src="${base}images/footer_logo.png" alt="محافظة دمشق" />
-            <p class="footer__about">تسعى محافظة دمشق إلى الارتقاء بجودة الخدمات المقدمة للمواطنين وتلبية تطلعاتهم، مستندة إلى معايير السرعة، والكفـاءة، والمصــداقيــة فــي الإنجــــاز.</p>
-          </div>
+            <img class="footer__logo" src="${base}images/footer_logo2.png" alt="محافظة دمشق" />
+            </div>
+             <nav class="footer__col">
+            <h3 class="footer__title">محافظة دمشق</h3>
+            <ul class="footer__list">
+              <li style="color: #1b2a24;font-weight: 300;">تسعى محافظة دمشق إلى الارتقاء بجودة الخدمات المقدمة للمواطنين وتلبية تطلعاتهم، مستندة إلى معايير السرعة، والكفـاءة، والمصــداقيــة فــي الإنجــــاز.</li>
+            </ul>
+          </nav>
           <nav class="footer__col">
             <h3 class="footer__title">روابط مهمة</h3>
             <ul class="footer__list">

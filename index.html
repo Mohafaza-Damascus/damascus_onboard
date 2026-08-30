@@ -64,148 +64,6 @@
         transform: translateY(0);
       }
 
-      .map-explorer {
-        padding-block: var(--sp-5);
-        overflow: hidden;
-      }
-      .map-explorer__inner {
-        display: grid;
-        grid-template-columns: 1fr 1.6fr;
-        align-items: center;
-        gap: var(--sp-5);
-      }
-
-      .map-explorer__card {
-        background: var(--green-800);
-        color: #fff;
-        border-radius: var(--r-md);
-        padding: var(--sp-2);
-        box-shadow: var(--shadow-md);
-        min-height: 420px;
-        display: flex;
-        flex-direction: column;
-      }
-      .map-explorer__card-img {
-        border-radius: var(--r-sm);
-        overflow: hidden;
-        aspect-ratio: 16 / 9;
-        background: rgba(255, 255, 255, 0.1);
-        margin-bottom: var(--sp-2);
-      }
-      .map-explorer__card-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .map-explorer__card-name {
-        font-size: 22px;
-        font-weight: 700;
-        margin-bottom: var(--sp-2);
-      }
-      .map-explorer__card-meta {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        font-size: 13px;
-        padding-bottom: var(--sp-2);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      }
-      .map-explorer__card-row {
-        display: flex;
-        justify-content: space-between;
-        gap: var(--sp-1);
-      }
-      .map-explorer__card-row dt {
-        color: rgba(255, 255, 255, 0.65);
-      }
-      .map-explorer__card-row dd {
-        font-weight: 600;
-      }
-      .map-explorer__card-desc {
-        font-size: 13px;
-        line-height: 1.9;
-        color: rgba(255, 255, 255, 0.7);
-        padding-top: var(--sp-2);
-        flex: 1;
-      }
-      .map-explorer__card-hint {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.4);
-        text-align: center;
-        padding-top: var(--sp-2);
-      }
-      .map-explorer__card.is-updating .map-explorer__card-img img,
-      .map-explorer__card.is-updating .map-explorer__card-name,
-      .map-explorer__card.is-updating .map-explorer__card-meta,
-      .map-explorer__card.is-updating .map-explorer__card-desc {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      .map-explorer__card-img img,
-      .map-explorer__card-name,
-      .map-explorer__card-meta,
-      .map-explorer__card-desc {
-        transition:
-          opacity 0.25s,
-          transform 0.25s;
-      }
-
-      .map-explorer__map {
-        user-select: none;
-      }
-      .map-explorer__map svg {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-      .dm-hood {
-        cursor: pointer;
-      }
-      .dm-hood path {
-        fill: #d4c9a8;
-        stroke: var(--green-800);
-        stroke-width: 2;
-        stroke-linejoin: round;
-        transition:
-          fill 0.25s,
-          filter 0.25s;
-      }
-      .dm-hood:hover path {
-        fill: #c9b88e;
-        filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.18));
-      }
-      .dm-hood.is-active path {
-        fill: var(--gold);
-        filter: drop-shadow(0 4px 14px rgba(201, 162, 74, 0.35));
-      }
-      .dm-lbl {
-        fill: var(--green-900);
-        font-size: 20px;
-        font-weight: 700;
-        font-family: "ITF Qomra Arabic", system-ui, sans-serif;
-        text-anchor: middle;
-        dominant-baseline: central;
-        pointer-events: none;
-        opacity: 0.8;
-        transition: opacity 0.25s;
-      }
-      .dm-hood:hover .dm-lbl,
-      .dm-hood.is-active .dm-lbl {
-        opacity: 1;
-      }
-      .dm-hood[data-id="olddam"] .dm-lbl,
-      .dm-hood[data-id="qanawat"] .dm-lbl,
-      .dm-hood[data-id="sarouja"] .dm-lbl,
-      .dm-hood[data-id="yarmouk"] .dm-lbl {
-        font-size: 15px;
-      }
-      .dm-hint {
-        text-align: center;
-        font-size: 13px;
-        color: var(--muted);
-        margin-top: var(--sp-2);
-      }
-
       .latest-news {
         padding-block: var(--sp-5);
       }
@@ -345,7 +203,7 @@
 
       .bottom-video {
         position: relative;
-        height: 100vh;
+        /* height: 100vh; */
         min-height: 280px;
         overflow: hidden;
         display: flex;
@@ -355,7 +213,7 @@
       }
       .bottom-video__el {
         /* width: 100%; */
-        height: 100%;
+        height: 50%;
         object-fit: cover;
         display: block;
         border-radius: 20px;
@@ -373,6 +231,210 @@
         pointer-events: none;
       }
 
+      .map-explorer {
+        padding-block: var(--sp-5);
+        /* overflow: hidden; */
+        border: 1px solid rgb(150, 147, 147);
+        margin-inline: 95px;
+        border-radius: 25px;
+        background-color: white;
+        height: 775px;
+      }
+
+      .map-explorer__inner {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--sp-4);
+        justify-content: center;
+      }
+
+      .map-explorer__map {
+        width: 580px;
+        flex-shrink: 0;
+        user-select: none;
+        transition: transform 0.45s ease;
+      }
+
+      .map-explorer__map svg {
+        width: 100%;
+        height: auto;
+        display: block;
+        overflow: visible;
+      }
+
+      .map-explorer__inner.has-selection .map-explorer__map {
+      }
+
+      .map-explorer__card {
+        background: var(--green-800);
+        color: #fff;
+        border-radius: var(--r-md);
+        box-shadow: var(--shadow-md);
+        display: flex;
+        flex-direction: column;
+
+        flex: 1;
+        min-width: 0;
+        max-width: 0;
+        opacity: 0;
+        /* overflow: hidden; */
+        padding: 0;
+        transform: translateX(30px);
+        transition:
+          max-width 0.45s ease,
+          opacity 0.35s ease 0.1s,
+          transform 0.4s ease 0.1s,
+          padding 0.35s ease;
+      }
+
+      .map-explorer__inner.has-selection .map-explorer__card {
+        max-width: 500px;
+        opacity: 1;
+        padding: var(--sp-2);
+        transform: translateX(0);
+      }
+
+      .map-explorer__card-img {
+        border-radius: var(--r-sm);
+        /* overflow: hidden; */
+        aspect-ratio: 16 / 9;
+        background: rgba(255, 255, 255, 0.1);
+        margin-bottom: var(--sp-2);
+      }
+      .map-explorer__card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .map-explorer__card-name {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: var(--sp-2);
+      }
+      .map-explorer__card-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 13px;
+        padding-bottom: var(--sp-2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .map-explorer__card-row {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--sp-1);
+      }
+      .map-explorer__card-row dt {
+        color: rgba(255, 255, 255, 0.65);
+      }
+      .map-explorer__card-row dd {
+        font-weight: 600;
+      }
+      .map-explorer__card-desc {
+        font-size: 13px;
+        line-height: 1.9;
+        color: rgba(255, 255, 255, 0.7);
+        padding-top: var(--sp-2);
+        flex: 1;
+      }
+
+      .map-explorer__card.is-updating .map-explorer__card-img img,
+      .map-explorer__card.is-updating .map-explorer__card-name,
+      .map-explorer__card.is-updating .map-explorer__card-meta,
+      .map-explorer__card.is-updating .map-explorer__card-desc {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      .map-explorer__card-img img,
+      .map-explorer__card-name,
+      .map-explorer__card-meta,
+      .map-explorer__card-desc {
+        transition:
+          opacity 0.25s,
+          transform 0.25s;
+      }
+
+      .dm-hood {
+        cursor: pointer;
+        transform-box: fill-box;
+        transform-origin: center;
+        transition:
+          transform 0.3s ease,
+          filter 0.3s ease;
+      }
+      .dm-hood path {
+        fill: #d4c9a8;
+        stroke: var(--green-800);
+        stroke-width: 2;
+        stroke-linejoin: round;
+        transition: fill 0.25s;
+      }
+      .dm-hood:hover {
+        transform: scale(1.06);
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+        z-index: 10;
+      }
+      .dm-hood:hover path {
+        fill: #c9b88e;
+      }
+      .dm-hood.is-active {
+        transform: scale(1.08);
+        filter: drop-shadow(0 6px 18px rgba(201, 162, 74, 0.4));
+        z-index: 20;
+      }
+      .dm-hood.is-active path {
+        fill: var(--gold);
+      }
+
+      .dm-lbl {
+        fill: var(--green-900);
+        font-size: 20px;
+        font-weight: 700;
+        font-family: "ITF Qomra Arabic", system-ui, sans-serif;
+        text-anchor: middle;
+        dominant-baseline: central;
+        pointer-events: none;
+        opacity: 0.8;
+        transition: opacity 0.25s;
+      }
+      .dm-hood:hover .dm-lbl,
+      .dm-hood.is-active .dm-lbl {
+        opacity: 1;
+      }
+      .dm-hood[data-id="olddam"] .dm-lbl,
+      .dm-hood[data-id="qanawat"] .dm-lbl,
+      .dm-hood[data-id="sarouja"] .dm-lbl,
+      .dm-hood[data-id="yarmouk"] .dm-lbl {
+        font-size: 15px;
+      }
+
+      @media (max-width: 900px) {
+        .map-explorer {
+        border: none;
+        margin-inline: 0px;
+        border-radius: 0px;
+        background-color: white;
+        height: fit-content;
+      }
+        .map-explorer__inner {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .map-explorer__map {
+          width: 100%;
+          max-width: 500px;
+        }
+
+        .map-explorer__card {
+          transform: translateY(20px);
+          width: 100%;
+        }
+        .map-explorer__inner.has-selection .map-explorer__card {
+          max-width: 100%;
+          transform: translateY(0);
+        }
+      }
       @media (max-width: 700px) {
         .news-grid {
           grid-template-columns: 1fr;
@@ -380,20 +442,6 @@
         .news-card__img {
           width: 90px;
           min-height: 90px;
-        }
-      }
-
-      @media (max-width: 900px) {
-        .map-explorer__inner {
-          grid-template-columns: 1fr;
-          gap: var(--sp-3);
-        }
-        .map-explorer__card {
-          min-height: auto;
-          order: 2;
-        }
-        .map-explorer__map {
-          order: 1;
         }
       }
     </style>
@@ -495,6 +543,75 @@
         </div>
       </section>
 
+      <section class="gov-section">
+        <div class="container">
+          <h2 class="gov-section__label">كلمة السيد المحافظ</h2>
+          <div class="gov-section__line"></div>
+
+          <div class="gov-section__card pattern">
+            <figure class="gov-section__photo">
+              <img src="images/mohafez2.png" alt="السيد المحافظ" />
+              <div class="gov-section__shine"></div>
+            </figure>
+            <div class="gov-section__body">
+              <h3 class="gov-section__name">محافظ دمشق</h3>
+              <span class="gov-section__role"
+                >محافظة دمشق - الجمهورية العربية السورية</span
+              >
+
+              <p class="gov-section__text">
+                دمشق مدينة التاريخ والحضارة، ونعمل اليوم على بنائها من جديد
+                بسواعد أبنائها، لتبقى منارةً للعلم والثقافة والعمران.
+              </p>
+              <p class="gov-section__text">
+                نعمل معاً من أجل بناء مدينة مزدهرة وآمنة، تضع المواطن في قلب
+                التنمية، وتستند إلى الشفافية والكفاءة والابتكار.
+              </p>
+
+              <div class="gov-section__socials">
+                <a href="#" class="gov-section__social" aria-label="انستغرام">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle
+                      cx="17.5"
+                      cy="6.5"
+                      r="1.2"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="gov-section__social" aria-label="إكس">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- <figure class="gov-section__photo">
+              <img src="images/mohafez.png" alt="السيد المحافظ" />
+              <div class="gov-section__shine"></div>
+            </figure> -->
+          </div>
+        </div>
+      </section>
+
       <section class="map-explorer" id="mapExplorer">
         <div class="container">
           <header class="section-head">
@@ -524,7 +641,6 @@
               <p class="map-explorer__card-desc" id="cardDesc">
                 ضاحية غرب دمشق تشتهر بالمساحات الخضراء والطبيعة الجبلية الخلابة.
               </p>
-              <p class="map-explorer__card-hint">← اضغط على حي في الخريطة</p>
             </article>
             <div class="map-explorer__map">
               <svg
@@ -631,7 +747,6 @@
                   <text class="dm-lbl" x="681" y="685">اليرموك</text>
                 </g>
               </svg>
-              <p class="dm-hint">اضغط على أي حي لعرض المعلومات</p>
             </div>
           </div>
         </div>
