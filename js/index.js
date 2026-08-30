@@ -141,7 +141,28 @@
   if (!video) return;
 
   const sources = [
-    "assets/new_mohafez.mp4",
+    // "assets/video/new_mohafez.mp4",
+
+  ];
+
+  let current = 0;
+
+  video.addEventListener("ended", () => {
+    current = (current + 1) % sources.length;
+    video.src = sources[current];
+    video.play();
+  });
+})();
+
+(function () {
+  const video = document.getElementById("heroVideo");
+  if (!video) return;
+
+  const sources = [
+    "assets/video/queue1.mp4",
+    "assets/video/queue2.mp4",
+    "assets/video/queue3.mp4",
+    "assets/video/new_mohafez.mp4",
   ];
 
   let current = 0;
