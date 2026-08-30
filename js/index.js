@@ -74,164 +74,61 @@
 })();
 
 (function () {
-  const districtData = {
-    dummar: {
-      name: "دمر",
-      pop: "120,000",
-      area: "18 كم²",
-      type: "سكني / ضاحية",
-      desc: "ضاحية غرب دمشق تشتهر بالمساحات الخضراء والطبيعة الجبلية الخلابة، وتضم مناطق سكنية حديثة ومرافق خدمية متنوعة.",
-    },
-    salihiye: {
-      name: "الصالحية",
-      pop: "90,000",
-      area: "3 كم²",
-      type: "تجاري / ثقافي",
-      desc: "من أرقى أحياء دمشق، تضم جامعة دمشق والمتحف الوطني ومراكز ثقافية وتجارية راقية.",
-    },
-    rukn: {
-      name: "ركن الدين",
-      pop: "130,000",
-      area: "5 كم²",
-      type: "سكني / تجاري",
-      desc: "حي شمالي يقع على سفح جبل قاسيون، يتميز بإطلالته البانورامية على دمشق وحيويته التجارية.",
-    },
-    berze: {
-      name: "برزة",
-      pop: "110,000",
-      area: "15 كم²",
-      type: "سكني",
-      desc: "حي شمالي كبير يتميز بتنوعه العمراني بين القديم والحديث، ويضم مرافق تعليمية وصحية مهمة.",
-    },
-    qaboun: {
-      name: "القابون",
-      pop: "80,000",
-      area: "9 كم²",
-      type: "صناعي / سكني",
-      desc: "منطقة شمالية شرقية تضم مناطق صناعية ومستودعات تجارية إلى جانب أحياء سكنية.",
-    },
-    jobar: {
-      name: "جوبر",
-      pop: "60,000",
-      area: "7 كم²",
-      type: "سكني",
-      desc: "حي شرقي يشهد جهود إعادة إعمار واسعة، ويتميز بموقعه الاستراتيجي على أطراف دمشق الشرقية.",
-    },
-    muhajireen: {
-      name: "المهاجرين",
-      pop: "75,000",
-      area: "4 كم²",
-      type: "سكني / حكومي",
-      desc: "حي راقٍ على سفح قاسيون، يضم قصر الشعب والعديد من المؤسسات الحكومية.",
-    },
-    sarouja: {
-      name: "ساروجة",
-      pop: "55,000",
-      area: "2 كم²",
-      type: "تراثي / تجاري",
-      desc: "حي تراثي عريق يضم بيوتات دمشقية قديمة وخانات تاريخية، من أقدم أحياء دمشق خارج السور.",
-    },
-    olddam: {
-      name: "دمشق القديمة",
-      pop: "45,000",
-      area: "1.5 كم²",
-      type: "تراثي / سياحي",
-      desc: "قلب دمشق النابض وأقدم مدينة مأهولة في العالم، تضم الجامع الأموي وسوق الحميدية وقلعة دمشق.",
-    },
-    qanawat: {
-      name: "القنوات",
-      pop: "70,000",
-      area: "2.5 كم²",
-      type: "تراثي / تجاري",
-      desc: "حي تاريخي سُمّي نسبة لقنوات المياه الرومانية القديمة، يجمع بين التراث والنشاط التجاري.",
-    },
-    shaghour: {
-      name: "الشاغور",
-      pop: "85,000",
-      area: "3 كم²",
-      type: "تراثي / سكني",
-      desc: "حي عريق يتميز بطابعه التراثي والمعماري القديم، يضم العديد من الحارات الدمشقية الأصيلة.",
-    },
-    mazza: {
-      name: "المزة",
-      pop: "250,000",
-      area: "12 كم²",
-      type: "سكني / حكومي",
-      desc: "من أكبر أحياء دمشق، تضم المؤسسات الحكومية والسفارات ومناطق سكنية حديثة.",
-    },
-    kafarsuseh: {
-      name: "كفرسوسة",
-      pop: "180,000",
-      area: "8 كم²",
-      type: "سكني / تجاري",
-      desc: "حي حيوي يجمع بين الطابع السكني والتجاري، يشهد نمواً عمرانياً متسارعاً.",
-    },
-    midan: {
-      name: "الميدان",
-      pop: "200,000",
-      area: "6 كم²",
-      type: "تجاري / سكني",
-      desc: "من أعرق أحياء دمشق وأكثرها حيوية، يشتهر بأسواقه الشعبية ومساجده التاريخية.",
-    },
-    qadam: {
-      name: "القدم",
-      pop: "95,000",
-      area: "5 كم²",
-      type: "صناعي / سكني",
-      desc: "حي جنوبي يجمع بين المناطق السكنية والصناعية، ويُعد من المناطق ذات الكثافة العالية.",
-    },
-    yarmouk: {
-      name: "اليرموك",
-      pop: "150,000",
-      area: "4 كم²",
-      type: "سكني",
-      desc: "حي سكني في جنوب دمشق، يشهد حالياً جهود إعادة إعمار وتأهيل واسعة.",
-    },
-  };
+  const hoods = document.querySelectorAll(".dm-hood");
+  const inner = document.querySelector(".map-explorer__inner");
+  const card = document.getElementById("explorerCard");
+  if (!hoods.length || !card || !inner) return;
 
-  const svgMap = document.getElementById("svgMap");
-  const explorerCard = document.getElementById("explorerCard");
   const cardImg = document.getElementById("cardImg");
   const cardName = document.getElementById("cardName");
   const cardPop = document.getElementById("cardPop");
   const cardArea = document.getElementById("cardArea");
   const cardType = document.getElementById("cardType");
   const cardDesc = document.getElementById("cardDesc");
+  const data = {
+    dummar:      { name: "دُمَّر",         pop: "120,000", area: "18 كم²", type: "سكني / ضاحية",    desc: "ضاحية غرب دمشق تشتهر بالمساحات الخضراء والطبيعة الجبلية الخلابة.", img: "images/Damascus.png" },
+    mazza:       { name: "المزّة",         pop: "350,000", area: "22 كم²", type: "سكني / إداري",    desc: "من أكبر أحياء دمشق، تضم مؤسسات حكومية ومجمعات سكنية حديثة.", img: "images/Damascus.png" },
+    kafarsuseh:  { name: "كفرسوسة",       pop: "180,000", area: "12 كم²", type: "سكني / تجاري",    desc: "حي حيوي يمتد جنوب غرب دمشق ويضم أسواقاً ومراكز تجارية.", img: "images/Damascus.png" },
+    berze:       { name: "برزة",          pop: "200,000", area: "15 كم²", type: "سكني",            desc: "حي شمالي عريق يتميز بطابعه الشعبي وقربه من جبل قاسيون.", img: "images/Damascus.png" },
+    qaboun:      { name: "القابون",       pop: "100,000", area: "8 كم²",  type: "صناعي / سكني",    desc: "منطقة صناعية وسكنية شمال شرق دمشق.", img: "images/Damascus.png" },
+    jobar:       { name: "جوبر",          pop: "90,000",  area: "7 كم²",  type: "سكني",            desc: "حي شرقي تاريخي كان يشتهر بزراعة المشمش والفواكه.", img: "images/Damascus.png" },
+    shaghour:    { name: "الشاغور",       pop: "250,000", area: "10 كم²", type: "سكني / تجاري",    desc: "من أعرق أحياء دمشق القديمة، يتميز بأسواقه الشعبية.", img: "images/Damascus.png" },
+    rukn:        { name: "ركن الدين",     pop: "280,000", area: "14 كم²", type: "سكني",            desc: "حي سكني على سفح جبل قاسيون يتميز بإطلالته البانورامية.", img: "images/Damascus.png" },
+    salihiye:    { name: "الصالحية",      pop: "150,000", area: "6 كم²",  type: "سكني / ثقافي",    desc: "حي تاريخي يضم معالم أثرية ومؤسسات تعليمية عريقة.", img: "images/Damascus.png" },
+    muhajireen:  { name: "المهاجرين",     pop: "130,000", area: "9 كم²",  type: "سكني",            desc: "حي راقٍ على سفح قاسيون يضم سفارات ومقرات دبلوماسية.", img: "images/Damascus.png" },
+    sarouja:     { name: "ساروجة",        pop: "60,000",  area: "3 كم²",  type: "تاريخي / تجاري",  desc: "من أقدم أحياء دمشق، يتميز بعمارته العثمانية الفريدة.", img: "images/Damascus.png" },
+    qanawat:     { name: "القنوات",       pop: "70,000",  area: "4 كم²",  type: "سكني / تاريخي",   desc: "حي وسطي يربط بين دمشق القديمة والأحياء الحديثة.", img: "images/Damascus.png" },
+    olddam:      { name: "دمشق القديمة",  pop: "40,000",  area: "2 كم²",  type: "تاريخي / سياحي",  desc: "المدينة القديمة المسورة، أحد أقدم المدن المأهولة في العالم.", img: "images/Damascus.png" },
+    midan:       { name: "الميدان",       pop: "220,000", area: "11 كم²", type: "سكني / تجاري",    desc: "حي تجاري تاريخي يشتهر بأسواقه ومساجده العريقة.", img: "images/Damascus.png" },
+    qadam:       { name: "القدم",         pop: "160,000", area: "9 كم²",  type: "سكني / صناعي",    desc: "حي جنوبي يضم ورشاً صناعية ومناطق سكنية.", img: "images/Damascus.png" },
+    yarmouk:     { name: "اليرموك",       pop: "140,000", area: "5 كم²",  type: "سكني",            desc: "حي جنوبي كان يُعرف بكثافته السكانية العالية.", img: "images/Damascus.png" },
+  };
 
-  if (!svgMap || !explorerCard) return;
+  let activeHood = null;
 
-  let activeId = null;
+  hoods.forEach((hood) => {
+    hood.addEventListener("click", () => {
+      const id = hood.dataset.id;
+      const info = data[id];
+      if (!info) return;
 
-  function updateCard(id) {
-    if (id === activeId) return;
-    activeId = id;
-    const d = districtData[id];
-    if (!d) return;
+      if (activeHood) activeHood.classList.remove("is-active");
+      hood.classList.add("is-active");
+      activeHood = hood;
+      inner.classList.add("has-selection");
+      card.classList.add("is-updating");
 
-    explorerCard.classList.add("is-updating");
-    setTimeout(() => {
-      cardImg.src = "images/Damascus.png";
-      cardImg.alt = d.name;
-      cardName.textContent = d.name;
-      cardPop.textContent = d.pop;
-      cardArea.textContent = d.area;
-      cardType.textContent = d.type;
-      cardDesc.textContent = d.desc;
-      explorerCard.classList.remove("is-updating");
-    }, 200);
-
-    svgMap.querySelectorAll(".dm-hood").forEach((g) => {
-      g.classList.toggle("is-active", g.dataset.id === id);
+      setTimeout(() => {
+        cardImg.src = info.img;
+        cardName.textContent = info.name;
+        cardPop.textContent = info.pop;
+        cardArea.textContent = info.area;
+        cardType.textContent = info.type;
+        cardDesc.textContent = info.desc;
+        card.classList.remove("is-updating");
+      }, 250);
     });
-  }
-
-  svgMap.addEventListener("click", (e) => {
-    const hood = e.target.closest(".dm-hood");
-    if (!hood) return;
-    updateCard(hood.dataset.id);
   });
-
-  updateCard("dummar");
 })();
 
 (function () {
