@@ -269,7 +269,9 @@ button {
   border-radius: var(--r-full);
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  transition: background 0.2s, transform 0.15s;
+  transition:
+    background 0.2s,
+    transform 0.15s;
 }
 .btn-contact:hover {
   background: rgba(255, 255, 255, 0.2);
@@ -571,7 +573,9 @@ button {
   padding: 8px 20px;
   border: 1px solid var(--green-900);
   border-radius: var(--r-sm);
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .gov-card__btn:hover {
@@ -679,7 +683,9 @@ button {
   color: #fff;
   font-size: 18px;
   font-weight: 600;
-  transition: background 0.25s, color 0.25s;
+  transition:
+    background 0.25s,
+    color 0.25s;
 }
 
 .discover__btn:hover {
@@ -742,7 +748,9 @@ button {
   color: #fff;
   font-size: 16px;
   font-weight: 600;
-  transition: background 0.25s, color 0.25s;
+  transition:
+    background 0.25s,
+    color 0.25s;
 }
 
 .services-cta__btn:hover {
@@ -913,7 +921,7 @@ button {
   padding-top: var(--sp-2);
 }
 
-.footer {
+/* .footer {
   --pattern-opacity: 0.08;
   --pattern-size: 380px;
 
@@ -1021,9 +1029,145 @@ button {
 }
 .footer__legal a:hover {
   color: var(--teal-600);
+} */
+
+.footer {
+  --pattern-opacity: 0.06;
+  --pattern-size: 70px;
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  padding-top: 56px;
+  padding-bottom: 0;
+  margin: var(--sp-4);
+  border-radius: 20px;
+}
+.footer.pattern::before {
+  opacity: 0.05;
+  background-size: 600px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
 }
 
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+}
 
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__logo {
+  /* width: auto; */
+  /* max-height: 100px; */
+  width: 150px;
+  margin-right: 25px;
+}
+
+.footer__about {
+  font-size: 15px;
+  line-height: 2;
+  color: #988561;
+  max-width: 36ch;
+}
+.footer__title {
+  position: relative;
+  display: inline-block;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--green-900);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.footer__title::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 2.5px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__list a {
+  font-size: 16px;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.2s, padding-inline-start 0.2s;
+}
+
+.footer__list a:hover {
+  color: var(--teal-600);
+  padding-inline-start: 6px;
+}
+.socials {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  color: var(--green-900);
+  background: rgba(27, 58, 47, 0.06);
+  border: 1px solid rgba(27, 58, 47, 0.1);
+  transition: background 0.25s, color 0.25s, transform 0.2s, box-shadow 0.2s;
+}
+
+.social:hover {
+  background: var(--green-800);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(6, 66, 57, 0.2);
+}
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  padding-block: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.footer__copy {
+  font-weight: 500;
+}
+
+.footer__legal {
+  display: flex;
+  gap: var(--sp-3);
+}
+
+.footer__legal a {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.footer__legal a:hover {
+  color: var(--teal-600);
+}
 .auth-overlay {
   position: fixed;
   inset: 0;
@@ -1037,7 +1181,9 @@ button {
   backdrop-filter: blur(6px);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
 }
 .auth-overlay.is-visible {
   opacity: 1;
@@ -1603,7 +1749,7 @@ button {
 
   .footer__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--sp-3);
+    gap: 32px;
   }
   .footer__brand {
     grid-column: 1 / -1;
@@ -1657,10 +1803,19 @@ button {
   }
   .footer__grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
   .footer__bottom {
     justify-content: center;
     text-align: center;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .footer__legal {
+    justify-content: center;
+  }
+  .socials {
+    justify-content: center;
   }
 }
 
