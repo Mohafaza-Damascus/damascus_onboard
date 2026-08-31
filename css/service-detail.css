@@ -1,0 +1,240 @@
+:root {
+  --sd-green: #064239;
+  --sd-green-light: #3a6962;
+  --sd-cream: #f3eddf;
+  --sd-cream-dark: #e8dcc8;
+  --sd-card-bg: #f4f8f6;
+  --sd-text: #07473c;
+  --sd-text-muted: #5a7a74;
+  --sd-gold: #be9c5a;
+  --sd-gold-light: #e8d098;
+  --sd-radius-lg: 28px;
+  --sd-radius-md: 18px;
+  --sd-radius-sm: 14px;
+}
+
+.detail-page {
+  min-height: 100vh;
+  background-color: var(--sd-green);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow-x: hidden;
+}
+
+.detail-page .bg-pattern {
+  position: fixed;
+  inset: 0;
+  background-image: url("../assets/Vector.png");
+  background-repeat: repeat;
+  background-size: 500px auto;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.detail-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1100px;
+  background: var(--sd-cream);
+  border-radius: var(--sd-radius-lg);
+  padding: 45px 50px 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.detail-back {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--sd-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.detail-back:hover {
+  opacity: 1;
+}
+
+.detail-back i {
+  font-size: 1rem;
+}
+
+.detail-logo {
+  width: 75px;
+  height: auto;
+  margin-bottom: 18px;
+  opacity: 0.9;
+}
+
+.detail-title {
+  color: var(--sd-text);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.detail-subtitle {
+  color: var(--sd-text-muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 600;
+  margin: 0 0 40px;
+  text-align: center;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  width: 100%;
+}
+
+.detail-card {
+  background: var(--sd-card-bg);
+  border-radius: var(--sd-radius-md);
+  padding: 22px 25px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  min-height: 210px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+}
+
+.detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(6, 66, 57, 0.12);
+}
+
+.detail-card .card-arrow {
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  background: rgba(6, 66, 57, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.detail-card:hover .card-arrow {
+  background: rgba(6, 66, 57, 0.12);
+}
+
+.detail-card .card-arrow i {
+  font-size: 0.85rem;
+  color: var(--sd-text);
+  opacity: 0.5;
+}
+
+/* Large background icon (watermark) */
+.detail-card .card-watermark {
+  font-size: 3.8rem;
+  color: var(--sd-green-light);
+  opacity: 0.1;
+  margin-bottom: auto;
+  align-self: center;
+  line-height: 1;
+}
+
+/* Card title */
+.detail-card h3 {
+  color: var(--sd-text);
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin: 12px 0 8px;
+  text-align: right;
+}
+
+/* Card description */
+.detail-card p {
+  color: var(--sd-text-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.65;
+  margin: 0;
+  text-align: right;
+}
+
+/* ── 2-column variant for pages with ≤2 items ── */
+.detail-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 720px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .detail-container {
+    padding: 40px 28px 45px;
+  }
+
+  .detail-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .detail-grid.cols-2 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail-page {
+    padding: 20px 12px;
+    align-items: flex-start;
+  }
+
+  .detail-container {
+    padding: 35px 18px 40px;
+    border-radius: 22px;
+  }
+
+  .detail-grid,
+  .detail-grid.cols-2 {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin-inline: auto;
+  }
+
+  .detail-card {
+    min-height: 180px;
+  }
+
+  .detail-back {
+    top: 18px;
+    right: 20px;
+  }
+
+  .detail-logo {
+    width: 60px;
+  }
+}
+
+@media (max-width: 380px) {
+  .detail-container {
+    padding: 30px 14px 35px;
+  }
+
+  .detail-title {
+    font-size: 1.6rem;
+  }
+}

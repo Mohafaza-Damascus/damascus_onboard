@@ -1231,7 +1231,7 @@ button {
 .footer__list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .footer__list a {
@@ -1239,7 +1239,7 @@ button {
   color: var(--text);
   font-weight: 300;
   transition:
-    color 0.2s,
+    color 0.7s,
     padding-inline-start 0.2s;
 }
 

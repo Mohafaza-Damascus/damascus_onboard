@@ -12,15 +12,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-
-  cards.forEach((card) => {
-    const href = card.dataset.href;
-    if (!href) return;
-
-    card.style.cursor = "pointer";
-
-    card.addEventListener("click", (e) => {
-      window.location.href = href;
-    });
-  });
 });
