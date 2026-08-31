@@ -112,7 +112,7 @@
 
     el.outerHTML = `
     <footer class="footer pattern">
-      <div class="">
+      <div style="padding-top:30px;">
         <div class="footer__grid">
           <div class="footer__brand">
             <img class="footer__logo" src="${base}images/footer_logo2.png" alt="محافظة دمشق" />
