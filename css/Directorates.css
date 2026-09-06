@@ -41,6 +41,7 @@ body {
   background-color: #edebe0;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .thirdsec {
@@ -55,21 +56,19 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  padding-top: 0;
   display: block;
 }
 
-/* السايد بار الجانبي كلوحة عائمة تنزلق لليمين */
 .map_left_side_menu {
   position: absolute;
   right: 0;
   top: 15px;
   height: calc(100% - 30px);
-  width: 280px;
-  min-width: 280px;
+  width: 290px;
+  min-width: 290px;
   padding: 15px 12px;
   background-color: #054239;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
   border: 1px solid #b9a779;
   border-radius: 16px;
   display: flex;
@@ -81,7 +80,7 @@ body {
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   pointer-events: auto;
-} 
+}
 
 .map_left_side_menu.is-open {
   transform: translateX(-15px);
@@ -93,32 +92,6 @@ body {
 .map_left_side_menu::-webkit-scrollbar-thumb {
   background: #b9a779;
   border-radius: 4px;
-}
-
-/* زر التحكم بالبطاقات من داخل السايد بار */
-.toggle_cards_sidebar_btn {
-  width: 100%;
-  height: 40px;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px dashed #b9a779;
-  border-radius: 10px;
-  color: #fae5af;
-  font-family: 'qomra_bold';
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  cursor: pointer;
-  margin-bottom: 6px;
-  flex-shrink: 0;
-  transition: all 0.25s ease;
-}
-
-.toggle_cards_sidebar_btn:hover {
-  background: #b9a779;
-  color: #054239;
-  border-style: solid;
 }
 
 .accordion_nav_wrapper {
@@ -194,8 +167,8 @@ body {
   color: #edebe0;
   border: 1px solid transparent;
   border-radius: 8px;
-  padding: 7px 10px;
-  font-size: 13px;
+  padding: 8px 12px;
+  font-size: 13.5px;
   text-align: right;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -211,7 +184,6 @@ body {
   color: #054239;
   font-family: 'qomra_bold';
 }
-
 .map_main_container {
   position: absolute;
   top: 0;
@@ -220,13 +192,8 @@ body {
   height: 100%;
   background: transparent;
   border: none;
-  backdrop-filter: none;
-  pointer-events: none; 
+  pointer-events: none;
   z-index: 5;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
 }
 
 .top_filters_bar {
@@ -241,7 +208,6 @@ body {
   pointer-events: auto !important;
 }
 
-/* زر الثلاث شخطات */
 .menu_toggle_btn {
   background-color: #054239 !important;
   border: 1.5px solid #b9a779 !important;
@@ -256,7 +222,6 @@ body {
   gap: 5px !important;
   cursor: pointer !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45) !important;
-  z-index: 1001 !important;
   pointer-events: auto !important;
   transition: background-color 0.2s ease, transform 0.15s ease !important;
   padding: 0 !important;
@@ -271,7 +236,7 @@ body {
   display: block !important;
   width: 22px !important;
   height: 3px !important;
-  background-color: #fae5af !important;  
+  background-color: #fae5af !important;
   border-radius: 3px !important;
   pointer-events: none !important;
 }
@@ -319,8 +284,6 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
-  border-radius: 0;
-  box-shadow: none;
 }
 
 #map {
@@ -328,102 +291,41 @@ body {
   height: 100%;
 }
 
-.map_down_side_Image_details_container {
-  position: absolute !important;
-  bottom: 15px !important;
-  left: 15px !important;
-  right: 15px !important;
-  width: calc(100% - 30px) !important;
-  height: 145px !important;
-  min-height: 145px !important;
-  z-index: 1000 !important; /* فوق الخريطة دائماً */
-  pointer-events: auto !important;
-  display: flex !important;
-  justify-content: flex-start !important;
-  align-items: center !important;
-  gap: 12px !important;
-  padding: 12px 14px !important;
-  background: rgba(5, 66, 57, 0.88) !important;
-  backdrop-filter: blur(8px) !important;
-  border: 1px solid #b9a779 !important;
-  border-radius: 16px !important;
-  overflow-x: auto !important;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5) !important;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease !important;
-}
-
-
-.map_down_side_Image_details_container.cards-hidden {
-  transform: translateY(220px) !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-
-.image_card {
-  min-width: 155px;
-  max-width: 175px;
-  height: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  background: #b9a779;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  border: 2px solid transparent;
-}
-
-.image_card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-}
-
-.image_card img {
-  width: 100%;
-  height: 65%;
-  object-fit: cover;
-  display: block;
-}
-
-.image_card p {
-  width: 100%;
-  text-align: center;
-  padding: 4px;
-  font-size: 11.5px;
-  font-family: 'qomra_bold';
-  color: #0f0f0f;
-}
-
 .marker-wrapper {
-  width: 30px;
-  height: 42px;
+  width: 32px;
+  height: 44px;
   cursor: pointer;
   z-index: 1;
 }
+
 .marker-content {
   width: 100%;
   height: 100%;
   position: relative;
-  filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.3));
-  transition: transform 0.2s ease;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.35));
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
 .marker-wrapper.highlighted {
-  z-index: 10;
+  z-index: 100;
 }
+
 .marker-wrapper.highlighted .marker-content {
-  transform: scale(1.2) translateY(-5px);
+  transform: scale(1.3) translateY(-7px);
 }
+
 .pin-head {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   background-color: var(--marker-color, #ea4335);
   border-radius: 50%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
+
 .pin-point {
   width: 0;
   height: 0;
@@ -431,10 +333,11 @@ body {
   border-right: 10px solid transparent;
   border-top: 16px solid var(--marker-color, #ea4335);
   position: absolute;
-  top: 26px;
-  left: 5px;
+  top: 28px;
+  left: 6px;
   z-index: 1;
 }
+
 .pin-dot {
   width: 12px;
   height: 12px;
@@ -446,75 +349,112 @@ body {
   transform: translate(-50%, -50%);
   z-index: 3;
 }
+
 .marker-emoji {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 13px;
+  font-size: 14px;
   z-index: 4;
 }
-
 .google-place-panel {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 7;
-  width: min(300px, 30%);
-  height: 100%;
+  position: fixed !important;
+
+  top: 50%;
+  bottom: auto;
+
+  left: 0 !important;
+  right: auto !important;
+
+  z-index: 999999 !important;
+
+  width: 320px;
+  height: 470px;
+
   overflow-y: auto;
+
   background: #fff;
   color: #1f2f2d;
-  box-shadow: 4px 0 12px rgba(60, 64, 67, 0.28);
-  transform: translateX(-110%);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.28s ease, opacity 0.28s ease;
-}
 
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.35);
+
+  border-radius: 0 16px 16px 0;
+
+  transform: translateY(-50%) translateX(-110%);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    transform 0.28s ease,
+    opacity 0.28s ease,
+    visibility 0.28s ease;
+}
 .google-place-panel.is-visible {
-  transform: translateX(0);
-  opacity: 1;
-  pointer-events: auto;
+  left: 0 !important;
+  right: auto !important;
+
+  transform: translateY(-50%) translateX(0) !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 .google-place-panel__close {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 2;
-  width: 30px;
-  height: 30px;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
   border: none;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   color: #054239;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.google-place-panel__close:hover {
+  background: #edebe0;
+}
+
+.google-place-panel__img-wrapper {
+  width: 100%;
+  height: 170px;
+  background: #054239;
+  overflow: hidden;
 }
 
 .google-place-panel__image {
   width: 100%;
-  height: 140px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
 
 .google-place-panel__body {
-  padding: 14px 16px;
+  padding: 16px;
 }
 
 .google-place-panel__title {
   color: #054239;
   font-family: 'qomra_bold';
-  font-size: 18px;
+  font-size: 19px;
   margin-bottom: 6px;
 }
 
 .google-place-panel__meta {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   color: #6f7876;
   font-size: 13px;
   margin-bottom: 12px;
@@ -525,17 +465,54 @@ body {
   font-weight: bold;
 }
 
+.google-place-panel__status:not(.is-open) {
+  color: #c0392b;
+  font-weight: bold;
+}
+
 .google-place-panel__row {
   margin: 8px 0;
   font-size: 13.5px;
   color: #263735;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .google-place-panel__description {
-  margin-top: 10px;
-  padding-top: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
   border-top: 1px solid #e5dfcf;
   font-size: 13.5px;
   line-height: 1.6;
   color: #46514f;
+}
+
+/* السماح بالتفاعل مع الخريطة والعلامات */
+.map_main_container {
+  pointer-events: auto !important;
+}
+
+.map_wrapper {
+  pointer-events: auto !important;
+}
+
+#map {
+  pointer-events: auto !important;
+}
+
+/* العلامات فوق الخريطة وقابلة للضغط */
+.marker-wrapper {
+  pointer-events: auto !important;
+  cursor: pointer;
+  z-index: 100 !important;
+}
+
+.marker-content {
+  pointer-events: auto !important;
+}
+
+/* العلامة المحددة */
+.marker-wrapper.highlighted {
+  z-index: 1000 !important;
 }

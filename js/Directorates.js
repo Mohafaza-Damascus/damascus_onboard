@@ -88,24 +88,24 @@ const categoriesData = {
     ],
     locationSets: {
       service_departments: [
-        [36.30209, 33.52503, "دائرة خدمات ساروجا", "./assets/10.png", "ساروجا", 8, 15, "مبنى مخصص لتقديم الخدمات البلدية للمواطنين في دمشق القديمة"],
-        [36.23304, 33.53279, "دائرة خدمات الشام الجديدة", "./assets/10.png", "مشروع دمر", 8, 15, "مبنى مخصص لتقديم الخدمات البلدية للمواطنين"],
-        [36.3029, 33.49963, "دائرة خدمات باب مصلى", "./assets/10.png", "باب مصلى", 8, 15, "مبنى مخصص لتقديم الخدمات البلدية للمواطنين"],
-        [36.2798, 33.49462, "دائرة خدمات كفرسوسة", "./assets/10.png", "كفرسوسة", 8, 15, "مبنى مخصص لتقديم الخدمات البلدية للمواطنين"],
-        [36.29787, 33.50683, "دائرة خدمة القنوات", "./assets/10.png", "القنوات", 8, 15, "مبنى مخصص لتقديم الخدمات البلدية للمواطنين"],
+        [36.30209, 33.52503, "دائرة خدمات ساروجا", "../assets/10.png", "ساروجا", 8, 15, "مبنى مخصص لتقديم الخدمات البلدية للمواطنين في دمشق القديمة"],
+        [36.23304, 33.53279, "دائرة خدمات الشام الجديدة", "../assets/10.png", "مشروع دمر", 8, 15, "مبنى مخصص لتقديم الخدمات البلدية للمواطنين"],
+        [36.3029, 33.49963, "دائرة خدمات باب مصلى", "../assets/10.png", "باب مصلى", 8, 15, "مبنى مخصص لتقديم الخدمات البلدية للمواطنين"],
+        [36.2798, 33.49462, "دائرة خدمات كفرسوسة", "../assets/10.png", "كفرسوسة", 8, 15, "مبنى مخصص لتقديم الخدمات البلدية للمواطنين"],
+        [36.29787, 33.50683, "دائرة خدمة القنوات", "../assets/10.png", "القنوات", 8, 15, "مبنى مخصص لتقديم الخدمات البلدية للمواطنين"],
       ],
       citizen_service_centers: [
-        [36.24723, 33.50205, "مركز خدمة المواطن كفرسوسة", "./assets/10.png", "كفرسوسة", 8, 15, "يقدم خدمات توثيق العقود واستقبال طلبات الرخص"],
-        [36.3138, 33.51802, "مركز خدمة المواطن القصاع", "./assets/10.png", "القصاع", 8, 15, "يقدم خدمات توثيق عقود الإيجار وإصدار وثائق غير موظف"],
-        [36.29666, 33.52077, "مركز خدمة المواطن ساحة السبع بحرات", "./assets/10.png", "السبع بحرات", 8, 15, "يقدم خدمات توثيق عقود الإيجار واستقبال طلبات الرخص"],
-        [36.28267, 33.51042, "مركز خدمة المواطن البرامكة", "./assets/10.png", "البرامكة", 8, 15, "يقدم خدمات إصدار الوثائق الرسمية"],
-        [36.30036, 33.49856, "مركز خدمة المواطن الميدان", "./assets/10.png", "الميدان", 8, 15, "يقدم خدمات توثيق العقود واستقبال طلبات الرخص"],
+        [36.24723, 33.50205, "مركز خدمة المواطن كفرسوسة", "../assets/10.png", "كفرسوسة", 8, 15, "يقدم خدمات توثيق العقود واستقبال طلبات الرخص"],
+        [36.3138, 33.51802, "مركز خدمة المواطن القصاع", "../assets/10.png", "القصاع", 8, 15, "يقدم خدمات توثيق عقود الإيجار وإصدار وثائق غير موظف"],
+        [36.29666, 33.52077, "مركز خدمة المواطن ساحة السبع بحرات", "../assets/10.png", "السبع بحرات", 8, 15, "يقدم خدمات توثيق عقود الإيجار واستقبال طلبات الرخص"],
+        [36.28267, 33.51042, "مركز خدمة المواطن البرامكة", "../assets/10.png", "البرامكة", 8, 15, "يقدم خدمات إصدار الوثائق الرسمية"],
+        [36.30036, 33.49856, "مركز خدمة المواطن الميدان", "../assets/10.png", "الميدان", 8, 15, "يقدم خدمات توثيق العقود واستقبال طلبات الرخص"],
       ],
       governorate_directorates: [
         [36.29, 33.51, "دائرة خدمات دمشق القديمة", PLACEHOLDER, "دمشق القديمة", 8, 15, "مبنى مخصص لتقديم الخدمات البلدية للمواطنين"],
       ],
       exhibition_city: [
-        [36.39187, 33.42722, "مدينة المعارض", "./assets/10.png", "طريق المطار", 8, 15, "تحتوي المدينة على قاعات مؤتمرات ومراكز أعمال ومطاعم"],
+        [36.39187, 33.42722, "مدينة المعارض", "../assets/10.png", "طريق المطار", 8, 15, "تحتوي المدينة على قاعات مؤتمرات ومراكز أعمال ومطاعم"],
       ],
     },
   },
@@ -120,32 +120,32 @@ const categoriesData = {
     ],
     locationSets: {
       ministries: [
-        [36.27872, 33.50524, "وزارة الداخلية", "./assets/10.png", "كفرسوسة", 8, 20, "المبنى المركزي لوزارة الداخلية السورية"],
-        [36.26971, 33.50222, "وزارة الخارجية", "./assets/10.png", "17 نيسان", 8, 20, "المبنى المركزي لوزارة الخارجية السورية"],
-        [36.24845, 33.49867, "وزارة العدل", "./assets/10.png", "المزة", 8, 20, "المبنى المركزي لوزارة العدل السورية"],
-        [36.28091, 33.50508, "وزارة الادارة المحلية", "./assets/10.png", "17 نيسان", 8, 20, "المبنى المركزي لوزارة الادارة المحلية السورية"],
-        [36.27369, 33.51158, "وزارة التعليم العالي", "./assets/10.png", "المزة", 8, 20, "المبنى المركزي لوزارة التعليم العالي"],
+        [36.27872, 33.50524, "وزارة الداخلية", "../assets/10.png", "كفرسوسة", 8, 20, "المبنى المركزي لوزارة الداخلية السورية"],
+        [36.26971, 33.50222, "وزارة الخارجية", "../assets/10.png", "17 نيسان", 8, 20, "المبنى المركزي لوزارة الخارجية السورية"],
+        [36.24845, 33.49867, "وزارة العدل", "../assets/10.png", "المزة", 8, 20, "المبنى المركزي لوزارة العدل السورية"],
+        [36.28091, 33.50508, "وزارة الادارة المحلية", "../assets/10.png", "17 نيسان", 8, 20, "المبنى المركزي لوزارة الادارة المحلية السورية"],
+        [36.27369, 33.51158, "وزارة التعليم العالي", "../assets/10.png", "المزة", 8, 20, "المبنى المركزي لوزارة التعليم العالي"],
       ],
       courts: [
-        [36.29976, 33.51087, "قصر العدل القنوات", "./assets/10.png", "القنوات", 8, 20, "مجمع المحاكم المركزي"],
-        [36.29902, 33.51108, "المحكمة الشرعية", "./assets/10.png", "القنوات", 8, 20, "المحكمة الشرعية المركزية بدمشق"],
-        [36.24796, 33.49839, "قصر العدل المزة", "./assets/10.png", "المزة", 8, 20, "مجمع محاكم المزة"],
+        [36.29976, 33.51087, "قصر العدل القنوات", "../assets/10.png", "القنوات", 8, 20, "مجمع المحاكم المركزي"],
+        [36.29902, 33.51108, "المحكمة الشرعية", "../assets/10.png", "القنوات", 8, 20, "المحكمة الشرعية المركزية بدمشق"],
+        [36.24796, 33.49839, "قصر العدل المزة", "../assets/10.png", "المزة", 8, 20, "مجمع محاكم المزة"],
       ],
       civil_registry: [
-        [36.30108, 33.50836, "دائرة نفوس باب سريجة", "./assets/10.png", "باب سريجة", 8, 20, "تسجيل المواليد والوفيات وإصدار البطاقات الشخصية"],
-        [36.30125, 33.51492, "مديرية النفوس", "./assets/10.png", "شارع الثورة", 8, 20, "المديرية العامة للشؤون المدنية"],
+        [36.30108, 33.50836, "دائرة نفوس باب سريجة", "../assets/10.png", "باب سريجة", 8, 20, "تسجيل المواليد والوفيات وإصدار البطاقات الشخصية"],
+        [36.30125, 33.51492, "مديرية النفوس", "../assets/10.png", "شارع الثورة", 8, 20, "المديرية العامة للشؤون المدنية"],
       ],
       syndicates: [
-        [36.26026, 33.50478, "نقابة المهندسين", "./assets/10.png", "المزة", 8, 20, "المؤسسة الرسمية لتنظيم العمل الهندسي"],
-        [36.29304, 33.51664, "نقابة المحامين", "./assets/10.png", "ميسلون", 8, 20, "تنظيم مهنة المحاماة والدفاع عن حقوق الأعضاء"],
+        [36.26026, 33.50478, "نقابة المهندسين", "../assets/10.png", "المزة", 8, 20, "المؤسسة الرسمية لتنظيم العمل الهندسي"],
+        [36.29304, 33.51664, "نقابة المحامين", "../assets/10.png", "ميسلون", 8, 20, "تنظيم مهنة المحاماة والدفاع عن حقوق الأعضاء"],
       ],
       associations: [
-        [36.29685, 33.51019, "رابطة الفلاحين", "./assets/10.png", "القنوات", 8, 20, "قيادة الفلاحين وتمثيلهم في المجالس الزراعية"],
-        [36.29397, 33.51735, "الاتحاد العام للعمال", "./assets/10.png", "الصالحية", 8, 20, "الاتحاد العام لنقابات العمال"],
+        [36.29685, 33.51019, "رابطة الفلاحين", "../assets/10.png", "القنوات", 8, 20, "قيادة الفلاحين وتمثيلهم في المجالس الزراعية"],
+        [36.29397, 33.51735, "الاتحاد العام للعمال", "../assets/10.png", "الصالحية", 8, 20, "الاتحاد العام لنقابات العمال"],
       ],
       immigration: [
-        [36.30211, 33.53777, "الهجرة و الجوازات", "./assets/10.png", "ركن الدين", 8, 20, "إصدار وتجديد جوازات السفر والإقامات"],
-        [36.29792, 33.5138, "مجمع يلبغا", "./assets/10.png", "المرجة", 8, 20, "فرع الهجرة والجوازات بدمشق"],
+        [36.30211, 33.53777, "الهجرة و الجوازات", "../assets/10.png", "ركن الدين", 8, 20, "إصدار وتجديد جوازات السفر والإقامات"],
+        [36.29792, 33.5138, "مجمع يلبغا", "../assets/10.png", "المرجة", 8, 20, "فرع الهجرة والجوازات بدمشق"],
       ],
     },
   },
@@ -159,24 +159,24 @@ const categoriesData = {
     ],
     locationSets: {
       banks: [
-        [36.29611, 33.52094, "مصرف سورية المركزي", "./assets/10.png", "ساحة السبع بحرات", 8, 20, "إصدار النقد الوطني وإدارة السياسة النقدية"],
-        [36.30329, 33.51083, "بنك سوريا الدولي الاسلامي", "./assets/10.png", "الحميدية", 8, 20, "خدمات مصرفية إسلامية شاملة للأفراد والشركات"],
+        [36.29611, 33.52094, "مصرف سورية المركزي", "../assets/10.png", "ساحة السبع بحرات", 8, 20, "إصدار النقد الوطني وإدارة السياسة النقدية"],
+        [36.30329, 33.51083, "بنك سوريا الدولي الاسلامي", "../assets/10.png", "الحميدية", 8, 20, "خدمات مصرفية إسلامية شاملة للأفراد والشركات"],
       ],
       exchange: [
-        [36.28278, 33.5211, "شركة الخواجة", "./assets/10.png", "ساحة الروضة", 8, 20, "صرافة العملات الأجنبية وتحويل الأموال"],
-        [36.30188, 33.51012, "شركة شامنا", "./assets/10.png", "الحريقة", 8, 20, "حوالات مالية لكافة المحافظات السورية"],
+        [36.28278, 33.5211, "شركة الخواجة", "../assets/10.png", "ساحة الروضة", 8, 20, "صرافة العملات الأجنبية وتحويل الأموال"],
+        [36.30188, 33.51012, "شركة شامنا", "../assets/10.png", "الحريقة", 8, 20, "حوالات مالية لكافة المحافظات السورية"],
       ],
       remittance: [
-        [36.28293, 33.52071, "الهرم", "./assets/10.png", "ساحة الروضة", 8, 20, "تحويل مالي داخلي سريع وتسديد فواتير"],
-        [36.28025, 33.52471, "الفؤاد", "./assets/10.png", "المهاجرين", 8, 20, "حوالات داخلية وخارجية عبر شبكة واسعة"],
+        [36.28293, 33.52071, "الهرم", "../assets/10.png", "ساحة الروضة", 8, 20, "تحويل مالي داخلي سريع وتسديد فواتير"],
+        [36.28025, 33.52471, "الفؤاد", "../assets/10.png", "المهاجرين", 8, 20, "حوالات داخلية وخارجية عبر شبكة واسعة"],
       ],
       shipping: [
-        [36.29014, 33.50638, "القدموس", "./assets/10.png", "البرامكة", 8, 20, "شحن البضائع والطرود وخدمات البريد السريع"],
-        [36.28305, 33.51019, "الاهلية", "./assets/10.png", "البرامكة", 8, 20, "شحن طرود بريدية وخدمات سياحة وسفر"],
+        [36.29014, 33.50638, "القدموس", "../assets/10.png", "البرامكة", 8, 20, "شحن البضائع والطرود وخدمات البريد السريع"],
+        [36.28305, 33.51019, "الاهلية", "../assets/10.png", "البرامكة", 8, 20, "شحن طرود بريدية وخدمات سياحة وسفر"],
       ],
       atm: [
-        [36.28965, 33.51607, "ATM بنك شام", "./assets/10.png", "ساحة النجمة", 8, 20, "سحب وإيداع نقدي على مدار الساعة"],
-        [36.29504, 33.51713, "ATM البنك العقاري", "./assets/10.png", "ساحة يوسف العظمة", 8, 20, "خدمات مصرفية سريعة ودفع فواتير"],
+        [36.28965, 33.51607, "ATM بنك شام", "../assets/10.png", "ساحة النجمة", 8, 20, "سحب وإيداع نقدي على مدار الساعة"],
+        [36.29504, 33.51713, "ATM البنك العقاري", "../assets/10.png", "ساحة يوسف العظمة", 8, 20, "خدمات مصرفية سريعة ودفع فواتير"],
       ],
     },
   },
@@ -190,27 +190,27 @@ const categoriesData = {
     ],
     locationSets: {
       hospitals: [
-        [36.32186, 33.52212, "مشفى العباسيين", "./assets/10.png", "العباسيين", 8, 20, "مشفى تخصصي يقدم خدمات طبية متنوعة"],
-        [36.29537, 33.5002, "مشفى دمشق (المجتهد)", "./assets/10.png", "المجتهد", 0, 24, "مشفى حكومي عام يعمل على مدار الساعة"],
-        [36.26331, 33.51231, "مشفى المواساة الجامعي", "./assets/10.png", "المواساة", 0, 24, "مشفى جامعي يقدم الرعاية الإسعافية والجراحية"],
-        [36.26216, 33.51185, "مشفى الاطفال", "./assets/10.png", "المواساة", 0, 24, "مشفى تخصصي للأطفال متاح 24 ساعة"],
-        [36.26968, 33.50553, "المشفى الوطني الجامعي", "./assets/10.png", "17 نيسان", 0, 24, "مشفى وطني متاح على مدار الساعة"],
+        [36.32186, 33.52212, "مشفى العباسيين", "../assets/10.png", "العباسيين", 8, 20, "مشفى تخصصي يقدم خدمات طبية متنوعة"],
+        [36.29537, 33.5002, "مشفى دمشق (المجتهد)", "../assets/10.png", "المجتهد", 0, 24, "مشفى حكومي عام يعمل على مدار الساعة"],
+        [36.26331, 33.51231, "مشفى المواساة الجامعي", "../assets/10.png", "المواساة", 0, 24, "مشفى جامعي يقدم الرعاية الإسعافية والجراحية"],
+        [36.26216, 33.51185, "مشفى الاطفال", "../assets/10.png", "المواساة", 0, 24, "مشفى تخصصي للأطفال متاح 24 ساعة"],
+        [36.26968, 33.50553, "المشفى الوطني الجامعي", "../assets/10.png", "17 نيسان", 0, 24, "مشفى وطني متاح على مدار الساعة"],
       ],
       health_centers: [
-        [36.2899, 33.52357, "مركز سوريانا الطبي", "./assets/10.png", "عرنوس", 0, 24, "عيادات شاملة ليزر وأسنان وأطفال"],
-        [36.28642, 33.5221, "مركز الروضة الطبي", "./assets/10.png", "الروضة", 0, 24, "مركز طبي تخصصي للعيون والليزر"],
+        [36.2899, 33.52357, "مركز سوريانا الطبي", "../assets/10.png", "عرنوس", 0, 24, "عيادات شاملة ليزر وأسنان وأطفال"],
+        [36.28642, 33.5221, "مركز الروضة الطبي", "../assets/10.png", "الروضة", 0, 24, "مركز طبي تخصصي للعيون والليزر"],
       ],
       pharmacies: [
-        [36.29277, 33.5245, "صيدلية الشهبندر", "./assets/10.png", "ساحة الشهبندر", 0, 24, "صيدلية مناوبة على مدار 24 ساعة"],
-        [36.29149, 33.52223, "صيدلية دار الداء المركزية", "./assets/10.png", "عرنوس", 8, 20, "صيدلية مركزية توفر كافة الأدوية والمستلزمات"],
+        [36.29277, 33.5245, "صيدلية الشهبندر", "../assets/10.png", "ساحة الشهبندر", 0, 24, "صيدلية مناوبة على مدار 24 ساعة"],
+        [36.29149, 33.52223, "صيدلية دار الداء المركزية", "../assets/10.png", "عرنوس", 8, 20, "صيدلية مركزية توفر كافة الأدوية والمستلزمات"],
       ],
       medical_equipment: [
-        [36.29528, 33.52125, "السلامة للتجهيزات الطبية", "./assets/10.png", "السبع بحرات", 0, 24, "أدوات طبية ومستودعات تجهيزات"],
-        [36.26254, 33.5107, "داماسكو للتجهيزات الطبية", "./assets/10.png", "المواساة", 0, 24, "أدوات طبية ومستلزمات المشافي"],
+        [36.29528, 33.52125, "السلامة للتجهيزات الطبية", "../assets/10.png", "السبع بحرات", 0, 24, "أدوات طبية ومستودعات تجهيزات"],
+        [36.26254, 33.5107, "داماسكو للتجهيزات الطبية", "../assets/10.png", "المواساة", 0, 24, "أدوات طبية ومستلزمات المشافي"],
       ],
       blood_banks: [
-        [36.26261, 33.5158, "بنك الدم المزة", "./assets/10.png", "المزة", 0, 24, "تأمين الوحدات الدموية لمشافي دمشق"],
-        [36.30223, 33.50002, "بنك دم الرشيد", "./assets/10.png", "باب مصلى", 0, 24, "مركز رئيسي لتأمين وحدات الدم ومشتقاته"],
+        [36.26261, 33.5158, "بنك الدم المزة", "../assets/10.png", "المزة", 0, 24, "تأمين الوحدات الدموية لمشافي دمشق"],
+        [36.30223, 33.50002, "بنك دم الرشيد", "../assets/10.png", "باب مصلى", 0, 24, "مركز رئيسي لتأمين وحدات الدم ومشتقاته"],
       ],
     },
   },
@@ -221,12 +221,12 @@ const categoriesData = {
     ],
     locationSets: {
       post: [
-        [36.29481, 33.51238, "البريد المركزي", "./assets/10.png", "ساحة الحجاز", 0, 24, "خدمات بريدية وسجل عدلي وبيان عائلي"],
-        [36.28389, 33.52036, "مكتب بريد الجلاء", "./assets/10.png", "الجلاء", 0, 24, "حوالات مالية ودفع رواتب المتقاعدين"],
+        [36.29481, 33.51238, "البريد المركزي", "../assets/10.png", "ساحة الحجاز", 0, 24, "خدمات بريدية وسجل عدلي وبيان عائلي"],
+        [36.28389, 33.52036, "مكتب بريد الجلاء", "../assets/10.png", "الجلاء", 0, 24, "حوالات مالية ودفع رواتب المتقاعدين"],
       ],
       telecom: [
-        [36.31833, 33.52365, "مركز خدمة MTN", "./assets/10.png", "ساحة العباسيين", 0, 24, "خدمات الخطوط والدعم الفني"],
-        [36.29716, 33.51292, "مركز خدمة SYRIATEL", "./assets/10.png", "الفيحاء", 0, 24, "خدمات الخطوط وتحديث البيانات"],
+        [36.31833, 33.52365, "مركز خدمة MTN", "../assets/10.png", "ساحة العباسيين", 0, 24, "خدمات الخطوط والدعم الفني"],
+        [36.29716, 33.51292, "مركز خدمة SYRIATEL", "../assets/10.png", "الفيحاء", 0, 24, "خدمات الخطوط وتحديث البيانات"],
       ],
     },
   },
@@ -239,18 +239,18 @@ const categoriesData = {
     ],
     locationSets: {
       departure_garages: [
-        [36.338846, 33.5388, "كراج البولمن", "./assets/10.png", "القابون", 0, 24, "انطلاق الرحلات اليومية لجميع المحافظات"],
-        [36.32508, 33.53011, "كراج العباسيين", "./assets/10.png", "العباسيين", 0, 24, "مركز انطلاق ريف دمشق والمحافظات"],
+        [36.338846, 33.5388, "كراج البولمن", "../assets/10.png", "القابون", 0, 24, "انطلاق الرحلات اليومية لجميع المحافظات"],
+        [36.32508, 33.53011, "كراج العباسيين", "../assets/10.png", "العباسيين", 0, 24, "مركز انطلاق ريف دمشق والمحافظات"],
       ],
       parking: [
-        [36.29101, 33.51949, "مراب الحمراء الطابقي", "./assets/10.png", "الصالحية", 0, 24, "مرآب طابقي لسيارات رواد السوق التجاري"],
-        [36.362926, 33.51216, "مرآب النعناع الطابقي للسيارات", "./assets/10.png", "الحلبوني", 0, 24, "مرآب طابقي في مركز الحلبوني"],
+        [36.29101, 33.51949, "مراب الحمراء الطابقي", "../assets/10.png", "الصالحية", 0, 24, "مرآب طابقي لسيارات رواد السوق التجاري"],
+        [36.362926, 33.51216, "مرآب النعناع الطابقي للسيارات", "../assets/10.png", "الحلبوني", 0, 24, "مرآب طابقي في مركز الحلبوني"],
       ],
       bus_stops: [
-        [36.288942, 33.513489, "موقف باص جسر الحرية", "./assets/10.png", "البرامكة", 0, 24, "محطة رئيسية للميكروباصات والباصات"],
+        [36.288942, 33.513489, "موقف باص جسر الحرية", "../assets/10.png", "البرامكة", 0, 24, "محطة رئيسية للميكروباصات والباصات"],
       ],
       traffic_nodes: [
-        [36.27653, 33.51413, "عقدة ساحة الأمويين", "./assets/10.png", "البرامكة", 0, 24, "تربط مركز المدينة بالطرق السريعة"],
+        [36.27653, 33.51413, "عقدة ساحة الأمويين", "../assets/10.png", "البرامكة", 0, 24, "تربط مركز المدينة بالطرق السريعة"],
       ],
     },
   },
@@ -263,20 +263,20 @@ const categoriesData = {
     ],
     locationSets: {
       squares: [
-        [36.29518, 33.51637, "ساحة يوسف العظمة", "./assets/10.png", "الصالحية", 0, 24, "أحد الساحات الهامة في وسط العاصمة دمشق"],
-        [36.31522, 33.51375, "ساحة باب توما", "./assets/10.png", "باب توما", 0, 24, "ساحة تحيط بباب توما الأثري"],
+        [36.29518, 33.51637, "ساحة يوسف العظمة", "../assets/10.png", "الصالحية", 0, 24, "أحد الساحات الهامة في وسط العاصمة دمشق"],
+        [36.31522, 33.51375, "ساحة باب توما", "../assets/10.png", "باب توما", 0, 24, "ساحة تحيط بباب توما الأثري"],
       ],
       bridges: [
-        [36.29549, 33.51387, "جسر فكتوريا", "./assets/10.png", "شكري القوتلي", 0, 24, "أول جسر للسيارات بجانب بردى"],
-        [36.30198, 33.526, "جسر العدوي", "./assets/10.png", "العدوي", 0, 24, "صلة وصل رئيسية بين وسط المدينة ومداخلها"],
+        [36.29549, 33.51387, "جسر فكتوريا", "../assets/10.png", "شكري القوتلي", 0, 24, "أول جسر للسيارات بجانب بردى"],
+        [36.30198, 33.526, "جسر العدوي", "../assets/10.png", "العدوي", 0, 24, "صلة وصل رئيسية بين وسط المدينة ومداخلها"],
       ],
       parks: [
-        [36.26805, 33.52251, "حديقة النيربين", "./assets/10.png", "ساحة ذي قار", 0, 24, "حديقة عريقة بإطلالة بانورامية"],
-        [36.27997, 33.51762, "حديقة الجاحظ", "./assets/10.png", "ابو رمانة", 0, 24, "أشهر المعالم الطبيعية في حي أبو رمانة"],
+        [36.26805, 33.52251, "حديقة النيربين", "../assets/10.png", "ساحة ذي قار", 0, 24, "حديقة عريقة بإطلالة بانورامية"],
+        [36.27997, 33.51762, "حديقة الجاحظ", "../assets/10.png", "ابو رمانة", 0, 24, "أشهر المعالم الطبيعية في حي أبو رمانة"],
       ],
       tunnels: [
-        [36.26288, 33.51072, "نفق المواساة", "./assets/10.png", "المواساة", 0, 24, "مشروع حيوي لتخفيف الازدحام في المنطقة الطبية"],
-        [36.27589, 33.51344, "نفق المزة", "./assets/10.png", "الامويين", 0, 24, "يربط بين أوتوستراد المزة وساحة الأمويين"],
+        [36.26288, 33.51072, "نفق المواساة", "../assets/10.png", "المواساة", 0, 24, "مشروع حيوي لتخفيف الازدحام في المنطقة الطبية"],
+        [36.27589, 33.51344, "نفق المزة", "../assets/10.png", "الامويين", 0, 24, "يربط بين أوتوستراد المزة وساحة الأمويين"],
       ],
     },
   },
@@ -288,14 +288,14 @@ const categoriesData = {
     ],
     locationSets: {
       police: [
-        [36.29675, 33.49185, "قسم شرطة الميدان", "./assets/10.png", "الميدان", 0, 24, "حفظ الأمن والنظام ومكافحة الجرائم"],
-        [36.27847, 33.50048, "قسم شرطة كفرسوسة", "./assets/10.png", "كفرسوسة", 0, 24, "حفظ النظام العام وتنفيذ المذكرات القضائية"],
+        [36.29675, 33.49185, "قسم شرطة الميدان", "../assets/10.png", "الميدان", 0, 24, "حفظ الأمن والنظام ومكافحة الجرائم"],
+        [36.27847, 33.50048, "قسم شرطة كفرسوسة", "../assets/10.png", "كفرسوسة", 0, 24, "حفظ النظام العام وتنفيذ المذكرات القضائية"],
       ],
       checkpoints: [
-        [36.3162, 33.49092, "نقطة تفتيش مخيم جرمانا", "./assets/10.png", "المتحلق الجنوبي", 0, 24, "نقطة مراقبة أمنية"],
+        [36.3162, 33.49092, "نقطة تفتيش مخيم جرمانا", "../assets/10.png", "المتحلق الجنوبي", 0, 24, "نقطة مراقبة أمنية"],
       ],
       civil_defense: [
-        [36.32985, 33.50548, "مديرية الدفاع المدني", "./assets/10.png", "المتحلق الجنوبي", 0, 24, "عمليات الإنقاذ والإسعاف والإطفاء"],
+        [36.32985, 33.50548, "مديرية الدفاع المدني", "../assets/10.png", "المتحلق الجنوبي", 0, 24, "عمليات الإنقاذ والإسعاف والإطفاء"],
       ],
     },
   },
@@ -308,17 +308,17 @@ const categoriesData = {
     ],
     locationSets: {
       universities: [
-        [36.31796, 33.49318, "كلية الهندسة المعلوماتية", "./assets/10.png", "الهمك", 0, 24, "أول كلية تخصصية بالمعلوماتية بجامعة دمشق"],
-        [36.2882, 33.51083, "جامعة دمشق", "./assets/10.png", "البرامكة", 0, 24, "أقدم وأكبر جامعة حكومية في سوريا"],
+        [36.31796, 33.49318, "كلية الهندسة المعلوماتية", "../assets/10.png", "الهمك", 0, 24, "أول كلية تخصصية بالمعلوماتية بجامعة دمشق"],
+        [36.2882, 33.51083, "جامعة دمشق", "../assets/10.png", "البرامكة", 0, 24, "أقدم وأكبر جامعة حكومية في سوريا"],
       ],
       institutes: [
-        [36.2956, 33.51958, "معهد الادريسي للعلوم و اللغات", "./assets/10.png", "الصالحية", 0, 24, "دورات تدريبية للغات والمجالات المهنية"],
+        [36.2956, 33.51958, "معهد الادريسي للعلوم و اللغات", "../assets/10.png", "الصالحية", 0, 24, "دورات تدريبية للغات والمجالات المهنية"],
       ],
       schools: [
-        [36.298094, 33.512644, "مدرسة ابن كثير الابتدائية", "./assets/10.png", "المزة", 0, 24, "مدرسة تعليم رسمي للمرحلة الابتدائية"],
+        [36.298094, 33.512644, "مدرسة ابن كثير الابتدائية", "../assets/10.png", "المزة", 0, 24, "مدرسة تعليم رسمي للمرحلة الابتدائية"],
       ],
       kindergartens: [
-        [36.29245, 33.52786, "روضة الفرسان الصغار", "./assets/10.png", "الميسات", 0, 24, "تعليم وترفيه وبناء القيم للأطفال"],
+        [36.29245, 33.52786, "روضة الفرسان الصغار", "../assets/10.png", "الميسات", 0, 24, "تعليم وترفيه وبناء القيم للأطفال"],
       ],
     },
   },
@@ -332,22 +332,22 @@ const categoriesData = {
     ],
     locationSets: {
       archaeological_sites: [
-        [36.30688, 33.51031, "قصر العظم", "./assets/10.png", "الحميدية", 0, 24, "تحفة معمارية دمشقية من القرن الثامن عشر"],
-        [36.30114, 33.51161, "قلعة دمشق", "./assets/10.png", "مركز المدينة", 0, 24, "حصن أثري بارز في الركن الشمالي الغربي للأسوار"],
+        [36.30688, 33.51031, "قصر العظم", "../assets/10.png", "الحميدية", 0, 24, "تحفة معمارية دمشقية من القرن الثامن عشر"],
+        [36.30114, 33.51161, "قلعة دمشق", "../assets/10.png", "مركز المدينة", 0, 24, "حصن أثري بارز في الركن الشمالي الغربي للأسوار"],
       ],
       museums: [
-        [36.28988, 33.51281, "المتحف الوطني", "./assets/10.png", "شكري القوتلي", 0, 24, "عميد المتاحف السورية وأكبرها"],
+        [36.28988, 33.51281, "المتحف الوطني", "../assets/10.png", "شكري القوتلي", 0, 24, "عميد المتاحف السورية وأكبرها"],
       ],
       hotels: [
-        [36.29341, 33.51696, "فندق الشام", "./assets/10.png", "ميسلون", 0, 24, "فندق 5 نجوم استراتيجي في قلب العاصمة"],
-        [36.29157, 33.5141, "فندق فور سيزون", "./assets/10.png", "شكري القوتلي", 0, 24, "أفخم فنادق العاصمة بإطلالة على بردى وقاسيون"],
+        [36.29341, 33.51696, "فندق الشام", "../assets/10.png", "ميسلون", 0, 24, "فندق 5 نجوم استراتيجي في قلب العاصمة"],
+        [36.29157, 33.5141, "فندق فور سيزون", "../assets/10.png", "شكري القوتلي", 0, 24, "أفخم فنادق العاصمة بإطلالة على بردى وقاسيون"],
       ],
       markets: [
-        [36.3037, 33.51126, "سوق الحميدية", "./assets/10.png", "الحميدية", 0, 24, "أشهر الأسواق التراثية بطول 600 متر"],
+        [36.3037, 33.51126, "سوق الحميدية", "../assets/10.png", "الحميدية", 0, 24, "أشهر الأسواق التراثية بطول 600 متر"],
       ],
       tourist_facilities: [
-        [36.2914, 33.51227, "التكية السليمانية", "./assets/10.png", "شكري القوتلي", 0, 24, "تحفة معمارية عثمانية شيدها سنان باشا"],
-        [36.28721, 33.54627, "جبل قاسيون", "./assets/10.png", "جبل قاسيون", 0, 24, "إطلالة بانورامية كاشفة لأحياء دمشق كاملة"],
+        [36.2914, 33.51227, "التكية السليمانية", "../assets/10.png", "شكري القوتلي", 0, 24, "تحفة معمارية عثمانية شيدها سنان باشا"],
+        [36.28721, 33.54627, "جبل قاسيون", "../assets/10.png", "جبل قاسيون", 0, 24, "إطلالة بانورامية كاشفة لأحياء دمشق كاملة"],
       ],
     },
   },
@@ -393,8 +393,8 @@ let activeMarkers = [];
 let activePopup = null;
 let activePlacePanel = null;
 
-let activeCategory = "damascus_facilities";
-let activeFilter = "service_departments";
+let activeCategory = null;
+let activeFilter = null;
 let activeDistrict = "all";
 let activeSecondary = "all";
 let userPosition = null;
@@ -471,7 +471,7 @@ function clearMarkers() {
     activePopup.remove();
     activePopup = null;
   }
-  hidePlacePanel();
+  //hidePlacePanel();
 }
 
 function highlightMarker(targetIndex) {
@@ -483,147 +483,192 @@ function highlightMarker(targetIndex) {
     }
   });
 }
-
-function renderMarkers(locations) {
+function renderMarkers(locations, shouldFitBounds = true) {
   clearMarkers();
-  const filtered = applyFilters(locations);
-  const iconStyle = getIconStyle();
 
-  filtered.forEach((loc, index) => {
-    const [lng, lat, name, img, district, openH, closeH, description] = loc;
-    const el = createMarkerEl(iconStyle);
-    el.style.animationDelay = `${index * 60}ms`;
-    const marker = new maplibregl.Marker({ element: el, anchor: "bottom" })
+  const filteredLocations = applyFilters(locations);
+
+  if (!filteredLocations.length) return;
+
+  const bounds = new maplibregl.LngLatBounds();
+
+  filteredLocations.forEach((location, index) => {
+    const [
+      lng,
+      lat,
+      name,
+      img,
+      district,
+      openH,
+      closeH,
+      description
+    ] = location;
+
+    bounds.extend([lng, lat]);
+
+    // الحصول على شكل الأيقونة الصحيح
+    const markerEl = createMarkerEl(
+      getIconStyle()
+    );
+
+    markerEl.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      highlightMarker(index);
+
+      showPlaceDetails(
+        lng,
+        lat,
+        name,
+        img,
+        district,
+        openH,
+        closeH,
+        description
+      );
+    });
+
+    const marker = new maplibregl.Marker({
+      element: markerEl,
+      anchor: "bottom"
+    })
       .setLngLat([lng, lat])
       .addTo(map);
 
-    el.addEventListener("click", (e) => {
-      e.stopPropagation();
-      highlightMarker(index);
-      showPlaceDetails(lng, lat, name, img, district, openH, closeH, description);
+    activeMarkers.push({
+      marker,
+      el: markerEl,
+      location,
+      index
     });
-
-    activeMarkers.push({ marker, el, loc, index });
   });
-}
 
+  if (!shouldFitBounds) return;
+
+  if (filteredLocations.length === 1) {
+    map.flyTo({
+      center: [filteredLocations[0][0], filteredLocations[0][1]],
+      zoom: 15,
+      duration: 800
+    });
+  } else {
+    map.fitBounds(bounds, {
+      padding: 90,
+      maxZoom: 15,
+      duration: 900
+    });
+  }
+}
 function ensurePlacePanel() {
   if (activePlacePanel) return activePlacePanel;
-  const mapWrapper = document.getElementById("map-container");
+
   const panel = document.createElement("aside");
+
   panel.className = "google-place-panel";
   panel.dir = "rtl";
+  panel.setAttribute("aria-hidden", "true");
+
   panel.innerHTML = `
-    <button class="google-place-panel__close" type="button" aria-label="إغلاق">×</button>
-    <img class="google-place-panel__image" src="${PLACEHOLDER}" alt="">
+    <button
+      class="google-place-panel__close"
+      type="button"
+      aria-label="إغلاق"
+    >✕</button>
+
+    <div class="google-place-panel__img-wrapper">
+      <img
+        class="google-place-panel__image"
+        src="${PLACEHOLDER}"
+        alt=""
+      >
+    </div>
+
     <div class="google-place-panel__body">
       <h2 class="google-place-panel__title"></h2>
+
       <div class="google-place-panel__meta">
-        <span class="google-place-panel__category"></span>
         <span class="google-place-panel__status"></span>
       </div>
+
       <div class="google-place-panel__row">
         <p class="google-place-panel__district"></p>
       </div>
+
       <div class="google-place-panel__row">
         <p class="google-place-panel__hours"></p>
       </div>
+
       <p class="google-place-panel__description"></p>
     </div>
   `;
 
-  panel.querySelector(".google-place-panel__close").addEventListener("click", hidePlacePanel);
-  mapWrapper.appendChild(panel);
+  panel
+    .querySelector(".google-place-panel__close")
+    .addEventListener("click", hidePlacePanel);
+
+  document.body.appendChild(panel); 
   activePlacePanel = panel;
+
   return panel;
 }
 
 function hidePlacePanel() {
   if (!activePlacePanel) return;
+
   activePlacePanel.classList.remove("is-visible");
+  activePlacePanel.setAttribute("aria-hidden", "true");
+
+  activeMarkers.forEach(({ el }) => {
+    el.classList.remove("highlighted");
+  });
 }
 
-function showPlaceDetails(lng, lat, name, image, district, openH, closeH, description) {
-  if (activePopup) {
-    activePopup.remove();
-    activePopup = null;
-  }
-
+function showPlaceDetails(
+  lng,
+  lat,
+  name,
+  image,
+  district,
+  openH,
+  closeH,
+  description
+) {
   const panel = ensurePlacePanel();
   const isOpen = isOpenNow(openH, closeH);
-  panel.querySelector(".google-place-panel__image").src = image || PLACEHOLDER;
+
+  panel.querySelector(".google-place-panel__image").src =
+    image || PLACEHOLDER;
+
   panel.querySelector(".google-place-panel__image").alt = name;
   panel.querySelector(".google-place-panel__title").innerText = name;
-  panel.querySelector(".google-place-panel__category").innerText = district || "دمشق";
-  panel.querySelector(".google-place-panel__status").innerText = isOpen ? "مفتوح الآن" : "مغلق الآن";
-  panel.querySelector(".google-place-panel__status").classList.toggle("is-open", isOpen);
-  panel.querySelector(".google-place-panel__district").innerText = `المنطقة: ${district || "غير محدد"}`;
+
+
+  const status = panel.querySelector(".google-place-panel__status");
+
+  status.innerText = isOpen ? "مفتوح الآن" : "مغلق الآن";
+  status.classList.toggle("is-open", isOpen);
+
+  panel.querySelector(".google-place-panel__district").innerText =
+    `المنطقة: ${district || "غير محدد"}`;
+
   panel.querySelector(".google-place-panel__hours").innerText =
-    openH === 0 && closeH === 24 ? "مفتوح على مدار الساعة" : `من ${openH}:00 حتى ${closeH}:00`;
-  panel.querySelector(".google-place-panel__description").innerText = description || "";
+    openH === 0 && closeH === 24
+      ? "مفتوح على مدار الساعة"
+      : `من ${openH}:00 حتى ${closeH}:00`;
+
+  panel.querySelector(".google-place-panel__description").innerText =
+    description || "";
+
   panel.classList.add("is-visible");
+  panel.setAttribute("aria-hidden", "false");
 
-  map.flyTo({
-    center: [lng, lat],
-    zoom: Math.max(map.getZoom(), 15),
-    duration: 900,
-  });
-}
-
-function renderImageCards(locations) {
-  const container = document.getElementById("imageCardsContainer");
-  container.innerHTML = "";
-  const filtered = applyFilters(locations);
-
-  if (filtered.length === 0) {
-    const empty = document.createElement("p");
-    empty.style.cssText = "color:#aaa;padding:1rem;text-align:center;width:100%;";
-    empty.innerText = "لا توجد نتائج";
-    container.appendChild(empty);
-    renderMarkers([]);
-    return;
-  }
-
-  filtered.forEach((loc, index) => {
-    const [lng, lat, name, img, district, openH, closeH, description] = loc;
-    const card = document.createElement("div");
-    card.className = "image_card";
-    card.title = name;
-
-    const image = document.createElement("img");
-    image.src = img;
-    image.alt = name;
-    image.onerror = () => { image.src = PLACEHOLDER; };
-
-    const label = document.createElement("p");
-    label.innerText = name;
-
-    card.appendChild(image);
-    card.appendChild(label);
-
-    if (activeCategory === "health" && activeSecondary === "nearest" && userPosition) {
-      const km = distanceKm(userPosition.lat, userPosition.lng, lat, lng);
-      const distEl = document.createElement("span");
-      distEl.style.cssText = "font-size:.65rem;color:#222;display:block;";
-      distEl.innerText = km < 1 ? `${Math.round(km * 1000)} م` : `${km.toFixed(1)} كم`;
-      label.appendChild(distEl);
-    }
-
-    card.addEventListener("click", () => {
-      document.querySelectorAll(".image_card").forEach((c) => {
-        c.style.borderColor = "transparent";
-      });
-      card.style.borderColor = "#fae5af";
-
-      map.flyTo({ center: [lng, lat], zoom: 16, duration: 1200 });
-      highlightMarker(index);
-      showPlaceDetails(lng, lat, name, img, district, openH, closeH, description);
-    });
-
-    container.appendChild(card);
-  });
-
-  renderMarkers(locations);
+map.flyTo({
+  center: [lng, lat],
+  zoom: 16,
+  speed: 1.2,
+  curve: 1.4,
+  essential: true
+});
 }
 
 function requestLocation(cb) {
@@ -643,17 +688,11 @@ function requestLocation(cb) {
     }
   );
 }
-
-// بناء شريط الفلاتر العلوي مع الحفاظ على زر الثلاث شخطات
 function renderTopFilters(rawLocations) {
   const bar = document.getElementById("topFiltersBar");
   if (!bar) return;
 
-  const existingToggleBtn = bar.querySelector("#toggleMenuBtn");
-  bar.innerHTML = "";
-  if (existingToggleBtn) {
-    bar.appendChild(existingToggleBtn);
-  }
+  bar.querySelectorAll(".filter_select_wrap").forEach((el) => el.remove());
 
   const districts = ["all", ...new Set(rawLocations.map((l) => l[4]))];
   const distWrap = document.createElement("div");
@@ -675,14 +714,13 @@ function renderTopFilters(rawLocations) {
 
   distSel.addEventListener("change", () => {
     activeDistrict = distSel.value;
-    renderImageCards(rawLocations);
+    renderMarkers(rawLocations, true);
   });
 
   distWrap.appendChild(distLabel);
   distWrap.appendChild(distSel);
   bar.appendChild(distWrap);
 
-  // فلتر الحالة لقسم الصحة
   if (activeCategory === "health") {
     const secWrap = document.createElement("div");
     secWrap.className = "filter_select_wrap";
@@ -710,9 +748,9 @@ function renderTopFilters(rawLocations) {
     secSel.addEventListener("change", () => {
       activeSecondary = secSel.value;
       if (activeSecondary === "nearest" && !userPosition) {
-        requestLocation(() => renderImageCards(rawLocations));
+        requestLocation(() => renderMarkers(rawLocations, true));
       } else {
-        renderImageCards(rawLocations);
+        renderMarkers(rawLocations, true);
       }
     });
 
@@ -721,9 +759,9 @@ function renderTopFilters(rawLocations) {
     bar.appendChild(secWrap);
   }
 }
-
 function renderAccordionNav() {
   const container = document.getElementById("categoryAccordion");
+  const sideMenu = document.getElementById("main-container");
   if (!container) return;
   container.innerHTML = "";
 
@@ -749,18 +787,23 @@ function renderAccordionNav() {
       subBtn.className = `sub_filter_btn ${isSubActive ? "active" : ""}`;
       subBtn.innerText = filter.label;
 
+      // عند النقر على خيار فرعي (مثل "وزارات"):
       subBtn.addEventListener("click", (e) => {
         e.stopPropagation();
         document.querySelectorAll(".sub_filter_btn").forEach((b) => b.classList.remove("active"));
         subBtn.classList.add("active");
 
+        activeCategory = catKey;
         activeFilter = filter.value;
         activeDistrict = "all";
         activeSecondary = "all";
 
         const locs = catData.locationSets[activeFilter] || [];
         renderTopFilters(locs);
-        renderImageCards(locs);
+        renderMarkers(locs, true);
+
+        // // إغلاق السايد بار تلقائياً لرؤية الخريطة
+        // if (sideMenu) sideMenu.classList.remove("is-open");
       });
 
       subList.appendChild(subBtn);
@@ -790,7 +833,9 @@ function renderAccordionNav() {
 
         const locs = catData.locationSets[activeFilter] || [];
         renderTopFilters(locs);
-        renderImageCards(locs);
+        renderMarkers(locs, true);
+
+        if (sideMenu) sideMenu.classList.remove("is-open");
       }
     });
 
@@ -802,12 +847,13 @@ function renderAccordionNav() {
 
 function initializeGuideMapUi() {
   renderAccordionNav();
-  const initLocs = categoriesData[activeCategory].locationSets[activeFilter] || [];
-  renderTopFilters(initLocs);
-  renderImageCards(initLocs);
+  const bar = document.getElementById("topFiltersBar");
+  if (bar) {
+    bar.querySelectorAll(".filter_select_wrap").forEach((el) => el.remove());
+  }
+  clearMarkers();
 }
 
-// إعداد فتح وإغلاق السايد بار عبر زر الـ 3 شخطات
 function setupSidebarToggle() {
   const toggleBtn = document.getElementById("toggleMenuBtn");
   const sideMenu = document.getElementById("main-container");
@@ -820,38 +866,26 @@ function setupSidebarToggle() {
   };
 
   document.addEventListener("click", function (e) {
-    if (sideMenu.classList.contains("is-open") && !sideMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+    if (
+      sideMenu.classList.contains("is-open") &&
+      !sideMenu.contains(e.target) &&
+      !toggleBtn.contains(e.target)
+    ) {
       sideMenu.classList.remove("is-open");
     }
   });
 }
 
-// إعداد زر إخفاء وإظهار البطاقات من السايد بار
-function setupCardsToggle() {
-  const toggleCardsBtn = document.getElementById("toggleCardsBtn");
-  const cardsContainer = document.getElementById("imageCardsContainer");
-
-  if (!toggleCardsBtn || !cardsContainer) return;
-
-  toggleCardsBtn.onclick = function (e) {
-    e.stopPropagation();
-    const isHidden = cardsContainer.classList.toggle("cards-hidden");
-    const btnText = toggleCardsBtn.querySelector(".btn_text");
-    const btnIcon = toggleCardsBtn.querySelector(".btn_icon");
-
-    if (isHidden) {
-      if (btnText) btnText.innerText = "إظهار البطاقات";
-      if (btnIcon) btnIcon.innerText = "🖼️";
-    } else {
-      if (btnText) btnText.innerText = "إخفاء البطاقات";
-      if (btnIcon) btnIcon.innerText = "👁️";
-    }
-  };
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", setupSidebarToggle);
+} else {
+  setupSidebarToggle();
 }
+
+
 
 map.on("load", () => {
   map.resize();
   initializeGuideMapUi();
   setupSidebarToggle();
-  setupCardsToggle();
 });
