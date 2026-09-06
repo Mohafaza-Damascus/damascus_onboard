@@ -68,14 +68,31 @@
   <body dir="rtl">
     <div class="thirdsec">
       <div class="map_container">
-        <!-- الناف بار الجانبي (قائمة قابلة للتمدد والطي) -->
+
+        
+        
+
         <div class="map_left_side_menu" id="main-container">
+          
+          <button id="toggleCardsBtn" class="toggle_cards_sidebar_btn" type="button">
+            <span class="btn_icon">👁️</span>
+            <span class="btn_text">إخفاء البطاقات</span>
+          </button>
+          
           <div class="accordion_nav_wrapper" id="categoryAccordion"></div>
         </div>
 
         <div class="map_main_container">
-          <!-- شريط الفلاتر العلوي (المنطقة + الحالة لقسم الصحة) -->
-          <div class="top_filters_bar" id="topFiltersBar"></div>
+
+          
+          <div class="top_filters_bar" id="topFiltersBar">
+            <button id="toggleMenuBtn" class="menu_toggle_btn" type="button" aria-label="فتح القائمة">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+
 
           <!-- مساحة الخريطة -->
           <div class="map_wrapper" id="map-container">

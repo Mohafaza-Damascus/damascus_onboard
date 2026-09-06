@@ -644,13 +644,17 @@ function requestLocation(cb) {
   );
 }
 
-// بناء شريط الفلاتر العلوي (المنطقة + شرط إظهار الحالة لقسم الصحة)
+// بناء شريط الفلاتر العلوي مع الحفاظ على زر الثلاث شخطات
 function renderTopFilters(rawLocations) {
   const bar = document.getElementById("topFiltersBar");
   if (!bar) return;
-  bar.innerHTML = "";
 
-  // 1. فلتر المنطقة (يظهر لجميع الأقسام)
+  const existingToggleBtn = bar.querySelector("#toggleMenuBtn");
+  bar.innerHTML = "";
+  if (existingToggleBtn) {
+    bar.appendChild(existingToggleBtn);
+  }
+
   const districts = ["all", ...new Set(rawLocations.map((l) => l[4]))];
   const distWrap = document.createElement("div");
   distWrap.className = "filter_select_wrap";
@@ -678,7 +682,7 @@ function renderTopFilters(rawLocations) {
   distWrap.appendChild(distSel);
   bar.appendChild(distWrap);
 
-  // 2. فلتر الحالة (يظهر حصراً عند اختيار قسم الصحة)
+  // فلتر الحالة لقسم الصحة
   if (activeCategory === "health") {
     const secWrap = document.createElement("div");
     secWrap.className = "filter_select_wrap";
@@ -718,7 +722,6 @@ function renderTopFilters(rawLocations) {
   }
 }
 
-// بناء القائمة الجانبية المتمددة (Accordion Nav)
 function renderAccordionNav() {
   const container = document.getElementById("categoryAccordion");
   if (!container) return;
@@ -804,4 +807,51 @@ function initializeGuideMapUi() {
   renderImageCards(initLocs);
 }
 
-map.on("load", initializeGuideMapUi);
+// إعداد فتح وإغلاق السايد بار عبر زر الـ 3 شخطات
+function setupSidebarToggle() {
+  const toggleBtn = document.getElementById("toggleMenuBtn");
+  const sideMenu = document.getElementById("main-container");
+
+  if (!toggleBtn || !sideMenu) return;
+
+  toggleBtn.onclick = function (e) {
+    e.stopPropagation();
+    sideMenu.classList.toggle("is-open");
+  };
+
+  document.addEventListener("click", function (e) {
+    if (sideMenu.classList.contains("is-open") && !sideMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+      sideMenu.classList.remove("is-open");
+    }
+  });
+}
+
+// إعداد زر إخفاء وإظهار البطاقات من السايد بار
+function setupCardsToggle() {
+  const toggleCardsBtn = document.getElementById("toggleCardsBtn");
+  const cardsContainer = document.getElementById("imageCardsContainer");
+
+  if (!toggleCardsBtn || !cardsContainer) return;
+
+  toggleCardsBtn.onclick = function (e) {
+    e.stopPropagation();
+    const isHidden = cardsContainer.classList.toggle("cards-hidden");
+    const btnText = toggleCardsBtn.querySelector(".btn_text");
+    const btnIcon = toggleCardsBtn.querySelector(".btn_icon");
+
+    if (isHidden) {
+      if (btnText) btnText.innerText = "إظهار البطاقات";
+      if (btnIcon) btnIcon.innerText = "🖼️";
+    } else {
+      if (btnText) btnText.innerText = "إخفاء البطاقات";
+      if (btnIcon) btnIcon.innerText = "👁️";
+    }
+  };
+}
+
+map.on("load", () => {
+  map.resize();
+  initializeGuideMapUi();
+  setupSidebarToggle();
+  setupCardsToggle();
+});
