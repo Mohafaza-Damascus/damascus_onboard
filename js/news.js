@@ -47,6 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ? 3
       : page.classList.contains("news-page--model-4")
         ? 4
+         : page.classList.contains("news-page--model-5")
+          ? 5
         : 0;
 
   if (!model) return;
@@ -255,5 +257,250 @@ document.addEventListener("DOMContentLoaded", () => {
     render();
   }
 
+  if (model === 5) {
+
+  const cardsPerPage = 6;
+  let currentPage = 1;
+
+  const pagination = document.querySelector("#newsPagination");
+
+  function getActiveCards() {
+
+    const activeTab = document.querySelector(
+      ".news-page--model-5 .tab-btn.active"
+    );
+
+    if (!activeTab) {
+      return [];
+    }
+
+    const filter = activeTab.dataset.filter;
+
+    if (filter === "all") {
+      return Array.from(
+        document.querySelectorAll(
+          ".news-page--model-5 .news-card--model-5"
+        )
+      );
+    }
+
+    const group = document.querySelector(
+      `.news-page--model-5 .news-group[data-category="${filter}"]`
+    );
+
+    if (!group) {
+      return [];
+    }
+
+    return Array.from(
+      group.querySelectorAll(".news-card--model-5")
+    );
+  }
+
+
+  function renderPagination() {
+
+    if (!pagination) {
+      return;
+    }
+
+    const cards = getActiveCards();
+
+    const totalPages = Math.ceil(
+      cards.length / cardsPerPage
+    );
+
+
+    /*
+     * إخفاء كل الكروت
+     */
+    document
+      .querySelectorAll(
+        ".news-page--model-5 .news-card--model-5"
+      )
+      .forEach((card) => {
+        card.style.display = "none";
+      });
+
+
+    /*
+     * عرض 6 كروت فقط
+     */
+    const start = (currentPage - 1) * cardsPerPage;
+    const end = start + cardsPerPage;
+
+    cards.slice(start, end).forEach((card) => {
+      card.style.display = "";
+    });
+
+
+    /*
+     * Pagination
+     */
+    pagination.innerHTML = "";
+
+
+    if (totalPages <= 1) {
+      pagination.style.display = "none";
+      return;
+    }
+
+
+    pagination.style.display = "flex";
+
+
+    function addPage(number) {
+
+      const button = document.createElement("button");
+
+      button.type = "button";
+      button.className = "news-pagination__number";
+
+      if (number === currentPage) {
+        button.classList.add("is-active");
+      }
+
+      button.textContent = number;
+
+      button.addEventListener("click", () => {
+
+        currentPage = number;
+
+        renderPagination();
+
+      });
+
+      pagination.appendChild(button);
+    }
+
+
+    function addDots() {
+
+      const dots = document.createElement("span");
+
+      dots.className = "news-pagination__dots";
+      dots.textContent = "…";
+
+      pagination.appendChild(dots);
+    }
+
+
+    /*
+     * الصفحات
+     */
+
+    if (totalPages <= 10) {
+
+      for (let i = 1; i <= totalPages; i++) {
+        addPage(i);
+      }
+
+      return;
+    }
+
+
+    /*
+     * البداية:
+     *
+     * 1 2 3 4 5 6 7 8 9 ... 100
+     */
+    if (currentPage <= 5) {
+
+      for (let i = 1; i <= 9; i++) {
+        addPage(i);
+      }
+
+      addDots();
+
+      addPage(totalPages);
+
+      return;
+    }
+
+
+    /*
+     * النهاية:
+     *
+     * 1 ... 92 93 94 95 96 97 98 99 100
+     */
+    if (currentPage >= totalPages - 4) {
+
+      addPage(1);
+
+      addDots();
+
+      for (
+        let i = totalPages - 8;
+        i <= totalPages;
+        i++
+      ) {
+        addPage(i);
+      }
+
+      return;
+    }
+
+
+    /*
+     * المنتصف:
+     *
+     * 1 ... 46 47 48 49 50 51 52 53 54 ... 100
+     */
+    addPage(1);
+
+    addDots();
+
+    for (
+      let i = currentPage - 4;
+      i <= currentPage + 4;
+      i++
+    ) {
+      addPage(i);
+    }
+
+    addDots();
+
+    addPage(totalPages);
+  }
+
+
+  /*
+   * عند تغيير التاب
+   */
+  tabs.forEach((tab) => {
+
+    tab.addEventListener("click", () => {
+
+      currentPage = 1;
+
+      /*
+       * applyFilter موجود عندك أصلاً
+       */
+      applyFilter(tab.dataset.filter);
+
+      renderPagination();
+
+    });
+
+  });
+
+
+  /*
+   * التشغيل أول مرة
+   */
+  const activeTab = document.querySelector(
+    ".news-page--model-5 .tab-btn.active"
+  );
+
+  if (activeTab) {
+
+    applyFilter(activeTab.dataset.filter);
+
+  }
+
+  renderPagination();
+}
+if (model !== 5) {
   newsGroups.forEach(createCarousel);
+}
 });
