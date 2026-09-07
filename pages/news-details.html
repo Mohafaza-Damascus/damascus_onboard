@@ -11,9 +11,9 @@
     <!-- CSS الأساسي للمنصة -->
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/news.css" />
-
     <!-- CSS خاص بصفحة تفاصيل الخبر -->
     <link rel="stylesheet" href="../css/news-details.css" />
+    <link rel="stylesheet" href="../css/news-details-related.css" />
   </head>
 
   <body>
@@ -41,11 +41,7 @@
              ========================================= -->
         <section class="news-details-header">
 
-          <h1 class="news-details-title">
-            استقبل السيد الرئيس أحمد الشرع اليوم في قصر الشعب بدمشق،
-            وزير الخارجية العراقي فؤاد حسين والوفد المرافق له،
-            بحضور وزير الخارجية والمغتربين أسعد الشيباني
-          </h1>
+          <h1 class="news-details-title" id="newsTitle"></h1>
 
 
           <div class="news-details-meta">
@@ -64,11 +60,10 @@
 
   <span>/</span>
 
-  <span class="news-details-breadcrumb-current">
-    استقبل السيد الرئيس أحمد الشرع اليوم في قصر الشعب بدمشق،
-    وزير الخارجية العراقي فؤاد حسين والوفد المرافق له،
-    بحضور وزير الخارجية والمغتربين أسعد الشيباني
-  </span>
+ <span
+    class="news-details-breadcrumb-current"
+    id="newsBreadcrumbTitle"
+></span>
 
   
 
@@ -81,7 +76,7 @@
                 alt=""
               />
 
-              <span>29-06-2026</span>
+              <span id="newsDate"></span>
 
             </div>
 
@@ -127,11 +122,11 @@
   <div class="news-details-image-wrapper">
 
     <img
-      id="activeImage"
-      src="../images/Rectangle 40.png"
-      alt="صورة الخبر"
-      class="news-details-main-image"
-    />
+    id="activeImage"
+    src=""
+    alt="صورة الخبر"
+    class="news-details-main-image"
+/>
 
 
     <!-- Dots داخل الصورة -->
@@ -181,21 +176,11 @@
 
   <!-- نص الخبر -->
 
-  <div class="news-details-text">
+<div class="news-details-text">
 
-    <p>
-      استقبل السيد الرئيس أحمد الشرع اليوم في قصر الشعب بدمشق،
-      وزير الخارجية العراقي فؤاد حسين والوفد المرافق له،
-      بحضور وزير الخارجية والمغتربين أسعد الشيباني.
-      وجرى خلال اللقاء بحث العلاقات الثنائية بين الجمهورية العربية
-      السورية وجمهورية العراق، وسبل تعزيز التعاون والتنسيق بين البلدين
-      في مختلف المجالات.
-      كما تناول اللقاء عددًا من الملفات والقضايا ذات الاهتمام المشترك،
-      والتأكيد على أهمية استمرار التواصل والتنسيق بما يخدم مصالح البلدين
-      والشعبين الشقيقين.
-    </p>
+    <p id="newsContent"></p>
 
-  </div>
+</div>
 
 
   <!-- مشاركة المقال -->
@@ -314,8 +299,8 @@
 <br>
 </section>
         <!-- =========================================
-             الأخبار ذات الصلة
-             ========================================= -->
+     الأخبار ذات الصلة
+     ========================================= -->
 <section class="news-details-related">
 
     <div class="news-details-related-header">
@@ -329,7 +314,6 @@
             </h2>
 
         </div>
-
 
         <a
             href="news-model-5.html"
@@ -354,18 +338,17 @@
 
 
         <!-- Previous -->
-<!-- Previous - جهة اليسار -->
-<button
-    type="button"
-    class="news-related-arrow news-related-arrow--prev"
-    id="relatedPrev"
-    aria-label="الأخبار السابقة"
->
-    <img
-        src="../images/Format=Stroke, Weight=Light.svg.svg"
-        alt=""
-    />
-</button>
+        <button
+            type="button"
+            class="news-related-arrow news-related-arrow--prev"
+            id="relatedPrev"
+            aria-label="الأخبار السابقة"
+        >
+            <img
+                src="../images/Format=Stroke, Weight=Light.svg"
+                alt=""
+            />
+        </button>
 
 
         <!-- Cards Viewport -->
@@ -376,202 +359,6 @@
                 class="news-grid news-grid--model-5 news-details-related-grid"
                 id="relatedNewsTrack"
             >
-
-
-                <!-- Card 1 -->
-                <article class="news-card news-card--model-5">
-
-                    <div class="news-card__img-wrap">
-
-                        <img
-                            src="../images/Rectangle 40.png"
-                            alt="خبر"
-                            class="news-card__img"
-                        />
-
-                    </div>
-
-
-                    <div class="news-card__body">
-
-                        <div class="news-card__date-wrap">
-
-                            <img
-                                src="../images/Calendar (1).png"
-                                alt=""
-                                class="calendar-icon"
-                            />
-
-                            <span class="news-card__date">
-                                30-06-2026
-                            </span>
-
-                        </div>
-
-
-                        <h3 class="news-card__title">
-                            استقبل السيد الرئيس أحمد الشرع اليوم في قصر الشعب
-                            عددًا من المسؤولين والوفود الرسمية
-                        </h3>
-
-
-                        <p class="news-card__text">
-                            جرى خلال اللقاء بحث عدد من الملفات والقضايا
-                            ذات الاهتمام المشترك.
-                        </p>
-
-                    </div>
-
-
-                    <a
-                        href="news-details.html"
-                        class="news-card__btn news-card__btn--model-5"
-                    >
-
-                        <span>
-                            اقرأ المزيد
-                        </span>
-
-                        <img
-                            src="../images/Advance.png"
-                            alt=""
-                            class="news-card__arrow"
-                        />
-
-                    </a>
-
-                </article>
-
-
-                <!-- Card 2 -->
-                <article class="news-card news-card--model-5">
-
-                    <div class="news-card__img-wrap">
-
-                        <img
-                            src="../images/Rectangle 40.png"
-                            alt="خبر"
-                            class="news-card__img"
-                        />
-
-                    </div>
-
-
-                    <div class="news-card__body">
-
-                        <div class="news-card__date-wrap">
-
-                            <img
-                                src="../images/Calendar (1).png"
-                                alt=""
-                                class="calendar-icon"
-                            />
-
-                            <span class="news-card__date">
-                                29-06-2026
-                            </span>
-
-                        </div>
-
-
-                        <h3 class="news-card__title">
-                            استقبل السيد الرئيس أحمد الشرع وزير الخارجية العراقي
-                            والوفد المرافق له
-                        </h3>
-
-
-                        <p class="news-card__text">
-                            بحث اللقاء العلاقات الثنائية وسبل تعزيز التعاون
-                            بين البلدين.
-                        </p>
-
-                    </div>
-
-
-                    <a
-                        href="news-details.html"
-                        class="news-card__btn news-card__btn--model-5"
-                    >
-
-                        <span>
-                            اقرأ المزيد
-                        </span>
-
-                        <img
-                            src="../images/Advance.png"
-                            alt=""
-                            class="news-card__arrow"
-                        />
-
-                    </a>
-
-                </article>
-
-
-                <!-- Card 3 -->
-                <article class="news-card news-card--model-5">
-
-                    <div class="news-card__img-wrap">
-
-                        <img
-                            src="../images/Rectangle 40.png"
-                            alt="خبر"
-                            class="news-card__img"
-                        />
-
-                    </div>
-
-
-                    <div class="news-card__body">
-
-                        <div class="news-card__date-wrap">
-
-                            <img
-                                src="../images/Calendar (1).png"
-                                alt=""
-                                class="calendar-icon"
-                            />
-
-                            <span class="news-card__date">
-                                28-06-2026
-                            </span>
-
-                        </div>
-
-
-                        <h3 class="news-card__title">
-                            لقاءات ومباحثات لتعزيز التعاون والتنسيق
-                            بين الجهات الحكومية
-                        </h3>
-
-
-                        <p class="news-card__text">
-                            استمرار العمل على تعزيز العلاقات والتعاون المشترك.
-                        </p>
-
-                    </div>
-
-
-                    <a
-                        href="news-details.html"
-                        class="news-card__btn news-card__btn--model-5"
-                    >
-
-                        <span>
-                            اقرأ المزيد
-                        </span>
-
-                        <img
-                            src="../images/Advance.png"
-                            alt=""
-                            class="news-card__arrow"
-                        />
-
-                    </a>
-
-                </article>
-
-
             </div>
 
         </div>
@@ -579,18 +366,17 @@
 
         <!-- Next -->
 
-   <!-- Next - جهة اليمين -->
-<button
-    type="button"
-    class="news-related-arrow news-related-arrow--next"
-    id="relatedNext"
-    aria-label="الأخبار التالية"
->
-    <img
-        src="../images/Format=Stroke, Weight=Light (1).svg"
-        alt=""
-    />
-</button>
+        <button
+            type="button"
+            class="news-related-arrow news-related-arrow--next"
+            id="relatedNext"
+            aria-label="الأخبار التالية"
+        >
+            <img
+                src="../images/Format=Stroke, Weight=Light (1).svg"
+                alt=""
+            />
+        </button>
 
     </div>
 

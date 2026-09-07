@@ -1,153 +1,846 @@
-const images = [
-  "../images/Rectangle 40.png",
-  "../images/Rectangle 40.png",
-  "../images/Rectangle 40.png",
-  "../images/Rectangle 40.png"
-];
+document.addEventListener("DOMContentLoaded", () => {
 
-let currentIndex = 0;
+    /* =====================================================
+       NEWS DATA
+       ===================================================== */
 
-const activeImage = document.getElementById("activeImage");
-const prevBtn = document.getElementById("prevSlide");
-const nextBtn = document.getElementById("nextSlide");
-const dotsContainer = document.getElementById("dotsContainer");
-const zoomBtn = document.getElementById("zoomImage");
+    const newsData = {
+
+        1: {
+            title: "نشاطات مديرية البيئة في محافظة دمشق",
+
+            date: "10-10-2025",
+
+            images: [
+                "../images/newdata/1.jpg",
+                "../images/newdata/download (1).jfif",
+                "../images/newdata/download.jfif"
+            ],
+
+            content:
+                "تعلن مديرية البيئة في محافظة دمشق عن فتح باب التسجيل في النادي الصيفي البيئي المجاني لعام 2026، وذلك ضمن مجموعة الأنشطة والبرامج التي تهدف إلى تعزيز الوعي البيئي لدى أبناء المجتمع وتشجيع المشاركة في المبادرات التي تسهم في الحفاظ على البيئة وتحسين جودة الحياة. ويتضمن البرنامج مجموعة من الأنشطة التوعوية والتعليمية والترفيهية، إلى جانب فعاليات ميدانية تهدف إلى تعريف المشاركين بأهمية المحافظة على النظافة العامة والمساحات الخضراء وترشيد استخدام الموارد. وتأتي هذه المبادرة في إطار اهتمام محافظة دمشق بتعزيز الأنشطة المجتمعية والبيئية وإتاحة فرص المشاركة أمام مختلف الفئات العمرية، بما يسهم في بناء سلوك بيئي مسؤول وتعزيز التعاون بين المؤسسات والمجتمع."
+        },
+
+        2: {
+            title: "مجموعة أنشطة محافظة دمشق",
+
+            date: "7-9-2025",
+
+            images: [
+                "../images/newdata/اعلان ازالة المولدات الكهربائية.jpg",
+                "../images/newdata/تشويقي مدينة المعارض.jpg",
+                "../images/newdata/حرف تحت الضوء.jpg",
+                "../images/newdata/مسابقة ثقافية عن مدينة دمشق.jpg",
+                "../images/newdata/نتشرف_بزيارتكم_في_جناح_محافظة_دمشق.jpg"
+            ],
+
+            content:
+                "انضموا إلينا في مسابقة ثقافية عن مدينة دمشق، حيث يمكنكم اختبار معلوماتكم عن تاريخ وثقافة دمشق والتعرف على جوانب جديدة من مدينتنا العريقة. استكشفوا الحرف التقليدية والفنون اليدوية التي تعكس تراثنا الثقافي الغني، وشاركوا في ورش العمل التي تعزز من مهاراتكم. لا تفوتوا الفرصة لزيارة جناحنا في مدينة المعارض، حيث نقدم لكم أحدث الابتكارات والمنتجات المحلية. كما نعمل على تحسين بيئتنا من خلال الإعلان عن مشاريع إزالة المولدات الكهربائية، مما يسهم في توفير الطاقة والحفاظ على البيئة."
+        },
+
+        3: {
+            title: "مجموعة قرارات محافظة دمشق",
+
+            date: "5-9-2025",
+
+            images: [
+                "../images/newdata/1.1.1.jpg",
+                "../images/newdata/1.1.jpg",
+                "../images/newdata/1.2.jpg",
+                "../images/newdata/1.3.jpg",
+                "../images/newdata/1 (2).jpg",
+                "../images/newdata/اعلان دعوة العاملين المفصولين.jpg",
+                "../images/newdata/المفرقعات والألعاب النارية.jpg",
+                "../images/newdata/تمديد_فترة_اغلاق_الكافيهات_لماريات_كاس_العالم.jpg"
+            ],
+
+            content:
+                "تتضمن هذه المجموعة سلسلة إعلانات وتنويهات رسمية صادرة عن محافظة دمشق ووزارة الإدارة المحلية، تغطي جوانب خدمية وتنظيمية وإدارية متنوعة؛ حيث تشمل إعلانات لمزاد علني لبيع أرض تجارية بدمر، واستكمال أعمال صيانة الطرق بالقابون، وتكريم مهندسي النظافة بالقدم، إلى جانب مواعيد مراجعة المتقدمين لوظائف عمال وسائقي نظافة بكفرسوسة، وبيان توزيع بدلات الإيجار لمستحقي السكن البديل بماروتا سيتي. كما تضم التحديث التنظيمي لغربي البرامكة، ودعوة العاملين المفصولين لمراجعة الإدارة لاستكمال المقابلات، بالإضافة إلى توجيهات أمنية وتنظيمية بمنع بيع المفرقعات والألعاب النارية، وتمديد ساعات إغلاق الكافيهات والمنشآت السياحية حتى 3 صباحاً لمتابعة مباريات كأس العالم 2026."
+        },
+
+        4: {
+            title: "مديرية التنمية المحلية",
+
+            date: "6-9-2025",
+
+            images: [
+                "../images/newdata/2.jpg",
+                "../images/newdata/3.JPG",
+                "../images/newdata/4.JPG",
+                "../images/newdata/5.JPG",
+                "../images/newdata/6.JPG"
+            ],
+
+            content:
+                "تقديراً لجهودهم المخلصة في الحفاظ على نظافة أحياء المدينة، كرّمت مديرية التنمية المحلية الأخوة مهندسي النظافة في مركز نظافة أمانة القدم. تأتي هذه المبادرة في إطار دعم وتعزيز كوادر النظافة وتشجيع الدور الحيوي الذي يقدمونه يومياً لخدمة المجتمع."
+        },
+
+        5: {
+            title: "الكهرباء في دمشق",
+
+            date: "8-9-2025",
+
+            images: [
+                "../images/newdata/DJI_20260902155618_0004_D.JPG",
+                "../images/newdata/DJI_20260902155643_0006_D.JPG",
+                "../images/newdata/DJI_20260902155714_0008_D.JPG",
+                "../images/newdata/DJI_20260902155723_0009_D.JPG",
+                "../images/newdata/IMG_20260902_110555.jpg"
+            ],
+
+            content:
+                "دعماً لواقع الكهرباء في حي القدم.. كهرباء دمشق قامت بمد خطوط توتر منخفض ووضع المركز بالخدمة، بما يعود بالنفع المثمر على الأهالي وتقديم الخدمات الأساسية في المنطقة."
+        },
+
+        6: {
+            title: "أعمال مديرية الإشراف في محافظة دمشق",
+
+            date: "10-9-2025",
+
+            images: [
+                "../images/newdata/2 (2).JPG",
+                "../images/newdata/3 (2).JPG",
+                "../images/newdata/4 (2).JPG",
+                "../images/newdata/5 (2).JPG",
+                "../images/newdata/6 (2).JPG",
+                "../images/newdata/7.JPG"
+            ],
+
+            content:
+                "في منطقة كفرسوسة.. قامت مديرية الصيانة بمحافظة دمشق بالتجهيز لأعمال تعبيد الطريق وتركيب المطريات، من أجل تقديم الخدمات الأساسية للسكان والأهالي."
+        },
+
+        7: {
+            title: "أعمال مديرية الصيانة في محافظة دمشق",
+
+            date: "11-9-2025",
+
+            images: [
+                "../images/newdata/2 (3).jpg",
+                "../images/newdata/3 (3).JPG",
+                "../images/newdata/4 (3).JPG",
+                "../images/newdata/5 (3).JPG",
+                "../images/newdata/6 (3).JPG",
+                "../images/newdata/7 (2).JPG"
+            ],
+
+            content:
+                "خدمتكم مستمرة.. ومديرية الإشراف بمحافظة دمشق تواصل إشرافها على الأعمال والمشاريع الخدمية وهذه المرة من منطقة القابون، حيث يتم استكمال عمليات الصيانة الطرقية لخدمتكم."
+        },
+
+        8: {
+            title: "ثانوية اليرموك",
+
+            date: "12-9-2025",
+
+            images: [
+                "../images/newdata/009A6225.JPG",
+                "../images/newdata/009A6262.JPG",
+                "../images/newdata/009A6371.JPG",
+                "../images/newdata/009A6173.JPG",
+                "../images/newdata/009A6167.JPG"
+            ],
+
+            content:
+                "افتتح معاون وزير التربية والتعليم للشؤون التربوية السيد يوسف عنان برفقة معاون محافظ دمشق السيد ضياء الدين محمد ثانوية اليرموك في دمشق، بعد الانتهاء من إعادة تأهيلها وترميمها لتستقبل طلابنا مع بداية العام الدراسي الجديد، وذلك بحضور عدد من الفعاليات التربوية والمجتمعية. وتصل الطاقة الاستيعابية للمدرسة إلى نحو 600 طالب في الدوام الواحد، على أن تُستَثمَر بنظام الفوجين الصباحي والمسائي، بما يُلبي احتياجات الطلاب في المنطقة ويخفف الضغط عن المدارس المجاورة."
+        }
+    };
 
 
-function updateCarousel() {
+    /* =====================================================
+       GET NEWS ID
+       ===================================================== */
 
-  activeImage.src = images[currentIndex];
+    const params =
+        new URLSearchParams(window.location.search);
 
-  const dots =
-    dotsContainer.querySelectorAll(".news-details-indicator");
+    const newsId =
+        params.get("id") || "1";
+
+    const news =
+        newsData[newsId];
 
 
-  dots.forEach((dot, index) => {
+    if (!news) {
 
-    dot.classList.toggle(
-      "active",
-      index === currentIndex
+        console.error(
+            `الخبر رقم ${newsId} غير موجود`
+        );
+
+        return;
+    }
+
+
+    /* =====================================================
+       PAGE ELEMENTS
+       ===================================================== */
+
+    const title =
+        document.getElementById("newsTitle");
+
+    const breadcrumbTitle =
+        document.getElementById("newsBreadcrumbTitle");
+
+    const date =
+        document.getElementById("newsDate");
+
+    const content =
+        document.getElementById("newsContent");
+
+    const activeImage =
+        document.getElementById("activeImage");
+
+    const dotsContainer =
+        document.getElementById("dotsContainer");
+
+    const prevButton =
+        document.getElementById("prevSlide");
+
+    const nextButton =
+        document.getElementById("nextSlide");
+
+    const zoomButton =
+        document.getElementById("zoomImage");
+
+
+    /* =====================================================
+       SET NEWS DATA
+       ===================================================== */
+
+    if (title) {
+        title.textContent = news.title;
+    }
+
+    if (breadcrumbTitle) {
+        breadcrumbTitle.textContent = news.title;
+    }
+
+    if (date) {
+        date.textContent = news.date;
+    }
+
+    if (content) {
+        content.textContent = news.content;
+    }
+
+
+    /* =====================================================
+       GALLERY
+       ===================================================== */
+
+    let currentImageIndex = 0;
+
+
+    function showImage(index) {
+
+        if (
+            !news.images ||
+            news.images.length === 0
+        ) {
+            return;
+        }
+
+        currentImageIndex =
+            (index + news.images.length) %
+            news.images.length;
+
+
+        if (activeImage) {
+
+            activeImage.src =
+                news.images[currentImageIndex];
+
+        }
+
+
+        updateDots();
+    }
+
+
+    /* =====================================================
+       DOTS
+       ===================================================== */
+
+    function createDots() {
+
+        if (!dotsContainer) {
+            return;
+        }
+
+        dotsContainer.innerHTML = "";
+
+
+        news.images.forEach(
+            (image, index) => {
+
+                const dot =
+                    document.createElement("button");
+
+
+                dot.type = "button";
+
+
+                dot.className =
+                    "news-details-indicator";
+
+
+                dot.setAttribute(
+                    "aria-label",
+                    `الصورة ${index + 1}`
+                );
+
+
+                dot.addEventListener(
+                    "click",
+                    () => showImage(index)
+                );
+
+
+                dotsContainer.appendChild(dot);
+
+            }
+        );
+
+
+        updateDots();
+    }
+
+
+    function updateDots() {
+
+        if (!dotsContainer) {
+            return;
+        }
+
+
+        const dots =
+            dotsContainer.querySelectorAll(
+                ".news-details-indicator"
+            );
+
+
+        dots.forEach(
+            (dot, index) => {
+
+                dot.classList.toggle(
+                    "active",
+                    index === currentImageIndex
+                );
+
+            }
+        );
+    }
+
+
+    /* =====================================================
+       PREVIOUS IMAGE
+       ===================================================== */
+
+    if (prevButton) {
+
+        prevButton.addEventListener(
+            "click",
+            () => {
+
+                showImage(
+                    currentImageIndex - 1
+                );
+
+            }
+        );
+    }
+
+
+    /* =====================================================
+       NEXT IMAGE
+       ===================================================== */
+
+    if (nextButton) {
+
+        nextButton.addEventListener(
+            "click",
+            () => {
+
+                showImage(
+                    currentImageIndex + 1
+                );
+
+            }
+        );
+    }
+
+
+    /* =====================================================
+       KEYBOARD
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (event.key === "ArrowLeft") {
+
+                showImage(
+                    currentImageIndex + 1
+                );
+
+            }
+
+
+            if (event.key === "ArrowRight") {
+
+                showImage(
+                    currentImageIndex - 1
+                );
+
+            }
+
+        }
     );
 
-  });
+
+    /* =====================================================
+       ZOOM
+       ===================================================== */
+
+    if (zoomButton) {
+
+        zoomButton.addEventListener(
+            "click",
+            () => {
+
+                if (!activeImage) {
+                    return;
+                }
+
+
+                if (document.fullscreenElement) {
+
+                    document.exitFullscreen();
+
+                    return;
+                }
+
+
+                if (activeImage.requestFullscreen) {
+
+                    activeImage.requestFullscreen();
+
+                }
+
+            }
+        );
+    }
+
+
+/* =====================================================
+   RELATED NEWS
+   ===================================================== */
+
+const relatedNewsTrack =
+    document.getElementById("relatedNewsTrack");
+
+const relatedPrev =
+    document.getElementById("relatedPrev");
+
+const relatedNext =
+    document.getElementById("relatedNext");
+
+
+let relatedCurrentIndex = 0;
+let relatedCardsPerView = 3;
+
+
+/* =====================================================
+   CARDS PER VIEW
+   ===================================================== */
+
+function getRelatedCardsPerView() {
+
+    const width = window.innerWidth;
+
+    if (width <= 650) {
+        return 1;
+    }
+
+    if (width <= 900) {
+        return 2;
+    }
+
+    return 3;
+}
+
+
+/* =====================================================
+   UPDATE RELATED SLIDER
+   ===================================================== */
+function updateRelatedSlider() {
+
+    if (!relatedNewsTrack) {
+        return;
+    }
+
+    const viewport =
+        relatedNewsTrack.parentElement;
+
+    if (!viewport) {
+        return;
+    }
+
+    const cards =
+        relatedNewsTrack.querySelectorAll(".news-card");
+
+    if (!cards.length) {
+
+        if (relatedPrev) {
+            relatedPrev.disabled = true;
+        }
+
+        if (relatedNext) {
+            relatedNext.disabled = true;
+        }
+
+        return;
+    }
+
+
+    /* =========================================
+       CARDS PER VIEW
+       ========================================= */
+
+    relatedCardsPerView =
+        getRelatedCardsPerView();
+
+
+    /* =========================================
+       VIEWPORT WIDTH
+       ========================================= */
+
+    const viewportWidth =
+        viewport.clientWidth;
+
+
+    /* =========================================
+       GAP
+       ========================================= */
+
+    const trackStyle =
+        window.getComputedStyle(
+            relatedNewsTrack
+        );
+
+    const gap =
+        parseFloat(trackStyle.columnGap) ||
+        parseFloat(trackStyle.gap) ||
+        0;
+
+
+    /* =========================================
+       CARD WIDTH
+       ========================================= */
+
+    const totalGap =
+        gap * (relatedCardsPerView - 1);
+
+    const cardWidth =
+        (
+            viewportWidth -
+            totalGap
+        ) /
+        relatedCardsPerView;
+
+
+    /* =========================================
+       APPLY CARD WIDTH
+       ========================================= */
+
+    cards.forEach(card => {
+
+        card.style.width =
+            `${cardWidth}px`;
+
+        card.style.minWidth =
+            `${cardWidth}px`;
+
+        card.style.maxWidth =
+            `${cardWidth}px`;
+
+        card.style.flex =
+            `0 0 ${cardWidth}px`;
+
+    });
+
+
+    /* =========================================
+       MAX INDEX
+       ========================================= */
+
+    const maxIndex =
+        Math.max(
+            0,
+            cards.length -
+            relatedCardsPerView
+        );
+
+
+    if (relatedCurrentIndex > maxIndex) {
+
+        relatedCurrentIndex =
+            maxIndex;
+    }
+
+
+    /* =========================================
+       MOVE TRACK
+       ========================================= */
+
+  const translateX =
+    relatedCurrentIndex *
+    (cardWidth + gap);
+
+relatedNewsTrack.style.transform =
+    `translate3d(${translateX}px, 0, 0)`;
+
+
+    /* =========================================
+       BUTTON STATES
+       ========================================= */
+
+    if (relatedPrev) {
+
+        relatedPrev.disabled =
+            relatedCurrentIndex <= 0;
+    }
+
+
+    if (relatedNext) {
+
+        relatedNext.disabled =
+            relatedCurrentIndex >= maxIndex;
+    }
 
 }
 
 
-function goToSlide(index) {
+/* =====================================================
+   RENDER RELATED NEWS
+   ===================================================== */
 
-  currentIndex = index;
+function renderRelatedNews() {
 
-  updateCarousel();
+    if (!relatedNewsTrack) {
+        return;
+    }
+
+
+    relatedNewsTrack.innerHTML = "";
+
+
+    /*
+       استثناء الخبر الحالي
+    */
+
+    const relatedNews =
+        Object.entries(newsData)
+            .filter(
+                ([id]) =>
+                    id !== String(newsId)
+            );
+
+
+    relatedNews.forEach(
+        ([id, item]) => {
+
+            const card =
+                document.createElement("article");
+
+
+            card.className =
+                "news-card news-card--model-5";
+
+
+            const coverImage =
+                item.images &&
+                item.images.length
+                    ? item.images[0]
+                    : "../images/Rectangle 40.png";
+
+
+            card.innerHTML = `
+
+                <div class="news-card__img-wrap">
+
+                    <img
+                        src="${coverImage}"
+                        alt="${item.title}"
+                        class="news-card__img"
+                    />
+
+                </div>
+
+
+                <div class="news-card__body">
+
+                    <div class="news-card__date-wrap">
+
+                        <img
+                            src="../images/Calendar (1).png"
+                            alt=""
+                            class="calendar-icon"
+                        />
+
+                        <span class="news-card__date">
+                            ${item.date}
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="news-card__title">
+                        ${item.title}
+                    </h3>
+
+
+                    <p class="news-card__text">
+                        ${item.content}
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="news-details.html?id=${id}"
+                    class="news-card__btn news-card__btn--model-5"
+                >
+
+                    <span>
+                        اقرأ المزيد
+                    </span>
+
+                    <img
+                        src="../images/Advance.png"
+                        alt=""
+                        class="news-card__arrow"
+                    />
+
+                </a>
+
+            `;
+
+
+            relatedNewsTrack.appendChild(card);
+
+        }
+    );
+
+
+    relatedCurrentIndex = 0;
+
+
+    requestAnimationFrame(() => {
+
+        updateRelatedSlider();
+
+    });
 
 }
 
 
-function initCarousel() {
+/* =====================================================
+   PREVIOUS
+   السهم الموجود على اليسار
+   ===================================================== */
 
-  dotsContainer.innerHTML = "";
+if (relatedPrev) {
 
+    relatedPrev.addEventListener(
+        "click",
+        () => {
 
-  images.forEach((_, index) => {
+            if (
+                relatedCurrentIndex > 0
+            ) {
 
-    const dot =
-      document.createElement("button");
+                relatedCurrentIndex--;
 
+                updateRelatedSlider();
 
-    dot.type = "button";
+            }
 
-    dot.className =
-      "news-details-indicator";
-
-
-    if (index === currentIndex) {
-
-      dot.classList.add("active");
-
-    }
-
-
-    dot.setAttribute(
-      "aria-label",
-      `الانتقال إلى الصورة ${index + 1}`
+        }
     );
-
-
-    dot.addEventListener(
-      "click",
-      () => goToSlide(index)
-    );
-
-
-    dotsContainer.appendChild(dot);
-
-  });
-
-
-  updateCarousel();
 
 }
 
 
-prevBtn.addEventListener(
-  "click",
-  () => {
+/* =====================================================
+   NEXT
+   السهم الموجود على اليمين
+   ===================================================== */
 
-    currentIndex =
-      (currentIndex - 1 + images.length)
-      % images.length;
+if (relatedNext) {
 
-    updateCarousel();
+    relatedNext.addEventListener(
+        "click",
+        () => {
 
-  }
-);
-
-
-nextBtn.addEventListener(
-  "click",
-  () => {
-
-    currentIndex =
-      (currentIndex + 1)
-      % images.length;
-
-    updateCarousel();
-
-  }
-);
+            if (!relatedNewsTrack) {
+                return;
+            }
 
 
-/* تكبير الصورة */
+            const cards =
+                relatedNewsTrack.querySelectorAll(
+                    ".news-card"
+                );
 
-zoomBtn.addEventListener(
-  "click",
-  () => {
 
-    if (
-      document.fullscreenElement
-    ) {
+            const maxIndex =
+                Math.max(
+                    0,
+                    cards.length -
+                    relatedCardsPerView
+                );
 
-      document.exitFullscreen();
 
-      return;
+            if (
+                relatedCurrentIndex <
+                maxIndex
+            ) {
+
+                relatedCurrentIndex++;
+
+                updateRelatedSlider();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   RESIZE
+   ===================================================== */
+
+window.addEventListener(
+    "resize",
+    () => {
+
+        requestAnimationFrame(() => {
+
+            updateRelatedSlider();
+
+        });
 
     }
-
-
-    const wrapper =
-      document.querySelector(
-        ".news-details-image-wrapper"
-      );
-
-
-    if (wrapper.requestFullscreen) {
-
-      wrapper.requestFullscreen();
-
-    }
-
-  }
 );
 
+    createDots();
 
-initCarousel();
+    showImage(0);
+
+    renderRelatedNews();
+
+});
