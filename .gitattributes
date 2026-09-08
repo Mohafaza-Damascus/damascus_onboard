@@ -1,1 +1,1 @@
-images/newdata/* filter=lfs diff=lfs merge=lfs -text
+# images/newdata/* filter=lfs diff=lfs merge=lfs -text

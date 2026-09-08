@@ -86,22 +86,134 @@
   const cardType = document.getElementById("cardType");
   const cardDesc = document.getElementById("cardDesc");
   const data = {
-    dummar:      { name: "دُمَّر",         pop: "120,000", area: "18 كم²", type: "سكني / ضاحية",    desc: "ضاحية غرب دمشق تشتهر بالمساحات الخضراء والطبيعة الجبلية الخلابة.", img: "images/Damascus.png" },
-    mazza:       { name: "المزّة",         pop: "350,000", area: "22 كم²", type: "سكني / إداري",    desc: "من أكبر أحياء دمشق، تضم مؤسسات حكومية ومجمعات سكنية حديثة.", img: "images/Damascus.png" },
-    kafarsuseh:  { name: "كفرسوسة",       pop: "180,000", area: "12 كم²", type: "سكني / تجاري",    desc: "حي حيوي يمتد جنوب غرب دمشق ويضم أسواقاً ومراكز تجارية.", img: "images/Damascus.png" },
-    berze:       { name: "برزة",          pop: "200,000", area: "15 كم²", type: "سكني",            desc: "حي شمالي عريق يتميز بطابعه الشعبي وقربه من جبل قاسيون.", img: "images/Damascus.png" },
-    qaboun:      { name: "القابون",       pop: "100,000", area: "8 كم²",  type: "صناعي / سكني",    desc: "منطقة صناعية وسكنية شمال شرق دمشق.", img: "images/Damascus.png" },
-    jobar:       { name: "جوبر",          pop: "90,000",  area: "7 كم²",  type: "سكني",            desc: "حي شرقي تاريخي كان يشتهر بزراعة المشمش والفواكه.", img: "images/Damascus.png" },
-    shaghour:    { name: "الشاغور",       pop: "250,000", area: "10 كم²", type: "سكني / تجاري",    desc: "من أعرق أحياء دمشق القديمة، يتميز بأسواقه الشعبية.", img: "images/Damascus.png" },
-    rukn:        { name: "ركن الدين",     pop: "280,000", area: "14 كم²", type: "سكني",            desc: "حي سكني على سفح جبل قاسيون يتميز بإطلالته البانورامية.", img: "images/Damascus.png" },
-    salihiye:    { name: "الصالحية",      pop: "150,000", area: "6 كم²",  type: "سكني / ثقافي",    desc: "حي تاريخي يضم معالم أثرية ومؤسسات تعليمية عريقة.", img: "images/Damascus.png" },
-    muhajireen:  { name: "المهاجرين",     pop: "130,000", area: "9 كم²",  type: "سكني",            desc: "حي راقٍ على سفح قاسيون يضم سفارات ومقرات دبلوماسية.", img: "images/Damascus.png" },
-    sarouja:     { name: "ساروجة",        pop: "60,000",  area: "3 كم²",  type: "تاريخي / تجاري",  desc: "من أقدم أحياء دمشق، يتميز بعمارته العثمانية الفريدة.", img: "images/Damascus.png" },
-    qanawat:     { name: "القنوات",       pop: "70,000",  area: "4 كم²",  type: "سكني / تاريخي",   desc: "حي وسطي يربط بين دمشق القديمة والأحياء الحديثة.", img: "images/Damascus.png" },
-    olddam:      { name: "دمشق القديمة",  pop: "40,000",  area: "2 كم²",  type: "تاريخي / سياحي",  desc: "المدينة القديمة المسورة، أحد أقدم المدن المأهولة في العالم.", img: "images/Damascus.png" },
-    midan:       { name: "الميدان",       pop: "220,000", area: "11 كم²", type: "سكني / تجاري",    desc: "حي تجاري تاريخي يشتهر بأسواقه ومساجده العريقة.", img: "images/Damascus.png" },
-    qadam:       { name: "القدم",         pop: "160,000", area: "9 كم²",  type: "سكني / صناعي",    desc: "حي جنوبي يضم ورشاً صناعية ومناطق سكنية.", img: "images/Damascus.png" },
-    yarmouk:     { name: "اليرموك",       pop: "140,000", area: "5 كم²",  type: "سكني",            desc: "حي جنوبي كان يُعرف بكثافته السكانية العالية.", img: "images/Damascus.png" },
+    dummar: {
+      name: "دُمَّر",
+      pop: "120,000",
+      area: "18 كم²",
+      type: "سكني / ضاحية",
+      desc: "ضاحية غرب دمشق تشتهر بالمساحات الخضراء والطبيعة الجبلية الخلابة.",
+      img: "images/Damascus.png",
+    },
+    mazza: {
+      name: "المزّة",
+      pop: "350,000",
+      area: "22 كم²",
+      type: "سكني / إداري",
+      desc: "من أكبر أحياء دمشق، تضم مؤسسات حكومية ومجمعات سكنية حديثة.",
+      img: "images/Damascus.png",
+    },
+    kafarsuseh: {
+      name: "كفرسوسة",
+      pop: "180,000",
+      area: "12 كم²",
+      type: "سكني / تجاري",
+      desc: "حي حيوي يمتد جنوب غرب دمشق ويضم أسواقاً ومراكز تجارية.",
+      img: "images/Damascus.png",
+    },
+    berze: {
+      name: "برزة",
+      pop: "200,000",
+      area: "15 كم²",
+      type: "سكني",
+      desc: "حي شمالي عريق يتميز بطابعه الشعبي وقربه من جبل قاسيون.",
+      img: "images/Damascus.png",
+    },
+    qaboun: {
+      name: "القابون",
+      pop: "100,000",
+      area: "8 كم²",
+      type: "صناعي / سكني",
+      desc: "منطقة صناعية وسكنية شمال شرق دمشق.",
+      img: "images/Damascus.png",
+    },
+    jobar: {
+      name: "جوبر",
+      pop: "90,000",
+      area: "7 كم²",
+      type: "سكني",
+      desc: "حي شرقي تاريخي كان يشتهر بزراعة المشمش والفواكه.",
+      img: "images/Damascus.png",
+    },
+    shaghour: {
+      name: "الشاغور",
+      pop: "250,000",
+      area: "10 كم²",
+      type: "سكني / تجاري",
+      desc: "من أعرق أحياء دمشق القديمة، يتميز بأسواقه الشعبية.",
+      img: "images/Damascus.png",
+    },
+    rukn: {
+      name: "ركن الدين",
+      pop: "280,000",
+      area: "14 كم²",
+      type: "سكني",
+      desc: "حي سكني على سفح جبل قاسيون يتميز بإطلالته البانورامية.",
+      img: "images/Damascus.png",
+    },
+    salihiye: {
+      name: "الصالحية",
+      pop: "150,000",
+      area: "6 كم²",
+      type: "سكني / ثقافي",
+      desc: "حي تاريخي يضم معالم أثرية ومؤسسات تعليمية عريقة.",
+      img: "images/Damascus.png",
+    },
+    muhajireen: {
+      name: "المهاجرين",
+      pop: "130,000",
+      area: "9 كم²",
+      type: "سكني",
+      desc: "حي راقٍ على سفح قاسيون يضم سفارات ومقرات دبلوماسية.",
+      img: "images/Damascus.png",
+    },
+    sarouja: {
+      name: "ساروجة",
+      pop: "60,000",
+      area: "3 كم²",
+      type: "تاريخي / تجاري",
+      desc: "من أقدم أحياء دمشق، يتميز بعمارته العثمانية الفريدة.",
+      img: "images/Damascus.png",
+    },
+    qanawat: {
+      name: "القنوات",
+      pop: "70,000",
+      area: "4 كم²",
+      type: "سكني / تاريخي",
+      desc: "حي وسطي يربط بين دمشق القديمة والأحياء الحديثة.",
+      img: "images/Damascus.png",
+    },
+    olddam: {
+      name: "دمشق القديمة",
+      pop: "40,000",
+      area: "2 كم²",
+      type: "تاريخي / سياحي",
+      desc: "المدينة القديمة المسورة، أحد أقدم المدن المأهولة في العالم.",
+      img: "images/Damascus.png",
+    },
+    midan: {
+      name: "الميدان",
+      pop: "220,000",
+      area: "11 كم²",
+      type: "سكني / تجاري",
+      desc: "حي تجاري تاريخي يشتهر بأسواقه ومساجده العريقة.",
+      img: "images/Damascus.png",
+    },
+    qadam: {
+      name: "القدم",
+      pop: "160,000",
+      area: "9 كم²",
+      type: "سكني / صناعي",
+      desc: "حي جنوبي يضم ورشاً صناعية ومناطق سكنية.",
+      img: "images/Damascus.png",
+    },
+    yarmouk: {
+      name: "اليرموك",
+      pop: "140,000",
+      area: "5 كم²",
+      type: "سكني",
+      desc: "حي جنوبي كان يُعرف بكثافته السكانية العالية.",
+      img: "images/Damascus.png",
+    },
   };
 
   let activeHood = null;
@@ -163,5 +275,31 @@
     current = (current + 1) % sources.length;
     video.src = sources[current];
     video.play();
+  });
+})();
+
+(function () {
+  const overlay = document.getElementById("introOverlay");
+  const video = document.getElementById("introVideo");
+  if (!overlay || !video) return;
+
+  document.body.classList.add("intro-active");
+
+  video.addEventListener("ended", () => {
+    overlay.classList.add("is-done");
+    document.body.classList.remove("intro-active");
+    setTimeout(() => overlay.remove(), 800);
+  });
+
+  video.addEventListener("error", () => {
+    overlay.remove();
+    document.body.classList.remove("intro-active");
+  });
+
+  overlay.addEventListener("click", () => {
+    video.pause();
+    overlay.classList.add("is-done");
+    document.body.classList.remove("intro-active");
+    setTimeout(() => overlay.remove(), 800);
   });
 })();

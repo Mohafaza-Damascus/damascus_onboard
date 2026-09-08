@@ -100,10 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
             images: [
                 "../images/newdata/2 (2).JPG",
                 "../images/newdata/3 (2).JPG",
-                "../images/newdata/4 (2).JPG",
-                "../images/newdata/5 (2).JPG",
-                "../images/newdata/6 (2).JPG",
-                "../images/newdata/7.JPG"
+                "../images/newdata/4-2.jpeg",
+                "../images/newdata/5-2.jpeg",
+                "../images/newdata/6-2.jpeg",
+                "../images/newdata/7.jpeg"
             ],
 
             content:

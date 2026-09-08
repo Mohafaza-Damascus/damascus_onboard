@@ -303,6 +303,39 @@ button {
 .burger.is-open span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
+
+.header__row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.header__bar {
+  flex: 1;
+  min-width: 0;
+}
+
+.header__side {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  flex-shrink: 0;
+}
+
+.header__side .btn-contact {
+  background: rgba(6, 66, 57, 0.08);
+  color: var(--green-800);
+}
+.header__side .btn-contact:hover {
+  background: var(--green-800);
+  color: #fff;
+}
+
+.header__side .btn-lang {
+  background: #fff;
+  color: var(--green-800);
+  border: 1px solid var(--border);
+}
 .pattern {
   position: relative;
   isolation: isolate;
@@ -605,7 +638,7 @@ button {
   height: 100%;
   object-fit: cover;
 }
- /* ستايل قسم المحافظ الجديد إذا اعتمدناه */
+/* ستايل قسم المحافظ الجديد إذا اعتمدناه */
 .gov-section {
   padding-block: var(--sp-5);
 }
@@ -1171,7 +1204,7 @@ button {
   padding-bottom: 0;
   margin: var(--sp-4);
   border-radius: 20px;
-  padding:25px
+  padding: 25px;
 }
 .footer.pattern::before {
   opacity: 0.05;
@@ -1206,7 +1239,7 @@ button {
 .footer__about {
   font-size: 15px;
   line-height: 2;
-  color: #BF9C39;
+  color: #bf9c39;
   max-width: 36ch;
 }
 .footer__title {
@@ -1727,7 +1760,9 @@ button {
     display: flex;
     z-index: 50;
   }
-
+  .header__side {
+    display: none;
+  }
   .nav {
     position: absolute;
     inset-inline: 0;
@@ -1818,7 +1853,6 @@ button {
   .stat + .stat::before {
     display: none;
   }
-/* ستايل القسم تبع المحافظ القديم لنعتمد عليه قبل */
   .governor__inner {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -1846,7 +1880,6 @@ button {
     width: 140px;
     order: -1;
   }
-/* هاد الجديد  */
   .gov-section__card {
     grid-template-columns: 1fr;
     min-height: auto;
@@ -1854,11 +1887,10 @@ button {
   }
 
   .gov-section__photo {
-    /* border-radius: 0 0 var(--r-lg) var(--r-lg); */
     height: 350px;
     order: -1;
-    margin-inline:30%;
-    margin-top:20px
+    margin-inline: 30%;
+    margin-top: 20px;
   }
 
   .gov-section__body {
@@ -1929,10 +1961,10 @@ button {
   .contact-form {
     grid-template-columns: 1fr;
   }
-    .gov-section__photo {
-  width: 200px;
-  height: 280px;
-}
+  .gov-section__photo {
+    width: 200px;
+    height: 280px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -1985,7 +2017,6 @@ button {
   .gov-section__name {
     font-size: 28px;
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {

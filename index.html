@@ -407,15 +407,36 @@
       .dm-hood[data-id="yarmouk"] .dm-lbl {
         font-size: 15px;
       }
-
+      .intro-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.8s ease;
+      }
+      .intro-overlay.is-done {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .intro-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      body.intro-active {
+        overflow: hidden;
+      }
       @media (max-width: 900px) {
         .map-explorer {
-        border: none;
-        margin-inline: 0px;
-        border-radius: 0px;
-        background-color: white;
-        height: fit-content;
-      }
+          border: none;
+          margin-inline: 0px;
+          border-radius: 0px;
+          background-color: white;
+          height: fit-content;
+        }
         .map-explorer__inner {
           flex-direction: column;
           align-items: center;
@@ -447,6 +468,11 @@
     </style>
   </head>
   <body style="background-color: #ede7d9">
+    <div class="intro-overlay" id="introOverlay">
+      <video class="intro-video" id="introVideo" autoplay muted playsinline>
+        <source src="assets/video/intro.mp4" type="video/mp4" />
+      </video>
+    </div>
     <div id="site-header" data-active="الرئيسية"></div>
     <main>
       <section class="hero-stats">
@@ -526,7 +552,7 @@
         </div>
       </section>
 
-      <section class="governor">
+      <!-- <section class="governor">
         <div class="governor__card pattern" style="border: none">
           <div class="container governor__inner">
             <div class="governor__card">
@@ -541,7 +567,7 @@
             </figure>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section class="gov-section">
         <div class="container">
