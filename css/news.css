@@ -740,7 +740,27 @@
   font-size: 15px;
 }
 
+
+/* =========================================================
+   RESPONSIVE MODELS 2/3/4
+   ========================================================= */
+
 @media (max-width: 1024px) {
+
+  .news-page--model-2 .news-grid {
+    grid-template-columns:
+      minmax(0, 1.75fr)
+      minmax(220px, 0.9fr);
+  }
+
+  .news-page--model-3 .news-grid {
+    grid-template-columns:
+      minmax(155px, 0.62fr)
+      minmax(290px, 1.2fr)
+      minmax(155px, 0.62fr);
+
+    gap: 14px;
+  }
   .news-page--model-4 .news-card--featured {
     width: 62%;
   }
@@ -776,9 +796,741 @@
   }
 }
 
+@media (max-width: 480px) {
+
+  .news-carousel__controls {
+    margin-top: 10px;
+  }
+
+  .news-carousel__btn {
+    width: 38px;
+    height: 38px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .news-card,
   .news-carousel__btn {
     transition: none !important;
   }
+}
+
+
+/* =========================================================
+   =========================================================
+   MODEL 5
+   =========================================================
+   3 LARGE CARDS + RIGHT FILTERS
+   ========================================================= */
+
+
+/* ---------- PAGE ---------- */
+
+.news-page--model-5 {
+  padding-top: 38px;
+}
+
+
+/* ---------- TITLE ---------- */
+
+.news-page--model-5 .news-header {
+  margin-bottom: 30px;
+
+  text-align: right;
+}
+
+.news-page--model-5 .news-title--model-5 {
+  display: block;
+
+  width: auto;
+
+  min-height: auto;
+
+  margin: 0;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+
+  color: var(--color-title);
+
+  font-size: clamp(26px, 3vw, 32px);
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  text-align: right;
+}
+
+
+/* ---------- TABS ---------- */
+
+.news-page--model-5 .news-tabs--model-5 {
+  justify-content: flex-start;
+
+  flex-direction: row;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+}
+
+
+/*
+   Because the document is RTL,
+   flex-start visually places the group on the right.
+*/
+
+.news-page--model-5 .tab-btn--model-5 {
+  width: auto;
+
+  min-width: 96px;
+
+  height: 40px;
+
+  padding: 0 18px;
+
+  border: 1px solid transparent;
+
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, 0.42);
+
+  box-shadow: none;
+
+  color: var(--color-title);
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.news-page--model-5 .tab-btn--model-5:hover {
+  opacity: 1;
+
+  background: rgba(6, 66, 57, 0.08);
+
+  color: var(--color-title);
+
+  transform: translateY(-1px);
+}
+
+.news-page--model-5 .tab-btn--model-5.active {
+  background: rgba(6, 66, 57, 0.08);
+
+  border-color: rgba(6, 66, 57, 0.16);
+
+  color: var(--color-title);
+
+  opacity: 1;
+}
+
+
+/* ---------- DIVIDER ---------- */
+
+.news-model-5-divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin-bottom: 18px;
+
+  background: rgba(6, 66, 57, 0.12);
+}
+
+
+/* ---------- SECTIONS ---------- */
+
+.news-page--model-5 .news-sections--model-5 {
+  width: 100%;
+}
+
+.news-page--model-5 .news-group--model-5 {
+  margin-bottom: 48px;
+}
+
+
+/*
+   The section title is intentionally not used
+   in Model 5 because the filter buttons represent
+   the categories.
+*/
+
+.news-page--model-5 .news-grid--model-5 {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  align-items: stretch;
+}
+
+
+/* ---------- CARD ---------- */
+
+.news-page--model-5 .news-card--model-5 {
+  height: 410px;
+
+  min-width: 0;
+
+  background: var(--card-bg);
+
+  border: 1px solid rgba(6, 66, 57, 0.16);
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 2px 8px rgba(6, 66, 57, 0.04);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.news-page--model-5 .news-card--model-5:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(6, 66, 57, 0.24);
+
+  box-shadow:
+    0 6px 16px rgba(6, 66, 57, 0.08);
+}
+
+
+/* ---------- IMAGE ---------- */
+
+.news-page--model-5 .news-card--model-5 .news-card__img-wrap {
+  padding: 13px 13px 7px;
+
+  flex-shrink: 0;
+}
+
+.news-page--model-5 .news-card--model-5 .news-card__img {
+  width: 100%;
+
+  height: 172px;
+
+  object-fit: cover;
+
+  border: none;
+
+  border-radius: 8px;
+}
+
+
+/* ---------- BODY ---------- */
+
+.news-page--model-5 .news-card--model-5 .news-card__body {
+  padding: 2px 15px 12px;
+
+  text-align: right;
+}
+
+
+/* ---------- DATE ---------- */
+
+.news-page--model-5
+.news-card--model-5
+.news-card__date-wrap {
+  justify-content: flex-start;
+
+  gap: 5px;
+
+  margin-bottom: 7px;
+}
+
+.news-page--model-5
+.news-card--model-5
+.calendar-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.news-page--model-5
+.news-card--model-5
+.news-card__date {
+  color: var(--color-title);
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+/* ---------- TITLE ---------- */
+
+.news-page--model-5
+.news-card--model-5
+.news-card__title {
+  color: var(--color-title);
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1.55;
+
+  margin: 0 0 7px;
+
+  -webkit-line-clamp: 2;
+}
+
+
+/* ---------- TEXT ---------- */
+
+.news-page--model-5
+.news-card--model-5
+.news-card__text {
+  color: var(--color-text);
+
+  font-size: 11px;
+
+  line-height: 1.55;
+
+  margin: 0;
+
+  -webkit-line-clamp: 2;
+}
+
+
+/* ---------- REMOVE OLD CUTOUT ---------- */
+
+.news-page--model-5
+.news-card--model-5
+.news-card__cutout {
+  display: none;
+}
+
+
+/* ---------- READ MORE BUTTON ---------- */
+
+.news-page--model-5
+.news-card--model-5
+.news-card__btn--model-5 {
+
+  position: absolute;
+
+  right: 13px;
+  left: auto;
+
+  bottom: 12px;
+
+  width: auto;
+
+  min-width: 82px;
+
+  height: 31px;
+
+  padding: 0 9px;
+
+  transform: none;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  border: 1px solid rgba(6, 66, 57, 0.16);
+
+  border-radius: 7px;
+
+  background: var(--card-bg);
+
+  color: var(--color-title);
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  z-index: 2;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* ---------- BUTTON HOVER ---------- */
+
+.news-page--model-5
+.news-card--model-5
+.news-card__btn--model-5:hover {
+
+  opacity: 1;
+
+  background: var(--color-title);
+
+  border-color: var(--color-title);
+
+  color: #fff;
+
+  transform: translateY(-1px);
+}
+
+
+/* ---------- BUTTON ARROW ---------- */
+
+.news-page--model-5
+.news-card--model-5
+.news-card__btn--model-5
+.news-card__arrow {
+
+  width: 13px;
+  height: 13px;
+
+  object-fit: contain;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.news-page--model-5
+.news-card--model-5
+.news-card__btn--model-5:hover
+.news-card__arrow {
+
+  transform: translateX(-2px);
+}
+
+
+/* =========================================================
+   MODEL 5 RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .news-page--model-5 .news-grid--model-5 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+  .news-page--model-5 .news-card--model-5 {
+    height: 410px;
+  }
+}
+
+
+@media (max-width: 760px) {
+
+  .news-page--model-5 {
+    padding-top: 30px;
+  }
+
+  .news-page--model-5 .news-title--model-5 {
+    font-size: 25px;
+  }
+
+  .news-page--model-5 .news-tabs--model-5 {
+    justify-content: flex-start;
+
+    gap: 7px;
+
+    margin-bottom: 14px;
+  }
+
+  .news-page--model-5 .tab-btn--model-5 {
+    min-width: 82px;
+
+    height: 37px;
+
+    padding: 0 12px;
+
+    font-size: 12px;
+  }
+
+  .news-page--model-5 .news-grid--model-5 {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .news-page--model-5 .news-card--model-5 {
+    height: 410px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .news-page--model-5 .news-title--model-5 {
+    font-size: 23px;
+  }
+
+  .news-page--model-5 .news-card--model-5 {
+    height: 400px;
+  }
+
+  .news-page--model-5
+  .news-card--model-5
+  .news-card__img {
+    height: 180px;
+  }
+}
+
+/* ─── NEWS CARD IMAGE HOVER SHINE ─── */
+
+.news-card__img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.news-card__img {
+  transition: transform 0.35s ease;
+}
+
+/* اللمعة */
+.news-card__img-wrap::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -60%;
+  width: 45%;
+  height: 300%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 35%,
+    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 255, 255, 0.08) 65%,
+    transparent 100%
+  );
+  transform: rotate(25deg) translateX(-180%);
+  pointer-events: none;
+  transition: transform 1.3s ease;
+}
+
+/* تكبير الصورة + تشغيل اللمعة */
+.news-card:hover .news-card__img {
+  transform: scale(1.04);
+}
+
+.news-card:hover .news-card__img-wrap::after {
+  transform: rotate(25deg) translateX(420%);
+}
+
+/* =========================================================
+   MODEL 5 — PAGINATION
+   ========================================================= */
+
+.news-pagination--model-5 {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 34px;
+
+  direction: ltr;
+}
+
+
+/* =========================================================
+   PAGE NUMBER
+   ========================================================= */
+
+.news-pagination--model-5
+.news-pagination__number {
+
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(6, 66, 57, 0.18);
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  color: var(--color-title);
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow: none;
+
+  transition: none;
+}
+
+
+/* =========================================================
+   ACTIVE PAGE
+   ========================================================= */
+
+.news-pagination--model-5
+.news-pagination__number.is-active {
+
+  background: var(--color-title);
+
+  border-color: var(--color-title);
+
+  color: #fff;
+
+}
+
+
+/* =========================================================
+   NO HOVER / TOUCH EFFECT
+   ========================================================= */
+
+.news-pagination--model-5
+.news-pagination__number:hover,
+.news-pagination--model-5
+.news-pagination__number:focus,
+.news-pagination--model-5
+.news-pagination__number:focus-visible,
+.news-pagination--model-5
+.news-pagination__number:active {
+
+  transform: none;
+
+  box-shadow: none;
+
+  opacity: 1;
+
+}
+
+
+/* =========================================================
+   PAGINATION DOTS
+   ========================================================= */
+
+.news-pagination--model-5
+.news-pagination__dots {
+
+  min-width: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-title);
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  user-select: none;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .news-pagination--model-5 {
+
+    gap: 6px;
+
+    margin-top: 28px;
+
+  }
+
+
+  .news-pagination--model-5
+  .news-pagination__number {
+
+    width: 32px;
+
+    height: 32px;
+
+    font-size: 11px;
+
+  }
+
+
+  .news-pagination--model-5
+  .news-pagination__dots {
+
+    min-width: 16px;
+
+    font-size: 14px;
+
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .news-pagination--model-5 {
+
+    gap: 5px;
+
+    margin-top: 24px;
+
+  }
+
+
+  .news-pagination--model-5
+  .news-pagination__number {
+
+    width: 29px;
+
+    height: 29px;
+
+    font-size: 10px;
+
+  }
+
+
+  .news-pagination--model-5
+  .news-pagination__dots {
+
+    min-width: 13px;
+
+    font-size: 13px;
+
+  }
+
 }

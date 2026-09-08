@@ -22,6 +22,7 @@
           { label: "النموذج الثاني", href: `${pagesPrefix}news-model-2.html` },
           { label: "النموذج الثالث", href: `${pagesPrefix}news-model-3.html` },
           { label: "النموذج الرابع", href: `${pagesPrefix}news-model-4.html` },
+          { label: "النموذج الخامس", href: `${pagesPrefix}news-model-5.html` },
         ],
       },
       { label: "النظرة الثقافية", href: `${pagesPrefix}Cultural.html` },

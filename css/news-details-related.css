@@ -1,0 +1,694 @@
+/* =========================================================
+   RELATED NEWS SLIDER
+   صفحة تفاصيل الخبر
+   ========================================================= */
+
+.news-details-related {
+    width: 100%;
+    position: relative;
+    margin-top: 80px;
+    padding-bottom: 40px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.news-details-related-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.news-details-section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.news-details-section-title > span {
+    display: block;
+
+    width: 5px;
+    height: 30px;
+
+    border-radius: 10px;
+
+    background: var(--color-title);
+}
+
+.news-details-section-title h2 {
+    margin: 0;
+
+    color: var(--color-title);
+
+    font-size: 25px;
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   ALL NEWS BUTTON
+   ========================================================= */
+
+.news-details-all-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 42px;
+
+    padding: 8px 16px;
+
+    border: 1px solid rgba(6, 66, 57, 0.3);
+    border-radius: 10px;
+
+    background: rgba(253, 251, 247, 0.7);
+
+    color: var(--color-title);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: none;
+}
+
+.news-details-all-btn img {
+    width: 17px;
+    height: 17px;
+
+    object-fit: contain;
+
+    filter: brightness(0.35);
+}
+
+
+/* =========================================================
+   SLIDER
+   ========================================================= */
+
+.news-related-slider {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding-bottom: 70px;
+}
+
+
+/* =========================================================
+   VIEWPORT
+   ========================================================= */
+
+.news-related-viewport {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TRACK
+
+   مهم:
+   Flex وليس Grid.
+   الـ JS يعتمد على transform.
+   ========================================================= */
+
+.news-details-related-grid {
+    display: flex !important;
+
+    flex-direction: row;
+    flex-wrap: nowrap !important;
+
+    align-items: stretch;
+
+    width: max-content !important;
+    max-width: none !important;
+
+    gap: 24px;
+
+    margin: 0;
+    padding: 0;
+
+    direction: ltr;
+
+    transition: transform 0.45s ease;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.news-details-related-grid .news-card,
+.news-details-related-grid .news-card--model-5 {
+
+    position: relative;
+
+    flex: 0 0 320px !important;
+
+    width: 320px !important;
+    min-width: 320px !important;
+    max-width: 320px !important;
+
+    height: 410px;
+
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: var(--card-bg);
+
+    border: 1px solid rgba(6, 66, 57, 0.16);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px rgba(6, 66, 57, 0.04);
+
+    transition:
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.news-details-related-grid .news-card:hover {
+    border-color: rgba(6, 66, 57, 0.24);
+
+    box-shadow:
+        0 6px 16px rgba(6, 66, 57, 0.08);
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+   ========================================================= */
+
+.news-details-related-grid
+.news-card__img-wrap {
+
+    width: 100%;
+
+    padding: 13px 13px 7px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.news-details-related-grid
+.news-card__img {
+
+    display: block;
+
+    width: 100%;
+    height: 172px;
+
+    object-fit: cover;
+
+    border: none;
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+.news-details-related-grid
+.news-card__body {
+
+    width: 100%;
+
+    padding: 2px 15px 12px;
+
+    text-align: right;
+
+    direction: rtl;
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.news-details-related-grid
+.news-card__date-wrap {
+
+    display: flex;
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 5px;
+
+    margin-bottom: 7px;
+}
+
+.news-details-related-grid
+.calendar-icon {
+
+    width: 14px;
+    height: 14px;
+
+    object-fit: contain;
+}
+
+.news-details-related-grid
+.news-card__date {
+
+    color: var(--color-title);
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.news-details-related-grid
+.news-card__title {
+
+    margin: 0 0 7px;
+
+    color: var(--color-title);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    line-height: 1.55;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+.news-details-related-grid
+.news-card__text {
+
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 11px;
+
+    line-height: 1.55;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CUTOUT
+   ========================================================= */
+
+.news-details-related-grid
+.news-card__cutout {
+
+    display: none;
+}
+
+
+/* =========================================================
+   READ MORE
+   ========================================================= */
+
+.news-details-related-grid
+.news-card__btn--model-5 {
+
+    position: absolute;
+
+    right: 13px;
+    left: auto;
+    bottom: 12px;
+
+    width: auto;
+    min-width: 82px;
+    height: 31px;
+
+    padding: 0 9px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    transform: none;
+
+    border: 1px solid rgba(6, 66, 57, 0.16);
+    border-radius: 7px;
+
+    background: var(--card-bg);
+
+    color: var(--color-title);
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    z-index: 2;
+
+    transition: none;
+}
+
+.news-details-related-grid
+.news-card__btn--model-5:hover {
+
+    background: var(--card-bg);
+
+    border-color: rgba(6, 66, 57, 0.16);
+
+    color: var(--color-title);
+
+    transform: none;
+}
+
+
+/* =========================================================
+   BUTTON ARROW
+   ========================================================= */
+
+.news-details-related-grid
+.news-card__arrow {
+
+    width: 13px;
+    height: 13px;
+
+    object-fit: contain;
+
+    transition: none;
+}
+
+
+/* =========================================================
+   RELATED ARROWS
+   ========================================================= */
+
+.news-related-arrow {
+
+    position: absolute;
+
+    bottom: 0;
+
+    z-index: 20;
+
+    width: 44px;
+    height: 44px;
+
+    flex: 0 0 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid rgba(6, 66, 57, 0.18);
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: var(--color-title);
+
+    cursor: pointer;
+
+    box-shadow: none;
+
+    font-family: inherit;
+    line-height: 1;
+
+    transition: none !important;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   RELATED ARROW POSITIONS
+
+   RTL page:
+   Prev = left
+   Next = right
+   ========================================================= */
+
+.news-related-arrow--prev {
+    left: 0;
+    right: auto;
+}
+
+.news-related-arrow--next {
+    right: 0;
+    left: auto;
+}
+
+
+/* =========================================================
+   ARROW ICON
+   ========================================================= */
+
+.news-related-arrow img {
+
+    width: 18px;
+    height: 18px;
+
+    display: block;
+
+    object-fit: contain;
+
+    transform: none !important;
+
+    transition: none !important;
+}
+
+
+/* =========================================================
+   NO HOVER EFFECT
+   ========================================================= */
+
+.news-related-arrow:hover,
+.news-related-arrow:focus,
+.news-related-arrow:focus-visible,
+.news-related-arrow:active {
+
+    background: #fff !important;
+
+    border-color: rgba(6, 66, 57, 0.18) !important;
+
+    color: var(--color-title) !important;
+
+    opacity: 1 !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+
+    transition: none !important;
+}
+
+
+/* =========================================================
+   DISABLED
+   ========================================================= */
+
+.news-related-arrow:disabled {
+
+    opacity: 0.35 !important;
+
+    cursor: default;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1199px) {
+
+    .news-details-related-grid .news-card,
+    .news-details-related-grid .news-card--model-5 {
+
+        flex-basis: 300px !important;
+
+        width: 300px !important;
+        min-width: 300px !important;
+        max-width: 300px !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .news-details-related {
+
+        margin-top: 55px;
+    }
+
+
+    .news-details-related-header {
+
+        align-items: flex-start;
+
+        margin-bottom: 25px;
+    }
+
+
+    .news-details-section-title h2 {
+
+        font-size: 22px;
+    }
+
+
+    .news-details-section-title > span {
+
+        width: 4px;
+        height: 24px;
+    }
+
+
+    .news-details-all-btn {
+
+        font-size: 14px;
+    }
+
+
+    .news-related-slider {
+
+        gap: 8px;
+
+        padding-bottom: 60px;
+    }
+
+
+    .news-details-related-grid {
+
+        gap: 16px;
+    }
+
+
+    .news-details-related-grid .news-card,
+    .news-details-related-grid .news-card--model-5 {
+
+        flex-basis: calc(100vw - 110px) !important;
+
+        width: calc(100vw - 110px) !important;
+        min-width: calc(100vw - 110px) !important;
+        max-width: calc(100vw - 110px) !important;
+    }
+
+
+    .news-related-arrow {
+
+        width: 38px;
+        height: 38px;
+
+        flex-basis: 38px;
+    }
+
+
+    .news-related-arrow img {
+
+        width: 15px;
+        height: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .news-details-related-grid .news-card,
+    .news-details-related-grid .news-card--model-5 {
+
+        flex-basis: calc(100vw - 90px) !important;
+
+        width: calc(100vw - 90px) !important;
+        min-width: calc(100vw - 90px) !important;
+        max-width: calc(100vw - 90px) !important;
+    }
+
+
+    .news-details-related-grid {
+
+        gap: 14px;
+    }
+
+
+    .news-related-arrow {
+
+        width: 34px;
+        height: 34px;
+
+        flex-basis: 34px;
+    }
+
+}
