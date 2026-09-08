@@ -1064,14 +1064,11 @@
 }
 
 .news-page--model-5 .news-card--model-5 .news-card__img {
+  display: block;
   width: 100%;
-
-  height: 172px;
-
+  height: 200px;
   object-fit: cover;
-
   border: none;
-
   border-radius: 8px;
 }
 
@@ -1574,4 +1571,7 @@
 
   }
 
+}
+.news-page--model-5 .news-card--model-5 {
+  cursor: pointer;
 }

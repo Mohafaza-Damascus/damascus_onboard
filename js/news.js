@@ -3,32 +3,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const newsGroups = document.querySelectorAll(".news-group");
   const sectionTitles = document.querySelectorAll(".section-divider-title");
 
-  function applyFilter(filter) {
+function applyFilter(filter) {
+  const allGroup = document.querySelector(
+    '.news-group[data-category="all"]'
+  );
+
+  if (!allGroup) return;
+
+  const cards = allGroup.querySelectorAll(".news-card--model-5");
+
+  cards.forEach((card) => {
     if (filter === "all") {
-      newsGroups.forEach((group) => (group.style.display = ""));
-      sectionTitles.forEach((title) => (title.style.display = ""));
+      card.style.display = "";
       return;
     }
 
-    newsGroups.forEach((group) => (group.style.display = "none"));
-    sectionTitles.forEach((title) => (title.style.display = "none"));
+    const categories = (card.dataset.categories || "")
+      .split(/\s+/)
+      .filter(Boolean);
 
-    const target = document.querySelector(
-      `.news-group[data-category="${filter}"]`,
-    );
+    card.style.display = categories.includes(filter)
+      ? ""
+      : "none";
+  });
 
-    if (!target) return;
-
-    target.style.display = "";
-    const previousElement = target.previousElementSibling;
-
-    if (
-      previousElement &&
-      previousElement.classList.contains("section-divider-title")
-    ) {
-      previousElement.style.display = "";
+  newsGroups.forEach((group) => {
+    if (group.dataset.category === "all") {
+      group.style.display = "";
+    } else {
+      group.style.display = "none";
     }
-  }
+  });
+}
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -264,8 +270,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const pagination = document.querySelector("#newsPagination");
 
-  function getActiveCards() {
+  const allGroup = document.querySelector(
+  '.news-page--model-5 .news-group[data-category="all"]'
+  );
 
+  const allCards = allGroup
+    ? Array.from(
+        allGroup.querySelectorAll(".news-card--model-5")
+      )
+    : [];
+    allCards.forEach((card) => {
+  card.addEventListener("click", (event) => {
+
+    if (event.target.closest("a")) {
+      return;
+    }
+
+    const link = card.querySelector(".news-card__btn--model-5");
+
+    if (link) {
+      window.location.href = link.href;
+    }
+
+  });
+});
+  function getActiveCards() {
     const activeTab = document.querySelector(
       ".news-page--model-5 .tab-btn.active"
     );
@@ -277,24 +306,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const filter = activeTab.dataset.filter;
 
     if (filter === "all") {
-      return Array.from(
-        document.querySelectorAll(
-          ".news-page--model-5 .news-card--model-5"
-        )
-      );
+      return allCards;
     }
 
-    const group = document.querySelector(
-      `.news-page--model-5 .news-group[data-category="${filter}"]`
-    );
+    return allCards.filter((card) => {
+      const categories = (card.dataset.categories || "")
+        .split(/\s+/)
+        .filter(Boolean);
 
-    if (!group) {
-      return [];
-    }
-
-    return Array.from(
-      group.querySelectorAll(".news-card--model-5")
-    );
+      return categories.includes(filter);
+    });
   }
 
 
@@ -468,20 +489,10 @@ document.addEventListener("DOMContentLoaded", () => {
    * عند تغيير التاب
    */
   tabs.forEach((tab) => {
-
     tab.addEventListener("click", () => {
-
       currentPage = 1;
-
-      /*
-       * applyFilter موجود عندك أصلاً
-       */
-      applyFilter(tab.dataset.filter);
-
       renderPagination();
-
     });
-
   });
 
 
