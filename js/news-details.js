@@ -66,9 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
             images: [
                 "../images/newdata/2.jpg",
                 "../images/newdata/3.JPG",
-                "../images/newdata/4.JPG",
-                "../images/newdata/5.JPG",
-                "../images/newdata/6.JPG"
+                "../images/newdata/4.jpeg",
+                "../images/newdata/5.jpeg",
+                "../images/newdata/6.jpeg"
             ],
 
             content:
@@ -81,10 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
             date: "8-9-2025",
 
             images: [
-                "../images/newdata/DJI_20260902155618_0004_D.JPG",
-                "../images/newdata/DJI_20260902155643_0006_D.JPG",
-                "../images/newdata/DJI_20260902155714_0008_D.JPG",
-                "../images/newdata/DJI_20260902155723_0009_D.JPG",
+                "../images/newdata/dj004.jpeg",
+                "../images/newdata/dj006.jpeg",
+                "../images/newdata/dj008.jpeg",
+                "../images/newdata/dj009.jpeg",
                 "../images/newdata/IMG_20260902_110555.jpg"
             ],
 
