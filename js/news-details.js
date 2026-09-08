@@ -1,672 +1,380 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const newsData = {
+    1: {
+      title: "نشاطات مديرية البيئة في محافظة دمشق",
 
-    /* =====================================================
-       NEWS DATA
-       ===================================================== */
+      date: "10-10-2025",
 
-    const newsData = {
+      images: [
+        "../images/newdata/1.jpg",
+        "../images/newdata/download (1).jfif",
+        "../images/newdata/download.jfif",
+      ],
 
-        1: {
-            title: "نشاطات مديرية البيئة في محافظة دمشق",
+      content:
+        "تعلن مديرية البيئة في محافظة دمشق عن فتح باب التسجيل في النادي الصيفي البيئي المجاني لعام 2026، وذلك ضمن مجموعة الأنشطة والبرامج التي تهدف إلى تعزيز الوعي البيئي لدى أبناء المجتمع وتشجيع المشاركة في المبادرات التي تسهم في الحفاظ على البيئة وتحسين جودة الحياة. ويتضمن البرنامج مجموعة من الأنشطة التوعوية والتعليمية والترفيهية، إلى جانب فعاليات ميدانية تهدف إلى تعريف المشاركين بأهمية المحافظة على النظافة العامة والمساحات الخضراء وترشيد استخدام الموارد. وتأتي هذه المبادرة في إطار اهتمام محافظة دمشق بتعزيز الأنشطة المجتمعية والبيئية وإتاحة فرص المشاركة أمام مختلف الفئات العمرية، بما يسهم في بناء سلوك بيئي مسؤول وتعزيز التعاون بين المؤسسات والمجتمع.",
+    },
 
-            date: "10-10-2025",
+    2: {
+      title: "مجموعة أنشطة محافظة دمشق",
 
-            images: [
-                "../images/newdata/1.jpg",
-                "../images/newdata/download (1).jfif",
-                "../images/newdata/download.jfif"
-            ],
+      date: "7-9-2025",
 
-            content:
-                "تعلن مديرية البيئة في محافظة دمشق عن فتح باب التسجيل في النادي الصيفي البيئي المجاني لعام 2026، وذلك ضمن مجموعة الأنشطة والبرامج التي تهدف إلى تعزيز الوعي البيئي لدى أبناء المجتمع وتشجيع المشاركة في المبادرات التي تسهم في الحفاظ على البيئة وتحسين جودة الحياة. ويتضمن البرنامج مجموعة من الأنشطة التوعوية والتعليمية والترفيهية، إلى جانب فعاليات ميدانية تهدف إلى تعريف المشاركين بأهمية المحافظة على النظافة العامة والمساحات الخضراء وترشيد استخدام الموارد. وتأتي هذه المبادرة في إطار اهتمام محافظة دمشق بتعزيز الأنشطة المجتمعية والبيئية وإتاحة فرص المشاركة أمام مختلف الفئات العمرية، بما يسهم في بناء سلوك بيئي مسؤول وتعزيز التعاون بين المؤسسات والمجتمع."
-        },
+      images: [
+        "../images/newdata/اعلان ازالة المولدات الكهربائية.jpg",
+        "../images/newdata/dj0004.jpeg",
+        "../images/newdata/dj0006.jpeg",
+        "../images/newdata/dj0008.jpeg",
+        "../images/newdata/dj00011.jpeg",
+      ],
 
-        2: {
-            title: "مجموعة أنشطة محافظة دمشق",
+      content:
+        "انضموا إلينا في مسابقة ثقافية عن مدينة دمشق، حيث يمكنكم اختبار معلوماتكم عن تاريخ وثقافة دمشق والتعرف على جوانب جديدة من مدينتنا العريقة. استكشفوا الحرف التقليدية والفنون اليدوية التي تعكس تراثنا الثقافي الغني، وشاركوا في ورش العمل التي تعزز من مهاراتكم. لا تفوتوا الفرصة لزيارة جناحنا في مدينة المعارض، حيث نقدم لكم أحدث الابتكارات والمنتجات المحلية. كما نعمل على تحسين بيئتنا من خلال الإعلان عن مشاريع إزالة المولدات الكهربائية، مما يسهم في توفير الطاقة والحفاظ على البيئة.",
+    },
 
-            date: "7-9-2025",
+    3: {
+      title: "مجموعة قرارات محافظة دمشق",
 
-            images: [
-                "../images/newdata/اعلان ازالة المولدات الكهربائية.jpg",
-                "../images/newdata/تشويقي مدينة المعارض.jpg",
-                "../images/newdata/حرف تحت الضوء.jpg",
-                "../images/newdata/مسابقة ثقافية عن مدينة دمشق.jpg",
-                "../images/newdata/نتشرف_بزيارتكم_في_جناح_محافظة_دمشق.jpg"
-            ],
+      date: "5-9-2025",
 
-            content:
-                "انضموا إلينا في مسابقة ثقافية عن مدينة دمشق، حيث يمكنكم اختبار معلوماتكم عن تاريخ وثقافة دمشق والتعرف على جوانب جديدة من مدينتنا العريقة. استكشفوا الحرف التقليدية والفنون اليدوية التي تعكس تراثنا الثقافي الغني، وشاركوا في ورش العمل التي تعزز من مهاراتكم. لا تفوتوا الفرصة لزيارة جناحنا في مدينة المعارض، حيث نقدم لكم أحدث الابتكارات والمنتجات المحلية. كما نعمل على تحسين بيئتنا من خلال الإعلان عن مشاريع إزالة المولدات الكهربائية، مما يسهم في توفير الطاقة والحفاظ على البيئة."
-        },
+      images: [
+        "../images/newdata/1.1.1.jpg",
+        "../images/newdata/1.1.jpg",
+        "../images/newdata/1.2.jpg",
+        "../images/newdata/1.3.jpg",
+        "../images/newdata/1 (2).jpg",
+        "../images/newdata/dj0003.jpeg",
+        "../images/newdata/dj00013.jpeg",
+        "../images/newdata/dj0005.jpeg",
+      ],
 
-        3: {
-            title: "مجموعة قرارات محافظة دمشق",
+      content:
+        "تتضمن هذه المجموعة سلسلة إعلانات وتنويهات رسمية صادرة عن محافظة دمشق ووزارة الإدارة المحلية، تغطي جوانب خدمية وتنظيمية وإدارية متنوعة؛ حيث تشمل إعلانات لمزاد علني لبيع أرض تجارية بدمر، واستكمال أعمال صيانة الطرق بالقابون، وتكريم مهندسي النظافة بالقدم، إلى جانب مواعيد مراجعة المتقدمين لوظائف عمال وسائقي نظافة بكفرسوسة، وبيان توزيع بدلات الإيجار لمستحقي السكن البديل بماروتا سيتي. كما تضم التحديث التنظيمي لغربي البرامكة، ودعوة العاملين المفصولين لمراجعة الإدارة لاستكمال المقابلات، بالإضافة إلى توجيهات أمنية وتنظيمية بمنع بيع المفرقعات والألعاب النارية، وتمديد ساعات إغلاق الكافيهات والمنشآت السياحية حتى 3 صباحاً لمتابعة مباريات كأس العالم 2026.",
+    },
 
-            date: "5-9-2025",
+    4: {
+      title: "مديرية التنمية المحلية",
 
-            images: [
-                "../images/newdata/1.1.1.jpg",
-                "../images/newdata/1.1.jpg",
-                "../images/newdata/1.2.jpg",
-                "../images/newdata/1.3.jpg",
-                "../images/newdata/1 (2).jpg",
-                "../images/newdata/اعلان دعوة العاملين المفصولين.jpg",
-                "../images/newdata/المفرقعات والألعاب النارية.jpg",
-                "../images/newdata/تمديد_فترة_اغلاق_الكافيهات_لماريات_كاس_العالم.jpg"
-            ],
+      date: "6-9-2025",
 
-            content:
-                "تتضمن هذه المجموعة سلسلة إعلانات وتنويهات رسمية صادرة عن محافظة دمشق ووزارة الإدارة المحلية، تغطي جوانب خدمية وتنظيمية وإدارية متنوعة؛ حيث تشمل إعلانات لمزاد علني لبيع أرض تجارية بدمر، واستكمال أعمال صيانة الطرق بالقابون، وتكريم مهندسي النظافة بالقدم، إلى جانب مواعيد مراجعة المتقدمين لوظائف عمال وسائقي نظافة بكفرسوسة، وبيان توزيع بدلات الإيجار لمستحقي السكن البديل بماروتا سيتي. كما تضم التحديث التنظيمي لغربي البرامكة، ودعوة العاملين المفصولين لمراجعة الإدارة لاستكمال المقابلات، بالإضافة إلى توجيهات أمنية وتنظيمية بمنع بيع المفرقعات والألعاب النارية، وتمديد ساعات إغلاق الكافيهات والمنشآت السياحية حتى 3 صباحاً لمتابعة مباريات كأس العالم 2026."
-        },
+      images: [
+        "../images/newdata/2.jpg",
+        "../images/newdata/3.JPG",
+        "../images/newdata/4.jpeg",
+        "../images/newdata/5.jpeg",
+        "../images/newdata/6.jpeg",
+      ],
 
-        4: {
-            title: "مديرية التنمية المحلية",
+      content:
+        "تقديراً لجهودهم المخلصة في الحفاظ على نظافة أحياء المدينة، كرّمت مديرية التنمية المحلية الأخوة مهندسي النظافة في مركز نظافة أمانة القدم. تأتي هذه المبادرة في إطار دعم وتعزيز كوادر النظافة وتشجيع الدور الحيوي الذي يقدمونه يومياً لخدمة المجتمع.",
+    },
 
-            date: "6-9-2025",
+    5: {
+      title: "الكهرباء في دمشق",
 
-            images: [
-                "../images/newdata/2.jpg",
-                "../images/newdata/3.JPG",
-                "../images/newdata/4.jpeg",
-                "../images/newdata/5.jpeg",
-                "../images/newdata/6.jpeg"
-            ],
+      date: "8-9-2025",
 
-            content:
-                "تقديراً لجهودهم المخلصة في الحفاظ على نظافة أحياء المدينة، كرّمت مديرية التنمية المحلية الأخوة مهندسي النظافة في مركز نظافة أمانة القدم. تأتي هذه المبادرة في إطار دعم وتعزيز كوادر النظافة وتشجيع الدور الحيوي الذي يقدمونه يومياً لخدمة المجتمع."
-        },
+      images: [
+        "../images/newdata/dj004.jpeg",
+        "../images/newdata/dj006.jpeg",
+        "../images/newdata/dj008.jpeg",
+        "../images/newdata/dj009.jpeg",
+        "../images/newdata/dj555.jpeg",
+      ],
 
-        5: {
-            title: "الكهرباء في دمشق",
+      content:
+        "دعماً لواقع الكهرباء في حي القدم.. كهرباء دمشق قامت بمد خطوط توتر منخفض ووضع المركز بالخدمة، بما يعود بالنفع المثمر على الأهالي وتقديم الخدمات الأساسية في المنطقة.",
+    },
 
-            date: "8-9-2025",
+    6: {
+      title: "أعمال مديرية الإشراف في محافظة دمشق",
 
-            images: [
-                "../images/newdata/dj004.jpeg",
-                "../images/newdata/dj006.jpeg",
-                "../images/newdata/dj008.jpeg",
-                "../images/newdata/dj009.jpeg",
-                "../images/newdata/IMG_20260902_110555.jpg"
-            ],
+      date: "10-9-2025",
 
-            content:
-                "دعماً لواقع الكهرباء في حي القدم.. كهرباء دمشق قامت بمد خطوط توتر منخفض ووضع المركز بالخدمة، بما يعود بالنفع المثمر على الأهالي وتقديم الخدمات الأساسية في المنطقة."
-        },
+      images: [
+        "../images/newdata/2 (2).JPG",
+        "../images/newdata/3 (2).JPG",
+        "../images/newdata/4-2.jpeg",
+        "../images/newdata/5-2.jpeg",
+        "../images/newdata/6-2.jpeg",
+        "../images/newdata/7.jpeg",
+      ],
 
-        6: {
-            title: "أعمال مديرية الإشراف في محافظة دمشق",
+      content:
+        "في منطقة كفرسوسة.. قامت مديرية الصيانة بمحافظة دمشق بالتجهيز لأعمال تعبيد الطريق وتركيب المطريات، من أجل تقديم الخدمات الأساسية للسكان والأهالي.",
+    },
 
-            date: "10-9-2025",
+    7: {
+      title: "أعمال مديرية الصيانة في محافظة دمشق",
 
-            images: [
-                "../images/newdata/2 (2).JPG",
-                "../images/newdata/3 (2).JPG",
-                "../images/newdata/4-2.jpeg",
-                "../images/newdata/5-2.jpeg",
-                "../images/newdata/6-2.jpeg",
-                "../images/newdata/7.jpeg"
-            ],
+      date: "11-9-2025",
 
-            content:
-                "في منطقة كفرسوسة.. قامت مديرية الصيانة بمحافظة دمشق بالتجهيز لأعمال تعبيد الطريق وتركيب المطريات، من أجل تقديم الخدمات الأساسية للسكان والأهالي."
-        },
+      images: [
+        "../images/newdata/2-3.jpeg",
+        "../images/newdata/3-3.jpeg",
+        "../images/newdata/4-3.jpeg",
+        "../images/newdata/5-3.jpeg",
+        "../images/newdata/6-3.jpeg",
+        "../images/newdata/7-2.jpeg",
+      ],
 
-        7: {
-            title: "أعمال مديرية الصيانة في محافظة دمشق",
+      content:
+        "خدمتكم مستمرة.. ومديرية الإشراف بمحافظة دمشق تواصل إشرافها على الأعمال والمشاريع الخدمية وهذه المرة من منطقة القابون، حيث يتم استكمال عمليات الصيانة الطرقية لخدمتكم.",
+    },
 
-            date: "11-9-2025",
+    8: {
+      title: "ثانوية اليرموك",
 
-            images: [
-                "../images/newdata/2 (3).jpg",
-                "../images/newdata/3 (3).JPG",
-                "../images/newdata/4 (3).JPG",
-                "../images/newdata/5 (3).JPG",
-                "../images/newdata/6 (3).JPG",
-                "../images/newdata/7 (2).JPG"
-            ],
+      date: "12-9-2025",
 
-            content:
-                "خدمتكم مستمرة.. ومديرية الإشراف بمحافظة دمشق تواصل إشرافها على الأعمال والمشاريع الخدمية وهذه المرة من منطقة القابون، حيث يتم استكمال عمليات الصيانة الطرقية لخدمتكم."
-        },
+      images: [
+        "../images/newdata/dj225.jpeg",
+        "../images/newdata/dj262.jpeg",
+        "../images/newdata/dj371.jpeg",
+        "../images/newdata/dj173.jpeg",
+        "../images/newdata/dj167.jpeg",
+      ],
 
-        8: {
-            title: "ثانوية اليرموك",
+      content:
+        "افتتح معاون وزير التربية والتعليم للشؤون التربوية السيد يوسف عنان برفقة معاون محافظ دمشق السيد ضياء الدين محمد ثانوية اليرموك في دمشق، بعد الانتهاء من إعادة تأهيلها وترميمها لتستقبل طلابنا مع بداية العام الدراسي الجديد، وذلك بحضور عدد من الفعاليات التربوية والمجتمعية. وتصل الطاقة الاستيعابية للمدرسة إلى نحو 600 طالب في الدوام الواحد، على أن تُستَثمَر بنظام الفوجين الصباحي والمسائي، بما يُلبي احتياجات الطلاب في المنطقة ويخفف الضغط عن المدارس المجاورة.",
+    },
+  };
 
-            date: "12-9-2025",
+  const params = new URLSearchParams(window.location.search);
 
-            images: [
-                "../images/newdata/009A6225.JPG",
-                "../images/newdata/009A6262.JPG",
-                "../images/newdata/009A6371.JPG",
-                "../images/newdata/009A6173.JPG",
-                "../images/newdata/009A6167.JPG"
-            ],
+  const newsId = params.get("id") || "1";
 
-            content:
-                "افتتح معاون وزير التربية والتعليم للشؤون التربوية السيد يوسف عنان برفقة معاون محافظ دمشق السيد ضياء الدين محمد ثانوية اليرموك في دمشق، بعد الانتهاء من إعادة تأهيلها وترميمها لتستقبل طلابنا مع بداية العام الدراسي الجديد، وذلك بحضور عدد من الفعاليات التربوية والمجتمعية. وتصل الطاقة الاستيعابية للمدرسة إلى نحو 600 طالب في الدوام الواحد، على أن تُستَثمَر بنظام الفوجين الصباحي والمسائي، بما يُلبي احتياجات الطلاب في المنطقة ويخفف الضغط عن المدارس المجاورة."
-        }
-    };
+  const news = newsData[newsId];
 
+  if (!news) {
+    console.error(`الخبر رقم ${newsId} غير موجود`);
 
-    /* =====================================================
-       GET NEWS ID
-       ===================================================== */
+    return;
+  }
+  const title = document.getElementById("newsTitle");
 
-    const params =
-        new URLSearchParams(window.location.search);
+  const breadcrumbTitle = document.getElementById("newsBreadcrumbTitle");
 
-    const newsId =
-        params.get("id") || "1";
+  const date = document.getElementById("newsDate");
 
-    const news =
-        newsData[newsId];
+  const content = document.getElementById("newsContent");
 
+  const activeImage = document.getElementById("activeImage");
 
-    if (!news) {
+  const dotsContainer = document.getElementById("dotsContainer");
 
-        console.error(
-            `الخبر رقم ${newsId} غير موجود`
-        );
+  const prevButton = document.getElementById("prevSlide");
+
+  const nextButton = document.getElementById("nextSlide");
+
+  const zoomButton = document.getElementById("zoomImage");
+
+  if (title) {
+    title.textContent = news.title;
+  }
+
+  if (breadcrumbTitle) {
+    breadcrumbTitle.textContent = news.title;
+  }
+
+  if (date) {
+    date.textContent = news.date;
+  }
+
+  if (content) {
+    content.textContent = news.content;
+  }
+  let currentImageIndex = 0;
+
+  function showImage(index) {
+    if (!news.images || news.images.length === 0) {
+      return;
+    }
+
+    currentImageIndex = (index + news.images.length) % news.images.length;
+
+    if (activeImage) {
+      activeImage.src = news.images[currentImageIndex];
+    }
+
+    updateDots();
+  }
+  function createDots() {
+    if (!dotsContainer) {
+      return;
+    }
+
+    dotsContainer.innerHTML = "";
+
+    news.images.forEach((image, index) => {
+      const dot = document.createElement("button");
+
+      dot.type = "button";
+
+      dot.className = "news-details-indicator";
+
+      dot.setAttribute("aria-label", `الصورة ${index + 1}`);
+
+      dot.addEventListener("click", () => showImage(index));
+
+      dotsContainer.appendChild(dot);
+    });
+
+    updateDots();
+  }
+  function updateDots() {
+    if (!dotsContainer) {
+      return;
+    }
+
+    const dots = dotsContainer.querySelectorAll(".news-details-indicator");
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentImageIndex);
+    });
+  }
+
+  if (prevButton) {
+    prevButton.addEventListener("click", () => {
+      showImage(currentImageIndex - 1);
+    });
+  }
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      showImage(currentImageIndex + 1);
+    });
+  }
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      showImage(currentImageIndex + 1);
+    }
+
+    if (event.key === "ArrowRight") {
+      showImage(currentImageIndex - 1);
+    }
+  });
+
+  if (zoomButton) {
+    zoomButton.addEventListener("click", () => {
+      if (!activeImage) {
+        return;
+      }
+
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
 
         return;
-    }
+      }
 
+      if (activeImage.requestFullscreen) {
+        activeImage.requestFullscreen();
+      }
+    });
+  }
+  const relatedNewsTrack = document.getElementById("relatedNewsTrack");
 
-    /* =====================================================
-       PAGE ELEMENTS
-       ===================================================== */
+  const relatedPrev = document.getElementById("relatedPrev");
 
-    const title =
-        document.getElementById("newsTitle");
+  const relatedNext = document.getElementById("relatedNext");
 
-    const breadcrumbTitle =
-        document.getElementById("newsBreadcrumbTitle");
-
-    const date =
-        document.getElementById("newsDate");
-
-    const content =
-        document.getElementById("newsContent");
-
-    const activeImage =
-        document.getElementById("activeImage");
-
-    const dotsContainer =
-        document.getElementById("dotsContainer");
-
-    const prevButton =
-        document.getElementById("prevSlide");
-
-    const nextButton =
-        document.getElementById("nextSlide");
-
-    const zoomButton =
-        document.getElementById("zoomImage");
-
-
-    /* =====================================================
-       SET NEWS DATA
-       ===================================================== */
-
-    if (title) {
-        title.textContent = news.title;
-    }
-
-    if (breadcrumbTitle) {
-        breadcrumbTitle.textContent = news.title;
-    }
-
-    if (date) {
-        date.textContent = news.date;
-    }
-
-    if (content) {
-        content.textContent = news.content;
-    }
-
-
-    /* =====================================================
-       GALLERY
-       ===================================================== */
-
-    let currentImageIndex = 0;
-
-
-    function showImage(index) {
-
-        if (
-            !news.images ||
-            news.images.length === 0
-        ) {
-            return;
-        }
-
-        currentImageIndex =
-            (index + news.images.length) %
-            news.images.length;
-
-
-        if (activeImage) {
-
-            activeImage.src =
-                news.images[currentImageIndex];
-
-        }
-
-
-        updateDots();
-    }
-
-
-    /* =====================================================
-       DOTS
-       ===================================================== */
-
-    function createDots() {
-
-        if (!dotsContainer) {
-            return;
-        }
-
-        dotsContainer.innerHTML = "";
-
-
-        news.images.forEach(
-            (image, index) => {
-
-                const dot =
-                    document.createElement("button");
-
-
-                dot.type = "button";
-
-
-                dot.className =
-                    "news-details-indicator";
-
-
-                dot.setAttribute(
-                    "aria-label",
-                    `الصورة ${index + 1}`
-                );
-
-
-                dot.addEventListener(
-                    "click",
-                    () => showImage(index)
-                );
-
-
-                dotsContainer.appendChild(dot);
-
-            }
-        );
-
-
-        updateDots();
-    }
-
-
-    function updateDots() {
-
-        if (!dotsContainer) {
-            return;
-        }
-
-
-        const dots =
-            dotsContainer.querySelectorAll(
-                ".news-details-indicator"
-            );
-
-
-        dots.forEach(
-            (dot, index) => {
-
-                dot.classList.toggle(
-                    "active",
-                    index === currentImageIndex
-                );
-
-            }
-        );
-    }
-
-
-    /* =====================================================
-       PREVIOUS IMAGE
-       ===================================================== */
-
-    if (prevButton) {
-
-        prevButton.addEventListener(
-            "click",
-            () => {
-
-                showImage(
-                    currentImageIndex - 1
-                );
-
-            }
-        );
-    }
-
-
-    /* =====================================================
-       NEXT IMAGE
-       ===================================================== */
-
-    if (nextButton) {
-
-        nextButton.addEventListener(
-            "click",
-            () => {
-
-                showImage(
-                    currentImageIndex + 1
-                );
-
-            }
-        );
-    }
-
-
-    /* =====================================================
-       KEYBOARD
-       ===================================================== */
-
-    document.addEventListener(
-        "keydown",
-        (event) => {
-
-            if (event.key === "ArrowLeft") {
-
-                showImage(
-                    currentImageIndex + 1
-                );
-
-            }
-
-
-            if (event.key === "ArrowRight") {
-
-                showImage(
-                    currentImageIndex - 1
-                );
-
-            }
-
-        }
-    );
-
-
-    /* =====================================================
-       ZOOM
-       ===================================================== */
-
-    if (zoomButton) {
-
-        zoomButton.addEventListener(
-            "click",
-            () => {
-
-                if (!activeImage) {
-                    return;
-                }
-
-
-                if (document.fullscreenElement) {
-
-                    document.exitFullscreen();
-
-                    return;
-                }
-
-
-                if (activeImage.requestFullscreen) {
-
-                    activeImage.requestFullscreen();
-
-                }
-
-            }
-        );
-    }
-
-
-/* =====================================================
-   RELATED NEWS
-   ===================================================== */
-
-const relatedNewsTrack =
-    document.getElementById("relatedNewsTrack");
-
-const relatedPrev =
-    document.getElementById("relatedPrev");
-
-const relatedNext =
-    document.getElementById("relatedNext");
-
-
-let relatedCurrentIndex = 0;
-let relatedCardsPerView = 3;
-
-
-/* =====================================================
-   CARDS PER VIEW
-   ===================================================== */
-
-function getRelatedCardsPerView() {
-
+  let relatedCurrentIndex = 0;
+  let relatedCardsPerView = 3;
+  function getRelatedCardsPerView() {
     const width = window.innerWidth;
 
     if (width <= 650) {
-        return 1;
+      return 1;
     }
 
     if (width <= 900) {
-        return 2;
+      return 2;
     }
 
     return 3;
-}
+  }
 
-
-/* =====================================================
-   UPDATE RELATED SLIDER
-   ===================================================== */
-function updateRelatedSlider() {
-
+  function updateRelatedSlider() {
     if (!relatedNewsTrack) {
-        return;
+      return;
     }
 
-    const viewport =
-        relatedNewsTrack.parentElement;
+    const viewport = relatedNewsTrack.parentElement;
 
     if (!viewport) {
-        return;
+      return;
     }
 
-    const cards =
-        relatedNewsTrack.querySelectorAll(".news-card");
+    const cards = relatedNewsTrack.querySelectorAll(".news-card");
 
     if (!cards.length) {
+      if (relatedPrev) {
+        relatedPrev.disabled = true;
+      }
 
-        if (relatedPrev) {
-            relatedPrev.disabled = true;
-        }
+      if (relatedNext) {
+        relatedNext.disabled = true;
+      }
 
-        if (relatedNext) {
-            relatedNext.disabled = true;
-        }
-
-        return;
+      return;
     }
-
-
-    /* =========================================
-       CARDS PER VIEW
-       ========================================= */
-
-    relatedCardsPerView =
-        getRelatedCardsPerView();
-
-
-    /* =========================================
-       VIEWPORT WIDTH
-       ========================================= */
-
-    const viewportWidth =
-        viewport.clientWidth;
-
-
-    /* =========================================
-       GAP
-       ========================================= */
-
-    const trackStyle =
-        window.getComputedStyle(
-            relatedNewsTrack
-        );
+    relatedCardsPerView = getRelatedCardsPerView();
+    const viewportWidth = viewport.clientWidth;
+    const trackStyle = window.getComputedStyle(relatedNewsTrack);
 
     const gap =
-        parseFloat(trackStyle.columnGap) ||
-        parseFloat(trackStyle.gap) ||
-        0;
+      parseFloat(trackStyle.columnGap) || parseFloat(trackStyle.gap) || 0;
+    const totalGap = gap * (relatedCardsPerView - 1);
 
+    const cardWidth = (viewportWidth - totalGap) / relatedCardsPerView;
+    cards.forEach((card) => {
+      card.style.width = `${cardWidth}px`;
 
-    /* =========================================
-       CARD WIDTH
-       ========================================= */
+      card.style.minWidth = `${cardWidth}px`;
 
-    const totalGap =
-        gap * (relatedCardsPerView - 1);
+      card.style.maxWidth = `${cardWidth}px`;
 
-    const cardWidth =
-        (
-            viewportWidth -
-            totalGap
-        ) /
-        relatedCardsPerView;
-
-
-    /* =========================================
-       APPLY CARD WIDTH
-       ========================================= */
-
-    cards.forEach(card => {
-
-        card.style.width =
-            `${cardWidth}px`;
-
-        card.style.minWidth =
-            `${cardWidth}px`;
-
-        card.style.maxWidth =
-            `${cardWidth}px`;
-
-        card.style.flex =
-            `0 0 ${cardWidth}px`;
-
+      card.style.flex = `0 0 ${cardWidth}px`;
     });
 
-
-    /* =========================================
-       MAX INDEX
-       ========================================= */
-
-    const maxIndex =
-        Math.max(
-            0,
-            cards.length -
-            relatedCardsPerView
-        );
-
+    const maxIndex = Math.max(0, cards.length - relatedCardsPerView);
 
     if (relatedCurrentIndex > maxIndex) {
-
-        relatedCurrentIndex =
-            maxIndex;
+      relatedCurrentIndex = maxIndex;
     }
+    const translateX = relatedCurrentIndex * (cardWidth + gap);
 
-
-    /* =========================================
-       MOVE TRACK
-       ========================================= */
-
-  const translateX =
-    relatedCurrentIndex *
-    (cardWidth + gap);
-
-relatedNewsTrack.style.transform =
-    `translate3d(${translateX}px, 0, 0)`;
-
-
-    /* =========================================
-       BUTTON STATES
-       ========================================= */
-
+    relatedNewsTrack.style.transform = `translate3d(${translateX}px, 0, 0)`;
     if (relatedPrev) {
-
-        relatedPrev.disabled =
-            relatedCurrentIndex <= 0;
+      relatedPrev.disabled = relatedCurrentIndex <= 0;
     }
-
 
     if (relatedNext) {
-
-        relatedNext.disabled =
-            relatedCurrentIndex >= maxIndex;
+      relatedNext.disabled = relatedCurrentIndex >= maxIndex;
     }
+  }
 
-}
-
-
-/* =====================================================
-   RENDER RELATED NEWS
-   ===================================================== */
-
-function renderRelatedNews() {
-
+  function renderRelatedNews() {
     if (!relatedNewsTrack) {
-        return;
+      return;
     }
-
 
     relatedNewsTrack.innerHTML = "";
 
+    const relatedNews = Object.entries(newsData).filter(
+      ([id]) => id !== String(newsId),
+    );
 
-    /*
-       استثناء الخبر الحالي
-    */
+    relatedNews.forEach(([id, item]) => {
+      const card = document.createElement("article");
 
-    const relatedNews =
-        Object.entries(newsData)
-            .filter(
-                ([id]) =>
-                    id !== String(newsId)
-            );
+      card.className = "news-card news-card--model-5";
 
+      const coverImage =
+        item.images && item.images.length
+          ? item.images[0]
+          : "../images/Rectangle 40.png";
 
-    relatedNews.forEach(
-        ([id, item]) => {
-
-            const card =
-                document.createElement("article");
-
-
-            card.className =
-                "news-card news-card--model-5";
-
-
-            const coverImage =
-                item.images &&
-                item.images.length
-                    ? item.images[0]
-                    : "../images/Rectangle 40.png";
-
-
-            card.innerHTML = `
+      card.innerHTML = `
 
                 <div class="news-card__img-wrap">
 
@@ -727,120 +435,53 @@ function renderRelatedNews() {
 
             `;
 
-
-            relatedNewsTrack.appendChild(card);
-
-        }
-    );
-
+      relatedNewsTrack.appendChild(card);
+    });
 
     relatedCurrentIndex = 0;
 
-
     requestAnimationFrame(() => {
+      updateRelatedSlider();
+    });
+  }
+
+  if (relatedPrev) {
+    relatedPrev.addEventListener("click", () => {
+      if (relatedCurrentIndex > 0) {
+        relatedCurrentIndex--;
 
         updateRelatedSlider();
-
+      }
     });
+  }
 
-}
+  if (relatedNext) {
+    relatedNext.addEventListener("click", () => {
+      if (!relatedNewsTrack) {
+        return;
+      }
 
+      const cards = relatedNewsTrack.querySelectorAll(".news-card");
 
-/* =====================================================
-   PREVIOUS
-   السهم الموجود على اليسار
-   ===================================================== */
+      const maxIndex = Math.max(0, cards.length - relatedCardsPerView);
 
-if (relatedPrev) {
+      if (relatedCurrentIndex < maxIndex) {
+        relatedCurrentIndex++;
 
-    relatedPrev.addEventListener(
-        "click",
-        () => {
+        updateRelatedSlider();
+      }
+    });
+  }
 
-            if (
-                relatedCurrentIndex > 0
-            ) {
+  window.addEventListener("resize", () => {
+    requestAnimationFrame(() => {
+      updateRelatedSlider();
+    });
+  });
 
-                relatedCurrentIndex--;
+  createDots();
 
-                updateRelatedSlider();
+  showImage(0);
 
-            }
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   NEXT
-   السهم الموجود على اليمين
-   ===================================================== */
-
-if (relatedNext) {
-
-    relatedNext.addEventListener(
-        "click",
-        () => {
-
-            if (!relatedNewsTrack) {
-                return;
-            }
-
-
-            const cards =
-                relatedNewsTrack.querySelectorAll(
-                    ".news-card"
-                );
-
-
-            const maxIndex =
-                Math.max(
-                    0,
-                    cards.length -
-                    relatedCardsPerView
-                );
-
-
-            if (
-                relatedCurrentIndex <
-                maxIndex
-            ) {
-
-                relatedCurrentIndex++;
-
-                updateRelatedSlider();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   RESIZE
-   ===================================================== */
-
-window.addEventListener(
-    "resize",
-    () => {
-
-        requestAnimationFrame(() => {
-
-            updateRelatedSlider();
-
-        });
-
-    }
-);
-
-    createDots();
-
-    showImage(0);
-
-    renderRelatedNews();
-
+  renderRelatedNews();
 });
