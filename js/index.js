@@ -219,7 +219,8 @@
   let activeHood = null;
 
   hoods.forEach((hood) => {
-    hood.addEventListener("click", () => {
+    // hood.addEventListener("click", () => {
+    hood.addEventListener("mouseenter", () => {
       const id = hood.dataset.id;
       const info = data[id];
       if (!info) return;
