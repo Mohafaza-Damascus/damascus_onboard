@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
       date: "10-10-2025",
 
       images: [
-        "../images/newdata/1.jpg",
+        "../images/newdata/1.jpeg",
         "../images/newdata/download (1).jfif",
         "../images/newdata/download.jfif",
       ],
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       date: "7-9-2025",
 
       images: [
-        "../images/newdata/اعلان ازالة المولدات الكهربائية.jpg",
+        "../images/newdata/dj0002.jpeg",
         "../images/newdata/dj0004.jpeg",
         "../images/newdata/dj0006.jpeg",
         "../images/newdata/dj0008.jpeg",
@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
       date: "5-9-2025",
 
       images: [
-        "../images/newdata/1.1.1.jpg",
-        "../images/newdata/1.1.jpg",
-        "../images/newdata/1.2.jpg",
-        "../images/newdata/1.3.jpg",
-        "../images/newdata/1 (2).jpg",
+        "../images/newdata/1-1-1.jpeg",
+        "../images/newdata/1-1.jpeg",
+        "../images/newdata/1-22.jpeg",
+        "../images/newdata/1-33.jpeg",
+        "../images/newdata/1-2.jpeg",
         "../images/newdata/dj0003.jpeg",
         "../images/newdata/dj00013.jpeg",
         "../images/newdata/dj0005.jpeg",
@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
       date: "6-9-2025",
 
       images: [
-        "../images/newdata/2.jpg",
-        "../images/newdata/3.JPG",
+        "../images/newdata/2.jpeg",
+        "../images/newdata/3.jpeg",
         "../images/newdata/4.jpeg",
         "../images/newdata/5.jpeg",
         "../images/newdata/6.jpeg",
@@ -92,8 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
       date: "10-9-2025",
 
       images: [
-        "../images/newdata/2 (2).JPG",
-        "../images/newdata/3 (2).JPG",
+        "../images/newdata/2-2.jpeg",
+        "../images/newdata/3-2.jpeg",
         "../images/newdata/4-2.jpeg",
         "../images/newdata/5-2.jpeg",
         "../images/newdata/6-2.jpeg",
