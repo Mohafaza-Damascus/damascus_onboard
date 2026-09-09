@@ -47,6 +47,55 @@ function applyFilter(filter) {
   const page = document.querySelector(".news-page");
   if (!page) return;
 
+const pageTabs = page.querySelectorAll(".tab-btn");
+const pageNewsGroups = page.querySelectorAll(".news-group");
+const pageSectionTitles = page.querySelectorAll(".section-divider-title");
+
+function applyPageFilter(filter) {
+  pageNewsGroups.forEach((group) => {
+    if (filter === "all") {
+      group.style.display = "";
+    } else {
+      group.style.display =
+        group.dataset.category === filter ? "" : "none";
+    }
+  });
+
+  pageSectionTitles.forEach((title) => {
+    const group = title.nextElementSibling;
+
+    if (
+      group &&
+      group.classList.contains("news-group")
+    ) {
+      if (filter === "all") {
+        title.style.display = "";
+      } else {
+        title.style.display =
+          group.dataset.category === filter ? "" : "none";
+      }
+    }
+  });
+}
+
+pageTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    pageTabs.forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    tab.classList.add("active");
+
+    applyPageFilter(tab.dataset.filter);
+  });
+});
+
+const pageActiveTab = page.querySelector(".tab-btn.active");
+
+if (pageActiveTab) {
+  applyPageFilter(pageActiveTab.dataset.filter);
+}
+
   const model = page.classList.contains("news-page--model-2")
     ? 2
     : page.classList.contains("news-page--model-3")
@@ -58,6 +107,153 @@ function applyFilter(filter) {
         : 0;
 
   if (!model) return;
+
+if (model === 2) {
+    function applyModelTwoFilter(filter) {
+        newsGroups.forEach((group) => {
+            if (filter === "all") {
+                group.style.display = "";
+            } else {
+                group.style.display =
+                    group.dataset.category === filter ? "" : "none";
+            }
+        });
+
+        sectionTitles.forEach((title) => {
+            const group = title.nextElementSibling;
+
+            if (
+                group &&
+                group.classList.contains("news-group")
+            ) {
+                if (filter === "all") {
+                    title.style.display = "";
+                } else {
+                    title.style.display =
+                        group.dataset.category === filter ? "" : "none";
+                }
+            }
+        });
+    }
+
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            tabs.forEach((item) => {
+                item.classList.remove("active");
+            });
+
+            tab.classList.add("active");
+
+            applyModelTwoFilter(tab.dataset.filter);
+        });
+    });
+
+    const activeTab = document.querySelector(
+        ".news-page--model-2 .tab-btn.active"
+    );
+
+    if (activeTab) {
+        applyModelTwoFilter(activeTab.dataset.filter);
+    }
+}
+
+if (model === 3) {
+  function applyModelThreeFilter(filter) {
+    newsGroups.forEach((group) => {
+      if (filter === "all") {
+        group.style.display = "";
+      } else {
+        group.style.display =
+          group.dataset.category === filter ? "" : "none";
+      }
+    });
+
+    sectionTitles.forEach((title) => {
+      const group = title.nextElementSibling;
+
+      if (
+        group &&
+        group.classList.contains("news-group")
+      ) {
+        if (filter === "all") {
+          title.style.display = "";
+        } else {
+          title.style.display =
+            group.dataset.category === filter ? "" : "none";
+        }
+      }
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      tab.classList.add("active");
+
+      applyModelThreeFilter(tab.dataset.filter);
+    });
+  });
+
+  const activeTab = document.querySelector(
+    ".news-page--model-3 .tab-btn.active"
+  );
+
+  if (activeTab) {
+    applyModelThreeFilter(activeTab.dataset.filter);
+  }
+}
+
+if (model === 4) {
+  function applyModelFourFilter(filter) {
+    newsGroups.forEach((group) => {
+      if (filter === "all") {
+        group.style.display = "";
+      } else {
+        group.style.display =
+          group.dataset.category === filter ? "" : "none";
+      }
+    });
+
+    sectionTitles.forEach((title) => {
+      const group = title.nextElementSibling;
+
+      if (
+        group &&
+        group.classList.contains("news-group")
+      ) {
+        if (filter === "all") {
+          title.style.display = "";
+        } else {
+          title.style.display =
+            group.dataset.category === filter ? "" : "none";
+        }
+      }
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      tab.classList.add("active");
+
+      applyModelFourFilter(tab.dataset.filter);
+    });
+  });
+
+  const activeTab = document.querySelector(
+    ".news-page--model-4 .tab-btn.active"
+  );
+
+  if (activeTab) {
+    applyModelFourFilter(activeTab.dataset.filter);
+  }
+}
 
   function mod(value, length) {
     return ((value % length) + length) % length;
