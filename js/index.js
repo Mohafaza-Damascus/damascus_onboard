@@ -271,7 +271,14 @@
   ];
 
   let current = 0;
-
+  if (sessionStorage.getItem("introPlayed")) {
+    video.autoplay = true;
+    video.play();
+  } else {
+    window.addEventListener("introFinished", () => {
+      video.play();
+    });
+  }
   video.addEventListener("ended", () => {
     current = (current + 1) % sources.length;
     video.src = sources[current];
@@ -284,23 +291,32 @@
   const video = document.getElementById("introVideo");
   if (!overlay || !video) return;
 
+  if (sessionStorage.getItem("introPlayed")) {
+    overlay.remove();
+    return;
+  }
+
   document.body.classList.add("intro-active");
 
-  video.addEventListener("ended", () => {
+  function endIntro() {
+    sessionStorage.setItem("introPlayed", "true");
     overlay.classList.add("is-done");
     document.body.classList.remove("intro-active");
-    setTimeout(() => overlay.remove(), 800);
-  });
+    setTimeout(() => overlay.remove(), 900);
+    window.dispatchEvent(new Event("introFinished"));
+  }
+
+  video.addEventListener("ended", endIntro);
 
   video.addEventListener("error", () => {
+    sessionStorage.setItem("introPlayed", "true");
     overlay.remove();
     document.body.classList.remove("intro-active");
+    window.dispatchEvent(new Event("introFinished"));
   });
 
   overlay.addEventListener("click", () => {
     video.pause();
-    overlay.classList.add("is-done");
-    document.body.classList.remove("intro-active");
-    setTimeout(() => overlay.remove(), 800);
+    endIntro();
   });
 })();

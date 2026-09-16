@@ -334,7 +334,6 @@
     });
   }
 
-  /* ─── News models menu ─── */
   const newsMenuItem = document.querySelector(".nav__item--has-menu");
   const newsMenuTrigger = document.querySelector("[data-news-menu-trigger]");
 
@@ -359,7 +358,6 @@
     });
   }
 
-  /* ─── Sticky header + height var ─── */
   const header = document.querySelector(".header");
 
   const setHeaderHeight = () => {
