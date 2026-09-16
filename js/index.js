@@ -267,7 +267,7 @@
     "assets/video/queue1.mp4",
     "assets/video/queue2.mp4",
     "assets/video/queue3.mp4",
-    "assets/video/new_mohafez.mp4",
+    // "assets/video/new_mohafez.mp4",
   ];
 
   let current = 0;

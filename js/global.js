@@ -68,7 +68,7 @@
     el.outerHTML = `
     <header class="header">
       <div class="container">
-        <div class="topbar"><span class="topbar__date" id="today"></span></div>
+     
         <div class="header__row">
           <a href="${base}index.html" class="logo" aria-label="محافظة دمشق">
             <img src="${base}images/logo.png" alt="شعار محافظة دمشق" />

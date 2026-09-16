@@ -29,8 +29,8 @@
   inset: 0;
   background-image: url("../assets/Vector.png");
   background-repeat: repeat;
-  background-size: 500px auto;
-  opacity: 0.7;
+  background-size: 1200px auto;
+  /* opacity: 0.9; */
   pointer-events: none;
   z-index: 0;
 }
@@ -109,6 +109,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: end;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
@@ -118,8 +119,12 @@
 }
 
 .detail-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(6, 66, 57, 0.12);
+  /* background: var(--sd-green-light);
+  border: 1px solid var(--sd-card-bg);
+  color:var(--sd-card-bg) */
+
 }
 
 .detail-card .card-arrow {
