@@ -1,24 +1,4 @@
-@font-face {
-  src: url('/assests/fonts/itfQomraArabic-Light.ttf');
-  font-family: 'qomra_light';
-}
-@font-face {
-  src: url('/assests/fonts/itfQomraArabic-Bold.ttf');
-  font-family: 'qomra_bold';
-}
-@font-face {
-  src: url('/assests/fonts/itfQomraArabic-Regular.ttf');
-  font-family: 'qomra_regular';
-}
 
-* {
-  padding: 0;
-  margin: 0;
-  font-family: 'qomra_regular';
-  box-sizing: border-box;
-  max-width: 100%;
-  scroll-behavior: smooth;
-}
 
 :root {
   --bg-dark: linear-gradient(135deg, #0f0f0f, #1a1a1a);
@@ -121,7 +101,7 @@ body {
   width: 100%;
   padding: 0 14px;
   font-size: 14px;
-  font-family: 'qomra_bold';
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -182,7 +162,7 @@ body {
 .sub_filter_btn.active {
   background: #b9a779;
   color: #054239;
-  font-family: 'qomra_bold';
+  font-weight: 700;
 }
 .map_main_container {
   position: absolute;
@@ -256,7 +236,7 @@ body {
 .filter_select_wrap label {
   font-size: 0.85rem;
   color: #fae5af;
-  font-family: 'qomra_bold';
+ font-weight: 700;
   white-space: nowrap;
 }
 
@@ -266,7 +246,7 @@ body {
   border: none;
   padding: 4px 6px;
   font-size: 0.85rem;
-  font-family: 'qomra_regular';
+ font-weight: 700;
   cursor: pointer;
   direction: rtl;
   outline: none;
@@ -447,7 +427,7 @@ body {
 
 .google-place-panel__title {
   color: #054239;
-  font-family: 'qomra_bold';
+ font-weight: 700;
   font-size: 19px;
   margin-bottom: 6px;
 }
