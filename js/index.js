@@ -3,7 +3,7 @@
   if (!statsGrid) return;
 
   const stats = statsGrid.querySelectorAll(".stat");
-  const STAGGER = 1000;
+  const STAGGER = 400;
 
   const animateCounter = (el) => {
     const target = parseFloat(el.dataset.count);

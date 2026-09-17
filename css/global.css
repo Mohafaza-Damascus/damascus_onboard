@@ -507,9 +507,9 @@ button {
   object-fit: contain;
   transition: transform 0.6s ease-in-out;
 }
-.stat:hover .stat__icon {
+/* .stat:hover .stat__icon {
   transform: rotateY(180deg);
-}
+} */
 
 .stat__label {
   font-size: 15px;
