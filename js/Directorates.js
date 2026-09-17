@@ -707,7 +707,7 @@ function renderTopFilters(rawLocations) {
   districts.forEach((d) => {
     const opt = document.createElement("option");
     opt.value = d;
-    opt.innerText = d === "all" ? "كل المناطق" : d;
+    opt.innerText = d === "all" ? "كل الاحياء" : d;
     if (d === activeDistrict) opt.selected = true;
     distSel.appendChild(opt);
   });
@@ -802,8 +802,7 @@ function renderAccordionNav() {
         renderTopFilters(locs);
         renderMarkers(locs, true);
 
-        // // إغلاق السايد بار تلقائياً لرؤية الخريطة
-        // if (sideMenu) sideMenu.classList.remove("is-open");
+        
       });
 
       subList.appendChild(subBtn);
@@ -811,7 +810,6 @@ function renderAccordionNav() {
 
     mainBtn.addEventListener("click", () => {
       const isOpen = item.classList.contains("open");
-
       document.querySelectorAll(".category_accordion_item").forEach((el) => {
         el.classList.remove("open");
         el.querySelector(".map_btn").classList.remove("active");
@@ -825,17 +823,13 @@ function renderAccordionNav() {
         activeDistrict = "all";
         activeSecondary = "all";
 
-        const firstSubBtn = subList.querySelector(".sub_filter_btn");
-        if (firstSubBtn) {
-          document.querySelectorAll(".sub_filter_btn").forEach((b) => b.classList.remove("active"));
-          firstSubBtn.classList.add("active");
-        }
+        
 
         const locs = catData.locationSets[activeFilter] || [];
         renderTopFilters(locs);
         renderMarkers(locs, true);
 
-        if (sideMenu) sideMenu.classList.remove("is-open");
+       
       }
     });
 
