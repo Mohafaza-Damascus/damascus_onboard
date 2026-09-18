@@ -18,10 +18,7 @@
         label: "الأخبار",
         href: `${pagesPrefix}news.html`,
         subItems: [
-          { label: "النموذج الأساسي", href: `${pagesPrefix}news.html` },
           { label: "النموذج الثاني", href: `${pagesPrefix}news-model-2.html` },
-          { label: "النموذج الثالث", href: `${pagesPrefix}news-model-3.html` },
-          { label: "النموذج الرابع", href: `${pagesPrefix}news-model-4.html` },
           { label: "النموذج الخامس", href: `${pagesPrefix}news-model-5.html` },
         ],
       },
@@ -334,29 +331,63 @@
     });
   }
 
-  const newsMenuItem = document.querySelector(".nav__item--has-menu");
-  const newsMenuTrigger = document.querySelector("[data-news-menu-trigger]");
+const newsMenuItem = document.querySelector(".nav__item--has-menu");
+const newsMenuTrigger = document.querySelector("[data-news-menu-trigger]");
 
-  if (newsMenuItem && newsMenuTrigger) {
-    const closeNewsMenu = () => {
+if (newsMenuItem && newsMenuTrigger) {
+  let closeTimer = null;
+
+  const openNewsMenu = () => {
+    clearTimeout(closeTimer);
+
+    newsMenuItem.classList.add("is-open");
+    newsMenuTrigger.setAttribute("aria-expanded", "true");
+  };
+
+  const closeNewsMenu = () => {
+    clearTimeout(closeTimer);
+
+    closeTimer = setTimeout(() => {
       newsMenuItem.classList.remove("is-open");
       newsMenuTrigger.setAttribute("aria-expanded", "false");
-    };
+    }, 150);
+  };
 
-    newsMenuTrigger.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = newsMenuItem.classList.toggle("is-open");
-      newsMenuTrigger.setAttribute("aria-expanded", String(isOpen));
-    });
+  // فتح القائمة بمجرد الوقوف على "الأخبار"
+  newsMenuItem.addEventListener("mouseenter", openNewsMenu);
 
-    document.addEventListener("click", (e) => {
-      if (!newsMenuItem.contains(e.target)) closeNewsMenu();
-    });
+  // إبقاء القائمة مفتوحة أثناء تحريك الماوس داخلها
+  newsMenuItem.addEventListener("mouseleave", closeNewsMenu);
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeNewsMenu();
-    });
-  }
+  // السماح أيضًا بالفتح عند الضغط
+  newsMenuTrigger.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const isOpen = newsMenuItem.classList.contains("is-open");
+
+    if (isOpen) {
+      closeNewsMenu();
+    } else {
+      openNewsMenu();
+    }
+  });
+
+  // إغلاقها عند الضغط خارجها
+  document.addEventListener("click", (e) => {
+    if (!newsMenuItem.contains(e.target)) {
+      newsMenuItem.classList.remove("is-open");
+      newsMenuTrigger.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // إغلاقها عند الضغط على Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      newsMenuItem.classList.remove("is-open");
+      newsMenuTrigger.setAttribute("aria-expanded", "false");
+    }
+  });
+}
 
   const header = document.querySelector(".header");
 
