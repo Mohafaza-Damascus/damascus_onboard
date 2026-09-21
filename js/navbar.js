@@ -24,7 +24,7 @@ function injectHeader() {
             <!--<div class="navbar">
                 <ul>
                     <li><a href="/platform/home.html">الرئيسية</a></li>
-                    <li><a href="/platform/news.html">الأخبار</a></li>
+                    <li><a href="/platform/news-model-5.html">الأخبار</a></li>
                     <li><a href="/platform/culture.html">نظرة ثقافية</a></li>
                     <li><a href="/platform/services.html">الخدمات</a></li>
                     <li><a href="/platform/guide.html">دليل دمشق</a></li>

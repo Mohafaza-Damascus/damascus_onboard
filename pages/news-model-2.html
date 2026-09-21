@@ -3,561 +3,849 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>محافظة دمشق - الأخبار | النموذج الرابع</title>
+
+    <title>محافظة دمشق - الأخبار</title>
+
     <link rel="icon" href="../images/logo.png" type="image/png" />
+
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/news.css" />
   </head>
+
   <body>
+
+    <!-- ================= HEADER ================= -->
     <div id="site-header" data-active="الأخبار"></div>
+
+
+    <!-- ================= NEWS PAGE ================= -->
     <main class="news-page news-page--model-2">
-      <div class="bg-pattern vector-pattern"></div>
+
+      <!-- Background Patterns -->
+
       <div class="bg-pattern jasmine-pattern jasmine-1"></div>
       <div class="bg-pattern jasmine-pattern jasmine-2"></div>
       <div class="bg-pattern jasmine-pattern jasmine-3"></div>
 
+
       <div class="container">
+
+        <!-- ================= PAGE HEADER ================= -->
         <section class="news-header">
-          <h1 class="news-title news-title--framed">آخر أخبار المحافظة</h1>
-          <!-- <p class="news-description">
-            تسعى محافظة دمشق إلى الارتقاء بجودة الخدمات المقدمة للمواطنين وتلبية
-            تطلعاتهم، مستندة إلى معايير السرعة، والكفاءة، والمصداقية في الإنجاز.
-            تسعى محافظة دمشق إلى الارتقاء بجودة الخدمات المقدمة للمواطنين وتلبية
-            تطلعاتهم، مستندة إلى معايير السرعة، والكفاءة، والمصداقية في الإنجاز.
-          </p> -->
+
+          <h1 class="news-title news-title--framed">
+            آخر أخبار المحافظة
+          </h1>
+
         </section>
 
+
+        <!-- ================= FILTERS ================= -->
         <nav class="news-tabs" aria-label="تصنيفات الأخبار">
-          <!-- <button class="tab-btn active" data-filter="all">أخر الأخبار</button> -->
-          <button class="tab-btn" data-filter="activities">الأنشطة</button>
-          <button class="tab-btn" data-filter="circulars">التعاميم</button>
-          <button class="tab-btn" data-filter="decisions">القرارات</button>
+
+  <button class="tab-btn active" data-filter="all">الكل</button>
+          <button
+            class="tab-btn active"
+            data-filter="news"
+          >
+            الأخبار
+          </button>
+
+          <button
+            class="tab-btn"
+            data-filter="activities"
+          >
+            الأنشطة
+          </button>
+
+          <button
+            class="tab-btn"
+            data-filter="ministries"
+          >
+            الوزارات والتعاميم
+          </button>
+
         </nav>
 
+
+        <!-- ================= NEWS SECTIONS ================= -->
         <div class="news-sections">
-          <section class="news-group" data-category="news">
+
+
+          <!-- ================================================= -->
+          <!-- الأخبار -->
+          <!-- ================================================= -->
+ <div class="section-divider-title">
+            الأخبار 
+          </div>
+          <section
+            class="news-group"
+            data-category="news"
+          >
+
             <div class="news-grid">
-              <article class="news-card">
+
+
+              <!-- CARD 3 -->
+              <article
+                class="news-card"
+                data-categories="news"
+              >
+
                 <div class="news-card__img-wrap">
+
                   <img
-                    src="../images/Rectangle 40.png"
-                    alt="خبر"
+                    src="../images/newdata/1-1-1.jpeg"
+                    alt="قرارات محافظة دمشق"
                     class="news-card__img"
                   />
+
                 </div>
+
+
                 <div class="news-card__body">
+
                   <div class="news-card__date-wrap">
+
                     <img
                       src="../images/Calendar (1).png"
                       alt=""
                       class="calendar-icon"
                     />
-                    <span class="news-card__date">10-10-2025</span>
+
+                    <span class="news-card__date">
+                      1-9-2025
+                    </span>
+
                   </div>
+
+
                   <h3 class="news-card__title">
-                    التقى الرئيس أحمد الشرع مع الرئيس الفرنسي
+                    قرارات محافظة دمشق
                   </h3>
+
+
                   <p class="news-card__text">
-                    وذلك للبحث في سبل تعزيز التعاون بين البلدين
+                    مجموعة من القرارت والإجراءات التي اتخذتها محافظة دمشق ضمن خطتها لتطوير المجتمع.
                   </p>
+
                 </div>
+
+
                 <img
                   src="../images/Rectangle 42.png"
                   alt=""
                   class="news-card__cutout"
                 />
-                <a href="#" class="news-card__btn">
+
+
+                <a
+                  href="news-details.html?id=3"
+                  class="news-card__btn"
+                >
+
                   <span>اقرأ المزيد</span>
+
                   <img
                     src="../images/Advance.png"
                     alt=""
                     class="news-card__arrow"
                   />
+
                 </a>
+
               </article>
 
-              <article class="news-card">
+
+              <!-- CARD 5 -->
+              <article
+                class="news-card"
+                data-categories="news ministries"
+              >
+
                 <div class="news-card__img-wrap">
+
                   <img
-                    src="../images/Rectangle 40.png"
-                    alt="خبر"
+                    src="../images/newdata/dj541.jpeg"
+                    alt="كهرباء دمشق"
                     class="news-card__img"
                   />
+
                 </div>
+
+
                 <div class="news-card__body">
+
                   <div class="news-card__date-wrap">
+
                     <img
                       src="../images/Calendar (1).png"
                       alt=""
                       class="calendar-icon"
                     />
-                    <span class="news-card__date">10-10-2025</span>
+
+                    <span class="news-card__date">
+                      8-9-2025
+                    </span>
+
                   </div>
+
+
                   <h3 class="news-card__title">
-                    التقى الرئيس أحمد الشرع مع الرئيس الفرنسي
+                    كهرباء دمشق
                   </h3>
+
+
                   <p class="news-card__text">
-                    وذلك للبحث في سبل تعزيز التعاون بين البلدين
+                    تفاصيل وتطورات عن الكهرباء في حي القدم.
                   </p>
+
                 </div>
+
+
                 <img
                   src="../images/Rectangle 42.png"
                   alt=""
                   class="news-card__cutout"
                 />
-                <a href="#" class="news-card__btn">
+
+
+                <a
+                  href="news-details.html?id=5"
+                  class="news-card__btn"
+                >
+
                   <span>اقرأ المزيد</span>
+
                   <img
                     src="../images/Advance.png"
                     alt=""
                     class="news-card__arrow"
                   />
+
                 </a>
+
               </article>
 
-              <article class="news-card">
+
+              <!-- CARD 6 -->
+              <article
+                class="news-card"
+                data-categories="news activities"
+              >
+
                 <div class="news-card__img-wrap">
+
                   <img
-                    src="../images/Rectangle 40.png"
-                    alt="خبر"
+                    src="../images/newdata/2.jpeg"
+                    alt="أعمال مديرية الإشراف في محافظة دمشق"
                     class="news-card__img"
                   />
+
                 </div>
+
+
                 <div class="news-card__body">
+
                   <div class="news-card__date-wrap">
+
                     <img
                       src="../images/Calendar (1).png"
                       alt=""
                       class="calendar-icon"
                     />
-                    <span class="news-card__date">10-10-2025</span>
+
+                    <span class="news-card__date">
+                      10-9-2025
+                    </span>
+
                   </div>
+
+
                   <h3 class="news-card__title">
-                    التقى الرئيس أحمد الشرع مع الرئيس الفرنسي
+                    أعمال مديرية الإشراف في محافظة دمشق
                   </h3>
+
+
                   <p class="news-card__text">
-                    وذلك للبحث في سبل تعزيز التعاون بين البلدين
+                    مديرية الإشراف بمحافظة دمشق تواصل إشرافها على الأعمال والمشاريع الخدمية
                   </p>
+
                 </div>
+
+
                 <img
                   src="../images/Rectangle 42.png"
                   alt=""
                   class="news-card__cutout"
                 />
-                <a href="#" class="news-card__btn">
+
+
+                <a
+                  href="news-details.html?id=6"
+                  class="news-card__btn"
+                >
+
                   <span>اقرأ المزيد</span>
+
                   <img
                     src="../images/Advance.png"
                     alt=""
                     class="news-card__arrow"
                   />
+
                 </a>
+
               </article>
 
-              <article class="news-card">
+
+              <!-- CARD 7 -->
+              <article
+                class="news-card"
+                data-categories="news"
+              >
+
                 <div class="news-card__img-wrap">
+
                   <img
-                    src="../images/Rectangle 40.png"
-                    alt="خبر"
+                    src="../images/newdata/1-3.jpeg"
+                    alt="أعمال مديرية الصيانة في محافظة دمشق"
                     class="news-card__img"
                   />
+
                 </div>
+
+
                 <div class="news-card__body">
+
                   <div class="news-card__date-wrap">
+
                     <img
                       src="../images/Calendar (1).png"
                       alt=""
                       class="calendar-icon"
                     />
-                    <span class="news-card__date">10-10-2025</span>
+
+                    <span class="news-card__date">
+                      11-9-2025
+                    </span>
+
                   </div>
+
+
                   <h3 class="news-card__title">
-                    التقى الرئيس أحمد الشرع مع الرئيس الفرنسي
+                    أعمال مديرية الصيانة في محافظة دمشق
                   </h3>
+
+
                   <p class="news-card__text">
-                    وذلك للبحث في سبل تعزيز التعاون بين البلدين
+                    قامت مديرية الصيانة بمحافظة دمشق بالتجهيز لأعمال تعبيد الطريق وتركيب المطريات
                   </p>
+
                 </div>
+
+
                 <img
                   src="../images/Rectangle 42.png"
                   alt=""
                   class="news-card__cutout"
                 />
-                <a href="#" class="news-card__btn">
+
+
+                <a
+                  href="news-details.html?id=7"
+                  class="news-card__btn"
+                >
+
                   <span>اقرأ المزيد</span>
+
                   <img
                     src="../images/Advance.png"
                     alt=""
                     class="news-card__arrow"
                   />
+
                 </a>
+
               </article>
+
+
             </div>
+
           </section>
-          <div class="section-divider-title">الأنشطة</div>
-          <section class="news-group" data-category="activities">
+
+
+          <!-- ================================================= -->
+          <!-- الأنشطة -->
+          <!-- ================================================= -->
+
+          <div class="section-divider-title">
+            الأنشطة
+          </div>
+
+
+          <section
+            class="news-group"
+            data-category="activities"
+          >
+
             <div class="news-grid">
-              <article class="news-card">
+
+
+              <!-- CARD 1 -->
+              <article
+                class="news-card"
+                data-categories="activities"
+              >
+
                 <div class="news-card__img-wrap">
+
                   <img
-                    src="../images/Rectangle 40 (1).png"
-                    alt="نشاط"
+                    src="../images/newdata/1.jpeg"
+                    alt="نشاطات مديرية البيئة في محافظة دمشق"
                     class="news-card__img"
                   />
+
                 </div>
+
+
                 <div class="news-card__body">
+
                   <div class="news-card__date-wrap">
+
                     <img
                       src="../images/Calendar (1).png"
                       alt=""
                       class="calendar-icon"
                     />
-                    <span class="news-card__date">10-10-2025</span>
+
+                    <span class="news-card__date">
+                      10-10-2025
+                    </span>
+
                   </div>
+
+
                   <h3 class="news-card__title">
-                    تدريب في الجامعة السورية الخاصة
+                    نشاطات مديرية البيئة في محافظة دمشق
                   </h3>
+
+
                   <p class="news-card__text">
-                    تدريب في الجامعة السورية الخاصة تدريبات
+                    تعلن مديرية البيئة في محافظة دمشق عن فتح باب التسجيل في النادي الصيفي البيئي المجاني لعام 2026.
                   </p>
+
                 </div>
+
+
                 <img
                   src="../images/Rectangle 42.png"
                   alt=""
                   class="news-card__cutout"
                 />
-                <a href="#" class="news-card__btn">
+
+
+                <a
+                  href="news-details.html?id=1"
+                  class="news-card__btn"
+                >
+
                   <span>اقرأ المزيد</span>
+
                   <img
                     src="../images/Advance.png"
                     alt=""
                     class="news-card__arrow"
                   />
+
                 </a>
+
               </article>
-              <article class="news-card">
+
+
+              <!-- CARD 2 -->
+              <article
+                class="news-card"
+                data-categories="activities"
+              >
+
                 <div class="news-card__img-wrap">
+
                   <img
-                    src="../images/Rectangle 40 (1).png"
-                    alt="نشاط"
+                    src="../images/newdata/dj0002.jpeg"
+                    alt="مجموعة أنشطة محافظة دمشق"
                     class="news-card__img"
                   />
+
                 </div>
+
+
                 <div class="news-card__body">
+
                   <div class="news-card__date-wrap">
+
                     <img
                       src="../images/Calendar (1).png"
                       alt=""
                       class="calendar-icon"
                     />
-                    <span class="news-card__date">10-10-2025</span>
+
+                    <span class="news-card__date">
+                      7-9-2026
+                    </span>
+
                   </div>
+
+
                   <h3 class="news-card__title">
-                    تدريب في الجامعة السورية الخاصة
+                    مجموعة أنشطة محافظة دمشق
                   </h3>
+
+
                   <p class="news-card__text">
-                    تدريب في الجامعة السورية الخاصة تدريبات
+                    تعلن محافظة دمشق عن ضرورة إزالة كافة المولدات الكهربائية المرخصة وغير المرخصة الموضوعة على الأملاك العامة (أرصفة - شوارع الخ).
                   </p>
+
                 </div>
+
+
                 <img
                   src="../images/Rectangle 42.png"
                   alt=""
                   class="news-card__cutout"
                 />
-                <a href="#" class="news-card__btn">
+
+
+                <a
+                  href="news-details.html?id=2"
+                  class="news-card__btn"
+                >
+
                   <span>اقرأ المزيد</span>
+
                   <img
                     src="../images/Advance.png"
                     alt=""
                     class="news-card__arrow"
                   />
+
                 </a>
+
               </article>
-              <article class="news-card">
+
+
+              <!-- CARD 4 -->
+              <article
+                class="news-card"
+                data-categories="activities ministries"
+              >
+
                 <div class="news-card__img-wrap">
+
                   <img
-                    src="../images/Rectangle 40 (1).png"
-                    alt="نشاط"
+                    src="../images/newdata/1-3.jpeg"
+                    alt="مديرية التنمية المحلية"
                     class="news-card__img"
                   />
+
                 </div>
+
+
                 <div class="news-card__body">
+
                   <div class="news-card__date-wrap">
+
                     <img
                       src="../images/Calendar (1).png"
                       alt=""
                       class="calendar-icon"
                     />
-                    <span class="news-card__date">10-10-2025</span>
+
+                    <span class="news-card__date">
+                      6-9-2025
+                    </span>
+
                   </div>
+
+
                   <h3 class="news-card__title">
-                    تدريب في الجامعة السورية الخاصة
+                    مديرية التنمية المحلية
                   </h3>
+
+
                   <p class="news-card__text">
-                    تدريب في الجامعة السورية الخاصة تدريبات
+                    مديرية التنمية المحلية في محافظة دمشق تكرم الأخوة مهندسي النظافة في مركز نظافة أمانة القدم.
                   </p>
+
                 </div>
+
+
                 <img
                   src="../images/Rectangle 42.png"
                   alt=""
                   class="news-card__cutout"
                 />
-                <a href="#" class="news-card__btn">
+
+
+                <a
+                  href="news-details.html?id=4"
+                  class="news-card__btn"
+                >
+
                   <span>اقرأ المزيد</span>
+
                   <img
                     src="../images/Advance.png"
                     alt=""
                     class="news-card__arrow"
                   />
+
                 </a>
+
               </article>
-              <article class="news-card">
+
+
+              <!-- CARD 6 -->
+              <article
+                class="news-card"
+                data-categories="news activities"
+              >
+
                 <div class="news-card__img-wrap">
+
                   <img
-                    src="../images/Rectangle 40 (1).png"
-                    alt="نشاط"
+                    src="../images/newdata/2.jpeg"
+                    alt="أعمال مديرية الإشراف في محافظة دمشق"
                     class="news-card__img"
                   />
+
                 </div>
+
+
                 <div class="news-card__body">
+
                   <div class="news-card__date-wrap">
+
                     <img
                       src="../images/Calendar (1).png"
                       alt=""
                       class="calendar-icon"
                     />
-                    <span class="news-card__date">10-10-2025</span>
+
+                    <span class="news-card__date">
+                      10-9-2025
+                    </span>
+
                   </div>
+
+
                   <h3 class="news-card__title">
-                    تدريب في الجامعة السورية الخاصة
+                    أعمال مديرية الإشراف في محافظة دمشق
                   </h3>
+
+
                   <p class="news-card__text">
-                    تدريب في الجامعة السورية الخاصة تدريبات
+                    مديرية الإشراف بمحافظة دمشق تواصل إشرافها على الأعمال والمشاريع الخدمية
                   </p>
+
                 </div>
+
+
                 <img
                   src="../images/Rectangle 42.png"
                   alt=""
                   class="news-card__cutout"
                 />
-                <a href="#" class="news-card__btn">
+
+
+                <a
+                  href="news-details.html?id=6"
+                  class="news-card__btn"
+                >
+
                   <span>اقرأ المزيد</span>
+
                   <img
                     src="../images/Advance.png"
                     alt=""
                     class="news-card__arrow"
                   />
+
                 </a>
+
               </article>
+
+
             </div>
+
           </section>
-          <div class="section-divider-title">التعاميم</div>
-          <section class="news-group" data-category="circulars">
+
+
+          <!-- ================================================= -->
+          <!-- الوزارات والتعاميم -->
+          <!-- ================================================= -->
+
+          <div class="section-divider-title">
+            الوزارات والتعاميم
+          </div>
+
+
+          <section
+            class="news-group"
+            data-category="ministries"
+          >
+
             <div class="news-grid">
-              <article class="news-card">
+
+
+              <!-- CARD 4 -->
+              <article
+                class="news-card"
+                data-categories="activities ministries"
+              >
+
                 <div class="news-card__img-wrap">
+
                   <img
-                    src="../images/Rectangle 40 (2).png"
-                    alt="تعميم"
+                    src="../images/newdata/1-3.jpeg"
+                    alt="مديرية التنمية المحلية"
                     class="news-card__img"
                   />
+
                 </div>
+
+
                 <div class="news-card__body">
+
                   <div class="news-card__date-wrap">
+
                     <img
                       src="../images/Calendar (1).png"
                       alt=""
                       class="calendar-icon"
                     />
-                    <span class="news-card__date">10-10-2025</span>
+
+                    <span class="news-card__date">
+                      6-9-2025
+                    </span>
+
                   </div>
+
+
                   <h3 class="news-card__title">
-                    بلاغ صادر عن الأمانة العامة لرئاسة الجمهورية
+                    مديرية التنمية المحلية
                   </h3>
+
+
                   <p class="news-card__text">
-                    بلاغ صادر عن الأمانة العامة لرئاسة الجمهورية
+                    مديرية التنمية المحلية في محافظة دمشق تكرم الأخوة مهندسي النظافة في مركز نظافة أمانة القدم.
                   </p>
+
                 </div>
+
+
                 <img
                   src="../images/Rectangle 42.png"
                   alt=""
                   class="news-card__cutout"
                 />
-                <a href="#" class="news-card__btn">
+
+
+                <a
+                  href="news-details.html?id=4"
+                  class="news-card__btn"
+                >
+
                   <span>اقرأ المزيد</span>
+
                   <img
                     src="../images/Advance.png"
                     alt=""
                     class="news-card__arrow"
                   />
+
                 </a>
+
               </article>
 
-              <article class="news-card">
-                <div class="news-card__img-wrap">
-                  <img
-                    src="../images/Rectangle 40 (2).png"
-                    alt="تعميم"
-                    class="news-card__img"
-                  />
-                </div>
-                <div class="news-card__body">
-                  <div class="news-card__date-wrap">
-                    <img
-                      src="../images/Calendar (1).png"
-                      alt=""
-                      class="calendar-icon"
-                    />
-                    <span class="news-card__date">10-10-2025</span>
-                  </div>
-                  <h3 class="news-card__title">
-                    بلاغ صادر عن الأمانة العامة لرئاسة الجمهورية
-                  </h3>
-                  <p class="news-card__text">
-                    بلاغ صادر عن الأمانة العامة لرئاسة الجمهورية
-                  </p>
-                </div>
-                <img
-                  src="../images/Rectangle 42.png"
-                  alt=""
-                  class="news-card__cutout"
-                />
-                <a href="#" class="news-card__btn">
-                  <span>اقرأ المزيد</span>
-                  <img
-                    src="../images/Advance.png"
-                    alt=""
-                    class="news-card__arrow"
-                  />
-                </a>
-              </article>
 
-              <article class="news-card">
-                <div class="news-card__img-wrap">
-                  <img
-                    src="../images/Rectangle 40 (2).png"
-                    alt="تعميم"
-                    class="news-card__img"
-                  />
-                </div>
-                <div class="news-card__body">
-                  <div class="news-card__date-wrap">
-                    <img
-                      src="../images/Calendar (1).png"
-                      alt=""
-                      class="calendar-icon"
-                    />
-                    <span class="news-card__date">10-10-2025</span>
-                  </div>
-                  <h3 class="news-card__title">
-                    بلاغ صادر عن الأمانة العامة لرئاسة الجمهورية
-                  </h3>
-                  <p class="news-card__text">
-                    بلاغ صادر عن الأمانة العامة لرئاسة الجمهورية
-                  </p>
-                </div>
-                <img
-                  src="../images/Rectangle 42.png"
-                  alt=""
-                  class="news-card__cutout"
-                />
-                <a href="#" class="news-card__btn">
-                  <span>اقرأ المزيد</span>
-                  <img
-                    src="../images/Advance.png"
-                    alt=""
-                    class="news-card__arrow"
-                  />
-                </a>
-              </article>
-            </div>
-          </section>
-          <div class="section-divider-title">القرارات</div>
-          <section class="news-group" data-category="decisions">
-            <div class="news-grid">
-              <article class="news-card">
-                <div class="news-card__img-wrap">
-                  <img
-                    src="../images/Rectangle 40 (3).png"
-                    alt="قرار"
-                    class="news-card__img"
-                  />
-                </div>
-                <div class="news-card__body">
-                  <div class="news-card__date-wrap">
-                    <img
-                      src="../images/Calendar (1).png"
-                      alt=""
-                      class="calendar-icon"
-                    />
-                    <span class="news-card__date">10-10-2025</span>
-                  </div>
-                  <h3 class="news-card__title">
-                    بلاغ صادر عن الأمانة العامة لرئاسة الجمهورية
-                  </h3>
-                  <p class="news-card__text">
-                    بلاغ صادر عن الأمانة العامة لرئاسة الجمهورية
-                  </p>
-                </div>
-                <img
-                  src="../images/Rectangle 42.png"
-                  alt=""
-                  class="news-card__cutout"
-                />
-                <a href="#" class="news-card__btn">
-                  <span>اقرأ المزيد</span>
-                  <img
-                    src="../images/Advance.png"
-                    alt=""
-                    class="news-card__arrow"
-                  />
-                </a>
-              </article>
+              <!-- CARD 5 -->
+              <article
+                class="news-card"
+                data-categories="news ministries"
+              >
 
-              <article class="news-card">
                 <div class="news-card__img-wrap">
+
                   <img
-                    src="../images/Rectangle 40 (3).png"
-                    alt="قرار"
+                    src="../images/newdata/dj541.jpeg"
+                    alt="كهرباء دمشق"
                     class="news-card__img"
                   />
+
                 </div>
+
+
                 <div class="news-card__body">
+
                   <div class="news-card__date-wrap">
+
                     <img
                       src="../images/Calendar (1).png"
                       alt=""
                       class="calendar-icon"
                     />
-                    <span class="news-card__date">10-10-2025</span>
+
+                    <span class="news-card__date">
+                      8-9-2025
+                    </span>
+
                   </div>
+
+
                   <h3 class="news-card__title">
-                    بلاغ صادر عن الأمانة العامة لرئاسة الجمهورية
+                    كهرباء دمشق
                   </h3>
+
+
                   <p class="news-card__text">
-                    بلاغ صادر عن الأمانة العامة لرئاسة الجمهورية
+                    تفاصيل وتطورات عن الكهرباء في حي القدم.
                   </p>
+
                 </div>
+
+
                 <img
                   src="../images/Rectangle 42.png"
                   alt=""
                   class="news-card__cutout"
                 />
-                <a href="#" class="news-card__btn">
+
+
+                <a
+                  href="news-details.html?id=5"
+                  class="news-card__btn"
+                >
+
                   <span>اقرأ المزيد</span>
+
                   <img
                     src="../images/Advance.png"
                     alt=""
                     class="news-card__arrow"
                   />
+
                 </a>
               </article>
-
-              <article class="news-card">
+              <!-- CARD 8 -->
+              <article
+                class="news-card"
+                data-categories="ministries"
+              >
                 <div class="news-card__img-wrap">
                   <img
-                    src="../images/Rectangle 40 (3).png"
-                    alt="قرار"
+                    src="../images/newdata/dj184.jpeg"
+                    alt="ثانوية اليرموك"
                     class="news-card__img"
                   />
                 </div>
@@ -568,13 +856,15 @@
                       alt=""
                       class="calendar-icon"
                     />
-                    <span class="news-card__date">10-10-2025</span>
+                    <span class="news-card__date">
+                      12-9-2025
+                    </span>
                   </div>
                   <h3 class="news-card__title">
-                    بلاغ صادر عن الأمانة العامة لرئاسة الجمهورية
+                    ثانوية اليرموك
                   </h3>
                   <p class="news-card__text">
-                    بلاغ صادر عن الأمانة العامة لرئاسة الجمهورية
+                    افتتح معاون وزير التربية والتعليم للشؤون التربوية السيد يوسف عنان برفقة معاون محافظ دمشق السيد ضياء الدين محمد ثانوية اليرموك في دمشق، بعد الانتهاء من إعادة التأهيل.
                   </p>
                 </div>
                 <img
@@ -582,7 +872,10 @@
                   alt=""
                   class="news-card__cutout"
                 />
-                <a href="#" class="news-card__btn">
+                <a
+                  href="news-details.html?id=8"
+                  class="news-card__btn"
+                >
                   <span>اقرأ المزيد</span>
                   <img
                     src="../images/Advance.png"
