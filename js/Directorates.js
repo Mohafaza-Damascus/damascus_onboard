@@ -456,7 +456,6 @@ function createMarkerEl(iconStyle, isHighlighted = false) {
     <div class="marker-content">
       <div class="pin-head">
         <div class="pin-dot"></div>
-        <span class="marker-emoji">${emoji}</span>
       </div>
       <div class="pin-point"></div>
     </div>

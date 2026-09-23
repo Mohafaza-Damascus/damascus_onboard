@@ -2122,7 +2122,6 @@ button {
   filter: brightness(10);
 }
 
-/* Smooth transitions */
 .header__row {
   transition: background 0.4s ease, border-radius 0.4s ease, padding 0.4s ease;
 }
