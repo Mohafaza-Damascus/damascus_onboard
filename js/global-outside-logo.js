@@ -67,90 +67,49 @@
           </li>`;
       })
       .join("");
-          el.outerHTML = `
-<header class="header">
-  <div class="container">
-    <div class="header__row">
-      <a href="${base}index.html" class="logo" aria-label="محافظة دمشق">
-        <img src="${base}images/logo.png" alt="شعار محافظة دمشق" />
-      </a>
-      <div class="header__bar">
-        <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-        <nav class="nav" id="nav">
-          <ul class="nav__list">${navLinks}</ul>
-          <div class="nav__actions">
-            <a href="#" class="btn-login" id="openAuth">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
-              </svg>
-              <span>تسجيل الدخول</span>
-            </a>
+    el.outerHTML = `
+    <header class="header">
+      <div class="container">
+     
+        <div class="header__row">
+          <a href="${base}index.html" class="logo" aria-label="محافظة دمشق">
+            <img src="${base}images/logo.png" alt="شعار محافظة دمشق" />
+          </a>
+          <div class="header__bar">
+            <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="nav">
+              <ul class="nav__list">${navLinks}</ul>
+              <div class="nav__actions">
+                <a href="#" class="btn-login" id="openAuth">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+                  </svg>
+                  <span>تسجيل الدخول</span>
+                </a>
+              </div>
+            </nav>
           </div>
-        </nav>
+          <div class="header__side">
+            <a href="${pagesPrefix}contact.html" class="btn-contact" aria-label="تواصل معنا">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.04z"/>
+              </svg>
+            </a>
+            <button class="btn-lang" id="langBtn" aria-label="تغيير اللغة">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <ellipse cx="12" cy="12" rx="4" ry="10"/>
+                <path d="M2 12h20"/>
+                <path d="M4.5 7h15"/>
+                <path d="M4.5 17h15"/>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="header__side">
-        <a href="${pagesPrefix}contact.html" class="btn-contact" aria-label="تواصل معنا">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.04z"/>
-          </svg>
-        </a>
-        <button class="btn-lang" id="langBtn" aria-label="تغيير اللغة">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <ellipse cx="12" cy="12" rx="4" ry="10"/>
-            <path d="M2 12h20"/>
-            <path d="M4.5 7h15"/>
-            <path d="M4.5 17h15"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</header>`;
-//     el.outerHTML = `
-// <header class="header">
-//   <div class="container">
-//     <div class="header__row">
-//       <div class="header__bar">
-//         <a href="${base}index.html" class="logo" aria-label="محافظة دمشق">
-//           <img src="${base}images/logo.png" alt="شعار محافظة دمشق" />
-//         </a>
-//         <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
-//           <span></span><span></span><span></span>
-//         </button>
-//         <nav class="nav" id="nav">
-//           <ul class="nav__list">${navLinks}</ul>
-//           <div class="nav__actions">
-//             <a href="#" class="btn-login" id="openAuth">
-//               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-//                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
-//               </svg>
-//               <span>تسجيل الدخول</span>
-//             </a>
-//             <a href="${pagesPrefix}contact.html" class="btn-contact" aria-label="تواصل معنا">
-//               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-//                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.04z"/>
-//               </svg>
-//             </a>
-//             <button class="btn-lang" id="langBtn" aria-label="تغيير اللغة">
-//               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-//                 <circle cx="12" cy="12" r="10"/>
-//                 <ellipse cx="12" cy="12" rx="4" ry="10"/>
-//                 <path d="M2 12h20"/>
-//                 <path d="M4.5 7h15"/>
-//                 <path d="M4.5 17h15"/>
-//               </svg>
-//             </button>
-//           </div>
-//         </nav>
-//       </div>
-//     </div>
-//   </div>
-// </header>`;
-
-
+    </header>`;
     // el.outerHTML = `
     // <header class="header">
     //   <div class="container">
@@ -446,23 +405,6 @@
   };
 
   setHeaderHeight();
-// من معاذ هاد السكشن مؤقت 
-  const logoBtn = document.querySelector('.header .logo');
-if (logoBtn) {
-  if (localStorage.getItem('header-unified') === 'true') {
-    document.querySelector('.header')?.classList.add('header--unified');
-  }
-
-  logoBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const h = document.querySelector('.header');
-    if (!h) return;
-    h.classList.toggle('header--unified');
-    localStorage.setItem('header-unified', h.classList.contains('header--unified'));
-  });
-}
-// من معاذ لهون مؤقت
-
   window.addEventListener("resize", setHeaderHeight);
   window.addEventListener("load", setHeaderHeight);
 

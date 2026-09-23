@@ -204,16 +204,19 @@
       .bottom-video {
         position: relative;
         /* height: 100vh; */
-        min-height: 280px;
+        /* min-height: 280px; */
         overflow: hidden;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        max-width: var(--container);
+        margin-inline: auto;
+        /* padding-inline: var(--sp-2); */
       }
       .bottom-video__el {
-        /* width: 100%; */
-        height: 50%;
+        width: 100%;
+        /* height: 50%; */
         object-fit: cover;
         display: block;
         border-radius: 20px;
@@ -221,13 +224,13 @@
       .bottom-video__overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(
+        /* background: linear-gradient(
           to bottom,
           rgba(237, 231, 217, 0.6) 0%,
           transparent 30%,
           transparent 70%,
           rgba(237, 231, 217, 0.6) 100%
-        );
+        ); */
         pointer-events: none;
       }
 
@@ -235,7 +238,9 @@
         padding-block: var(--sp-5);
         /* overflow: hidden; */
         border: 1px solid rgb(150, 147, 147);
-        margin-inline: 9%;
+        margin-inline: auto;
+        max-width: var(--container);
+        padding-inline: var(--sp-2);
         border-radius: 25px;
         background-color: white;
         height: 775px;

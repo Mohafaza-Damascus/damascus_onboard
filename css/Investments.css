@@ -8,7 +8,7 @@ body {
   margin: 0;
   min-height: 100vh;
   position: relative;
-  background-color: #efe7d6; 
+  background-color: #efe7d6;
 }
 
 body::before {
@@ -22,10 +22,10 @@ body::before {
   z-index: -1;
   background-image: url("../images/pattern.png");
   background-repeat: repeat;
-  background-size: 450px auto; 
+  background-size: 450px auto;
   background-position: center top;
-  opacity: 0.12; 
-  mix-blend-mode: multiply; 
+  opacity: 0.12;
+  mix-blend-mode: multiply;
 }
 
 .inv-intro {
@@ -77,19 +77,21 @@ body::before {
   width: 460px;
   max-width: calc(50vw - 40px);
   min-height: 240px;
-  background: #efe7d6;
+  /* background: #efe7d6; */
+  background: var(--svc-dark);
   border: 1px solid rgba(6, 66, 57, 0.15);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 36px var(--sp-3) var(--sp-3); 
+  padding: 36px var(--sp-3) var(--sp-3);
   cursor: pointer;
   transition: all 0.4s ease;
 }
 
 .inv-card:hover {
-  background: var(--svc-dark);
+  /* background: var(--svc-dark); */
+  background: #efe7d6;
   border-color: #efe7d6;
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
@@ -101,25 +103,30 @@ body::before {
   left: 16px;
   width: 44px;
   height: 44px;
-  background: rgba(6, 66, 57, 0.12);
+  /* background: rgba(6, 66, 57, 0.12); */
+  background: #efe7d6;
   border: 1px solid transparent;
   border-radius: 12px;
   display: grid;
   place-items: center;
   color: var(--svc-green);
+  /* color: #efe7d6; */
   font-size: 16px;
   transition: all 0.4s ease;
 }
 
 .inv-card:hover .card-arrow {
   background: rgba(255, 255, 255, 0.15);
-  color: #efe7d6;
-  border-color: #efe7d6;
-  transform: translateX(-4px); 
+  /* color: #efe7d6; */
+  color: var(--svc-green);
+  /* border-color: #efe7d6; */
+  border-color: var(--svc-green);
+  transform: translateX(-4px);
 }
 
 .inv-card__title {
- color: var(--svc-dark);
+  /* color: var(--svc-dark); */
+  color: #efe7d6;
   font-weight: 700;
   font-size: clamp(24px, 3vw, 32px);
   margin-bottom: 10px;
@@ -133,17 +140,20 @@ body::before {
   z-index: 2;
   font-size: 15px;
   line-height: 1.8;
-color: var(--svc-dark);
+  /* color: var(--svc-dark); */
+  color: #efe7d6;
   text-align: center;
   transition: color 0.3s ease;
 }
 
 .inv-card:hover .inv-card__title {
-  color: #efe7d6;
+  /* color: #efe7d6; */
+  color: var(--svc-dark);
 }
 
 .inv-card:hover .inv-card__desc {
-color: rgba(255, 255, 255, 0.8);
+  /* color: rgba(255, 255, 255, 0.8); */
+  color: var(--svc-dark);
 }
 
 @media (max-width: 768px) {
