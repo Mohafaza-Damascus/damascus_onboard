@@ -177,7 +177,7 @@ button {
   display: flex;
   align-items: center;
   gap: var(--sp-2);
-  background: var(--green-700);
+  background: var(--green-900);
   border-radius: var(--r-md);
   padding: 6px 10px 6px var(--sp-2);
   box-shadow: var(--shadow-sm);
@@ -2084,9 +2084,9 @@ button {
 
 
 /* معاذ هاد الستايل مؤقت و للحذف */
-/* ── Unified header (everything inside green bar) ── */
 .header--unified .header__row {
-  background: var(--green-700);
+  /* background: var(--green-700); */
+  background: var(--green-900);
   border-radius: var(--r-md);
   padding: 6px 10px 6px var(--sp-2);
   box-shadow: var(--shadow-sm);
