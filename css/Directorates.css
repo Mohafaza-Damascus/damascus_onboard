@@ -1,9 +1,8 @@
-
- *,
+*,
 *::before,
 *::after {
   box-sizing: border-box;
-} 
+}
 :root {
   --bg-dark: linear-gradient(135deg, #0f0f0f, #1a1a1a);
   --bg-panel: rgb(66, 45, 45);
@@ -20,7 +19,6 @@
   --blur: blur(12px);
   --font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
 body {
   background-color: transparent;
   width: 100vw;
@@ -28,63 +26,47 @@ body {
   margin: 0;
   overflow: hidden;
   position: relative;
-  
 }
-
 .thirdsec {
   position: absolute;
-  top:0px;
+  top: 0px;
   width: 100%;
   /* height: calc(100vh - 120px); */
   height: 100vh;
   min-height: 0;
   overflow: visible;
-
 }
 .map_container {
   position: relative;
   width: 100%;
   height: 100%;
   display: block;
-
 }
-
 .map_left_side_menu {
   position: absolute;
   right: 15px;
   top: 135px;
   bottom: 15px;
-
   width: 290px;
   min-width: 290px;
-
   box-sizing: border-box;
-
   padding: 15px 12px;
-
   background-color: #054239;
   border: 1px solid #b9a779;
   border-radius: 16px;
-
   display: flex;
   flex-direction: column;
   gap: 8px;
-
   z-index: 2000;
-
   overflow-y: auto;
   overflow-x: hidden;
-
   transform: translateX(115%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-
   pointer-events: auto;
 }
-
 .map_left_side_menu.is-open {
   transform: translateX(0);
 }
-
 .map_left_side_menu::-webkit-scrollbar {
   width: 4px;
 }
@@ -92,14 +74,12 @@ body {
   background: #b9a779;
   border-radius: 4px;
 }
-
 .accordion_nav_wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
 .category_accordion_item {
   width: 100%;
   display: flex;
@@ -110,7 +90,6 @@ body {
   background: rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
-
 .map_btn {
   background-color: #054239;
   color: #edebe0;
@@ -127,28 +106,23 @@ body {
   align-items: center;
   transition: all 0.25s ease;
 }
-
 .map_btn:hover {
   background: rgba(185, 167, 121, 0.25);
   color: #f7e3b3;
 }
-
 .map_btn.active {
   background: #b9a779;
   color: #0f0f0f;
   font-weight: 700;
   box-shadow: 0 2px 12px rgba(184, 168, 46, 0.35);
 }
-
 .chevron_arrow {
   font-size: 10px;
   transition: transform 0.3s ease;
 }
-
 .category_accordion_item.open .chevron_arrow {
   transform: rotate(180deg);
 }
-
 .category_sub_list {
   display: none;
   flex-direction: column;
@@ -156,11 +130,9 @@ body {
   padding: 6px 8px 8px;
   background: rgba(0, 30, 26, 0.45);
 }
-
 .category_accordion_item.open .category_sub_list {
   display: flex;
 }
-
 .sub_filter_btn {
   background: transparent;
   color: #edebe0;
@@ -172,12 +144,10 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-
 .sub_filter_btn:hover {
   background: rgba(185, 167, 121, 0.2);
   color: #fae5af;
 }
-
 .sub_filter_btn.active {
   background: #b9a779;
   color: #054239;
@@ -194,7 +164,6 @@ body {
   pointer-events: none;
   z-index: 5;
 }
-
 .top_filters_bar {
   position: absolute;
   top: 85px;
@@ -206,7 +175,6 @@ body {
   z-index: 1000 !important;
   pointer-events: auto !important;
 }
-
 .menu_toggle_btn {
   background-color: #054239 !important;
   border: 1.5px solid #b9a779 !important;
@@ -222,15 +190,15 @@ body {
   cursor: pointer !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45) !important;
   pointer-events: auto !important;
-  transition: background-color 0.2s ease, transform 0.15s ease !important;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease !important;
   padding: 0 !important;
 }
-
 .menu_toggle_btn:hover {
   background-color: #085a4e !important;
   transform: scale(1.04);
 }
-
 .menu_toggle_btn span {
   display: block !important;
   width: 22px !important;
@@ -239,7 +207,6 @@ body {
   border-radius: 3px !important;
   pointer-events: none !important;
 }
-
 .filter_select_wrap {
   display: flex;
   align-items: center;
@@ -251,31 +218,27 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45) !important;
   height: 44px !important;
 }
-
 .filter_select_wrap label {
   font-size: 0.85rem;
   color: #fae5af;
- font-weight: 700;
+  font-weight: 700;
   white-space: nowrap;
 }
-
 .filter_select {
   background: transparent;
   color: #edebe0;
   border: none;
   padding: 4px 6px;
   font-size: 0.85rem;
- font-weight: 700;
+  font-weight: 700;
   cursor: pointer;
   direction: rtl;
   outline: none;
 }
-
 .filter_select option {
   background: #054239;
   color: #edebe0;
 }
-
 .map_wrapper {
   position: absolute;
   top: 0;
@@ -284,13 +247,10 @@ body {
   height: 100%;
   z-index: 1;
 }
-
 #map {
   width: 100%;
   height: 100%;
 }
-
-
 .marker-wrapper {
   width: 32px;
   height: 44px;
@@ -299,139 +259,92 @@ body {
   pointer-events: auto !important;
   overflow: visible;
 }
-
 .marker-content {
   width: 32px;
   height: 44px;
   position: relative;
   overflow: visible;
-
-  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.30));
-
-  transition:
-    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.3));
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-
 .pin-head {
   width: 32px;
   height: 32px;
-
   position: absolute;
   top: 0;
   left: 0;
-
   background-color: var(--marker-color, #ea4335);
-
-  
   border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg);
   transform-origin: 50% 50%;
-
   z-index: 2;
-
-  box-shadow:
-    0 2px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
-
-
 .pin-dot {
   width: 11px;
   height: 11px;
-
   position: absolute;
   top: 50%;
   left: 50%;
-
   background: #fff;
   border-radius: 50%;
-
   transform: translate(-50%, -50%) rotate(45deg);
-
   z-index: 3;
 }
-
 .marker-emoji {
   position: absolute;
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%) rotate(45deg);
-
   font-size: 14px;
   line-height: 1;
-
   z-index: 4;
 }
-
-
 .pin-point {
   display: none;
 }
-
-
-
 .marker-wrapper.highlighted {
   z-index: 1000 !important;
 }
-
 .marker-wrapper.highlighted .marker-content {
   transform: scale(1.3) translateY(-7px);
 }
-
 .google-place-panel {
   position: fixed !important;
-
   top: 50% !important;
   left: 15px !important;
-
   right: auto !important;
   bottom: auto !important;
-
   width: 290px;
   max-width: calc(100vw - 30px);
-
   height: 480px;
   max-height: calc(100vh - 110px);
-
   box-sizing: border-box;
-
   overflow-y: auto;
   overflow-x: hidden;
-
   background: #fff;
   color: #1f2f2d;
-
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.35);
-
   border-radius: 16px;
-
   transform: translateY(-50%) translateX(-120%);
-
   opacity: 0;
   visibility: hidden;
-
   pointer-events: none;
-
   transition:
     transform 0.28s ease,
     opacity 0.28s ease,
     visibility 0.28s ease;
-
   z-index: 999999 !important;
 }
 .google-place-panel.is-visible {
   top: 50% !important;
   left: 15px !important;
   right: auto !important;
-
   transform: translateY(-50%) translateX(0) !important;
-
   opacity: 1 !important;
   visibility: visible !important;
-
   pointer-events: auto !important;
 }
-
 .google-place-panel__close {
   position: absolute;
   top: 12px;
@@ -451,36 +364,30 @@ body {
   justify-content: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
-
 .google-place-panel__close:hover {
   background: #edebe0;
 }
-
 .google-place-panel__img-wrapper {
   width: 100%;
   height: 170px;
   background: #054239;
   overflow: hidden;
 }
-
 .google-place-panel__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
 .google-place-panel__body {
   padding: 16px;
 }
-
 .google-place-panel__title {
   color: #054239;
- font-weight: 700;
+  font-weight: 700;
   font-size: 19px;
   margin-bottom: 6px;
 }
-
 .google-place-panel__meta {
   display: flex;
   gap: 10px;
@@ -488,17 +395,14 @@ body {
   font-size: 13px;
   margin-bottom: 12px;
 }
-
 .google-place-panel__status.is-open {
   color: #16824c;
   font-weight: bold;
 }
-
 .google-place-panel__status:not(.is-open) {
   color: #c0392b;
   font-weight: bold;
 }
-
 .google-place-panel__row {
   margin: 8px 0;
   font-size: 13.5px;
@@ -507,7 +411,6 @@ body {
   align-items: center;
   gap: 8px;
 }
-
 .google-place-panel__description {
   margin-top: 12px;
   padding-top: 12px;
@@ -516,30 +419,23 @@ body {
   line-height: 1.6;
   color: #46514f;
 }
-
-
 .map_main_container {
   pointer-events: auto !important;
 }
-
 .map_wrapper {
   pointer-events: auto !important;
 }
-
 #map {
   pointer-events: auto !important;
 }
-
 .marker-wrapper {
   pointer-events: auto !important;
   cursor: pointer;
   z-index: 100 !important;
 }
-
 .marker-content {
   pointer-events: auto !important;
 }
-
 .marker-wrapper.highlighted {
   z-index: 1000 !important;
 }
