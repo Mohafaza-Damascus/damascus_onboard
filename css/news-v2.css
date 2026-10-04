@@ -1,0 +1,899 @@
+/* =========================================================
+   NEWS V2
+   Same visual design as the original News page
+   ========================================================= */
+
+:root {
+    --news-v2-title: #064239;
+    --news-v2-text: rgba(6, 66, 57, 0.79);
+
+    --news-v2-bg-gradient: linear-gradient(
+        156.64deg,
+        rgba(248, 245, 238, 0.5) 28.64%,
+        rgba(208, 187, 146, 0.2) 46.12%,
+        rgba(248, 245, 238, 0.5) 73.59%
+    );
+
+    --news-v2-tab-gradient: linear-gradient(
+        90deg,
+        rgba(6, 66, 57, 0.7) 9.31%,
+        rgba(248, 245, 238, 0.6265) 51.76%,
+        rgba(6, 66, 57, 0.7) 100%
+    );
+
+    --news-v2-tab-shadow:
+        inset 0 4px 4px 0 rgba(6, 66, 57, 0.788);
+
+    --news-v2-card-bg: #fdfbf7;
+    --news-v2-card-border: #064239;
+
+    --news-v2-radius: 20px;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.news-v2-page {
+    position: relative;
+
+    min-height: calc(100vh - 173px);
+
+    padding-top: 40px;
+    padding-bottom: 80px;
+
+    overflow: hidden;
+
+    background: var(--news-v2-bg-gradient);
+
+    z-index: 1;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Background
+|--------------------------------------------------------------------------
+*/
+
+.news-v2-page::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    background-image: url("../assets/Vector.png");
+    background-repeat: repeat;
+    background-size: 1250px auto;
+    background-position: center top;
+
+    opacity: 0.35;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.news-v2-container {
+    width: min(1400px, calc(100% - 80px));
+
+    margin: 0 auto;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.news-v2-heading {
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.news-v2-heading h1 {
+    width: 100%;
+
+    margin: 0;
+
+    color: var(--news-v2-title);
+
+    font-size: clamp(26px, 3vw, 32px);
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   TABS
+   ========================================================= */
+
+.news-v2-tabs {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+.news-v2-tab {
+    width: 145px;
+    height: 45px;
+
+    padding: 0;
+
+    border: 1px solid var(--news-v2-title);
+
+    border-radius: 5px;
+
+    background: var(--news-v2-title);
+
+    box-shadow: var(--news-v2-tab-shadow);
+
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.news-v2-tab:hover {
+    opacity: 0.85;
+
+    transform: translateY(-2px);
+}
+
+
+.news-v2-tab:active {
+    transform: translateY(0);
+}
+
+
+.news-v2-tab.is-active {
+    opacity: 1;
+
+    box-shadow:
+        inset 0 4px 4px 0 rgba(6, 66, 57, 0.788),
+        0 4px 10px rgba(6, 66, 57, 0.08);
+}
+
+
+.news-v2-tab:focus-visible {
+    outline: 3px solid rgba(6, 66, 57, 0.25);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.news-v2-divider {
+    width: 100%;
+
+    height: 1px;
+
+    margin-bottom: 40px;
+
+    background: rgba(6, 66, 57, 0.15);
+}
+
+
+/* =========================================================
+   GROUP
+   ========================================================= */
+
+.news-v2-group {
+    position: relative;
+
+    margin-bottom: 50px;
+
+    z-index: 2;
+}
+
+
+.news-v2-group.is-hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.news-v2-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.news-v2-card {
+    position: relative;
+
+    height: 500px;
+
+    background: var(--news-v2-card-bg);
+
+    border: 1px solid var(--news-v2-card-border);
+
+    border-radius: var(--news-v2-radius);
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: visible;
+
+    box-shadow:
+        0 4px 12px rgba(6, 66, 57, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.news-v2-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(6, 66, 57, 0.12);
+}
+
+
+/* =========================================================
+   CARD IMAGE
+   ========================================================= */
+
+.news-v2-card__image {
+    padding: 20px 20px 10px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.news-v2-card__image img {
+    width: 100%;
+
+    height: 208px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(6, 66, 57, 0.2);
+
+    display: block;
+}
+
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+.news-v2-card__body {
+    padding: 10px 20px 20px;
+
+    text-align: right;
+
+    flex-grow: 1;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.news-v2-card__date {
+    color: var(--news-v2-title);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.news-v2-card__date::before {
+    content: "";
+
+    width: 18px;
+    height: 18px;
+
+    flex: 0 0 18px;
+
+    background-image: url("../images/Calendar (1).png");
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.news-v2-card__body h2 {
+    color: var(--news-v2-title);
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    margin: 0 0 10px;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+   ========================================================= */
+
+.news-v2-card__body p {
+    color: var(--news-v2-text);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 3;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   READ MORE BUTTON
+   ========================================================= */
+
+.news-v2-card__button {
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 155px;
+
+    height: 40px;
+
+    transform: translate(-12px, 0);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #fff;
+
+    background: var(--news-v2-title);
+
+    border-radius: 0 0 0 18px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    z-index: 2;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.news-v2-card__button::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -10px;
+
+    width: 155px;
+
+    height: 60px;
+
+    background-image: url("../images/Rectangle 42.png");
+
+    background-size: 155px 60px;
+
+    background-repeat: no-repeat;
+
+    background-position: left bottom;
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+
+.news-v2-card__button:hover {
+    opacity: 0.85;
+
+    transform: translate(-12px, -2px);
+}
+
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.news-v2-pagination {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 45px;
+
+    min-height: 44px;
+}
+
+
+.news-v2-pagination:empty {
+    display: none;
+}
+
+
+.news-v2-pagination button {
+    min-width: 40px;
+
+    height: 40px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--news-v2-title);
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: var(--news-v2-title);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.news-v2-pagination button:hover {
+    background: var(--news-v2-title);
+
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+
+.news-v2-pagination button.is-active {
+    background: var(--news-v2-title);
+
+    color: #fff;
+
+    cursor: default;
+}
+
+
+.news-v2-pagination button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+.news-v2-pagination__arrow {
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+.news-v2-pagination__dots {
+    color: var(--news-v2-title);
+
+    font-weight: 700;
+
+    padding: 0 3px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .news-v2-container {
+        width: min(1100px, calc(100% - 50px));
+    }
+
+    .news-v2-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1024
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    .news-v2-page {
+        padding-top: 35px;
+        padding-bottom: 70px;
+    }
+
+    .news-v2-container {
+        width: calc(100% - 40px);
+    }
+
+    .news-v2-heading {
+        margin-bottom: 55px;
+    }
+
+    .news-v2-tabs {
+        gap: 15px;
+
+        margin-bottom: 30px;
+    }
+
+    .news-v2-tab {
+        width: 130px;
+
+        font-size: 16px;
+    }
+
+    .news-v2-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 25px;
+    }
+
+    .news-v2-card {
+        height: 500px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+    .news-v2-page {
+        padding-top: 30px;
+
+        padding-bottom: 55px;
+    }
+
+    .news-v2-container {
+        width: calc(100% - 30px);
+    }
+
+    .news-v2-heading {
+        margin-bottom: 40px;
+    }
+
+    .news-v2-heading h1 {
+        font-size: 26px;
+    }
+
+    .news-v2-tabs {
+        gap: 10px;
+
+        margin-bottom: 25px;
+    }
+
+    .news-v2-tab {
+        width: 110px;
+
+        height: 40px;
+
+        font-size: 14px;
+    }
+
+    .news-v2-divider {
+        margin-bottom: 30px;
+    }
+
+    .news-v2-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .news-v2-card {
+        height: auto;
+
+        min-height: 500px;
+    }
+
+    .news-v2-card__image img {
+        height: 220px;
+    }
+
+    .news-v2-card__body {
+        padding-bottom: 75px;
+    }
+
+    .news-v2-pagination {
+        gap: 5px;
+
+        margin-top: 35px;
+    }
+
+    .news-v2-pagination button {
+        min-width: 36px;
+
+        height: 36px;
+
+        padding: 0 9px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .news-v2-container {
+        width: calc(100% - 20px);
+    }
+
+    .news-v2-tab {
+        width: 100px;
+
+        font-size: 13px;
+    }
+
+    .news-v2-card__image {
+        padding: 15px 15px 10px;
+    }
+
+    .news-v2-card__body {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+/* =========================================================
+   PAGE BACKGROUND
+   ========================================================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+
+    background-color: #064239;
+}
+
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    background-color: #064239;
+
+    background-image: url("../assets/Vector.png");
+
+    background-repeat: repeat;
+
+    background-size: 1250px auto;
+
+    background-position: center top;
+}
+
+
+.news-v2-page {
+    position: relative;
+
+    min-height: calc(100vh - 173px);
+
+    padding-top: 40px;
+    padding-bottom: 80px;
+
+    overflow: hidden;
+
+    background: var(--news-v2-bg-gradient);
+
+    z-index: 1;
+}
+/* =========================================================
+   BACKGROUND PATTERNS
+   ========================================================= */
+
+.news-v2-background {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    overflow: hidden;
+}
+
+
+.news-v2-bg-pattern {
+    position: absolute;
+
+    pointer-events: none;
+}
+
+
+.news-v2-vector-pattern {
+    inset: 0;
+
+    background-image: url("../assets/Vector.png");
+
+    background-repeat: repeat;
+
+    background-size: 1250px auto;
+
+    background-position: center top;
+
+    opacity: 0.25;
+}
+
+
+.news-v2-jasmine-pattern {
+    width: 547px;
+    height: 821px;
+
+    background-image: url("../images/ياسمينpng 5.png");
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    opacity: 0.7;
+}
+
+
+.news-v2-jasmine-1 {
+    top: 500px;
+
+    left: 120px;
+
+    transform: rotate(-15deg);
+}
+
+
+.news-v2-jasmine-2 {
+    top: 1150px;
+
+    right: -110px;
+
+    left: auto;
+
+    transform: rotate(30deg);
+}
+
+
+.news-v2-jasmine-3 {
+    top: 1600px;
+
+    left: 120px;
+
+    transform: rotate(-20deg);
+}

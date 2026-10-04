@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>الفعاليات الثقافية | دمشق</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/Events-details.css"
+    >
+</head>
+
+<body>
+
+    <!-- =================================================
+        PAGE
+    ================================================== -->
+
+    <main class="events-page">
+
+        <!-- =================================================
+            HERO
+        ================================================== -->
+
+        <section class="events-hero">
+
+            <div class="events-container">
+
+                <div class="events-hero-content">
+
+                    <span class="events-eyebrow">
+                        ماذا يحدث؟
+                    </span>
+
+                    <span class="events-number">
+                        08
+                    </span>
+
+                    <h1>
+                        الفعاليات
+                        <br>
+                        <span>الثقافية</span>
+                    </h1>
+
+                    <p>
+                        اكتشف الفعاليات الثقافية والفنية التي تقام
+                        في دمشق، وتعرّف على أبرز الأنشطة والمعارض
+                        والعروض التي تجمع أهل المدينة وزوارها.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+            CALENDAR SECTION
+        ================================================== -->
+
+        <section class="events-calendar-section">
+
+            <div class="events-container">
+
+                <!-- Section Header -->
+
+                <div class="events-section-header">
+
+                    <div class="events-section-title">
+
+                        <span class="section-label">
+                            أجندة دمشق
+                        </span>
+
+                        <h2>
+                            الفعاليات القادمة
+                        </h2>
+
+                        <p>
+                            اختر يوماً من التقويم لاستعراض الفعاليات
+                            الثقافية المقامة خلاله.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Calendar Navigation -->
+
+                    <div class="calendar-header-actions">
+
+                        <button
+                            type="button"
+                            class="calendar-nav-button"
+                            id="calendarPrev"
+                            aria-label="الشهر السابق"
+                        >
+                            →
+                        </button>
+
+
+                        <div class="calendar-month-title">
+
+                            <span id="calendarMonth">
+                                تشرين الأول
+                            </span>
+
+                            <span id="calendarYear">
+                                2026
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="calendar-nav-button"
+                            id="calendarNext"
+                            aria-label="الشهر التالي"
+                        >
+                            ←
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                    CALENDAR
+                ================================================== -->
+
+                <div class="cultural-calendar">
+
+                    <!-- Weekdays -->
+
+                    <div class="calendar-weekdays">
+
+                        <div>الأحد</div>
+                        <div>الاثنين</div>
+                        <div>الثلاثاء</div>
+                        <div>الأربعاء</div>
+                        <div>الخميس</div>
+                        <div>الجمعة</div>
+                        <div>السبت</div>
+
+                    </div>
+
+
+                    <!-- Days -->
+
+                    <div
+                        class="calendar-grid"
+                        id="calendarGrid"
+                    ></div>
+
+                </div>
+
+
+                <!-- =================================================
+                    SELECTED DAY
+                ================================================== -->
+
+                <div
+                    class="selected-day-section"
+                    id="selectedDaySection"
+                >
+
+                    <div class="selected-day-header">
+
+                        <div>
+
+                            <span class="selected-day-label">
+                                فعاليات اليوم
+                            </span>
+
+                            <h3 id="selectedDayTitle">
+                                اختر يوماً من التقويم
+                            </h3>
+
+                        </div>
+
+                        <span
+                            class="selected-day-count"
+                            id="selectedDayCount"
+                        >
+                            0 فعاليات
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="events-list"
+                        id="eventsList"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+            FEATURED EVENTS
+        ================================================== -->
+
+        <section class="featured-events-section">
+
+            <div class="events-container">
+
+                <div class="featured-header">
+
+                    <span class="section-label">
+                        لا تفوّت
+                    </span>
+
+                    <h2>
+                        أبرز الفعاليات
+                    </h2>
+
+                </div>
+
+
+                <div
+                    class="featured-events-grid"
+                    id="featuredEvents"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/Events-details.js"></script>
+
+</body>
+
+</html>
