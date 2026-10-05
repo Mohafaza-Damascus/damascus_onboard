@@ -1,174 +1,909 @@
-:root {
-  --svc-green: #3a6962;
-  --svc-dark: #07473c;
-  --gold-gradient: linear-gradient(180deg, #e8d098 0%, #be9c5a 100%);
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-body {
-  margin: 0;
-  min-height: 100vh;
+/* ===================================================
+   1. الهيرو سكشن الفاخر (Hero Section)
+   =================================================== */
+.inv-hero {
   position: relative;
-  background-color: #efe7d6;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px 85px;
+  background-color: #0c1f19;
+  overflow: hidden;
+  color: #ffffff;
+  direction: rtl;
 }
-body::before {
-  content: "";
-  position: fixed;
+
+/* صورة الخلفية مع ثبات نسبي */
+.inv-hero__bg-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  filter: saturate(1.1);
+  transform: scale(1.03);
+  transition: transform 10s ease;
+  z-index: 1;
+}
+
+/* طبقة التدرج الداكنة الفاخرة */
+.inv-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(9, 24, 19, 0.82) 0%,
+    rgba(14, 38, 30, 0.92) 50%,
+    rgba(7, 18, 14, 0.98) 100%
+  );
+  z-index: 2;
+}
+
+/* وهج ضوئي ذهبي خافت في المنتصف للعمق */
+.inv-hero__glow {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(200, 150, 62, 0.16) 0%, transparent 70%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* الحاوية الأساسية */
+.inv-hero__container {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* شارة الهيرو (Badge) */
+.inv-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f3eedf;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.inv-hero__badge i {
+  color: #c8963e;
+}
+
+/* نقطة النبض الخضراء للشارة */
+.badge-pulse {
+  width: 8px;
+  height: 8px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(56, 189, 248, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+  }
+}
+
+/* عنوان الهيرو */
+.inv-hero__title {
+  font-size: 2.85rem;
+  font-weight: 900;
+  line-height: 1.3;
+  margin: 0 0 20px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* تدرج ذهبي للنص المميز */
+.inv-hero__title .text-gradient {
+  background: linear-gradient(135deg, #ffd787 0%, #c8963e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* الوصف */
+.inv-hero__desc {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #e2e8f0;
+  max-width: 780px;
+  margin: 0 0 38px;
+  font-weight: 400;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* أزرار الإجراءات */
+.inv-hero__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #c8963e 0%, #a47628 100%);
+  color: #ffffff;
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(200, 150, 62, 0.35);
+  transition: all 0.3s ease;
+}
+
+.btn-hero-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(200, 150, 62, 0.5);
+  background: linear-gradient(135deg, #d8a64e 0%, #b38332 100%);
+}
+
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  padding: 14px 30px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
+}
+
+/* قسم الإحصائيات السريعة */
+.inv-hero__stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18, 48, 38, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  padding: 18px 36px;
+  gap: 32px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-number {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #f3eedf;
+  letter-spacing: -0.5px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===================================================
+   التجاوب مع الشاشات والموبايل
+   =================================================== */
+@media (max-width: 992px) {
+  .inv-hero {
+    min-height: 520px;
+    padding: 80px 20px 65px;
+  }
+  .inv-hero__title {
+    font-size: 2.3rem;
+  }
+  .inv-hero__desc {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .inv-hero {
+    padding: 60px 15px 50px;
+  }
+  .inv-hero__badge {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    margin-bottom: 18px;
+  }
+  .inv-hero__title {
+    font-size: 1.75rem;
+  }
+  .inv-hero__desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .inv-hero__actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+  }
+  .inv-hero__stats {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    padding: 20px 15px;
+  }
+  .stat-divider {
+    width: 60px;
+    height: 1px;
+  }
+}
+
+/* ===================================================
+   2. سكشن رحلة قاسيون (تخطيط عمودين: يمين نصوص ويسار صور)
+   =================================================== */
+.qasioun-section {
+  padding: 80px 0 90px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* التخطيط الشبكي لقسمين (يمين محتوى ويسار معرض الصور) */
+.qasioun-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+/* --- العمود الأيمن: الكتابة، الاستثمار، والزر --- */
+.qasioun-content {
+  text-align: right;
+  direction: rtl;
+}
+
+.qasioun-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(200, 150, 62, 0.12);
+  color: #a47628;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.qasioun-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #1b4d3e;
+  margin: 0 0 14px;
+  line-height: 1.3;
+}
+
+.title-underline-start {
+  width: 65px;
+  height: 4px;
+  background-color: #c8963e;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.qasioun-desc {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #4a5568;
+  margin-bottom: 26px;
+}
+
+
+.qasioun-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 34px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.qasioun-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.qasioun-features li i {
+  color: #1b4d3e;
+  font-size: 1.25rem;
+  background: #eaf3f0;
+  padding: 12px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.qasioun-features strong {
+  display: block;
+  font-size: 1.05rem;
+  color: #1a202c;
+  margin-bottom: 4px;
+}
+
+.qasioun-features span {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* حاوية الزر أسفل الكتابة */
+.qasioun-btn-wrap-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-qasioun {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #1b4d3e;
+  color: #ffffff;
+  padding: 15px 36px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(27, 77, 62, 0.28);
+  transition: all 0.3s ease;
+}
+
+.btn-qasioun i {
+  transition: transform 0.3s ease;
+}
+
+.btn-qasioun:hover {
+  background: #13392d;
+  box-shadow: 0 12px 25px rgba(27, 77, 62, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-qasioun:hover i {
+  transform: translateX(-5px);
+}
+
+/* ===================================================
+   العمود الأيسر: الكاروسيل (أبعاد طولية ومضبوطة)
+   =================================================== */
+.qasioun-visual {
+  position: relative;
+  width: 100%;
+}
+
+.journey-carousel {
+  position: relative;
+  width: 100%;
+  height: 550px; /* زيادة الارتفاع ليتناسب مع الطول الجديد */
+  margin: 0 auto;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* منطقة الصور */
+.journey-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+/* البطاقة الافتراضية (تقليل العرض وزيادة الطول) */
+.journey-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;      /* تم تقليل العرض من 370px */
+  height: 480px;     /* تم زيادة الطول من 420px */
+  border-radius: 14px;
+  overflow: hidden;
+  transform-origin: center center;
+  opacity: 0;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.5s ease,
+    filter 0.5s ease,
+    box-shadow 0.5s ease;
+  pointer-events: none;
+}
+
+.journey-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* البطاقة الرئيسية النشطة في المنتصف (أطول وأنحف) */
+.journey-card.active {
+  width: 325px;      /* تم تقليل العرض من 540px */
+  height: 520px;     /* تم زيادة الارتفاع من 485px */
+  opacity: 1;
+  z-index: 5;
+  transform: translate(-50%, -50%) scale(1);
+  filter: brightness(1);
+  pointer-events: auto;
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.24);
+}
+
+/* البطاقة الموجودة على اليمين */
+.journey-card.next {
+  opacity: 0.75;
+  z-index: 3;
+  transform: translate(30px, -50%) scale(0.86) rotate(2deg);
+  filter: brightness(0.65);
+}
+
+/* البطاقة الموجودة على اليسار */
+.journey-card.prev {
+  opacity: 0.75;
+  z-index: 3;
+  transform: translate(-105%, -50%) scale(0.86) rotate(-2deg);
+  filter: brightness(0.65);
+}
+
+/* البطاقات البعيدة */
+.journey-card.next2 {
+  opacity: 0.35;
+  z-index: 2;
+  transform: translate(120px, -50%) scale(0.74) rotate(3deg);
+  filter: brightness(0.4);
+}
+
+.journey-card.prev2 {
+  opacity: 0.35;
+  z-index: 2;
+  transform: translate(-140%, -50%) scale(0.74) rotate(-3deg);
+  filter: brightness(0.4);
+}
+
+/* الصور غير الظاهرة */
+.journey-card.hidden {
+  opacity: 0;
+  z-index: 1;
+  transform: translate(-50%, -50%) scale(0.6);
+}
+
+/* الأسهم */
+.journey-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #102f43;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.journey-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  background: #f8fafb;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.journey-arrow--prev {
+  right: -15px;
+}
+
+.journey-arrow--next {
+  left: -15px;
+}
+
+/* النقاط (Dots) */
+.journey-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.journey-dot {
+  width: 9px;
+  height: 9px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background: #c5d0d7;
+  cursor: pointer;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+.journey-dot.active {
+  width: 25px;
+  border-radius: 20px;
+  background: #1b4d3e;
+}
+
+/* ===================================================
+   سكشن شبكة الكروت القلابة (Flip Cards Grid)
+   =================================================== */
+.investment-grid-section {
+  padding: 85px 0 95px;
+  background-color: #ffffff;
+  direction: rtl;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #64748b;
+  margin-top: 14px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* توزيع الشبكة - 4 أعمدة في الشاشات الكبيرة */
+.flip-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+}
+
+/* الحاوية الأساسية للكرت مع منظور 3D */
+.flip-card {
+  background-color: transparent;
+  height: 480px; /* طول الكرت */
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+/* العنصر الداخلي الذي يدور */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* دوران الكرت عند الهوفر أو التفعيل باللمس */
+.flip-card:hover .flip-card-inner,
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(-180deg);
+}
+
+/* خصائص الوجهين (Front & Back) */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  z-index: -1;
-  background-image: url("../images/pattern.png");
-  background-repeat: repeat;
-  background-size: 450px auto;
-  background-position: center top;
-  opacity: 0.12;
-  mix-blend-mode: multiply;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
 }
-.inv-intro {
-  padding-top: var(--sp-4);
-  padding-bottom: var(--sp-3);
+
+/* ---------------- الوجه الأمامي (Front) ---------------- */
+.flip-card-front {
+  background-color: #1b4d3e;
 }
-.inv-intro__title {
-  font-size: clamp(28px, 3.4vw, 36px);
-  font-weight: 700;
-  color: #064239;
-  margin-bottom: 12px;
-  text-align: center;
-}
-.inv-intro__desc {
-  font-size: clamp(16px, 2vw, 22px);
-  font-weight: 500;
-  line-height: 1.7;
-  color: #064239;
-  max-width: 1173px;
-  margin-inline: auto;
-  text-align: center;
-}
-.inv-hero {
+
+.flip-card-front img {
   width: 100%;
-  max-width: 1430px;
-  margin-inline: auto;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-block: var(--sp-4, 40px);
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
 }
-.inv-hero__cards {
-  position: relative;
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  align-items: stretch;
-  padding-inline: var(--sp-2);
-  width: 100%;
+
+.flip-card:hover .flip-card-front img {
+  transform: scale(1.06);
 }
-.inv-card {
-  position: relative;
-  width: 460px;
-  max-width: calc(50vw - 40px);
-  min-height: 240px;
-  /* background: #efe7d6; */
-  background: var(--svc-dark);
-  border: 1px solid rgba(6, 66, 57, 0.15);
-  border-radius: 20px;
+
+/* تدرج لوني داكن أسفل الصورة ليظهر النص بوضوح */
+.card-front-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 20px 22px;
+  background: linear-gradient(
+    to top,
+    rgba(10, 25, 20, 0.95) 0%,
+    rgba(10, 25, 20, 0.7) 60%,
+    transparent 100%
+  );
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 36px var(--sp-3) var(--sp-3);
-  cursor: pointer;
-  transition: all 0.4s ease;
+  justify-content: flex-end;
 }
-.inv-card:hover {
-  /* background: var(--svc-dark); */
-  background: #efe7d6;
-  border-color: #efe7d6;
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+
+.front-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #c8963e;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
-.inv-card .card-arrow {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  width: 44px;
-  height: 44px;
-  /* background: rgba(6, 66, 57, 0.12); */
-  background: #efe7d6;
-  border: 1px solid transparent;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  color: var(--svc-green);
-  /* color: #efe7d6; */
-  font-size: 16px;
-  transition: all 0.4s ease;
+
+.front-title {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 0 0 14px 0;
 }
-.inv-card:hover .card-arrow {
-  background: rgba(255, 255, 255, 0.15);
-  /* color: #efe7d6; */
-  color: var(--svc-green);
-  /* border-color: #efe7d6; */
-  border-color: var(--svc-green);
+
+/* الخط التزييني الأحمر/الذهبي أسفل العنوان كما في التصميم */
+.front-accent-line {
+  width: 38px;
+  height: 3px;
+  background-color: #d9383a; /* أو #c8963e حسب الهوية */
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.flip-card:hover .front-accent-line {
+  width: 65px;
+}
+
+/* ---------------- الوجه الخلفي (Back) ---------------- */
+.flip-card-back {
+  background-color: #ffffff;
+  color: #1a202c;
+  transform: rotateY(-180deg);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+.back-header {
+  margin-bottom: 16px;
+}
+
+.back-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #1b4d3e;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.back-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* الشرح مع شريط تمرير أنيق ونحيف */
+.back-body {
+  flex: 1;
+  overflow-y: auto;
+  padding-left: 8px;
+  margin-bottom: 20px;
+}
+
+.back-body p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* تخصيص الـ Scrollbar الصغير الأنيق */
+.back-body::-webkit-scrollbar {
+  width: 5px;
+}
+.back-body::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+.back-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+.back-body::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.back-footer {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.btn-card-details {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1b4d3e;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-card-details i {
+  font-size: 0.85rem;
+  transition: transform 0.25s ease;
+}
+
+.btn-card-details:hover {
+  color: #c8963e;
+}
+
+.btn-card-details:hover i {
   transform: translateX(-4px);
 }
-.inv-card__title {
-  /* color: var(--svc-dark); */
-  color: #efe7d6;
-  font-weight: 700;
-  font-size: clamp(24px, 3vw, 32px);
-  margin-bottom: 10px;
-  line-height: 1.4;
-  text-align: center;
-  transition: color 0.3s ease;
-}
-.inv-card__desc {
-  position: relative;
-  z-index: 2;
-  font-size: 15px;
-  line-height: 1.8;
-  /* color: var(--svc-dark); */
-  color: #efe7d6;
-  text-align: center;
-  transition: color 0.3s ease;
-}
-.inv-card:hover .inv-card__title {
-  /* color: #efe7d6; */
-  color: var(--svc-dark);
-}
-.inv-card:hover .inv-card__desc {
-  /* color: rgba(255, 255, 255, 0.8); */
-  color: var(--svc-dark);
-}
-@media (max-width: 768px) {
-  .inv-hero__cards {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--sp-3);
+
+
+/* ===================================================
+   التجاوب مع مختلف أحجام الشاشات (Responsive)
+   =================================================== */
+@media (max-width: 1024px) {
+  .inv-hero__title {
+    font-size: 2.1rem;
   }
-  .inv-card {
+
+  .qasioun-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .qasioun-content {
+    text-align: center;
+  }
+
+  .title-underline-start {
+    margin: 0 auto 24px;
+  }
+
+  .qasioun-features {
+    max-width: 520px;
+    margin: 0 auto 32px;
+    text-align: right;
+  }
+
+  .qasioun-btn-wrap-start {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .inv-hero {
+    min-height: 400px;
+    padding: 50px 15px;
+  }
+
+  .inv-hero__title {
+    font-size: 1.75rem;
+  }
+
+  .inv-hero__desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .qasioun-title {
+    font-size: 1.85rem;
+  }
+
+  .journey-carousel {
+    height: 450px;
+  }
+
+  .journey-card.active {
+    width: 265px;
+    height: 420px;
+  }
+
+  .journey-card {
+    width: 215px;
+    height: 370px;
+  }
+
+  .journey-arrow--prev {
+    right: 5px;
+  }
+
+  .journey-arrow--next {
+    left: 5px;
+  }
+
+  .btn-qasioun {
     width: 100%;
-    max-width: 400px;
-    min-height: 200px;
-  }
-}
-@media (max-width: 480px) {
-  .inv-intro__desc {
-    font-size: 15px;
-  }
-  .inv-card {
-    min-height: 180px;
-    max-width: 340px;
-    padding-top: 45px;
-  }
-  .inv-card .card-arrow {
-    width: 38px;
-    height: 38px;
-    font-size: 14px;
-    top: 12px;
-    left: 12px;
-  }
-  .inv-card__title {
-    font-size: 22px;
+    justify-content: center;
   }
 }
