@@ -123,20 +123,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const flipCards = document.querySelectorAll(".flip-card");
 
   flipCards.forEach((card) => {
-    // دعم النقر للقلب على أجهزة الموبايل واللمس
+  
     card.addEventListener("click", function (e) {
-      // إذا نقر المستخدم على رابط التفاصيل المباشر نتركه يفتح الرابط
+
       if (e.target.closest(".btn-card-details")) return;
 
-      // للأجهزة اللمسية والشاشات الصغيرة
       if (window.innerWidth <= 1024) {
-        // إغلاق الكروت الأخرى المفتوحة
+       
         flipCards.forEach((otherCard) => {
           if (otherCard !== card) {
             otherCard.classList.remove("is-flipped");
           }
         });
-        // قلب الكرت الحالي
+       
         this.classList.toggle("is-flipped");
       }
     });
