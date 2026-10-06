@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>إضافة خبر - محافظة دمشق</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/news-create.css">
+</head>
+
+<body>
+
+<div id="site-header" data-active="إدارة الأخبار"></div>
+
+    <main class="news-form-page">
+
+        <div class="news-form-container">
+
+            <!-- Header -->
+            <section class="news-form-header">
+
+                <div>
+
+                    <a
+                        href="news-dashboard.html"
+                        class="news-back-link"
+                    >
+                        العودة إلى إدارة الأخبار
+                    </a>
+
+                    <span class="news-form-eyebrow">
+                        لوحة التحكم
+                    </span>
+
+                    <h1>إضافة خبر جديد</h1>
+
+                    <p>
+                        أدخل معلومات الخبر ليظهر ضمن أخبار محافظة دمشق.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Form -->
+            <form
+                id="createNewsForm"
+                class="news-form"
+            >
+
+                <section class="news-form-card">
+
+                    <div class="news-form-card__header">
+
+                        <h2>معلومات الخبر</h2>
+
+                        <span>
+                            جميع الحقول المطلوبة يجب تعبئتها
+                        </span>
+
+                    </div>
+
+
+                    <div class="news-form-grid">
+
+                        <!-- Title -->
+                        <div class="news-form-field news-form-field--full">
+
+                            <label for="newsTitle">
+                                عنوان الخبر
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="newsTitle"
+                                name="title"
+                                placeholder="أدخل عنوان الخبر"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Category -->
+                        <div class="news-form-field">
+
+                            <label for="newsCategory">
+                                التصنيف
+                                <span>*</span>
+                            </label>
+
+                            <select
+                                id="newsCategory"
+                                name="category"
+                                required
+                            >
+                                <option value="">
+                                    اختر التصنيف
+                                </option>
+
+                                <option value="governorate">
+                                    أخبار المحافظة
+                                </option>
+
+                                <option value="general">
+                                    أخبار عامة
+                                </option>
+                            </select>
+
+                        </div>
+
+
+                        <!-- Date -->
+                        <div class="news-form-field">
+
+                            <label for="newsDate">
+                                تاريخ الخبر
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="date"
+                                id="newsDate"
+                                name="date"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Image -->
+                        <div class="news-form-field news-form-field--full">
+
+                            <label for="newsImage">
+                                صورة الخبر
+                            </label>
+
+                            <div class="news-image-upload">
+
+                                <input
+                                    type="file"
+                                    id="newsImage"
+                                    name="image"
+                                    accept="image/*"
+                                    hidden
+                                >
+
+                                <label
+                                    for="newsImage"
+                                    class="news-image-upload__box"
+                                >
+
+                                    <div class="news-image-upload__icon">
+                                        +
+                                    </div>
+
+                                    <strong>
+                                        اختر صورة الخبر
+                                    </strong>
+
+                                    <span>
+                                        PNG, JPG, JPEG
+                                    </span>
+
+                                </label>
+
+                                <div
+                                    id="imagePreview"
+                                    class="news-image-preview"
+                                    hidden
+                                >
+
+                                    <img
+                                        id="imagePreviewImage"
+                                        src=""
+                                        alt="معاينة صورة الخبر"
+                                    >
+
+                                    <button
+                                        type="button"
+                                        id="removeImage"
+                                    >
+                                        إزالة الصورة
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Summary -->
+                        <div class="news-form-field news-form-field--full">
+
+                            <label for="newsSummary">
+                                ملخص الخبر
+                                <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="newsSummary"
+                                name="summary"
+                                rows="4"
+                                placeholder="اكتب ملخصاً مختصراً عن الخبر..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- Content -->
+                        <div class="news-form-field news-form-field--full">
+
+                            <label for="newsContent">
+                                محتوى الخبر
+                                <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="newsContent"
+                                name="content"
+                                rows="10"
+                                placeholder="اكتب محتوى الخبر كاملاً..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- Status -->
+                        <div class="news-form-field news-form-field--full">
+
+                            <label>
+                                حالة الخبر
+                                <span>*</span>
+                            </label>
+
+                            <div class="news-status-options">
+
+                                <label class="news-status-option">
+
+                                    <input
+                                        type="radio"
+                                        name="status"
+                                        value="published"
+                                        checked
+                                    >
+
+                                    <span>
+                                        <strong>منشور</strong>
+                                        <small>
+                                            يظهر الخبر مباشرة على الموقع
+                                        </small>
+                                    </span>
+
+                                </label>
+
+
+                                <label class="news-status-option">
+
+                                    <input
+                                        type="radio"
+                                        name="status"
+                                        value="draft"
+                                    >
+
+                                    <span>
+                                        <strong>مسودة</strong>
+                                        <small>
+                                            يبقى الخبر محفوظاً دون نشر
+                                        </small>
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Actions -->
+                <div class="news-form-actions">
+
+                    <a
+                        href="news-dashboard.html"
+                        class="dashboard-secondary-button"
+                    >
+                        إلغاء
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="dashboard-primary-button"
+                    >
+                        حفظ الخبر
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/global.js"></script>
+    <script src="../js/news-create.js"></script>
+
+</body>
+</html>

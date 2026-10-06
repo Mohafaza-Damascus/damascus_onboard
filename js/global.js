@@ -22,6 +22,7 @@
           { label: "النموذج الداتا", href: `${pagesPrefix}news-new.html` },
           { label: "النموذج الثاني", href: `${pagesPrefix}news-model-2.html` },
           { label: "النموذج الخامس", href: `${pagesPrefix}news-model-5.html` },
+          {label: "إدارة الأخبار",href: `${pagesPrefix}news-dashboard.html`,},
         ],
       },
       {
@@ -43,7 +44,9 @@
 
     const navLinks = navItems
       .map((item) => {
-        const isActive = item.label === activePage;
+        const isActive =
+  item.label === activePage ||
+  item.subItems?.some((subItem) => subItem.label === activePage);
 
         if (!item.subItems) {
           return `<li><a class="nav__link${isActive ? " is-active" : ""}" href="${item.href}">${item.label}</a></li>`;

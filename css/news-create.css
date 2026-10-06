@@ -1,0 +1,405 @@
+.news-form-page {
+    min-height: calc(100vh - var(--header-h, 90px));
+
+    padding: 70px 0 100px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(246, 244, 237, 0.95),
+            rgba(239, 245, 241, 0.95)
+        );
+}
+
+.news-form-container {
+    width: min(1050px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.news-form-header {
+    margin-bottom: 35px;
+}
+
+.news-back-link {
+    display: inline-flex;
+
+    margin-bottom: 25px;
+
+    color: #1265f9;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.news-back-link:hover {
+    text-decoration: underline;
+}
+
+.news-form-eyebrow {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #1265f9;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.news-form-header h1 {
+    margin: 0 0 10px;
+
+    color: #064239;
+
+    font-size: clamp(30px, 4vw, 44px);
+}
+
+.news-form-header p {
+    margin: 0;
+
+    color: rgba(6, 66, 57, 0.62);
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.news-form-card {
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid rgba(6, 66, 57, 0.08);
+    border-radius: 22px;
+
+    box-shadow: 0 12px 40px rgba(6, 66, 57, 0.06);
+}
+
+.news-form-card__header {
+    padding: 25px 28px;
+
+    border-bottom: 1px solid rgba(6, 66, 57, 0.08);
+}
+
+.news-form-card__header h2 {
+    margin: 0 0 6px;
+
+    color: #064239;
+
+    font-size: 20px;
+}
+
+.news-form-card__header span {
+    color: rgba(6, 66, 57, 0.52);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.news-form-grid {
+    padding: 30px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+}
+
+.news-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.news-form-field--full {
+    grid-column: 1 / -1;
+}
+
+.news-form-field label {
+    color: #064239;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.news-form-field label span {
+    color: #c62828;
+}
+
+.news-form-field input[type="text"],
+.news-form-field input[type="date"],
+.news-form-field select,
+.news-form-field textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    color: #173b34;
+
+    background: #f8faf9;
+
+    border: 1px solid rgba(6, 66, 57, 0.11);
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.news-form-field textarea {
+    min-height: 120px;
+
+    resize: vertical;
+
+    line-height: 1.8;
+}
+
+.news-form-field input:focus,
+.news-form-field select:focus,
+.news-form-field textarea:focus {
+    border-color: #1265f9;
+
+    box-shadow:
+        0 0 0 3px rgba(18, 101, 249, 0.08);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.news-image-upload {
+    width: 100%;
+}
+
+.news-image-upload__box {
+    min-height: 170px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 25px;
+
+    border: 1.5px dashed rgba(6, 66, 57, 0.2);
+    border-radius: 14px;
+
+    background: #fafcfb;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.news-image-upload__box:hover {
+    background: #f4f8f6;
+
+    border-color: #1265f9;
+}
+
+.news-image-upload__icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #1265f9;
+    background: #edf3ff;
+
+    font-size: 25px;
+}
+
+.news-image-upload__box strong {
+    color: #064239;
+
+    font-size: 14px;
+}
+
+.news-image-upload__box span {
+    color: rgba(6, 66, 57, 0.48);
+
+    font-size: 12px;
+}
+
+.news-image-preview {
+    position: relative;
+
+    margin-top: 15px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: #f5f7f6;
+}
+
+.news-image-preview[hidden] {
+    display: none;
+}
+
+.news-image-preview img {
+    width: 100%;
+    max-height: 300px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.news-image-preview button {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    padding: 8px 12px;
+
+    border: 0;
+    border-radius: 8px;
+
+    color: #fff;
+    background: rgba(198, 40, 40, 0.9);
+
+    font-family: inherit;
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.news-status-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.news-status-option {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 17px;
+
+    border: 1px solid rgba(6, 66, 57, 0.1);
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.news-status-option:has(input:checked) {
+    border-color: #1265f9;
+    background: #f5f8ff;
+}
+
+.news-status-option input {
+    accent-color: #1265f9;
+}
+
+.news-status-option span {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.news-status-option strong {
+    color: #064239;
+
+    font-size: 13px;
+}
+
+.news-status-option small {
+    color: rgba(6, 66, 57, 0.52);
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.news-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 10px;
+
+    margin-top: 22px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+    .news-form-page {
+        padding: 40px 0 70px;
+    }
+
+    .news-form-container {
+        width: min(100% - 28px, 1050px);
+    }
+
+    .news-form-grid {
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+    }
+
+    .news-form-field--full {
+        grid-column: auto;
+    }
+
+    .news-status-options {
+        grid-template-columns: 1fr;
+    }
+
+    .news-form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .news-form-actions a,
+    .news-form-actions button {
+        width: 100%;
+    }
+}
