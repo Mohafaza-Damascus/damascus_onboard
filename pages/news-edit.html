@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>تعديل الخبر - محافظة دمشق</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/news-create.css">
+    <link rel="stylesheet" href="../css/news-edit.css">
+</head>
+
+<body>
+
+<div id="site-header" data-active="إدارة الأخبار"></div>
+
+    <main class="news-form-page">
+
+        <div class="news-form-container">
+
+            <section class="news-form-header">
+
+                <div>
+
+                    <a
+                        href="news-dashboard.html"
+                        class="news-back-link"
+                    >
+                        العودة إلى إدارة الأخبار
+                    </a>
+
+                    <span class="news-form-eyebrow">
+                        لوحة التحكم
+                    </span>
+
+                    <h1>تعديل الخبر</h1>
+
+                    <p>
+                        تعديل معلومات الخبر وتحديث محتواه.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <form
+                id="editNewsForm"
+                class="news-form"
+            >
+
+                <input
+                    type="hidden"
+                    id="editNewsId"
+                >
+
+
+                <section class="news-form-card">
+
+                    <div class="news-form-card__header">
+
+                        <h2>معلومات الخبر</h2>
+
+                        <span>
+                            قم بتعديل المعلومات المطلوبة
+                        </span>
+
+                    </div>
+
+
+                    <div class="news-form-grid">
+
+                        <div class="news-form-field news-form-field--full">
+
+                            <label for="editNewsTitle">
+                                عنوان الخبر
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editNewsTitle"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="news-form-field">
+
+                            <label for="editNewsCategory">
+                                التصنيف
+                                <span>*</span>
+                            </label>
+
+                            <select
+                                id="editNewsCategory"
+                                required
+                            >
+
+                                <option value="governorate">
+                                    أخبار المحافظة
+                                </option>
+
+                                <option value="general">
+                                    أخبار عامة
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="news-form-field">
+
+                            <label for="editNewsDate">
+                                تاريخ الخبر
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="date"
+                                id="editNewsDate"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="news-form-field news-form-field--full">
+
+                            <label for="editNewsImage">
+                                صورة الخبر
+                            </label>
+
+                            <div class="news-image-upload">
+
+                                <input
+                                    type="file"
+                                    id="editNewsImage"
+                                    accept="image/*"
+                                    hidden
+                                >
+
+                                <label
+                                    for="editNewsImage"
+                                    class="news-image-upload__box"
+                                >
+
+                                    <div class="news-image-upload__icon">
+                                        +
+                                    </div>
+
+                                    <strong>
+                                        تغيير صورة الخبر
+                                    </strong>
+
+                                    <span>
+                                        PNG, JPG, JPEG
+                                    </span>
+
+                                </label>
+
+
+                                <div
+                                    id="editImagePreview"
+                                    class="news-image-preview"
+                                >
+
+                                    <img
+                                        id="editImagePreviewImage"
+                                        src=""
+                                        alt="صورة الخبر"
+                                    >
+
+                                    <button
+                                        type="button"
+                                        id="removeEditImage"
+                                    >
+                                        إزالة الصورة
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="news-form-field news-form-field--full">
+
+                            <label for="editNewsSummary">
+                                ملخص الخبر
+                                <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="editNewsSummary"
+                                rows="4"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="news-form-field news-form-field--full">
+
+                            <label for="editNewsContent">
+                                محتوى الخبر
+                                <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="editNewsContent"
+                                rows="10"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="news-form-field news-form-field--full">
+
+                            <label>
+                                حالة الخبر
+                                <span>*</span>
+                            </label>
+
+                            <div class="news-status-options">
+
+                                <label class="news-status-option">
+
+                                    <input
+                                        type="radio"
+                                        name="editStatus"
+                                        value="published"
+                                    >
+
+                                    <span>
+                                        <strong>منشور</strong>
+                                        <small>
+                                            يظهر الخبر على الموقع
+                                        </small>
+                                    </span>
+
+                                </label>
+
+
+                                <label class="news-status-option">
+
+                                    <input
+                                        type="radio"
+                                        name="editStatus"
+                                        value="draft"
+                                    >
+
+                                    <span>
+                                        <strong>مسودة</strong>
+                                        <small>
+                                            لا يظهر للزوار
+                                        </small>
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <div class="news-form-actions">
+
+                    <a
+                        href="news-dashboard.html"
+                        class="dashboard-secondary-button"
+                    >
+                        إلغاء
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="dashboard-primary-button"
+                    >
+                        حفظ التعديلات
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/global.js"></script>
+    <script src="../js/news-edit.js"></script>
+
+</body>
+</html>

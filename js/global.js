@@ -23,11 +23,24 @@
         label: "الأخبار",
         href: `${pagesPrefix}news.html`,
         subItems: [
+          { label: "النموذج الاساسي", href: `${pagesPrefix}news.html` },
+          { label: "النموذج الداتا", href: `${pagesPrefix}news-new.html` },
           { label: "النموذج الثاني", href: `${pagesPrefix}news-model-2.html` },
           { label: "النموذج الخامس", href: `${pagesPrefix}news-model-5.html` },
+          {label: "إدارة الأخبار",href: `${pagesPrefix}news-dashboard.html`,},
         ],
       },
-      { label: "النظرة الثقافية", href: `${pagesPrefix}Cultural.html` },
+      {
+        label: "النظرة الثقافية",
+        href: `${pagesPrefix}Cultural.html`,
+        subItems: [
+          { label: "النموذج القديم", href: `${pagesPrefix}Cultural.html` },
+          { label: "النموذج الأول", href: `${pagesPrefix}Cultural-model-1.html` },
+          { label: "النموذج الثاني", href: `${pagesPrefix}Cultural-model-2.html` },
+          { label: "النموذج الثالث", href: `${pagesPrefix}Cultural-model-3.html` },
+          { label: "النموذج المطور ", href: `${pagesPrefix}Cultural-model-4.html` },
+        ],
+      },
       { label: "خدمات", href: `${pagesPrefix}services.html` },
       { label: "دليل دمشق", href: `${pagesPrefix}Directorates.html` },
       { label: "الاستثمارات", href: `${pagesPrefix}Investments.html` },
@@ -36,7 +49,9 @@
 
     const navLinks = navItems
       .map((item) => {
-        const isActive = item.label === activePage;
+        const isActive =
+  item.label === activePage ||
+  item.subItems?.some((subItem) => subItem.label === activePage);
 
         if (!item.subItems) {
           return `<li><a class="nav__link${isActive ? " is-active" : ""}" href="${item.href}">${item.label}</a></li>`;
@@ -56,7 +71,7 @@
               type="button"
               aria-expanded="false"
               aria-haspopup="true"
-              data-news-menu-trigger
+              data-menu-trigger
             >
               <span>${item.label}</span>
               <svg class="nav__chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -377,63 +392,106 @@
     });
   }
 
-  const newsMenuItem = document.querySelector(".nav__item--has-menu");
-  const newsMenuTrigger = document.querySelector("[data-news-menu-trigger]");
+  const menuItems = document.querySelectorAll(".nav__item--has-menu");
 
-  if (newsMenuItem && newsMenuTrigger) {
-    let closeTimer = null;
+menuItems.forEach((menuItem) => {
+  const menuTrigger = menuItem.querySelector("[data-menu-trigger]");
+  const submenu = menuItem.querySelector(".nav__submenu");
 
-    const openNewsMenu = () => {
-      clearTimeout(closeTimer);
-
-      newsMenuItem.classList.add("is-open");
-      newsMenuTrigger.setAttribute("aria-expanded", "true");
-    };
-
-    const closeNewsMenu = () => {
-      clearTimeout(closeTimer);
-
-      closeTimer = setTimeout(() => {
-        newsMenuItem.classList.remove("is-open");
-        newsMenuTrigger.setAttribute("aria-expanded", "false");
-      }, 150);
-    };
-
-    // فتح القائمة بمجرد الوقوف على "الأخبار"
-    newsMenuItem.addEventListener("mouseenter", openNewsMenu);
-
-    // إبقاء القائمة مفتوحة أثناء تحريك الماوس داخلها
-    newsMenuItem.addEventListener("mouseleave", closeNewsMenu);
-
-    // السماح أيضًا بالفتح عند الضغط
-    newsMenuTrigger.addEventListener("click", (e) => {
-      e.stopPropagation();
-
-      const isOpen = newsMenuItem.classList.contains("is-open");
-
-      if (isOpen) {
-        closeNewsMenu();
-      } else {
-        openNewsMenu();
-      }
-    });
-
-    // إغلاقها عند الضغط خارجها
-    document.addEventListener("click", (e) => {
-      if (!newsMenuItem.contains(e.target)) {
-        newsMenuItem.classList.remove("is-open");
-        newsMenuTrigger.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    // إغلاقها عند الضغط على Escape
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        newsMenuItem.classList.remove("is-open");
-        newsMenuTrigger.setAttribute("aria-expanded", "false");
-      }
-    });
+  if (!menuTrigger || !submenu) {
+    return;
   }
+
+  let closeTimer = null;
+
+  const openMenu = () => {
+    clearTimeout(closeTimer);
+
+    menuItems.forEach((otherMenu) => {
+      if (otherMenu !== menuItem) {
+        otherMenu.classList.remove("is-open");
+
+        const otherTrigger =
+          otherMenu.querySelector("[data-menu-trigger]");
+
+        if (otherTrigger) {
+          otherTrigger.setAttribute("aria-expanded", "false");
+        }
+      }
+    });
+
+    menuItem.classList.add("is-open");
+    menuTrigger.setAttribute("aria-expanded", "true");
+  };
+
+  const closeMenu = () => {
+    clearTimeout(closeTimer);
+
+    closeTimer = setTimeout(() => {
+      menuItem.classList.remove("is-open");
+      menuTrigger.setAttribute("aria-expanded", "false");
+    }, 500);
+  };
+
+  menuItem.addEventListener("mouseenter", openMenu);
+  menuItem.addEventListener("mouseleave", closeMenu);
+
+  menuTrigger.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    clearTimeout(closeTimer);
+
+    if (menuItem.classList.contains("is-open")) {
+      menuItem.classList.remove("is-open");
+      menuTrigger.setAttribute("aria-expanded", "false");
+    } else {
+      openMenu();
+    }
+  });
+
+  submenu.addEventListener("mouseenter", () => {
+    clearTimeout(closeTimer);
+  });
+
+  submenu.addEventListener("mouseleave", closeMenu);
+
+  submenu.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+});
+
+document.addEventListener("click", (e) => {
+  menuItems.forEach((menuItem) => {
+    if (!menuItem.contains(e.target)) {
+      menuItem.classList.remove("is-open");
+
+      const menuTrigger =
+        menuItem.querySelector("[data-menu-trigger]");
+
+      if (menuTrigger) {
+        menuTrigger.setAttribute("aria-expanded", "false");
+      }
+    }
+  });
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") {
+    return;
+  }
+
+  menuItems.forEach((menuItem) => {
+    menuItem.classList.remove("is-open");
+
+    const menuTrigger =
+      menuItem.querySelector("[data-menu-trigger]");
+
+    if (menuTrigger) {
+      menuTrigger.setAttribute("aria-expanded", "false");
+    }
+  });
+});
 
   const header = document.querySelector(".header");
 
