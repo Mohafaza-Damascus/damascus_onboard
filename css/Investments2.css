@@ -1,0 +1,310 @@
+:root {
+  --svc-green: #3a6962;
+  --svc-dark: #07473c;
+  --gold-accent: #b8912e;
+  --gold-light: #efe7d6;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  background-color: #064239;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-color: #064239;
+  background-image: url("../assets/Vector.png");
+  background-repeat: repeat;
+  background-size: 1250px auto;
+  background-position: center top;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+/* =====================================================
+   مقدمة الصفحة (Intro)
+===================================================== */
+.inv-intro {
+  padding: 40px 20px 20px;
+}
+
+.inv-intro__title {
+  font-size: clamp(28px, 3.4vw, 36px);
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.inv-intro__desc {
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--gold-light);
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =====================================================
+   رحلة قاسيون (Qasioun Section)
+===================================================== */
+.qasiyoun-section {
+  position: relative;
+  width: 100%;
+  padding: 80px 0 100px;
+  background: radial-gradient(circle at 10% 20%, rgba(185, 167, 121, 0.08), transparent 30%), #f8f6f0;
+  overflow: hidden;
+}
+
+.qasiyoun-container {
+  width: min(92%, 1380px);
+  margin: 0 auto;
+}
+
+/* الهيدر */
+.qasiyoun-heading {
+  max-width: 720px;
+  margin: 0 0 45px auto;
+  text-align: right;
+}
+
+.qasiyoun-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--gold-accent);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.qasiyoun-kicker::before {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: var(--gold-accent);
+}
+
+.qasiyoun-heading h2 {
+  margin: 0 0 14px;
+  color: #06463d;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.qasiyoun-heading p {
+  margin: 0;
+  color: #66706c;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* =====================================================
+   شبكة العرض للـ 6 صور (Bento Grid المتناسق)
+===================================================== */
+.qasiyoun-showcase {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+ grid-template-rows: 270px 270px;
+  gap: 22px; /* مسافة مريحة تمنع أي تداخل بين الكروت */
+}
+
+.qasiyoun-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 20px;
+  text-decoration: none;
+  background-color: #ddd;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  isolation: isolate;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.qasiyoun-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.qasiyoun-main {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3; 
+}
+
+
+
+/* الصور والتراكب */
+.qasiyoun-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.qasiyoun-card:hover img {
+  transform: scale(1.06);
+}
+
+.qasiyoun-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(3, 35, 31, 0.9) 0%, rgba(3, 35, 31, 0.3) 45%, transparent 80%);
+  transition: opacity 0.4s ease;
+}
+
+.qasiyoun-card:hover .qasiyoun-overlay {
+  background: linear-gradient(to top, rgba(3, 35, 31, 0.95) 0%, rgba(3, 35, 31, 0.4) 60%);
+}
+
+/* تفاصيل الكرت */
+.qasiyoun-info {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  left: 22px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #fff;
+}
+
+.qasiyoun-number {
+  color: #d2bb82;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.qasiyoun-info h3 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  flex: 1;
+  text-align: right;
+}
+
+.qasiyoun-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  font-size: 16px;
+  transition: all 0.35s ease;
+}
+
+.qasiyoun-card:hover .qasiyoun-arrow {
+  background: var(--gold-accent);
+  border-color: var(--gold-accent);
+  transform: translateX(-4px);
+}
+
+
+.qasiyoun-action {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 55px;
+}
+
+.qasiyoun-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 36px;
+  border: 1px solid var(--gold-accent);
+  border-radius: 50px;
+  background: #06463d;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(6, 70, 61, 0.18);
+  transition: all 0.35s ease;
+}
+
+.qasiyoun-button:hover {
+  background: #0b5a4e;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 32px rgba(6, 70, 61, 0.28);
+}
+
+.qasiyoun-button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--gold-accent);
+  color: white;
+  font-size: 15px;
+  transition: transform 0.35s ease;
+}
+
+.qasiyoun-button:hover .qasiyoun-button-icon {
+  transform: translate(-3px, -3px);
+}
+
+/* =====================================================
+   التجاوب (Responsive)
+===================================================== */
+@media (max-width: 1024px) {
+  .qasiyoun-showcase {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .qasiyoun-main {
+    grid-column: 1 / 3;
+    grid-row: auto;
+    height: 320px;
+  }
+  .qasiyoun-card-6 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .qasiyoun-card {
+    height: 240px;
+  }
+}
+
+@media (max-width: 650px) {
+  .qasiyoun-section {
+    padding: 60px 0 70px;
+  }
+  .qasiyoun-showcase {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .qasiyoun-card,
+  .qasiyoun-main {
+    height: 230px;
+  }
+  .qasiyoun-button {
+    width: 100%;
+    max-width: 320px;
+  }
+}
