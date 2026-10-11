@@ -1043,3 +1043,231 @@ body::before {
     font-size: 13px;
   }
 }
+
+
+/* =========================================
+   FIGMA + DATA MODEL
+   ========================================= */
+
+.figma-data-page {
+  --figma-card-radius: 11px;
+  --figma-card-height: 260px;
+  --figma-card-gap: 20px;
+
+  min-height: calc(100vh - 173px);
+  padding: 4px 0 24px;
+  background: #f0e8d8;
+}
+
+.figma-data-container {
+  width: min(100% - 60px, 1400px);
+  margin-inline: auto;
+}
+
+.figma-data-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--figma-card-gap);
+}
+
+.figma-data-card {
+  position: relative;
+  display: block;
+  height: var(--figma-card-height);
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: var(--figma-card-radius);
+  color: #fff;
+  text-decoration: none;
+  background: #1b2435;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 8%);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.figma-data-card__image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 400ms ease;
+}
+
+
+.figma-data-card__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: linear-gradient(
+    180deg,
+    rgb(13 23 43 / 91%) 0%,
+    rgb(13 23 43 / 60%) 38%,
+    rgb(13 23 43 / 27%) 100%
+  );
+}
+
+/* طبقة الهوفر الخمرية */
+.figma-data-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(76, 12, 29, 0.96) 0%,
+    rgba(76, 12, 29, 0.78) 38%,
+    rgba(76, 12, 29, 0.35) 100%
+  );
+
+  opacity: 0;
+  transition: opacity 450ms ease;
+}
+
+
+.figma-data-card__content {
+  position: relative;
+  z-index: 1;
+  padding: 22px 24px;
+  text-align: right;
+}
+
+.figma-data-card__content h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(21px, 2.1vw, 31px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.figma-data-card__content p {
+  margin: 10px 0 0;
+  color: rgb(255 255 255 / 92%);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.figma-data-card__arrow {
+  position: absolute;
+  top: 34px;
+  left: 29px;
+  z-index: 2;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  color: rgb(255 255 255 / 85%);
+  font-family: Arial, sans-serif;
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 1;
+  transition: transform 220ms ease;
+}
+
+.figma-data-card__count {
+  position: absolute;
+  bottom: 23px;
+  z-index: 2;
+  display: grid;
+  width: 33px;
+  height: 33px;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.figma-data-card__count--green {
+  left: 23px;
+  color: #fff;
+  background: #005347;
+}
+
+.figma-data-card__count--light {
+  right: 23px;
+  color: #172236;
+  background: #f5f0e4;
+}
+
+@media (hover: hover) {
+.figma-data-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 18%);
+  }
+
+  .figma-data-card:hover .figma-data-card__image {
+    transform: scale(1.045);
+  }
+
+.figma-data-card:hover::after {
+  opacity: 1;
+}
+
+.figma-data-card:hover .figma-data-card__image {
+  transform: scale(1.045);
+}
+
+.figma-data-card:hover .figma-data-card__arrow {
+  transform: translateX(-4px);
+}
+
+
+  .figma-data-card:hover .figma-data-card__arrow {
+    transform: translateX(-4px);
+  }
+}
+
+.figma-data-card:focus-visible {
+  outline: 3px solid #0b7968;
+  outline-offset: 3px;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .figma-data-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .figma-data-card {
+    --figma-card-height: 245px;
+  }
+
+  .figma-data-card__content {
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .figma-data-page {
+    padding: 14px 0 28px;
+  }
+
+  .figma-data-container {
+    width: calc(100% - 28px);
+  }
+
+  .figma-data-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .figma-data-card {
+    --figma-card-height: 230px;
+  }
+
+  .figma-data-card__content h2 {
+    font-size: 25px;
+  }
+
+  .figma-data-card__content p {
+    max-width: 85%;
+    font-size: 14px;
+  }
+}

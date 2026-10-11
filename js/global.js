@@ -27,6 +27,7 @@
           { label: "النموذج الداتا", href: `${pagesPrefix}news-new.html` },
           { label: "النموذج الثاني", href: `${pagesPrefix}news-model-2.html` },
           { label: "النموذج الخامس", href: `${pagesPrefix}news-model-5.html` },
+          { label: "نموذج figma ", href: `${pagesPrefix}news-model-6.html` },
           {label: "إدارة الأخبار",href: `${pagesPrefix}news-dashboard.html`,},
         ],
       },
