@@ -3396,3 +3396,429 @@
         transition: none;
     }
 }
+
+
+/* =========================================
+   DAMASCUS IN NUMBERS
+========================================= */
+
+.damascus-numbers {
+    --numbers-gold: #d8bd8b;
+    --numbers-bg: #002b26;
+    --numbers-card: #04342e;
+    --numbers-border: rgba(216, 189, 139, 0.2);
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 115px 40px 75px;
+    color: #fff;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(216, 189, 139, 0.09),
+            transparent 55%
+        ),
+        var(--numbers-bg);
+}
+
+.damascus-numbers__container {
+    position: relative;
+    z-index: 2;
+    width: min(1380px, 100%);
+    margin-inline: auto;
+}
+
+.damascus-numbers__header {
+    max-width: 760px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.damascus-numbers__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 23px;
+    color: var(--numbers-gold);
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.damascus-numbers__eyebrow::before,
+.damascus-numbers__eyebrow::after {
+    content: "";
+    width: 27px;
+    height: 1px;
+    background: var(--numbers-gold);
+    opacity: 0.7;
+}
+
+.damascus-numbers__header h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(30px, 4vw, 49px);
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+.damascus-numbers__header h2 span {
+    display: block;
+    color: var(--numbers-gold);
+}
+
+.damascus-numbers__header > p {
+    max-width: 630px;
+    margin: 18px auto 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    line-height: 2;
+}
+
+.damascus-numbers__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.damascus-number-card {
+    position: relative;
+    display: flex;
+    min-height: 335px;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 23px 27px;
+    overflow: hidden;
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.035),
+        rgba(255, 255, 255, 0.008)
+    );
+
+    border: 1px solid var(--numbers-border);
+    border-radius: 5px;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.damascus-number-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--numbers-gold),
+        transparent
+    );
+
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.45s ease;
+}
+
+.damascus-number-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(216, 189, 139, 0.55);
+    background-color: rgba(216, 189, 139, 0.035);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.damascus-number-card:hover::before {
+    transform: scaleX(1);
+}
+
+.damascus-number-card__index {
+    position: absolute;
+    top: 17px;
+    inset-inline-start: 18px;
+    color: rgba(216, 189, 139, 0.6);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.damascus-number-card__icon {
+    display: grid;
+    width: 61px;
+    height: 61px;
+    place-items: center;
+    margin-bottom: 24px;
+
+    color: var(--numbers-gold);
+    background: rgba(216, 189, 139, 0.07);
+    border: 1px solid rgba(216, 189, 139, 0.23);
+    border-radius: 50%;
+
+    transition:
+        transform 0.4s ease,
+        background-color 0.4s ease;
+}
+
+.damascus-number-card__icon svg {
+    width: 34px;
+    height: 34px;
+    stroke: currentColor;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.damascus-number-card:hover .damascus-number-card__icon {
+    transform: rotate(-8deg) scale(1.06);
+    background: rgba(216, 189, 139, 0.14);
+}
+
+.damascus-number-card__value {
+    display: flex;
+    min-height: 65px;
+    align-items: center;
+    justify-content: center;
+    direction: ltr;
+    color: var(--numbers-gold);
+    font-size: clamp(37px, 3.4vw, 52px);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+}
+
+.damascus-number-card__count {
+    display: inline-block;
+}
+
+.damascus-number-card h3 {
+    margin: 15px 0 9px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+.damascus-number-card p {
+    max-width: 260px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.damascus-number-card__line {
+    width: 35px;
+    height: 1px;
+    margin-top: auto;
+    padding-top: 0;
+    transform: translateY(12px);
+    background: var(--numbers-gold);
+    opacity: 0.6;
+    transition: width 0.4s ease;
+}
+
+.damascus-number-card:hover .damascus-number-card__line {
+    width: 75px;
+}
+
+.damascus-numbers__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 50px;
+    color: rgba(216, 189, 139, 0.85);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.damascus-numbers__footer-line {
+    width: min(100px, 12vw);
+    height: 1px;
+    background: var(--numbers-border);
+}
+
+.damascus-numbers__ornament {
+    position: absolute;
+    z-index: 0;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(216, 189, 139, 0.055);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.damascus-numbers__ornament::before,
+.damascus-numbers__ornament::after {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    border: 1px solid rgba(216, 189, 139, 0.055);
+    border-radius: 50%;
+}
+
+.damascus-numbers__ornament::after {
+    inset: 45px;
+}
+
+.damascus-numbers__ornament--top {
+    top: -180px;
+    inset-inline-start: -100px;
+}
+
+.damascus-numbers__ornament--bottom {
+    right: auto;
+    bottom: -200px;
+    inset-inline-end: -100px;
+}
+
+/* Responsive */
+
+@media (max-width: 1050px) {
+    .damascus-numbers__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .damascus-number-card {
+        min-height: 315px;
+    }
+}
+
+@media (max-width: 600px) {
+    .damascus-numbers {
+        padding: 80px 20px 55px;
+    }
+
+    .damascus-numbers__header {
+        margin-bottom: 38px;
+    }
+
+    .damascus-numbers__header > p {
+        font-size: 14px;
+    }
+
+    .damascus-numbers__grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .damascus-number-card {
+        min-height: 285px;
+        padding: 28px 20px 25px;
+    }
+
+    .damascus-number-card__value {
+        font-size: 45px;
+    }
+
+    .damascus-numbers__footer {
+        gap: 10px;
+        font-size: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .damascus-number-card,
+    .damascus-number-card::before,
+    .damascus-number-card__icon,
+    .damascus-number-card__line {
+        transition: none;
+    }
+}
+
+/* =========================================
+   DAMASCUS NUMBERS — BEIGE EDITION
+========================================= */
+
+.damascus-numbers {
+    --numbers-gold: #a58a58;
+    --numbers-bg: #f3eee3;
+    --numbers-card: #faf7f0;
+    --numbers-border: #e2d7c3;
+    --numbers-text: #263b32;
+    --numbers-muted: #777466;
+
+    color: var(--numbers-text);
+    background:
+        radial-gradient(
+            circle at 8% 15%,
+            rgba(216, 189, 139, 0.18),
+            transparent 28%
+        ),
+        var(--numbers-bg);
+}
+
+.damascus-numbers__header h2 {
+    color: var(--numbers-text);
+}
+
+.damascus-numbers__header h2 span {
+    color: var(--numbers-gold);
+}
+
+.damascus-numbers__header > p {
+    color: var(--numbers-muted);
+}
+
+.damascus-numbers__eyebrow {
+    color: var(--numbers-gold);
+}
+
+.damascus-number-card {
+    min-height: 335px;
+    padding: 34px 24px 29px;
+    border: 1px solid var(--numbers-border);
+    border-radius: 24px;
+    background: rgba(250, 247, 240, 0.88);
+    box-shadow: 0 8px 25px rgba(67, 54, 34, 0.035);
+}
+
+.damascus-number-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(165, 138, 88, 0.6);
+    background: #fffdf8;
+    box-shadow: 0 18px 35px rgba(67, 54, 34, 0.09);
+}
+
+.damascus-number-card__index {
+    color: var(--numbers-gold);
+}
+
+.damascus-number-card__icon {
+    color: var(--numbers-gold);
+    background: #f0e7d5;
+    border-color: #e3d3b3;
+}
+
+.damascus-number-card h3 {
+    color: var(--numbers-text);
+}
+
+.damascus-number-card p {
+    color: var(--numbers-muted);
+}
+
+.damascus-number-card__value {
+    color: var(--numbers-gold);
+}
+
+.damascus-number-card__line {
+    background: var(--numbers-gold);
+}
+
+.damascus-numbers__footer {
+    color: var(--numbers-gold);
+}
+
+.damascus-numbers__footer-line {
+    background: var(--numbers-border);
+}
+
+.damascus-numbers__ornament,
+.damascus-numbers__ornament::before,
+.damascus-numbers__ornament::after {
+    border-color: rgba(165, 138, 88, 0.12);
+}

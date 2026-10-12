@@ -1099,3 +1099,114 @@ content.classList.add("is-revealing");
     update(active);
     
 });
+
+/* =========================================
+   DAMASCUS NUMBERS — ROLLING COUNTERS
+========================================= */
+
+(() => {
+    const section = document.querySelector("#damascus-numbers");
+
+    if (!section) return;
+
+    const counters = section.querySelectorAll("[data-count]");
+
+    if (!counters.length) return;
+
+    const formatNumber = (value) =>
+        Math.floor(value).toLocaleString("en-US");
+
+    const animateCounter = (counter, index) => {
+        if (counter.dataset.animated === "true") return;
+
+        counter.dataset.animated = "true";
+
+        const target = Number(counter.dataset.count);
+        const suffix = counter.dataset.suffix || "";
+        const duration = 2800 + index * 220;
+        const startTime = performance.now();
+
+        if (!Number.isFinite(target) || target < 0) {
+            counter.textContent = "0";
+            return;
+        }
+
+        const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if (reducedMotion) {
+            counter.textContent = formatNumber(target) + suffix;
+            return;
+        }
+
+        const tick = (now) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // سرعة عالية أولاً ثم تباطؤ واضح قرب النهاية.
+            const eased = 1 - Math.pow(1 - progress, 5);
+
+            // مدى الأرقام العشوائية يتناقص مع اقتراب النهاية.
+            const noiseRange = Math.max(
+                0,
+                Math.round((1 - eased) * Math.min(target * 0.7, 999))
+            );
+
+            let displayedValue;
+
+            if (progress >= 1) {
+                displayedValue = target;
+            } else {
+                const approximateValue = target * eased;
+
+                const randomOffset = Math.round(
+                    (Math.random() * 2 - 1) * noiseRange
+                );
+
+                displayedValue = Math.max(
+                    0,
+                    Math.min(
+                        target,
+                        Math.round(approximateValue + randomOffset)
+                    )
+                );
+            }
+
+            counter.textContent =
+                formatNumber(displayedValue) + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(tick);
+            } else {
+                // ضمان تثبيت الرقم النهائي الصحيح.
+                counter.textContent = formatNumber(target) + suffix;
+            }
+        };
+
+        requestAnimationFrame(tick);
+    };
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (!entries.some((entry) => entry.isIntersecting)) {
+                    return;
+                }
+
+                counters.forEach((counter, index) => {
+                    animateCounter(counter, index);
+                });
+
+                observer.disconnect();
+            },
+            { threshold: 0.25 }
+        );
+
+        observer.observe(section);
+    } else {
+        counters.forEach((counter, index) => {
+            animateCounter(counter, index);
+        });
+    }
+})();
