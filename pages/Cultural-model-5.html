@@ -480,87 +480,261 @@
 
             </section>
 
-            <!-- =================================================
-                08 - CULTURAL EVENTS
-            ================================================== -->
-            <section class="culture-section events-section">
+<!-- =========================================
+     DAMASCUS CULTURAL CALENDAR
+========================================= -->
+<section class="damascus-agenda" id="damascus-agenda">
 
-                <div class="section-header">
+    <div class="damascus-agenda__container">
 
+        <!-- Header -->
+        <header class="agenda-heading">
+
+            <div class="agenda-heading__intro">
+                <span class="agenda-eyebrow">
+                    <span class="agenda-eyebrow__dot"></span>
+                    نبض المدينة الثقافي
+                </span>
+
+                <h2>
+                    روزنامة
+                    <span>دمشق</span>
+                </h2>
+
+                <p>
+                    من أمسية موسيقية إلى معرض فني،
+                    اكتشف ما يستحق أن تعيشه في دمشق.
+                </p>
+            </div>
+
+            <div class="agenda-month">
+                <button
+                    type="button"
+                    class="agenda-month__arrow"
+                    id="agendaPrevMonth"
+                    aria-label="الشهر السابق"
+                >→</button>
+
+                <div class="agenda-month__label" aria-live="polite">
+                    <span id="agendaMonthName">تشرين الأول</span>
+                    <strong id="agendaYear">2026</strong>
+                </div>
+
+                <button
+                    type="button"
+                    class="agenda-month__arrow"
+                    id="agendaNextMonth"
+                    aria-label="الشهر التالي"
+                >←</button>
+            </div>
+
+        </header>
+
+        <!-- Month overview -->
+        <div class="agenda-overview">
+            <div class="agenda-overview__label">
+                <span class="agenda-overview__line"></span>
+                <span id="agendaSelectedMonth">فعاليات تشرين الأول</span>
+            </div>
+
+            <span class="agenda-overview__count">
+                <strong id="agendaEventCount">0</strong>
+                <span>فعالية في هذا الشهر</span>
+            </span>
+        </div>
+
+        <!-- Horizontal day selector -->
+        <div class="agenda-days" aria-label="اختيار يوم">
+
+            <button
+                type="button"
+                class="agenda-days__nav"
+                id="agendaDaysPrev"
+                aria-label="الأيام السابقة"
+            >→</button>
+
+            <div
+                class="agenda-days__viewport"
+                id="agendaDaysViewport"
+            >
+                <div
+                    class="agenda-days__track"
+                    id="agendaDaysTrack"
+                    role="group"
+                    aria-label="أيام الشهر"
+                ></div>
+            </div>
+
+            <button
+                type="button"
+                class="agenda-days__nav"
+                id="agendaDaysNext"
+                aria-label="الأيام التالية"
+            >←</button>
+
+        </div>
+
+        <!-- Category filters -->
+        <div class="agenda-filters" aria-label="تصفية الفعاليات">
+
+            <button
+                type="button"
+                class="agenda-filter is-active"
+                data-agenda-filter="all"
+                aria-pressed="true"
+            >الكل</button>
+
+            <button
+                type="button"
+                class="agenda-filter"
+                data-agenda-filter="music"
+                aria-pressed="false"
+            >موسيقى</button>
+
+            <button
+                type="button"
+                class="agenda-filter"
+                data-agenda-filter="art"
+                aria-pressed="false"
+            >فنون ومعارض</button>
+
+            <button
+                type="button"
+                class="agenda-filter"
+                data-agenda-filter="heritage"
+                aria-pressed="false"
+            >تراث</button>
+
+            <button
+                type="button"
+                class="agenda-filter"
+                data-agenda-filter="talk"
+                aria-pressed="false"
+            >ندوات ولقاءات</button>
+
+        </div>
+
+        <!-- Events layout -->
+        <div class="agenda-content" id="agendaContent">
+
+            <!-- Featured event -->
+            <article
+                class="agenda-featured"
+                id="agendaFeatured"
+                aria-live="polite"
+            >
+                <div class="agenda-featured__visual">
+                    <div class="agenda-featured__visual-pattern"></div>
+
+                    <span class="agenda-featured__visual-label">
+                        DAMASCUS / CULTURE
+                    </span>
+
+                    <div class="agenda-featured__visual-center">
+                        <span class="agenda-featured__visual-symbol">د</span>
+                        <span class="agenda-featured__visual-caption">
+                            حكايات من المدينة
+                        </span>
+                    </div>
+
+                    <span class="agenda-featured__visual-index">
+                        01 — DAMASCUS
+                    </span>
+                </div>
+
+                <div class="agenda-featured__details">
+                    <div class="agenda-featured__topline">
+                        <span
+                            class="agenda-tag"
+                            id="agendaFeaturedCategory"
+                        >فعالية ثقافية</span>
+
+                        <span
+                            class="agenda-featured__date"
+                            id="agendaFeaturedDate"
+                        >—</span>
+                    </div>
+
+                    <span class="agenda-featured__eyebrow">
+                        اختيار روزنامة دمشق
+                    </span>
+
+                    <h3 id="agendaFeaturedTitle">
+                        اكتشف فعاليات المدينة
+                    </h3>
+
+                    <p id="agendaFeaturedDescription">
+                        اختر يوماً من الشريط لتكتشف الفعاليات الثقافية المتاحة.
+                    </p>
+
+                    <div class="agenda-featured__meta">
+                        <span class="agenda-meta-item">
+                            <span class="agenda-meta-item__icon">⌖</span>
+                            <span id="agendaFeaturedLocation">دمشق</span>
+                        </span>
+
+                        <span class="agenda-meta-item">
+                            <span class="agenda-meta-item__icon">◷</span>
+                            <span id="agendaFeaturedTime">حسب موعد الفعالية</span>
+                        </span>
+                    </div>
+
+                    <a
+                        href="#"
+                        class="agenda-featured__link"
+                        id="agendaFeaturedLink"
+                        hidden
+                    >
+                        <span>تفاصيل الفعالية</span>
+                        <span aria-hidden="true">←</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Other events -->
+            <aside class="agenda-side">
+
+                <div class="agenda-side__heading">
                     <div>
-                        <span class="section-number">
-                            08
-                        </span>
-
-                        <span class="section-label">
-                            ماذا يحدث؟
-                        </span>
-
-                        <h2>
-                            الفعاليات الثقافية
-                        </h2>
+                        <span class="agenda-side__eyebrow">على جدولك</span>
+                        <h3>فعاليات اليوم</h3>
                     </div>
 
-                    <div class="calendar-header-actions">
-
-                        <button
-                            type="button"
-                            class="calendar-nav-button"
-                            id="calendarPrev"
-                            aria-label="الشهر السابق"
-                        >
-                            →
-                        </button>
-
-                        <div class="calendar-month-title">
-                            <span id="calendarMonth">
-                                تشرين الأول
-                            </span>
-
-                            <span id="calendarYear">
-                                2026
-                            </span>
-                        </div>
-
-                        <button
-                            type="button"
-                            class="calendar-nav-button"
-                            id="calendarNext"
-                            aria-label="الشهر التالي"
-                        >
-                            ←
-                        </button>
-
-                    </div>
-
+                    <span
+                        class="agenda-side__total"
+                        id="agendaDayCount"
+                    >0</span>
                 </div>
 
+                <div
+                    class="agenda-event-list"
+                    id="agendaEventList"
+                    aria-live="polite"
+                ></div>
 
-                <div class="cultural-calendar">
+            </aside>
 
-                    <!-- Weekdays -->
-                    <div class="calendar-weekdays">
+        </div>
 
-                        <div>الأحد</div>
-                        <div>الاثنين</div>
-                        <div>الثلاثاء</div>
-                        <div>الأربعاء</div>
-                        <div>الخميس</div>
-                        <div>الجمعة</div>
-                        <div>السبت</div>
+        <!-- Empty state -->
+        <div class="agenda-empty" id="agendaEmpty" hidden>
+            <span class="agenda-empty__symbol">✳</span>
+            <h3>هذا اليوم ينتظر حكاية جديدة</h3>
+            <p>لا توجد فعاليات مطابقة لاختياراتك. جرّب يوماً آخر أو غيّر التصنيف.</p>
+            <button type="button" id="agendaShowAll">
+                عرض جميع فعاليات اليوم
+            </button>
+        </div>
 
-                    </div>
+        <footer class="agenda-footer">
+            <span>كل يوم في دمشق يحمل احتمالاً جديداً</span>
+            <span class="agenda-footer__ornament" aria-hidden="true">✳</span>
+        </footer>
 
+    </div>
 
-                    <!-- Days generated by JavaScript -->
-                    <div
-                        class="calendar-grid"
-                        id="calendarGrid"
-                    ></div>
+</section>
 
-                </div>
-
-            </section>
 
 <!-- =========================================
      04 - THE SEVEN GATES OF DAMASCUS

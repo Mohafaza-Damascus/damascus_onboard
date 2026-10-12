@@ -1210,3 +1210,541 @@ content.classList.add("is-revealing");
         });
     }
 })();
+
+/* =========================================
+   DAMASCUS AGENDA — INTERACTIVE CALENDAR
+========================================= */
+
+(() => {
+    const root = document.querySelector("#damascus-agenda");
+
+    if (!root || root.dataset.initialized === "true") return;
+
+    root.dataset.initialized = "true";
+
+    const $ = (selector) => root.querySelector(selector);
+
+    const monthName = $("#agendaMonthName");
+    const yearLabel = $("#agendaYear");
+    const selectedMonthLabel = $("#agendaSelectedMonth");
+    const eventCount = $("#agendaEventCount");
+
+    const daysTrack = $("#agendaDaysTrack");
+    const daysViewport = $("#agendaDaysViewport");
+
+    const featured = $("#agendaFeatured");
+    const featuredCategory = $("#agendaFeaturedCategory");
+    const featuredDate = $("#agendaFeaturedDate");
+    const featuredTitle = $("#agendaFeaturedTitle");
+    const featuredDescription = $("#agendaFeaturedDescription");
+    const featuredLocation = $("#agendaFeaturedLocation");
+    const featuredTime = $("#agendaFeaturedTime");
+    const featuredLink = $("#agendaFeaturedLink");
+
+    const eventList = $("#agendaEventList");
+    const dayCount = $("#agendaDayCount");
+    const emptyState = $("#agendaEmpty");
+
+    const categoryLabels = {
+        music: "موسيقى",
+        art: "فنون ومعارض",
+        heritage: "تراث",
+        talk: "ندوات ولقاءات"
+    };
+
+    const monthNames = [
+        "كانون الثاني",
+        "شباط",
+        "آذار",
+        "نيسان",
+        "أيار",
+        "حزيران",
+        "تموز",
+        "آب",
+        "أيلول",
+        "تشرين الأول",
+        "تشرين الثاني",
+        "كانون الأول"
+    ];
+
+    const weekdayNames = [
+        "الأحد",
+        "الاثنين",
+        "الثلاثاء",
+        "الأربعاء",
+        "الخميس",
+        "الجمعة",
+        "السبت"
+    ];
+
+    /*
+     * DEMO DATA:
+     * Replace these example events with the platform's real data.
+     *
+     * date: YYYY-MM-DD
+     * category: music | art | heritage | talk
+     * url: optional event details page
+     */
+
+    const events = [
+        {
+            id: 1,
+            date: "2026-10-11",
+            title: "أمسية موسيقية شامية",
+            category: "music",
+            description: "تصوّر تجريبي لأمسية تحتفي بالمقامات والألحان التي ارتبطت بالذاكرة الموسيقية لدمشق.",
+            location: "دمشق — الموقع يحدد لاحقاً",
+            time: "18:00",
+            url: ""
+        },
+        {
+            id: 2,
+            date: "2026-10-11",
+            title: "معرض حكايات من المدينة",
+            category: "art",
+            description: "تصوّر تجريبي لمعرض بصري يستكشف تفاصيل العمارة الدمشقية وأحياء المدينة القديمة.",
+            location: "دمشق — الموقع يحدد لاحقاً",
+            time: "16:00",
+            url: ""
+        },
+        {
+            id: 3,
+            date: "2026-10-14",
+            title: "لقاء حول التراث المعماري",
+            category: "heritage",
+            description: "تصوّر تجريبي للقاء يناقش ملامح العمارة التقليدية وطرق الحفاظ على ذاكرة المكان.",
+            location: "دمشق — الموقع يحدد لاحقاً",
+            time: "17:30",
+            url: ""
+        },
+        {
+            id: 4,
+            date: "2026-10-17",
+            title: "ورشة فنون بصرية",
+            category: "art",
+            description: "تصوّر تجريبي لورشة فنية تستلهم الألوان والزخارف والتفاصيل البصرية من دمشق.",
+            location: "دمشق — الموقع يحدد لاحقاً",
+            time: "11:00",
+            url: ""
+        },
+        {
+            id: 5,
+            date: "2026-10-20",
+            title: "حوار ثقافي مفتوح",
+            category: "talk",
+            description: "تصوّر تجريبي لجلسة حوارية حول الثقافة المحلية ودور المبادرات المجتمعية.",
+            location: "دمشق — الموقع يحدد لاحقاً",
+            time: "18:00",
+            url: ""
+        },
+        {
+            id: 6,
+            date: "2026-10-23",
+            title: "أمسية موسيقى وتراث",
+            category: "music",
+            description: "تصوّر تجريبي لأمسية تجمع بين الموسيقى والتراث الشامي في تجربة ثقافية واحدة.",
+            location: "دمشق — الموقع يحدد لاحقاً",
+            time: "19:00",
+            url: ""
+        },
+        {
+            id: 7,
+            date: "2026-10-27",
+            title: "معرض الذاكرة الدمشقية",
+            category: "art",
+            description: "تصوّر تجريبي لمعرض يوثق ملامح الحياة اليومية والذاكرة البصرية للمدينة.",
+            location: "دمشق — الموقع يحدد لاحقاً",
+            time: "15:00",
+            url: ""
+        }
+    ];
+
+    let visibleMonth = new Date(2026, 9, 1);
+    let selectedDate = "2026-10-11";
+    let activeCategory = "all";
+    let selectedEventId = null;
+
+    const pad = (value) => String(value).padStart(2, "0");
+
+    const dateKey = (date) => {
+        return [
+            date.getFullYear(),
+            pad(date.getMonth() + 1),
+            pad(date.getDate())
+        ].join("-");
+    };
+
+    const parseDate = (key) => {
+        const [year, month, day] = key.split("-").map(Number);
+
+        return new Date(year, month - 1, day);
+    };
+
+    const sameMonth = (date, month) => {
+        return (
+            date.getFullYear() === month.getFullYear() &&
+            date.getMonth() === month.getMonth()
+        );
+    };
+
+    const formatArabicDate = (key) => {
+        const date = parseDate(key);
+
+        return `${weekdayNames[date.getDay()]}، ${date.getDate()} ${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+    };
+
+    const formatTime = (time) => {
+        if (!time) return "يحدد لاحقاً";
+
+        const [hours, minutes] = time.split(":").map(Number);
+        const suffix = hours >= 12 ? "مساءً" : "صباحاً";
+        const hour12 = hours % 12 || 12;
+
+        return `${hour12}:${pad(minutes)} ${suffix}`;
+    };
+
+    const getMonthEvents = () => {
+        return events.filter((event) => {
+            return sameMonth(parseDate(event.date), visibleMonth);
+        });
+    };
+
+    const getDayEvents = () => {
+        return events
+            .filter((event) => {
+                return (
+                    event.date === selectedDate &&
+                    (
+                        activeCategory === "all" ||
+                        event.category === activeCategory
+                    )
+                );
+            })
+            .sort((a, b) => a.time.localeCompare(b.time));
+    };
+
+    const animateFeatured = () => {
+        featured.classList.remove("agenda-is-changing");
+
+        // Restart the CSS animation after changing the featured event.
+        void featured.offsetWidth;
+
+        featured.classList.add("agenda-is-changing");
+    };
+
+    const renderMonthHeader = () => {
+        monthName.textContent = monthNames[visibleMonth.getMonth()];
+        yearLabel.textContent = visibleMonth.getFullYear();
+
+        selectedMonthLabel.textContent =
+            `فعاليات ${monthNames[visibleMonth.getMonth()]}`;
+
+        eventCount.textContent = getMonthEvents().length;
+    };
+
+    const renderDays = () => {
+        const numberOfDays = new Date(
+            visibleMonth.getFullYear(),
+            visibleMonth.getMonth() + 1,
+            0
+        ).getDate();
+
+        const monthEvents = getMonthEvents();
+
+        daysTrack.innerHTML = "";
+
+        for (let day = 1; day <= numberOfDays; day++) {
+            const date = new Date(
+                visibleMonth.getFullYear(),
+                visibleMonth.getMonth(),
+                day
+            );
+
+            const key = dateKey(date);
+
+            const hasEvents = monthEvents.some((event) => {
+                return event.date === key;
+            });
+
+            const button = document.createElement("button");
+
+            button.type = "button";
+            button.className = "agenda-day";
+            button.dataset.date = key;
+            button.setAttribute("aria-pressed", "false");
+
+            button.innerHTML = `
+                <span class="agenda-day__name">
+                    ${weekdayNames[date.getDay()]}
+                </span>
+
+                <span class="agenda-day__number">
+                    ${day}
+                </span>
+
+                <span class="agenda-day__month">
+                    ${monthNames[visibleMonth.getMonth()]}
+                </span>
+
+                ${hasEvents
+                    ? '<span class="agenda-day__dot" aria-label="توجد فعاليات"></span>'
+                    : ""
+                }
+            `;
+
+            button.addEventListener("click", () => {
+                selectDate(key);
+            });
+
+            daysTrack.appendChild(button);
+        }
+
+        updateSelectedDay();
+
+        requestAnimationFrame(() => {
+            scrollSelectedDayIntoView("auto");
+        });
+    };
+
+    const updateSelectedDay = () => {
+        daysTrack.querySelectorAll(".agenda-day").forEach((button) => {
+            const isSelected = button.dataset.date === selectedDate;
+
+            button.classList.toggle("is-selected", isSelected);
+            button.setAttribute("aria-pressed", String(isSelected));
+        });
+    };
+
+    const scrollSelectedDayIntoView = (behavior = "smooth") => {
+        const selectedButton = daysTrack.querySelector(
+            `[data-date="${selectedDate}"]`
+        );
+
+        if (!selectedButton) return;
+
+        const viewportRect = daysViewport.getBoundingClientRect();
+        const buttonRect = selectedButton.getBoundingClientRect();
+
+        const offset =
+            buttonRect.left -
+            viewportRect.left -
+            (viewportRect.width - buttonRect.width) / 2;
+
+        daysViewport.scrollBy({
+            left: offset,
+            behavior
+        });
+    };
+
+    const renderEventList = (dayEvents) => {
+        eventList.innerHTML = "";
+
+        dayCount.textContent = dayEvents.length;
+
+        dayEvents.forEach((event, index) => {
+            const date = parseDate(event.date);
+            const button = document.createElement("button");
+
+            button.type = "button";
+            button.className = "agenda-event";
+            button.dataset.eventId = event.id;
+            button.style.animationDelay = `${index * 55}ms`;
+
+            if (event.id === selectedEventId) {
+                button.classList.add("is-active");
+            }
+
+            button.setAttribute(
+                "aria-pressed",
+                String(event.id === selectedEventId)
+            );
+
+            button.innerHTML = `
+                <span class="agenda-event__date">
+                    <strong>${date.getDate()}</strong>
+                    <span>${monthNames[date.getMonth()]}</span>
+                </span>
+
+                <span class="agenda-event__body">
+                    <span class="agenda-event__category">
+                        ${categoryLabels[event.category] || "فعالية ثقافية"}
+                    </span>
+
+                    <span class="agenda-event__title"></span>
+
+                    <span class="agenda-event__time">
+                        ${formatTime(event.time)}
+                    </span>
+                </span>
+
+                <span class="agenda-event__arrow" aria-hidden="true">←</span>
+            `;
+
+            // Insert user-managed text safely.
+            button.querySelector(".agenda-event__title").textContent =
+                event.title;
+
+            button.addEventListener("click", () => {
+                selectedEventId = event.id;
+                renderDay();
+            });
+
+            eventList.appendChild(button);
+        });
+    };
+
+    const renderFeaturedEvent = (event) => {
+        if (!event) {
+            featuredCategory.textContent = "لا توجد فعالية";
+            featuredDate.textContent = formatArabicDate(selectedDate);
+            featuredTitle.textContent = "هذا اليوم ينتظر حكاية جديدة";
+            featuredDescription.textContent =
+                "اختر يوماً آخر من الشريط لاستكشاف الفعاليات المتاحة.";
+
+            featuredLocation.textContent = "—";
+            featuredTime.textContent = "—";
+
+            featuredLink.hidden = true;
+            featuredLink.removeAttribute("href");
+
+            return;
+        }
+
+        featuredCategory.textContent =
+            categoryLabels[event.category] || "فعالية ثقافية";
+
+        featuredDate.textContent = formatArabicDate(event.date);
+        featuredTitle.textContent = event.title;
+        featuredDescription.textContent = event.description;
+        featuredLocation.textContent = event.location;
+        featuredTime.textContent = formatTime(event.time);
+
+        if (event.url) {
+            featuredLink.href = event.url;
+            featuredLink.hidden = false;
+        } else {
+            featuredLink.hidden = true;
+            featuredLink.removeAttribute("href");
+        }
+    };
+
+    const renderDay = () => {
+        const dayEvents = getDayEvents();
+
+        if (!dayEvents.some((event) => event.id === selectedEventId)) {
+            selectedEventId = dayEvents.length ? dayEvents[0].id : null;
+        }
+
+        const activeEvent = dayEvents.find((event) => {
+            return event.id === selectedEventId;
+        });
+
+        renderFeaturedEvent(activeEvent);
+        renderEventList(dayEvents);
+
+        emptyState.hidden = dayEvents.length > 0;
+        featured.hidden = dayEvents.length === 0;
+
+        animateFeatured();
+    };
+
+    const selectDate = (key) => {
+        const date = parseDate(key);
+
+        if (!sameMonth(date, visibleMonth)) return;
+
+        selectedDate = key;
+        selectedEventId = null;
+
+        updateSelectedDay();
+        renderDay();
+        scrollSelectedDayIntoView();
+    };
+
+    const changeMonth = (offset) => {
+        visibleMonth = new Date(
+            visibleMonth.getFullYear(),
+            visibleMonth.getMonth() + offset,
+            1
+        );
+
+        const dayCountInMonth = new Date(
+            visibleMonth.getFullYear(),
+            visibleMonth.getMonth() + 1,
+            0
+        ).getDate();
+
+        const oldDay = parseDate(selectedDate).getDate();
+        const newDay = Math.min(oldDay, dayCountInMonth);
+
+        selectedDate = dateKey(
+            new Date(
+                visibleMonth.getFullYear(),
+                visibleMonth.getMonth(),
+                newDay
+            )
+        );
+
+        selectedEventId = null;
+
+        renderMonthHeader();
+        renderDays();
+        renderDay();
+    };
+
+    $("#agendaPrevMonth").addEventListener("click", () => {
+        changeMonth(-1);
+    });
+
+    $("#agendaNextMonth").addEventListener("click", () => {
+        changeMonth(1);
+    });
+
+    $("#agendaDaysPrev").addEventListener("click", () => {
+        daysViewport.scrollBy({
+            left: -Math.max(240, daysViewport.clientWidth * 0.7),
+            behavior: "smooth"
+        });
+    });
+
+    $("#agendaDaysNext").addEventListener("click", () => {
+        daysViewport.scrollBy({
+            left: Math.max(240, daysViewport.clientWidth * 0.7),
+            behavior: "smooth"
+        });
+    });
+
+    root.querySelectorAll("[data-agenda-filter]").forEach((button) => {
+        button.addEventListener("click", () => {
+            activeCategory = button.dataset.agendaFilter;
+
+            root.querySelectorAll("[data-agenda-filter]").forEach((filter) => {
+                const active = filter === button;
+
+                filter.classList.toggle("is-active", active);
+                filter.setAttribute("aria-pressed", String(active));
+            });
+
+            selectedEventId = null;
+            renderDay();
+        });
+    });
+
+    $("#agendaShowAll").addEventListener("click", () => {
+        activeCategory = "all";
+
+        root.querySelectorAll("[data-agenda-filter]").forEach((button) => {
+            const active = button.dataset.agendaFilter === "all";
+
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+        });
+
+        selectedEventId = null;
+        renderDay();
+    });
+
+    renderMonthHeader();
+    renderDays();
+    renderDay();
+})();
