@@ -141,7 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // إعادة ضبط الكروت عند تغيير حجم الشاشة للأكبر
   window.addEventListener("resize", () => {
     if (window.innerWidth > 1024) {
       flipCards.forEach((c) => c.classList.remove("is-flipped"));
