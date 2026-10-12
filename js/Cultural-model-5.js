@@ -1748,3 +1748,222 @@ content.classList.add("is-revealing");
     renderDays();
     renderDay();
 })();
+
+/* =========================================
+   DAMASCUS LANDMARKS — ROTATING CARDS
+========================================= */
+(() => {
+    const stage = document.querySelector("#landmarksStage");
+    const cylinder = document.querySelector("#landmarksCylinder");
+    const previousButton = document.querySelector("#landmarksPrev");
+    const nextButton = document.querySelector("#landmarksNext");
+    const pagination = document.querySelector("#landmarksPagination");
+    const status = document.querySelector("#landmarksStatus");
+
+    if (
+        !stage ||
+        !cylinder ||
+        !previousButton ||
+        !nextButton ||
+        !pagination ||
+        !status
+    ) {
+        return;
+    }
+
+    const cards = Array.from(
+        cylinder.querySelectorAll(".landmark-card")
+    );
+
+    if (cards.length < 2) {
+        return;
+    }
+
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+    const names = cards.map((card) => {
+        return card.querySelector("h3")?.textContent.trim() || "معلم دمشقي";
+    });
+
+    let currentIndex = 0;
+    let timer = null;
+    let radius = 430;
+    let isPaused = false;
+    let touchStartX = 0;
+
+    const angle = 360 / cards.length;
+
+    function calculateRadius() {
+        const cardWidth = cards[0].getBoundingClientRect().width;
+
+        /*
+         * المسافة محسوبة لتظهر الكارتات كحلقة ثلاثية الأبعاد.
+         * لا حاجة لتغييرها عند إضافة معلم أو حذفه.
+         */
+        radius = Math.round(
+            Math.max(cardWidth * 0.95, cardWidth / (2 * Math.tan(Math.PI / cards.length)) + 80)
+        );
+    }
+
+    function renderCards() {
+        calculateRadius();
+
+        cards.forEach((card, index) => {
+            const cardAngle = angle * index;
+
+            card.style.transform =
+                `translate(-50%, -50%) rotateY(${cardAngle}deg) translateZ(${radius}px)`;
+
+            card.setAttribute(
+                "aria-label",
+                `${names[index]} — ${index + 1} من ${cards.length}`
+            );
+        });
+
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        cylinder.style.transform =
+            `rotateY(${-currentIndex * angle}deg)`;
+
+        pagination.querySelectorAll("button").forEach((button, index) => {
+            const active = index === currentIndex;
+
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-current", active ? "true" : "false");
+        });
+
+        status.textContent = names[currentIndex];
+    }
+
+    function goTo(index) {
+        currentIndex = (index + cards.length) % cards.length;
+        updateCarousel();
+    }
+
+    function next() {
+        goTo(currentIndex + 1);
+    }
+
+    function previous() {
+        goTo(currentIndex - 1);
+    }
+
+    function stopAutoRotation() {
+        if (timer !== null) {
+            window.clearInterval(timer);
+            timer = null;
+        }
+    }
+
+    function startAutoRotation() {
+        stopAutoRotation();
+
+        if (reducedMotion.matches || isPaused) {
+            return;
+        }
+
+        timer = window.setInterval(next, 5000);
+    }
+
+    function resetAutoRotation() {
+        startAutoRotation();
+    }
+
+    cards.forEach((card, index) => {
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.setAttribute(
+            "aria-label",
+            `عرض ${names[index]}`
+        );
+
+        button.addEventListener("click", () => {
+            goTo(index);
+            resetAutoRotation();
+        });
+
+        pagination.appendChild(button);
+    });
+
+    previousButton.addEventListener("click", () => {
+        previous();
+        resetAutoRotation();
+    });
+
+    nextButton.addEventListener("click", () => {
+        next();
+        resetAutoRotation();
+    });
+
+    stage.addEventListener("mouseenter", () => {
+        isPaused = true;
+        stopAutoRotation();
+    });
+
+    stage.addEventListener("mouseleave", () => {
+        isPaused = false;
+        startAutoRotation();
+    });
+
+    stage.addEventListener("focusin", () => {
+        isPaused = true;
+        stopAutoRotation();
+    });
+
+    stage.addEventListener("focusout", (event) => {
+        if (!stage.contains(event.relatedTarget)) {
+            isPaused = false;
+            startAutoRotation();
+        }
+    });
+
+    stage.addEventListener(
+        "touchstart",
+        (event) => {
+            touchStartX = event.changedTouches[0].clientX;
+        },
+        { passive: true }
+    );
+
+    stage.addEventListener(
+        "touchend",
+        (event) => {
+            const touchEndX = event.changedTouches[0].clientX;
+            const difference = touchStartX - touchEndX;
+
+            if (Math.abs(difference) < 45) {
+                return;
+            }
+
+            if (difference > 0) {
+                next();
+            } else {
+                previous();
+            }
+
+            resetAutoRotation();
+        },
+        { passive: true }
+    );
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            stopAutoRotation();
+        } else {
+            startAutoRotation();
+        }
+    });
+
+    reducedMotion.addEventListener("change", startAutoRotation);
+
+    window.addEventListener("resize", renderCards);
+
+    renderCards();
+    startAutoRotation();
+})();
+

@@ -4794,3 +4794,1914 @@
 .damascus-agenda .agenda-featured.agenda-is-changing {
     animation: agendaRise 0.4s ease both;
 }
+
+
+
+/* =========================================
+   DAMASCUS LANDMARKS — EDITORIAL EXPERIENCE
+========================================= */
+
+.damascus-landmarks {
+    --dl-ink: #183b32;
+    --dl-ink-deep: #102d27;
+    --dl-cream: #f5f0e5;
+    --dl-paper: #fffdf8;
+    --dl-gold: #d8bd8b;
+    --dl-muted: #77776b;
+    --dl-border: rgba(24, 59, 50, 0.13);
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 110px 0 72px;
+    background:
+        radial-gradient(
+            ellipse at 8% 15%,
+            rgba(216, 189, 139, 0.18),
+            transparent 34%
+        ),
+        var(--dl-cream);
+    color: var(--dl-ink);
+}
+
+.damascus-landmarks *,
+.damascus-landmarks *::before,
+.damascus-landmarks *::after {
+    box-sizing: border-box;
+}
+
+.damascus-landmarks button {
+    font: inherit;
+}
+
+.damascus-landmarks__inner {
+    width: min(1380px, calc(100% - 80px));
+    margin-inline: auto;
+}
+
+.damascus-landmarks__header {
+    display: grid;
+    grid-template-columns: 0.55fr 1.45fr;
+    align-items: start;
+    gap: 50px;
+    margin-bottom: 48px;
+}
+
+.damascus-landmarks__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 14px;
+    color: #8b724b;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.damascus-landmarks__eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--dl-gold);
+}
+
+.damascus-landmarks__heading h2 {
+    margin: 0;
+    font-size: clamp(36px, 4.5vw, 66px);
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: -1.8px;
+}
+
+.damascus-landmarks__heading h2 span {
+    display: block;
+    color: #9c8359;
+}
+
+.damascus-landmarks__heading > p {
+    max-width: 550px;
+    margin: 17px 0 0;
+    color: #77776b;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.damascus-landmarks__experience {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(350px, 0.88fr);
+    align-items: stretch;
+    gap: 42px;
+}
+
+/* Main visual */
+
+.damascus-landmarks__visual {
+    min-width: 0;
+}
+
+.damascus-landmarks__visual-frame {
+    position: relative;
+    isolation: isolate;
+    height: 610px;
+    overflow: hidden;
+    border-radius: 28px;
+    background: var(--dl-ink);
+    box-shadow: 0 28px 65px rgba(24, 59, 50, 0.13);
+}
+
+.damascus-landmarks__scene {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(1.045);
+    transition:
+        opacity 900ms ease,
+        transform 5.5s cubic-bezier(0.2, 0.65, 0.25, 1);
+    pointer-events: none;
+}
+
+.damascus-landmarks__scene.is-active {
+    z-index: 1;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.damascus-landmarks__scene-art {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 75% 15%,
+            rgba(239, 207, 151, 0.75),
+            transparent 35%
+        ),
+        linear-gradient(145deg, #a78c66, #4d6252 58%, #203b32);
+}
+
+.damascus-landmarks__scene-art span {
+    position: absolute;
+    display: block;
+}
+
+/* Decorative sun and architectural illustrations */
+
+.damascus-landmarks .art-sun {
+    top: 12%;
+    left: 17%;
+    width: 115px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgba(242, 216, 170, 0.65);
+    box-shadow: 0 0 100px rgba(242, 216, 170, 0.24);
+}
+
+.damascus-landmarks .art-floor {
+    right: -10%;
+    bottom: -8%;
+    left: -10%;
+    height: 37%;
+    background:
+        repeating-linear-gradient(
+            95deg,
+            transparent 0 55px,
+            rgba(255, 255, 255, 0.07) 56px 58px
+        ),
+        linear-gradient(0deg, #263c32, #50644e);
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+}
+
+.damascus-landmarks .art-arch {
+    bottom: 13%;
+    left: 19%;
+    width: 62%;
+    height: 66%;
+    border: 14px solid rgba(229, 204, 161, 0.88);
+    border-bottom: 0;
+    border-radius: 50% 50% 0 0 / 36% 36% 0 0;
+}
+
+.damascus-landmarks .art-arch--inner {
+    left: 30%;
+    width: 40%;
+    height: 49%;
+    border-width: 7px;
+    border-color: rgba(248, 232, 197, 0.7);
+}
+
+.damascus-landmarks .art-dome {
+    bottom: 59%;
+    left: 39%;
+    width: 22%;
+    height: 17%;
+    border-radius: 50% 50% 0 0;
+    background: linear-gradient(120deg, #d9c39a, #9c8259);
+    border: 2px solid rgba(255, 238, 199, 0.65);
+}
+
+.damascus-landmarks .art-minaret {
+    bottom: 18%;
+    right: 19%;
+    width: 9%;
+    height: 58%;
+    background: linear-gradient(90deg, #a38a64, #e4cfaa, #917451);
+    clip-path: polygon(30% 0, 70% 0, 75% 12%, 100% 12%, 100% 18%, 77% 18%, 77% 100%, 23% 100%, 23% 18%, 0 18%, 0 12%, 25% 12%);
+}
+
+/* Citadel illustration */
+
+.damascus-landmarks .art-citadel {
+    background:
+        radial-gradient(ellipse at 75% 18%, #dfc28e, transparent 30%),
+        linear-gradient(150deg, #82907a, #3b5144 62%, #1c342b);
+}
+
+.damascus-landmarks .citadel-wall {
+    bottom: 16%;
+    left: 7%;
+    width: 86%;
+    height: 42%;
+    border: 5px solid #b99b6e;
+    background: repeating-linear-gradient(
+        0deg,
+        #9e835b 0 36px,
+        #b69b71 37px 40px
+    );
+    clip-path: polygon(0 18%, 8% 18%, 8% 0, 23% 0, 23% 18%, 39% 18%, 39% 0, 57% 0, 57% 18%, 75% 18%, 75% 0, 92% 0, 92% 18%, 100% 18%, 100% 100%, 0 100%);
+}
+
+.damascus-landmarks .citadel-tower {
+    bottom: 36%;
+    width: 22%;
+    height: 42%;
+    border: 5px solid #d2b78c;
+    background: repeating-linear-gradient(0deg, #9c8057 0 27px, #c4a577 28px 31px);
+}
+
+.damascus-landmarks .citadel-tower--one {
+    left: 13%;
+}
+
+.damascus-landmarks .citadel-tower--two {
+    right: 13%;
+}
+
+.damascus-landmarks .citadel-gate {
+    bottom: 16%;
+    left: 40%;
+    width: 20%;
+    height: 29%;
+    border: 6px solid #d5bd94;
+    border-bottom: 0;
+    border-radius: 50% 50% 0 0;
+    background: #283c30;
+}
+
+/* Azem Palace */
+
+.damascus-landmarks .art-azem {
+    background:
+        radial-gradient(ellipse at 50% 15%, #e5cda4, transparent 35%),
+        linear-gradient(140deg, #a08b68, #52604a 65%, #243a2f);
+}
+
+.damascus-landmarks .azem-arch {
+    bottom: 15%;
+    left: 21%;
+    width: 58%;
+    height: 65%;
+    border: 13px solid #e2c9a1;
+    border-bottom: 0;
+    border-radius: 50% 50% 0 0;
+}
+
+.damascus-landmarks .azem-arch--inner {
+    left: 34%;
+    width: 32%;
+    height: 45%;
+    border-width: 7px;
+    border-color: #b39567;
+}
+
+.damascus-landmarks .azem-window {
+    top: 23%;
+    left: 41%;
+    width: 18%;
+    height: 21%;
+    border: 5px solid #d9c098;
+    border-radius: 50% 50% 0 0;
+    background: #3e5344;
+}
+
+.damascus-landmarks .azem-fountain {
+    bottom: 15%;
+    left: 37%;
+    width: 26%;
+    height: 8%;
+    border: 4px solid #e0c69a;
+    border-radius: 50%;
+    background: #627a6c;
+}
+
+/* Bab Touma */
+
+.damascus-landmarks .art-touma {
+    background:
+        radial-gradient(ellipse at 65% 12%, #d9b983, transparent 33%),
+        linear-gradient(150deg, #b8a17a, #63705a 60%, #253a30);
+}
+
+.damascus-landmarks .touma-wall {
+    inset: 15% 7% 15%;
+    border: 7px solid #dfc79e;
+    background: repeating-linear-gradient(
+        0deg,
+        #a98d63 0 45px,
+        #bda57e 46px 49px
+    );
+}
+
+.damascus-landmarks .touma-gate {
+    bottom: 15%;
+    left: 26%;
+    width: 48%;
+    height: 58%;
+    border: 10px solid #dfc79e;
+    border-bottom: 0;
+    border-radius: 50% 50% 0 0;
+    background: #25392e;
+}
+
+.damascus-landmarks .touma-door {
+    bottom: 15%;
+    left: 37%;
+    width: 26%;
+    height: 41%;
+    border: 4px solid #8b6945;
+    border-bottom: 0;
+    border-radius: 50% 50% 0 0;
+    background: repeating-linear-gradient(90deg, #604c35 0 10px, #8b6a45 11px 13px);
+}
+
+/* Straight Street */
+
+.damascus-landmarks .art-street {
+    background:
+        radial-gradient(ellipse at 50% 12%, #e6c997, transparent 35%),
+        linear-gradient(150deg, #8d8c6c, #485b47 65%, #243b30);
+}
+
+.damascus-landmarks .street-building {
+    bottom: 17%;
+    width: 42%;
+    height: 70%;
+    background: repeating-linear-gradient(
+        0deg,
+        #b8a078 0 40px,
+        #d0b992 41px 44px
+    );
+}
+
+.damascus-landmarks .street-building--left {
+    left: -3%;
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+}
+
+.damascus-landmarks .street-building--right {
+    right: -3%;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+.damascus-landmarks .street-perspective {
+    bottom: 14%;
+    left: 30%;
+    width: 40%;
+    height: 66%;
+    background: linear-gradient(90deg, #334b39, #9e9a70, #334b39);
+    clip-path: polygon(43% 0, 57% 0, 100% 100%, 0 100%);
+}
+
+.damascus-landmarks .street-arch {
+    top: 22%;
+    left: 36%;
+    width: 28%;
+    height: 31%;
+    border: 6px solid #e1c79a;
+    border-bottom: 0;
+    border-radius: 50% 50% 0 0;
+}
+
+/* Khan As'ad Pasha */
+
+.damascus-landmarks .art-khan {
+    background:
+        radial-gradient(ellipse at 50% 15%, #e5c89b, transparent 36%),
+        linear-gradient(145deg, #a58a63, #59654f 62%, #293e32);
+}
+
+.damascus-landmarks .khan-building {
+    inset: 19% 8% 16%;
+    border: 9px solid #d4b88a;
+    background: repeating-linear-gradient(
+        0deg,
+        #a58a61 0 38px,
+        #c2a477 39px 43px
+    );
+}
+
+.damascus-landmarks .khan-arch {
+    bottom: 16%;
+    width: 23%;
+    height: 52%;
+    border: 7px solid #e0c79d;
+    border-bottom: 0;
+    border-radius: 50% 50% 0 0;
+}
+
+.damascus-landmarks .khan-arch--one {
+    left: 22%;
+}
+
+.damascus-landmarks .khan-arch--two {
+    right: 22%;
+}
+
+.damascus-landmarks .khan-courtyard {
+    bottom: 16%;
+    left: 43%;
+    width: 14%;
+    height: 32%;
+    border: 5px solid #d9bd8f;
+    border-bottom: 0;
+    border-radius: 50% 50% 0 0;
+    background: #344a39;
+}
+
+/* Maktab Anbar */
+
+.damascus-landmarks .art-maktab {
+    background:
+        radial-gradient(ellipse at 72% 12%, #e7cda0, transparent 35%),
+        linear-gradient(145deg, #a88d67, #5b694f 62%, #263d30);
+}
+
+.damascus-landmarks .maktab-building {
+    inset: 18% 13% 15%;
+    border: 8px solid #dec49a;
+    background: repeating-linear-gradient(
+        0deg,
+        #a48a62 0 38px,
+        #c7ac7f 39px 43px
+    );
+}
+
+.damascus-landmarks .maktab-window {
+    top: 34%;
+    width: 16%;
+    height: 21%;
+    border: 5px solid #e0c79b;
+    border-radius: 50% 50% 0 0;
+    background: #394d3b;
+}
+
+.damascus-landmarks .maktab-window--one {
+    left: 25%;
+}
+
+.damascus-landmarks .maktab-window--two {
+    right: 25%;
+}
+
+.damascus-landmarks .maktab-door {
+    bottom: 15%;
+    left: 42%;
+    width: 16%;
+    height: 32%;
+    border: 5px solid #e0c79b;
+    border-bottom: 0;
+    border-radius: 50% 50% 0 0;
+    background: #3b4936;
+}
+
+/* Visual overlays */
+
+.damascus-landmarks__visual-shade {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(16, 35, 27, 0.42) 0%,
+            transparent 29%,
+            transparent 48%,
+            rgba(16, 35, 27, 0.2) 65%,
+            rgba(16, 35, 27, 0.94) 100%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(16, 35, 27, 0.12),
+            transparent 70%
+        );
+    pointer-events: none;
+}
+
+.damascus-landmarks__visual-top,
+.damascus-landmarks__visual-caption,
+.damascus-landmarks__visual-bottom {
+    position: absolute;
+    z-index: 3;
+    right: 30px;
+    left: 30px;
+    color: #fffaf0;
+}
+
+.damascus-landmarks__visual-top {
+    top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.damascus-landmarks__visual-tag {
+    padding: 10px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 100px;
+    background: rgba(20, 44, 34, 0.22);
+    font-size: 9px;
+    letter-spacing: 1.7px;
+    backdrop-filter: blur(10px);
+}
+
+.damascus-landmarks__visual-number {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    direction: ltr;
+    font-size: 13px;
+    color: rgba(255, 250, 240, 0.65);
+}
+
+.damascus-landmarks__visual-number span:first-child {
+    color: var(--dl-gold);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.damascus-landmarks__visual-caption {
+    bottom: 80px;
+    transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.damascus-landmarks__visual-caption.is-changing {
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+.damascus-landmarks__visual-caption > span {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--dl-gold);
+    font-size: 12px;
+}
+
+.damascus-landmarks__visual-caption h3 {
+    margin: 0;
+    font-size: clamp(34px, 4vw, 54px);
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.damascus-landmarks__visual-caption p {
+    margin: 12px 0 0;
+    color: rgba(255, 250, 240, 0.75);
+    font-size: 13px;
+}
+
+.damascus-landmarks__visual-bottom {
+    bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 17px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 250, 240, 0.72);
+    font-size: 11px;
+}
+
+.damascus-landmarks__visual-symbol {
+    color: var(--dl-gold);
+    font-size: 22px;
+}
+
+.damascus-landmarks__progress {
+    height: 3px;
+    margin: 17px 0 0;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(24, 59, 50, 0.12);
+}
+
+.damascus-landmarks__progress span {
+    display: block;
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: #a58a5b;
+}
+
+.damascus-landmarks__progress span.is-running {
+    animation: damascus-landmark-progress 5s linear forwards;
+}
+
+@keyframes damascus-landmark-progress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.damascus-landmarks__visual-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    color: var(--dl-muted);
+    font-size: 11px;
+}
+
+.damascus-landmarks__note-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #a58a5b;
+    box-shadow: 0 0 0 4px rgba(165, 138, 91, 0.12);
+}
+
+.damascus-landmarks__note-line {
+    flex: 1;
+    height: 1px;
+    background: var(--dl-border);
+}
+
+/* Details panel */
+
+.damascus-landmarks__details {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    padding: 28px 0 0;
+}
+
+.damascus-landmarks__details-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--dl-border);
+}
+
+.damascus-landmarks__details-label {
+    color: #8b724b;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.damascus-landmarks__controls {
+    display: flex;
+    gap: 8px;
+}
+
+.damascus-landmarks__arrow {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid var(--dl-border);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--dl-ink);
+    font-size: 20px;
+    cursor: pointer;
+    transition:
+        background 250ms ease,
+        color 250ms ease,
+        border-color 250ms ease,
+        transform 250ms ease;
+}
+
+.damascus-landmarks__arrow:hover {
+    transform: translateY(-2px);
+    border-color: var(--dl-ink);
+    background: var(--dl-ink);
+    color: white;
+}
+
+.damascus-landmarks__active-info {
+    padding: 28px 0 26px;
+    animation: damascus-landmark-reveal 500ms ease both;
+}
+
+@keyframes damascus-landmark-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.damascus-landmarks__active-index {
+    color: #a58a5b;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.damascus-landmarks__active-info h3 {
+    margin: 12px 0 12px;
+    color: var(--dl-ink);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.damascus-landmarks__active-info > p {
+    max-width: 500px;
+    margin: 0;
+    color: #73756a;
+    font-size: 14px;
+    line-height: 2.15;
+}
+
+.damascus-landmarks__facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 24px;
+    padding: 18px 0;
+    border-top: 1px solid var(--dl-border);
+    border-bottom: 1px solid var(--dl-border);
+}
+
+.damascus-landmarks__facts div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.damascus-landmarks__facts div + div {
+    padding-right: 18px;
+    border-right: 1px solid var(--dl-border);
+}
+
+.damascus-landmarks__facts span {
+    color: #89877b;
+    font-size: 11px;
+}
+
+.damascus-landmarks__facts strong {
+    color: var(--dl-ink);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Landmark selector */
+
+.damascus-landmarks__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+}
+
+.damascus-landmarks__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 35px minmax(0, 1fr) 28px;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid transparent;
+    border-bottom-color: var(--dl-border);
+    border-radius: 11px;
+    background: transparent;
+    text-align: right;
+    cursor: pointer;
+    transition:
+        background 250ms ease,
+        border-color 250ms ease,
+        transform 250ms ease;
+}
+
+.damascus-landmarks__item:hover {
+    transform: translateX(-3px);
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.damascus-landmarks__item.is-active {
+    border-color: rgba(165, 138, 91, 0.25);
+    background: rgba(255, 255, 255, 0.65);
+}
+
+.damascus-landmarks__item-number {
+    color: #a39b88;
+    font-size: 11px;
+    direction: ltr;
+}
+
+.damascus-landmarks__item-name {
+    overflow: hidden;
+    color: #5e685d;
+    font-size: 13px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 250ms ease;
+}
+
+.damascus-landmarks__item.is-active .damascus-landmarks__item-name {
+    color: var(--dl-ink);
+    font-weight: 800;
+}
+
+.damascus-landmarks__item-arrow {
+    display: grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    border-radius: 50%;
+    color: #a58a5b;
+    opacity: 0;
+    transform: translate(-4px, 4px);
+    transition: opacity 250ms ease, transform 250ms ease;
+}
+
+.damascus-landmarks__item.is-active .damascus-landmarks__item-arrow,
+.damascus-landmarks__item:hover .damascus-landmarks__item-arrow {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.damascus-landmarks__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 25px;
+    color: #89877b;
+    font-size: 11px;
+}
+
+.damascus-landmarks__footer button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+    padding: 8px 12px;
+    border: 1px solid var(--dl-border);
+    border-radius: 100px;
+    background: transparent;
+    color: var(--dl-ink);
+    font-size: 11px;
+    cursor: pointer;
+    transition: background 200ms ease;
+}
+
+.damascus-landmarks__footer button:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.damascus-landmarks__footer button span:first-child {
+    color: #a58a5b;
+    font-size: 13px;
+}
+
+.damascus-landmarks__closing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 80px;
+}
+
+.damascus-landmarks__closing span {
+    width: min(100px, 12vw);
+    height: 1px;
+    background: rgba(165, 138, 91, 0.55);
+}
+
+.damascus-landmarks__closing p {
+    margin: 0;
+    color: #8b724b;
+    font-size: 13px;
+}
+
+/* Responsive */
+
+@media (max-width: 1050px) {
+    .damascus-landmarks__inner {
+        width: min(100% - 48px, 900px);
+    }
+
+    .damascus-landmarks__header {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .damascus-landmarks__eyebrow {
+        padding-top: 0;
+    }
+
+    .damascus-landmarks__experience {
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+        gap: 25px;
+    }
+
+    .damascus-landmarks__visual-frame {
+        height: 570px;
+    }
+
+    .damascus-landmarks__facts {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 760px) {
+    .damascus-landmarks {
+        padding: 75px 0 55px;
+    }
+
+    .damascus-landmarks__inner {
+        width: calc(100% - 32px);
+    }
+
+    .damascus-landmarks__header {
+        margin-bottom: 30px;
+    }
+
+    .damascus-landmarks__heading h2 {
+        font-size: clamp(35px, 9vw, 52px);
+        letter-spacing: -1px;
+    }
+
+    .damascus-landmarks__heading > p {
+        font-size: 13px;
+    }
+
+    .damascus-landmarks__experience {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .damascus-landmarks__visual-frame {
+        height: min(118vw, 520px);
+        min-height: 390px;
+        border-radius: 22px;
+    }
+
+    .damascus-landmarks__visual-top,
+    .damascus-landmarks__visual-caption,
+    .damascus-landmarks__visual-bottom {
+        right: 20px;
+        left: 20px;
+    }
+
+    .damascus-landmarks__visual-top {
+        top: 20px;
+    }
+
+    .damascus-landmarks__visual-caption {
+        bottom: 75px;
+    }
+
+    .damascus-landmarks__visual-caption h3 {
+        font-size: clamp(31px, 8vw, 43px);
+    }
+
+    .damascus-landmarks__visual-bottom {
+        bottom: 20px;
+    }
+
+    .damascus-landmarks__details {
+        padding-top: 0;
+    }
+
+    .damascus-landmarks__active-info {
+        padding-top: 24px;
+    }
+
+    .damascus-landmarks__active-info h3 {
+        font-size: 32px;
+    }
+
+    .damascus-landmarks__item {
+        padding: 13px 11px;
+    }
+
+    .damascus-landmarks__closing {
+        margin-top: 48px;
+        gap: 12px;
+    }
+
+    .damascus-landmarks__closing p {
+        font-size: 11px;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .damascus-landmarks *,
+    .damascus-landmarks *::before,
+    .damascus-landmarks *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =========================================
+   DAMASCUS LANDMARKS — VISUAL IDENTITY
+========================================= */
+
+.damascus-landmarks {
+    --landmark-cream: #f5efe3;
+    --landmark-paper: #fffaf1;
+    --landmark-gold: #b9955c;
+    --landmark-gold-light: #d8bd8b;
+    --landmark-brown: #30291f;
+    --landmark-muted: #817665;
+
+    position: relative;
+    overflow: hidden;
+    padding: 110px 24px 100px;
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(216, 189, 139, 0.17),
+            transparent 45%
+        ),
+        var(--landmark-cream);
+    color: var(--landmark-brown);
+    isolation: isolate;
+}
+
+.damascus-landmarks *,
+.damascus-landmarks *::before,
+.damascus-landmarks *::after {
+    box-sizing: border-box;
+}
+
+.damascus-landmarks__container {
+    width: min(1320px, 100%);
+    margin-inline: auto;
+}
+
+.damascus-landmarks__header {
+    max-width: 720px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.damascus-landmarks__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    color: #927344;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.damascus-landmarks__eyebrow::before,
+.damascus-landmarks__eyebrow::after {
+    width: 30px;
+    height: 1px;
+    background: var(--landmark-gold);
+    content: "";
+}
+
+.damascus-landmarks__header h2 {
+    margin: 0;
+    font-family: inherit;
+    font-size: clamp(34px, 5vw, 58px);
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.damascus-landmarks__header h2 span {
+    display: block;
+    color: #a58450;
+}
+
+.damascus-landmarks__header p {
+    max-width: 590px;
+    margin: 20px auto 0;
+    color: var(--landmark-muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.damascus-landmarks__showcase {
+    position: relative;
+    width: 100%;
+    padding-block: 25px;
+    perspective: 1500px;
+}
+
+.damascus-landmarks__stage {
+    position: relative;
+    width: 100%;
+    height: 680px;
+    perspective: 1500px;
+    touch-action: pan-y;
+}
+
+.damascus-landmarks__cylinder {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: transform 1.1s cubic-bezier(.2, .75, .25, 1);
+}
+
+.landmark-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(350px, 74vw);
+    height: 590px;
+    overflow: hidden;
+    border: 1px solid rgba(185, 149, 92, 0.38);
+    border-radius: 28px;
+    background: var(--landmark-paper);
+    box-shadow: 0 20px 55px rgba(48, 41, 31, 0.14);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+}
+
+.landmark-card__image {
+    position: relative;
+    flex: 0 0 215px;
+    overflow: hidden;
+    background: #d9c9ad;
+}
+
+.landmark-card__image::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(35, 29, 21, 0.12),
+        transparent 35%,
+        rgba(35, 29, 21, 0.22)
+    );
+    content: "";
+    pointer-events: none;
+}
+
+.landmark-card__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.landmark-card:hover .landmark-card__image img {
+    transform: scale(1.06);
+}
+
+.landmark-card__number,
+.landmark-card__type {
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    color: #fff;
+    background: rgba(39, 32, 24, 0.66);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 30px;
+    padding: 8px 12px;
+    font-size: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.landmark-card__number {
+    left: 14px;
+    direction: ltr;
+}
+
+.landmark-card__type {
+    right: 14px;
+}
+
+.landmark-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 21px 23px 23px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--landmark-gold-light) transparent;
+}
+
+.landmark-card__location {
+    color: #9c7a48;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.landmark-card__body h3 {
+    margin: 7px 0 9px;
+    color: var(--landmark-brown);
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.landmark-card__intro {
+    margin: 0;
+    color: #655b4d;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.landmark-card__facts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 17px;
+    border-top: 1px solid rgba(185, 149, 92, 0.25);
+}
+
+.landmark-card__facts div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(185, 149, 92, 0.2);
+}
+
+.landmark-card__facts div span {
+    flex-shrink: 0;
+    color: #91816b;
+    font-size: 10px;
+}
+
+.landmark-card__facts div strong {
+    color: #544634;
+    font-size: 11px;
+    text-align: left;
+}
+
+.landmark-card__description {
+    margin: 15px 0;
+    color: #756b5d;
+    font-size: 11px;
+    line-height: 2;
+}
+
+.landmark-card__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 13px;
+    color: #8c6c3e;
+    border-top: 1px solid rgba(185, 149, 92, 0.3);
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.landmark-card__link span {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border: 1px solid rgba(185, 149, 92, 0.55);
+    border-radius: 50%;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.landmark-card__link:hover {
+    color: #4e3b23;
+}
+
+.landmark-card__link:hover span {
+    color: #fff;
+    background: #a58450;
+    transform: translateX(-3px);
+}
+
+/* Navigation */
+
+.landmarks-control {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border: 1px solid rgba(185, 149, 92, 0.55);
+    border-radius: 50%;
+    background: rgba(255, 250, 241, 0.94);
+    color: #80633c;
+    font-size: 23px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(48, 41, 31, 0.09);
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.landmarks-control:hover {
+    background: #a58450;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.landmarks-control--prev {
+    right: 0;
+}
+
+.landmarks-control--next {
+    left: 0;
+}
+
+.damascus-landmarks__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 8px;
+}
+
+.damascus-landmarks__bottom p {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+    color: #7e705d;
+    font-size: 12px;
+}
+
+.landmarks-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #a58450;
+    box-shadow: 0 0 0 4px rgba(165, 132, 80, 0.12);
+}
+
+.landmarks-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.landmarks-pagination button {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background: #d0c1a9;
+    cursor: pointer;
+    transition:
+        width 0.3s ease,
+        background 0.3s ease;
+}
+
+.landmarks-pagination button.is-active {
+    width: 27px;
+    background: #a58450;
+}
+
+.damascus-landmarks__hint {
+    color: #958773;
+    font-size: 11px;
+}
+
+@media (max-width: 760px) {
+    .damascus-landmarks {
+        padding: 75px 15px;
+    }
+
+    .damascus-landmarks__header {
+        margin-bottom: 35px;
+    }
+
+    .damascus-landmarks__stage {
+        height: 640px;
+    }
+
+    .landmark-card {
+        width: min(330px, 78vw);
+        height: 565px;
+        border-radius: 25px;
+    }
+
+    .landmark-card__image {
+        flex-basis: 185px;
+    }
+
+    .landmark-card__body {
+        padding: 18px;
+    }
+
+    .landmark-card__body h3 {
+        font-size: 22px;
+    }
+
+    .landmarks-control {
+        top: auto;
+        bottom: -7px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .landmarks-control--prev {
+        right: calc(50% + 12px);
+    }
+
+    .landmarks-control--next {
+        left: calc(50% + 12px);
+    }
+
+    .damascus-landmarks__bottom {
+        flex-direction: column;
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    .damascus-landmarks__hint {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .damascus-landmarks *,
+    .damascus-landmarks *::before,
+    .damascus-landmarks *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================
+   DAMASCUS LANDMARKS — VISUAL IDENTITY
+========================================= */
+
+.damascus-landmarks {
+    --landmark-cream: #f5efe3;
+    --landmark-paper: #fffaf1;
+    --landmark-gold: #b9955c;
+    --landmark-gold-light: #d8bd8b;
+    --landmark-brown: #30291f;
+    --landmark-muted: #817665;
+
+    position: relative;
+    overflow: hidden;
+    padding: 110px 24px 100px;
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(216, 189, 139, 0.17),
+            transparent 45%
+        ),
+        var(--landmark-cream);
+    color: var(--landmark-brown);
+    isolation: isolate;
+}
+
+.damascus-landmarks *,
+.damascus-landmarks *::before,
+.damascus-landmarks *::after {
+    box-sizing: border-box;
+}
+
+.damascus-landmarks__container {
+    width: min(1320px, 100%);
+    margin-inline: auto;
+}
+
+.damascus-landmarks__header {
+    max-width: 720px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.damascus-landmarks__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    color: #927344;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.damascus-landmarks__eyebrow::before,
+.damascus-landmarks__eyebrow::after {
+    width: 30px;
+    height: 1px;
+    background: var(--landmark-gold);
+    content: "";
+}
+
+.damascus-landmarks__header h2 {
+    margin: 0;
+    font-family: inherit;
+    font-size: clamp(34px, 5vw, 58px);
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.damascus-landmarks__header h2 span {
+    display: block;
+    color: #a58450;
+}
+
+.damascus-landmarks__header p {
+    max-width: 590px;
+    margin: 20px auto 0;
+    color: var(--landmark-muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.damascus-landmarks__showcase {
+    position: relative;
+    width: 100%;
+    padding-block: 25px;
+    perspective: 1500px;
+}
+
+.damascus-landmarks__stage {
+    position: relative;
+    width: 100%;
+    height: 680px;
+    perspective: 1500px;
+    touch-action: pan-y;
+}
+
+.damascus-landmarks__cylinder {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: transform 1.1s cubic-bezier(.2, .75, .25, 1);
+}
+
+.landmark-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(350px, 74vw);
+    height: 590px;
+    overflow: hidden;
+    border: 1px solid rgba(185, 149, 92, 0.38);
+    border-radius: 28px;
+    background: var(--landmark-paper);
+    box-shadow: 0 20px 55px rgba(48, 41, 31, 0.14);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+}
+
+.landmark-card__image {
+    position: relative;
+    flex: 0 0 215px;
+    overflow: hidden;
+    background: #d9c9ad;
+}
+
+.landmark-card__image::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(35, 29, 21, 0.12),
+        transparent 35%,
+        rgba(35, 29, 21, 0.22)
+    );
+    content: "";
+    pointer-events: none;
+}
+
+.landmark-card__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.landmark-card:hover .landmark-card__image img {
+    transform: scale(1.06);
+}
+
+.landmark-card__number,
+.landmark-card__type {
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    color: #fff;
+    background: rgba(39, 32, 24, 0.66);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 30px;
+    padding: 8px 12px;
+    font-size: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.landmark-card__number {
+    left: 14px;
+    direction: ltr;
+}
+
+.landmark-card__type {
+    right: 14px;
+}
+
+.landmark-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 21px 23px 23px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--landmark-gold-light) transparent;
+}
+
+.landmark-card__location {
+    color: #9c7a48;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.landmark-card__body h3 {
+    margin: 7px 0 9px;
+    color: var(--landmark-brown);
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.landmark-card__intro {
+    margin: 0;
+    color: #655b4d;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.landmark-card__facts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 17px;
+    border-top: 1px solid rgba(185, 149, 92, 0.25);
+}
+
+.landmark-card__facts div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(185, 149, 92, 0.2);
+}
+
+.landmark-card__facts div span {
+    flex-shrink: 0;
+    color: #91816b;
+    font-size: 10px;
+}
+
+.landmark-card__facts div strong {
+    color: #544634;
+    font-size: 11px;
+    text-align: left;
+}
+
+.landmark-card__description {
+    margin: 15px 0;
+    color: #756b5d;
+    font-size: 11px;
+    line-height: 2;
+}
+
+.landmark-card__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 13px;
+    color: #8c6c3e;
+    border-top: 1px solid rgba(185, 149, 92, 0.3);
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.landmark-card__link span {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border: 1px solid rgba(185, 149, 92, 0.55);
+    border-radius: 50%;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.landmark-card__link:hover {
+    color: #4e3b23;
+}
+
+.landmark-card__link:hover span {
+    color: #fff;
+    background: #a58450;
+    transform: translateX(-3px);
+}
+
+/* Navigation */
+
+.landmarks-control {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border: 1px solid rgba(185, 149, 92, 0.55);
+    border-radius: 50%;
+    background: rgba(255, 250, 241, 0.94);
+    color: #80633c;
+    font-size: 23px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(48, 41, 31, 0.09);
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.landmarks-control:hover {
+    background: #a58450;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.landmarks-control--prev {
+    right: 0;
+}
+
+.landmarks-control--next {
+    left: 0;
+}
+
+.damascus-landmarks__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 8px;
+}
+
+.damascus-landmarks__bottom p {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+    color: #7e705d;
+    font-size: 12px;
+}
+
+.landmarks-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #a58450;
+    box-shadow: 0 0 0 4px rgba(165, 132, 80, 0.12);
+}
+
+.landmarks-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.landmarks-pagination button {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background: #d0c1a9;
+    cursor: pointer;
+    transition:
+        width 0.3s ease,
+        background 0.3s ease;
+}
+
+.landmarks-pagination button.is-active {
+    width: 27px;
+    background: #a58450;
+}
+
+.damascus-landmarks__hint {
+    color: #958773;
+    font-size: 11px;
+}
+
+@media (max-width: 760px) {
+    .damascus-landmarks {
+        padding: 75px 15px;
+    }
+
+    .damascus-landmarks__header {
+        margin-bottom: 35px;
+    }
+
+    .damascus-landmarks__stage {
+        height: 640px;
+    }
+
+    .landmark-card {
+        width: min(330px, 78vw);
+        height: 565px;
+        border-radius: 25px;
+    }
+
+    .landmark-card__image {
+        flex-basis: 185px;
+    }
+
+    .landmark-card__body {
+        padding: 18px;
+    }
+
+    .landmark-card__body h3 {
+        font-size: 22px;
+    }
+
+    .landmarks-control {
+        top: auto;
+        bottom: -7px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .landmarks-control--prev {
+        right: calc(50% + 12px);
+    }
+
+    .landmarks-control--next {
+        left: calc(50% + 12px);
+    }
+
+    .damascus-landmarks__bottom {
+        flex-direction: column;
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    .damascus-landmarks__hint {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .damascus-landmarks *,
+    .damascus-landmarks *::before,
+    .damascus-landmarks *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
