@@ -1,4 +1,6 @@
+
 const PLACEHOLDER = "../assets/10.png";
+let currentBounds = null;
 
 const CATEGORY_NAMES = {
   damascus_facilities: "مرافق دمشق",
@@ -15,66 +17,34 @@ const CATEGORY_NAMES = {
 
 const CATEGORY_ICONS = {
   damascus_facilities: {
-    service_departments: { emoji: "🏢", color: "#2980b9" },
-    citizen_service_centers: { emoji: "🤝", color: "#27ae60" },
-    governorate_directorates: { emoji: "🏛️", color: "#8e44ad" },
-    exhibition_city: { emoji: "🎪", color: "#e67e22" },
+ 
   },
   gov_buildings: {
-    ministries: { emoji: "🏛️", color: "#c0392b" },
-    courts: { emoji: "⚖️", color: "#2c3e50" },
-    civil_registry: { emoji: "🪪", color: "#16a085" },
-    syndicates: { emoji: "👥", color: "#d35400" },
-    associations: { emoji: "🤝", color: "#f39c12" },
-    immigration: { emoji: "🛂", color: "#34495e" },
+  
   },
   economy: {
-    banks: { emoji: "🏦", color: "#27ae60" },
-    exchange: { emoji: "💱", color: "#f1c40f" },
-    remittance: { emoji: "💸", color: "#2ecc71" },
-    shipping: { emoji: "📦", color: "#d35400" },
-    atm: { emoji: "🏧", color: "#3498db" },
+ 
   },
   health: {
-    hospitals: { emoji: "🏥", color: "#e74c3c" },
-    health_centers: { emoji: "🏨", color: "#2980b9" },
-    pharmacies: { emoji: "💊", color: "#27ae60" },
-    medical_equipment: { emoji: "🩼", color: "#8e44ad" },
-    blood_banks: { emoji: "🩸", color: "#c0392b" },
+
   },
   services: {
-    post: { emoji: "✉️", color: "#f39c12" },
-    telecom: { emoji: "📡", color: "#1abc9c" },
+  
   },
   transport: {
-    departure_garages: { emoji: "🚌", color: "#e67e22" },
-    parking: { emoji: "🅿️", color: "#3498db" },
-    bus_stops: { emoji: "🚏", color: "#f39c12" },
-    traffic_nodes: { emoji: "🚦", color: "#e74c3c" },
+   
   },
   public_facilities: {
-    squares: { emoji: "⛲", color: "#2ecc71" },
-    bridges: { emoji: "🌉", color: "#7f8c8d" },
-    parks: { emoji: "🌳", color: "#27ae60" },
-    tunnels: { emoji: "🚇", color: "#34495e" },
+ 
   },
   security: {
-    police: { emoji: "🚔", color: "#2c3e50" },
-    checkpoints: { emoji: "🚧", color: "#e67e22" },
-    civil_defense: { emoji: "🚒", color: "#e74c3c" },
+ 
   },
   education: {
-    universities: { emoji: "🎓", color: "#2980b9" },
-    institutes: { emoji: "📚", color: "#e67e22" },
-    schools: { emoji: "🏫", color: "#27ae60" },
-    kindergartens: { emoji: "🌸", color: "#e91e8c" },
+  
   },
   tourism: {
-    archaeological_sites: { emoji: "🕌", color: "#c0392b" },
-    museums: { emoji: "🏛️", color: "#9b59b6" },
-    hotels: { emoji: "🏨", color: "#f39c12" },
-    markets: { emoji: "🛍️", color: "#16a085" },
-    tourist_facilities: { emoji: "🎡", color: "#e74c3c" },
+ 
   },
 };
 
@@ -441,22 +411,21 @@ function getIconStyle() {
   if (CATEGORY_ICONS[activeCategory] && CATEGORY_ICONS[activeCategory][activeFilter]) {
     return CATEGORY_ICONS[activeCategory][activeFilter];
   }
-  return { emoji: "📍", color: "#ea4335" };
+  return { emoji: "", color: "#ea4335" };
 }
 
 function createMarkerEl(iconStyle, isHighlighted = false) {
   const wrapper = document.createElement("div");
   wrapper.className = "marker-wrapper" + (isHighlighted ? " highlighted" : "");
   const color = iconStyle ? iconStyle.color : "#ea4335";
-  const emoji = iconStyle ? iconStyle.emoji : "📍";
+  const emoji = iconStyle ? iconStyle.emoji : "";
 
   wrapper.style.setProperty("--marker-color", color);
   wrapper.innerHTML = `
     <div class="marker-content">
       <div class="pin-head">
-        <div class="pin-dot"></div>
+        <span class="pin-dot">${emoji}</span>
       </div>
-      <div class="pin-point"></div>
     </div>
   `;
   return wrapper;
@@ -469,7 +438,6 @@ function clearMarkers() {
     activePopup.remove();
     activePopup = null;
   }
-  //hidePlacePanel();
 }
 
 function highlightMarker(targetIndex) {
@@ -481,12 +449,16 @@ function highlightMarker(targetIndex) {
     }
   });
 }
+
 function renderMarkers(locations, shouldFitBounds = true) {
   clearMarkers();
 
   const filteredLocations = applyFilters(locations);
 
-  if (!filteredLocations.length) return;
+  if (!filteredLocations.length) {
+    currentBounds = null;
+    return;
+  }
 
   const bounds = new maplibregl.LngLatBounds();
 
@@ -504,15 +476,11 @@ function renderMarkers(locations, shouldFitBounds = true) {
 
     bounds.extend([lng, lat]);
 
-    const markerEl = createMarkerEl(
-      getIconStyle()
-    );
+    const markerEl = createMarkerEl(getIconStyle());
 
     markerEl.addEventListener("click", (event) => {
       event.stopPropagation();
-
       highlightMarker(index);
-
       showPlaceDetails(
         lng,
         lat,
@@ -540,22 +508,12 @@ function renderMarkers(locations, shouldFitBounds = true) {
     });
   });
 
-  if (!shouldFitBounds) return;
+  currentBounds = bounds;
 
-  if (filteredLocations.length === 1) {
-    map.flyTo({
-      center: [filteredLocations[0][0], filteredLocations[0][1]],
-      zoom: 15,
-      duration: 800
-    });
-  } else {
-    map.fitBounds(bounds, {
-      padding: 90,
-      maxZoom: 15,
-      duration: 900
-    });
-  }
+  if (!shouldFitBounds) return;
+  resetMapView();
 }
+
 function ensurePlacePanel() {
   if (activePlacePanel) return activePlacePanel;
 
@@ -565,32 +523,18 @@ function ensurePlacePanel() {
   panel.setAttribute("aria-hidden", "true");
 
   panel.innerHTML = `
-    <button
-      class="google-place-panel__close"
-      type="button"
-      aria-label="إغلاق"
-    >✕</button>
-
+    <button class="google-place-panel__close" type="button" aria-label="إغلاق">✕</button>
     <div class="google-place-panel__img-wrapper">
-      <img
-        class="google-place-panel__image"
-        src="${PLACEHOLDER}"
-        alt=""
-      >
+      <img class="google-place-panel__image" src="${PLACEHOLDER}" alt="">
     </div>
-
     <div class="google-place-panel__body">
       <h2 class="google-place-panel__title"></h2>
-
-      <!-- تم استبدال شارة مفتوح/مغلق بساعات العمل هنا مباشرة -->
       <div class="google-place-panel__meta">
         <span class="google-place-panel__hours-badge"></span>
       </div>
-
       <div class="google-place-panel__row">
         <p class="google-place-panel__district"></p>
       </div>
-
       <p class="google-place-panel__description"></p>
     </div>
   `;
@@ -599,7 +543,7 @@ function ensurePlacePanel() {
     .querySelector(".google-place-panel__close")
     .addEventListener("click", hidePlacePanel);
 
-  document.body.appendChild(panel); 
+  document.body.appendChild(panel);
   activePlacePanel = panel;
 
   return panel;
@@ -611,20 +555,26 @@ function hidePlacePanel() {
   activePlacePanel.classList.remove("is-visible");
   activePlacePanel.setAttribute("aria-hidden", "true");
 
-  activeMarkers.forEach(({ el }) => {
-    el.classList.remove("highlighted");
-  });
+  document.querySelectorAll(".nav_cat_btn").forEach((b) => b.classList.remove("active"));
+  document.querySelectorAll(".sub_filter_btn").forEach((b) => b.classList.remove("active"));
+  document.querySelectorAll(".category_nav_item").forEach((el) => el.classList.remove("open"));
+
+
+  activeCategory = null;
+  activeFilter = null;
+  activeDistrict = "all";
+  activeSecondary = "all";
+
+  clearMarkers();
+
+  const sideFilters = document.getElementById("sideFiltersContainer");
+  if (sideFilters) sideFilters.innerHTML = "";
+
+  currentBounds = null;
+  resetMapView();
 }
-function showPlaceDetails(
-  lng,
-  lat,
-  name,
-  image,
-  district,
-  openH,
-  closeH,
-  description
-) {
+
+function showPlaceDetails(lng, lat, name, image, district, openH, closeH, description) {
   const panel = ensurePlacePanel();
 
   panel.querySelector(".google-place-panel__image").src = image || PLACEHOLDER;
@@ -637,12 +587,8 @@ function showPlaceDetails(
       : ` أوقات الدوام: من الساعة ${openH}:00 صباحاً حتى ${closeH}:00`;
 
   panel.querySelector(".google-place-panel__hours-badge").innerText = hoursText;
-
-  panel.querySelector(".google-place-panel__district").innerText =
-    ` المنطقة: ${district || "غير محدد"}`;
-
-  panel.querySelector(".google-place-panel__description").innerText =
-    description || "";
+  panel.querySelector(".google-place-panel__district").innerText = ` المنطقة: ${district || "غير محدد"}`;
+  panel.querySelector(".google-place-panel__description").innerText = description || "";
 
   panel.classList.add("is-visible");
   panel.setAttribute("aria-hidden", "false");
@@ -673,109 +619,152 @@ function requestLocation(cb) {
     }
   );
 }
-function renderTopFilters(rawLocations) {
-  const bar = document.getElementById("topFiltersBar");
-  if (!bar) return;
 
-  bar.querySelectorAll(".filter_select_wrap").forEach((el) => el.remove());
+function renderSideFloatingFilters(rawLocations) {
+  const container = document.getElementById("sideFiltersContainer");
+  if (!container) return;
+  container.innerHTML = "";
 
   const districts = ["all", ...new Set(rawLocations.map((l) => l[4]))];
-  const distWrap = document.createElement("div");
-  distWrap.className = "filter_select_wrap";
+  const distWrapper = document.createElement("div");
+  distWrapper.className = "floating-filter-wrapper";
 
-  const distLabel = document.createElement("label");
-  distLabel.innerText = "المنطقة:";
+  const currentDistrictLabel = activeDistrict === "all" ? "المنطقة / الحي" : activeDistrict;
+  const distBtn = document.createElement("button");
+  distBtn.type = "button";
+  distBtn.className = "floating-filter-btn";
+  distBtn.innerHTML = `<span> ${currentDistrictLabel}</span> <span>▾</span>`;
 
-  const distSel = document.createElement("select");
-  distSel.className = "filter_select";
+  const distMenu = document.createElement("div");
+  distMenu.className = "floating-filter-menu";
 
   districts.forEach((d) => {
-    const opt = document.createElement("option");
-    opt.value = d;
-    opt.innerText = d === "all" ? "كل الاحياء" : d;
-    if (d === activeDistrict) opt.selected = true;
-    distSel.appendChild(opt);
+    const item = document.createElement("button");
+    item.type = "button";
+    item.className = `floating-menu-item ${d === activeDistrict ? "active" : ""}`;
+    item.innerText = d === "all" ? "كافة الأحياء" : d;
+
+    item.addEventListener("click", (e) => {
+      e.stopPropagation();
+      activeDistrict = d;
+      distWrapper.classList.remove("open");
+      renderSideFloatingFilters(rawLocations);
+      renderMarkers(rawLocations, true);
+    });
+
+    distMenu.appendChild(item);
   });
 
-  distSel.addEventListener("change", () => {
-    activeDistrict = distSel.value;
-    renderMarkers(rawLocations, true);
+  distBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = distWrapper.classList.contains("open");
+    document.querySelectorAll(".floating-filter-wrapper").forEach(w => w.classList.remove("open"));
+    if (!isOpen) distWrapper.classList.add("open");
   });
 
-  distWrap.appendChild(distLabel);
-  distWrap.appendChild(distSel);
-  bar.appendChild(distWrap);
+  distWrapper.appendChild(distBtn);
+  distWrapper.appendChild(distMenu);
+  container.appendChild(distWrapper);
 
   if (activeCategory === "health") {
-    const secWrap = document.createElement("div");
-    secWrap.className = "filter_select_wrap";
+    const secWrapper = document.createElement("div");
+    secWrapper.className = "floating-filter-wrapper";
 
-    const secLabel = document.createElement("label");
-    secLabel.innerText = "الحالة:";
+    const secLabels = {
+      all: "كل الأوقات",
+      open_now: "مفتوح الآن",
+      nearest: "الأقرب لي"
+    };
 
-    const secSel = document.createElement("select");
-    secSel.className = "filter_select";
+    const secBtn = document.createElement("button");
+    secBtn.type = "button";
+    secBtn.className = "floating-filter-btn";
+    secBtn.innerHTML = `<span> ${secLabels[activeSecondary] || "الحالة"}</span> <span>▾</span>`;
 
-    const secOptions = [
-      { value: "all", label: "كل الحالات" },
+    const secMenu = document.createElement("div");
+    secMenu.className = "floating-filter-menu";
+
+    const options = [
+      { value: "all", label: "كل الأوقات" },
       { value: "open_now", label: "مفتوح الآن" },
-      { value: "nearest", label: "الأقرب أولاً" },
+      { value: "nearest", label: "الأقرب لموقعي" },
     ];
 
-    secOptions.forEach((o) => {
-      const opt = document.createElement("option");
-      opt.value = o.value;
-      opt.innerText = o.label;
-      if (o.value === activeSecondary) opt.selected = true;
-      secSel.appendChild(opt);
+    options.forEach((opt) => {
+      const item = document.createElement("button");
+      item.type = "button";
+      item.className = `floating-menu-item ${opt.value === activeSecondary ? "active" : ""}`;
+      item.innerText = opt.label;
+
+      item.addEventListener("click", (e) => {
+        e.stopPropagation();
+        activeSecondary = opt.value;
+        secWrapper.classList.remove("open");
+        renderSideFloatingFilters(rawLocations);
+
+        if (activeSecondary === "nearest" && !userPosition) {
+          requestLocation(() => renderMarkers(rawLocations, true));
+        } else {
+          renderMarkers(rawLocations, true);
+        }
+      });
+
+      secMenu.appendChild(item);
     });
 
-    secSel.addEventListener("change", () => {
-      activeSecondary = secSel.value;
-      if (activeSecondary === "nearest" && !userPosition) {
-        requestLocation(() => renderMarkers(rawLocations, true));
-      } else {
-        renderMarkers(rawLocations, true);
-      }
+    secBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = secWrapper.classList.contains("open");
+      document.querySelectorAll(".floating-filter-wrapper").forEach(w => w.classList.remove("open"));
+      if (!isOpen) secWrapper.classList.add("open");
     });
 
-    secWrap.appendChild(secLabel);
-    secWrap.appendChild(secSel);
-    bar.appendChild(secWrap);
+    secWrapper.appendChild(secBtn);
+    secWrapper.appendChild(secMenu);
+    container.appendChild(secWrapper);
   }
 }
-function renderAccordionNav() {
+
+function renderTopCategoriesNav() {
   const container = document.getElementById("categoryAccordion");
-  const sideMenu = document.getElementById("main-container");
   if (!container) return;
   container.innerHTML = "";
 
   Object.keys(categoriesData).forEach((catKey) => {
     const catData = categoriesData[catKey];
-    const item = document.createElement("div");
-    const isCurrent = catKey === activeCategory;
-    item.className = `category_accordion_item ${isCurrent ? "open" : ""}`;
+    const isCurrentCat = catKey === activeCategory;
+
+    const navItem = document.createElement("div");
+    navItem.className = `category_nav_item ${isCurrentCat ? "active-cat" : ""}`;
 
     const mainBtn = document.createElement("button");
-    mainBtn.className = `map_btn ${isCurrent ? "active" : ""}`;
+    mainBtn.type = "button";
+    mainBtn.className = `nav_cat_btn ${isCurrentCat ? "active" : ""}`;
     mainBtn.innerHTML = `
       <span>${CATEGORY_NAMES[catKey] || catKey}</span>
       <span class="chevron_arrow">▼</span>
     `;
 
-    const subList = document.createElement("div");
-    subList.className = "category_sub_list";
+    const dropMenu = document.createElement("div");
+    dropMenu.className = "category_dropdown_menu";
 
     catData.filters.forEach((filter) => {
       const subBtn = document.createElement("button");
-      const isSubActive = isCurrent && filter.value === activeFilter;
+      subBtn.type = "button";
+      const isSubActive = isCurrentCat && filter.value === activeFilter;
       subBtn.className = `sub_filter_btn ${isSubActive ? "active" : ""}`;
-      subBtn.innerText = filter.label;
 
-      
+      const iconObj = CATEGORY_ICONS[catKey]?.[filter.value] || { emoji: "•" };
+      subBtn.innerHTML = `<span>${iconObj.emoji}</span> <span>${filter.label}</span>`;
+
       subBtn.addEventListener("click", (e) => {
         e.stopPropagation();
+
+        navItem.classList.remove("open");
+
+        document.querySelectorAll(".nav_cat_btn").forEach((b) => b.classList.remove("active"));
         document.querySelectorAll(".sub_filter_btn").forEach((b) => b.classList.remove("active"));
+        mainBtn.classList.add("active");
         subBtn.classList.add("active");
 
         activeCategory = catKey;
@@ -784,87 +773,74 @@ function renderAccordionNav() {
         activeSecondary = "all";
 
         const locs = catData.locationSets[activeFilter] || [];
-        renderTopFilters(locs);
+        renderSideFloatingFilters(locs);
         renderMarkers(locs, true);
-
-        
       });
 
-      subList.appendChild(subBtn);
+      dropMenu.appendChild(subBtn);
     });
 
-    mainBtn.addEventListener("click", () => {
-      const isOpen = item.classList.contains("open");
-      document.querySelectorAll(".category_accordion_item").forEach((el) => {
-        el.classList.remove("open");
-        el.querySelector(".map_btn").classList.remove("active");
-      });
+    mainBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const wasOpen = navItem.classList.contains("open");
 
-      if (!isOpen) {
-        item.classList.add("open");
-        mainBtn.classList.add("active");
-        activeCategory = catKey;
-        activeFilter = catData.filters[0].value;
-        activeDistrict = "all";
-        activeSecondary = "all";
+      // إغلاق باقي القوائم
+      document.querySelectorAll(".category_nav_item").forEach((el) => el.classList.remove("open"));
+      document.querySelectorAll(".floating-filter-wrapper").forEach((el) => el.classList.remove("open"));
 
-        
-
-        const locs = catData.locationSets[activeFilter] || [];
-        renderTopFilters(locs);
-        renderMarkers(locs, true);
-
-       
+      if (!wasOpen) {
+        navItem.classList.add("open");
       }
     });
 
-    item.appendChild(mainBtn);
-    item.appendChild(subList);
-    container.appendChild(item);
+    navItem.appendChild(mainBtn);
+    navItem.appendChild(dropMenu);
+    container.appendChild(navItem);
+  });
+
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".category_nav_item").forEach((el) => el.classList.remove("open"));
+    document.querySelectorAll(".floating-filter-wrapper").forEach((el) => el.classList.remove("open"));
   });
 }
 
-function initializeGuideMapUi() {
-  renderAccordionNav();
-  const bar = document.getElementById("topFiltersBar");
-  if (bar) {
-    bar.querySelectorAll(".filter_select_wrap").forEach((el) => el.remove());
+function resetMapView() {
+  if (currentBounds && !currentBounds.isEmpty()) {
+    map.fitBounds(currentBounds, {
+      padding: 90,
+      maxZoom: 15,
+      duration: 800,
+    });
+  } else {
+    map.flyTo({
+      center: [36.2765, 33.5138],
+      zoom: 12,
+      duration: 800,
+    });
   }
-  clearMarkers();
 }
 
-function setupSidebarToggle() {
-  const toggleBtn = document.getElementById("toggleMenuBtn");
-  const sideMenu = document.getElementById("main-container");
+document.addEventListener("DOMContentLoaded", () => {
+  const introScreen = document.getElementById("introScreen");
+  const startExploreBtn = document.getElementById("startExploreBtn");
 
-  if (!toggleBtn || !sideMenu) return;
+  if (startExploreBtn && introScreen) {
+    startExploreBtn.addEventListener("click", () => {
+      introScreen.classList.add("hide-intro");
+      setTimeout(() => {
+        map.resize();
+        resetMapView();
+      }, 400);
+    });
+  }
 
-  toggleBtn.onclick = function (e) {
-    e.stopPropagation();
-    sideMenu.classList.toggle("is-open");
-  };
+  renderTopCategoriesNav();
 
-  document.addEventListener("click", function (e) {
-    if (
-      sideMenu.classList.contains("is-open") &&
-      !sideMenu.contains(e.target) &&
-      !toggleBtn.contains(e.target)
-    ) {
-      sideMenu.classList.remove("is-open");
-    }
-  });
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", setupSidebarToggle);
-} else {
-  setupSidebarToggle();
-}
-
-
+ 
+ 
+});
 
 map.on("load", () => {
   map.resize();
-  initializeGuideMapUi();
-  setupSidebarToggle();
+  hidePlacePanel();
 });
