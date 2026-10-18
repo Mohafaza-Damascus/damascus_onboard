@@ -18,58 +18,25 @@
 
 
         <main class="cultural-model-5">
-
-            <!-- =====================================================
-                HERO
-            ====================================================== -->
-            <section class="culture-hero">
-
-                <div class="culture-hero-image">
-                    <img
-                        src="../images/ياسمينpng 5.png"
-                        alt="دمشق"
-                    >
-                </div>
-
-                <div class="culture-hero-overlay"></div>
-
-                <div class="culture-hero-content">
-
-                    <span class="hero-eyebrow">
-                        النظرة الثقافية
-                    </span>
-
-                    <h1>
-                        دمشق
-                    </h1>
-
-                    <p class="hero-title">
-                        مدينة تعيش بين الماضي والحاضر
-                    </p>
-
-                    <p class="hero-description">
-                        تاريخ طويل، عمارة عريقة، فنون وحرف وحكايات
-                        صنعت هوية المدينة عبر العصور.
-                    </p>
-
-                    <a href="#culture-content" class="hero-scroll">
-                        <span>اكتشف دمشق</span>
-                        <span class="scroll-arrow">↓</span>
-                    </a>
-
-                </div>
-
-            </section>
-
             <!-- =================================================
                 03 - HISTORY TIMELINE
             ================================================== -->
 <section class="damascus-timeline" id="damascus-history">
-    <div class="damascus-timeline__intro">
-        <span class="damascus-timeline__eyebrow">03 / عبر الزمن</span>
-        <h2>تاريخ دمشق</h2>
-        <p>طبقات من الحضارة، تتحرك أمامك من أقدم العصور حتى دمشق اليوم.</p>
-        
+<div class="damascus-timeline__intro">
+        <span class="damascus-timeline__eyebrow"></span>
+
+        <h2 class="damascus-timeline__curved-title" aria-label="دمشق عبر العصور">
+            <svg viewBox="0 0 800 150" role="presentation" focusable="false">
+                <path id="historyTitleCurve" d="M 60,125 Q 400,25 740,125" fill="none" />
+                <text>
+                    <textPath href="#historyTitleCurve" startOffset="50%" text-anchor="middle">
+                        دمشق عبر العصور
+                    </textPath>
+                </text>
+            </svg>
+        </h2>
+
+        <p>رحلة عبر آلاف السنين في واحدة من أقدم المدن المأهولة في العالم، من الآراميين إلى اليوم.</p>
     </div>
 
     <div class="damascus-timeline__stage" data-timeline>
@@ -90,13 +57,13 @@
                 <br>
                 <br>
 
-                <span>اكتشف المزيد</span><span aria-hidden="true"></span>
+                <span></span><span aria-hidden="true"></span>
             </a>
         </div>
 
         <div class="damascus-timeline__controls">
             <button type="button" class="damascus-timeline__control" data-prev aria-label="المرحلة السابقة">→ <span>السابق</span></button>
-            <div class="damascus-timeline__counter"><strong data-current>08</strong><span></span><em data-total>16</em></div>
+           <div class="damascus-timeline__counter"><strong data-current>05</strong><span></span><em data-total>10</em></div>
             <button type="button" class="damascus-timeline__control" data-next aria-label="المرحلة التالية"><span>التالي</span> ←</button>
         </div>
 
@@ -119,40 +86,69 @@
         <!-- Section Header -->
         <header class="damascus-numbers__header">
 
-            <span class="damascus-numbers__eyebrow">
-                05 / دمشق بالأرقام
-            </span>
 
             <h2>
                 ملامح دمشق
-                <span>بلغة الأرقام</span>
+                <span>نبض المدينة بلغة الأرقام</span>
             </h2>
 
             <p>
-                اكتشف ما تحتضنه دمشق من معالم ومشاريع واستثمارات،
-                وتعرّف إلى الخدمات التي تجمعها المنصة في مكان واحد.
+                أرقام لا تحصي الحجارة والمساحات فحسب، بل تروي حكاية مدينةٍ
+                تنفّست الحضارة ونسجت ذاكرتها عبر آلاف السنين.
             </p>
 
         </header>
 
-        <!-- Statistics -->
+        <!-- Statistics (5 Cards) -->
         <div class="damascus-numbers__grid">
 
-            <!-- 01: Landmarks -->
+            <!-- 01: عدد السكان -->
             <article class="damascus-number-card">
+                <span class="damascus-number-card__arch" aria-hidden="true"></span>
+                <span class="damascus-number-card__index">01</span>
 
-                <span class="damascus-number-card__index">
-                    01
+                <div class="damascus-number-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="15" r="6"/>
+                        <circle cx="12" cy="19" r="4.5"/>
+                        <circle cx="36" cy="19" r="4.5"/>
+                        <path d="M13 38C13 31.9 17.9 27 24 27C30.1 27 35 31.9 35 38"/>
+                        <path d="M5 38C5 33.6 8.1 30 12.2 29.5"/>
+                        <path d="M43 38C43 33.6 39.9 30 35.8 29.5"/>
+                    </svg>
+                </div>
+
+                <div class="damascus-number-card__value">
+                    <span
+                        class="damascus-number-card__count"
+                        data-count="2150000"
+                        data-suffix="+"
+                    >0</span>
+                </div>
+
+                <span class="damascus-number-card__unit">نسمة</span>
+                <h3>عدد السكان</h3>
+
+                <p>
+                    قلوب تنبض بالحياة اليومية وتصنع روح الشام ودفء حاراتها العتيقة.
+                </p>
+
+                <span class="damascus-number-card__emotion">
+                    ✦ روح المكان وأهله
                 </span>
+                <span class="damascus-number-card__line" aria-hidden="true"></span>
+            </article>
 
-                <div
-                    class="damascus-number-card__icon"
-                    aria-hidden="true"
-                >
+            <!-- 02: معالم دمشق -->
+            <article class="damascus-number-card">
+                <span class="damascus-number-card__arch" aria-hidden="true"></span>
+                <span class="damascus-number-card__index">02</span>
+
+                <div class="damascus-number-card__icon" aria-hidden="true">
                     <svg viewBox="0 0 48 48" fill="none">
                         <path d="M8 40V22L24 8L40 22V40H8Z"/>
-                        <path d="M19 40V28H29V40"/>
-                        <path d="M15 23H17M31 23H33"/>
+                        <path d="M19 40V28C19 25.2 21.2 23 24 23C26.8 23 29 25.2 29 28V40"/>
+                        <path d="M24 8V4"/>
                     </svg>
                 </div>
 
@@ -164,137 +160,118 @@
                     >0</span>
                 </div>
 
-                <h3>معلم دمشقي</h3>
+                <span class="damascus-number-card__unit">معلماً تاريخياً</span>
+                <h3>معالم دمشق</h3>
 
                 <p>
-                    معالم تاريخية وثقافية للتعرّف إلى ذاكرة المدينة.
+                    جوامع وكنائس وقصور وخانات تشهد على تعاقب الحضارات في قلب المدينة.
                 </p>
 
-                <span
-                    class="damascus-number-card__line"
-                    aria-hidden="true"
-                ></span>
-
+                <span class="damascus-number-card__emotion">
+                    ✦ حجارة تحفظ الحكايات
+                </span>
+                <span class="damascus-number-card__line" aria-hidden="true"></span>
             </article>
 
-            <!-- 02: Investments -->
+            <!-- 03: مساحة دمشق -->
             <article class="damascus-number-card">
+                <span class="damascus-number-card__arch" aria-hidden="true"></span>
+                <span class="damascus-number-card__index">03</span>
 
-                <span class="damascus-number-card__index">
-                    02
-                </span>
-
-                <div
-                    class="damascus-number-card__icon"
-                    aria-hidden="true"
-                >
+                <div class="damascus-number-card__icon" aria-hidden="true">
                     <svg viewBox="0 0 48 48" fill="none">
-                        <rect x="7" y="16" width="34" height="24" rx="3"/>
-                        <path d="M17 16V11C17 9.3 18.3 8 20 8H28C29.7 8 31 9.3 31 11V16"/>
-                        <path d="M7 26H41"/>
-                        <path d="M20 26V30H28V26"/>
+                        <path d="M7 36L18 16L28 28L35 20L42 36H7Z"/>
+                        <circle cx="34" cy="13" r="3.5"/>
+                        <path d="M6 40H42"/>
                     </svg>
                 </div>
 
                 <div class="damascus-number-card__value">
                     <span
                         class="damascus-number-card__count"
-                        data-count="128"
+                        data-count="105"
                         data-suffix=""
                     >0</span>
                 </div>
 
-                <h3>فرصة استثمارية</h3>
+                <span class="damascus-number-card__unit">كم²</span>
+                <h3>مساحة دمشق</h3>
 
                 <p>
-                    فرص استثمارية مدرجة للتعرّف إلى إمكانات المدينة.
+                    تمتد بين سفوح جبل قاسيون شمالاً وبساتين الغوطة وضفاف بردى جنوباً.
                 </p>
 
-                <span
-                    class="damascus-number-card__line"
-                    aria-hidden="true"
-                ></span>
-
+                <span class="damascus-number-card__emotion">
+                    ✦ بين قاسيون والغوطة
+                </span>
+                <span class="damascus-number-card__line" aria-hidden="true"></span>
             </article>
 
-            <!-- 03: Projects -->
+            <!-- 04: عدد المناطق -->
             <article class="damascus-number-card">
+                <span class="damascus-number-card__arch" aria-hidden="true"></span>
+                <span class="damascus-number-card__index">04</span>
 
-                <span class="damascus-number-card__index">
-                    03
-                </span>
-
-                <div
-                    class="damascus-number-card__icon"
-                    aria-hidden="true"
-                >
+                <div class="damascus-number-card__icon" aria-hidden="true">
                     <svg viewBox="0 0 48 48" fill="none">
-                        <path d="M8 40V19L24 9L40 19V40H8Z"/>
-                        <path d="M17 40V28H31V40"/>
-                        <path d="M19 20H21M27 20H29"/>
-                        <path d="M4 40H44"/>
+                        <path d="M24 42C24 42 37 31 37 20C37 12.8 31.2 7 24 7C16.8 7 11 12.8 11 20C11 31 24 42 24 42Z"/>
+                        <circle cx="24" cy="20" r="5"/>
                     </svg>
                 </div>
 
                 <div class="damascus-number-card__value">
                     <span
                         class="damascus-number-card__count"
-                        data-count="392"
+                        data-count="16"
                         data-suffix=""
                     >0</span>
                 </div>
 
-                <h3>مشروع تنموي</h3>
+                <span class="damascus-number-card__unit">منطقة سكنية وتراثية</span>
+                <h3>عدد المناطق</h3>
 
                 <p>
-                    مشاريع تساهم في تطوير المدينة وتحسين واقعها.
+                    مناطق وأحياء عريقة تتكامل فيها دمشق القديمة مع امتدادها العمراني الحديث.
                 </p>
 
-                <span
-                    class="damascus-number-card__line"
-                    aria-hidden="true"
-                ></span>
-
+                <span class="damascus-number-card__emotion">
+                    ✦ فسيفساء الأحياء الدمشقية
+                </span>
+                <span class="damascus-number-card__line" aria-hidden="true"></span>
             </article>
 
-            <!-- 04: Platform Services -->
-            <article class="damascus-number-card">
+            <!-- 05: النظرة الثقافية (عمر الحضارة) -->
+            <article class="damascus-number-card damascus-number-card--cultural">
+                <span class="damascus-number-card__arch" aria-hidden="true"></span>
+                <span class="damascus-number-card__index">05</span>
 
-                <span class="damascus-number-card__index">
-                    04
-                </span>
-
-                <div
-                    class="damascus-number-card__icon"
-                    aria-hidden="true"
-                >
+                <div class="damascus-number-card__icon" aria-hidden="true">
                     <svg viewBox="0 0 48 48" fill="none">
-                        <circle cx="24" cy="24" r="17"/>
-                        <path d="M17 24L22 29L32 18"/>
-                        <path d="M24 3V7M24 41V45"/>
-                        <path d="M3 24H7M41 24H45"/>
+                        <path d="M24 6L28.5 17.5L40 22L28.5 26.5L24 38L19.5 26.5L8 22L19.5 17.5L24 6Z"/>
+                        <circle cx="24" cy="22" r="3"/>
+                        <path d="M14 41H34"/>
                     </svg>
                 </div>
 
                 <div class="damascus-number-card__value">
                     <span
                         class="damascus-number-card__count"
-                        data-count="39"
-                        data-suffix=""
+                        data-count="11000"
+                        data-suffix="+"
                     >0</span>
                 </div>
 
-                <h3>خدمات رقمية</h3>
+                <span class="damascus-number-card__unit">عام من الحياة</span>
+                <h3>عمق الحضارة</h3>
 
                 <p>
-                    خدمات توفرها المنصة لتسهيل الوصول إلى المعلومات.
+                    أقدم عاصمة مأهولة دون انقطاع، تتلاقى فيها الفنون والحرف والذاكرة الإنسانية.
                 </p>
 
-                <span
-                    class="damascus-number-card__line"
-                    aria-hidden="true"
-                ></span>
-
+                <span class="damascus-number-card__emotion">
+                    ✦ أقدم عاصمة مأهولة بالعالم
+                </span>
+                <span class="damascus-number-card__line" aria-hidden="true"></span>
             </article>
 
         </div>
@@ -308,7 +285,7 @@
             ></span>
 
             <span>
-                دمشق — حكاية مدينة تتجدد
+                دمشق — حكاية مدينة تتجدد كل يوم
             </span>
 
             <span
@@ -328,37 +305,20 @@
 </section>
 
 
-
-
 <!-- =========================================
      DAMASCUS LANDMARKS — معالم دمشق
 ========================================== -->
 <section class="damascus-landmarks" id="damascus-landmarks">
+<div class="damascus-landmarks__container">
 
-    <div class="damascus-landmarks__container">
+        <div class="damascus-landmarks__layout">
 
-        <header class="damascus-landmarks__header">
-            <span class="damascus-landmarks__eyebrow">
-                06 / ذاكرة المكان
-            </span>
+            <!-- الجهة اليمنى: الكروت الدوّارة -->
+            <div class="damascus-landmarks__showcase">
 
-            <h2>
-                معالم دمشق
-                <span>حجارة تحفظ الحكايات</span>
-            </h2>
+                <div class="damascus-landmarks__stage" id="landmarksStage">
 
-            <p>
-                من روائع العمارة الدمشقية إلى الأسواق والقصور التاريخية،
-                اكتشف الأماكن التي صنعت ملامح المدينة عبر القرون.
-            </p>
-            <br>
-        </header>
-
-        <div class="damascus-landmarks__showcase">
-
-            <div class="damascus-landmarks__stage" id="landmarksStage">
-
-                <div class="damascus-landmarks__cylinder" id="landmarksCylinder">
+                    <div class="damascus-landmarks__cylinder" id="landmarksCylinder">
 
                     <!-- 01 — الجامع الأموي -->
                     <article class="landmark-card">
@@ -368,7 +328,7 @@
                                 alt="الجامع الأموي في دمشق"
                                 loading="lazy"
                             >
-                            <span class="landmark-card__number">01 / 06</span>
+                            
                             <span class="landmark-card__type">معلم ديني وتاريخي</span>
                         </div>
 
@@ -423,7 +383,6 @@
                                 alt="قصر العظم في دمشق القديمة"
                                 loading="lazy"
                             >
-                            <span class="landmark-card__number">02 / 06</span>
                             <span class="landmark-card__type">قصر ومتحف تراثي</span>
                         </div>
 
@@ -478,7 +437,6 @@
                                 alt="قلعة دمشق التاريخية"
                                 loading="lazy"
                             >
-                            <span class="landmark-card__number">03 / 06</span>
                             <span class="landmark-card__type">حصن تاريخي</span>
                         </div>
 
@@ -533,7 +491,6 @@
                                 alt="سوق الحميدية في دمشق"
                                 loading="lazy"
                             >
-                            <span class="landmark-card__number">04 / 06</span>
                             <span class="landmark-card__type">سوق تراثي</span>
                         </div>
 
@@ -588,7 +545,6 @@
                                 alt="خان أسعد باشا في دمشق القديمة"
                                 loading="lazy"
                             >
-                            <span class="landmark-card__number">05 / 06</span>
                             <span class="landmark-card__type">خان تجاري تاريخي</span>
                         </div>
 
@@ -643,7 +599,6 @@
                                 alt="المتحف الوطني بدمشق"
                                 loading="lazy"
                             >
-                            <span class="landmark-card__number">06 / 06</span>
                             <span class="landmark-card__type">متحف أثري وثقافي</span>
                         </div>
 
@@ -689,294 +644,312 @@
                             </a>
                         </div>
                     </article>
-
+</div>
                 </div>
+
+                <button
+                    type="button"
+                    class="landmarks-control landmarks-control--prev"
+                    id="landmarksPrev"
+                    aria-label="المعلم السابق"
+                >→</button>
+
+                <button
+                    type="button"
+                    class="landmarks-control landmarks-control--next"
+                    id="landmarksNext"
+                    aria-label="المعلم التالي"
+                >←</button>
+
+                <div class="damascus-landmarks__bottom">
+                    <div class="landmarks-pagination" id="landmarksPagination"></div>
+                    <span class="damascus-landmarks__hint">
+                    
+                    </span>
+                </div>
+
             </div>
 
-            <button
-                type="button"
-                class="landmarks-control landmarks-control--prev"
-                id="landmarksPrev"
-                aria-label="المعلم السابق"
-            >→</button>
+            <!-- الجهة اليسرى: العنوان + وصف القسم (سطرين) + وصف الكرت الفعّال -->
+            <div class="damascus-landmarks__info-column">
 
-            <button
-                type="button"
-                class="landmarks-control landmarks-control--next"
-                id="landmarksNext"
-                aria-label="المعلم التالي"
-            >←</button>
+                <header class="damascus-landmarks__header">
 
-        </div>
 
-        <div class="damascus-landmarks__bottom">
-            <div class="landmarks-pagination" id="landmarksPagination"></div>
+                    <h2>ذاكرة المكان</h2>
 
-            <p>
-                <span class="landmarks-status-dot"></span>
-                <span id="landmarksStatus">اكتشف حكاية المكان</span>
-            </p>
+                    <p class="damascus-landmarks__subtitle">
+                        من روائع العمارة الدمشقية إلى الأسواق والقصور التاريخية،
+                        اكتشف الأماكن التي صنعت ملامح المدينة عبر القرون.
+                    </p>
+                </header>
 
-            <span class="damascus-landmarks__hint">
-                استخدم الأسهم أو اسحب للتنقل بين المعالم
-            </span>
+                <!-- صندوق وصف الكرت الفعّال حالياً -->
+                <div class="damascus-landmarks__active-box" id="landmarkActiveBox" aria-live="polite">
+                    <div class="damascus-landmarks__active-meta">
+                        <span class="damascus-landmarks__active-badge" id="landmarkActiveType">معلم ديني وتاريخي</span>
+                        <span class="damascus-landmarks__active-location" id="landmarkActiveLocation">دمشق القديمة</span>
+                    
+                    </div>
+
+                    <h3 id="landmarkActiveTitle">الجامع الأموي</h3>
+
+                    <p class="damascus-landmarks__active-intro" id="landmarkActiveIntro"></p>
+
+                    <p class="damascus-landmarks__active-desc" id="landmarkActiveDesc"></p>
+
+                    <div class="damascus-landmarks__active-facts" id="landmarkActiveFacts"></div>
+
+                    <div class="damascus-landmarks__active-footer">
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="damascus-landmarks__active-link"
+                            id="landmarkActiveLink"
+                        >
+                            <span>اكتشف تاريخ المعلم</span>
+                            <span aria-hidden="true">←</span>
+                        </a>
+
+                        <p class="damascus-landmarks__status-pill">
+                            <span class="landmarks-status-dot"></span>
+                            <span id="landmarksStatus">الجامع الأموي</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
 </section>
 
 
-
 <!-- =========================================
-     DAMASCUS CULTURAL CALENDAR
+     DAMASCUS CULTURAL CALENDAR — DESK NOTEBOOK (النموذج الأول)
 ========================================= -->
 <section class="damascus-agenda" id="damascus-agenda">
 
     <div class="damascus-agenda__container">
 
-        <!-- Header -->
+        <!-- Header & Filters -->
         <header class="agenda-heading">
 
             <div class="agenda-heading__intro">
-                <span class="agenda-eyebrow">
-                    <span class="agenda-eyebrow__dot"></span>
-                    نبض المدينة الثقافي
-                </span>
+
 
                 <h2>
-                    روزنامة
-                    <span>دمشق</span>
+                    الروزنامة
+                    <span>الدمشقية</span>
                 </h2>
 
                 <p>
-                    من أمسية موسيقية إلى معرض فني،
-                    اكتشف ما يستحق أن تعيشه في دمشق.
+                    قلّب صفحات الشهور واستكشف الأيام التي تحمل أمسيات ومعارض ولقاءات ثقافية في دمشق.
                 </p>
             </div>
 
-            <div class="agenda-month">
+            <!-- Category filters -->
+            <div class="agenda-filters" aria-label="تصفية الفعاليات">
                 <button
                     type="button"
-                    class="agenda-month__arrow"
-                    id="agendaPrevMonth"
-                    aria-label="الشهر السابق"
-                >→</button>
-
-                <div class="agenda-month__label" aria-live="polite">
-                    <span id="agendaMonthName">تشرين الأول</span>
-                    <strong id="agendaYear">2026</strong>
-                </div>
+                    class="agenda-filter is-active"
+                    data-agenda-filter="all"
+                    aria-pressed="true"
+                >كل الفعاليات</button>
 
                 <button
                     type="button"
-                    class="agenda-month__arrow"
-                    id="agendaNextMonth"
-                    aria-label="الشهر التالي"
-                >←</button>
+                    class="agenda-filter"
+                    data-agenda-filter="music"
+                    aria-pressed="false"
+                >موسيقى</button>
+
+                <button
+                    type="button"
+                    class="agenda-filter"
+                    data-agenda-filter="art"
+                    aria-pressed="false"
+                >فنون ومعارض</button>
+
+                <button
+                    type="button"
+                    class="agenda-filter"
+                    data-agenda-filter="heritage"
+                    aria-pressed="false"
+                >تراث</button>
+
+                <button
+                    type="button"
+                    class="agenda-filter"
+                    data-agenda-filter="talk"
+                    aria-pressed="false"
+                >ندوات ولقاءات</button>
             </div>
 
         </header>
 
-        <!-- Month overview -->
-        <div class="agenda-overview">
-            <div class="agenda-overview__label">
-                <span class="agenda-overview__line"></span>
-                <span id="agendaSelectedMonth">فعاليات تشرين الأول</span>
+        <!-- Main Workspace: Desk Calendar + Landmark Card -->
+        <div class="agenda-workspace">
+
+            <!-- 1. اليمين: الدفتر المكتبي القابل للتقليب -->
+            <div class="agenda-notebook-Scene">
+                <div class="agenda-notebook" id="agendaNotebook">
+
+                    <!-- الحلقات المعدنية العلوية -->
+                    <div class="agenda-notebook__rings" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span>
+                    </div>
+
+                    <!-- الشريط العلوي البني للدفتر -->
+                    <div class="agenda-notebook__topbar">
+                        <button
+                            type="button"
+                            class="agenda-notebook__nav"
+                            id="agendaPrevMonth"
+                            aria-label="الشهر السابق"
+                        >
+                            <span>→</span>
+                            <small>الشهر السابق</small>
+                        </button>
+
+                        <div class="agenda-notebook__topbar-title" aria-live="polite">
+                            <strong id="agendaNotebookEnMonth">2026 / OCTOBER</strong>
+                            <span id="agendaMonthName">تشرين الأول</span>
+                            <span id="agendaYear" hidden>2026</span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="agenda-notebook__nav"
+                            id="agendaNextMonth"
+                            aria-label="الشهر التالي"
+                        >
+                            <small>الشهر التالي</small>
+                            <span>←</span>
+                        </button>
+                    </div>
+
+                    <!-- الورقة القابلة للقلب -->
+                    <div class="agenda-notebook__sheet-wrapper">
+                        <div class="agenda-notebook__sheet" id="agendaNotebookSheet">
+
+                            <!-- العمود الجانبي لرقم الشهر الكبير -->
+                            <aside class="agenda-sheet__sidebar">
+                                <span class="agenda-sheet__month-num" id="agendaMonthNumber">10</span>
+                                <span class="agenda-sheet__month-ar" id="agendaSelectedMonth">تشرين الأول</span>
+                                <div class="agenda-sheet__divider"></div>
+
+                                <div class="agenda-sheet__counter">
+                                    <strong id="agendaEventCount">0</strong>
+                                    <span>أيام فعاليات في هذه الورقة</span>
+                                </div>
+
+                                <div class="agenda-sheet__stamp" aria-hidden="true">
+                                    <span>DAMASCUS</span>
+                                    <strong>AGENDA</strong>
+                                </div>
+                            </aside>
+
+                            <!-- منطقة أيام الفعاليات فقط -->
+                            <div class="agenda-sheet__main">
+                                <div class="agenda-sheet__header">
+                                    <span>أيام الفعاليات المسجّلة في هذا الشهر</span>
+                                    <small>اضغط على اليوم لعرض بطاقة الفعالية</small>
+                                </div>
+
+                                <div
+                                    class="agenda-sheet__days-grid"
+                                    id="agendaDaysTrack"
+                                    role="group"
+                                    aria-label="أيام الفعاليات"
+                                ></div>
+
+                                <!-- حالة عدم وجود فعاليات -->
+                                <div class="agenda-empty" id="agendaEmpty" hidden>
+                                    <span class="agenda-empty__symbol">✳</span>
+                                    <h3>لا توجد أيام فعاليات مطابقة في هذه الورقة</h3>
+                                    <p>جرّب عرض جميع التصنيفات أو اقلب الورقة إلى شهر آخر.</p>
+                                    <button type="button" id="agendaShowAll">
+                                        عرض كل الفعاليات
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- قاعدة الدفتر السفلية -->
+                    <div class="agenda-notebook__stand">
+                        <span>✦ روزنامة دمشق الثقافية — حكاية في كل ورقة</span>
+                        <span class="agenda-notebook__flip-hint">اقلب الورقة من الأعلى لتصفح الشهور</span>
+                    </div>
+
+                </div>
             </div>
 
-            <span class="agenda-overview__count">
-                <strong id="agendaEventCount">0</strong>
-                <span>فعالية في هذا الشهر</span>
-            </span>
-        </div>
-
-        <!-- Horizontal day selector -->
-        <div class="agenda-days" aria-label="اختيار يوم">
-
-            <button
-                type="button"
-                class="agenda-days__nav"
-                id="agendaDaysPrev"
-                aria-label="الأيام السابقة"
-            >→</button>
-
-            <div
-                class="agenda-days__viewport"
-                id="agendaDaysViewport"
-            >
-                <div
-                    class="agenda-days__track"
-                    id="agendaDaysTrack"
-                    role="group"
-                    aria-label="أيام الشهر"
-                ></div>
-            </div>
-
-            <button
-                type="button"
-                class="agenda-days__nav"
-                id="agendaDaysNext"
-                aria-label="الأيام التالية"
-            >←</button>
-
-        </div>
-
-        <!-- Category filters -->
-        <div class="agenda-filters" aria-label="تصفية الفعاليات">
-
-            <button
-                type="button"
-                class="agenda-filter is-active"
-                data-agenda-filter="all"
-                aria-pressed="true"
-            >الكل</button>
-
-            <button
-                type="button"
-                class="agenda-filter"
-                data-agenda-filter="music"
-                aria-pressed="false"
-            >موسيقى</button>
-
-            <button
-                type="button"
-                class="agenda-filter"
-                data-agenda-filter="art"
-                aria-pressed="false"
-            >فنون ومعارض</button>
-
-            <button
-                type="button"
-                class="agenda-filter"
-                data-agenda-filter="heritage"
-                aria-pressed="false"
-            >تراث</button>
-
-            <button
-                type="button"
-                class="agenda-filter"
-                data-agenda-filter="talk"
-                aria-pressed="false"
-            >ندوات ولقاءات</button>
-
-        </div>
-
-        <!-- Events layout -->
-        <div class="agenda-content" id="agendaContent">
-
-            <!-- Featured event -->
-            <article
-                class="agenda-featured"
-                id="agendaFeatured"
-                aria-live="polite"
-            >
-                <div class="agenda-featured__visual">
-                    <div class="agenda-featured__visual-pattern"></div>
-
-                    <span class="agenda-featured__visual-label">
-                        DAMASCUS / CULTURE
-                    </span>
-
-                    <div class="agenda-featured__visual-center">
-                        <span class="agenda-featured__visual-symbol">د</span>
-                        <span class="agenda-featured__visual-caption">
-                            حكايات من المدينة
-                        </span>
-                    </div>
-
-                    <span class="agenda-featured__visual-index">
-                        01 — DAMASCUS
-                    </span>
-                </div>
-
-                <div class="agenda-featured__details">
-                    <div class="agenda-featured__topline">
-                        <span
-                            class="agenda-tag"
-                            id="agendaFeaturedCategory"
-                        >فعالية ثقافية</span>
-
-                        <span
-                            class="agenda-featured__date"
-                            id="agendaFeaturedDate"
-                        >—</span>
-                    </div>
-
-                    <span class="agenda-featured__eyebrow">
-                        اختيار روزنامة دمشق
-                    </span>
-
-                    <h3 id="agendaFeaturedTitle">
-                        اكتشف فعاليات المدينة
-                    </h3>
-
-                    <p id="agendaFeaturedDescription">
-                        اختر يوماً من الشريط لتكتشف الفعاليات الثقافية المتاحة.
-                    </p>
-
-                    <div class="agenda-featured__meta">
-                        <span class="agenda-meta-item">
-                            <span class="agenda-meta-item__icon">⌖</span>
-                            <span id="agendaFeaturedLocation">دمشق</span>
-                        </span>
-
-                        <span class="agenda-meta-item">
-                            <span class="agenda-meta-item__icon">◷</span>
-                            <span id="agendaFeaturedTime">حسب موعد الفعالية</span>
-                        </span>
-                    </div>
-
-                    <a
-                        href="#"
-                        class="agenda-featured__link"
-                        id="agendaFeaturedLink"
-                        hidden
-                    >
-                        <span>تفاصيل الفعالية</span>
-                        <span aria-hidden="true">←</span>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Other events -->
-            <aside class="agenda-side">
-
-                <div class="agenda-side__heading">
-                    <div>
-                        <span class="agenda-side__eyebrow">على جدولك</span>
-                        <h3>فعاليات اليوم</h3>
-                    </div>
-
-                    <span
-                        class="agenda-side__total"
-                        id="agendaDayCount"
-                    >0</span>
-                </div>
-
-                <div
-                    class="agenda-event-list"
-                    id="agendaEventList"
+            <!-- 2. اليسار: كرت الفعالية المختارة (بنفس تصميم كروت المعالم) -->
+            <div class="agenda-card-wrapper">
+                <article
+                    class="landmark-card agenda-landmark-card"
+                    id="agendaFeatured"
                     aria-live="polite"
-                ></div>
+                >
+                    <div class="landmark-card__image">
+                        <img
+                            id="agendaFeaturedImage"
+                            src="../assets/umayyad-mosque.jfif"
+                            alt="صورة الفعالية"
+                            loading="lazy"
+                        >
+                        <span class="landmark-card__type" id="agendaFeaturedCategory">فعالية ثقافية</span>
+                    </div>
 
-            </aside>
+                    <div class="landmark-card__body">
+                        <span class="landmark-card__location" id="agendaFeaturedLocation">دمشق القديمة</span>
+                        <h3 id="agendaFeaturedTitle">اكتشف فعاليات المدينة</h3>
+
+                        <p class="landmark-card__intro" id="agendaFeaturedDescription">
+                            اختر أحد أيام الفعاليات من ورقة التقويم لاستعراض التفاصيل والمواعيد.
+                        </p>
+
+                        <div class="landmark-card__facts">
+                            <div>
+                                <span>التاريخ</span>
+                                <strong id="agendaFeaturedDate">—</strong>
+                            </div>
+                            <div>
+                                <span>وقت الفعالية</span>
+                                <strong id="agendaFeaturedTime">حسب الموعد</strong>
+                            </div>
+                            <div>
+                                <span>الشهر</span>
+                                <strong id="agendaTicketMonthName">تشرين الأول</strong>
+                            </div>
+                        </div>
+
+                        <!-- إذا كان في نفس اليوم أكثر من فعالية -->
+                        <div class="agenda-ticket__day-switcher" id="agendaDaySwitcher" hidden>
+                            <span class="agenda-ticket__switcher-label">فعاليات هذا اليوم (<strong id="agendaDayCount">1</strong>):</span>
+                            <div class="agenda-event-list" id="agendaEventList"></div>
+                        </div>
+
+                        <a
+                            href="#"
+                            class="landmark-card__link"
+                            id="agendaFeaturedLink"
+                        >
+                            <span aria-hidden="true">←</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
 
         </div>
-
-        <!-- Empty state -->
-        <div class="agenda-empty" id="agendaEmpty" hidden>
-            <span class="agenda-empty__symbol">✳</span>
-            <h3>هذا اليوم ينتظر حكاية جديدة</h3>
-            <p>لا توجد فعاليات مطابقة لاختياراتك. جرّب يوماً آخر أو غيّر التصنيف.</p>
-            <button type="button" id="agendaShowAll">
-                عرض جميع فعاليات اليوم
-            </button>
-        </div>
-
-        <footer class="agenda-footer">
-            <span>كل يوم في دمشق يحمل احتمالاً جديداً</span>
-            <span class="agenda-footer__ornament" aria-hidden="true">✳</span>
-        </footer>
 
     </div>
 
@@ -984,132 +957,188 @@
 
 
 <!-- =========================================
-     04 - THE SEVEN GATES OF DAMASCUS
-========================================== -->
+     DAMASCUS CULTURAL CALENDAR V2 — 3D TILTED DESK CALENDAR & LANDMARK CARDS (النموذج الثاني)
+========================================= -->
+<section class="damascus-agenda-v2" id="damascus-agenda-v2">
 
-<section
-    class="damascus-gates damascus-timeline"
-    id="damascus-gates"
->
-    <div
-        class="damascus-gates__intro damascus-timeline__intro"
-    >
-        <span
-            class="damascus-gates__eyebrow damascus-timeline__eyebrow"
-        >
-            04 / أبواب دمشق
-        </span>
+    <div class="damascus-agenda-v2__container">
 
-        <h2>
-            أبواب الشام السبعة
-        </h2>
+        <!-- عنوان القسم -->
+        <header class="damascus-agenda-v2__header">
 
-        <p>
-            أبواب تاريخية ارتبطت بدمشق القديمة،
-            وشكّلت مداخلها ومعالمها عبر العصور.
-        </p>
-    </div>
+            <h2>
+            الروزنامة الدمشقية 
+                <span>أيامٌ تروي حكايات الثقافة</span>
+            </h2>
+        </header>
 
+        <div class="damascus-agenda-v2__layout">
 
-    <div
-        class="damascus-gates__stage damascus-timeline__stage"
-        data-gates-timeline
-    >
-        <!-- الصور الثلاث -->
-        <div
-            class="damascus-gates__scene damascus-timeline__scene"
-        >
-            <div
-                class="damascus-gates__cards damascus-timeline__cards"
-                data-gates-cards-track
-            ></div>
-        </div>
+            <!-- 1. اليمين: دفتر التقويم المائل ثلاثي الأبعاد (هادئ وتظهر خلفيته) -->
+            <div class="agenda-v2__calendar-col">
 
+                <div class="agenda-v2__scene">
+                    <div class="agenda-v2__desk-calendar" id="agendaV2Calendar">
 
-        <!-- نقاط الأبواب -->
-        <div
-            class="damascus-gates__points damascus-timeline__years"
-            aria-label="أبواب دمشق"
-        >
-            <div
-                class="damascus-gates__points-line damascus-timeline__years-line"
-            ></div>
+                        <!-- الدعامة الخلفية والجانبية للدفتر -->
+                        <div class="agenda-v2__back-stand" aria-hidden="true"></div>
+                        <div class="agenda-v2__side-gusset" aria-hidden="true"></div>
 
-            <div
-                class="damascus-gates__points-track damascus-timeline__years-track"
-                data-gates-points-track
-            ></div>
-        </div>
+                        <!-- الحلقات المعدنية العلوية -->
+                        <div class="agenda-v2__rings" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                        </div>
 
+                        <!-- الشريط العلوي البني للدفتر مع أزرار الشهور -->
+                        <div class="agenda-v2__top-bar">
+                            <div class="agenda-v2__en-date">
+                                <strong id="agendaV2EnTitle">2026. / OCTOBER</strong>
+                                <span id="agendaV2ArSub">تشرين الأول</span>
+                            </div>
 
-        <!-- معلومات الباب الفعّال -->
-        <div
-            class="damascus-gates__content damascus-timeline__content"
-            aria-live="polite"
-        >
-            <span
-                class="damascus-gates__period damascus-timeline__period"
-                data-gates-period
-            >
-                أحد أبواب دمشق القديمة
-            </span>
+                            <div class="agenda-v2__month-controls">
+                                <button
+                                    type="button"
+                                    class="agenda-v2__month-btn"
+                                    id="agendaV2PrevMonth"
+                                    aria-label="الشهر السابق"
+                                >→</button>
+                                <button
+                                    type="button"
+                                    class="agenda-v2__month-btn"
+                                    id="agendaV2NextMonth"
+                                    aria-label="الشهر التالي"
+                                >←</button>
+                            </div>
+                        </div>
 
-            <h3 data-gates-title>
-                باب توما
-            </h3>
+                        <!-- الورقة الأمامية البيضاء القابلة للقلب -->
+                        <div class="agenda-v2__sheet" id="agendaV2Sheet">
 
-            <p data-gates-description>
-                يُعد باب توما من أشهر أبواب دمشق القديمة، ويرتبط بالجهة
-                الشمالية الشرقية من المدينة. حافظ الباب على حضوره ضمن
-                النسيج التاريخي للمدينة، وأصبح من أبرز المعالم المرتبطة
-                بأحياء دمشق القديمة وحركتها اليومية.
-            </p>
+                            <!-- العمود الجانبي لرقم الشهر الكبير -->
+                            <div class="agenda-v2__sheet-side">
+                                <strong class="agenda-v2__big-num" id="agendaV2MonthNum">10</strong>
+                                <span class="agenda-v2__month-pill" id="agendaV2MonthName">تشرين الأول</span>
 
-            <a
-                class="damascus-gates__more damascus-timeline__more"
-                data-gates-more
-                href="#"
-            >
-                <span>اكتشف الباب</span>
-                <span aria-hidden="true">←</span>
-            </a>
-        </div>
+                                <div class="agenda-v2__mini-lines" aria-hidden="true">
+                                    <span></span><span></span><span></span>
+                                </div>
 
+                                <p class="agenda-v2__days-summary">
+                                    <strong id="agendaV2Count">5</strong>
+                                    أيام فعاليات
+                                </p>
+                            </div>
 
-        <!-- أزرار التنقل والعداد -->
-        <div
-            class="damascus-gates__controls damascus-timeline__controls"
-        >
-            <button
-                type="button"
-                class="damascus-gates__control damascus-timeline__control"
-                data-gates-prev
-                aria-label="الباب السابق"
-            >
-                → <span>السابق</span>
-            </button>
+                            <!-- شبكة أيام الفعاليات فقط (هادئة ونظيفة) -->
+                            <div class="agenda-v2__sheet-body">
+                                <div class="agenda-v2__sheet-note">
+                                    <span>الأيام المضاءة فقط تحتوي على فعاليات</span>
+                                </div>
 
-            <div
-                class="damascus-gates__counter damascus-timeline__counter"
-            >
-        
-                <strong data-gates-current>04</strong>
+                                <div
+                                    class="agenda-v2__days-grid"
+                                    id="agendaV2DaysGrid"
+                                    role="group"
+                                    aria-label="أيام الفعاليات"
+                                ></div>
+                            </div>
 
-                <span></span>
+                        </div>
 
-                <em data-gates-total>07</em>
+                        <!-- القاعدة البنية السفلية البارزة للدفتر -->
+                        <div class="agenda-v2__base-ledge">
+                            <span>DAMASCUS CULTURAL AGENDA</span>
+                            <span>اقلب الورقة لتصفح الشهور</span>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
 
-            <button
-                type="button"
-                class="damascus-gates__control damascus-timeline__control"
-                data-gates-next
-                aria-label="الباب التالي"
-            >
-                <span>التالي</span> ←
-            </button>
+            <!-- 2. اليسار: كروت الفعاليات الـ 5 متجاورة بنفس نمط المعالم مع الوصف بداخلها -->
+            <div class="agenda-v2__card-col">
+
+                <div class="agenda-v2__showcase">
+                    <div class="agenda-v2__stage" id="agendaV2Stage">
+                        <div class="agenda-v2__cylinder" id="agendaV2Cylinder"></div>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="landmarks-control landmarks-control--prev"
+                        id="agendaV2PrevEvent"
+                        aria-label="الفعالية السابقة"
+                    >→</button>
+
+                    <button
+                        type="button"
+                        class="landmarks-control landmarks-control--next"
+                        id="agendaV2NextEvent"
+                        aria-label="الفعالية التالية"
+                    >←</button>
+                </div>
+
+                <!-- النقاط الذهبية السفلية -->
+                <div class="agenda-v2__bottom">
+                    <div class="landmarks-pagination" id="agendaV2Pagination"></div>
+                    <span class="agenda-v2__counter-text" id="agendaV2EventCounter">01 / 05</span>
+                </div>
+
+            </div>
+
         </div>
+
     </div>
+
+</section>
+
+<!-- =========================================
+     04 - THE SEVEN GATES OF DAMASCUS (المعرض البصري التفاعلي)
+========================================== -->
+<section class="damascus-gates-hero" id="damascus-gates">
+  <div class="gates-hero-container">
+    <div class="hero" id="hero" aria-roledescription="carousel" aria-label="أبواب دمشق">
+      <canvas class="hero__bg" aria-hidden="true"></canvas>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <!-- النصوص الجانبية (اسم الباب والشرح والعدّاد) -->
+      <div class="hero__copy">
+        <p class="kicker" data-anim data-field="kicker">04 / أصالة التاريخ</p>
+        <h1 class="title" data-anim data-field="name"></h1>
+        <p class="counter" data-anim><span dir="ltr"><span class="counter__cur">01</span><span class="counter__total">/07</span></span></p>
+      </div>
+
+      <!-- زر البوابة التفاعلي -->
+      <button class="gate" type="button" aria-label="انتقل إلى الباب التالي">
+        <span class="gate__stack">
+          <img class="gate__img" alt="" draggable="false">
+          <img class="gate__img" alt="" draggable="false">
+        </span>
+      </button>
+
+      <div class="hero__info">
+        <p class="desc" data-anim data-field="text"></p>
+        <a class="btn" data-anim data-field="link" href="#">اكتشف المزيد</a>
+      </div>
+
+      <footer class="hero__bar">
+        <div class="bullets" aria-label="اختر باباً"></div>
+
+        <div class="hint" aria-hidden="true">
+          <span class="hint__arrow">
+            <svg viewBox="0 0 30 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15 15 4l12 11"/></svg>
+          </span>
+          <span class="hint__text">اضغط على البوابة للتنقل بين الأبواب</span>
+        </div>
+      </footer>
+
+      <p class="sr-only" id="live" aria-live="polite"></p>
+    </div>
+  </div>
 </section>
 
 
@@ -1130,14 +1159,8 @@
 
     <div class="damascus-album-cta__content">
 
-        <span class="damascus-album-cta__eyebrow">
-            05 / ذاكرة المدينة
-        </span>
 
         <div class="damascus-album-cta__heading">
-            <span class="damascus-album-cta__label">
-                ألبوم دمشق
-            </span>
 
             <h2>
                 لكل زاوية في دمشق
@@ -1168,42 +1191,106 @@
 
 </section>
 
+<!-- =========================================
+     08 - INTANGIBLE HERITAGE (التراث اللامادي والصنعات الدمشقية)
+========================================== -->
+<section class="damascus-intangible" id="damascus-intangible">
 
-        </div>
+    <div class="damascus-intangible__container">
+
+        <!-- Header -->
+        <header class="damascus-intangible__header">
 
 
-        <!-- =====================================================
-             FOOTER CTA
-        ====================================================== -->
-        <section class="culture-final">
+            <h2>
+                صنعات دمشق الخالدة
+                <span>إرثٌ صاغته الأنامل عبر العصور</span>
+            </h2>
 
-            <div class="final-background"></div>
+            <p>
+                من وهج أفران الزجاج وورشات الخزف إلى دقّات الصدف وحياكة البروكار ونسخ المخطوطات؛
+                حرفٌ دمشقيةٌ حوّلت المادة الصمّاء إلى فنٍّ يتوارثه شيوخ الكار جيلاً بعد جيل.
+            </p>
+        </header>
 
-            <div class="final-content">
+        <!-- Main Interactive Showcase -->
+        <div class="damascus-intangible__workspace">
 
-                <span>
-                    النظرة الثقافية
-                </span>
+            <!-- اليمين: قائمة الحرف والصنعات الكبرى -->
+            <div class="intangible-crafts__list" id="intangibleCraftsList" role="tablist" aria-label="الصنعات الدمشقية">
+                <!-- يتم توليد أزرار الحرف برمجياً عبر JS -->
+            </div>
 
-                <h2>
-                    دمشق...
-                    <br>
-                    مدينة لا تُروى مرة واحدة
-                </h2>
+            <!-- اليسار: منصة عرض الحرفة الفعّالة -->
+            <div class="intangible-showcase" id="intangibleShowcase" aria-live="polite">
 
-                <p>
-                    اكتشف مكاناً، تعرّف إلى شخص،
-                    اقرأ حكاية، وابدأ رحلة جديدة في دمشق.
-                </p>
+                <!-- الصورة داخل القوس الدمشقي -->
+                <div class="intangible-showcase__visual">
+                    <div class="intangible-showcase__arch-frame">
+                        <img
+                            id="intangibleImage"
+                            src="../assets/azem-palace.jfif"
+                            alt="صورة الحرفة الدمشقية"
+                            loading="lazy"
+                        >
+                        <div class="intangible-showcase__overlay"></div>
 
-                <a href="#">
-                    ابدأ الاكتشاف
-                    <span>←</span>
-                </a>
+                        <span class="intangible-showcase__num" id="intangibleNumber">01 / 06</span>
+                        <span class="intangible-showcase__badge" id="intangibleBadge">حرفة تراثية أصيلة</span>
+
+                        <blockquote class="intangible-showcase__quote" id="intangibleQuote">
+                            «طينٌ وماءٌ ونار.. تخرجُ منها جنانٌ زرقاءُ لا تذبل»
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- تفاصيل الحرفة ومعلوماتها التاريخية -->
+                <div class="intangible-showcase__details">
+                    <span class="intangible-showcase__era" id="intangibleEra">منذ العهدين المملوكي والعثماني</span>
+                    <h3 id="intangibleTitle">الخزف والقيشاني الدمشقي</h3>
+
+                    <p class="intangible-showcase__desc" id="intangibleDesc">
+                        اشتهرت دمشق بصناعة الخزف والفخار المصقول وبلاط القيشاني ذي الألوان الزرقاء والفيروزية،
+                        الذي زيّن جدران الجوامع والبيوت الدمشقية العريقة برسومٍ نباتية وهندسية بالغة الدقة.
+                    </p>
+
+                    <div class="intangible-showcase__pillars">
+                        <div>
+                            <span>عناصر الصنعة</span>
+                            <strong id="intangibleMaterial">الطين المصقول والأكاسيد الملونة</strong>
+                        </div>
+                        <div>
+                            <span>موطن الحرفة</span>
+                            <strong id="intangibleLocation">التكية السليمانية وباب شرقي</strong>
+                        </div>
+                        <div>
+                            <span>سرّ المهنة</span>
+                            <strong id="intangibleSecret">الرسم اليدوي والحرق المزدوج</strong>
+                        </div>
+                    </div>
+
+                    <div class="intangible-showcase__footer">
+                        <div class="intangible-showcase__nav">
+                            <button type="button" id="intangiblePrev" aria-label="الحرفة السابقة">→</button>
+                            <button type="button" id="intangibleNext" aria-label="الحرفة التالية">←</button>
+                        </div>
+
+                        <div class="intangible-showcase__progress">
+                            <span id="intangibleProgressBar"></span>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </div>
+
+</section>
+
+
+        </div>
 
     </main>
 
@@ -1211,6 +1298,12 @@
     <!-- Footer -->
     <div id="site-footer"></div>
 
+<!-- سكربتات قسم أبواب دمشق التفاعلي -->
+    <script src="../js/slides.js"></script>
+    <script src="../js/gate.js"></script>
+    <script src="../js/scenes.js"></script>
+    <script src="../js/renderer.js"></script>
+    <script src="../js/main.js"></script>
 
     <script src="../js/global.js"></script>
     <script src="../js/index.js"></script>
