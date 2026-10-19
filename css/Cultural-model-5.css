@@ -9524,3 +9524,192 @@
         padding: 24px 20px;
     }
 }
+/* =========================================================
+   TIMELINE CIRCULAR RING & HOVER BLUR/CLARIFY EFFECT
+========================================================= */
+
+/* 1. تحويل حاوية الصور إلى حلقة دائرية متصلة مركزية */
+#damascus-history .damascus-timeline__cards {
+    position: relative;
+    display: block !important;
+    width: 100%;
+    height: 100%;
+    transform: none !important;
+}
+
+#damascus-history .damascus-timeline__card {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    width: var(--timeline-card-width, 270px);
+    min-width: var(--timeline-card-width, 270px);
+    transform-origin: center bottom;
+    will-change: transform, opacity, filter;
+    transition:
+        transform 0.78s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.55s ease,
+        filter 0.45s ease !important;
+}
+
+/* تموضع الكروت الخمسة في القوس الدائري حول المركز */
+#damascus-history .damascus-timeline__card.card-slot-0 {
+    transform: translate3d(calc(-50% - (var(--timeline-card-width) * 1.92)), calc(-50% + 72px), 0) rotate(-11deg) scale(0.74) !important;
+    opacity: 0.75;
+    filter: blur(2px);
+    z-index: 1;
+}
+
+#damascus-history .damascus-timeline__card.card-slot-1 {
+    transform: translate3d(calc(-50% - var(--timeline-card-width)), calc(-50% + 24px), 0) rotate(-5.5deg) scale(0.86) !important;
+    opacity: 0.9;
+    filter: blur(1px);
+    z-index: 2;
+}
+
+#damascus-history .damascus-timeline__card.card-slot-2,
+#damascus-history .damascus-timeline__card.is-active {
+    transform: translate3d(-50%, calc(-50% - 28px), 0) rotate(0deg) scale(1.14) !important;
+    opacity: 1;
+    filter: blur(0px);
+    z-index: 4;
+}
+
+#damascus-history .damascus-timeline__card.card-slot-3 {
+    transform: translate3d(calc(-50% + var(--timeline-card-width)), calc(-50% + 24px), 0) rotate(5.5deg) scale(0.86) !important;
+    opacity: 0.9;
+    filter: blur(1px);
+    z-index: 2;
+}
+
+#damascus-history .damascus-timeline__card.card-slot-4 {
+    transform: translate3d(calc(-50% + (var(--timeline-card-width) * 1.92)), calc(-50% + 72px), 0) rotate(11deg) scale(0.74) !important;
+    opacity: 0.75;
+    filter: blur(2px);
+    z-index: 1;
+}
+
+/* الدخول والخروج الدائري السلس من طرفي القوس */
+#damascus-history .damascus-timeline__card.card-slot-hidden-left {
+    transform: translate3d(calc(-50% - (var(--timeline-card-width) * 2.65)), calc(-50% + 120px), 0) rotate(-16deg) scale(0.58) !important;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#damascus-history .damascus-timeline__card.card-slot-hidden-right {
+    transform: translate3d(calc(-50% + (var(--timeline-card-width) * 2.65)), calc(-50% + 120px), 0) rotate(16deg) scale(0.58) !important;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 2. تأثير التغبيش والوضوح الفوري (Focus / Blur & Shine) عند التأشير بالماوس */
+
+/* عند دخول الماوس لمنطقة الصور: تغبيش الكروت غير المؤشر عليها لإبراز الصورة المختارة */
+#damascus-history .damascus-timeline__cards:hover .damascus-timeline__card:not(:hover) {
+    filter: blur(4.5px) brightness(0.78) saturate(0.6);
+    opacity: 0.65;
+}
+
+/* الصورة التي يؤشر عليها الماوس: توضح بالكامل 100% وتتوهج وتكبر قليلاً */
+#damascus-history .damascus-timeline__card:hover {
+    filter: blur(0px) brightness(1.05) saturate(1.15) !important;
+    opacity: 1 !important;
+    z-index: 6 !important;
+}
+
+#damascus-history .damascus-timeline__card:hover .damascus-timeline__card-image {
+    border-color: var(--culture-gold, #a58b5c);
+    box-shadow:
+        0 28px 60px rgba(6, 66, 57, 0.32),
+        0 0 0 4px rgba(165, 139, 92, 0.28);
+}
+
+#damascus-history .damascus-timeline__card:hover .damascus-timeline__card-image img {
+    transform: scale(1.12);
+    filter: saturate(1.18) contrast(1.06);
+}
+
+/* لمعة ضوئية تعبر فوق الصورة عند التأشير عليها */
+#damascus-history .damascus-timeline__card-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+        115deg,
+        transparent 20%,
+        rgba(255, 248, 225, 0.42) 48%,
+        transparent 75%
+    );
+    transform: translateX(120%);
+    transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
+#damascus-history .damascus-timeline__card:hover .damascus-timeline__card-image::before {
+    transform: translateX(-120%);
+}
+
+/* شارة اسم وحقبة العصر التي تظهر داخل الصورة عند التأشير عليها */
+#damascus-history .damascus-timeline__card-hover-info {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    z-index: 3;
+    padding: 12px 14px;
+    border-radius: 16px;
+    background: rgba(6, 48, 41, 0.78);
+    border: 1px solid rgba(216, 189, 139, 0.45);
+    color: #fff;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
+#damascus-history .damascus-timeline__card-hover-info span {
+    display: block;
+    margin-bottom: 3px;
+    color: #e5cda0;
+    font-size: 11px;
+    direction: ltr;
+}
+
+#damascus-history .damascus-timeline__card-hover-info strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#damascus-history .damascus-timeline__card:hover .damascus-timeline__card-hover-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* استجابة الموبايل للحلقة الدائرية */
+@media (max-width: 800px) {
+    #damascus-history .damascus-timeline__card.card-slot-1 {
+        transform: translate3d(calc(-50% - var(--timeline-card-width)), calc(-50% + 22px), 0) rotate(-7deg) scale(0.82) !important;
+    }
+
+    #damascus-history .damascus-timeline__card.card-slot-2,
+    #damascus-history .damascus-timeline__card.is-active {
+        transform: translate3d(-50%, calc(-50% - 16px), 0) rotate(0deg) scale(1.08) !important;
+    }
+
+    #damascus-history .damascus-timeline__card.card-slot-3 {
+        transform: translate3d(calc(-50% + var(--timeline-card-width)), calc(-50% + 22px), 0) rotate(7deg) scale(0.82) !important;
+    }
+
+    #damascus-history .damascus-timeline__card.card-slot-0,
+    #damascus-history .damascus-timeline__card.card-slot-4 {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

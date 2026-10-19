@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCalendar();
 
 
-    /*
+/*
     |--------------------------------------------------------------------------
     | 2. Damascus Through the Ages (Circular Infinite Loop & 2s Autoplay)
     |--------------------------------------------------------------------------
