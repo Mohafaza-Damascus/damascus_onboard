@@ -63,6 +63,7 @@
 .qasioun-content {
   text-align: right;
   direction: rtl;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .qasioun-badge {
