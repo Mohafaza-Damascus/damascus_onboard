@@ -1,313 +1,422 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-
-const projectsCatalog = {
-    // 1. المجمعات والأسواق التجارية
-    "business-city": {
-      overview: {
-        title: "المجمعات والأسواق التجارية",
-        desc: "مشاريع تجارية كبرى تعتمد نظام (BOT) لمدد تتراوح بين 10 إلى 40 عاماً، تهدف لتوفير مساحات تسوق حديثة ومكاتب أعمال متكاملة مع مرائب تحت الأرض لخدمة زوار العاصمة.",
-        features: [
-          { icon: "fa-store", title: "مولات متخصصة", desc: "مراكز تسوق ضخمة تضم مئات المحلات التجارية." },
-          { icon: "fa-briefcase", title: "مكاتب أعمال", desc: "مساحات مكتبية إدارية حديثة مجهزة بأفضل الخدمات." },
-          { icon: "fa-square-parking", title: "مرائب خدمية", desc: "مواقف سيارات تحت الأرض لتخديم رواد الأسواق." }
-        ]
-      },
-      featured: {
-        title: "مول عمر بيك التجاري",
-        date: "عقد BOT - 40 سنة",
-        desc: "مول تجاري متخصص ومرائب في منطقة الزاهرة الجديدة (جانب الفرن الآلي)، بمساحات تجارية استثمارية في القبو الأول تبلغ 12,000 م2.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      },
-      mini1: {
-        title: "سوق تجاري ومكاتب - المزة",
-        date: "عقد BOT - 10 سنوات",
-        desc: "سوق تجاري ومكاتب أعمال مع مرائب تحت الأرض في منطقة المزة (مقابل مشفى المواساة الخيري) بمساحة طابقية 12,735 م2.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      },
-      mini2: {
-        title: "مساحات تجارية - القبو الأول",
-        date: "عقد BOT - 40 سنة",
-        desc: "استثمار مساحات تجارية استثمارية في الأقبية الأولى للحدائق والمشاريع تصل مساحاتها لآلاف الأمتار المربعة.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      }
+  /* ==============================================================
+     قاعدة البيانات الحقيقية للمشاريع الـ 15 (من ملف مديرية المعلوماتية 2026)
+     ============================================================== */
+  const projectsCatalog = {
+    // 1. حمام الجورة
+    "hammam-aljoura": {
+      badge: "عقد BOT - 15 سنة",
+      title: "حمام الجورة التراثي",
+      desc: "مشروع تنفيذ واستثمار حمام الجورة التراثي في منطقة ساروجة بدمشق، يهدف إلى إحياء وتوظيف المعالم التراثية الدمشقية الأصيلة ضمن استثمار سياحي وخدمي مميز.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي والعقار",
+          desc: "دمشق - ساروجة | رقم العقار: 1339"
+        },
+        {
+          icon: "fa-ruler-combined",
+          title: "المساحات المعتمدة",
+          desc: "المساحة الإجمالية: 2,450 م² | مساحة البناء: 2,400 م²"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 15 سنة - محافظة دمشق"
+        }
+      ]
     },
 
-    // 2. الفنادق السياحية
-    "financial-center": {
-      overview: {
-        title: "منظومة الفنادق السياحية",
-        desc: "استثمارات سياحية استراتيجية لبناء فنادق من سوية 4 و 5 نجوم في أهم المواقع الحيوية في دمشق، لتعزيز البنية التحتية لقطاع السياحة والضيافة.",
-        features: [
-          { icon: "fa-hotel", title: "فنادق 5 نجوم", desc: "مشاريع فندقية ضخمة في مناطق دمر وساحة عرنوس." },
-          { icon: "fa-star", title: "فنادق 4 نجوم", desc: "منشآت سياحية حديثة تتوسط العاصمة لخدمة الزوار." },
-          { icon: "fa-handshake", title: "عقود استثمارية", desc: "فرص بنظام BOT تمتد إلى 40 سنة." }
-        ]
-      },
-      featured: {
-        title: "فندق وسوق تجاري - ساحة عرنوس",
-        date: "عقد BOT - 40 سنة",
-        desc: "مشروع متكامل يضم فندقاً وسوقاً تجارياً ومرائب في منطقة ساحة عرنوس (الصالحية)، بمساحة طابقية فوق الأرض 18,700 م2.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      },
-      mini1: {
-        title: "فندق 5 نجوم - دمر",
-        date: "عقد BOT - 40 سنة",
-        desc: "فندق سياحي من سوية 5 نجوم مع أنشطة تجارية وترفيهية متممة على المقاسم (1-2-3) في دمر.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      },
-      mini2: {
-        title: "فندق 4 نجوم - مدخل الفردوس",
-        date: "عقد BOT - 40 سنة",
-        desc: "فندق سياحي من سوية 4 نجوم مع أنشطة تجارية وترفيهية عند مدخل مرآب الفردوس.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      }
+    // 2. حديقة المدفع
+    "hadikat-almidfaa": {
+      badge: "عقد BOT - 40 سنة",
+      title: "حديقة المدفع وما تحتها",
+      desc: "دراسة وتنفيذ واستثمار حديقة المدفع وما تحتها من مساحات تجارية استثمارية ومرائب طابقية في منطقة أبو رمانة الراقية.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي والعقار",
+          desc: "دمشق - أبو رمانة | رقم العقار: 4465"
+        },
+        {
+          icon: "fa-layer-group",
+          title: "تفاصيل المساحات الاستثمارية",
+          desc: "القبو الأول (تجاري استثماري): 2,200 م² | باقي الأقبية (مرائب بالكامل): 13,200 م² | مساحة البناء: 2,200 م²"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 40 سنة - محافظة دمشق"
+        }
+      ]
     },
 
-    // 3. السياحة العلاجية والتراثية
-    "qasioun-journey": {
-      overview: {
-        title: "السياحة العلاجية والتراثية",
-        desc: "مشاريع تجمع بين الحداثة في الاستشفاء الطبي المتقدم، وبين عبق التراث الدمشقي الأصيل للحفاظ على الهوية الثقافية وتطوير الخدمات.",
-        features: [
-          { icon: "fa-hospital", title: "مراكز استشفاء", desc: "فنادق ومراكز طبية متطورة من سوية 5 نجوم." },
-          { icon: "fa-landmark", title: "إحياء التراث", desc: "استثمار المعالم التاريخية كالحمامات التراثية." },
-          { icon: "fa-leaf", title: "أنشطة متممة", desc: "خدمات تجارية مرافقة للمراكز الطبية والسياحية." }
-        ]
-      },
-      featured: {
-        title: "فندق استشفاء ومركز طبي",
-        date: "عقد BOT - 40 سنة",
-        desc: "فندق استشفاء ومركز طبي من سوية 5 نجوم مع أنشطة تجارية متممة في دمر (جنوب مول الاب تاون) بمساحات طابقية تتجاوز 26,000 م2.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      },
-      mini1: {
-        title: "استثمار حمام الجورة التراثي",
-        date: "عقد BOT - 15 سنة",
-        desc: "مشروع تنفيذ واستثمار حمام الجورة التراثي في منطقة ساروجة بدمشق بمساحة 2,450 م2 للحفاظ على الإرث الثقافي.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      },
-      mini2: {
-        title: "خدمات طبية وتجارية متكاملة",
-        date: "عقد BOT - 40 سنة",
-        desc: "استثمار الأقبية والمساحات تحت المراكز الطبية لتوفير مرائب تتسع لمئات السيارات وخدمات تجارية داعمة.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      }
+    // 3. حديقة البرامكة
+    "hadikat-albaramkeh": {
+      badge: "عقد BOT - 40 سنة",
+      title: "حديقة البرامكة والسوق التخصصي",
+      desc: "دراسة وتنفيذ واستثمار حديقة البرامكة مع إنشاء سوق تجاري متخصص تحت الحديقة ومرائب واسعة لخدمة المنطقة الحيوية.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي والعقار",
+          desc: "دمشق - الفحامة - البرامكة | رقم العقار: 2285"
+        },
+        {
+          icon: "fa-layer-group",
+          title: "تفاصيل المساحات الاستثمارية",
+          desc: "القبو الأول (تجاري استثماري): 6,470 م² | باقي الأقبية (مرائب بالكامل): 19,410 م² | مساحة البناء: 5,300 م²"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 40 سنة - محافظة دمشق"
+        }
+      ]
     },
 
-    // 4. الحدائق والمساحات التحت أرضية
-    "clean-energy": {
-      overview: {
-        title: "الحدائق والأسواق التحت أرضية",
-        desc: "رؤية بيئية واستثمارية حديثة تعتمد على إبقاء المساحات الخضراء فوق الأرض، واستثمار الأعماق لإنشاء أسواق ومرائب متطورة.",
-        features: [
-          { icon: "fa-tree", title: "حدائق عامة", desc: "تطوير مساحات خضراء صديقة للبيئة للمواطنين." },
-          { icon: "fa-arrow-down", title: "أسواق تحت الأرض", desc: "أسواق تجارية متخصصة تحت الحدائق مباشرة." },
-          { icon: "fa-car", title: "مرائب طابقية", desc: "مواقف سيارات واسعة لحل أزمة الازدحام المحيطة." }
-        ]
-      },
-      featured: {
-        title: "حديقة البرامكة والسوق التجاري",
-        date: "عقد BOT - 40 سنة",
-        desc: "دراسة وتنفيذ واستثمار حديقة البرامكة وسوق تجاري متخصص تحتها مع مرائب تتجاوز مساحتها 19,000 م2.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      },
-      mini1: {
-        title: "حديقة المدفع - أبو رمانة",
-        date: "عقد BOT - 40 سنة",
-        desc: "دراسة وتنفيذ واستثمار حديقة المدفع وما تحتها من مرائب ومساحات تجارية تخدم أرقى مناطق العاصمة.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      },
-      mini2: {
-        title: "استثمارات الأقبية المتعددة",
-        date: "عقد BOT - 40 سنة",
-        desc: "استغلال المراتب والأقبية تحت الحدائق بمساحات تتجاوز 13,000 م2 لتوفير أقصى قدرة استيعابية للسيارات.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      }
+    // 4. العقارين / 2156-2157 / مدخل الفردوس
+    "hotel-fardous": {
+      badge: "عقد BOT - 40 سنة",
+      title: "فندق سياحي 4 نجوم - مدخل الفردوس",
+      desc: "مشروع إقامة واستثمار فندق سياحي من سوية 4 نجوم مع أنشطة تجارية وترفيهية متممة ومرائب على العقارين (2156-2157) في قلب العاصمة.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي والعقارات",
+          desc: "دمشق - مدخل مرآب الفردوس | العقار 2156 (585 م²) والعقار 2157 (357 م²)"
+        },
+        {
+          icon: "fa-building",
+          title: "المساحات الطابقية والتجارية",
+          desc: "طابقية فوق الأرض: 11,500 م² | القبو الأول (تجاري): 1,215 م² | باقي الأقبية (مرائب): 3,645 م²"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 40 سنة - محافظة دمشق"
+        }
+      ]
     },
 
-    // 5. المرائب الروبوتية الذكية
-    "transit-network": {
-      overview: {
-        title: "المرائب الروبوتية الذكية",
-        desc: "حلول مرورية وتكنولوجية متقدمة لإنشاء مرائب تعتمد على الذكاء الاصطناعي والروبوتات لحل مشاكل الازدحام في مركز المدينة.",
-        features: [
-          { icon: "fa-robot", title: "أنظمة روبوتية", desc: "اصطفاف آلي للسيارات لزيادة القدرة الاستيعابية." },
-          { icon: "fa-location-dot", title: "مواقع مركزية", desc: "تتوزع في البرامكة، باب توما، وشارع الثورة." },
-          { icon: "fa-clock", title: "عقود تشغيل", desc: "عقود استثمار وتطوير لمدة 15 عاماً." }
-        ]
-      },
-      featured: {
-        title: "مرآب الجهاد الروبوتي - البرامكة",
-        date: "عقد BOT - 15 سنة",
-        desc: "إنشاء مرآب روبوتي ذكي يتسع لـ 200 موقف لخدمة منطقة البرامكة ذات الكثافة المرورية العالية.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      },
-      mini1: {
-        title: "مرآب الصوفانية - باب توما",
-        date: "عقد BOT - 15 سنة",
-        desc: "مرآب روبوتي ذكي يتسع لـ 200 موقف في باب توما لتسهيل حركة السياح والزوار في دمشق القديمة.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      },
-      mini2: {
-        title: "مرائب شارع الثورة والبحصة",
-        date: "عقد BOT - 15 سنة",
-        desc: "مرائب روبوتية وطابقية تحت الأرض خلف المصالح العقارية وفندق كريستال (البحصة) لخدمة مركز الأعمال.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      }
+    // 5. فندق على المقاسم / 1-2-3 / دمر
+    "hotel-dummar": {
+      badge: "عقد BOT - 40 سنة",
+      title: "فندق سياحي 5 نجوم - المقاسم (1-2-3) دمر",
+      desc: "مشروع فندق سياحي فاخر من سوية 5 نجوم مع أنشطة تجارية وترفيهية متممة ومرائب متكاملة في منطقة مشروع دمر.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي والعقارات",
+          desc: "دمشق - مشروع دمر | أرقام العقارات: B1 - B2 - B3"
+        },
+        {
+          icon: "fa-hotel",
+          title: "المساحات الطابقية والتجارية",
+          desc: "طابقية فوق الأرض: 24,000 م² | القبو الأول (تجاري): 3,000 م² | باقي الأقبية (مرائب): 9,000 م² | مساحة البناء: 1,600 م²"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 40 سنة - محافظة دمشق"
+        }
+      ]
     },
 
-    // 6. الشقق الفندقية
-    "tourist-resort": {
-      overview: {
-        title: "مشروع الشقق الفندقية",
-        desc: "مشاريع مخصصة لإنشاء شقق فندقية راقية تلبي احتياجات الإقامة الفاخرة والطويلة لرجال الأعمال والسياح في دمشق.",
-        features: [
-          { icon: "fa-building", title: "شقق فندقية", desc: "وحدات سكنية بخدمات فندقية كاملة." },
-          { icon: "fa-city", title: "إطلالات مميزة", desc: "مواقع استراتيجية في مشروع دمر الحديث." },
-          { icon: "fa-key", title: "إقامة متكاملة", desc: "خصوصية الشقق مع رفاهية الفنادق المعتمدة." }
-        ]
-      },
-      featured: {
-        title: "مشروع شقق فندقية - دمر",
-        date: "عقد BOT - 40 سنة",
-        desc: "مشروع ضخم لإنشاء شقق فندقية على العقارين (55-56) في دمر الشرقية (جزيرة 14)، لتقديم أرقى خدمات الضيافة.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      },
-      mini1: {
-        title: "مساحات بناء استثمارية",
-        date: "عقد BOT - 40 سنة",
-        desc: "توفير مساحات بناء ضخمة تصل إلى 116,755 م2 و 198,556 م2 لتطوير مجمعات إقامة فندقية شاملة.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      },
-      mini2: {
-        title: "مرافق وخدمات داعمة",
-        date: "عقد BOT - 40 سنة",
-        desc: "تزويد الشقق الفندقية بمرائب متطورة، أندية رياضية، ومراكز تسوق لتأمين راحة المقيمين.",
-        image: "ضع_مسار_الصورة_هنا.jpg",
-        link: "#"
-      }
+    // 6. فندق استشفاء ومركز طبي المقسمين / 63-64 / دمر
+    "medical-hotel-dummar": {
+      badge: "عقد BOT - 40 سنة",
+      title: "فندق استشفاء ومركز طبي 5 نجوم - دمر",
+      desc: "فندق استشفاء ومركز طبي متطور من سوية 5 نجوم مع أنشطة تجارية متممة على المقسمين (63-64) في دمر لتعزيز قطاع السياحة العلاجية.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي والعقارات",
+          desc: "دمشق - دمر (جنوب مول الاب تاون) | العقارات: 982 - 985 - 986"
+        },
+        {
+          icon: "fa-hospital",
+          title: "مساحات المقسمين (63 و 64)",
+          desc: "المقسم 63: طابقية 6,376 م²، تجاري 1,566 م²، مرائب 4,698 م² | المقسم 64: طابقية 6,320 م²، تجاري 1,255 م²، مرائب 3,765 م²"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 40 سنة - محافظة دمشق"
+        }
+      ]
+    },
+
+    // 7. سوق تجاري ومكاتب المقسم / 106 / المزة
+    "souk-mazzeh-106": {
+      badge: "عقد BOT - 10 سنوات",
+      title: "سوق تجاري ومكاتب - المقسم (106) المزة",
+      desc: "مشروع سوق تجاري عصري ومكاتب أعمال إدارية مع مرائب تحت الأرض في موقع حيوي واستراتيجي بمنطقة المزة.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي والعقار",
+          desc: "دمشق - المزة (مقابل مشفى المواساة الخيري) | رقم العقار: 5576"
+        },
+        {
+          icon: "fa-briefcase",
+          title: "المساحات الطابقية والتجارية",
+          desc: "طابقية فوق الأرض: 12,735 م² | القبو الأول (تجاري): 933 م² | باقي الأقبية (مرائب): 1,866 م² | مساحة البناء: 383 م²"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 10 سنوات - محافظة دمشق"
+        }
+      ]
+    },
+
+    // 8. فندق وسوق تجاري ومرائب المقسم / 14 / ساحة عرنوس
+    "hotel-arnous-14": {
+      badge: "عقد BOT - 40 سنة",
+      title: "فندق وسوق تجاري ومرائب - ساحة عرنوس",
+      desc: "مشروع استثماري متكامل يضم فندقاً وسوقاً تجارياً ومرائب للسيارات على المقسم (14) في منطقة الصالحية - ساحة عرنوس الحيوية.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي",
+          desc: "دمشق - الصالحية - ساحة عرنوس (المقسم 14 - مقترح)"
+        },
+        {
+          icon: "fa-building-columns",
+          title: "المساحات الطابقية والتجارية",
+          desc: "طابقية فوق الأرض: 18,700 م² | القبو الأول (تجاري): 2,825 م² | باقي الأقبية (مرائب بالكامل): 8,473 م²"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 40 سنة - محافظة دمشق"
+        }
+      ]
+    },
+
+    // 9. مول عمر بيك
+    "omar-bek-mall": {
+      badge: "عقد BOT - 40 سنة",
+      title: "مول عمر بيك التجاري",
+      desc: "مول تجاري متخصص ومرائب ومخازن بمساحات ضخمة في منطقة الزاهرة الجديدة لتخديم الحركة التسويقية والتجارية في جنوب العاصمة.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي",
+          desc: "دمشق - الزاهرة الجديدة (جانب الفرن الآلي)"
+        },
+        {
+          icon: "fa-store",
+          title: "توزيع المساحات الطابقية والأقبية",
+          desc: "مساحة البناء: 12,000 م² | القبو الأول (تجاري): 12,000 م² | القبو الثاني والثالث (مرائب): 24,000 م² | القبو الرابع (مخازن): 12,000 م²"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 40 سنة - محافظة دمشق"
+        }
+      ]
+    },
+
+    // 10. العقارين / 55-56 / دمر الشرقية
+    "hotel-apartments-dummar": {
+      badge: "عقد BOT - 40 سنة",
+      title: "مشروع شقق فندقية - دمر الشرقية",
+      desc: "مشروع عمراني وسياحي ضخم لإنشاء واستثمار شقق فندقية متكاملة الخدمات على العقارين (55-56) في مشروع دمر.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي",
+          desc: "دمشق - مشروع دمر (جزيرة 14) - العقارين 55 و 56 دمر الشرقية"
+        },
+        {
+          icon: "fa-city",
+          title: "المساحات المعتمدة",
+          desc: "المساحة الإجمالية للمشروع: 16,000 م² | مساحات العقارات: 116,755 م² و 198,556 م²"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 40 سنة - محافظة دمشق"
+        }
+      ]
+    },
+
+    // 11. مرآب الجهاد
+    "garage-aljihaad": {
+      badge: "عقد BOT - 15 سنة",
+      title: "مرآب الجهاد الروبوتي الذكي",
+      desc: "مشروع إنشاء واستثمار مرآب روبوتي ذكي متعدد الطوابق يعمل بالأنظمة الآلية الحديثة لتأمين مواقف السيارات في منطقة البرامكة.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي والعقار",
+          desc: "دمشق - البرامكة | رقم العقار: 781"
+        },
+        {
+          icon: "fa-robot",
+          title: "الطاقة الاستيعابية والتقنية",
+          desc: "نظام اصطفاف روبوتي ذكي بسعة إجمالية تبلغ (200) موقف سيارة"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 15 سنة - محافظة دمشق"
+        }
+      ]
+    },
+
+    // 12. مرآب الصوفانية
+    "garage-alsoufaniya": {
+      badge: "عقد BOT - 15 سنة",
+      title: "مرآب الصوفانية الروبوتي الذكي",
+      desc: "مشروع إنشاء واستثمار مرآب روبوتي ذكي في منطقة باب توما لتخديم الزوار والسياح وتخفيف الازدحام المروري في محيط دمشق القديمة.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي والعقارات",
+          desc: "دمشق - باب توما | أرقام العقارات: 943 - 944"
+        },
+        {
+          icon: "fa-robot",
+          title: "الطاقة الاستيعابية والتقنية",
+          desc: "نظام اصطفاف روبوتي ذكي بسعة إجمالية تبلغ (200) موقف سيارة"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 15 سنة - محافظة دمشق"
+        }
+      ]
+    },
+
+    // 13. مرآب المقسم / 10 / شارع الثورة
+    "garage-thawra-10": {
+      badge: "عقد BOT - 15 سنة",
+      title: "مرآب المقسم (10) الروبوتي - شارع الثورة",
+      desc: "مشروع مرآب روبوتي ذكي في قلب المركز التجاري والإداري للعاصمة بشارع الثورة لتأمين حلول اصطفاف عصرية وسريعة.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي",
+          desc: "دمشق - شارع الثورة (جنوب المصالح العقارية) - المقسم 10"
+        },
+        {
+          icon: "fa-robot",
+          title: "طبيعة المشروع",
+          desc: "مرآب روبوتي ذكي يعتمد الأنظمة الآلية الحديثة لتخديم مركز المدينة"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 15 سنة - محافظة دمشق"
+        }
+      ]
+    },
+
+    // 14. مرآب المقسم / 12 / شارع الثورة
+    "garage-thawra-12": {
+      badge: "عقد BOT - 15 سنة",
+      title: "مرآب المقسم (12) الروبوتي - شارع الثورة",
+      desc: "مشروع مرآب روبوتي ذكي شمال مبنى المصالح العقارية في شارع الثورة لرفد المنطقة التجارية والإدارية بمواقف سيارات حديثة.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي",
+          desc: "دمشق - شارع الثورة (شمال المصالح العقارية) - المقسم 12"
+        },
+        {
+          icon: "fa-robot",
+          title: "طبيعة المشروع",
+          desc: "مرآب روبوتي ذكي متطور يدعم البنية التحتية المرورية في وسط دمشق"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 15 سنة - محافظة دمشق"
+        }
+      ]
+    },
+
+    // 15. مرآب البحصة
+    "garage-bahsa": {
+      badge: "عقد BOT - 15 سنة",
+      title: "مرآب البحصة الطابقي تحت الأرض",
+      desc: "مشروع إنشاء واستثمار مرآب طابقي تحت الأرض في منطقة البحصة الحيوية لتخديم الفنادق والأسواق التجارية المجاورة.",
+      features: [
+        {
+          icon: "fa-location-dot",
+          title: "الموقع التفصيلي",
+          desc: "دمشق - البحصة (خلف فندق كريستال)"
+        },
+        {
+          icon: "fa-square-parking",
+          title: "المساحة المعتمدة",
+          desc: "مرآب طابقي تحت الأرض بمساحة إجمالية تبلغ 1,200 م²"
+        },
+        {
+          icon: "fa-file-contract",
+          title: "نظام التعاقد والجهة المالكة",
+          desc: "عقد استثمار (BOT) لمدة 15 سنة - محافظة دمشق"
+        }
+      ]
     }
   };
+
   /* ==============================================================
-     دالة تعبئة السكشن الثاني ببيانات المشروع والنزول إليه
+     دالة تحديث الوصف الجانبي ليتطابق مع الكرت الموجود في المنتصف
      ============================================================== */
-  function showProjectInSecondSection(projectId) {
-    const projectData = projectsCatalog[projectId];
-    const showcaseGrid = document.querySelector(".showcase-grid");
-    const targetSection = document.getElementById("project-business-city") || document.querySelector(".projects-showcase-section");
+  let fadeTimeout = null;
+  let lastRenderedProjectId = null;
 
-    if (!projectData || !showcaseGrid) return;
+  function updateMainContent(projectId) {
+    const data = projectsCatalog[projectId];
+    if (!data || projectId === lastRenderedProjectId) return;
+    lastRenderedProjectId = projectId;
 
-  
-    showcaseGrid.style.opacity = "0.2";
-    showcaseGrid.style.transition = "opacity 0.25s ease";
+    const contentDiv = document.getElementById("dynamic-project-content") || document.querySelector(".qasioun-content");
+    if (!contentDiv) return;
 
-    setTimeout(() => {
-    
-      const featuredCard = showcaseGrid.querySelector(".featured-card, .featured-slot .showcase-item");
-      if (featuredCard) {
-        featuredCard.querySelector(".featured-thumb img, .card-thumb img").src = projectData.featured.image;
-        featuredCard.querySelector(".card-meta-date").innerHTML = `<i class="fa-regular fa-calendar"></i> ${projectData.featured.date}`;
-        featuredCard.querySelector(".featured-title, .card-title").textContent = projectData.featured.title;
-        featuredCard.querySelector(".featured-desc, .card-desc").textContent = projectData.featured.desc;
-        const btn = featuredCard.querySelector(".btn-card-action");
-        if (btn) btn.href = projectData.featured.link;
+    const badgeEl = contentDiv.querySelector(".qasioun-badge");
+    const titleEl = contentDiv.querySelector(".qasioun-title");
+    const descEl = contentDiv.querySelector(".qasioun-desc");
+    const featuresList = contentDiv.querySelector(".qasioun-features");
+
+    if (fadeTimeout) {
+      clearTimeout(fadeTimeout);
+    }
+
+    contentDiv.style.opacity = "0";
+
+    fadeTimeout = setTimeout(() => {
+      if (badgeEl && data.badge) badgeEl.textContent = data.badge;
+      if (titleEl) titleEl.textContent = data.title;
+      if (descEl) descEl.textContent = data.desc;
+
+      if (featuresList && Array.isArray(data.features)) {
+        featuresList.innerHTML = data.features
+          .map(
+            (item) => `
+            <li>
+              <i class="fa-solid ${item.icon}"></i>
+              <div>
+                <strong>${item.title}:</strong>
+                <span>${item.desc}</span>
+              </div>
+            </li>
+          `
+          )
+          .join("");
       }
 
-     
-      const miniCards = showcaseGrid.querySelectorAll(".showcase-mini-card, .side-cards-col .showcase-item");
-      if (miniCards.length >= 2) {
-      
-        miniCards[0].querySelector(".mini-card-thumb img, .card-thumb img").src = projectData.mini1.image;
-        miniCards[0].querySelector(".card-meta-date").innerHTML = `<i class="fa-regular fa-calendar"></i> ${projectData.mini1.date}`;
-        miniCards[0].querySelector(".mini-card-title, .card-title").textContent = projectData.mini1.title;
-        miniCards[0].querySelector(".mini-card-desc, .card-desc").textContent = projectData.mini1.desc;
-        const btn1 = miniCards[0].querySelector(".btn-card-action");
-        if (btn1) btn1.href = projectData.mini1.link;
-
-       
-        miniCards[1].querySelector(".mini-card-thumb img, .card-thumb img").src = projectData.mini2.image;
-        miniCards[1].querySelector(".card-meta-date").innerHTML = `<i class="fa-regular fa-calendar"></i> ${projectData.mini2.date}`;
-        miniCards[1].querySelector(".mini-card-title, .card-title").textContent = projectData.mini2.title;
-        miniCards[1].querySelector(".mini-card-desc, .card-desc").textContent = projectData.mini2.desc;
-        const btn2 = miniCards[1].querySelector(".btn-card-action");
-        if (btn2) btn2.href = projectData.mini2.link;
-      }
-
-      showcaseGrid.style.opacity = "1";
-
-   
-      if (targetSection) {
-        targetSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
-    }, 200);
+      contentDiv.style.opacity = "1";
+    }, 220);
   }
 
   /* ==============================================================
-     1. سلايدر السكشن الأول وربط الضغط على الصور
+     إدارة السلايدر وربط الكرت الفعّال (Active) بالوصف الجانبي
      ============================================================== */
-
-/* ==============================================================
-   دالة لتحديث النص الجانبي بناءً على المشروع المعروض في السلايدر
-   ============================================================== */
-function updateMainContent(projectId) {
-  const data = projectsCatalog[projectId]?.overview;
-  if (!data) return;
-
-  const contentDiv = document.querySelector('.qasioun-content');
-  const titleEl = contentDiv.querySelector('.qasioun-title');
-  const descEl = contentDiv.querySelector('.qasioun-desc');
-  const featuresList = contentDiv.querySelector('.qasioun-features');
-
-  // إخفاء النص لعمل تأثير التبديل
-  contentDiv.style.opacity = '0';
-
-  setTimeout(() => {
-    // تحديث العنوان والوصف
-    titleEl.textContent = data.title;
-    descEl.textContent = data.desc;
-
-    // بناء وتحديث قائمة الميزات
-    let featuresHTML = '';
-    data.features.forEach(item => {
-      featuresHTML += `
-        <li>
-          <i class="fa-solid ${item.icon}"></i>
-          <div>
-            <strong>${item.title}:</strong>
-            <span>${item.desc}</span>
-          </div>
-        </li>
-      `;
-    });
-    featuresList.innerHTML = featuresHTML;
-
-    // إظهار النص من جديد
-    contentDiv.style.opacity = '1';
-  }, 300); // 300ms تتوافق مع الـ transition في الـ CSS
-}
-
   const carousels = document.querySelectorAll(".journey-carousel");
 
   carousels.forEach((carousel) => {
@@ -326,7 +435,7 @@ function updateMainContent(projectId) {
 
     let currentIndex = 0;
     let autoPlay = null;
-    const AUTO_PLAY_DELAY = 3500;
+    const AUTO_PLAY_DELAY = 4000;
     let isHovered = false;
     let dots = [];
 
@@ -336,7 +445,7 @@ function updateMainContent(projectId) {
         const dot = document.createElement("button");
         dot.type = "button";
         dot.className = "journey-dot";
-        dot.setAttribute("aria-label", `الصورة ${index + 1}`);
+        dot.setAttribute("aria-label", `المشروع ${index + 1}`);
 
         dot.addEventListener("click", () => {
           currentIndex = index;
@@ -377,13 +486,24 @@ function updateMainContent(projectId) {
         const isActive = index === currentIndex;
         dot.classList.toggle("active", isActive);
         dot.setAttribute("aria-current", String(isActive));
-
-        const activeProjectId = cards[currentIndex].getAttribute("data-project-id");
-      if(activeProjectId) {
-         updateMainContent(activeProjectId);
-      }
       });
+
+      // تحديث الوصف الجانبي مرة واحدة فقط للمشروع الموجود في المنتصف (active)
+      const activeProjectId = cards[currentIndex].getAttribute("data-project-id");
+      if (activeProjectId) {
+        updateMainContent(activeProjectId);
+      }
     }
+
+    // مراقب إضافي في حال قام global.js بتغيير الكرت الفعّال
+    const observer = new MutationObserver(() => {
+      const activeCard = slider.querySelector(".journey-card.active");
+      if (activeCard) {
+        const activeId = activeCard.getAttribute("data-project-id");
+        if (activeId) updateMainContent(activeId);
+      }
+    });
+    observer.observe(slider, { attributes: true, subtree: true, attributeFilter: ["class"] });
 
     function goToPrevious() {
       currentIndex = getIndex(-1);
@@ -425,18 +545,13 @@ function updateMainContent(projectId) {
         restartAutoPlay();
       });
     }
+
     cards.forEach((card, index) => {
       card.addEventListener("click", () => {
-        const projectId = card.getAttribute("data-project-id");
-        
-        if (index === currentIndex) {
-          if (projectId) showProjectInSecondSection(projectId);
-        } else {
-      
+        if (index !== currentIndex) {
           currentIndex = index;
           updateCarousel();
           restartAutoPlay();
-          if (projectId) showProjectInSecondSection(projectId);
         }
       });
     });
@@ -454,97 +569,4 @@ function updateMainContent(projectId) {
     updateCarousel();
     startAutoPlay();
   });
-
-
-  /* ==============================================================
-     2. تدوير الكروت والأسهم السفلية داخل السكشن الثاني (3 / 1)
-     ============================================================== */
-  const featuredSlot = document.getElementById("featuredSlot");
-  const miniSlots = document.getElementById("miniSlots");
-  const showcaseCounter = document.getElementById("showcaseCounter");
-  const showcasePrevBtn = document.querySelector(".showcase-prev-btn");
-  const showcaseNextBtn = document.querySelector(".showcase-next-btn");
-  const showcaseGrid = document.querySelector(".showcase-grid");
-
-  if (featuredSlot && miniSlots) {
-    let showcaseCards = [
-      featuredSlot.querySelector(".showcase-item"),
-      ...miniSlots.querySelectorAll(".showcase-item")
-    ].filter(Boolean);
-
-    const totalCards = 3;
-
-    function updateSlots() {
-      if (showcaseGrid) showcaseGrid.style.opacity = "0.3";
-
-      setTimeout(() => {
-        featuredSlot.innerHTML = "";
-        miniSlots.innerHTML = "";
-
-        featuredSlot.appendChild(showcaseCards[0]);
-        if (showcaseCards[1]) miniSlots.appendChild(showcaseCards[1]);
-        if (showcaseCards[2]) miniSlots.appendChild(showcaseCards[2]);
-
-        const currentActiveIndex = showcaseCards[0].getAttribute("data-index") || "1";
-        if (showcaseCounter) {
-          showcaseCounter.textContent = `${currentActiveIndex} / ${totalCards}`;
-        }
-
-        if (showcaseGrid) showcaseGrid.style.opacity = "1";
-      }, 150);
-    }
-
-    if (showcaseNextBtn) {
-      showcaseNextBtn.addEventListener("click", () => {
-        const first = showcaseCards.shift();
-        showcaseCards.push(first);
-        updateSlots();
-      });
-    }
-
-    if (showcasePrevBtn) {
-      showcasePrevBtn.addEventListener("click", () => {
-        const last = showcaseCards.pop();
-        showcaseCards.unshift(last);
-        updateSlots();
-      });
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-
-  
-  const flipCards = document.querySelectorAll(".flip-card");
-
-  flipCards.forEach((card) => {
-    card.addEventListener("click", (event) => {
-      if (event.target.closest(".btn-card-details")) return;
-
-      if (window.innerWidth <= 1024) {
-        flipCards.forEach((otherCard) => {
-          if (otherCard !== card) {
-            otherCard.classList.remove("is-flipped");
-          }
-        });
-        card.classList.toggle("is-flipped");
-      }
-    });
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 1024) {
-      flipCards.forEach((card) => {
-        card.classList.remove("is-flipped");
-      });
-    }
-  });
-
 });
