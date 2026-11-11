@@ -1,10 +1,4 @@
 (function () {
-  // const inPages =
-  //   location.pathname.includes("/pages/") ||
-  //   document.currentScript?.src?.includes("/pages/");
-
-  // const base = inPages ? "../" : "";
-  // const pagesPrefix = inPages ? "" : "pages/";
   const cssLink = document.querySelector('link[href*="global.css"]');
   const base = cssLink
     ? cssLink.getAttribute("href").replace("css/global.css", "")
@@ -28,7 +22,7 @@
           { label: "النموذج الثاني", href: `${pagesPrefix}news-model-2.html` },
           { label: "النموذج الخامس", href: `${pagesPrefix}news-model-5.html` },
           { label: "نموذج figma ", href: `${pagesPrefix}news-model-6.html` },
-          {label: "إدارة الأخبار",href: `${pagesPrefix}news-dashboard.html`,},
+          { label: "إدارة الأخبار", href: `${pagesPrefix}news-dashboard.html` },
         ],
       },
       {
@@ -36,11 +30,26 @@
         href: `${pagesPrefix}Cultural.html`,
         subItems: [
           { label: "النموذج القديم", href: `${pagesPrefix}Cultural.html` },
-          { label: "النموذج الأول", href: `${pagesPrefix}Cultural-model-1.html` },
-          { label: "النموذج الثاني", href: `${pagesPrefix}Cultural-model-2.html` },
-          { label: "النموذج الثالث", href: `${pagesPrefix}Cultural-model-3.html` },
-          { label: "النموذج الرابع ", href: `${pagesPrefix}Cultural-model-4.html` },
-          { label: "النموذج الخامس ", href: `${pagesPrefix}Cultural-model-5.html` },
+          {
+            label: "النموذج الأول",
+            href: `${pagesPrefix}Cultural-model-1.html`,
+          },
+          {
+            label: "النموذج الثاني",
+            href: `${pagesPrefix}Cultural-model-2.html`,
+          },
+          {
+            label: "النموذج الثالث",
+            href: `${pagesPrefix}Cultural-model-3.html`,
+          },
+          {
+            label: "النموذج الرابع ",
+            href: `${pagesPrefix}Cultural-model-4.html`,
+          },
+          {
+            label: "النموذج الخامس ",
+            href: `${pagesPrefix}Cultural-model-5.html`,
+          },
         ],
       },
       { label: "خدمات", href: `${pagesPrefix}services.html` },
@@ -52,8 +61,8 @@
     const navLinks = navItems
       .map((item) => {
         const isActive =
-  item.label === activePage ||
-  item.subItems?.some((subItem) => subItem.label === activePage);
+          item.label === activePage ||
+          item.subItems?.some((subItem) => subItem.label === activePage);
 
         if (!item.subItems) {
           return `<li><a class="nav__link${isActive ? " is-active" : ""}" href="${item.href}">${item.label}</a></li>`;
@@ -84,129 +93,48 @@
           </li>`;
       })
       .join("");
-          el.outerHTML = `
-<header class="header">
-  <div class="container">
-    <div class="header__row">
-      <a href="${base}index.html" class="logo" aria-label="محافظة دمشق">
-        <img src="${base}images/logo.png" alt="شعار محافظة دمشق" />
-      </a>
-      <div class="header__bar">
-        <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-        <nav class="nav" id="nav">
-          <ul class="nav__list">${navLinks}</ul>
-          <div class="nav__actions">
-            <a href="#" class="btn-login" id="openAuth">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
-              </svg>
-              <span>تسجيل الدخول</span>
+    el.outerHTML = `
+      <header class="header">
+        <div class="container">
+          <div class="header__row">
+            <a href="${base}index.html" class="logo" aria-label="محافظة دمشق">
+              <img src="${base}images/logo.png" alt="شعار محافظة دمشق" />
             </a>
+            <div class="header__bar">
+              <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
+                <span></span><span></span><span></span>
+              </button>
+              <nav class="nav" id="nav">
+                <ul class="nav__list">${navLinks}</ul>
+                <div class="nav__actions">
+                  <a href="#" class="btn-login" id="openAuth">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+                    </svg>
+                    <span>تسجيل الدخول</span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+            <div class="header__side">
+              <a href="${pagesPrefix}contact.html" class="btn-contact" aria-label="تواصل معنا">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.04z"/>
+                </svg>
+              </a>
+              <button class="btn-lang" id="langBtn" aria-label="تغيير اللغة">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <ellipse cx="12" cy="12" rx="4" ry="10"/>
+                  <path d="M2 12h20"/>
+                  <path d="M4.5 7h15"/>
+                  <path d="M4.5 17h15"/>
+                </svg>
+              </button>
+            </div>
           </div>
-        </nav>
-      </div>
-      <div class="header__side">
-        <a href="${pagesPrefix}contact.html" class="btn-contact" aria-label="تواصل معنا">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.04z"/>
-          </svg>
-        </a>
-        <button class="btn-lang" id="langBtn" aria-label="تغيير اللغة">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <ellipse cx="12" cy="12" rx="4" ry="10"/>
-            <path d="M2 12h20"/>
-            <path d="M4.5 7h15"/>
-            <path d="M4.5 17h15"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</header>`;
-//     el.outerHTML = `
-// <header class="header">
-//   <div class="container">
-//     <div class="header__row">
-//       <div class="header__bar">
-//         <a href="${base}index.html" class="logo" aria-label="محافظة دمشق">
-//           <img src="${base}images/logo.png" alt="شعار محافظة دمشق" />
-//         </a>
-//         <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
-//           <span></span><span></span><span></span>
-//         </button>
-//         <nav class="nav" id="nav">
-//           <ul class="nav__list">${navLinks}</ul>
-//           <div class="nav__actions">
-//             <a href="#" class="btn-login" id="openAuth">
-//               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-//                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
-//               </svg>
-//               <span>تسجيل الدخول</span>
-//             </a>
-//             <a href="${pagesPrefix}contact.html" class="btn-contact" aria-label="تواصل معنا">
-//               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-//                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.04z"/>
-//               </svg>
-//             </a>
-//             <button class="btn-lang" id="langBtn" aria-label="تغيير اللغة">
-//               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-//                 <circle cx="12" cy="12" r="10"/>
-//                 <ellipse cx="12" cy="12" rx="4" ry="10"/>
-//                 <path d="M2 12h20"/>
-//                 <path d="M4.5 7h15"/>
-//                 <path d="M4.5 17h15"/>
-//               </svg>
-//             </button>
-//           </div>
-//         </nav>
-//       </div>
-//     </div>
-//   </div>
-// </header>`;
-
-
-    // el.outerHTML = `
-    // <header class="header">
-    //   <div class="container">
-    //     <div class="topbar"><span class="topbar__date" id="today"></span></div>
-    //     <div class="header__bar">
-    //       <a href="${base}index.html" class="logo" aria-label="محافظة دمشق">
-    //         <img src="${base}images/logo.png" alt="شعار محافظة دمشق" />
-    //       </a>
-    //       <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
-    //         <span></span><span></span><span></span>
-    //       </button>
-    //       <nav class="nav" id="nav">
-    //         <ul class="nav__list">${navLinks}</ul>
-    //         <div class="nav__actions">
-    //           <a href="#" class="btn-login" id="openAuth">
-    //             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    //               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
-    //             </svg>
-    //             <span>تسجيل الدخول</span>
-    //           </a>
-    //           <a href="${pagesPrefix}contact.html" class="btn-contact" aria-label="تواصل معنا">
-    //             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    //               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.04z"/>
-    //             </svg>
-    //           </a>
-    //           <button class="btn-lang" id="langBtn" aria-label="تغيير اللغة">
-    //             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    //               <circle cx="12" cy="12" r="10"/>
-    //               <ellipse cx="12" cy="12" rx="4" ry="10"/>
-    //               <path d="M2 12h20"/>
-    //               <path d="M4.5 7h15"/>
-    //               <path d="M4.5 17h15"/>
-    //             </svg>
-    //           </button>
-    //         </div>
-    //       </nav>
-    //     </div>
-    //   </div>
-    // </header>`;
+        </div>
+      </header>`;
   }
 
   function renderFooter() {
@@ -356,7 +284,6 @@
         <div class="auth-modal__divider"><span>أو</span></div>
         <p class="auth-modal__switch">لديك حساب؟ <a href="#" id="goLogin2">تسجيل الدخول</a></p>
       </div>
-
     </div>`;
 
     document.body.appendChild(wrapper.firstElementChild);
@@ -396,104 +323,101 @@
 
   const menuItems = document.querySelectorAll(".nav__item--has-menu");
 
-menuItems.forEach((menuItem) => {
-  const menuTrigger = menuItem.querySelector("[data-menu-trigger]");
-  const submenu = menuItem.querySelector(".nav__submenu");
+  menuItems.forEach((menuItem) => {
+    const menuTrigger = menuItem.querySelector("[data-menu-trigger]");
+    const submenu = menuItem.querySelector(".nav__submenu");
 
-  if (!menuTrigger || !submenu) {
-    return;
-  }
+    if (!menuTrigger || !submenu) {
+      return;
+    }
 
-  let closeTimer = null;
+    let closeTimer = null;
 
-  const openMenu = () => {
-    clearTimeout(closeTimer);
+    const openMenu = () => {
+      clearTimeout(closeTimer);
 
-    menuItems.forEach((otherMenu) => {
-      if (otherMenu !== menuItem) {
-        otherMenu.classList.remove("is-open");
+      menuItems.forEach((otherMenu) => {
+        if (otherMenu !== menuItem) {
+          otherMenu.classList.remove("is-open");
 
-        const otherTrigger =
-          otherMenu.querySelector("[data-menu-trigger]");
+          const otherTrigger = otherMenu.querySelector("[data-menu-trigger]");
 
-        if (otherTrigger) {
-          otherTrigger.setAttribute("aria-expanded", "false");
+          if (otherTrigger) {
+            otherTrigger.setAttribute("aria-expanded", "false");
+          }
         }
+      });
+
+      menuItem.classList.add("is-open");
+      menuTrigger.setAttribute("aria-expanded", "true");
+    };
+
+    const closeMenu = () => {
+      clearTimeout(closeTimer);
+
+      closeTimer = setTimeout(() => {
+        menuItem.classList.remove("is-open");
+        menuTrigger.setAttribute("aria-expanded", "false");
+      }, 500);
+    };
+
+    menuItem.addEventListener("mouseenter", openMenu);
+    menuItem.addEventListener("mouseleave", closeMenu);
+
+    menuTrigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      clearTimeout(closeTimer);
+
+      if (menuItem.classList.contains("is-open")) {
+        menuItem.classList.remove("is-open");
+        menuTrigger.setAttribute("aria-expanded", "false");
+      } else {
+        openMenu();
       }
     });
 
-    menuItem.classList.add("is-open");
-    menuTrigger.setAttribute("aria-expanded", "true");
-  };
+    submenu.addEventListener("mouseenter", () => {
+      clearTimeout(closeTimer);
+    });
 
-  const closeMenu = () => {
-    clearTimeout(closeTimer);
+    submenu.addEventListener("mouseleave", closeMenu);
 
-    closeTimer = setTimeout(() => {
-      menuItem.classList.remove("is-open");
-      menuTrigger.setAttribute("aria-expanded", "false");
-    }, 500);
-  };
+    submenu.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  });
 
-  menuItem.addEventListener("mouseenter", openMenu);
-  menuItem.addEventListener("mouseleave", closeMenu);
+  document.addEventListener("click", (e) => {
+    menuItems.forEach((menuItem) => {
+      if (!menuItem.contains(e.target)) {
+        menuItem.classList.remove("is-open");
 
-  menuTrigger.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+        const menuTrigger = menuItem.querySelector("[data-menu-trigger]");
 
-    clearTimeout(closeTimer);
+        if (menuTrigger) {
+          menuTrigger.setAttribute("aria-expanded", "false");
+        }
+      }
+    });
+  });
 
-    if (menuItem.classList.contains("is-open")) {
-      menuItem.classList.remove("is-open");
-      menuTrigger.setAttribute("aria-expanded", "false");
-    } else {
-      openMenu();
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") {
+      return;
     }
-  });
 
-  submenu.addEventListener("mouseenter", () => {
-    clearTimeout(closeTimer);
-  });
-
-  submenu.addEventListener("mouseleave", closeMenu);
-
-  submenu.addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
-});
-
-document.addEventListener("click", (e) => {
-  menuItems.forEach((menuItem) => {
-    if (!menuItem.contains(e.target)) {
+    menuItems.forEach((menuItem) => {
       menuItem.classList.remove("is-open");
 
-      const menuTrigger =
-        menuItem.querySelector("[data-menu-trigger]");
+      const menuTrigger = menuItem.querySelector("[data-menu-trigger]");
 
       if (menuTrigger) {
         menuTrigger.setAttribute("aria-expanded", "false");
       }
-    }
+    });
   });
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key !== "Escape") {
-    return;
-  }
-
-  menuItems.forEach((menuItem) => {
-    menuItem.classList.remove("is-open");
-
-    const menuTrigger =
-      menuItem.querySelector("[data-menu-trigger]");
-
-    if (menuTrigger) {
-      menuTrigger.setAttribute("aria-expanded", "false");
-    }
-  });
-});
 
   const header = document.querySelector(".header");
 
@@ -506,22 +430,25 @@ document.addEventListener("keydown", (e) => {
   };
 
   setHeaderHeight();
-// من معاذ هاد السكشن مؤقت 
-  const logoBtn = document.querySelector('.header .logo');
-if (logoBtn) {
-  if (localStorage.getItem('header-unified') === 'true') {
-    document.querySelector('.header')?.classList.add('header--unified');
-  }
+  // من معاذ هاد السكشن مؤقت
+  const logoBtn = document.querySelector(".header .logo");
+  if (logoBtn) {
+    if (localStorage.getItem("header-unified") === "true") {
+      document.querySelector(".header")?.classList.add("header--unified");
+    }
 
-  logoBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const h = document.querySelector('.header');
-    if (!h) return;
-    h.classList.toggle('header--unified');
-    localStorage.setItem('header-unified', h.classList.contains('header--unified'));
-  });
-}
-// من معاذ لهون مؤقت
+    logoBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const h = document.querySelector(".header");
+      if (!h) return;
+      h.classList.toggle("header--unified");
+      localStorage.setItem(
+        "header-unified",
+        h.classList.contains("header--unified"),
+      );
+    });
+  }
+  // من معاذ لهون مؤقت
 
   window.addEventListener("resize", setHeaderHeight);
   window.addEventListener("load", setHeaderHeight);

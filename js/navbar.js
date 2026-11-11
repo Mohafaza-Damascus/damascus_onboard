@@ -44,16 +44,11 @@ function injectHeader() {
             </div>-->
         </div>
     `;
-
     document.body.insertAdjacentHTML('afterbegin', headerHTML);
-    
-
-
 }
 
 function injectFooter() {
     if (document.getElementById('mainFooter')) return;
-
     const footerHTML = `
         <div class="footersec" id="mainFooter">
             <div class="f">
@@ -63,7 +58,6 @@ function injectFooter() {
                        
                     </div>
                 </div>
-
                 <div class="fb">
                     <div class="bb">
                         <p>روابط سريعة</p>
@@ -73,7 +67,6 @@ function injectFooter() {
                         <a class="link" href="/platform/services.html">الخدمات</a>
                         <a class="link" href="/platform/contact.html">اقتراحات</a>
                     </div>
-
                     <div class="bc">
                         <div class="footer-contact-row">
                             <div class="footer-contact-icon" style="background-image: url(./assests/img/phone.png);"></div>
@@ -105,7 +98,6 @@ function injectFooter() {
                     </div>
                 </div>
             </div>
-
             <div>
                 <div class="fc">
                     <p id="footerText">جميع الحقوق محفوظة - محافظة دمشق © 2026</p>
