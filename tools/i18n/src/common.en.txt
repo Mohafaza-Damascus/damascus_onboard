@@ -1,0 +1,243 @@
+0	Home
+1	News
+2	Culture
+3	Services
+4	Services
+5	Damascus Guide
+6	Investments
+7	Damascus Governorate
+8	Damascus Governorate
+9	Damascus Governorate logo
+10	Menu
+11	Sign in
+12	Contact us
+13	Change language
+14	Damascus Governorate works to raise the quality of the services it offers citizens and to meet their expectations, guided by speed, efficiency and reliability.
+15	Quick links
+16	Telegram
+17	X
+18	YouTube
+19	Facebook
+20	Instagram
+21	Citizen services
+22	E-services
+23	Get in touch
+24	Yusuf al-Azma Square, Damascus
+25	© 2026 Damascus Governorate. All rights reserved.
+26	Switch header style
+27	Style 1
+28	Style 2
+29	Style 3
+30	Welcome to the e-portal
+31	Sign in or create a new account to reach all services
+32	Create a new account
+33	Email
+34	Password
+35	Forgot your password?
+36	Sign in
+37	or
+38	Don't have an account?
+39	Create an account
+40	Enter your email
+41	Enter your password
+42	Enter your details to register on the Damascus Governorate portal
+43	First name
+44	Last name
+45	Phone number
+46	I am a
+47	Citizen
+48	Government employee
+49	Investor
+50	Journalist
+51	Confirm password
+52	Area
+53	Detect my location
+54	Create account
+55	Already have an account?
+56	Portal smart assistant
+57	Online now
+58	Our services
+59	Professions & licences
+60	Complaints
+61	Payment
+62	Financial affairs
+63	Smart assistant
+64	Smart assistant
+65	Close
+66	Send
+67	Type your question here...
+68	offer
+69	what
+70	what are
+71	about the site
+72	learn
+73	overview
+74	Hello! 👋 The portal offers a range of government e-services, including:
+75	**Financial affairs** – managing payments and fees
+76	**Planning & urban development** – building permits and planning
+77	**Professions & licences** – issuing and renewing professional licences
+78	**Complaints** – filing and tracking complaints
+79	**External services** – various services for outside applicants
+80	**E-payment** – paying fees securely
+81	**Decree 66** – services related to Regulatory Decree No. 66
+82	**Temporary register** – temporary registration of businesses and activities
+83	**Event permit** – permits for holding events
+84	Would you like details about a particular service?
+85	finance
+86	financial affairs
+87	fees
+88	payments
+89	💰 **Financial affairs**
+90	With this service you can:
+91	See fees and amounts due
+92	Pay government bills
+93	Check the status of payments
+94	Print receipts and invoices
+95	You can reach this service directly from the main services panel. Do you need any more help?
+96	planning
+97	urban
+98	zoning
+99	building
+100	🏙️ **Planning & urban development**
+101	This service covers:
+102	Building and demolition permit requests
+103	Checking zoning plans
+104	Approving engineering drawings
+105	Following up urban planning requests
+106	Please have the required documents ready (ID, title deed, drawings) when you apply.
+107	licence
+108	license
+109	professions
+110	licences
+111	renew licence
+112	profession
+113	📄 **Professions & licences**
+114	Through this service you can:
+115	Apply for a new professional licence
+116	Renew an existing licence
+117	Check the status of your application
+118	Pay licence fees online
+119	**Steps:**
+120	1. Sign in with your applicant account
+121	2. Choose "Professions & licences"
+122	3. Fill in the form and upload the documents
+123	4. Pay the fees and follow up
+124	Do you have a specific question?
+125	complaint
+126	complaints
+127	file a complaint
+128	report
+129	📋 **Complaints & reports**
+130	The complaints system lets you:
+131	File a new complaint easily
+132	Follow the status of your complaint
+133	Get notified of the latest updates
+134	Attach supporting documents and photos
+135	**To apply:** choose the "Complaints" service on the home page, enter your details and describe the problem in full.
+136	Note: you will receive a reply within 5–7 working days.
+137	pay
+138	e-payment
+139	card
+140	settle
+141	bill
+142	💳 **E-payment**
+143	We provide a secure payment environment that supports:
+144	**Credit and debit cards** (Visa / MasterCard)
+145	Direct **bank transfer**
+146	**E-wallets**
+147	All transactions are encrypted and secured. You can print the receipt as soon as the payment is complete.
+148	Having trouble with a payment?
+149	decree
+150	decree 66
+151	📜 **Decree 66**
+152	This decree regulates a number of activities and businesses. The service lets you:
+153	Read the decree and its executive regulations
+154	Submit requests related to the decree
+155	Check compliance and requirements
+156	Register a business under the decree's provisions
+157	For more details, please contact the competent office or open the service directly.
+158	register
+159	temporary
+160	temporary register
+161	temporary registration
+162	🗂️ **Temporary register**
+163	This register lets you:
+164	Register a business or commercial activity temporarily while the official procedures are completed
+165	Get a register number to deal with other authorities
+166	Update your details and complete permanent registration later
+167	The temporary registration can be extended under the regulations in force.
+168	event
+169	permit
+170	party
+171	occasion
+172	festival
+173	event permit
+174	🎪 **Event permit**
+175	Planning an event? The service lets you:
+176	Apply for a permit to hold public or private events
+177	Set the event details (type, location, duration)
+178	Upload supporting documents (insurance, security plans and more)
+179	Receive the permit online once approved
+180	We advise applying at least 14 working days before the event.
+181	external
+182	external services
+183	🌐 **External services**
+184	Dealing with outside bodies and partners
+185	Services for residents and visitors from outside the local area
+186	Linking procedures with other government bodies
+187	Please have the required documents ready and sign in to use these services.
+188	hours
+189	time
+190	working hours
+191	available
+192	open
+193	🕐 **Service hours**
+194	The e-portal is available **24 hours a day, 7 days a week**.
+195	Human support is available:
+196	Sunday – Thursday: 8 am – 3 pm
+197	For emergencies, contact us by email or on the hotline.
+198	sign up
+199	account
+200	subscribe
+201	password
+202	🔐 **Sign-in and account**
+203	To use the services:
+204	1. Click "Sign in" at the top of the page
+205	2. Enter your username and password
+206	3. Or create a new account if this is your first visit
+207	If you forget your password, use "Forgot your password?" and a verification code will be sent to your phone.
+208	thanks
+209	thank you
+210	excellent
+211	great
+212	good
+213	ok
+214	okay
+215	😊 You're very welcome! We're always glad to help.
+216	If you have any other question, don't hesitate to ask. 🌟
+217	hello
+218	hi there
+219	peace
+220	hey
+221	welcome
+222	hiya
+223	hi
+224	Welcome! 👋 I'm the portal's smart assistant.
+225	I can help you with:
+226	Getting to know the portal's services
+227	Guidance on how to submit requests
+228	Answering your questions about fees and procedures
+229	What can I help you with today?
+230	Thanks for your question 🙏
+231	I couldn't fully understand your question, but I can help you with these services:
+232	Urban planning
+233	Decree 66
+234	Event permit
+235	Please rephrase your question or pick one of the services above.
+236	You
+237	Welcome to the e-portal! 👋
+238	Page not found - Damascus Governorate
+239	Page not found
+240	The link may have changed or the page may have been removed.
+241	Back to home
+242	العربية

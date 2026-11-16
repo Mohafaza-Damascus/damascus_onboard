@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>لوحة تحكم محافظة دمشق</title>
+    <link rel="icon" href="../../images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="../../css/dashboards.css" />
+    <link rel="stylesheet" href="../../css/dashboard-app.css" />
+    <link rel="stylesheet" href="../../css/dashboard-login.css" />
+  </head>
+  <body>
+    <header class="dash-top">
+      <a class="dash-brand" href="#/news"><img src="../../images/logo.png" alt="" /><span>لوحة تحكم المحافظة</span></a>
+      <nav class="dash-tabs" aria-label="أقسام لوحة التحكم">
+        <a href="#/news" data-tab="news">الأخبار</a>
+        <a href="#/events" data-tab="events">الفعاليات</a>
+        <a href="#/investments" data-tab="investments">الاستثمارات</a>
+        <a href="services.html">الخدمات</a>
+      </nav>
+      <div class="dash-top__actions">
+        <a class="btn btn-ghost btn-small" href="../../index.html" target="_blank" rel="noopener">عرض الموقع</a>
+        <button type="button" class="btn btn-ghost btn-small" data-backup>نسخة احتياطية</button>
+      </div>
+    </header>
+
+    <main class="page" id="app">
+      <p class="dash-loading">جارٍ التحميل...</p>
+    </main>
+
+    <div class="modal" id="confirm" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+      <div class="modal-box">
+        <div class="modal-icon">
+          <svg class="i" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v6M14 11v6" /></svg>
+        </div>
+        <h3 id="confirmTitle"></h3>
+        <p id="confirmText"></p>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" data-confirm="no">إلغاء</button>
+          <button type="button" class="btn btn-danger" data-confirm="yes">حذف</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="../../js/i18n/content-news.js"></script>
+    <script src="../../js/i18n/content-opportunities.js"></script>
+    <script src="../../js/site-files.js"></script>
+    <script src="../../js/opportunities-data.js"></script>
+    <script src="../../js/dashboard-auth.js"></script>
+    <script src="../../js/dashboard.js"></script>
+  </body>
+</html>

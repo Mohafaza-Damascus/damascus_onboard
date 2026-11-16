@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ذاكرة المكان | دمشق</title>
+
+    <link rel="icon" href="../images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/legacy-pages.css" />
+    <link rel="stylesheet" href="../css/landmark.css" />
+    <script src="../js/i18n.js"></script>
+  </head>
+
+  <body class="legacy-page">
+    <div id="site-header" data-active="النظرة الثقافية"></div>
+
+    <main class="lm" id="landmark">
+      <a class="lm__back" href="Cultural-model-5.html#damascus-landmarks">
+        <span aria-hidden="true">→</span>
+        العودة إلى ذاكرة المكان
+      </a>
+
+      <header class="lm__hero">
+        <img class="lm__img" id="lmImage" src="" alt="" />
+        <div class="lm__hero-text">
+          <span class="lm__badge" id="lmType"></span>
+          <h1 class="lm__title" id="lmName"></h1>
+          <p class="lm__intro" id="lmIntro"></p>
+        </div>
+      </header>
+
+      <section class="lm__body">
+        <p class="lm__desc" id="lmDesc"></p>
+        <dl class="lm__facts" id="lmFacts"></dl>
+      </section>
+
+      <section class="lm__story" aria-labelledby="lmStoryTitle">
+        <h2 class="lm__heading" id="lmStoryTitle">الحكاية</h2>
+        <div class="lm__story-text" id="lmStory"></div>
+      </section>
+
+      <section class="lm__gallery" aria-labelledby="lmGalleryTitle">
+        <h2 class="lm__heading" id="lmGalleryTitle">معرض الصور</h2>
+        <div class="lm-carousel" id="lmCarousel">
+          <div class="lm-carousel__main" id="lmMain">
+            <div class="lm-carousel__track" id="lmTrack"></div>
+            <button
+              class="lm-carousel__btn lm-carousel__btn--prev"
+              id="lmPrevPhoto"
+              type="button"
+              aria-label="الصورة السابقة"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+            </button>
+            <button
+              class="lm-carousel__btn lm-carousel__btn--next"
+              id="lmNextPhoto"
+              type="button"
+              aria-label="الصورة التالية"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <span class="lm-carousel__count" id="lmCount"></span>
+          </div>
+          <div class="lm-carousel__thumbs" id="lmThumbs"></div>
+        </div>
+        <p class="lm__credits" id="lmCredit"></p>
+      </section>
+
+      <nav class="lm__pager" aria-label="معالم أخرى">
+        <a class="lm__pager-link" id="lmPrev" href="#">
+          <span class="dm-arrow dm-arrow--right" aria-hidden="true"
+            ><span class="dm-arrow__shape"
+              ><span class="dm-arrow__line"></span
+              ><svg class="dm-arrow__icon" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg></span
+          ></span>
+          <span class="lm__pager-text"><small>المعلم السابق</small><strong id="lmPrevName"></strong></span>
+        </a>
+        <a class="lm__pager-link lm__pager-link--next" id="lmNext" href="#">
+          <span class="lm__pager-text"><small>المعلم التالي</small><strong id="lmNextName"></strong></span>
+          <span class="dm-arrow dm-arrow--left" aria-hidden="true"
+            ><span class="dm-arrow__shape"
+              ><span class="dm-arrow__line"></span
+              ><svg class="dm-arrow__icon" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" /></svg></span
+          ></span>
+        </a>
+      </nav>
+    </main>
+
+    <script src="../js/landmarks-data.js"></script>
+    <script src="../js/landmark.js"></script>
+    <div id="site-footer"></div>
+    <script src="../js/global.js"></script>
+  </body>
+</html>

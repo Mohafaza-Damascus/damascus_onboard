@@ -1,0 +1,31 @@
+html[dir="ltr"] body,
+html[dir="ltr"] body *:not([lang="ar"]):not([data-i18n-skip]) {
+  direction: ltr !important;
+}
+
+html[dir="ltr"] .fa-arrow-left,
+html[dir="ltr"] .fa-arrow-right,
+html[dir="ltr"] .fa-arrow-left-long,
+html[dir="ltr"] .fa-arrow-right-long,
+html[dir="ltr"] .fa-chevron-left,
+html[dir="ltr"] .fa-chevron-right,
+html[dir="ltr"] .fa-angle-left,
+html[dir="ltr"] .fa-angle-right,
+html[dir="ltr"] .fa-caret-left,
+html[dir="ltr"] .fa-caret-right,
+html[dir="ltr"] .fa-arrow-left-from-bracket,
+html[dir="ltr"] .fa-arrow-right-to-bracket {
+  scale: -1 1;
+}
+
+html[dir="ltr"] [aria-label^="Previous"] svg,
+html[dir="ltr"] [aria-label^="Next"] svg,
+html[dir="ltr"] [aria-label^="Go to the next"] svg,
+html[dir="ltr"] .dm-arrow {
+  scale: -1 1;
+}
+
+html[dir="ltr"] a[class$="__back"] > span[aria-hidden="true"] {
+  display: inline-block;
+  scale: -1 1;
+}

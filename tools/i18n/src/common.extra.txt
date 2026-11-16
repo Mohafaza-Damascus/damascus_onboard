@@ -1,0 +1,9 @@
+أنت	You
+أهلاً بك في البوابة الإلكترونية! 👋	Welcome to the e-portal! 👋
+أنا مساعدك الذكي، يمكنني الإجابة على أسئلتك حول خدماتنا.	I'm your smart assistant and I can answer your questions about our services.
+اضغط على أحد الاختيارات أدناه أو اكتب سؤالك مباشرةً.	Tap one of the options below or type your question.
+ما هي خدماتكم؟	What services do you offer?
+كيف أتقدم بطلب رخصة؟	How do I apply for a licence?
+كيف أقدم شكوى؟	How do I file a complaint?
+ما هو الدفع الإلكتروني؟	What is e-payment?
+عن الشؤون المالية؟	About financial affairs?

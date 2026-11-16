@@ -1,0 +1,299 @@
+0	Al-Jawza Bathhouse
+1	Damascus — Sarouja
+2	Restoring and operating the al-Jawza bathhouse.
+3	Total area
+4	450 m²
+5	Built area
+6	400 m²
+7	Property number
+8	Al-Madfaa Garden
+9	Damascus — Abu Rummaneh
+10	Designing, building and operating the garden and the car parks beneath it.
+11	Designing, building and operating al-Madfaa Garden in Abu Rummaneh, with a commercial investment basement extending under public property and three car-park basements.
+12	Property zone
+13	Abu Rummaneh
+14	Contract model
+15	Garden area
+16	2,200 m²
+17	First investment basement (extends under public property)
+18	Area of each car-park basement
+19	4,280 m²
+20	Total car-park basements (second – fourth)
+21	12,840 m²
+22	Garden surface
+23	Public garden
+24	First basement
+25	Commercial investment space
+26	Second – fourth basement
+27	Brief for the al-Madfaa Garden investment proposal.pdf
+28	Al-Baramkeh Pioneers Garden
+29	Damascus — al-Baramkeh, al-Fahhameh (near Tishreen Stadium)
+30	Designing, building and operating the garden, with a car-accessories market and car parks beneath it.
+31	Rehabilitating and running the al-Baramkeh Pioneers Garden near Tishreen Stadium, and building a specialised car market and car parks in its basements.
+32	Al-Baramkeh
+33	Zoning plan
+34	Al-Baramkeh – al-Fahhameh
+35	Zoning classification
+36	Commercial market
+37	Tishreen Stadium
+38	Adjacent
+39	6,000 m²
+40	Total basement area
+41	24,000 m²
+42	Commercial basement
+43	Car parks (3 basements)
+44	18,000 m²
+45	Investment activities on the garden surface
+46	5% of the area
+47	Rehabilitating, maintaining and running the garden, with restaurants, cafés and shops on 5% of the area
+48	First basement (mezzanine, 8 m high)
+49	Section one: car decoration and accessories, care products, batteries and tyres — section two: new and used spare parts
+50	Second basement
+51	Car park, car wash and quick-service maintenance halls
+52	Third basement
+53	Car park
+54	Fourth basement
+55	Car park, storage and services
+56	Brief for the al-Baramkeh children's garden investment proposal.pdf
+57	Al-Fayhaa Hotel — properties 2156 and 2157
+58	Damascus — al-Firdaws, opposite the Cham Hotel
+59	A 4-star hotel with complementary commercial and leisure activities: a commercial basement, three car-park basements, an arcaded ground floor and 13 storeys.
+60	Al-Fayhaa Lakshari Hotel in al-Firdaws, opposite the Cham Hotel, on properties 2156 and 2157 next to the al-Firdaws car park.
+61	Salihiyah Jadda
+62	Property numbers
+63	Al-Bahsa zoning
+64	Tourism and commercial
+65	Cham Hotel
+66	50 m
+67	85 m
+68	29 May Street
+69	Maysaloun Road
+70	Above-ground floor area
+71	11,745 m²
+72	Investment basement
+73	1,215 m²
+74	Car parks
+75	3,645 m²
+76	Building footprint
+77	392 m²
+78	First-floor footprint
+79	1,057.38 m²
+80	Second-floor footprint
+81	857.87 m²
+82	Basement footprint (including public property)
+83	1,215.6 m²
+84	Area of property 2156
+85	585 m²
+86	Area of property 2157
+87	357 m²
+88	Commercial basement + 3 car-park basements + ground floor (with a 4.5 m arcade) + 13 storeys
+89	One basement is shared with public property underground
+90	An 8 m wide traffic tunnel serving the al-Firdaws car park runs under the hotel
+91	Top floor
+92	Restaurants and terraces
+93	Sports centre
+94	Leisure halls
+95	Hotel rooms
+96	Conference halls
+97	Tourism and leisure advisory centre
+98	Business advisory centre
+99	Events hall
+100	Ground floor
+101	Lobby and cafés
+102	Basements
+103	Al-Fayhaa Lakshari Hotel brief.pdf
+104	Royal Cham Hotel — plots B1, B2 and B3
+105	Damascus — East Dummar, Beirut Road
+106	A 5-star hotel with complementary commercial and leisure activities.
+107	A study for the Royal Cham Hotel investment opportunity on plots B1, B2 and B3 in East Dummar, based on the site's advantages and the planned zoning.
+108	The three plots can be merged into one
+109	East Dummar
+110	Zoning plan number B1
+111	Zoning plan number B2
+112	Zoning plan number B3
+113	Barada Valley
+114	150 m
+115	Souq al-Sham
+116	650 m
+117	Beirut Street
+118	Al-Rabweh Street
+119	Unknown Soldier Street
+120	Above-ground floor area (after merging)
+121	Investment basement (after merging)
+122	3,000 m²
+123	9,000 m²
+124	Building footprint (after merging)
+125	1,600 m²
+126	Area of each plot
+127	888 m²
+128	Footprint of each plot
+129	656 m²
+130	Floor area of each plot
+131	8,000 m²
+132	Commercial basement of each plot
+133	12th floor
+134	Swimming pool
+135	11th floor
+136	Restaurants
+137	10th floor
+138	Sports and fitness centre
+139	Floors 4 – 9
+140	3rd floor
+141	The hotel's own restaurant
+142	2nd floor
+143	1st floor
+144	Events halls
+145	Cafés and lobby
+146	Basement 1
+147	Basements 2 – 4
+148	Car park and services
+149	Royal Cham Hotel brief.pdf
+150	Medical hotel and medical centre — plots 63 and 64
+151	Damascus — Dummar project, opposite Uptown Mall
+152	A 5-star medical hotel and medical centre with complementary commercial activities.
+153	A study for the investment opportunity on plots 63 and 64 in the Dummar project: a medical hotel on plot 63 and a medical centre on plot 64.
+154	The two plots can be merged
+155	Dummar project
+156	Property numbers
+157	Tourism, commercial and services
+158	Uptown Mall
+159	60 m
+160	Al-Fayhaa Sports Club
+161	240 m
+162	Uptown Road
+163	Plot 63 — plot area
+164	1,566 m²
+165	Plot 63 — building footprint
+166	725 m²
+167	Plot 63 — above ground
+168	6,376 m²
+169	Plot 63 — investment basement
+170	Plot 63 — car park
+171	4,698 m²
+172	Plot 64 — plot area
+173	1,255 m²
+174	Plot 64 — building footprint
+175	650 m²
+176	Plot 64 — above ground
+177	6,320 m²
+178	Plot 64 — investment basement
+179	Plot 64 — car park
+180	3,765 m²
+181	Plot 63 — medical hotel
+182	Upper floors
+183	Treatment wing
+184	Hotel management, medical management and laboratories
+185	Reception, restaurants and cafés
+186	Basements (3)
+187	Plot 64 — medical centre
+188	Dental clinics
+189	Fertility centre
+190	Two floors
+191	Beauty centres
+192	Cosmetic surgery centre
+193	Maternity hospital
+194	Plots 63 and 64 brief.pdf
+195	Shopping centre and offices — plot 106
+196	Damascus — Mezzeh Sheikh Saad, opposite al-Mouwasat Charity Hospital
+197	A shopping centre and business offices with an underground car park.
+198	A study for the investment opportunity on plot 106 in Mezzeh Sheikh Saad: a shopping centre and business offices with an underground car park.
+199	Zoning east of the Military Hospital
+200	Zoning plot number
+201	Al-Mouwasat Square
+202	300 m
+203	Mezzeh Highway
+204	1 km
+205	Umayyad Square
+206	1.5 km
+207	Al-Mouwasat al-Khayriya Street
+208	Al-Walid bin Abd al-Malik Street
+209	17 April Street
+210	Total above-ground floor area
+211	1,273 m²
+212	Ground floor (whole building footprint)
+213	382.78 m²
+214	First floor (with projections)
+215	445.18 m²
+216	Second floor (with projections)
+217	Total basement area (3 basements)
+218	2,798 m²
+219	Area of each basement
+220	932.78 m²
+221	Second floor
+222	Technology entertainment and games halls
+223	First floor
+224	Supermarket
+225	Lobby and café
+226	Food corner, fast-food outlets and shops
+227	Second and third basements
+228	Plot 106 investment proposal brief.pdf
+229	Hotel, shopping centre and car parks — plot 14
+230	Damascus — Arnous Square
+231	A hotel, shopping centre and car parks.
+232	Proposal
+233	18,700 m²
+234	Commercial space (first basement)
+235	2,825 m²
+236	Car parks (remaining basements)
+237	8,473 m²
+238	Omar Baytak Mall
+239	Damascus — New al-Zahira, next to the automated bakery
+240	A specialised shopping mall and car parks.
+241	A study for the investment opportunity at the military car park in New al-Zahira: a specialised mall, car parks and underground storage, with the surrounding gardens rehabilitated.
+242	New al-Zahira
+243	The south-western part of New al-Zahira
+244	Main site area (including basements)
+245	12 dunams
+246	Area of the surrounding gardens
+247	34 dunams
+248	Shopping areas (first basement)
+249	12,000 m²
+250	Car parks (second and third basements)
+251	Storage (fourth basement)
+252	Shops and cafés on the garden surface
+253	5% of each garden
+254	Garden surface
+255	Rehabilitating, maintaining and running the gardens and the surrounding pavements, with shops and cafés on 5% of each garden
+256	First basement (4.5 m high)
+257	Car park and warehouses
+258	Brief for the Omar Baytak Mall investment proposal.pdf
+259	Serviced apartments — properties 55 and 56
+260	Damascus — East Dummar, Taameer, block 43/A
+261	A serviced apartments project.
+262	16,000 m²
+263	Area of property 55
+264	1,167 m²
+265	Area of property 56
+266	1,985 m²
+267	Al-Jihad car park
+268	Damascus — al-Baramkeh
+269	A smart robotic car park.
+270	Number of spaces
+271	Al-Soufaniya car park
+272	Damascus — Bab Touma
+273	Plot 10 car park — al-Thawra Street
+274	Damascus — al-Thawra Street, south of the Real Estate Directorate
+275	Plot 12 car park — al-Thawra Street
+276	Damascus — al-Thawra Street, north of the Real Estate Directorate
+277	Al-Bahsa car park
+278	Damascus — al-Bahsa, behind the Crystal Hotel
+279	A multi-storey underground car park.
+280	1,200 m²
+281	Ibn Asakir Garden
+282	Damascus — Old al-Zahira, Ibn Asakir Street
+283	Developing the Ibn Asakir Street garden with commercial space and an enclosed children's garden, above a three-basement car park.
+284	A linear garden on Ibn Asakir Street in Old al-Zahira: 10% of the land for shops, 30% for an enclosed children's garden and the rest open gardens, with a commercial basement and a three-basement car park.
+285	Old al-Zahira
+286	Commercial investment space
+287	39,306 m²
+288	Shops at ground level
+289	10% of the land area
+290	Enclosed children's garden
+291	30% of the land area
+292	Car park
+293	3 basements
+294	Ground level
+295	Open gardens, shops (10%) and an enclosed children's garden (30%)
+296	Commercial space
+297	Basements 2 – 4
+298	Brief for the Ibn Asakir Garden investment proposal.pdf

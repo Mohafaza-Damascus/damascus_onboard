@@ -1,0 +1,9 @@
+:HL["/dalil/_next/static/chunks/3htoflysp4yki.css","style"]
+:HL["/dalil/_next/static/media/itfQomraArabic_Black-s.p.060tm-7gl6led.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/dalil/_next/static/media/itfQomraArabic_Bold-s.p.30j7e0kz5e87x.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/dalil/_next/static/media/itfQomraArabic_Medium-s.p.417b78ee_lira.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/dalil/_next/static/media/itfQomraArabic_Regular-s.p.0qtpsd04gljq-.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/dalil/_next/static/chunks/2ddmrojwgxvfe.css","style"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"viewer","h":96,"c":"$Q2"}]]
+0:{"b":"Ch1mC602rEfglXZMaJjdX","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

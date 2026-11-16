@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دليل المعاملات الورقية</title>
+    <link rel="icon" href="../../images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/service-detail.css" />
+    <link rel="stylesheet" href="../../css/service-cards.css" />
+    <script src="../../js/i18n.js"></script>
+  </head>
+  <body class="detail-page">
+    <div id="site-header" data-active="الخدمات"></div>
+
+    <div class="bg-pattern"></div>
+
+    <div class="detail-container">
+      <div class="detail-heading-row">
+        <h1 class="detail-title">دليل المعاملات الورقية</h1>
+
+        <div class="back-home-actions">
+          <a href="../../index.html" class="back-home-link"> الصفحة الرئيسية </a>
+
+          <a href="javascript:history.back()" class="back-arrow" aria-label="الرجوع للصفحة السابقة">
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input type="search" id="searchInput" placeholder="ما الخدمة التي تبحث عنها؟" aria-label="ابحث عن خدمة" />
+      </div>
+
+      <div class="detail-grid" id="guideServicesGrid"></div>
+    </div>
+    <div id="site-footer"></div>
+    <script src="../../js/global.js"></script>
+    <script src="../../js/load-data.js" data-file="../services-form/services-list.js"></script>
+    <script src="../services-form/services-store.js"></script>
+    <script src="../services-form/guide-services.js"></script>
+  </body>
+</html>

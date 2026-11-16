@@ -1,0 +1,112 @@
+0	Damascus Governorate
+1	Population
+2	Administrative districts
+3	Area
+4	Tourist landmarks
+5	Site visitors
+6	A word from the Governor
+7	Maher Marwan Idlibi
+8	Damascus Governorate - Syrian Arab Republic
+9	Damascus is a city of history and civilisation, and today we are rebuilding it
+10	with the hands of its own people, so it remains a beacon of learning, culture and architecture.
+11	Together we are building a thriving, safe city that puts citizens at the heart of
+12	development, grounded in transparency, efficiency and innovation.
+13	Explore the districts of Damascus
+14	Dummar
+15	Population:
+16	Area:
+17	18 km²
+18	Character:
+19	Residential / suburb
+20	A suburb west of Damascus known for its green spaces and beautiful mountain scenery.
+21	Mezzeh
+22	Kafr Sousa
+23	Barzeh
+24	Qaboun
+25	Jobar
+26	Al-Shaghour
+27	Rukn al-Din
+28	Al-Salihiyah
+29	Al-Muhajirin
+30	Sarouja
+31	Al-Qanawat
+32	Damascus
+33	Old City
+34	Al-Midan
+35	Al-Qadam
+36	Yarmouk
+37	Latest news
+38	Follow the latest news, circulars and decisions from Damascus Governorate
+39	All news
+40	Everything you need to get your paperwork done, in one place!
+41	digital services
+42	Number of e-services
+43	completed transactions
+44	Number of services delivered
+45	in progress
+46	Number of ongoing services
+47	E-services, requests and inquiries,
+48	all available with ease
+49	and speed.
+50	Start a service
+51	Because your voice matters
+52	... the voice of the capital
+53	Governor Maher Marwan Idlibi
+54	Interactive map of Damascus districts
+55	Mezzeh
+56	22 km²
+57	Residential / administrative
+58	One of the largest districts of Damascus, home to government institutions and modern housing complexes.
+59	12 km²
+60	Residential / commercial
+61	A lively district in south-west Damascus with markets and shopping centres.
+62	15 km²
+63	Residential
+64	A long-established northern district known for its traditional character and closeness to Mount Qasioun.
+65	8 km²
+66	Industrial / residential
+67	An industrial and residential area in north-east Damascus.
+68	7 km²
+69	A historic eastern district once famous for growing apricots and other fruit.
+70	10 km²
+71	One of the oldest quarters of Old Damascus, known for its traditional markets.
+72	14 km²
+73	A residential district on the slopes of Mount Qasioun with panoramic views.
+74	6 km²
+75	Residential / cultural
+76	A historic district with archaeological sites and long-standing educational institutions.
+77	9 km²
+78	An upscale district on the slopes of Qasioun, home to embassies and diplomatic missions.
+79	3 km²
+80	Historic / commercial
+81	One of the oldest districts of Damascus, known for its distinctive Ottoman architecture.
+82	4 km²
+83	Residential / historic
+84	A central district linking Old Damascus with the modern neighbourhoods.
+85	Old Damascus
+86	2 km²
+87	Historic / tourist
+88	The walled old city, one of the oldest continuously inhabited cities in the world.
+89	11 km²
+90	A historic commercial district famous for its markets and old mosques.
+91	Residential / industrial
+92	A southern district with industrial workshops and residential areas.
+93	5 km²
+94	A southern district once known for its very high population density.
+95	Photo:
+96	January
+97	February
+98	March
+99	April
+100	May
+101	June
+102	July
+103	August
+104	September
+105	October
+106	November
+107	December
+108	Activity
+109	Decision
+110	Circular
+111	News

@@ -1,0 +1,254 @@
+0	Mahloula (Solved)
+1	None
+2	From complaint to solution: "Mahloula" is the portal for filing complaints online.
+3	Free
+4	Go to the Damascus Governorate online complaints portal.
+5	Fill in the required details (name, phone number and type of complaint).
+6	Pinpoint the location of the problem (area, neighbourhood and street).
+7	Describe the complaint clearly.
+8	Attach photos or a video showing the problem (for example piled-up rubbish, a pothole or a sewage fault) so we can respond quickly.
+9	Press Send.
+10	Transporting building materials and equipment
+11	A permit that allows the holder of a building or restoration licence to move heavy and construction materials and equipment within Damascus Governorate, along a route and at times set in advance by the Governorate to keep traffic and roads safe.
+12	Copy of the building or restoration licence
+13	Copy of the driver's ID
+14	Copy of the vehicle papers
+15	Licence details: enter the type of licence and the holder's name, attach a copy of the licence and set the start point and destination.
+16	Driver and vehicle: enter the driver's details and national ID number, attach the ID and vehicle papers, and enter the vehicle details and weights.
+17	Permitted materials: list the materials to be moved, their quantities and units, and add any notes about the transport.
+18	Building materials distributor
+19	A permit that allows a business owner to distribute building, industrial or commercial materials from a set location (a warehouse or outlet) within the Governorate.
+20	Copy of the professional practice licence.
+21	Copy of the driver's ID.
+22	Copy of the vehicle papers.
+23	Driver and vehicle: enter the driver's details and national ID number, attach the ID and vehicle papers, and enter the vehicle details and weights.
+24	Permitted materials: list the materials to be distributed, their quantities and units, and the vehicles used for distribution.
+25	Rubble removal
+26	A permit that allows citizens to move demolition and construction waste (rubble) from their project, or war debris that needs clearing, from the site to a Governorate-approved dump, keeping the city clean and the environment safe.
+27	Request details: enter the applicant's name and mobile number, set the location of the rubble and choose the dump it will go to.
+28	Driver and vehicle: enter the driver's details and national ID number, attach a copy of the ID and vehicle papers, and enter the vehicle's weight and height.
+29	Estimated weight: specify the type of rubble and the amount in kilograms, add notes and calculate the total transport cost.
+30	Maintenance Directorate
+31	Vehicle access to Old Damascus
+32	A service that issues permits for cars to enter Old Damascus, organising vehicle access at set times according to the type of occupancy (residential or commercial).
+33	Residential: flat title deed or rental contract – residence certificate from the mukhtar – car owner's ID – vehicle registration papers.
+34	Commercial: commercial register – commercial residence certificate from the mukhtar – car owner's ID – vehicle registration papers.
+35	Residential: 3,000 new SYP
+36	Commercial: 100,000 new SYP
+37	(For residential permits, only one car is allowed per independent home.)
+38	Applicant details: enter the applicant's details and national ID number, and attach the ID and a copy of the type of licence.
+39	Vehicle details: enter the vehicle type and plate number and attach a copy of the car papers.
+40	Pay the annual fee: after initial approval, an annual fee is due according to the type of licence.
+41	Old Damascus City Directorate
+42	Inquiry about an allocation decision
+43	Inquiry on whether an allocation decision exists
+44	Copy of a building permit decision
+45	Certified copy of a seizure notice contract
+46	Request for a copy of a setback plan
+47	Copy of an administrative licence decision
+48	Professions & Licences Directorate
+49	Property record – Decree 66
+50	Directorate for Implementing Legislative Decree No. 66 of 2012
+51	Founding committee: 8 flats or more
+52	Forming a building committee
+53	Founding committee for buildings of 8 flats or more – the building is required to form a committee.
+54	No application needed.
+55	The Building Committees Office prepares a meeting notice one month before the meeting date.
+56	The Supervision Office posts the notice in the building, with the date, time and place of the meeting.
+57	The representative attends the meeting, and the vote takes place after checking the occupancy status of those present.
+58	The election statement is issued and the Supervision Office asks the official printer to make an official stamp.
+59	Service departments (municipality)
+60	Founding committee: fewer than 8 flats
+61	Founding committee for buildings of fewer than 8 flats – based on the majority's wish.
+62	An application from the majority of occupants, giving each occupant's name, occupancy status and national ID number.
+63	Regular election of a new committee every two years
+64	A letter from the building committee when its term ends.
+65	The Building Committees Office prepares a meeting notice two months before the meeting date.
+66	The administrative committee posts the meeting notice on the notice board and sets the venue.
+67	The election statement is issued and handed to the new committee.
+68	Removing a seal placed for a building violation
+69	Seal removal procedure
+70	Procedure for removing a seal placed for a building violation.
+71	Information to include in the application: the applicant's name, the property and full address, a description of the violation and its area, and how long the temporary seal removal is needed.
+72	Application: the citizen applies to the relevant service department to have the seal removed.
+73	Removal pledge: the application includes a pledge, certified by a notary, to remove the violation on the property.
+74	Submit the seal removal application with the pledge to remove the violation.
+75	The service department asks the police station to remove the seal temporarily.
+76	The seal is removed for a set period only, so the violation can be removed.
+77	After removal, the work is checked, a report is drawn up and the seal is put back.
+78	A memo is sent to the Governor requesting final removal of the seal.
+79	Once approved, the seal is officially removed and a final report is drawn up.
+80	Seal removal – restoration without a restoration permit
+81	Seal removal procedure – restoration without a restoration permit
+82	Pledge: the application includes a pledge, certified by a notary, not to carry out any restoration work without a restoration permit.
+83	Information to include in the application: the applicant's name, the property and full address, and the number of the restoration permit application submitted to the department.
+84	A notarised pledge not to carry out any restoration work without a restoration permit.
+85	Submit the seal removal application together with a restoration permit application.
+86	The service department asks the police station to remove the seal temporarily.
+87	The seal is removed for a set period only, so the site can be inspected for a restoration permit.
+88	A report is drawn up for restoration without a permit, and it is settled in the usual way.
+89	A memo is sent to the Governor requesting final removal of the seal, after the restoration permit is obtained and the violation settlement fees are paid.
+90	Restoration without a restoration permit.
+91	Private roofs, setbacks and terraces
+92	Installing solar panels
+93	Procedure for installing solar panels – private roofs, setbacks and terraces
+94	An application from the person concerned.
+95	Copy of ID.
+96	Proof of ownership of the private roof.
+97	Subdivision plan.
+98	Plan of the current situation.
+99	A plan from the applicant showing the area of the roof, terrace or setback and where the panels will be placed.
+100	Installation rules: (1. The base starts 50 cm above the surface, and the top of the highest panel in the system must not be more than 2 metres above the surface – keep away from neighbours' light and ventilation openings; if harm occurs after the conditions are met, the matter goes to court – install a light at the building entrance.)
+101	Cost of stamps
+102	The specialist engineer inspects the site and checks it against the current situation.
+103	An approval form is prepared with the required information and documents and sent to the Directorate of Service Departments.
+104	Once approved, the applicant receives a certified copy of the licence.
+105	After the work is finished, the site is inspected to check it meets the conditions in the decision.
+106	Shared roofs and shared setbacks
+107	Procedure for installing solar panels – shared roofs and shared setbacks
+108	A request from the administrative committee stating that the work will be done with its knowledge. If there is no committee, a temporary one is formed; if that isn't possible, the administrative unit divides the shared space.
+109	Proof of ownership of the shared roof or setback.
+110	A sketch of the whole shared area divided among the units entitled to use it, with each unit's number written on its share.
+111	Building permit.
+112	Conditions: (No system installed on shared property may block access to any part of it for maintenance, or to other systems and equipment on these areas. – The metal frame for the panels must meet structural and public safety standards in its design, fixing and installation, and installing the metal base on the top roof must not damage the roof, especially its waterproofing; tiled sloping roofs require a separate metal frame. – When installing panels on a roof built in violation on the top floor, a proper technical report on the structural safety of that roof must be submitted. – Shared roofs may only be reached through shared property. – The panels must start 50 cm above the equipment on the roof, may not rest on that equipment or obstruct its maintenance. – Keep away from light and ventilation openings; if harm occurs, the matter goes to court. – Install a light at the building entrance.)
+113	Cost of the procedure's stamps
+114	Once approval is complete, the applicant receives a certified copy of the licence.
+115	First-time licence
+116	Open-air occupancy
+117	Copy of personal ID.
+118	Copy of the administrative licence.
+119	Submit the licence application at the relevant service department
+120	Wait for the executive office's decision
+121	Pay the fees and get a clearance at the Financial Affairs Directorate after the executive office approves
+122	Pay the revenue stamp fee at the Damascus finance office
+123	Collect a duly certified copy of the occupancy permit, in person or through an official power of attorney
+124	Renewing licences for diesel tanks and fuel stations
+125	Open-air occupancy – renewing licences for diesel tanks and fuel stations
+126	Copy of ID
+127	Copy of the previous licence
+128	Submit the application at the general registry in the Governorate building
+129	Wait for the relevant directorate to inspect the site, give its opinion and set the area
+130	Wait for the executive office's approval
+131	Pay the fees and get a clearance at the Financial Affairs Directorate
+132	Pay the revenue stamp fee at the Damascus Finance Directorate
+133	Collect a copy of the original occupancy permit, in person or through an official power of attorney
+134	Service departments (municipality)
+135	Cancelling a vegetable outlet licence
+136	Open-air occupancy – cancelling a vegetable outlet licence
+137	A written request to cancel the licence
+138	Submit the written request at the general registry of Damascus Governorate.
+139	The police seal the outlet.
+140	Pay the fees and complete the financial clearance up to the date of sealing.
+141	Cancelling a licence
+142	Open-air occupancy – cancelling a licence
+143	A written request submitted at the general registry in the Governorate building.
+144	Submit the request at the Governorate's general registry.
+145	Wait for the reply from the Directorate of Service Departments.
+146	Pay the fees and complete the financial clearance up to the date of removal.
+147	Certified copy of an eviction notice
+148	E-service
+149	Directorate of Planning & Urban Development
+150	This e-service will be available soon.
+151	Copy of the dispute-resolution committee's decision confirming a share allocation
+152	Copy of the architectural plan of a Governorate-owned plot / Housing Department
+153	Inquiry about plot instalments / Housing Department
+154	Copy of an expropriation decree or decision
+155	Property status statement
+156	Statement of zoning shares
+157	Statement of the date of demolition or occupation
+158	Residential flat status statement
+159	Subject to Law No. 60
+160	Request to remove an expropriation note from a property
+161	Request for temporary use of an expropriated property
+162	None
+163	Request approval to install an electrical substation on an expropriated property
+164	Request to take delivery of a plot
+165	Request to rent a residential flat
+166	Contract for buying a home from the Governorate / Housing Department
+167	Request to change the urban zoning classification
+168	Building permit
+169	Request a refund of a subdivision deposit
+170	Request a refund of a frontage deposit
+171	True copy of the dispute-resolution committee's decision
+172	Title deed request
+173	Property record request
+174	Temporary Register Directorate
+175	Urgent property record request
+176	Statement of the chain of owners
+177	Property record verification
+178	Car park licence request
+179	Traffic Engineering & Transport Directorate
+180	Request a garage subscription
+181	Property record statement
+182	Statement of the chain of owners since the property register was opened
+183	Ownership statement from the alphabetical index
+184	Property subdivision plan
+185	Survey statement
+186	Statement of descriptions since the register was opened
+187	Grave ownership statement
+188	Burials Office
+189	Request a death statement
+190	Request for a burial
+191	Request to register a grave
+192	Request an occupancy licence for Eid fairground rides
+193	Property Affairs Directorate
+194	Request a pavement occupancy licence
+195	Inquiry about the possibility of a kiosk licence
+196	Inquiry about leasing or renting empty shops, properties or bathhouses
+197	Request occupancy for a temporary festival for a set period
+198	Inquiry about the designated places for Eid fairground rides
+199	Concrete-pouring permits
+200	Directorate of Service Departments
+201	Request a restoration licence
+202	Request a solar panel licence
+203	Request a seasonal licence
+204	Settling building violations
+205	Request a violations record
+206	Request certified copies of building permits (Yarmouk only)
+207	Inquiry about the conditions for advertising signs
+208	Inquiry about requesting a billboard
+209	Request a copy of a receipt / Treasury or Collection Department
+210	Financial Affairs Directorate
+211	Request a clearance certificate / Verification and Collection Department
+212	Inquiry about a payment / finance system
+213	Copy of a commercial lease
+214	Inquiry about a loan instalment transfer
+215	Inquiry about a union deduction
+216	Inquiry about a deduction for the Workers' Social Assistance Fund
+217	Inquiry about a deduction for the Social Solidarity Fund
+218	Inquiry about amounts due to a contractor
+219	Inquiry about the salary of a deceased employee
+220	Inquiry about the date of a property auction
+221	Inquiry about whether an owner or heir has a share to collect
+222	Inquiry about the lease period
+223	Inquiry about fees due
+224	Inquiry about whether a notice has arrived from the Central Bank
+225	Inquiry about local fees and charges
+226	Request a copy of a statement for a drivers' order
+227	Employee request for a copy of a salary refund receipt
+228	Replacement for a lost collection receipt
+229	Refunds procedure
+230	Request a change of descriptions
+231	Request to fold (close) a file
+232	Change the occupant's name
+233	Request a change of profession
+234	Request a licence for a new profession
+235	Request to cancel a licence
+236	Seal removal
+237	Inquiry about ownership of key money (farough)
+238	Licence follow-up
+239	Inquiry about a document in the licence file
+240	Removing seals on administrative licences
+241	Concrete-pouring permit
+242	Permission to build
+243	وؤويويتؤوب
+244	يتبتبنبنيميتيا
+245	Building permit
+246	Plans certified by Damascus Governorate
+247	Request a concrete-pouring permit
+248	Submit the application
+249	The application is reviewed and the permit's allowed period is checked
+250	The area engineer inspects the building work
+251	The concrete-pouring permit is granted.
+252	Service department
+253	This e-service will be available when the platform launches on 1-12-2026.

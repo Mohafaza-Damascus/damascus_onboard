@@ -1,0 +1,71 @@
+0	Investment in Damascus - Damascus Governorate
+1	Damascus as you've
+2	never seen it
+3	before
+4	On the slopes of Mount Qasioun, a new tourist and cultural destination overlooking the whole capital.
+5	Visit the Qasioun Journey website
+6	Damascus Governorate is opening the capital's doors to investment, with a portfolio of
+7	development
+8	projects that reshape the city and build partnerships that
+9	last
+10	Investment
+11	portfolios
+12	No investment portfolios are available right now. Follow us to hear about upcoming ones.
+13	Night-time render of the Qasioun Journey walkway overlooking Damascus
+14	Projects map
+15	Filter portfolios by sector
+16	Previous project
+17	Next project
+18	Details
+19	Investment portfolio details - Damascus Governorate
+20	Investment portfolios
+21	Breadcrumb
+22	We couldn't find this portfolio
+23	The portfolio may have been removed, or the link is incorrect.
+24	Back to investment portfolios
+25	- Investment portfolios - Damascus Governorate
+26	Contract type
+27	BOT (build – operate – transfer)
+28	Investment period
+29	Applications for this portfolio have closed.
+30	Download the portfolio (PDF)
+31	Application deadline
+32	Open
+33	Zoning plan
+34	Areas
+35	and details
+36	Applications closed
+37	This portfolio is no longer available. Browse the portfolios open now.
+38	Open portfolios
+39	The portfolio opens on
+40	The portfolio closes automatically when the deadline passes.
+41	Applications open
+42	Until further notice
+43	No deadline has been set for this portfolio yet.
+44	days
+45	hours
+46	minutes
+47	seconds
+48	Zoning data
+49	Location
+50	Proposed programme
+51	Building
+52	uses
+53	Other
+54	portfolios
+55	All portfolios
+56	Tourism & hotels
+57	Markets & gardens
+58	Car parks
+59	Open
+60	Closed
+61	1 day
+62	2 days
+63	days
+64	days
+65	2 hours
+66	Applications closed
+67	Opens on
+68	Closes in
+69	Closes in under an hour
+70	left

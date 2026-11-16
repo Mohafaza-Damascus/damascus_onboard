@@ -1,0 +1,103 @@
+﻿0	Services | Damascus Governorate
+1	Home
+2	Choose the section you want to go to
+3	Find out which e-services are available
+4	and which offices provide them.
+5	Browse services
+6	Paper transactions guide
+7	See the details of each transaction, the documents required,
+8	the fees and the steps to complete it.
+9	Browse the guide
+10	Back to the previous page
+11	E-services - Damascus Governorate
+12	All services
+13	Financial services
+14	Planning & urban development
+15	Traffic & transport
+16	Real estate affairs
+17	Burials
+18	Properties
+19	Service departments
+20	No services match your search or the selected category.
+21	Which service are you looking for?
+22	Search for a service
+23	Could not find the e-services elements.
+24	a
+25	Complaints
+26	Complaints
+27	Finance
+28	Professions
+29	Licences
+30	Professions & licences
+31	Urban planning
+32	Planning & urban development
+33	Decree 66
+34	Traffic engineering & transport
+35	Property affairs
+36	Online
+37	View the service guide:
+38	New service
+39	View guide
+40	Coming soon
+41	E-service guide - Damascus Governorate
+42	Service guide
+43	Loading the service details...
+44	Copy service link
+45	Contact page
+46	Back to e-services
+47	Fees:
+48	Required documents:
+49	Steps:
+50	Service guide
+51	Feedback and suggestions
+52	For any question or comment about this service, we'd be glad to hear from you.
+53	Breadcrumb
+54	Service information
+55	Service details
+56	Service not found
+57	Go back to the e-services page and choose the service again.
+58	E-service
+59	Guide
+60	- Damascus Governorate
+61	No description has been added for this service yet.
+62	Directorate:
+63	Fee information hasn't been added yet.
+64	Required documents haven't been added yet.
+65	The steps for this service haven't been added yet.
+66	Search for a service
+67	Guide details - Damascus Governorate
+68	About the service
+69	Print the guide
+70	Back to the transactions guide
+71	You can go back to the transactions guide and choose another service.
+72	Transaction details
+73	Link copied
+74	Couldn't copy the link
+75	Couldn't display the service
+76	The service wasn't found. Go back to the transactions guide and choose the service again.
+77	Untitled service
+78	No description has been added for this service.
+79	Online through the platform
+80	In person
+81	In person at the relevant office
+82	Not specified
+83	Directorate
+84	How to apply
+85	Where to apply
+86	No steps have been added for this service.
+87	No required documents have been added for this service.
+88	No fees have been added for this service.
+89	guideServicesGrid not found
+90	Close service details
+91	Service description
+92	Required documents
+93	Fees
+94	Transaction stages
+95	Where the transaction is completed
+96	Untitled service:
+97	Address not specified
+98	Service categories
+99	Switch filter style
+100	Filter 1: tabs
+101	Filter 2: sidebar
+102	Filter 3: drag strip

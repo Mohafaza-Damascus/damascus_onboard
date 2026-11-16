@@ -1,0 +1,18 @@
+0	Damascus Governorate - News
+1	All
+2	Last day
+3	Last week
+4	Last month
+5	Governorate activities
+6	No news matches this filter.
+7	More
+8	Be the first to hear our news
+9	Follow us on social media to keep up with the latest news and updates.
+10	Filter news
+11	X
+12	Instagram
+14	Related news
+15	Damascus Governorate news
+17	News item not found
+18	The item may have been removed, or the link is incorrect.
+21	Back to news

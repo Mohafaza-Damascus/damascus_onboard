@@ -1,9 +1,9 @@
 (function () {
   const cssLink = document.querySelector('link[href*="global.css"]');
-  const base = cssLink
-    ? cssLink.getAttribute("href").replace("css/global.css", "")
-    : "";
+  const base = cssLink ? cssLink.getAttribute("href").replace("css/global.css", "") : "";
   const pagesPrefix = base + "pages/";
+
+  const guideHref = "https://desktop-5kc9l5q.tail7e5653.ts.net/";
 
   function renderHeader() {
     const el = document.getElementById("site-header");
@@ -11,68 +11,30 @@
 
     const activePage = el.dataset.active || "";
 
+    const savedModel = localStorage.getItem("dm-header-model") || el.dataset.headerModel || "2";
+
     const navItems = [
       { label: "الرئيسية", href: `${base}index.html` },
-      {
-        label: "الأخبار",
-        href: `${pagesPrefix}news.html`,
-        subItems: [
-          { label: "النموذج الاساسي", href: `${pagesPrefix}news.html` },
-          { label: "النموذج الداتا", href: `${pagesPrefix}news-new.html` },
-          { label: "النموذج الثاني", href: `${pagesPrefix}news-model-2.html` },
-          { label: "النموذج الخامس", href: `${pagesPrefix}news-model-5.html` },
-          { label: "نموذج figma ", href: `${pagesPrefix}news-model-6.html` },
-          { label: "إدارة الأخبار", href: `${pagesPrefix}news-dashboard.html` },
-        ],
-      },
-      {
-        label: "النظرة الثقافية",
-        href: `${pagesPrefix}Cultural.html`,
-        subItems: [
-          { label: "النموذج القديم", href: `${pagesPrefix}Cultural.html` },
-          {
-            label: "النموذج الأول",
-            href: `${pagesPrefix}Cultural-model-1.html`,
-          },
-          {
-            label: "النموذج الثاني",
-            href: `${pagesPrefix}Cultural-model-2.html`,
-          },
-          {
-            label: "النموذج الثالث",
-            href: `${pagesPrefix}Cultural-model-3.html`,
-          },
-          {
-            label: "النموذج الرابع ",
-            href: `${pagesPrefix}Cultural-model-4.html`,
-          },
-          {
-            label: "النموذج الخامس ",
-            href: `${pagesPrefix}Cultural-model-5.html`,
-          },
-        ],
-      },
-      { label: "خدمات", href: `${pagesPrefix}services.html` },
-      { label: "دليل دمشق", href: `${pagesPrefix}Directorates.html` },
+      { label: "الأخبار", href: `${pagesPrefix}news-enas.html` },
+      { label: "النظرة الثقافية", href: `${pagesPrefix}Cultural-model-5.html` },
+      { label: "الخدمات", aliases: ["الخدمات"], href: `${pagesPrefix}services-model-2.html` },
+      { label: "دليل دمشق", href: guideHref },
       { label: "الاستثمارات", href: `${pagesPrefix}Investments.html` },
-      { label: "المشاريع", href: `${pagesPrefix}projects.html` },
     ];
 
     const navLinks = navItems
       .map((item) => {
         const isActive =
           item.label === activePage ||
-          item.subItems?.some((subItem) => subItem.label === activePage);
+          (item.aliases || []).includes(activePage) ||
+          (item.subItems || []).some((subItem) => subItem.label === activePage);
 
         if (!item.subItems) {
-          return `<li><a class="nav__link${isActive ? " is-active" : ""}" href="${item.href}">${item.label}</a></li>`;
+          return `<li class="nav__item"><a class="nav__link${isActive ? " is-active" : ""}" href="${item.href}"><span>${item.label}</span></a></li>`;
         }
 
         const subLinks = item.subItems
-          .map(
-            (subItem) =>
-              `<li><a class="nav__submenu-link" href="${subItem.href}">${subItem.label}</a></li>`,
-          )
+          .map((subItem) => `<li><a class="nav__submenu-link" href="${subItem.href}">${subItem.label}</a></li>`)
           .join("");
 
         return `
@@ -89,52 +51,64 @@
                 <path d="m7 10 5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </button>
-            <ul class="nav__submenu" aria-label="نماذج الأخبار">${subLinks}</ul>
+            <ul class="nav__submenu" aria-label="${item.label}">${subLinks}</ul>
           </li>`;
       })
       .join("");
+
     el.outerHTML = `
-      <header class="header">
-        <div class="container">
-          <div class="header__row">
-            <a href="${base}index.html" class="logo" aria-label="محافظة دمشق">
-              <img src="${base}images/logo.png" alt="شعار محافظة دمشق" />
+<header class="header header--model-${savedModel}" id="siteHeader">
+  <div class="container">
+    <div class="header__row">
+      <a href="${base}index.html" class="logo" aria-label="محافظة دمشق">
+        <span class="logo__badge">
+          <img src="${base}images/logo.png" alt="شعار محافظة دمشق" />
+        </span>
+        <span class="logo__text">
+          <strong class="logo__title">محافظة دمشــــــــــــــــق</strong>
+          <small class="logo__subtitle">DAMASCUS GOVERNORATE</small>
+        </span>
+      </a>
+
+      <div class="header__bar">
+        <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav" id="nav">
+          <ul class="nav__list">${navLinks}</ul>
+
+          <div class="nav__actions">
+            <a href="#" class="btn-login" id="openAuth">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+              </svg>
+              <span>تسجيل الدخول</span>
             </a>
-            <div class="header__bar">
-              <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
-                <span></span><span></span><span></span>
-              </button>
-              <nav class="nav" id="nav">
-                <ul class="nav__list">${navLinks}</ul>
-                <div class="nav__actions">
-                  <a href="#" class="btn-login" id="openAuth">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
-                    </svg>
-                    <span>تسجيل الدخول</span>
-                  </a>
-                </div>
-              </nav>
-            </div>
-            <div class="header__side">
-              <a href="${pagesPrefix}contact.html" class="btn-contact" aria-label="تواصل معنا">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.04z"/>
-                </svg>
-              </a>
-              <button class="btn-lang" id="langBtn" aria-label="تغيير اللغة">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <ellipse cx="12" cy="12" rx="4" ry="10"/>
-                  <path d="M2 12h20"/>
-                  <path d="M4.5 7h15"/>
-                  <path d="M4.5 17h15"/>
-                </svg>
-              </button>
-            </div>
           </div>
-        </div>
-      </header>`;
+        </nav>
+      </div>
+
+      <div class="header__side">
+        <a href="${pagesPrefix}contact.html" class="btn-contact" aria-label="تواصل معنا" title="تواصل معنا">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.04z"/>
+          </svg>
+        </a>
+        <button class="btn-lang" id="langBtn" aria-label="تغيير اللغة" title="تغيير اللغة">
+
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <ellipse cx="12" cy="12" rx="4" ry="10"/>
+            <path d="M2 12h20"/>
+            <path d="M4.5 7h15"/>
+            <path d="M4.5 17h15"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>`;
   }
 
   function renderFooter() {
@@ -143,62 +117,78 @@
 
     el.outerHTML = `
     <footer class="footer pattern">
-      <div style="padding-top:30px;">
-        <div class="footer__grid">
+      <div class="footer__inner">
+        <div class="footer__top">
           <div class="footer__brand">
-            <img class="footer__logo" src="${base}images/footer_logo2.png" alt="محافظة دمشق" />
+            <div class="footer__identity">
+              <a href="${base}index.html">
+                <img class="footer__logo" src="${base}images/damascus-emblem.png" alt="محافظة دمشق" title="محافظة دمشق" />
+              </a>
+              <h2 class="footer__name">محافظة دمشق</h2>
             </div>
-             <nav class="footer__col">
-            <h3 class="footer__title">محافظة دمشق</h3>
-            <ul class="footer__list">
-              <li style="color: #1b2a24;font-weight: 300;">تسعى محافظة دمشق إلى الارتقاء بجودة الخدمات المقدمة للمواطنين وتلبية تطلعاتهم، مستندة إلى معايير السرعة، والكفـاءة، والمصــداقيــة فــي الإنجــــاز.</li>
-            </ul>
-          </nav>
-          <nav class="footer__col">
-            <h3 class="footer__title">روابط مهمة</h3>
-            <ul class="footer__list">
-              <li><a href="${pagesPrefix}news.html">الأخبار</a></li>
-              <li><a href="${pagesPrefix}projects.html">المشاريع</a></li>
-              <li><a href="${pagesPrefix}services.html">خدمات</a></li>
-              <li><a href="${pagesPrefix}Directorates.html">دليل دمشق</a></li>
-              <li><a href="#">دليل مواقع الجهات الحكومية</a></li>
-            </ul>
-          </nav>
-          <nav class="footer__col">
-            <h3 class="footer__title">خدمات المواطنين</h3>
-            <ul class="footer__list">
-              <li><a href="${pagesPrefix}services.html">الخدمات</a></li>
-              <li><a href="${pagesPrefix}contact.html">تواصل معنا</a></li>
-            </ul>
-          </nav>
-          <div class="footer__col">
-            <h3 class="footer__title">تابعنا:</h3>
+            <p class="footer__about">تسعى محافظة دمشق إلى الارتقاء بجودة الخدمات المقدمة للمواطنين وتلبية تطلعاتهم، مستندة إلى معايير السرعة، والكفاءة، والمصداقية في الإنجاز.</p>
             <ul class="socials">
-              <li><a href="#" class="social" aria-label="انستغرام"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a></li>
-              <li><a href="#" class="social" aria-label="فيسبوك"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a></li>
+              <li><a href="https://t.me/DamascusGov1" class="social" target="_blank" rel="noopener" aria-label="تيليغرام"><svg viewBox="0 0 448 512" fill="currentColor"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/></svg></a></li>
+              <li><a href="https://x.com/DamascusGov1?s=20" class="social" target="_blank" rel="noopener" aria-label="إكس"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>
+              <li><a href="https://www.youtube.com/@DamascusGov1" class="social" target="_blank" rel="noopener" aria-label="يوتيوب"><svg viewBox="0 0 510 510" fill="currentColor"><path d="M459,61.2C443.7,56.1,349.35,51,255,51c-94.35,0-188.7,5.1-204,10.2C10.2,73.95,0,163.2,0,255s10.2,181.05,51,193.8C66.3,453.9,160.65,459,255,459c94.35,0,188.7-5.1,204-10.2c40.8-12.75,51-102,51-193.8S499.8,73.95,459,61.2z M204,369.75v-229.5L357,255L204,369.75z"/></svg></a></li>
+              <li><a href="https://www.facebook.com/DamascusGov1" class="social" target="_blank" rel="noopener" aria-label="فيسبوك"><svg viewBox="0 0 512 512" fill="currentColor"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a></li>
+              <li><a href="https://www.instagram.com/damascusgov1" class="social" target="_blank" rel="noopener" aria-label="انستغرام"><svg viewBox="0 0 448 512" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a></li>
             </ul>
+          </div>
+          <div class="footer__grid">
+            <nav class="footer__col">
+              <h3 class="footer__title">روابط سريعة</h3>
+              <ul class="footer__list">
+                <li><a href="${base}index.html">الرئيسية</a></li>
+                <li><a href="${pagesPrefix}news-enas.html">الأخبار</a></li>
+                <li><a href="${pagesPrefix}Cultural-model-5.html">النظرة الثقافية</a></li>
+                <li><a href="${guideHref}">دليل دمشق</a></li>
+                <li><a href="${pagesPrefix}Investments.html">الاستثمارات</a></li>
+              </ul>
+            </nav>
+            <nav class="footer__col">
+              <h3 class="footer__title">خدمات المواطنين</h3>
+              <ul class="footer__list">
+                <li><a href="${pagesPrefix}services-model-2.html">الخدمات</a></li>
+                <li><a href="${pagesPrefix}electronic-services.html">الخدمات الإلكترونية</a></li>
+                <li><a href="${pagesPrefix}contact.html">تواصل معنا</a></li>
+              </ul>
+            </nav>
+            <div class="footer__col">
+              <h3 class="footer__title">طرق التواصل</h3>
+              <ul class="footer__contact">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.04z"/></svg>
+                  <span><a href="tel:+963112234567"><bdi dir="ltr">011-2234567</bdi></a><br /><a href="tel:+963999123456"><bdi dir="ltr">+963 999 123 456</bdi></a></span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+                  <a href="mailto:damascus@moi.gov.sy"><bdi dir="ltr">damascus@moi.gov.sy</bdi></a>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>دمشق — ساحة يوسف العظمة</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="footer__bottom">
           <p class="footer__copy">جميع الحقوق محفوظة - محافظة دمشق © 2026</p>
-          <ul class="footer__legal">
-            <li><a href="#">الشروط والأحكام</a></li>
-            <li><a href="#">سياسة الخصوصية</a></li>
-          </ul>
         </div>
       </div>
     </footer>
-    <button class="a11y-btn" aria-label="إمكانية الوصول">
-      <img src="${base}images/Standing Man.png" alt="" />
-    </button>`;
+    <div class="header-switcher" id="headerSwitcher" aria-label="تبديل تصميم الهيدر">
+      <button type="button" data-hmodel="1" title="النموذج 1">H1</button>
+      <button type="button" data-hmodel="2" title="النموذج 2">H2</button>
+      <button type="button" data-hmodel="3" title="النموذج 3">H3</button>
+    </div>`;
   }
 
   function renderModals() {
     const wrapper = document.createElement("div");
     wrapper.innerHTML = `
-
     <div class="auth-overlay" id="authOverlay">
-
       <div class="auth-modal" id="authWelcome">
         <button class="auth-modal__close" data-close>&times;</button>
         <img class="auth-modal__logo" src="${base}images/logo.png" alt="محافظة دمشق" />
@@ -289,16 +279,67 @@
     document.body.appendChild(wrapper.firstElementChild);
   }
 
+  function loadAiChat() {
+    const css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = `${base}css/ai-chat.css`;
+    document.head.appendChild(css);
+
+    const js = document.createElement("script");
+    js.src = `${base}js/ai-chat.js`;
+    document.body.appendChild(js);
+  }
+
   renderHeader();
   renderFooter();
   renderModals();
-  const todayEl = document.getElementById("today");
-  if (todayEl) {
-    todayEl.textContent = new Date().toLocaleDateString("ar-SY", {
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-      year: "numeric",
+  loadAiChat();
+
+  const header = document.querySelector(".header");
+  const switcher = document.getElementById("headerSwitcher");
+
+  const setHeaderHeight = () => {
+    if (!header) return;
+    document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
+  };
+
+  function applyHeaderModel(modelNum) {
+    if (!header) return;
+    header.classList.remove("header--model-1", "header--model-2", "header--model-3", "header--model-4");
+    header.classList.add(`header--model-${modelNum}`);
+    localStorage.setItem("dm-header-model", String(modelNum));
+    if (switcher) {
+      switcher.querySelectorAll("button").forEach((btn) => {
+        btn.classList.toggle("is-active", btn.dataset.hmodel === String(modelNum));
+      });
+    }
+    setHeaderHeight();
+  }
+
+  const initialModel = localStorage.getItem("dm-header-model") || "2";
+  applyHeaderModel(initialModel);
+
+  if (switcher) {
+    switcher.addEventListener("click", (e) => {
+      const btn = e.target.closest("button[data-hmodel]");
+      if (!btn) return;
+      applyHeaderModel(btn.dataset.hmodel);
+    });
+  }
+
+  const langBtn = document.getElementById("langBtn");
+  if (langBtn && window.I18N) {
+    const label = window.I18N.lang === "en" ? "العربية" : "English";
+    langBtn.setAttribute("aria-label", label);
+    langBtn.setAttribute("title", label);
+    langBtn.setAttribute("data-i18n-skip", "");
+    langBtn.addEventListener("click", () => window.I18N.toggle());
+  }
+  if (window.I18N && window.I18N.lang === "en") {
+    document.querySelectorAll(".logo__subtitle").forEach((el) => {
+      el.textContent = "محافظة دمشق";
+      el.setAttribute("lang", "ar");
+      el.setAttribute("data-i18n-skip", "");
     });
   }
 
@@ -321,149 +362,68 @@
     });
   }
 
-  const menuItems = document.querySelectorAll(".nav__item--has-menu");
-
-  menuItems.forEach((menuItem) => {
+  document.querySelectorAll(".nav__item--has-menu").forEach((menuItem) => {
     const menuTrigger = menuItem.querySelector("[data-menu-trigger]");
-    const submenu = menuItem.querySelector(".nav__submenu");
-
-    if (!menuTrigger || !submenu) {
-      return;
-    }
+    if (!menuTrigger) return;
 
     let closeTimer = null;
 
     const openMenu = () => {
       clearTimeout(closeTimer);
-
-      menuItems.forEach((otherMenu) => {
-        if (otherMenu !== menuItem) {
-          otherMenu.classList.remove("is-open");
-
-          const otherTrigger = otherMenu.querySelector("[data-menu-trigger]");
-
-          if (otherTrigger) {
-            otherTrigger.setAttribute("aria-expanded", "false");
-          }
-        }
-      });
-
       menuItem.classList.add("is-open");
       menuTrigger.setAttribute("aria-expanded", "true");
     };
 
     const closeMenu = () => {
       clearTimeout(closeTimer);
-
       closeTimer = setTimeout(() => {
         menuItem.classList.remove("is-open");
         menuTrigger.setAttribute("aria-expanded", "false");
-      }, 500);
+      }, 150);
     };
 
     menuItem.addEventListener("mouseenter", openMenu);
     menuItem.addEventListener("mouseleave", closeMenu);
 
     menuTrigger.addEventListener("click", (e) => {
-      e.preventDefault();
       e.stopPropagation();
-
-      clearTimeout(closeTimer);
-
-      if (menuItem.classList.contains("is-open")) {
-        menuItem.classList.remove("is-open");
-        menuTrigger.setAttribute("aria-expanded", "false");
-      } else {
-        openMenu();
-      }
+      const isOpen = menuItem.classList.contains("is-open");
+      if (isOpen) closeMenu();
+      else openMenu();
     });
 
-    submenu.addEventListener("mouseenter", () => {
-      clearTimeout(closeTimer);
-    });
-
-    submenu.addEventListener("mouseleave", closeMenu);
-
-    submenu.addEventListener("click", (e) => {
-      e.stopPropagation();
-    });
-  });
-
-  document.addEventListener("click", (e) => {
-    menuItems.forEach((menuItem) => {
+    document.addEventListener("click", (e) => {
       if (!menuItem.contains(e.target)) {
         menuItem.classList.remove("is-open");
-
-        const menuTrigger = menuItem.querySelector("[data-menu-trigger]");
-
-        if (menuTrigger) {
-          menuTrigger.setAttribute("aria-expanded", "false");
-        }
+        menuTrigger.setAttribute("aria-expanded", "false");
       }
     });
-  });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key !== "Escape") {
-      return;
-    }
-
-    menuItems.forEach((menuItem) => {
-      menuItem.classList.remove("is-open");
-
-      const menuTrigger = menuItem.querySelector("[data-menu-trigger]");
-
-      if (menuTrigger) {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        menuItem.classList.remove("is-open");
         menuTrigger.setAttribute("aria-expanded", "false");
       }
     });
   });
 
-  const header = document.querySelector(".header");
-
-  const setHeaderHeight = () => {
-    if (!header) return;
-    document.documentElement.style.setProperty(
-      "--header-h",
-      header.offsetHeight + "px",
-    );
-  };
-
   setHeaderHeight();
-  // من معاذ هاد السكشن مؤقت
-  const logoBtn = document.querySelector(".header .logo");
-  if (logoBtn) {
-    if (localStorage.getItem("header-unified") === "true") {
-      document.querySelector(".header")?.classList.add("header--unified");
-    }
-
-    logoBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const h = document.querySelector(".header");
-      if (!h) return;
-      h.classList.toggle("header--unified");
-      localStorage.setItem(
-        "header-unified",
-        h.classList.contains("header--unified"),
-      );
-    });
-  }
-  // من معاذ لهون مؤقت
-
   window.addEventListener("resize", setHeaderHeight);
   window.addEventListener("load", setHeaderHeight);
 
   if (header) {
     let lastY = window.scrollY;
-    const SCROLL_THRESHOLD = 60;
+    const SCROLL_THRESHOLD = 80;
 
     const onScroll = () => {
       const y = window.scrollY;
-      header.classList.toggle("is-scrolled", y > 20);
+      const delta = y - lastY;
 
-      if (y > SCROLL_THRESHOLD) {
-        header.classList.toggle("is-hidden", y > lastY);
-      } else {
+      header.classList.toggle("is-scrolled", y > 24);
+
+      if (y > SCROLL_THRESHOLD && delta > 6) {
+        header.classList.add("is-hidden");
+      } else if (delta < -4 || y <= SCROLL_THRESHOLD) {
         header.classList.remove("is-hidden");
       }
 
@@ -472,41 +432,6 @@
 
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-  }
-
-  const counters = document.querySelectorAll(".stat__value");
-
-  const animate = (el) => {
-    const target = parseFloat(el.dataset.count);
-    const suffix = el.dataset.suffix || "";
-    const decimals = parseInt(el.dataset.decimals || "0", 10);
-    const duration = 1400;
-    const start = performance.now();
-
-    const tick = (now) => {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      const value = (target * eased).toFixed(decimals);
-      el.textContent = Number(value).toLocaleString("ar-SY") + suffix;
-      if (p < 1) requestAnimationFrame(tick);
-    };
-
-    requestAnimationFrame(tick);
-  };
-
-  if (counters.length) {
-    const io = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animate(entry.target);
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.4 },
-    );
-    counters.forEach((el) => io.observe(el));
   }
 
   const authOverlay = document.getElementById("authOverlay");
@@ -535,7 +460,7 @@
   if (openAuthBtn) {
     openAuthBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      openAuth();
+      openAuth(authLogin);
     });
   }
 
@@ -550,8 +475,7 @@
       e.preventDefault();
       showView(authLogin);
     });
-  if (goRegister)
-    goRegister.addEventListener("click", () => showView(authRegister));
+  if (goRegister) goRegister.addEventListener("click", () => showView(authRegister));
   if (goRegister2)
     goRegister2.addEventListener("click", (e) => {
       e.preventDefault();
@@ -575,9 +499,7 @@
     selector.addEventListener("click", (e) => {
       const pill = e.target.closest(".role-pill");
       if (!pill) return;
-      selector
-        .querySelectorAll(".role-pill")
-        .forEach((p) => p.classList.remove("is-active"));
+      selector.querySelectorAll(".role-pill").forEach((p) => p.classList.remove("is-active"));
       pill.classList.add("is-active");
     });
   });

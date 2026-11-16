@@ -1,4 +1,4 @@
-<!-- <!doctype html>
+<!doctype html>
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
@@ -7,208 +7,7 @@
     <link rel="icon" href="../images/logo.png" type="image/png" />
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/contact.css" />
-  </head>
-  <body>
-    <main class="contact-page">
-      <div class="contact-bg">
-        <img src="../images/Damascus.png" alt="" aria-hidden="true" />
-      </div>
-
-      <div class="contact-card">
-      
-        <button
-          class="contact-close"
-          aria-label="إغلاق"
-          onclick="history.back()"
-        >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-          >
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-
-        <div class="contact-head">
-          <div class="contact-head__info">
-            <h1 class="contact-head__title">صوتك يصل الينا</h1>
-            <p class="contact-head__sub">نسعد بتواصلك معنا</p>
-          </div>
-          <figure class="contact-head__logo">
-            <img src="../images/footer_logo.png" alt="محافظة دمشق" />
-          </figure>
-        </div>
-
-        <div class="contact-form">
-          <div class="contact-col">
-            <div class="contact-field">
-              <label for="fullName">الاسم الكامل</label>
-              <input type="text" id="fullName" name="fullName" required />
-            </div>
-            <div class="contact-field">
-              <label for="email">البريد الالكتروني</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-          </div>
-
-          <div class="contact-col">
-            <div class="contact-field">
-              <label for="subject">الموضوع</label>
-              <input type="text" id="subject" name="subject" required />
-            </div>
-            <div class="contact-field">
-              <label for="suggestion">المقترح</label>
-              <textarea
-                id="suggestion"
-                name="suggestion"
-                rows="4"
-                placeholder="اكتب مقترحك هنا..."
-              ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <button type="button" class="contact-submit" id="submitBtn">
-          إرسال
-        </button>
-      </div>
-    </main>
-
-    <button class="a11y-btn" aria-label="إمكانية الوصول">
-      <img src="../images/Standing Man.png" alt="" />
-    </button>
-
-    <script src="../js/global.js"></script>
-    <script src="../js/services.js"></script>
-    <script src="../js/index.js"></script>
-    <script>
-      document.getElementById("submitBtn")?.addEventListener("click", () => {
-        const name = document.getElementById("fullName").value.trim();
-        const email = document.getElementById("email").value.trim();
-        if (!name || !email) {
-          alert("يرجى ملء الاسم والبريد الالكتروني");
-          return;
-        }
-        alert("شكراً لتواصلك! تم إرسال رسالتك بنجاح.");
-      });
-    </script>
-  </body>
-</html> -->
-
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>محافظة دمشق</title>
-    <link rel="stylesheet" href="../css/contact.css" />
-    <!-- <link rel="stylesheet" href="../css/common.css" /> -->
-    <link rel="stylesheet" href="../css/global.css" />
-
-    <link
-      href="../Bwork/Styles/bworkMessage.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="../Bwork/Styles/bworkMessage.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="../Bwork/Styles/default.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="../Bwork/Styles/viewer.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="../Bwork/Styles/bwork.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="../Bwork/Styles/workflow.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="../Bwork/Styles/login.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="../Bwork/Styles/fileviewer/archivePnl.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="../Bwork/Styles/fileviewer/imgViewer.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="../Bwork/Styles/widgets/widgets.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link rel="stylesheet" href="../css/global.css" />
-    <link rel="icon" href="../images/logo.png" type="image/png" />
-
-    <style>
-      :root {
-        --labelalign: right;
-        --float: right !important;
-        --left: 0;
-        --right: 1;
-      }
-    </style>
-    <link href="./services-styles.css" rel="stylesheet" type="text/css" />
-    <script src="../Bwork/Scripts/multilang.js?v34"></script>
-    <script src="../Bwork/Scripts/bworkRequests.js?v34"></script>
-    <script src="../Bwork/Scripts/bwork.js?v34"></script>
-    <script src="../Bwork/Scripts/bworkMain.js?v34"></script>
-    <script src="../Bwork/Scripts/multilang.js?v34"></script>
-    <script src="../Bwork/Scripts/bworkFrames.js?v34"></script>
-    <script src="../Bwork/Scripts/editableTable.js?v34"></script>
-    <script src="../Bwork/Scripts/primascript.js?v34"></script>
-    <script src="../Bwork/Scripts/fileviewer/archivePnl.js?v34"></script>
-    <script src="../Bwork/Scripts/fileviewer/imgViewer.js?v34"></script>
-    <script src="../Bwork/Scripts/bworkComperable.js?v34"></script>
-    <script src="../Bwork/Scripts/bowrkIntervals.js?v34"></script>
-    <script src="../Bwork/Scripts/bworkMessages.js?v34"></script>
-    <script src="../Bwork/Scripts/bworkPrivileges.js?v34"></script>
-    <script src="../Bwork/Scripts/bworkDepartments.js?v34"></script>
-    <script src="../Bwork/Scripts/bworkComponent.js?v34"></script>
-    <script src="../Bwork/Scripts/numbers.js?v34"></script>
-    <script src="../Bwork/Scripts/handleWindowSize.js?v34"></script>
-    <script src="../Bwork/Scripts/sockets.js?v34"></script>
-    <script src="../Bwork/Scripts/shortcuts.js?v34"></script>
-    <script src="../Bwork/Scripts/user-account.js?v34"></script>
-    <script src="../Bwork/Scripts/workflow/functions.js?v34"></script>
-    <script src="../Bwork/Scripts/dewan/dewan.js?v34"></script>
-    <script src="../Bwork/Scripts/log/db-log.js?v34"></script>
-    <script src="../Bwork/Scripts/log/wf-logs.js?v34"></script>
-    <script src="../Bwork/Scripts/bworkCache.js?v34"></script>
-    <script src="../Bwork/Scripts/report/report-functions.js?v34"></script>
-    <script src="../Bwork/Scripts/scan/scan-cycle.js?v34"></script>
-    <script src="../Bwork/Scripts/widget-info.js?v34"></script>
-    <script src="../Bwork/Scripts/bworkFilesSearch.js?v34"></script>
-    <script src="../Bwork/Scripts/fileviewer/image-element.js?v34"></script>
-    <script src="../Bwork/Scripts/log/wf-action.js?v34"></script>
-    <script src="./services-functions.js"></script>
-    <script src="./license/licenses-functions.js"></script>
-    <script src="./license/license-preview.js"></script>
-    <script src="../Bwork/Scripts/loginLoad.js?v34"></script>
+    <script src="../js/i18n.js"></script>
   </head>
   <body dir="rtl">
     <div id="site-header" data-active="تواصل معنا"></div>
@@ -244,48 +43,30 @@
           <div class="contact-gold-bar"></div>
 
           <div class="contact-info-row">
-            <img src="./assests/img/phone.png" alt="هاتف" />
-            <div class="contact-info-text">
-              011-2234567<br />+963 999 123 456
-            </div>
+            <img src="../images/icons/phone.svg" alt="هاتف" />
+            <div class="contact-info-text">011-2234567<br />+963 999 123 456</div>
           </div>
           <div class="contact-info-row">
-            <img src="./assests/img/email.png" alt="بريد" />
+            <img src="../images/icons/email.svg" alt="بريد" />
             <div class="contact-info-text">damascus@moi.gov.sy</div>
           </div>
           <div class="contact-info-row">
-            <img src="./assests/img/location.png" alt="عنوان" />
+            <img src="../images/icons/location.svg" alt="عنوان" />
             <div class="contact-info-text">دمشق — ساحة يوسف العظمة</div>
           </div>
 
           <div class="contact-social-row">
-            <a
-              href="https://t.me/DamascusGov1"
-              class="contact-social-btn"
-              aria-label="Telegram"
-            >
-              <img src="./assests/img/telegram.png" alt="" />
+            <a href="https://t.me/DamascusGov1" class="contact-social-btn" aria-label="Telegram">
+              <img src="../images/social/telegram.png" alt="" />
             </a>
-            <a
-              href="https://x.com/DamascusGov1?fbclid=IwdGRjcAR_oc9jbGNrBH-hymV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHrxH_GOjpQsKClmxI8nRn9FVTQP5MjlrqgxvC_S5WxwgzjIxWBTMRYCUfRch_aem_Nnp76voBypGebyQjhVZ7Zw"
-              class="contact-social-btn"
-              aria-label="X"
-            >
-              <img src="./assests/img/twitter.png" alt="" />
+            <a href="https://x.com/DamascusGov1?s=20" class="contact-social-btn" aria-label="X">
+              <img src="../images/social/twitter.png" alt="" />
             </a>
-            <a
-              href="https://www.facebook.com/share/1BRhkDQ92D/"
-              class="contact-social-btn"
-              aria-label="Facebook"
-            >
-              <img src="./assests/img/facebook.png" alt="" />
+            <a href="https://www.facebook.com/DamascusGov1" class="contact-social-btn" aria-label="Facebook">
+              <img src="../images/social/facebook.png" alt="" />
             </a>
-            <a
-              href="https://www.instagram.com/damascusgov1?igsh=ZWdvYjQwemQ4dG5h"
-              class="contact-social-btn"
-              aria-label="Instagram"
-            >
-              <img src="./assests/img/instagram.png" alt="" />
+            <a href="https://www.instagram.com/damascusgov1" class="contact-social-btn" aria-label="Instagram">
+              <img src="../images/social/instagram.png" alt="" />
             </a>
           </div>
         </div>

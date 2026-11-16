@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>محافظة دمشق - الأخبار</title>
+
+    <link rel="icon" href="../images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="../css/news-enas.css" />
+    <script src="../js/i18n.js"></script>
+  </head>
+  <body>
+    <div id="site-header" data-active="الأخبار"></div>
+
+    <main class="main-content-wrapper">
+      <section class="news-section">
+        <h2 class="section-title">آخر الأخبار</h2>
+        <div class="accordion"></div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <section class="news-section">
+        <div class="news-grid-header">
+          <h2 class="section-title">جميع الأخبار</h2>
+          <div class="news-filters" role="group" aria-label="فلترة الأخبار">
+            <button type="button" class="news-filter" data-filter="all" aria-pressed="true">الكل</button>
+            <button type="button" class="news-filter" data-filter="day" aria-pressed="false">آخر يوم</button>
+            <button type="button" class="news-filter" data-filter="week" aria-pressed="false">آخر أسبوع</button>
+            <button type="button" class="news-filter" data-filter="month" aria-pressed="false">آخر شهر</button>
+            <span class="news-filters-sep" aria-hidden="true"></span>
+            <button type="button" class="news-filter" data-filter="activity" aria-pressed="false">
+              أنشطة المحافظة
+            </button>
+            <button type="button" class="news-filter" data-filter="decision" aria-pressed="false">قرار</button>
+            <button type="button" class="news-filter" data-filter="news" aria-pressed="false">خبر</button>
+          </div>
+        </div>
+        <div class="news-grid"></div>
+
+        <p class="news-empty" id="newsEmpty" hidden>لا توجد أخبار ضمن هذه الفلترة.</p>
+        <div class="news-more-wrap" id="newsMoreWrap" hidden>
+          <button type="button" class="news-more" id="newsMore">المزيد</button>
+        </div>
+      </section>
+
+      <section class="follow-us border-beam" aria-labelledby="followTitle">
+        <canvas class="follow-bg" data-fluted-glass aria-hidden="true"></canvas>
+
+        <div class="follow-content">
+          <h2 class="follow-title" id="followTitle">كن أول من يعرف جديدنا</h2>
+          <p class="follow-text">تابعنا على منصات التواصل الاجتماعي لتبقى على اطلاع بآخر الأخبار والمستجدات.</p>
+        </div>
+
+        <div class="follow-links">
+          <a
+            class="follow-link follow-link--facebook"
+            href="https://www.facebook.com/DamascusGov1"
+            target="_blank"
+            rel="noopener"
+            aria-label="فيسبوك"
+            title="فيسبوك"
+          >
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                d="M12 3.303h-2.285c-0.27 0-0.572 0.355-0.572 0.831v1.65h2.857v2.352h-2.857v7.064h-2.698v-7.063h-2.446v-2.353h2.446v-1.384c0-1.985 1.378-3.6 3.269-3.6h2.286v2.503z"
+              />
+            </svg>
+          </a>
+          <a
+            class="follow-link follow-link--x"
+            href="https://x.com/DamascusGov1?s=20"
+            target="_blank"
+            rel="noopener"
+            aria-label="منصة إكس"
+            title="منصة إكس"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              />
+            </svg>
+          </a>
+          <a
+            class="follow-link follow-link--instagram"
+            href="https://www.instagram.com/damascusgov1"
+            target="_blank"
+            rel="noopener"
+            aria-label="إنستغرام"
+            title="إنستغرام"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zM7.5 4A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4zM12 7a5 5 0 1 1 0 10a5 5 0 1 1 0-10zM12 9a3 3 0 1 0 0 6a3 3 0 1 0 0-6zM17.5 5.3a1.2 1.2 0 1 1 0 2.4a1.2 1.2 0 1 1 0-2.4z"
+              />
+            </svg>
+          </a>
+          <a
+            class="follow-link follow-link--youtube"
+            href="https://www.youtube.com/@DamascusGov1"
+            target="_blank"
+            rel="noopener"
+            aria-label="يوتيوب"
+            title="يوتيوب"
+          >
+            <svg viewBox="0 0 510 510" aria-hidden="true">
+              <path
+                d="M459,61.2C443.7,56.1,349.35,51,255,51c-94.35,0-188.7,5.1-204,10.2C10.2,73.95,0,163.2,0,255s10.2,181.05,51,193.8C66.3,453.9,160.65,459,255,459c94.35,0,188.7-5.1,204-10.2c40.8-12.75,51-102,51-193.8S499.8,73.95,459,61.2z M204,369.75v-229.5L357,255L204,369.75z"
+              />
+            </svg>
+          </a>
+          <a
+            class="follow-link follow-link--telegram"
+            href="https://t.me/DamascusGov1"
+            target="_blank"
+            rel="noopener"
+            aria-label="تيليغرام"
+            title="تيليغرام"
+          >
+            <svg viewBox="0 0 448 512" aria-hidden="true">
+              <path
+                d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <span class="border-beam-ring" aria-hidden="true"></span>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="../js/global.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/load-data.js" data-file="../js/news-data.js"></script>
+    <script src="../js/news-enas.js"></script>
+    <script src="../js/fluted-glass.js"></script>
+  </body>
+</html>

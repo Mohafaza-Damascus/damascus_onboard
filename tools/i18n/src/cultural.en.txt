@@ -1,0 +1,1029 @@
+0	Culture | Damascus
+1	They
+2	called her
+3	Tamesqu
+4	Dimashqa
+5	Dimashq
+6	Damascus
+7	Darmasaq
+8	Jillaq
+9	Al-Sham
+10	Dimashqi
+11	Darmasuq
+12	Dimashq al-Sham
+13	What they said about her
+14	Damascus ...
+15	A story of glory that never fades
+16	through the ages
+17	Ancient times
+18	The beginnings of Damascus
+19	How Damascus began and grew into a city and urban centre in the Levant.
+20	Drag or use the arrows to move
+21	Discover more
+22	Tap the gate to move between the gates
+23	Memory of the place
+24	From masterpieces of Damascene architecture to historic markets and palaces,
+25	discover the places that shaped the city over the centuries.
+26	The Damascene
+27	calendar
+28	Intangible heritage
+29	"What they said about her" book – use the arrows to turn the pages
+30	Previous page
+31	Next page
+32	Damascus through the ages
+33	Historical periods
+34	Previous period
+35	Next period
+36	The gates of Damascus
+37	Go to the next gate
+38	Choose a gate
+39	Landmarks of Damascus — tap a card to open the landmark's page, or use the arrows to move
+40	Previous landmark
+41	Choose a landmark
+42	Next landmark
+43	The Damascene calendar
+44	Calendar – use the left and right arrows to turn
+45	Fields of intangible heritage
+46	List of heritage fields
+47	Music
+48	Musical evening
+49	A musical evening bringing together artists and musicians in Damascus.
+50	Arts
+51	Art exhibition
+52	An art exhibition of contemporary works.
+53	Heritage
+54	Heritage event
+55	A cultural event showcasing a side of Damascene heritage.
+56	Theatre
+57	Theatre performance
+58	A theatre performance as part of the city's cultural programme.
+59	1st millennium BC
+60	Aramaean Damascus
+61	In the first millennium BC, Damascus became the capital of a powerful Aramaean kingdom.
+62	333 – 64 BC
+63	The Hellenistic period
+64	After the conquests of Alexander the Great, Damascus entered the Greek world.
+65	64 BC – 395 AD
+66	The Roman era
+67	Under Rome, Damascus flourished and the Straight Street was laid out.
+68	395 – 634 AD
+69	The Byzantine era
+70	Damascus became an important Christian centre and its temple was turned into a church.
+71	661 – 750 AD
+72	The Umayyad state
+73	Damascus became the capital of the largest state of its day, and the Umayyad Mosque was built.
+74	750 – 1154 AD
+75	Abbasids and Fatimids
+76	Damascus became a province contested by the Abbasids, the Fatimids and the Seljuks.
+77	1154 – 1260 AD
+78	Zengids and Ayyubids
+79	Damascus became a seat of power again under Nur al-Din Zengi and Saladin.
+80	1260 – 1516 AD
+81	The Mamluk Sultanate
+82	Schools, bathhouses and markets flourished under the Mamluks.
+83	1516 – 1918 AD
+84	The Ottoman era
+85	A major stop for pilgrim caravans, where takiyyas and khans were built.
+86	1918 – 1970 AD
+87	The Arab Government and independence
+88	The first Arab government in Damascus, then the French Mandate, Maysaloun and the Great Revolt, until evacuation in 1946.
+89	1970 – 2011 AD
+90	Assad's seizure of power
+91	Hafez al-Assad's coup in 1970, decades of repression and massacres, and power handed down to his son.
+92	2011 – 2024 AD
+93	The Syrian revolution and its victory
+94	From the Souq al-Hamidiyah protest in 2011 to the liberation of Damascus and the fall of the regime on 8 December 2024.
+95	2024 AD – today
+96	Modern Damascus
+97	Free Damascus after liberation, and a new chapter of recovery and rebuilding.
+98	even
+99	from
+100	From the memory of Damascus and its living heritage
+101	Main features
+102	Related crafts:
+103	Bab Sharqi
+104	Dating back to Roman times, it still keeps much of its original form. It stands at the eastern end of the Straight Street and has three openings, the widest in the middle.
+105	Bab Kisan
+106	Its name is linked to the story of Saint Paul's escape from Damascus, and today it houses a small chapel in his name by the south-eastern wall of the old city.
+107	Bab al-Saghir
+108	One of the southern gates of Damascus, next to the Bab al-Saghir cemetery, which holds the tombs of several Companions of the Prophet and members of his family.
+109	Bab al-Jabiya
+110	At the western end of the Straight Street, opposite Bab Sharqi; its name comes from the ancient town of al-Jabiya.
+111	Bab al-Faradis
+112	Also known as Bab al-Amara, it lies north of the Umayyad Mosque; its name, "gate of the paradises", comes from the orchards that once surrounded it outside the wall.
+113	Bab al-Salam
+114	One of the most beautiful gates of Damascus and the best preserved; the Ayyubids rebuilt it in the 13th century AD.
+115	Bab Touma
+116	Named after Saint Thomas, its name is carried today by one of the oldest and liveliest quarters of Old Damascus.
+117	[Gates of Damascus] Couldn't load
+118	— a fallback scene was used.
+119	[Gates of Damascus] No image
+120	.jpg — a fallback scene was used.
+121	[Gates of Damascus] Couldn't load the gate image
+122	— the drawn gate was used.
+123	Go to
+124	[Gates of Damascus] Switching to Canvas 2D:
+125	WebGL isn't available
+126	Images loaded from file:// — run serve.js to enable WebGL
+127	Prophetic hadith
+128	On the merits of the Levant as a whole, not Damascus alone — narrated by Zayd ibn Thabit, Sunan al-Tirmidhi (3954) and Musnad Ahmad (21607)
+129	On the merits of al-Sham
+130	Hadith
+131	Blessed is al-Sham, for the angels of the Most Merciful spread their wings over it
+132	Ibn Jubayr al-Andalusi
+133	From his travels, as quoted by Ibn Battuta in "Tuhfat al-Nuzzar", in his chapter on Damascus
+134	Paradise of the East
+135	Travel
+136	As for Damascus, it is the paradise of the East, the rising place of its radiant light, the last of the lands of Islam we visited, and the bride of the cities we beheld
+137	Ibn Battuta
+138	Describing his arrival in Damascus in 726 AH — "Tuhfat al-Nuzzar fi Ghara'ib al-Amsar wa Aja'ib al-Asfar"
+139	The city's beauty
+140	Damascus surpasses all other lands in loveliness and leads them in beauty; any description, however long, falls short of its charms
+141	Yaqut al-Hamawi
+142	Geographer and historian — "Mu'jam al-Buldan", entry on Damascus
+143	The running water of Damascus
+144	History
+145	Among the features of Damascus I have seen in no other land are its many rivers and the water running through its channels
+146	From his description of Damascus — "Mu'jam al-Buldan", entry on Damascus
+147	Paradise in Damascus
+148	In short, nothing has been said to describe paradise without its like being found in Damascus
+149	Describing the Umayyad Mosque — "Tuhfat al-Nuzzar", on the Mosque of Damascus known as the Mosque of the Umayyads
+150	The Umayyad Mosque
+151	It is the grandest mosque in the world, the finest in craftsmanship and the most wondrous in beauty, splendour and perfection; nothing like it is known and nothing resembles it
+152	Al-Sanawbari
+153	Abbasid poet — his verses are quoted by Yaqut al-Hamawi in "Mu'jam al-Buldan"
+154	The world in Damascus
+155	Poetry
+156	Life in Damascus is pure for those who dwell there
+157	you will find no world outside Damascus
+158	Al-Buhturi
+159	From verses describing the greenery and rain of Damascus — quoted by Yaqut al-Hamawi in "Mu'jam al-Buldan"
+160	The charms of Damascus
+161	Damascus has unveiled its charms
+162	and its rains have kept every promise to you
+163	Ahmad Shawqi
+164	From the poem "The Calamity of Damascus", tied to the events of 1925 and recited in January 1926 — al-Shawqiyyat
+165	The Calamity of Damascus
+166	Greetings gentler than the breeze of Barada
+167	and tears that cannot be held back, O Damascus
+168	Nizar Qabbani
+169	From "The Damascene Poem"
+170	The Damascene Poem
+171	This is Damascus... and this is the cup and the wine
+172	I am in love... and some love can slay
+173	Al-Walid ibn Abd al-Malik
+174	A saying attributed to him in an account given by Ibn Manzur in "Mukhtasar Tarikh Dimashq"
+175	Account
+176	I have seen you, people of Damascus, boast over others of four qualities, and I wanted your mosque to be the fifth
+177	A saying quoted by Ibn Jubayr
+178	He recorded it in his travels from "those who say" in Damascus, without naming a single speaker, as it appears in Ibn Battuta's account
+179	Damascus and paradise
+180	If paradise is on earth, Damascus is surely in it; and if it is in heaven, Damascus rivals it and stands beside it
+181	Mark Twain
+182	A free summary of an idea from his book "The Innocents Abroad", chapter 44 (1869), not a literal quotation
+183	Damascus has watched empires rise, flourish and fall, and has endured as an ancient city through the centuries
+184	The Book of Damascus
+185	What travellers, writers and poets wrote about Damascus
+186	What they said about her · Damascus Governorate
+188	Damascene cuisine and the art of hospitality
+189	The dishes, sweets and seasonal preserves of Damascene homes, the rituals of coffee and the etiquette of welcoming guests.
+190	Yabraq (stuffed vine leaves)
+191	Shish barak
+192	Kibbeh
+193	Kishk
+194	Jams and pickles
+195	Bread and home-made leaven
+196	Liquorice drink (erq sous)
+197	Tamarind drink
+198	Jallab
+199	Coffee and hospitality
+200	Traditional cook
+201	Confectioner
+202	Baklava maker
+203	Maamoul maker
+204	Arabic ice-cream maker
+205	Baker
+206	Preserves maker
+207	Traditional drinks seller
+208	Traditional crafts and industries
+209	Crafts handed down in Damascene workshops: from forging sword blades and inlaying wood with mother-of-pearl to weaving brocade and blowing glass.
+210	Damascene swords
+211	Qabqab (wooden clogs)
+212	Glass and glass-blowing
+213	Oud making
+214	Damascene furniture
+215	Pottery and ceramics
+216	Decorated tiles
+217	Saddles and leatherwork
+218	Traditional jewellery
+219	Syrian glass-blowing — 2023
+220	Oud making and playing — 2022 (joint file with Iran)
+221	Arts, music and folk performance
+222	The performing arts that fill cafés, lanes and weddings: shadow puppetry, the hakawati, the Shami arada and religious chanting.
+223	Shadow puppetry
+224	The hakawati (storyteller)
+225	The Shami arada
+226	Folk chants
+227	Folk dance
+228	Making musical instruments
+229	Religious chanting
+230	Shadow puppetry — 2018 (urgent safeguarding)
+231	Oud making and playing — 2022
+232	Customs, traditions and occasions
+233	The occasions of Damascene life: weddings, the Ramadan eve outing (takrizeh), picnics (siran), and the customs of feasts, neighbours and bathhouses.
+234	Damascene weddings
+235	Takrizeh before Ramadan
+236	The Damascene picnic (siran)
+237	The musaharati and the iftar cannon
+238	Feast customs
+239	The Mawlid and religious occasions
+240	Customs for newborns
+241	Neighbourly customs
+242	Mourning and celebrations
+243	Damascene bathhouses
+244	Oral heritage and folk games
+245	The city's spoken memory: proverbs, tales and expressions, children's songs, street games and the calls of street sellers.
+246	Damascene proverbs
+247	Folk tales
+248	Damascene expressions
+249	Folk songs
+250	Street games
+251	Traditional children's games
+252	Riddles
+253	Street sellers' calls
+254	Memory of the markets
+255	Traditional knowledge and practices
+256	Inherited knowledge of aromatic plants, perfumes, soap and preserves, and farming in the orchards around Damascus.
+257	Aromatic plants
+258	Perfume making
+259	Soap making
+260	Seasonal preserves
+261	Farming knowledge
+262	Beekeeping
+263	Household knowledge
+264	Craftsmen's knowledge
+265	Sunday
+266	Monday
+267	Tuesday
+268	Wednesday
+269	Thursday
+270	Friday
+271	Saturday
+272	Previous event
+273	Next event
+274	Previous photo
+275	Next photo
+276	No events at the moment
+277	Liberation Day
+278	Anniversary of the city's liberation — public holiday and national events.
+279	Christmas celebrations
+280	Christmas Eve — celebrations, carols and lights.
+281	New Year's Eve
+282	New Year's Eve celebration 🎉 — fireworks and countdown.
+283	Unification of the factions
+284	Anniversary of the unification of the factions — national occasion and public holiday.
+285	Intellectual symposium
+286	An intellectual symposium with leading thinkers and academics.
+287	Spring break
+288	Start of the spring break — a pause between school terms.
+289	New Year
+290	The start of the new year 2027.
+291	Public holiday · check the official holiday calendar
+292	Eid al-Fitr
+293	Eid al-Fitr at the end of the holy month of Ramadan. The date depends on the sighting of the new moon and the official announcement.
+294	Religious occasion · estimated date
+295	Syrian Revolution Day
+296	Anniversary of the start of the Syrian revolution — national occasion.
+297	National occasion · check the holiday decision in force
+298	Mother's Day
+299	A social occasion honouring mothers and their devotion.
+300	Social occasion · not necessarily a public holiday
+301	Western Easter
+302	Easter according to the Western calendar.
+303	Religious occasion · not a public holiday unless officially announced
+304	Evacuation Day
+305	Anniversary of the departure of the last French soldier from Syrian soil in 1946.
+306	Labour Day
+307	International Workers' Day — honouring workers and their role in building the country.
+308	Check the holiday decision in force
+309	Eastern Easter
+310	Easter according to the Eastern calendar.
+311	Eid al-Adha
+312	Eid al-Adha. The date depends on the sighting of the new moon and the official announcement.
+313	Islamic New Year
+314	The start of the new Hijri year 1449.
+315	The Prophet's Birthday (Mawlid)
+316	Anniversary of the birth of the Prophet Muhammad ﷺ.
+317	Liberation Day
+318	Anniversary of liberation — national occasion.
+319	Christmas
+320	Christmas Day.
+321	Religious occasion · check the official announcements
+322	Archaeological landmark
+323	Religious and historic landmark
+324	The Umayyad Mosque of Damascus
+325	An outstanding architectural masterpiece that joins a long history with the spirit of the old city.
+326	The mosque was built under Caliph al-Walid ibn Abd al-Malik in the early 8th century AD. It is one of the finest examples of early Islamic architecture, known for its vast courtyard, arcades and historic mosaics.
+327	The mosque stands on a sacred site that saw successive forms of worship over thousands of years: the temple of the Aramaean god Hadad, then the Roman temple of Jupiter, then the Cathedral of Saint John the Baptist in Byzantine times.
+328	In 705 AD Caliph al-Walid ibn Abd al-Malik ordered the mosque to be built; the work lasted about ten years, and its walls were decorated with golden mosaics of rivers, trees and palaces that many see as a symbol of paradise.
+329	The mosque has three minarets — the Bride's Minaret, the Minaret of Jesus and the Qaitbay Minaret — and its prayer hall holds a shrine attributed to the Prophet John (Yahya). It has suffered fires and earthquakes over the centuries and has been restored many times.
+330	Period
+331	The Umayyad era
+332	What stands out
+333	Mosaics and architecture
+334	The visit
+335	Taking in the details of the building
+336	Azm Palace
+337	Palace and heritage museum
+338	Azm Palace in Old Damascus
+339	Details of old Damascene life in a courtyard with water at its centre, surrounded by ornament.
+340	Built by As'ad Pasha al-Azm in the 18th century, it is one of the finest examples of Damascene architecture from the Ottoman era. Its halls and courtyards reveal traditional furniture, crafts and customs.
+341	The palace was built in 1749 by order of As'ad Pasha al-Azm, the Ottoman governor of Damascus, as his residence and seat of government in the heart of the old city near Souq al-Bzouriyeh.
+342	The palace has two main parts: the selamlik for receiving guests and the haramlik for the family. Around its courtyards are halls decorated with painted wood (ajami), striped ablaq stone and fountains.
+343	The palace was damaged during the Great Syrian Revolt of 1925; it later passed to the state, was restored, and the Museum of Popular Traditions opened there in 1954.
+344	Built in
+345	1749 AD
+346	Ablaq stonework and the inner courtyard
+347	Architecture and traditional crafts
+348	The Citadel of Damascus
+349	Historic fortress
+350	The historic Citadel of Damascus
+351	Walls and towers that tell chapters of the city's defence and political importance.
+352	The citadel is bound up with the military and political history of Damascus and went through architectural changes in the Middle Ages. Together with the walls of the old city, it is an important part of the historic landscape around the markets and quarters.
+353	The citadel stands in the north-western corner of the old city; its site has been fortified since the Seljuk period in the 11th century AD.
+354	Al-Adil, the Ayyubid king and brother of Saladin, rebuilt it between 1203 and 1216 with massive towers and strong walls, making it the seat of power and the centre of the city's defence.
+355	The citadel was later used as barracks and a prison until the late 20th century, then emptied and restored to become a cultural space hosting festivals and exhibitions.
+356	Character
+357	Military and defensive
+358	What stands out
+359	The walls and towers
+360	Exploring defensive architecture
+361	Souq al-Hamidiyah
+362	Heritage market
+363	Souq al-Hamidiyah in Damascus
+364	A bustling commercial passage where popular memory sits alongside crafts and goods.
+365	One of the most famous historic markets of Damascus, known for its covered passage and wide variety of shops. It leads towards the Umayyad Mosque as part of the network of connected markets in the old city.
+366	The market runs from the Citadel of Damascus to the columns of the Temple of Jupiter in front of the Umayyad Mosque, nearly 600 metres long; it is the most famous and busiest covered market in Damascus.
+367	It is named after two Ottoman sultans: Abdul Hamid I, under whom the first part of the market was built around 1780, and Abdul Hamid II, under whom it was extended and rebuilt in the late 19th century.
+368	It is known for its arched metal roof, pierced with small holes that let in rays of sunlight, with fabric, sweet and craft shops lining both sides.
+369	Commercial and heritage
+370	The metal roof and the shops
+371	Shopping and discovering crafts
+372	Khan As'ad Pasha
+373	Historic caravanserai
+374	Khan As'ad Pasha in Old Damascus
+375	An architectural space designed to receive merchants and caravans and trade goods.
+376	The khan was built under As'ad Pasha al-Azm in 1751 and was part of the city's commercial fabric. Its central courtyard and domes give the place its distinctive architectural presence.
+377	As'ad Pasha al-Azm built it between 1751 and 1753 in Souq al-Bzouriyeh as the largest khan in Old Damascus and a centre for caravan trade from many cities.
+378	It has two floors around a square courtyard topped by adjoining domes around a central opening, and its walls alternate courses of black and white stone, known as Damascene ablaq.
+379	The ground floor was used to store goods and the upper floor to house merchants; it has been restored in recent decades and now hosts exhibitions and cultural events.
+380	18th century
+381	The courtyard and domes
+382	Discovering commercial architecture
+383	The National Museum of Damascus
+384	Museum
+385	Archaeological and cultural museum
+386	A journey through Syria's antiquities, from ancient civilisations to Islamic art.
+387	The museum holds archaeological collections documenting many sides of Syria's history, introducing visitors to many civilisations and archaeological sites through the objects, inscriptions and works of art on display.
+388	Founded in 1919, the museum moved to its current building near the Takiyya Sulaymaniyya in 1936; it is Syria's oldest and largest museum.
+389	Its entrance is fronted by the façade of the Umayyad palace of Qasr al-Hayr al-Gharbi from the 8th century AD, moved stone by stone from the Syrian desert and rebuilt here.
+390	It has sections for prehistory and for ancient, classical and Islamic Syrian antiquities. Highlights include the Dura-Europos synagogue with its wall paintings and the Ugarit tablet bearing one of the oldest alphabets in the world.
+391	Museum opened
+392	1936 AD
+393	Historic finds and antiquities
+394	Exploring archaeological collections
+395	The Temple of Jupiter in Damascus
+396	Ruins of a Roman temple
+397	Towering Roman columns greet visitors leaving Souq al-Hamidiyah for the Umayyad Mosque.
+398	The remains of the western gate of the Temple of Jupiter in Damascus, one of the largest temples in Roman Syria, with Corinthian columns and an arch still standing in the heart of the old city.
+399	From the first millennium BC a temple to the Aramaean god Hadad stood here; the Romans enlarged it in the 1st and 2nd centuries AD into a temple of Damascene Jupiter.
+400	The temple was enclosed by two concentric walls, and the remains of its western gate, with Corinthian columns and an arch, still stand at the end of Souq al-Hamidiyah.
+401	In the late 4th century AD the temple became the Church of Saint John the Baptist, and the Umayyad Mosque later rose in its place, so the site sums up thousands of years of worship in Damascus.
+402	Roman era
+403	The Corinthian columns
+404	The end of Souq al-Hamidiyah
+405	The Eastern Gate
+406	Roman gate
+407	The eastern gate of Old Damascus at the end of the Straight Street.
+408	A Roman gate with three arches at the end of the Straight Street, one of the few gates of Damascus that has kept its Roman features.
+409	The gate dates from Roman times and was designed with three openings: a wide central one for carts and two side ones for pedestrians, facing the colonnades that once lined the Straight Street.
+410	It is also known as the Gate of the Sun, and historical sources say Khalid ibn al-Walid entered Damascus through it in 634 AD.
+411	The gate was restored in the 20th century and today leads into the old Bab Sharqi quarter with its churches, houses and cafés.
+412	The three arches
+413	The start of the Straight Street
+414	Mausoleum of Saladin
+415	Historic mausoleum
+416	The dome sheltering the tomb of the liberator of Jerusalem, beside the Umayyad Mosque.
+417	A small mausoleum with a red dome in a garden against the north wall of the Umayyad Mosque, holding the tomb of Sultan Saladin.
+418	Saladin died in Damascus in 1193, and his mausoleum was built in 1196 in a garden against the north wall of the Umayyad Mosque.
+419	The mausoleum was part of the Aziziyya school founded by his son, al-Malik al-Aziz Uthman; today only the dome and the tomb chamber remain.
+420	The mausoleum holds two cenotaphs: the original carved wooden one from the Ayyubid era, and a marble one given by the German Emperor Wilhelm II on his visit to Damascus in 1898, when he also paid for the mausoleum's restoration.
+421	1196 AD
+422	The Ayyubid wooden cenotaph
+423	North of the Umayyad Mosque
+424	Bimaristan al-Nuri
+425	Historic hospital and museum
+426	One of the oldest hospitals in the Islamic world, and a medical school since the 12th century.
+427	A hospital and medical school founded by Nur al-Din Zengi, now home to the Museum of Medicine and Science in the Arab World.
+428	Sultan Nur al-Din Mahmud Zengi founded it in 1154 as a hospital and medical school in the heart of Damascus; sources say it was built with the ransom paid by a Frankish prince.
+429	It treated patients for many centuries, and great physicians studied and worked there, among them Ibn al-Nafis, who discovered the pulmonary circulation.
+430	It is known for its entrance decorated with muqarnas and its pierced dome, and today it houses the Museum of Medicine and Science in the Arab World.
+431	1154 AD
+432	The muqarnas gateway
+433	The Museum of Medicine and Science
+434	Takiyya Sulaymaniyya
+435	Ottoman complex
+436	An Ottoman complex on the banks of the Barada, designed by the architect Sinan.
+437	A mosque with a wide dome and two slender minarets, and a takiyya that fed the poor and pilgrims; its rooms are now a handicrafts market.
+438	The Ottoman Sultan Suleiman the Magnificent built it between 1554 and 1559 on the bank of the Barada River, on the site of the Mamluk al-Ablaq Palace, to a design by the famous architect Mimar Sinan.
+439	It includes a mosque with a wide dome and two slender minarets, and a takiyya that fed the poor and pilgrims; the Salimiyya school was added later under Sultan Selim II.
+440	Over time the rooms of the takiyya became a market for traditional handicrafts, next to the National Museum of Damascus.
+441	1554–1559 AD
+442	The two minarets and the dome
+443	Handicrafts market
+444	Hejaz Railway Station
+445	Historic railway station
+446	Damascus's gateway to Medina in the days of the Hejaz Railway.
+447	The main passenger station of the Hejaz Railway, with a decorated façade and a hall with a painted wooden ceiling; several old steam locomotives are displayed around it.
+448	The station building was built in the 1910s to a design by the Spanish architect Fernando de Aranda, as the main passenger station of the Hejaz Railway.
+449	The first train left Damascus for Medina in 1908, cutting a journey of weeks by camel to a few days, and the station became a meeting point for pilgrims, merchants and travellers.
+450	The station no longer serves as a main railway station, but its building remains one of the most beautiful in modern Damascus and hosts exhibitions and cultural events.
+451	The 1910s
+452	The hall with the wooden ceiling
+453	Old steam locomotives
+454	Maktab Anbar
+455	Historic Damascene house
+456	A grand Damascene house that became a school and trained generations of Syria's leading figures.
+457	A large Damascene house with several courtyards and rich wood and stone decoration, now the seat of the Committee for the Protection of Old Damascus.
+458	The merchant Yusuf Anbar began building it in the second half of the 19th century as a grand residence, but the high cost of building stopped the work before it was finished.
+459	The Ottoman state confiscated the house in 1890, finished it and turned it into a public school known as Maktab Anbar, where many of Syria's leading figures and writers studied.
+460	The Ministry of Culture bought the building in 1976 and restored it; today it is the seat of the Committee for the Protection of Old Damascus and hosts cultural events.
+461	19th century
+462	Courtyards and wood decoration
+463	Cultural events
+464	Chapel of Ananias
+465	Historic church
+466	An underground chapel in Bab Touma believed to be the house of Saint Ananias.
+467	A small chapel below street level in Bab Touma, linked to the story of Saint Paul and one of the oldest Christian places of worship in Damascus.
+468	A small chapel below street level in Bab Touma, believed to be the house of Saint Ananias, one of the first Christians in Damascus.
+469	According to Christian tradition, Ananias received Saul of Tarsus (Saint Paul) after he lost his sight on the road to Damascus, baptised him and restored his sight, and so his journey of spreading Christianity began.
+470	Visitors go down a stone staircase to two vaulted rooms whose walls are decorated with icons and paintings telling the story of Ananias and Paul.
+471	1st century AD
+472	The underground chapel
+473	Bab Touma quarter
+474	Marjeh Square Monument
+475	Memorial
+476	Memorial column
+477	A bronze column in the heart of Marjeh Square commemorating the telegraph line between Damascus and Medina.
+478	A bronze column on a stone base in the middle of Marjeh Square (Martyrs' Square), wrapped in telegraph wires and topped by a small model of a mosque.
+479	The monument was erected in 1907 under the Ottoman governor of Damascus, Hussein Nazim Pasha, to celebrate the telegraph line linking Damascus with Medina, alongside the Hejaz Railway project.
+480	It consists of a stone base topped by a bronze column wrapped in telegraph wires and crowned by a small model of the Yildiz Mosque in Istanbul.
+481	The square is also known as Martyrs' Square, commemorating those executed there in 1916, and for decades al-Marjeh was the commercial heart of Damascus and the centre of its hotels and cafés.
+482	Built in
+483	1907 AD
+484	The bronze column
+485	Marjeh Square
+486	Yusuf al-Azma Square
+487	Square and memorial
+488	A square in the heart of modern Damascus with a statue of War Minister Yusuf al-Azma at its centre.
+489	One of the best-known squares of modern Damascus, centred on a statue of Yusuf al-Azma, who fell at the Battle of Maysaloun, and overlooked by official and commercial buildings.
+490	Yusuf al-Azma, War Minister in the Arab Government in Damascus, led volunteers against the French army at the Battle of Maysaloun on 24 July 1920 and was killed there, becoming a symbol of sacrifice in Syrian memory.
+491	The square opened in 1947 and was named after him; his statue stands at its centre, and official buildings overlook it, including the Damascus Governorate building, so it is also called Governorate Square.
+492	Today the square is one of the liveliest spots in Damascus, where main streets of the city centre meet.
+493	1947 AD
+494	Statue of Yusuf al-Azma
+495	Central modern Damascus
+496	Statue of Saladin
+497	Bronze statue
+498	The knight of Hattin on horseback in front of the Citadel of Damascus.
+499	A huge bronze group in front of the Citadel of Damascus showing Saladin on his horse surrounded by his soldiers, by the Syrian sculptor Abdallah al-Sayed.
+500	The statue was made by the Syrian sculptor Abdallah al-Sayed and unveiled in 1993 in front of the Citadel of Damascus near the entrance to Souq al-Hamidiyah.
+501	It shows Saladin on horseback surrounded by his soldiers, with two Frankish prisoners behind him, recalling his victory at the Battle of Hattin in 1187.
+502	The statue has become one of the best-known landmarks of contemporary Damascus and a meeting point for visitors at the gate of the old city.
+503	1993 AD
+504	The bronze group
+505	In front of the Citadel of Damascus
+506	Back to Damascus through the ages
+507	Previous era
+508	Next era
+509	Events of the era
+510	Other eras
+511	| Damascus through the ages
+512	In the first millennium BC, Damascus became the capital of a powerful Aramaean kingdom, and its people built a temple to their god Hadad in the heart of the city.
+513	Thousands of years ago
+514	One of the oldest cities
+515	Damascus is one of the oldest continuously inhabited cities in the world, with traces of settlement around it going back thousands of years.
+516	10th century BC
+517	Aram-Damascus
+518	Damascus became the capital of a powerful Aramaean kingdom known as Aram-Damascus.
+519	The Aramaean era
+520	The temple of Hadad
+521	The Aramaeans built a temple to their god Hadad in the heart of the city, on the site where the Umayyad Mosque would later stand.
+522	732 BC
+523	Falling to Assyria
+524	The Aramaean kingdom fell to the Assyrians under King Tiglath-Pileser III.
+525	The Hellenistic era
+526	After the conquests of Alexander the Great, Damascus entered the Greek world and its streets were laid out again in the Greek style.
+527	333 BC
+528	Alexander the Great
+529	After the Battle of Issus, Alexander's army took control of Damascus.
+530	A street grid
+531	Under the Seleucids the city was reorganised with streets crossing at right angles in the Greek style.
+532	85 BC
+533	The Nabataeans
+534	The Nabataean king Aretas III entered Damascus and ruled it for a time.
+535	Under Rome, Damascus flourished: its great temple was enlarged, the Straight Street was laid out, and walls and gates surrounded the city.
+536	64 BC
+537	Damascus under Rome
+538	The Roman general Pompey annexed Syria to the Roman Empire, and Damascus came under Roman rule.
+539	The Temple of Jupiter
+540	The old temple was enlarged into a huge temple of Damascene Jupiter, and remains of its columns still stand near the Umayyad Mosque.
+541	The Straight Street
+542	The Straight Street was laid out to cross the city from east to west, and a wall surrounded it with gates named after the planets.
+543	Paul in Damascus
+544	The story of Saint Paul is tied to Damascus: he was lowered from its wall in a basket at the spot known today as Bab Kisan.
+545	2nd century AD
+546	Apollodorus of Damascus
+547	Damascus was the birthplace of the architect Apollodorus, who designed Trajan's Forum and his famous column in Rome.
+548	The Byzantine era
+549	Damascus became an important Christian centre, and its great temple was turned into a church dedicated to John the Baptist.
+550	Late 4th century
+551	The Church of John the Baptist
+552	Under Emperor Theodosius the temple became a church dedicated to John the Baptist.
+553	A city of churches
+554	Damascus was an important Christian centre, filled with churches and monasteries.
+555	634 AD
+556	The Islamic conquest
+557	The Muslims entered Damascus led by Khalid ibn al-Walid and Abu Ubayda ibn al-Jarrah.
+558	Damascus became the capital of the largest state of its time, and the Umayyad Mosque, with its golden mosaics, was built there.
+559	661 AD
+560	Capital of the caliphate
+561	Mu'awiya ibn Abi Sufyan made Damascus the capital of the Umayyad Caliphate, the centre of a state stretching from al-Andalus to Central Asia.
+562	The Khadra Palace
+563	Mu'awiya built a palace known as al-Khadra (the Green Palace) next to the great mosque.
+564	705 AD
+565	Caliph al-Walid ibn Abd al-Malik began building the Umayyad Mosque, famous for its golden mosaics.
+566	750 AD
+567	The end of the Umayyad era
+568	The caliphate passed to the Abbasids, who moved the capital to Iraq.
+569	Once a capital, Damascus became a province contested by one state after another: the Abbasids, then the Fatimids, then the Seljuks.
+570	An Abbasid province
+571	Damascus became a province of the Abbasid Caliphate after being its capital.
+572	789 AD
+573	The Treasury Dome
+574	The Treasury Dome was built in the courtyard of the Umayyad Mosque in the Abbasid era.
+575	970 AD
+576	The Fatimids
+577	Damascus came under the rule of the Fatimid state.
+578	1076 AD
+579	The Seljuks
+580	The Seljuks took Damascus.
+581	With Nur al-Din Zengi and then Saladin, Damascus became a seat of power again and filled with schools and hospitals.
+582	Nur al-Din Zengi
+583	Nur al-Din Zengi entered Damascus and founded the Bimaristan al-Nuri, one of the most famous hospitals of its time.
+584	1174 AD
+585	Saladin
+586	Saladin entered Damascus, and it became the centre of his state.
+587	1193 AD
+588	The tomb of Saladin
+589	Saladin died in Damascus and was buried near the Umayyad Mosque.
+590	13th century
+591	Al-Malik al-Adil rebuilt and fortified the Citadel of Damascus.
+592	The Mamluk era
+593	Under the Mamluks, schools, bathhouses and markets flourished, despite the hardships the city went through.
+594	1260 AD
+595	Ain Jalut
+596	After the Mamluk victory over the Mongols at Ain Jalut, Damascus came under their rule.
+597	1277 AD
+598	The Zahiriyya school
+599	Sultan al-Zahir Baybars was buried in the Zahiriyya school, which later housed the Zahiriyya Library.
+600	1400 – 1401 AD
+601	Tamerlane's invasion
+602	Tamerlane overran Damascus, burned many of its landmarks and carried its craftsmen off to Samarkand.
+603	Schools and markets
+604	Schools, bathhouses and markets flourished in Damascus, and many of them still stand.
+605	The Ottoman era
+606	Four centuries in which Damascus became a major stop for pilgrim caravans, with takiyyas, khans and palaces built there.
+607	1516 AD
+608	Marj Dabiq
+609	After the Battle of Marj Dabiq, Damascus came under Ottoman rule.
+610	1554 AD
+611	Sultan Suleiman the Magnificent ordered the Takiyya Sulaymaniyya to be built to a design by the architect Sinan.
+612	The governor of Damascus, As'ad Pasha al-Azm, built his famous palace, today the Museum of Popular Traditions.
+613	1752 AD
+614	Khan As'ad Pasha, the largest khan in Old Damascus, was built.
+615	1908 AD
+616	The Hejaz Railway
+617	The Hejaz Railway set out from Damascus and reached Medina in 1908, and the Hejaz Station was built in Damascus in the early 20th century.
+618	After the Ottomans left, the first Arab government was formed in Damascus; the city then resisted the French Mandate until Syria gained independence in 1946, opening the era of the republic and the coups that followed.
+619	1 October 1918
+620	The Arab Government
+621	Arab forces entered Damascus after the Ottoman withdrawal, and the first Arab government was formed there.
+622	8 March 1920
+623	The Arab Kingdom of Syria
+624	The Syrian General Congress in Damascus declared Syria's independence and crowned Faisal ibn al-Hussein king.
+625	24 July 1920
+626	The Battle of Maysaloun
+627	War Minister Yusuf al-Azma confronted the French army at Maysaloun and was killed there, and Damascus came under the French Mandate.
+628	1925 AD
+629	The Great Syrian Revolt
+630	The revolt spread to Damascus and its Ghouta; French forces shelled the city and the Sidi Amud quarter burned, becoming known as al-Hariqa ("the fire").
+631	17 April 1946
+632	The last French soldier left Syria, and 17 April became the national Independence Day.
+633	1958 – 1961 AD
+634	Union with Egypt
+635	The United Arab Republic joined Syria and Egypt, ending with the secession of 1961.
+636	8 March 1963
+637	The Baath coup
+638	The Baath Party seized power in a military coup, paving the way for Hafez al-Assad's coup in 1970.
+639	The Assad coup and family rule
+640	The era of Hafez al-Assad's seizure of power in the 1970 coup, followed by security rule, massacres and hereditary succession, until the Syrian revolution began in 2011.
+641	1970 AD
+642	Hafez al-Assad's coup
+643	Hafez al-Assad seized power in a military coup in November 1970, founding a totalitarian security regime that tightened its grip on the state and society.
+644	The 1980s
+645	The Assad regime's massacres and repression
+646	The country saw bloody crackdowns, horrific massacres of civilians and the enforced disappearance of tens of thousands in detention centres and political prisons.
+647	2000 AD
+648	Bashar al-Assad takes power
+649	After Hafez al-Assad died in 2000, the constitution was amended within minutes to hand power to his son Bashar al-Assad, and the security grip on the country continued.
+650	In March 2011 the Syrian revolution began, demanding freedom and dignity; Syrians held out for nearly fourteen years against repression, siege and displacement, until the revolution triumphed with the liberation of Damascus on 8 December 2024.
+651	15 March 2011
+652	From Souq al-Hamidiyah
+653	From Souq al-Hamidiyah in the heart of Old Damascus came one of the first protests of the Syrian revolution, chanting for freedom and dignity.
+654	2011 – 2012 AD
+655	Protests in Damascus and its countryside
+656	Peaceful protests spread through the neighbourhoods of Damascus and its countryside, from al-Midan, Barzeh and Qaboun to Douma and Daraya, and the regime met them with bullets, arrests and sieges.
+657	21 August 2013
+658	The chemical massacre in Ghouta
+659	The regime struck Eastern and Western Ghouta with sarin gas, killing hundreds of civilians, among them children.
+660	2013 – 2018 AD
+661	The siege of Eastern Ghouta
+662	The regime besieged Eastern Ghouta for years; the siege ended in 2018 with a military campaign and the forced displacement of its people.
+663	27 November 2024
+664	The "Deterrence of Aggression" battle
+665	The "Deterrence of Aggression" offensive began, and within days Aleppo, then Hama and Homs, were liberated.
+666	8 December 2024
+667	The liberation of Damascus and the victory of the revolution
+668	The revolutionaries entered Damascus and Bashar al-Assad fled; the regime fell after fifty-four years of family rule, and the Syrian revolution was victorious.
+669	On 8 December 2024 the sun of freedom rose over Damascus with the fall of the Assad regime, and the capital began a new chapter of recovery, freedom and rebuilding.
+670	The dawn of freedom
+671	Damascenes celebrated liberation in Umayyad Square and at the Umayyad Mosque, and the capital regained its free identity.
+672	Life returns and rebuilding begins
+673	A new phase began in Damascus: rebuilding institutions, safeguarding the city's ancient heritage and restoring its role as a centre of civilisation and culture.
+674	Memory of the place | Damascus
+675	Back to Memory of the place
+676	The story
+677	Photo gallery
+678	Other landmarks
+679	| Memory of the place
+680	— photo
+681	Photo:
+683	Damascus album | Culture
+684	D
+685	Damascus · a visual album
+686	Back to the home page ↗
+687	Damascus... a memory that never ages
+688	Every stone in this city bears the trace of a passing hand, and the story of a heart that loved the place.
+689	The story of a city
+690	through time
+691	Step into the hall of Damascene memory and wander among the paintings and stories that made the spirit of al-Sham.
+692	Start the visual tour
+693	In every corner of Damascus lies the trace of centuries of beauty
+694	Current stop
+695	Room entrance
+696	Scroll down to move through the room
+697	Previous painting
+698	Next painting
+699	Exhibition stops
+700	The old city
+701	In the lanes of Old Damascus, Arab houses, inner courtyards and markets stand side by side, and memory remains part of everyday life.
+702	Urban memory
+703	"Lanes that whisper of jasmine and breathe the scent of our ancestors"
+704	At the heart of Damascus stands the Umayyad Mosque, one of its foremost religious and architectural landmarks and a witness to the passing ages.
+705	Place and spirit
+706	"Golden mosaics guarding the courtyard of history for thirteen centuries"
+707	Damascene markets
+708	Places of craft, trade and meeting, the markets preserve the details, sounds and scents of Damascene life.
+709	Craft and daily life
+710	"Under the covered arches, the maker's hand meets living memory"
+711	Ottoman Damascus
+712	The traces of this period show in the architecture, the layout of the markets and details that combine function and beauty.
+713	Layers of history
+714	"The harmony of ablaq stone across khans, palaces and takiyyas"
+715	The city grew and its streets and quarters changed, while the past stayed present in its features.
+716	Urban change
+717	"A city reaching towards the future, its roots deep in history"
+718	Damascus today
+719	A city that joins memory and change, inherited stories and the ideas it creates every day.
+720	A living city
+721	"The oldest capital in the world... a story whose chapters are written every morning"
+722	· click the painting to look closer
+723	You've reached the end of the tour
+724	Details of the history of Damascus
+725	Back to Culture
+726	The history of Damascus
+727	How Damascus began and grew into a city and urban centre
+728	in the Levant.
+729	Period
+730	3000 BC
+731	Category
+732	Damascus through time
+733	Historical overview
+734	Damascus in the earliest times
+735	Damascus is one of the oldest continuously inhabited cities in
+736	the world; its location and natural resources
+737	gave rise to an early urban society, and it grew
+738	into a centre of trade and contact between the regions of the Levant.
+739	Historical milestone
+740	Damascus and its place in the region
+741	The location of Damascus helped link the inland regions
+742	with the coast and the ancient trade routes, which
+743	gave the city growing importance through
+744	different periods of history.
+745	Over time, layers of buildings and culture
+746	built up around the city and later became a key part
+747	of the historic identity of Damascus.
+748	A city shaped by successive civilisations
+749	and the memory that gathered in the place.
+750	Key facts
+751	Milestones of the period
+752	The main facts linked to this period
+753	in the history of Damascus.
+754	Period
+755	Significance of the period
+756	The birth of the city
+757	Reach
+758	The Levant
+759	Legacy of the period
+760	A new layer in the identity of Damascus
+761	The historical changes Damascus went through
+762	were not separate from one another; each period helped shape
+763	part of the cultural, urban and social landscape
+764	we know today.
+765	Geographic and commercial position
+766	Urban growth
+767	Cultural exchange
+768	Other milestones
+769	Explore the timeline
+770	Damascus in the third millennium BC
+771	Damascus is one of the oldest continuously inhabited cities in the world; its location and natural resources gave rise to an early urban society, and it grew into a centre of trade and contact between the regions of the Levant.
+772	The location of Damascus helped link the inland regions with the coast and the ancient trade routes, which gave the city growing importance through different periods of history.
+773	Over time, layers of buildings and culture built up around the city and later became a key part of the historic identity of Damascus.
+774	A city shaped by successive civilisations and the memory that gathered in the place.
+775	The natural and economic setting of Damascus laid the first foundations of a city with a lasting presence in the region's history.
+776	1100 BC
+777	Damascus, capital of the Aramaean kingdom
+778	Damascus rose as an important political and cultural centre in the region during the Aramaean era.
+779	Damascus in the Aramaean era
+780	In the Aramaean era Damascus went through an important stage of political and urban growth, becoming the centre of an influential Aramaean kingdom in the southern Levant.
+781	Damascus as a political centre
+782	In this period the name of Damascus was tied to the Aramaean kingdom, and the city stood out within a wide political and trade network in the region.
+783	This role raised the standing of Damascus as a city whose importance reached beyond its surroundings.
+784	From a young city to a leading political centre of the Levant.
+785	The Aramaean centre
+786	The Aramaean era added an important political and cultural layer to the history of Damascus and linked the city to a wide region.
+787	The Aramaean kingdom
+788	Political activity
+789	Trade
+790	The Assyrian era
+791	Damascus under Assyrian influence
+792	A time of political change
+793	Damascus was caught up in the great political changes the region went through.
+794	Damascus and the Assyrian changes
+795	In this period Damascus was drawn into the political changes the Levant went through as Assyrian influence spread across the region.
+796	A city amid regional change
+797	Damascus became part of the new political balance imposed by Assyrian expansion in the Levant.
+798	This period shows how important the city's location was in the region's network of political and commercial powers.
+799	Its location kept Damascus present in every regional change.
+800	Political change
+801	The Assyrian period shows how the history of Damascus was bound up with the great political changes of the ancient Near East.
+802	Regional influence
+803	Political change
+804	Strategic location
+805	Damascus in the Hellenistic era
+806	The influence of Hellenistic civilisation
+807	The city interacted with the Hellenistic civilisations and cultures of the region.
+808	In the Hellenistic era Damascus engaged with the cultural and political patterns that spread through the eastern Mediterranean after the Macedonian conquests.
+809	Cultures meeting
+810	The city's openness to the wider region brought in new patterns of culture, building and administration.
+811	Damascus became part of a varied cultural world combining local elements with outside influences.
+812	The history of Damascus is a history of constant exchange between cultures.
+813	Cultural exchange
+814	The Hellenistic era added new elements of cultural exchange to Damascus.
+815	Cultural exchange
+816	Hellenistic influences
+817	Cultural diversity
+818	Roman Damascus
+819	Damascus in the Roman world
+820	Damascus grew in building and economy within the network of Roman cities in the Levant.
+821	Damascus in the Roman era
+822	Damascus came within the Roman sphere, grew in building and economy, and benefited from its place in the network of cities and roads of the Levant.
+823	Buildings, roads and markets
+824	The growth of Damascus in the Roman era was linked to a network of roads and trade centres connecting different parts of the Levant.
+825	The city saw building changes that shaped parts of its later historic fabric.
+826	In Damascus roads cross and the layers of the city meet.
+827	Urban growth
+828	The Roman era left an important mark on the urban and commercial fabric of Damascus.
+829	Roman roads
+830	Trade and markets
+831	Urban expansion
+832	395 AD
+833	Damascus in the Byzantine era
+834	The city's changes in the Byzantine era
+835	Damascus remained an important urban and trading centre in the Byzantine period.
+836	In the Byzantine era Damascus remained an important city of the Levant and kept its urban and commercial role.
+837	The city carries on
+838	Despite political and religious change, Damascus kept its role as an urban and trading centre.
+839	In this period new elements were added to the city's urban and cultural memory.
+840	The city carries on while civilisations change around it.
+841	Urban continuity
+842	The Byzantine period is one link in a long chain of urban continuity in Damascus.
+843	Urban continuity
+844	Trade
+845	Cultural diversity
+846	635 AD
+847	Damascus in the early Islamic era
+848	Damascus enters the Islamic era
+849	Damascus began a new chapter of its history with the Islamic conquest of the city.
+850	Damascus began a new chapter of its history with the Islamic conquest, and the city started to take shape in a new cultural and political setting.
+851	The start of a new era
+852	The city went through political, administrative and social change as it passed to Islamic rule.
+853	Over time Damascus became a major centre of the Islamic world.
+854	A new era that added a far-reaching cultural layer to the city.
+855	A historic turning point
+856	The move into the Islamic era was a major turning point in the political and cultural history of Damascus.
+857	Political change
+858	Cultural change
+859	Joining the Islamic world
+860	661 AD
+861	Damascus, capital of the Umayyad state
+862	The golden age of Damascus
+863	Damascus became the capital of the Umayyad state and a far-reaching political and cultural centre.
+864	Damascus became the capital of the Umayyad state and an important political, administrative and cultural centre of a state that spread over vast lands.
+865	In the Umayyad era the city saw wide-ranging growth in buildings and institutions, and became the centre of political and administrative decision-making.
+866	In this period the name of Damascus was also tied to building, artistic and architectural projects that left a lasting mark on the city's history.
+867	From Damascus began an era that left a wide mark on the history of the Islamic world.
+868	Capital of the state
+869	The Umayyad era is one of the most important historical layers in the identity of Damascus, for the political, urban and cultural expansion the city saw.
+870	The Umayyad capital
+871	Building and architecture
+872	The cultural and political centre
+873	1174 AD
+874	The Ayyubid era
+875	Damascus in the Ayyubid era
+876	Damascus as a political and military centre
+877	Damascus held a central place in the Ayyubid state and saw important building work.
+878	Damascus held an important place in the Ayyubid era and became a leading political and military centre in the region.
+879	A city at the heart of the Ayyubid period
+880	In this period Damascus saw important political, military and building activity.
+881	Many buildings developed there that helped shape the features of the historic city.
+882	Damascus is a city that joins political history and urban memory.
+883	Political centre
+884	The Ayyubid era added a new layer of buildings and architectural features to the city.
+885	The political centre
+886	Buildings
+887	Military role
+888	1260 AD
+889	Mamluk Damascus
+890	Schools, markets and public buildings
+891	Religious and educational architecture, markets and public buildings flourished in the city.
+892	Damascus in the Mamluk era
+893	In the Mamluk era Damascus saw a flowering of religious and educational architecture, markets and public buildings.
+894	Architecture and institutions flourish
+895	Building and educational activity produced an important layer of landmarks that are still part of the city's historic landscape.
+896	Schools, markets, khans and other buildings became key elements of the Damascene urban fabric.
+897	In the Mamluk architecture of Damascus, the city's memory lives in the details.
+898	An architectural flowering
+899	The Mamluk era left a clear mark on the architecture, markets and educational and religious institutions of Damascus.
+900	Schools
+901	Markets and khans
+902	Religious architecture
+903	1516 AD
+904	Damascus in the Ottoman era
+905	Damascus within the Ottoman state
+906	Damascus remained an important commercial, religious and urban centre in the region.
+907	Damascus became part of the Ottoman state and kept its important commercial, religious and urban role in the region.
+908	A city on the trade routes
+909	Damascus kept its importance as a commercial and urban centre, linked to the networks of roads and caravans that crossed the region.
+910	In this period the city saw urban and social changes that added new layers to its historic fabric.
+911	Damascus kept its role as a link between cities and routes.
+912	Commercial centre
+913	The Ottoman era was a long chapter in the history of Damascus, leaving its mark on architecture, markets and social life.
+914	Trade and caravans
+915	Markets
+916	Social life
+917	1860 AD
+918	Modern changes
+919	Damascus in the 19th century
+920	The first steps towards a modern city
+921	New administrative, urban and social changes began to appear in Damascus.
+922	Damascus and modern change
+923	In the 19th century Damascus went through administrative, urban and social changes, and the features of the modern city began to appear.
+924	Between the old city and the new
+925	New patterns of organisation, administration and building began to appear alongside the city's historic fabric.
+926	These changes were an important transition in the modern history of Damascus.
+927	A city that changes without losing its memory.
+928	Modern change
+929	Modern change marked the start of a new phase that reshaped Damascus's relationship with building, administration and society.
+930	Administrative modernisation
+931	Social change
+932	1946 AD
+933	Independence
+934	Damascus after independence
+935	Damascus, capital of the Syrian state
+936	Damascus became the centre of the modern Syrian state and its political and administrative institutions.
+937	Damascus in the modern Syrian state
+938	With independence, Damascus became the centre of the modern Syrian state and the seat of its political and administrative institutions, and kept growing as the country's capital.
+939	The capital and state institutions
+940	Damascus became the centre of national and administrative institutions, and the city expanded as its role as capital grew.
+941	This came with changes in the city's urban and social fabric.
+942	Damascus carries on as capital, and the city changes around its historic centre.
+943	The capital of Syria
+944	In modern times Damascus has been tied to its identity as capital and seat of state institutions, while keeping its historic and cultural standing.
+945	National institutions
+946	Urban expansion
+947	1979 AD
+948	World heritage
+949	Old Damascus and world heritage
+950	The old city was added to the World Heritage List for its exceptional historic and cultural value.
+951	The old city of Damascus is one of the most important historic areas, holding many layers of history, architecture and culture.
+952	The city's memory in its buildings
+953	The old city holds a wide range of markets, khans, houses and religious and historic buildings.
+954	Together these form an urban fabric that reflects the city's long build-up of history.
+955	In the old city, history is read not only in books but in the place itself.
+956	World heritage
+957	The old city is one of the most important elements of the cultural and urban identity of Damascus.
+958	Architectural heritage
+959	Cultural memory
+960	2026 AD
+961	Contemporary Damascus
+962	A city that gathers the layers of history
+963	Damascus carries on as a city that joins its historic legacy with contemporary urban and cultural change.
+964	Today Damascus carries on as a city that joins accumulated layers of history with contemporary urban life, keeping its cultural and historic presence.
+965	A city of past and present
+966	In Damascus today, traces of many periods of history stand alongside modern neighbourhoods, buildings and facilities.
+967	This blend of past and present is one of the defining features of the city's identity.
+968	Damascus is a city whose history does not end at any one period.
+969	A contemporary city
+970	The identity of Damascus keeps taking shape through the meeting of historic legacy and contemporary change.
+971	Historic legacy
+972	Contemporary life
+973	Cultural identity
+974	| History of Damascus
+975	Start
+976	End
+977	Cultural events | Damascus
+978	What's on?
+979	Cultural
+980	events
+981	Discover the cultural and arts events held
+982	in Damascus, and find out about the main activities, exhibitions
+983	and performances that bring together the city's people and visitors.
+984	Damascus agenda
+985	Upcoming events
+986	Choose a day on the calendar to see the cultural
+987	events held on it.
+988	Today's events
+989	Choose a day on the calendar
+990	0 events
+991	Don't miss
+992	Featured events
+993	Previous month
+994	Next month
+995	A Damascene musical evening
+996	Dar al-Assad for Culture and Arts
+997	A musical evening combining Eastern music and traditional instruments in a Damascene cultural setting.
+998	Memory of Damascus exhibition
+999	Exhibition
+1000	Arab Cultural Centre
+1001	An exhibition documenting old Damascene life through photos, documents and objects.
+1002	Symposium on Damascene heritage
+1003	Symposium
+1004	Al-Assad National Library
+1005	A cultural symposium on architecture, markets and traditional crafts and their role in preserving the identity of Damascus.
+1006	Arabic poetry night
+1007	Literature
+1008	Arab Cultural Centre – Abu Rummaneh
+1009	A literary evening with poets and lovers of Arabic poetry.
+1010	Arabic calligraphy workshop
+1011	Workshop
+1012	House of Arabic Calligraphy
+1013	An introductory workshop on the basics of Arabic calligraphy, its styles and artistic uses.
+1014	National Theatre
+1015	A theatre performance in the season's cultural programme, with a group of Syrian artists.
+1016	Damascene crafts exhibition
+1017	Crafts and heritage
+1018	An event showcasing traditional Damascene crafts and handmade works inspired by local heritage.
+1019	Syrian Film Week
+1020	Cinema
+1021	A film programme screening Syrian films and discussing their artistic approaches.
+1022	Fine art exhibition
+1023	Art
+1024	Damascus Gallery
+1025	A collection of works presenting contemporary approaches to fine art.
+1026	Literary evening
+1027	A literary gathering with readings and discussions on contemporary Syrian literature.
+1028	events
+1029	No events are listed for this day.
+1030	Choose a day on the calendar to see its events.

@@ -1,0 +1,136 @@
+0	Kerbstones installed on the streets of Mezzeh
+1	Supervision Directorate teams oversee kerbstone installation on the streets of Mezzeh to improve the infrastructure
+2	Fieldwork to install kerbstones on the streets of Mezzeh, part of delivering service projects to technical standards.
+3	Supervision Directorate teams oversaw the installation of kerbstones on the streets of Mezzeh. The work is part of a sustained effort to deliver service projects to the required technical standards, improving public facilities and the services offered to local residents.
+4	Call for offers for a shop in the Zablatani wholesale market
+5	Damascus Governorate invites offers to lease shop No. 68 in the Zablatani wholesale market
+6	Call for offers for shop No. 68 (second platform) with its frontage in the Zablatani wholesale market, for 3 years.
+7	Call for offers in the Zablatani wholesale market. Damascus Governorate invites offers for shop No. 68 (second platform), together with its frontage, in the Zablatani wholesale market.
+8	*Lease terms for bidding in the public auction:*
+9	Lease period: 3 years.
+10	Estimated value: 750,000 (seven hundred and fifty thousand) new Syrian pounds.
+11	Tender file price: 2,000 new Syrian pounds.
+12	To obtain the tender file, please visit the Contracts Department at the Governorate building, second floor.
+13	*Date and place of opening the offers:* 12 noon on 27/10/2026 at the Damascus Governorate building.
+14	Routine technical maintenance in the Umayyad tunnel
+15	Supervision Directorate crews continue routine technical work in the Umayyad tunnel to keep it ready and safe
+16	Routine, preventive technical work in the Umayyad tunnel to guarantee the highest level of safety for everyone passing through.
+17	The capital's artery that never sleeps, kept moving by preventive work. Looking after vital facilities is not just about fixing faults; its real value lies in acting early. With that in mind, Supervision Directorate crews in Damascus Governorate are continuing their routine technical work in the Umayyad tunnel, keeping it ready and ensuring the highest level of safety for everyone using it, without waiting for problems to appear.
+18	Kafr Sousa roads prepared for asphalting
+19	The Maintenance Directorate of Damascus Governorate begins preparing the site for asphalting and installing rain drains in Kafr Sousa
+20	Road levelling, rehabilitation and rain-drain installation in Kafr Sousa to secure basic services for residents.
+21	In Kafr Sousa, Maintenance Directorate crews prepared the site for paving and asphalting the road and installing drains for rainwater. The work is part of the Governorate's ongoing plan to maintain and upgrade infrastructure and improve the roads, providing basic services for residents and easing traffic in the area.
+22	Public auction for a commercial shop in Bab al-Jabiya
+23	Damascus Governorate announces a public auction to lease shop No. 32 in Bab al-Jabiya for 5 years
+24	Public auction to lease shop No. 32 in property No. 221, Bab al-Jabiya, for five years.
+25	Public auction in Bab al-Jabiya. Damascus Governorate announces a public auction to lease shop No. 32 on the ground floor of property No. 221 in Bab al-Jabiya.
+26	Lease period: 5 years.
+27	Opening bid: 140,000 (one hundred and forty thousand) new Syrian pounds.
+28	*Date and place of the auction:* 10 am on 27/10/2026 at the Damascus Governorate building.
+29	Lab samples taken from the Barada River at al-Rabweh
+30	Environment Directorate teams carry out a field visit in al-Rabweh to take lab samples from the Barada River and check its environmental health
+31	An Environment Directorate field visit to al-Rabweh to take random lab samples from the Barada River and keep its course clean.
+32	As part of monitoring the environment, Environment Directorate teams carried out a field visit in al-Rabweh, taking random lab samples from the waters of the Barada River. The aim is to run the necessary tests, check the river's health, keep its course clean and protect it from pollution.
+33	Damascus Governorate announces a public auction to lease shop No. 35 in Bab al-Jabiya for 5 years
+34	Public auction to lease shop No. 35 in property No. 221, Bab al-Jabiya, for five years.
+35	Public auction in Bab al-Jabiya. Damascus Governorate announces a public auction to lease shop No. 35 on the ground floor of property No. 221 in Bab al-Jabiya.
+36	Opening bid: 120,000 (one hundred and twenty thousand) new Syrian pounds.
+37	*Date and place of the auction:* 11 am on 27/10/2026 at the Damascus Governorate building.
+38	New CEO appointed for the Syrian Petroleum Company
+39	Presidential Decree No. 190 of 2026 appoints Mr Maher Khalil al-Hassan as CEO of the Syrian Petroleum Company
+40	A presidential decree appoints Mr Maher Khalil al-Hassan as the new CEO of the Syrian Petroleum Company.
+41	Presidential decree appoints a new CEO for the Syrian Petroleum Company. President Ahmad al-Sharaa issued Decree No. 190 of 2026 appointing Mr Maher Khalil al-Hassan as CEO of the Syrian Petroleum Company, as part of restructuring and developing the oil and energy sector.
+42	Cleaning and clearing storm drains in Old Damascus
+43	Old Damascus Directorate crews continue cleaning and clearing storm drains so water flows freely ahead of the rainy season
+44	Ongoing fieldwork to clear and clean storm drains in the neighbourhoods of Old Damascus and prevent blockages.
+45	Old Damascus Directorate crews are continuing to clean and clear storm drains across the area's neighbourhoods. The fieldwork is part of early preparations to keep rainwater flowing and prevent blockages, protecting residents and property during the rainy season.
+46	Sewer network clearing and maintenance in old al-Zahira
+47	General Water and Sewerage Company crews open and clear the sewer network in old al-Zahira
+48	Fieldwork to open and clear the sewer network in old al-Zahira, preventing blockages and keeping it working smoothly.
+49	General Water and Sewerage Company crews opened and cleared the sewer network in the old al-Zahira neighbourhood. The response keeps the network working smoothly and prevents blockages or emergencies that could affect the comfort and safety of residents.
+50	Education Director's inspection visit to the Teacher Training Institute
+51	Damascus's Director of Education visits the Teacher Training Institute to review its courses and check its readiness
+52	A field visit by the Director of Education to the Teacher Training Institute in Damascus to review training courses and support staff development.
+53	As part of plans to strengthen teaching skills, the Director of Education in Damascus, Ms Rafah al-Boushi al-Dabbagh, made a field visit to the Teacher Training Institute. The visit reviewed the courses being run and the institute's overall readiness, so that teachers receive the best possible training and education keeps improving.
+54	Paving continues at the Zablatani wholesale market
+55	The Maintenance Directorate of Damascus Governorate continues paving in Zablatani – wholesale market to improve traffic in the city
+56	Paving and road maintenance continue in Zablatani at the wholesale market to improve traffic.
+57	In Zablatani – wholesale market, the Maintenance Directorate of Damascus Governorate is continuing paving work to improve traffic flow in the city, as part of its ongoing plan to upgrade roads and public squares across the capital.
+58	Call for offers to rehabilitate and run the Fire Brigade and Ibn Asakir gardens
+59	Damascus Governorate invites offers, for the third time, to rehabilitate, manage, run, maintain and occupy the Fire Brigade and Ibn Asakir gardens for 10 years
+60	Call for offers to rehabilitate, manage and maintain the Fire Brigade and Ibn Asakir gardens as an investment for ten years.
+61	Call for offers for the Fire Brigade Garden and Ibn Asakir Garden. Damascus Governorate invites offers to rehabilitate, manage, run, maintain and occupy the Fire Brigade Garden and Ibn Asakir Garden (third call).
+62	*Investment terms for submitting offers:*
+63	Lease period: 10 years.
+64	*Date and place of opening the offers:* 12 noon on 26/10/2026 at the Damascus Governorate building.
+65	Public auction to lease the 17 April interchange tunnel on the Mezzeh Highway
+66	Damascus Governorate announces a public auction to lease the 17 April interchange tunnel, between the first and second tunnels on the Mezzeh Highway, for 4 years
+67	Public auction to lease the 17 April interchange tunnel between the first and second tunnels on the Mezzeh Highway for four years.
+68	Public auction on the Mezzeh Highway. Damascus Governorate announces a public auction for the 17 April interchange tunnel, between the first and second tunnels on the Mezzeh Highway.
+69	Lease period: 4 years.
+70	Opening bid: 500,000 (five hundred thousand) new Syrian pounds.
+71	Tender file price: 5,000 (five thousand) new Syrian pounds.
+72	Inspection visit to goldsmiths in the gold markets
+73	The General Authority for Precious Metals at the Ministry of Industry inspects goldsmiths' shops to check specifications and standards
+74	A field inspection of goldsmiths' shops in the gold markets to check compliance with the required specifications and standards.
+75	Part of the inspection visit to goldsmiths' shops in the capital's gold markets, carried out by the General Authority for Precious Metals at the Ministry of Industry. These ongoing visits check that shops meet the required specifications and standards, protect consumers' rights and keep the markets in order.
+76	Environmental inspections and field checks in response to citizens' complaints
+77	The Environment Directorate of Damascus Governorate carries out field checks and inspections of businesses in response to citizens' complaints, to ensure environmental compliance
+78	Responding to residents' complaints, the Environment Directorate inspects some businesses in the capital to check their compliance.
+79	Your complaints get answers. Following up citizens' complaints and keen to protect public safety, the Environment Directorate carried out environmental inspections and the necessary field checks on some businesses in the capital, to make sure they meet the required environmental standards and keep the environment clean and safe for everyone.
+80	Cleaning campaigns continue in al-Qadam
+81	The "Cleaner Damascus" campaigns continue across the capital, with Cleaning Directorate crews now in al-Qadam
+82	The "Cleaner Damascus" field campaigns continue, with Cleaning Directorate crews serving the residents of al-Qadam.
+83	The "Cleaner Damascus" campaigns are continuing across the capital thanks to the efforts of the Cleaning Directorate crews, this time in al-Qadam, where teams are running intensive campaigns to remove rubbish and clean streets and neighbourhoods, improving the environment and services and giving residents the best possible service.
+84	Public auction for a wooden kiosk in Bab Touma
+85	Damascus Governorate announces an auction to lease the wooden kiosk belonging to the Environment Directorate in Bab Touma – Harat al-Zaytoun for 3 years
+86	Public auction to lease the Environment Directorate's wooden kiosk in Bab Touma – Harat al-Zaytoun for three years.
+87	Public auction in Bab Touma. Damascus Governorate announces an auction to lease the wooden kiosk belonging to the Environment Directorate in Old Damascus – Bab Touma – Harat al-Zaytoun, under the stated terms and specifications.
+88	*Investment terms for applying:*
+89	Estimated value: 350,000 (three hundred and fifty thousand) new Syrian pounds only.
+90	Tender file price: 2,000 new Syrian pounds only.
+91	Development lecture to support Environment Directorate staff
+92	The Administrative Development Directorate of Damascus Governorate holds a development lecture to support Environment Directorate staff and strengthen institutional values
+93	A development lecture by the Values Development Department to improve job performance and nurture the values of Environment Directorate staff.
+94	Because staff are the foundation of institutional success, the Administrative Development Directorate, through its Values Development Department, gave a development lecture to support Environment Directorate employees and nurture their values, helping them work more efficiently and serve citizens better.
+95	Full rehabilitation of the Ibn al-Amid 4 bakery in Rukn al-Din
+96	The Syrian Bakeries Corporation carries out a full rehabilitation of the Ibn al-Amid 4 bakery in Rukn al-Din to improve bread quality
+97	Full rehabilitation of the Ibn al-Amid 4 bakery in Rukn al-Din by the Syrian Bakeries Corporation to improve the bread offered to citizens.
+98	Part of the full rehabilitation of the Ibn al-Amid 4 bakery in Rukn al-Din, carried out by the Syrian Bakeries Corporation to improve bread quality and the service offered to you, making sure bread meets the best specifications and standards.
+99	Call for offers to design, build and run an automated car park in al-Soufaniya
+100	Damascus Governorate invites offers to design, build and operate an automated car park in al-Soufaniya Garden under a BOT scheme for 15.5 years
+101	Call for offers to design, build and operate an automated car park in al-Soufaniya Garden under a BOT scheme for fifteen and a half years.
+102	Call for offers for the al-Soufaniya car park. Damascus Governorate invites offers to design, build and operate an automated car park in al-Soufaniya Garden under a BOT scheme, under the stated terms and specifications.
+103	Lease period: 15.5 years.
+104	Initial deposit: 2,000,000 (two million) new Syrian pounds only.
+105	Tender file price: 10,000 new Syrian pounds only.
+106	Development lecture on integrity for Traffic Engineering staff
+107	The Administrative Development Directorate of Damascus Governorate holds a development lecture on integrity for the Traffic Engineering Directorate staff to support their performance
+108	A development lecture for Traffic Engineering Directorate staff, organised by the Values Development Department to improve job performance.
+109	The valuable lectures continue. The Administrative Development Directorate of Damascus Governorate, through its Values Development Department, gave the Traffic Engineering Directorate staff a development lecture on the value of integrity, to support their performance and raise their professional and ethical awareness in the service of the institution.
+110	Maintenance Directorate works
+111	Works by the Maintenance Directorate of Damascus Governorate
+112	The Maintenance Directorate of Damascus Governorate prepared for road paving, rain-drain installation and the maintenance of pavements and main roads, to improve infrastructure and road safety.
+113	Clearing rain drains ahead of winter in Old Damascus
+114	The Old Damascus Directorate and Civil Defence clear rain drains in Old Damascus to prepare for the winter season
+115	Rain drains cleared in Old Damascus through cooperation between the Old Damascus Directorate and Civil Defence, ahead of winter.
+116	Part of the work to clear rain drains in preparation for winter in Old Damascus, carried out jointly by the Old Damascus Directorate and Civil Defence, to make sure the drainage networks are ready and to guard against any pooling of water.
+117	Joint meeting of Damascus Governorate and the Ministry of Emergencies to launch volunteer initiatives
+118	Damascus Governorate and representatives of the Ministry of Emergencies and Disaster Management discuss launching volunteer service initiatives to meet neighbourhood needs
+119	A meeting between Damascus Governorate and the Ministry of Emergencies to discuss volunteer service initiatives that meet the basic needs of neighbourhoods.
+120	Damascus Governorate met representatives of the Ministry of Emergencies and Disaster Management to discuss launching new volunteer service initiatives that meet the various basic needs of the city's areas and neighbourhoods and strengthen community cooperation to improve services.
+121	Second District director meets al-Muhajirin mukhtars to review services
+122	The Second District director meets the mukhtars of al-Muhajirin to review services and development and address the challenges raised
+123	A meeting between the Second District director and the mukhtars of al-Muhajirin to review services and development and meet basic needs.
+124	The director of the Second District (Rukn al-Din – al-Muhajirin – Sarouja), Mr Moataz Abu Marq, met the mukhtars of al-Muhajirin to review services and development in the area and go over some of the challenges facing its neighbourhoods, with the aim of solving the problems raised, meeting residents' basic needs and improving the services provided.
+125	Meeting on services and developing the second sector in al-Salihiyah
+126	The Second District director meets the Souq al-Jumaa committee in al-Salihiyah to discuss ways of improving basic services
+127	A meeting between the Second District director and the Souq al-Jumaa committee in al-Salihiyah to discuss and improve basic services in the second sector.
+128	Part of the meeting between the director of the Second District (Rukn al-Din – al-Muhajirin – Sarouja), Mr Moataz Abu Marq, and the Souq al-Jumaa committee in al-Salihiyah, discussing services and the development of the second sector to benefit basic services in the area and improve local service work.
+129	Planting seedlings and caring for greenery in al-Halbouni Square
+130	The Gardens Directorate of Damascus Governorate continues its "Damascus is green and will stay green" campaign, planting seedlings and caring for plants in al-Halbouni Square
+131	Planting seedlings and caring for plants in al-Halbouni Square as part of the "Damascus is green and will stay green" campaign.
+132	Looking after the city's green spaces, the Gardens Directorate of Damascus Governorate planted seedlings and cared for plants in al-Halbouni Square, continuing the "Damascus is green and will stay green" campaigns to support the city's greenery and improve the look and environment of its squares and public gardens.
+133	Completing road maintenance in Qaboun
+134	The Supervision Directorate of Damascus Governorate follows up the completion of road maintenance projects in Qaboun
+135	The Supervision Directorate of Damascus Governorate continues its field follow-up and supervision of service works and projects across the city, with work currently focused on Qaboun to complete road maintenance and street rehabilitation, as part of ongoing efforts to improve infrastructure and serve residents better.

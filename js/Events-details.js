@@ -1,604 +1,314 @@
-/* =========================================================
-   CULTURAL EVENTS
-========================================================= */
-
-
-/* =========================================================
-   MONTHS
-========================================================= */
-
 const arabicMonths = [
-    "كانون الثاني",
-    "شباط",
-    "آذار",
-    "نيسان",
-    "أيار",
-    "حزيران",
-    "تموز",
-    "آب",
-    "أيلول",
-    "تشرين الأول",
-    "تشرين الثاني",
-    "كانون الأول"
+  "كانون الثاني",
+  "شباط",
+  "آذار",
+  "نيسان",
+  "أيار",
+  "حزيران",
+  "تموز",
+  "آب",
+  "أيلول",
+  "تشرين الأول",
+  "تشرين الثاني",
+  "كانون الأول",
 ];
 
-
-/* =========================================================
-   EVENTS DATA
-========================================================= */
-
 const eventsData = {
+  "2026-10-3": [
+    {
+      id: 1,
+      title: "أمسية موسيقية دمشقية",
+      type: "موسيقى",
+      time: "18:00",
+      location: "دار الأسد للثقافة والفنون",
+      description: "أمسية موسيقية تجمع بين الموسيقى الشرقية والآلات التقليدية في أجواء ثقافية دمشقية.",
+    },
+  ],
 
-    "2026-10-3": [
-        {
-            id: 1,
-            title: "أمسية موسيقية دمشقية",
-            type: "موسيقى",
-            time: "18:00",
-            location: "دار الأسد للثقافة والفنون",
-            description:
-                "أمسية موسيقية تجمع بين الموسيقى الشرقية والآلات التقليدية في أجواء ثقافية دمشقية."
-        }
-    ],
+  "2026-10-8": [
+    {
+      id: 2,
+      title: "معرض ذاكرة دمشق",
+      type: "معرض",
+      time: "17:00",
+      location: "المركز الثقافي العربي",
+      description: "معرض يوثق جوانب من الحياة الدمشقية القديمة من خلال الصور والوثائق والمقتنيات.",
+    },
+  ],
 
-    "2026-10-8": [
-        {
-            id: 2,
-            title: "معرض ذاكرة دمشق",
-            type: "معرض",
-            time: "17:00",
-            location: "المركز الثقافي العربي",
-            description:
-                "معرض يوثق جوانب من الحياة الدمشقية القديمة من خلال الصور والوثائق والمقتنيات."
-        }
-    ],
+  "2026-10-12": [
+    {
+      id: 3,
+      title: "ندوة حول التراث الدمشقي",
+      type: "ندوة",
+      time: "16:30",
+      location: "مكتبة الأسد الوطنية",
+      description: "ندوة ثقافية تناقش العمارة والأسواق والحرف التقليدية ودورها في الحفاظ على هوية دمشق.",
+    },
+  ],
 
-    "2026-10-12": [
-        {
-            id: 3,
-            title: "ندوة حول التراث الدمشقي",
-            type: "ندوة",
-            time: "16:30",
-            location: "مكتبة الأسد الوطنية",
-            description:
-                "ندوة ثقافية تناقش العمارة والأسواق والحرف التقليدية ودورها في الحفاظ على هوية دمشق."
-        }
-    ],
+  "2026-10-17": [
+    {
+      id: 4,
+      title: "ليلة الشعر العربي",
+      type: "أدب",
+      time: "19:00",
+      location: "المركز الثقافي العربي - أبو رمانة",
+      description: "أمسية أدبية يشارك فيها عدد من الشعراء والمهتمين بالشعر العربي.",
+    },
+  ],
 
-    "2026-10-17": [
-        {
-            id: 4,
-            title: "ليلة الشعر العربي",
-            type: "أدب",
-            time: "19:00",
-            location: "المركز الثقافي العربي - أبو رمانة",
-            description:
-                "أمسية أدبية يشارك فيها عدد من الشعراء والمهتمين بالشعر العربي."
-        }
-    ],
+  "2026-10-21": [
+    {
+      id: 5,
+      title: "ورشة الخط العربي",
+      type: "ورشة",
+      time: "15:00",
+      location: "بيت الخط العربي",
+      description: "ورشة تعريفية بأساسيات الخط العربي وأساليبه وتطبيقاته الفنية.",
+    },
+  ],
 
-    "2026-10-21": [
-        {
-            id: 5,
-            title: "ورشة الخط العربي",
-            type: "ورشة",
-            time: "15:00",
-            location: "بيت الخط العربي",
-            description:
-                "ورشة تعريفية بأساسيات الخط العربي وأساليبه وتطبيقاته الفنية."
-        }
-    ],
+  "2026-10-25": [
+    {
+      id: 6,
+      title: "عرض مسرحي",
+      type: "مسرح",
+      time: "20:00",
+      location: "المسرح القومي",
+      description: "عرض مسرحي ضمن البرنامج الثقافي للموسم، بمشاركة مجموعة من الفنانين السوريين.",
+    },
+  ],
 
-    "2026-10-25": [
-        {
-            id: 6,
-            title: "عرض مسرحي",
-            type: "مسرح",
-            time: "20:00",
-            location: "المسرح القومي",
-            description:
-                "عرض مسرحي ضمن البرنامج الثقافي للموسم، بمشاركة مجموعة من الفنانين السوريين."
-        }
-    ],
+  "2026-10-29": [
+    {
+      id: 7,
+      title: "معرض الحرف الدمشقية",
+      type: "حرف وتراث",
+      time: "17:30",
+      location: "المدينة القديمة",
+      description: "فعالية تستعرض الحرف التقليدية الدمشقية وأعمالاً يدوية مستوحاة من التراث المحلي.",
+    },
+  ],
 
-    "2026-10-29": [
-        {
-            id: 7,
-            title: "معرض الحرف الدمشقية",
-            type: "حرف وتراث",
-            time: "17:30",
-            location: "المدينة القديمة",
-            description:
-                "فعالية تستعرض الحرف التقليدية الدمشقية وأعمالاً يدوية مستوحاة من التراث المحلي."
-        }
-    ],
+  "2026-11-4": [
+    {
+      id: 8,
+      title: "أسبوع الفيلم السوري",
+      type: "سينما",
+      time: "19:00",
+      location: "دار الأسد للثقافة والفنون",
+      description: "برنامج سينمائي يعرض مجموعة من الأفلام السورية ويناقش تجاربها الفنية.",
+    },
+  ],
 
-    "2026-11-4": [
-        {
-            id: 8,
-            title: "أسبوع الفيلم السوري",
-            type: "سينما",
-            time: "19:00",
-            location: "دار الأسد للثقافة والفنون",
-            description:
-                "برنامج سينمائي يعرض مجموعة من الأفلام السورية ويناقش تجاربها الفنية."
-        }
-    ],
+  "2026-11-10": [
+    {
+      id: 9,
+      title: "معرض الفن التشكيلي",
+      type: "فن",
+      time: "17:00",
+      location: "غاليري دمشق",
+      description: "مجموعة من الأعمال الفنية التي تقدم تجارب معاصرة في الفن التشكيلي.",
+    },
+  ],
 
-    "2026-11-10": [
-        {
-            id: 9,
-            title: "معرض الفن التشكيلي",
-            type: "فن",
-            time: "17:00",
-            location: "غاليري دمشق",
-            description:
-                "مجموعة من الأعمال الفنية التي تقدم تجارب معاصرة في الفن التشكيلي."
-        }
-    ],
-
-    "2026-11-18": [
-        {
-            id: 10,
-            title: "أمسية أدبية",
-            type: "أدب",
-            time: "18:30",
-            location: "المركز الثقافي العربي",
-            description:
-                "لقاء أدبي يضم قراءات ونقاشات حول الأدب السوري المعاصر."
-        }
-    ]
-
+  "2026-11-18": [
+    {
+      id: 10,
+      title: "أمسية أدبية",
+      type: "أدب",
+      time: "18:30",
+      location: "المركز الثقافي العربي",
+      description: "لقاء أدبي يضم قراءات ونقاشات حول الأدب السوري المعاصر.",
+    },
+  ],
 };
 
+const calendarGrid = document.getElementById("calendarGrid");
 
-/* =========================================================
-   DOM
-========================================================= */
+const calendarMonth = document.getElementById("calendarMonth");
 
-const calendarGrid =
-    document.getElementById("calendarGrid");
+const calendarYear = document.getElementById("calendarYear");
 
-const calendarMonth =
-    document.getElementById("calendarMonth");
+const calendarPrev = document.getElementById("calendarPrev");
 
-const calendarYear =
-    document.getElementById("calendarYear");
+const calendarNext = document.getElementById("calendarNext");
 
-const calendarPrev =
-    document.getElementById("calendarPrev");
+const selectedDayTitle = document.getElementById("selectedDayTitle");
 
-const calendarNext =
-    document.getElementById("calendarNext");
+const selectedDayCount = document.getElementById("selectedDayCount");
 
-const selectedDayTitle =
-    document.getElementById("selectedDayTitle");
+const eventsList = document.getElementById("eventsList");
 
-const selectedDayCount =
-    document.getElementById("selectedDayCount");
-
-const eventsList =
-    document.getElementById("eventsList");
-
-const featuredEvents =
-    document.getElementById("featuredEvents");
-
-
-/* =========================================================
-   STATE
-========================================================= */
+const featuredEvents = document.getElementById("featuredEvents");
 
 let currentDate = new Date(2026, 9, 1);
 
 let selectedDate = null;
 
-
-/* =========================================================
-   HELPERS
-========================================================= */
-
 function getEventKey(year, month, day) {
-
-    return `${year}-${month + 1}-${day}`;
+  return `${year}-${month + 1}-${day}`;
 }
-
 
 function getEventsForDate(year, month, day) {
+  const key = getEventKey(year, month, day);
 
-    const key = getEventKey(
-        year,
-        month,
-        day
-    );
-
-    return eventsData[key] || [];
+  return eventsData[key] || [];
 }
-
 
 function formatArabicDate(year, month, day) {
-
-    return `${day} ${arabicMonths[month]} ${year}`;
+  return `${day} ${arabicMonths[month]} ${year}`;
 }
-
-
-/* =========================================================
-   RENDER CALENDAR
-========================================================= */
 
 function renderCalendar() {
+  const year = currentDate.getFullYear();
 
-    const year =
-        currentDate.getFullYear();
+  const month = currentDate.getMonth();
 
-    const month =
-        currentDate.getMonth();
+  calendarMonth.textContent = arabicMonths[month];
 
+  calendarYear.textContent = year;
 
-    calendarMonth.textContent =
-        arabicMonths[month];
+  calendarGrid.innerHTML = "";
 
-    calendarYear.textContent =
-        year;
+  const firstDay = new Date(year, month, 1).getDay();
 
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-    calendarGrid.innerHTML = "";
+  const previousMonthDays = new Date(year, month, 0).getDate();
 
+  for (let i = firstDay - 1; i >= 0; i--) {
+    const day = previousMonthDays - i;
 
-    /*
-        JS getDay():
-        Sunday = 0
-        Monday = 1
-        ...
-        Saturday = 6
+    createCalendarDay(day, "previous");
+  }
 
-        This matches our Arabic calendar
-        starting from Sunday.
-    */
+  for (let day = 1; day <= daysInMonth; day++) {
+    createCalendarDay(day, "current");
+  }
 
-    const firstDay =
-        new Date(
-            year,
-            month,
-            1
-        ).getDay();
+  const totalCells = calendarGrid.children.length;
 
+  const remaining = (7 - (totalCells % 7)) % 7;
 
-    const daysInMonth =
-        new Date(
-            year,
-            month + 1,
-            0
-        ).getDate();
-
-
-    const previousMonthDays =
-        new Date(
-            year,
-            month,
-            0
-        ).getDate();
-
-
-    /*
-        Previous month days
-    */
-
-    for (
-        let i = firstDay - 1;
-        i >= 0;
-        i--
-    ) {
-
-        const day =
-            previousMonthDays - i;
-
-        createCalendarDay(
-            day,
-            "previous"
-        );
-    }
-
-
-    /*
-        Current month
-    */
-
-    for (
-        let day = 1;
-        day <= daysInMonth;
-        day++
-    ) {
-
-        createCalendarDay(
-            day,
-            "current"
-        );
-    }
-
-
-    /*
-        Next month days
-    */
-
-    const totalCells =
-        calendarGrid.children.length;
-
-    const remaining =
-        (7 - (totalCells % 7)) % 7;
-
-
-    for (
-        let day = 1;
-        day <= remaining;
-        day++
-    ) {
-
-        createCalendarDay(
-            day,
-            "next"
-        );
-    }
+  for (let day = 1; day <= remaining; day++) {
+    createCalendarDay(day, "next");
+  }
 }
 
+function createCalendarDay(day, type) {
+  const element = document.createElement("button");
 
-/* =========================================================
-   CREATE CALENDAR DAY
-========================================================= */
+  element.type = "button";
 
-function createCalendarDay(
-    day,
-    type
-) {
+  element.className = "calendar-day";
 
-    const element =
-        document.createElement("button");
+  if (type !== "current") {
+    element.classList.add("other-month");
 
+    element.disabled = true;
 
-    element.type = "button";
+    const number = document.createElement("span");
 
-    element.className =
-        "calendar-day";
+    number.className = "calendar-day-number";
 
-
-    /*
-        Previous / next month
-    */
-
-    if (type !== "current") {
-
-        element.classList.add(
-            "other-month"
-        );
-
-        element.disabled = true;
-
-        const number =
-            document.createElement("span");
-
-        number.className =
-            "calendar-day-number";
-
-        number.textContent =
-            day;
-
-        element.appendChild(number);
-
-        calendarGrid.appendChild(
-            element
-        );
-
-        return;
-    }
-
-
-    const year =
-        currentDate.getFullYear();
-
-    const month =
-        currentDate.getMonth();
-
-
-    const events =
-        getEventsForDate(
-            year,
-            month,
-            day
-        );
-
-
-    /*
-        Number
-    */
-
-    const number =
-        document.createElement("span");
-
-    number.className =
-        "calendar-day-number";
-
-    number.textContent =
-        day;
+    number.textContent = day;
 
     element.appendChild(number);
 
+    calendarGrid.appendChild(element);
 
-    /*
-        Events
-    */
+    return;
+  }
 
-    if (events.length > 0) {
+  const year = currentDate.getFullYear();
 
-        element.classList.add(
-            "has-events"
-        );
+  const month = currentDate.getMonth();
 
+  const events = getEventsForDate(year, month, day);
 
-        events
-            .slice(0, 2)
-            .forEach(event => {
+  const number = document.createElement("span");
 
-                const eventTitle =
-                    document.createElement("span");
+  number.className = "calendar-day-number";
 
-                eventTitle.className =
-                    "calendar-day-event";
+  number.textContent = day;
 
-                eventTitle.textContent =
-                    event.title;
+  element.appendChild(number);
 
-                element.appendChild(
-                    eventTitle
-                );
-            });
-    }
+  if (events.length > 0) {
+    element.classList.add("has-events");
 
+    events.slice(0, 2).forEach((event) => {
+      const eventTitle = document.createElement("span");
 
-    /*
-        Today
-    */
+      eventTitle.className = "calendar-day-event";
 
-    const today =
-        new Date();
+      eventTitle.textContent = event.title;
 
-    if (
-        today.getFullYear() === year &&
-        today.getMonth() === month &&
-        today.getDate() === day
-    ) {
+      element.appendChild(eventTitle);
+    });
+  }
 
-        element.classList.add(
-            "today"
-        );
-    }
+  const today = new Date();
 
+  if (today.getFullYear() === year && today.getMonth() === month && today.getDate() === day) {
+    element.classList.add("today");
+  }
 
-    /*
-        Selected
-    */
+  if (selectedDate && selectedDate.year === year && selectedDate.month === month && selectedDate.day === day) {
+    element.classList.add("active");
+  }
 
-    if (
-        selectedDate &&
-        selectedDate.year === year &&
-        selectedDate.month === month &&
-        selectedDate.day === day
-    ) {
+  element.addEventListener("click", () => {
+    selectDate(year, month, day);
+  });
 
-        element.classList.add(
-            "active"
-        );
-    }
-
-
-    /*
-        Click
-    */
-
-    element.addEventListener(
-        "click",
-        () => {
-
-            selectDate(
-                year,
-                month,
-                day
-            );
-        }
-    );
-
-
-    calendarGrid.appendChild(
-        element
-    );
+  calendarGrid.appendChild(element);
 }
 
-
-/* =========================================================
-   SELECT DATE
-========================================================= */
-
-function selectDate(
+function selectDate(year, month, day) {
+  selectedDate = {
     year,
     month,
-    day
-) {
+    day,
+  };
 
-    selectedDate = {
-        year,
-        month,
-        day
-    };
+  const events = getEventsForDate(year, month, day);
 
+  selectedDayTitle.textContent = formatArabicDate(year, month, day);
 
-    const events =
-        getEventsForDate(
-            year,
-            month,
-            day
-        );
+  selectedDayCount.textContent = `${events.length} فعاليات`;
 
+  renderEvents(events);
 
-    selectedDayTitle.textContent =
-        formatArabicDate(
-            year,
-            month,
-            day
-        );
+  renderCalendar();
 
-
-    selectedDayCount.textContent =
-        `${events.length} فعاليات`;
-
-
-    renderEvents(
-        events
-    );
-
-
-    renderCalendar();
-
-
-    document
-        .getElementById(
-            "selectedDaySection"
-        )
-        .scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+  document.getElementById("selectedDaySection").scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
 }
 
-
-/* =========================================================
-   RENDER EVENTS
-========================================================= */
-
 function renderEvents(events) {
+  eventsList.innerHTML = "";
 
-    eventsList.innerHTML = "";
-
-
-    if (!events.length) {
-
-        eventsList.innerHTML = `
+  if (!events.length) {
+    eventsList.innerHTML = `
             <div class="events-empty">
                 لا توجد فعاليات مسجلة لهذا اليوم.
             </div>
         `;
 
-        return;
-    }
+    return;
+  }
 
+  events.forEach((event) => {
+    const card = document.createElement("article");
 
-    events.forEach(event => {
+    card.className = "event-card";
 
-        const card =
-            document.createElement("article");
-
-        card.className =
-            "event-card";
-
-
-        card.innerHTML = `
+    card.innerHTML = `
 
             <div class="event-time">
                 ${event.time}
@@ -626,116 +336,62 @@ function renderEvents(events) {
 
         `;
 
-
-        eventsList.appendChild(
-            card
-        );
-    });
+    eventsList.appendChild(card);
+  });
 }
 
+calendarPrev.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() - 1);
 
-/* =========================================================
-   MONTH NAVIGATION
-========================================================= */
+  selectedDate = null;
 
-calendarPrev.addEventListener(
-    "click",
-    () => {
+  resetSelectedDay();
 
-        currentDate.setMonth(
-            currentDate.getMonth() - 1
-        );
+  renderCalendar();
+});
 
-        selectedDate = null;
+calendarNext.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() + 1);
 
-        resetSelectedDay();
+  selectedDate = null;
 
-        renderCalendar();
-    }
-);
+  resetSelectedDay();
 
-
-calendarNext.addEventListener(
-    "click",
-    () => {
-
-        currentDate.setMonth(
-            currentDate.getMonth() + 1
-        );
-
-        selectedDate = null;
-
-        resetSelectedDay();
-
-        renderCalendar();
-    }
-);
-
-
-/* =========================================================
-   RESET SELECTED DAY
-========================================================= */
+  renderCalendar();
+});
 
 function resetSelectedDay() {
+  selectedDayTitle.textContent = "اختر يوماً من التقويم";
 
-    selectedDayTitle.textContent =
-        "اختر يوماً من التقويم";
+  selectedDayCount.textContent = "0 فعاليات";
 
-    selectedDayCount.textContent =
-        "0 فعاليات";
-
-    eventsList.innerHTML = `
+  eventsList.innerHTML = `
         <div class="events-empty">
             اختر يوماً من التقويم لاستعراض الفعاليات.
         </div>
     `;
 }
 
-
-/* =========================================================
-   FEATURED EVENTS
-========================================================= */
-
 function renderFeaturedEvents() {
+  const allEvents = [];
 
-    const allEvents = [];
+  Object.entries(eventsData).forEach(([date, events]) => {
+    events.forEach((event) => {
+      allEvents.push({
+        ...event,
+        date,
+      });
+    });
+  });
 
+  allEvents.slice(0, 3).forEach((event) => {
+    const card = document.createElement("article");
 
-    Object.entries(eventsData)
-        .forEach(([date, events]) => {
+    card.className = "featured-event-card";
 
-            events.forEach(event => {
+    const [year, month, day] = event.date.split("-").map(Number);
 
-                allEvents.push({
-                    ...event,
-                    date
-                });
-
-            });
-        });
-
-
-    allEvents
-        .slice(0, 3)
-        .forEach(event => {
-
-            const card =
-                document.createElement("article");
-
-            card.className =
-                "featured-event-card";
-
-
-            const [
-                year,
-                month,
-                day
-            ] = event.date
-                .split("-")
-                .map(Number);
-
-
-            card.innerHTML = `
+    card.innerHTML = `
 
                 <div>
 
@@ -751,11 +407,9 @@ function renderFeaturedEvents() {
 
                     </div>
 
-
                     <h3>
                         ${event.title}
                     </h3>
-
 
                     <p>
                         ${event.description}
@@ -763,24 +417,15 @@ function renderFeaturedEvents() {
 
                 </div>
 
-
                 <div class="featured-event-location">
                     ${event.location}
                 </div>
 
             `;
 
-
-            featuredEvents.appendChild(
-                card
-            );
-        });
+    featuredEvents.appendChild(card);
+  });
 }
-
-
-/* =========================================================
-   INITIALIZE
-========================================================= */
 
 renderCalendar();
 

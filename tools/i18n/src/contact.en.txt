@@ -1,0 +1,13 @@
+0	Contact us - Damascus Governorate
+1	Your voice reaches us
+2	We are glad to hear from you
+3	Full name
+4	Subject
+5	Suggestion
+6	Suggestions
+7	Enter your name
+8	What is your message about?
+9	Write your suggestion here...
+10	Phone
+11	Email
+12	Address

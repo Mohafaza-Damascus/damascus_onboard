@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>دليل الخدمة الإلكترونية - محافظة دمشق</title>
+
+    <link rel="icon" href="../images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+      :root {
+        --sd-primary: var(--green-900);
+        --sd-primary-hover: #0b5a4d;
+        --sd-accent: var(--teal-600);
+
+        --sd-band: #e8f0ea;
+        --sd-page: #fbfaf7;
+        --sd-line: #e4e0d6;
+        --sd-muted: #66736c;
+        --sd-soft: #f2f0ea;
+      }
+
+      body {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .sd-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        grid-template-rows: auto 1fr;
+        column-gap: 32px;
+        padding-bottom: 48px;
+      }
+
+      .sd-layout.is-missing {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .sd-hero {
+        grid-column: 1;
+        grid-row: 1;
+        padding: 28px 0 30px;
+        background: transparent;
+        box-shadow: none;
+        clip-path: none;
+        border-bottom: 1px solid #be9c5a;
+      }
+
+      .sd-breadcrumb ol {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        list-style: none;
+        font-size: 13px;
+        color: var(--sd-muted);
+      }
+
+      .sd-breadcrumb li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .sd-breadcrumb li + li::before {
+        content: "\f053";
+        font-family: "Font Awesome 6 Free";
+        font-size: 9px;
+        font-weight: 900;
+      }
+
+      .sd-breadcrumb a {
+        color: var(--sd-primary);
+        transition: color 0.2s ease;
+      }
+
+      .sd-breadcrumb a:hover {
+        color: var(--sd-accent);
+        text-decoration: underline;
+      }
+
+      .sd-hero__head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px 24px;
+        margin-top: 20px;
+      }
+
+      .sd-hero h1 {
+        font-size: clamp(26px, 3vw, 34px);
+        font-weight: 700;
+        line-height: 1.5;
+        color: var(--sd-primary);
+        overflow-wrap: anywhere;
+      }
+
+      .sd-hero__actions {
+        display: flex;
+        flex-shrink: 0;
+        gap: 8px;
+      }
+
+      .sd-hero__desc {
+        max-width: 72ch;
+        margin-top: 12px;
+        font-size: 16px;
+        line-height: 1.9;
+        color: #3d4a44;
+        white-space: pre-line;
+        overflow-wrap: anywhere;
+      }
+
+      .sd-copy {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 18px;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--sd-accent);
+        cursor: pointer;
+      }
+
+      .sd-copy:hover span {
+        text-decoration: underline;
+      }
+
+      .sd-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 42px;
+        padding: 0 18px;
+        border-radius: var(--r-sm);
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+        transition:
+          background-color 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
+        cursor: pointer;
+      }
+
+      .sd-btn--primary {
+        background: var(--sd-primary);
+        color: #fff;
+        border: none;
+      }
+
+      .sd-btn--primary:hover {
+        background: var(--sd-primary-hover);
+        color: #fff;
+      }
+
+      .sd-btn--soft {
+        width: 100%;
+        background: var(--sd-soft);
+        color: #064239;
+      }
+
+      .sd-btn--soft:hover {
+        background: #e8e5dc;
+      }
+
+      .sd-link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        width: fit-content;
+        margin-top: 1 px;
+        padding-inline-start: 10px;
+        font-size: 14px;
+        color: var(--sd-accent);
+      }
+
+      .sd-link:hover {
+        text-decoration: underline;
+      }
+
+      .sd-link i {
+        font-size: 11px;
+      }
+
+      .sd-btn:focus-visible,
+      .sd-copy:focus-visible,
+      .sd-tab:focus-visible,
+      .sd-link:focus-visible,
+      .sd-breadcrumb a:focus-visible {
+        outline: 2px solid var(--sd-accent);
+        outline-offset: 3px;
+      }
+
+      .sd-aside {
+        position: relative;
+        z-index: 1;
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: start;
+        margin-top: 28px;
+        padding: 28px;
+        border: 1px solid var(--sd-line);
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: var(--shadow-sm);
+        min-width: 0;
+      }
+
+      .sd-facts {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-weight: 700;
+        color: #064239;
+      }
+
+      .sd-fact dt,
+      .sd-aside-section h2 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .sd-fact dt i,
+      .sd-aside-section h2 i {
+        width: 18px;
+        font-size: 16px;
+        text-align: center;
+        color: var(--sd-accent);
+      }
+
+      .sd-fact dd {
+        margin-top: 10px;
+        padding-inline-start: 28px;
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--sd-muted);
+        white-space: pre-line;
+        overflow-wrap: anywhere;
+      }
+
+      .sd-divider {
+        height: 1px;
+        border: 0;
+        background: var(--sd-line);
+        margin: 15px 0;
+      }
+
+      .sd-main {
+        grid-column: 1;
+        grid-row: 2;
+        min-width: 0;
+        padding-top: 5px;
+      }
+
+      .sd-tabs {
+        display: none;
+      }
+
+      .sd-sections {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .sd-section {
+        display: block;
+        min-width: 0;
+        padding: 0 0 6px;
+      }
+
+      .sd-section:last-child {
+        border-bottom: none;
+      }
+
+      .sd-section-title {
+        margin-bottom: 0;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 1.5;
+        color: var(--sd-primary);
+      }
+
+      .sd-section .sd-list {
+        margin: 0;
+      }
+
+      .sd-list {
+        list-style: none;
+        counter-reset: sd-item;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sd-list li {
+        display: flex;
+        gap: 6px;
+        padding: 0;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.9;
+        color: var(--text);
+        overflow-wrap: anywhere;
+        counter-increment: sd-item;
+      }
+
+      .sd-list li::before {
+        content: counter(sd-item) "-";
+        flex-shrink: 0;
+        min-width: 26px;
+        font-weight: 700;
+        color: var(--sd-primary);
+      }
+
+      .sd-empty {
+        padding: 8px 0;
+        color: var(--sd-muted);
+        line-height: 1.8;
+      }
+
+      #guideFees {
+        list-style: none !important;
+        counter-reset: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      #guideFees li {
+        list-style: none !important;
+        counter-increment: none !important;
+      }
+
+      #guideFees li::before,
+      #guideFees li::after {
+        content: none !important;
+      }
+
+      #guideFees li::marker {
+        content: none !important;
+      }
+
+      .sd-missing {
+        display: none;
+        padding: 28px 24px;
+        border: 1px dashed var(--sd-line);
+        border-radius: 16px;
+        background: #fff;
+        text-align: center;
+        color: var(--sd-muted);
+      }
+
+      .sd-missing .sd-btn {
+        width: auto;
+        margin-top: 16px;
+      }
+
+      .sd-layout.is-missing .sd-missing {
+        display: block;
+      }
+
+      .sd-layout.is-missing .sd-hero__actions,
+      .sd-layout.is-missing .sd-copy,
+      .sd-layout.is-missing .sd-aside,
+      .sd-layout.is-missing .sd-main > .sd-sections {
+        display: none;
+      }
+
+      .sd-feedback {
+        margin-top: 32px;
+        margin-bottom: 56px;
+        text-align: center;
+        padding: 28px;
+        border: 1px solid var(--sd-line);
+        border-radius: 16px;
+        background: #fff;
+      }
+
+      .sd-feedback__icon {
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        margin-inline: auto;
+        border-radius: 50%;
+        background: var(--sd-band);
+        font-size: 18px;
+        color: var(--sd-accent);
+      }
+
+      .sd-feedback h2 {
+        margin-top: 16px;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .sd-feedback p {
+        margin-top: 8px;
+        font-size: 15px;
+        line-height: 1.8;
+        color: var(--sd-muted);
+      }
+
+      .sd-feedback .sd-btn {
+        margin-top: 18px;
+      }
+
+      @media (max-width: 980px) {
+        .sd-layout {
+          grid-template-columns: minmax(0, 1fr);
+          grid-template-rows: auto;
+        }
+
+        .sd-hero,
+        .sd-aside,
+        .sd-main {
+          grid-column: 1;
+          grid-row: auto;
+        }
+
+        .sd-aside {
+          margin-top: 24px;
+        }
+
+        .sd-main {
+          padding-top: 24px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .sd-hero {
+          padding: 20px 0 28px;
+        }
+
+        .sd-hero__actions,
+        .sd-hero__actions .sd-btn {
+          width: 100%;
+        }
+
+        .sd-aside,
+        .sd-feedback {
+          padding: 22px 18px;
+        }
+
+        .sd-list li {
+          font-size: 15px;
+        }
+
+        .sd-section-title {
+          font-size: 18px;
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        body::before,
+        .header,
+        .footer,
+        .a11y-btn,
+        .sd-hero__actions,
+        .sd-copy,
+        .sd-tabs,
+        .sd-feedback,
+        .sd-back {
+          display: none !important;
+        }
+
+        .sd-layout {
+          display: block;
+          padding-bottom: 0;
+        }
+
+        .sd-hero {
+          padding: 0 0 16px;
+          background: none;
+          box-shadow: none;
+          clip-path: none;
+        }
+
+        .sd-aside {
+          margin: 0 0 16px;
+          box-shadow: none;
+        }
+
+        .sd-sections {
+          gap: 16px;
+        }
+
+        .sd-section {
+          padding: 12px 0;
+          break-inside: avoid;
+        }
+
+        .sd-section-title {
+          display: block;
+        }
+      }
+
+      .sd-start-service,
+      .sd-back {
+        width: 100%;
+      }
+
+      .sd-start-service {
+        margin-bottom: 10px;
+      }
+
+      .sd-start-service.is-soon,
+      .sd-start-service.is-soon:hover {
+        background: #c9a24a;
+        cursor: default;
+        pointer-events: none;
+      }
+
+      #guideDescription {
+        width: 50%;
+        max-height: 100px;
+        box-sizing: border-box;
+        margin: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        overflow-wrap: anywhere;
+        line-height: 1.8;
+        text-align: right;
+      }
+
+      #guidePapers,
+      #guideSteps {
+        list-style: none;
+        counter-reset: sd-item;
+        padding: 0;
+        margin: 0;
+      }
+
+      #guidePapers li,
+      #guideSteps li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 6px;
+        padding: 0;
+        font-size: 16px;
+        line-height: 1.8;
+        counter-increment: sd-item;
+      }
+
+      #guidePapers li::before,
+      #guideSteps li::before {
+        content: counter(sd-item) "-";
+        display: inline-block;
+        flex: 0 0 26px;
+        color: var(--sd-primary);
+        font-weight: 700;
+      }
+
+      #guidePapers .sd-list,
+      #guideSteps .sd-list {
+        list-style: none !important;
+        counter-reset: sd-item;
+        padding: 0;
+        margin: 0;
+      }
+
+      #guidePapers .sd-list li,
+      #guideSteps .sd-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 6px;
+        padding: 0;
+        counter-increment: sd-item;
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      #guidePapers .sd-list li::before,
+      #guideSteps .sd-list li::before {
+        content: counter(sd-item) "-" !important;
+        display: inline-block;
+        flex: 0 0 26px;
+        color: var(--sd-primary);
+        font-weight: 700;
+      }
+
+      #guidePapers .sd-list li::marker,
+      #guideSteps .sd-list li::marker {
+        content: "" !important;
+      }
+
+      .sd-hero__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: nowrap;
+      }
+
+      .sd-hero__head h1 {
+        min-width: 0;
+        margin: 0;
+      }
+
+      .sd-hero__head .sd-start-service {
+        flex-shrink: 0;
+        width: auto;
+        margin: 0;
+      }
+
+      @media (max-width: 600px) {
+        .sd-hero__head {
+          flex-wrap: wrap;
+        }
+
+        .sd-hero__head .sd-start-service {
+          width: 100%;
+        }
+      }
+
+      .sd-hero__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+
+      .sd-hero__actions .sd-start-service {
+        width: 100%;
+        margin: 0;
+      }
+
+      .sd-hero__actions .sd-copy {
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+      }
+
+      .sd-aside-section {
+        margin-top: 5px;
+      }
+    </style>
+    <script src="../js/i18n.js"></script>
+  </head>
+
+  <body class="electronic-service-guide-page">
+    <div id="site-header" data-active="خدمات"></div>
+
+    <main>
+      <div class="container sd-layout" id="electronicServiceLayout">
+        <header class="sd-hero">
+          <nav class="sd-breadcrumb" aria-label="مسار التنقل">
+            <ol>
+              <li>
+                <a href="../index.html">الرئيسية</a>
+              </li>
+              <li>
+                <a href="electronic-services.html">الخدمات الإلكترونية</a>
+              </li>
+              <li aria-current="page">دليل الخدمة</li>
+            </ol>
+          </nav>
+
+          <div class="sd-hero__head">
+            <h1 id="guideTitle">جارٍ تحميل تفاصيل الخدمة...</h1>
+
+            <div class="sd-hero__actions">
+              <a class="sd-btn sd-btn--primary sd-start-service" id="startServiceBtn" href="#">
+                ابدأ الخدمة
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+              </a>
+
+              <button type="button" class="sd-copy" id="copyGuideLinkBtn">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                <span aria-live="polite">نسخ رابط الخدمة</span>
+              </button>
+            </div>
+          </div>
+
+          <p class="sd-hero__desc" id="guideDescription"></p>
+        </header>
+
+        <aside class="sd-aside" aria-label="معلومات الخدمة">
+          <dl class="sd-facts" id="guideFacts"></dl>
+
+          <section class="sd-aside-section">
+            <h2>
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              تواصل معنا
+            </h2>
+
+            <a class="sd-link" href="contact.html">
+              صفحة تواصل معنا
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </section>
+
+          <hr class="sd-divider" />
+
+          <a class="sd-btn sd-btn--soft sd-back" href="electronic-services.html">
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            العودة إلى الخدمات الإلكترونية
+          </a>
+        </aside>
+
+        <section class="sd-main" aria-label="تفاصيل الخدمة">
+          <div class="sd-sections">
+            <section class="sd-section" id="guideFeesSection">
+              <h2 class="sd-section-title">الرسوم :</h2>
+              <ol class="sd-list" id="guideFees"></ol>
+            </section>
+
+            <section class="sd-section" id="guidePapersSection">
+              <h2 class="sd-section-title">الأوراق المطلوبة :</h2>
+              <ol class="sd-list" id="guidePapers"></ol>
+            </section>
+
+            <section class="sd-section" id="guideStepsSection">
+              <h2 class="sd-section-title">الخطوات :</h2>
+              <ol class="sd-list" id="guideSteps"></ol>
+            </section>
+          </div>
+
+          <div class="sd-missing" id="guideMissing" hidden>
+            <p>دليل خدمة <strong id="missingServiceName"></strong></p>
+            <a class="sd-btn sd-btn--soft" href="electronic-services.html">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              العودة إلى الخدمات الإلكترونية
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <section class="container" aria-labelledby="esgFeedbackTitle">
+        <div class="sd-feedback">
+          <span class="sd-feedback__icon">
+            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          </span>
+
+          <h2 id="esgFeedbackTitle">التعليقات والاقتراحات</h2>
+
+          <p>لأي استفسار أو ملاحظات حول هذه الخدمة، يسعدنا تواصلك معنا.</p>
+
+          <a class="sd-btn sd-btn--primary" href="contact.html"> تواصل معنا </a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="../js/global.js"></script>
+    <script src="../js/load-data.js" data-file="services-form/services-list.js"></script>
+    <script src="services-form/services-store.js"></script>
+    <script src="../js/electronic-service-guide.js"></script>
+  </body>
+</html>

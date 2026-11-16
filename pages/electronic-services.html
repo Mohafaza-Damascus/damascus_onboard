@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>الخدمات الإلكترونية - محافظة دمشق</title>
+
+    <link rel="icon" href="../images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/electronic-services.css?v=2" />
+    <link rel="stylesheet" href="../css/service-cards.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="../js/i18n.js"></script>
+  </head>
+
+  <body class="electronic-services-page">
+    <div id="site-header" data-active="خدمات"></div>
+
+    <main class="electronic-services">
+      <div class="electronic-services__layout">
+        <div class="electronic-services__main">
+          <section class="electronic-services__top">
+            <div class="electronic-services__heading-row">
+              <h1>الخدمات الإلكترونية</h1>
+
+              <div class="electronic-services__back-actions">
+                <a href="../index.html" class="electronic-services__back-home"> الصفحة الرئيسية </a>
+
+                <a href="javascript:history.back()" class="electronic-services__back-arrow" aria-label="الرجوع للصفحة السابقة">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="electronic-services__search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              <input
+                type="search"
+                id="electronicServiceSearch"
+                placeholder="ما الخدمة التي تبحث عنها؟"
+                aria-label="البحث عن خدمة"
+              />
+            </div>
+          </section>
+
+          <section class="electronic-services__results">
+            <div class="electronic-services__grid" id="electronicServicesGrid"></div>
+
+            <p class="electronic-services__empty" id="noServicesMessage" hidden>
+              لا توجد خدمات مطابقة لبحثك أو للتصنيف المحدد.
+            </p>
+          </section>
+        </div>
+
+        <aside class="electronic-services__sidebar" id="serviceSidebar">
+          <h2>تصنيفات الخدمات</h2>
+
+          <div class="electronic-services__filters" id="serviceFilters">
+            <button class="service-filter active" data-filter="all" type="button">جميع الخدمات</button>
+
+            <button class="service-filter" data-filter="الشكاوى" type="button">الشكاوى</button>
+
+            <button class="service-filter" data-filter="مديرية التنظيم والتخطيط العمراني" type="button">مديرية التنظيم والتخطيط العمراني</button>
+
+            <button class="service-filter" data-filter="المهن والرخص" type="button">المهن والرخص</button>
+
+            <button class="service-filter" data-filter="مديرية السجل المؤقت" type="button">مديرية السجل المؤقت</button>
+
+            <button class="service-filter" data-filter="مديرية المجالس" type="button">مديرية المجالس</button>
+
+            <button class="service-filter" data-filter="مديرية المالية" type="button">مديرية المالية</button>
+
+            <button class="service-filter" data-filter="مكتب دفن الموتى" type="button">مكتب دفن الموتى</button>
+
+            <button class="service-filter" data-filter="مديرية الأملاك" type="button">مديرية الأملاك</button>
+
+            <button class="service-filter" data-filter="المرسوم 66" type="button">المرسوم 66</button>
+
+            <button class="service-filter" data-filter="دوائر الخدمات" type="button">دوائر الخدمات</button>
+
+            <button class="service-filter" data-filter="مديرية هندسة المرور" type="button">مديرية هندسة المرور</button>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="../js/global.js"></script>
+    <script src="../js/load-data.js" data-file="services-form/services-list.js"></script>
+    <script src="services-form/services-store.js"></script>
+    <script src="../js/electronic-services.js"></script>
+  </body>
+</html>

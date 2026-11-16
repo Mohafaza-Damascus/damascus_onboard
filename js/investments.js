@@ -1,150 +1,247 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const cards = Array.from(document.querySelectorAll(".journey-card"));
-  const carousel = document.querySelector(".journey-carousel");
+  const page = document.querySelector(".inv-page");
+  if (!page) return;
 
-  
-  const prevBtn =
-    document.querySelector(".journey-arrow--prev") ||
-    document.getElementById("journeyPrev");
+  page.classList.add("inv-js");
 
-  const nextBtn =
-    document.querySelector(".journey-arrow--next") ||
-    document.getElementById("journeyNext");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
-  const dotsContainer =
-    document.querySelector(".journey-dots") ||
-    document.getElementById("journeyDots");
+  function splitWords(root) {
+    let index = 0;
 
-  
-  if (!cards.length) return;
+    const walk = (node) => {
+      Array.from(node.childNodes).forEach((child) => {
+        if (child.nodeType === Node.TEXT_NODE) {
+          if (!child.textContent.trim()) return;
 
-  let currentIndex = 0;
-  let dots = [];
-
-  if (dotsContainer) {
-    dotsContainer.innerHTML = ""; 
-    cards.forEach((_, index) => {
-      const dot = document.createElement("button");
-      dot.className = "journey-dot";
-      dot.type = "button";
-      dot.setAttribute("aria-label", `الانتقال إلى الصورة ${index + 1}`);
-
-      dot.addEventListener("click", () => {
-        currentIndex = index;
-        updateCarousel();
-        restartAutoPlay();
+          const fragment = document.createDocumentFragment();
+          child.textContent.split(/(\s+)/).forEach((part) => {
+            if (!part) return;
+            if (!part.trim()) {
+              fragment.appendChild(document.createTextNode(part));
+              return;
+            }
+            const word = document.createElement("span");
+            const inner = document.createElement("span");
+            word.className = "w";
+            word.style.setProperty("--i", index++);
+            inner.textContent = part;
+            word.appendChild(inner);
+            fragment.appendChild(word);
+          });
+          child.replaceWith(fragment);
+        } else if (child.nodeType === Node.ELEMENT_NODE) {
+          walk(child);
+        }
       });
+    };
 
-      dotsContainer.appendChild(dot);
-    });
-    dots = Array.from(dotsContainer.querySelectorAll(".journey-dot"));
+    walk(root);
+    return Array.from(root.querySelectorAll(".w"));
   }
 
-  function getIndex(offset) {
-    return (currentIndex + offset + cards.length) % cards.length;
+  page.querySelectorAll("[data-split]").forEach(splitWords);
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+  );
+
+  page.querySelectorAll("[data-reveal], [data-split]").forEach((el) => {
+    revealObserver.observe(el);
+  });
+
+  const statement = page.querySelector("[data-scroll-words]");
+  const statementWords = statement ? splitWords(statement) : [];
+
+  function updateStatement() {
+    if (!statement) return;
+
+    const rect = statement.getBoundingClientRect();
+    const viewport = window.innerHeight;
+    const progress = reduceMotion ? 1 : clamp((viewport * 0.85 - rect.top) / (rect.height + viewport * 0.35), 0, 1);
+    const lit = Math.round(progress * statementWords.length);
+
+    statementWords.forEach((word, index) => word.classList.toggle("is-lit", index < lit));
   }
 
-  function updateCarousel() {
+  const store = window.InvOpportunities;
+  const statusOrder = { open: 0, upcoming: 1 };
+  const opportunities = store
+    ? store
+        .getAll()
+        .filter((item) => store.getStatus(item) !== "closed")
+        .sort((a, b) => statusOrder[store.getStatus(a)] - statusOrder[store.getStatus(b)])
+    : [];
+  const oppCategories = store ? store.categories : {};
+  const escapeHtml = store ? store.escapeHtml : (text) => String(text);
+
+  const oppFilters = page.querySelector("[data-opps-filters]");
+  const mapTrack = page.querySelector("[data-map-track]");
+  const mapEmpty = page.querySelector("[data-map-empty]");
+  const pad = (n) => String(n).padStart(2, "0");
+
+  if (mapTrack) {
+    mapTrack.innerHTML = opportunities
+      .map((item, index) => {
+        const status = store.getStatus(item);
+        const left = store.timeLeft(item);
+        const soon = status === "open" && left && left.days < 7;
+        const href = `Opportunity-details.html?id=${encodeURIComponent(item.id)}`;
+        const image = item.images && item.images[0];
+        const media = image
+          ? `<a class="inv-mcard__media" href="${href}" tabindex="-1"><img src="${store.imageUrl(image)}" alt="${escapeHtml(item.title)}" loading="lazy">`
+          : `<a class="inv-mcard__media inv-mcard__media--icon inv-mcard__media--${item.category}" href="${href}" tabindex="-1"><i class="fa-solid ${item.icon || oppCategories[item.category]?.icon || "fa-building"}" aria-hidden="true"></i>`;
+
+        return `
+          <article class="inv-mcard${status === "upcoming" ? " is-upcoming" : ""}" data-category="${item.category}">
+            ${media}
+              <span class="inv-mcard__num">${pad(index + 1)}</span>
+              <span class="inv-mcard__cat">${oppCategories[item.category]?.label || ""}</span>
+              ${status === "upcoming" ? `<span class="inv-mcard__badge">قريباً</span>` : ""}
+            </a>
+            <div class="inv-mcard__body">
+              <h3 class="inv-mcard__title inv-display"><a href="${href}">${escapeHtml(item.title)}</a></h3>
+              <span class="inv-mcard__loc"><i class="fa-solid fa-location-dot"></i> ${escapeHtml(item.location)}</span>
+              <span class="inv-mcard__deadline${soon ? " is-soon" : ""}">
+                <i class="fa-regular ${status === "upcoming" ? "fa-calendar" : "fa-hourglass-half"}"></i> ${store.deadlineLabel(item)}
+              </span>
+              <div class="inv-mcard__foot">
+                <span class="inv-mcard__years"><i class="fa-regular fa-clock"></i> ${store.yearsText(item.years)}</span>
+                <a class="inv-link" href="${href}">التفاصيل <i class="fa-solid fa-arrow-left"></i></a>
+              </div>
+            </div>
+          </article>`;
+      })
+      .join("");
+  }
+
+  if (mapEmpty) mapEmpty.hidden = opportunities.length > 0;
+
+  const cards = mapTrack ? Array.from(mapTrack.querySelectorAll(".inv-mcard")) : [];
+  const mapPrev = page.querySelector("[data-map-prev]");
+  const mapNext = page.querySelector("[data-map-next]");
+  const mapCurrent = page.querySelector("[data-map-current]");
+  const mapTotal = page.querySelector("[data-map-total]");
+  const mapBar = page.querySelector("[data-map-bar]");
+  const mapIsRtl = mapTrack && getComputedStyle(mapTrack).direction === "rtl";
+//
+const PAGE_SIZE = 3;
+  let activeCategory = "all";
+  let currentPage = 0;
+
+  const getFilteredCards = () =>
+    cards.filter((card) => activeCategory === "all" || card.dataset.category === activeCategory);
+
+  function updateMap() {
+    if (!mapTrack) return;
+
+    const filtered = getFilteredCards();
+    const total = filtered.length;
+    const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+
+    currentPage = clamp(currentPage, 0, totalPages - 1);
+
+    const start = currentPage * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+
     cards.forEach((card) => {
-      card.className = "journey-card hidden";
+      card.hidden = true;
+    });
+    filtered.slice(start, end).forEach((card) => {
+      card.hidden = false;
     });
 
-    const total = cards.length;
+    const shownCount = total === 0 ? 0 : Math.min(end, total);
+    const progress = totalPages > 1 ? currentPage / (totalPages - 1) : 1;
 
-    cards[currentIndex].className = "journey-card active";
+    if (mapBar) mapBar.style.transform = `scaleX(${progress})`;
+    if (mapCurrent) mapCurrent.textContent = pad(shownCount);
+    if (mapTotal) mapTotal.textContent = pad(total);
+    if (mapPrev) mapPrev.disabled = currentPage <= 0;
+    if (mapNext) mapNext.disabled = currentPage >= totalPages - 1;
+    if (mapEmpty) mapEmpty.hidden = total > 0;
+  }
 
-    if (total > 1) {
-      cards[getIndex(1)].className = "journey-card next";
-      cards[getIndex(-1)].className = "journey-card prev";
+  function moveMap(direction) {
+    const filtered = getFilteredCards();
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    currentPage = clamp(currentPage + direction, 0, totalPages - 1);
+    updateMap();
+  }
+
+  if (mapTrack) {
+    if (mapPrev) mapPrev.addEventListener("click", () => moveMap(-1));
+    if (mapNext) mapNext.addEventListener("click", () => moveMap(1));
+    updateMap();
+  }
+
+  function applyFilter(key) {
+    activeCategory = key;
+    currentPage = 0; // العودة لأول 3 بطاقات عند تغيير الفلتر
+
+    if (oppFilters) {
+      oppFilters.querySelectorAll(".inv-filter").forEach((button) => {
+        const active = button.dataset.filter === key;
+        button.classList.toggle("is-active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
     }
 
-    if (total > 3) {
-      cards[getIndex(2)].className = "journey-card next2";
-      cards[getIndex(-2)].className = "journey-card prev2";
-    }
+    updateMap();
+  }
 
-    dots.forEach((dot, index) => {
-      dot.classList.toggle("active", index === currentIndex);
+  if (oppFilters) {
+    const filters = [["all", "الكل"], ...Object.entries(oppCategories).map(([key, value]) => [key, value.label])];
+
+    oppFilters.innerHTML = filters
+      .map(([key, label], index) => {
+        const count = key === "all" ? cards.length : cards.filter((card) => card.dataset.category === key).length;
+        if (key !== "all" && !count) return "";
+        return `<button type="button" class="inv-filter${index === 0 ? " is-active" : ""}" data-filter="${key}" aria-pressed="${index === 0}">
+                  ${label} <span class="inv-filter__count">${count}</span>
+                </button>`;
+      })
+      .join("");
+
+    oppFilters.addEventListener("click", (event) => {
+      const button = event.target.closest(".inv-filter");
+      if (button) applyFilter(button.dataset.filter);
+    });
+  }
+//
+
+
+  let ticking = false;
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      updateStatement();
+      ticking = false;
     });
   }
 
-  function goToPrevious() {
-    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-    updateCarousel();
+  let resizeTimer = null;
+  function onResize() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      updateMap();
+      onScroll();
+    }, 120);
   }
 
-  // التبديل للتالي
-  function goToNext() {
-    currentIndex = (currentIndex + 1) % cards.length;
-    updateCarousel();
-  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onResize);
 
-  // ربط أحداث الأسهم
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => {
-      goToPrevious();
-      restartAutoPlay();
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      goToNext();
-      restartAutoPlay();
-    });
-  }
-
-  cards.forEach((card, index) => {
-    card.addEventListener("click", () => {
-      if (index !== currentIndex) {
-        currentIndex = index;
-        updateCarousel();
-        restartAutoPlay();
-      }
-    });
-  });
-  const AUTO_PLAY_DELAY = 3000; 
-  let autoPlay = setInterval(goToNext, AUTO_PLAY_DELAY);
-
-  function restartAutoPlay() {
-    clearInterval(autoPlay);
-    autoPlay = setInterval(goToNext, AUTO_PLAY_DELAY);
-  }
-
-  if (carousel) {
-    carousel.addEventListener("mouseenter", () => clearInterval(autoPlay));
-    carousel.addEventListener("mouseleave", () => restartAutoPlay());
-  }
-
-  // تشغيل المعرض في البداية
-  updateCarousel();
-
-  document.addEventListener("DOMContentLoaded", () => {
-  const flipCards = document.querySelectorAll(".flip-card");
-
-  flipCards.forEach((card) => {
-  
-    card.addEventListener("click", function (e) {
-
-      if (e.target.closest(".btn-card-details")) return;
-
-      if (window.innerWidth <= 1024) {
-       
-        flipCards.forEach((otherCard) => {
-          if (otherCard !== card) {
-            otherCard.classList.remove("is-flipped");
-          }
-        });
-       
-        this.classList.toggle("is-flipped");
-      }
-    });
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 1024) {
-      flipCards.forEach((c) => c.classList.remove("is-flipped"));
-    }
-  });
-});
+  window.addEventListener("load", onResize);
 });

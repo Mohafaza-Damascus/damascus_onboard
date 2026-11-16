@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>إدارة الخدمات - لوحة تحكم محافظة دمشق</title>
+    <link rel="icon" href="../../images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="../../css/dashboards.css" />
+    <link rel="stylesheet" href="../../css/dashboard-app.css" />
+    <link rel="stylesheet" href="../../css/dashboard-login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <header class="dash-top">
+      <a class="dash-brand" href="index.html"><img src="../../images/logo.png" alt="" /><span>لوحة تحكم المحافظة</span></a>
+      <nav class="dash-tabs" aria-label="أقسام لوحة التحكم">
+        <a href="index.html#/news">الأخبار</a>
+        <a href="index.html#/events">الفعاليات</a>
+        <a href="index.html#/investments">الاستثمارات</a>
+        <a href="services.html" class="active">الخدمات</a>
+      </nav>
+      <div class="dash-top__actions">
+        <a class="btn btn-ghost btn-small" href="../../index.html" target="_blank">عرض الموقع</a>
+      </div>
+    </header>
+
+    <main class="page">
+      <section id="listView">
+        <header class="page-head">
+          <h1>الخدمات</h1>
+          <div class="head-actions">
+            <button type="button" class="btn btn-primary" id="addBtn">+ خدمة جديدة</button>
+          </div>
+        </header>
+
+        <section class="stats">
+          <div class="stat"><strong id="countAll">0</strong><span>إجمالي الخدمات</span></div>
+          <div class="stat"><strong id="countPaper">0</strong><span>خدمات ورقية</span></div>
+          <div class="stat"><strong id="countElectronic">0</strong><span>خدمات إلكترونية</span></div>
+        </section>
+
+        <div class="filters">
+          <nav class="chips" id="chips">
+            <a href="#" class="chip active" data-type="all">الكل</a>
+            <a href="#" class="chip" data-type="مكاني">ورقية</a>
+            <a href="#" class="chip" data-type="إلكتروني">إلكترونية</a>
+          </nav>
+          <div class="filters-end">
+            <label class="search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="searchInput" placeholder="ابحث في الخدمات..." />
+            </label>
+          </div>
+        </div>
+
+        <section class="feed feed--full" id="servicesList"></section>
+      </section>
+
+      <section id="formView" hidden>
+        <header class="heading">
+          <h1 id="formTitle">خدمة جديدة</h1>
+          <div class="heading-actions">
+            <button type="submit" form="serviceForm" class="btn btn-primary">حفظ</button>
+            <button type="button" class="btn btn-outline" id="cancelBtn">إلغاء</button>
+          </div>
+        </header>
+
+        <form id="serviceForm" class="editor" novalidate>
+          <p class="form-error" id="formError" hidden></p>
+
+          <section class="panel">
+            <div class="panel-head"><h2>معلومات الخدمة</h2></div>
+            <div class="panel-body">
+              <div class="field"><label>اسم الخدمة</label><input class="input-title" name="name" /></div>
+              <div class="field">
+                <label>المديرية التابعة لها الخدمة</label>
+                <select class="input" name="directorate" id="directorateSelect"></select>
+              </div>
+              <div class="field"><label>وصف الخدمة</label><textarea class="textarea" name="description"></textarea></div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head"><h2>صورة الخدمة</h2></div>
+            <div class="panel-body">
+              <div class="field">
+                <label>الصورة <span class="hint">اختياري، بدونها بتظهر صورة مبنى المحافظة</span></label>
+                <label class="drop" id="imageDrop">
+                  <input type="file" accept="image/*" id="imageInput" />
+                  <img class="drop-preview" id="imagePreview" alt="" hidden />
+                  <span class="drop-btn">+ اختر صورة</span>
+                </label>
+              </div>
+              <button type="button" class="btn btn-ghost btn-small" id="removeImageBtn" hidden>إزالة الصورة</button>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head"><h2>الأوراق والرسوم والخطوات</h2></div>
+            <div class="panel-body">
+              <div class="field">
+                <label>الأوراق المطلوبة <span class="hint">كل ورقة بسطر</span></label>
+                <textarea class="textarea" name="papers"></textarea>
+              </div>
+              <div class="field"><label>الرسوم</label><textarea class="textarea" name="fees"></textarea></div>
+              <div class="field">
+                <label>مراحل المعاملة <span class="hint">كل مرحلة بسطر</span></label>
+                <textarea class="textarea" name="stages"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head"><h2>مكان التقديم</h2></div>
+            <div class="panel-body">
+              <div class="field">
+                <label>طريقة تقديم الطلب</label>
+                <div class="types">
+                  <label><input type="radio" name="requestPlace" value="مكاني" checked /><span class="type">حضورياً (ورقية)</span></label>
+                  <label><input type="radio" name="requestPlace" value="إلكتروني" /><span class="type">إلكترونياً</span></label>
+                </div>
+              </div>
+
+              <div id="paperFields">
+                <div class="field">
+                  <label>مكان تقديم الطلب</label>
+                  <input class="input" name="physicalPlace" placeholder="مثال: مبنى المحافظة - الطابق الثاني" />
+                </div>
+              </div>
+
+              <div id="electronicFields" hidden>
+                <div class="field">
+                  <label>تصنيف الخدمة الإلكترونية <span class="hint">التبويب يلي بتظهر تحته الخدمة</span></label>
+                  <select class="input" name="electronicDirectorate" id="categorySelect"></select>
+                </div>
+                <div class="field">
+                  <label>رابط بدء الخدمة <span class="hint">اختياري، أي رابط أو مسار صفحة</span></label>
+                  <input class="input" type="text" name="serviceUrl" dir="ltr" placeholder="../../license/page.html" />
+                </div>
+              </div>
+            </div>
+          </section>
+        </form>
+      </section>
+    </main>
+
+    <div class="dash-toast" id="toast" role="status"></div>
+
+    <script src="../../js/site-files.js"></script>
+    <script src="../services-form/services-store.js"></script>
+    <script src="services-dashboard.js"></script>
+  </body>
+</html>

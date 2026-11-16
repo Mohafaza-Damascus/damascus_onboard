@@ -1,0 +1,7 @@
+﻿تصنيفات الخدمات	Service categories
+تبديل شكل الفلتر	Switch filter style
+الفلتر 1: تبويبات	Filter 1: tabs
+الفلتر 2: قائمة جانبية	Filter 2: sidebar
+الفلتر 3: شريط بالسحب	Filter 3: drag strip
+تعرّف على الخدمات الإلكترونية المتاحة والجهات التي تقدمها.	Find out which e-services are available and which offices provide them.
+اطّلع على تفاصيل المعاملات والأوراق المطلوبة والرسوم وخطوات إنجازها.	See the details of each transaction, the documents required, the fees and the steps to complete it.
