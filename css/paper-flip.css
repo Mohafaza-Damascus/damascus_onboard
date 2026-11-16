@@ -1,0 +1,86 @@
+.pf-flipper {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+.pf-strip {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  transform-origin: 50% 0;
+  transform-style: preserve-3d;
+}
+.pf-face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: calc(100% + 1px);
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: var(--paper, #fdfcf8);
+}
+.pf-back {
+  transform: rotateY(180deg);
+  background: var(--paper-back, #f2eee5);
+}
+.pf-face.pf-first {
+  border-radius: 6px 6px 0 0;
+}
+.pf-face.pf-last {
+  border-radius: 0 0 9px 9px;
+}
+
+.pf-clone {
+  position: absolute !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.pf-clone *,
+.pf-clone {
+  animation: none !important;
+  transition: none !important;
+}
+
+.pf-lit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.pf-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+}
+
+.pf-nudge-next {
+  animation: pfNudgeNext 0.45s ease;
+}
+.pf-nudge-prev {
+  animation: pfNudgePrev 0.45s ease;
+}
+@keyframes pfNudgeNext {
+  40% {
+    transform: rotateX(9deg);
+  }
+}
+@keyframes pfNudgePrev {
+  40% {
+    transform: rotateX(-4deg);
+  }
+}
+
+.cal-section [data-grab] {
+  touch-action: none;
+}

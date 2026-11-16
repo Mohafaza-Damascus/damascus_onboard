@@ -1,0 +1,73 @@
+body:where(.legacy-page) {
+  line-height: normal;
+}
+
+:where(body.legacy-page *):not(
+    :where(
+        .header,
+        .header *,
+        .footer,
+        .footer *,
+        .auth-overlay,
+        .auth-overlay *,
+        .header-switcher,
+        .header-switcher *,
+        .a11y-btn,
+        .a11y-btn *,
+        #ai-chat-btn,
+        #ai-chat-btn *,
+        #ai-chat-panel,
+        #ai-chat-panel *
+      )
+  ) {
+  margin: revert;
+  padding: revert;
+}
+
+:where(body.legacy-page) :is(ul, ol):not(:where(.header *, .footer *, .auth-overlay *, #ai-chat-panel *)) {
+  list-style: revert;
+}
+:where(body.legacy-page) img:not(:where(.header *, .footer *, .auth-overlay *, .a11y-btn *)) {
+  max-width: revert;
+  display: revert;
+}
+:where(body.legacy-page)
+  button:not(
+    :where(.header *, .footer *, .auth-overlay *, .header-switcher *, #ai-chat-panel *, #ai-chat-btn, .a11y-btn)
+  ) {
+  font: revert;
+  padding: revert;
+  border: revert;
+}
+
+:where(body.legacy-page) .hero {
+  margin-top: revert;
+  height: revert;
+  min-height: revert;
+  position: revert;
+  z-index: revert;
+}
+:where(body.legacy-page) .hero::after {
+  content: none;
+}
+:where(body.legacy-page) .btn {
+  display: revert;
+  align-items: revert;
+  justify-content: revert;
+  padding: revert;
+  border-radius: revert;
+  font-size: revert;
+  font-weight: revert;
+  transition: revert;
+}
+
+body:where(.legacy-page) :where(.header, .footer, .auth-overlay, .header-switcher, .a11y-btn) {
+  --gold: #c9a24a;
+  --text: #1b2a24;
+  --muted: #237366;
+  --border: #dfdace;
+  --cream: #f2efe7;
+  --container: 1200px;
+  font-family: "ITF Qomra Arabic", system-ui, sans-serif;
+  line-height: 1.7;
+}
