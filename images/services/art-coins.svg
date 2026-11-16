@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f7b68"/>
+      <stop offset="0.55" stop-color="#064239"/>
+      <stop offset="1" stop-color="#032a24"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.45" cy="0.7" r="0.55">
+      <stop offset="0" stop-color="#c9a24a" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#c9a24a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="960" height="640" fill="url(#bg)"/>
+  <rect width="960" height="640" fill="url(#glow)"/>
+  <g stroke="#f2efe7" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M60 560H900" stroke-opacity="0.35"/>
+    <path d="M190 540v-18" stroke="#c9a24a" /><path d="M370 540v-18" stroke="#c9a24a" />
+    <ellipse cx="280" cy="540" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <ellipse cx="280" cy="522" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <path d="M190 510v-18" stroke="#c9a24a" /><path d="M370 510v-18" stroke="#c9a24a" />
+    <ellipse cx="280" cy="510" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <ellipse cx="280" cy="492" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <path d="M190 480v-18" stroke="#c9a24a" /><path d="M370 480v-18" stroke="#c9a24a" />
+    <ellipse cx="280" cy="480" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <ellipse cx="280" cy="462" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <path d="M190 450v-18" stroke="#c9a24a" /><path d="M370 450v-18" stroke="#c9a24a" />
+    <ellipse cx="280" cy="450" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <ellipse cx="280" cy="432" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <path d="M190 420v-18" stroke="#c9a24a" /><path d="M370 420v-18" stroke="#c9a24a" />
+    <ellipse cx="280" cy="420" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <ellipse cx="280" cy="402" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <path d="M190 390v-18" stroke="#c9a24a" /><path d="M370 390v-18" stroke="#c9a24a" />
+    <ellipse cx="280" cy="390" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <ellipse cx="280" cy="372" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <path d="M380 540v-18" stroke="#c9a24a" /><path d="M560 540v-18" stroke="#c9a24a" />
+    <ellipse cx="470" cy="540" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <ellipse cx="470" cy="522" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <path d="M380 510v-18" stroke="#c9a24a" /><path d="M560 510v-18" stroke="#c9a24a" />
+    <ellipse cx="470" cy="510" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <ellipse cx="470" cy="492" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <path d="M380 480v-18" stroke="#c9a24a" /><path d="M560 480v-18" stroke="#c9a24a" />
+    <ellipse cx="470" cy="480" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <ellipse cx="470" cy="462" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <path d="M380 450v-18" stroke="#c9a24a" /><path d="M560 450v-18" stroke="#c9a24a" />
+    <ellipse cx="470" cy="450" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+    <ellipse cx="470" cy="432" rx="90" ry="24" fill="#064239" stroke="#c9a24a" />
+
+    <g transform="rotate(-10 740 380)">
+      <rect x="600" y="300" width="290" height="160" rx="14" fill="#f2efe7" fill-opacity="0.08"/>
+      <circle cx="745" cy="380" r="40" stroke="#c9a24a" />
+      <path d="M630 330h40M860 430h-40" stroke="#c9a24a" />
+    </g>
+  </g>
+</svg>
