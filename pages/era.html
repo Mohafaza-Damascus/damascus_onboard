@@ -3,37 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>دمشق عبر العصور</title>
-
     <link rel="icon" href="../images/logo.png" type="image/png" />
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/legacy-pages.css" />
     <link rel="stylesheet" href="../css/era.css" />
     <script src="../js/i18n.js"></script>
   </head>
-
   <body class="legacy-page">
     <div id="site-header" data-active="النظرة الثقافية"></div>
-
     <main class="era" id="era">
       <a class="era__back" href="Cultural-model-5.html#damascus-history">
         <span aria-hidden="true">→</span>
         العودة إلى دمشق عبر العصور
       </a>
-
       <header class="era__intro">
         <h1 class="era__name" id="eraName"></h1>
         <p class="era__period" id="eraPeriod"></p>
       </header>
-
       <section class="era-journey" id="eraJourney" aria-label="أحداث العصر">
         <div class="era-journey__sticky">
           <div class="era-journey__track" id="eraTrack">
             <figure class="era-journey__image">
               <img id="eraImage" src="" alt="" draggable="false" />
             </figure>
-
             <div class="era-journey__board" id="eraBoard">
               <div class="era-journey__axis" aria-hidden="true">
                 <i></i>
@@ -44,27 +37,31 @@
           </div>
         </div>
       </section>
-
       <nav class="era__pager" aria-label="عصور أخرى">
         <a class="era__pager-link" id="eraPrev" href="#">
           <span class="dm-arrow dm-arrow--right" aria-hidden="true"
             ><span class="dm-arrow__shape"
               ><span class="dm-arrow__line"></span
-              ><svg class="dm-arrow__icon" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg></span
+              ><svg class="dm-arrow__icon" viewBox="0 0 24 24">
+                <path d="M9 6l6 6-6 6" /></svg></span
           ></span>
-          <span class="era__pager-text"><small>العصر السابق</small><strong id="eraPrevName"></strong></span>
+          <span class="era__pager-text"
+            ><small>العصر السابق</small><strong id="eraPrevName"></strong
+          ></span>
         </a>
         <a class="era__pager-link era__pager-link--next" id="eraNext" href="#">
-          <span class="era__pager-text"><small>العصر التالي</small><strong id="eraNextName"></strong></span>
+          <span class="era__pager-text"
+            ><small>العصر التالي</small><strong id="eraNextName"></strong
+          ></span>
           <span class="dm-arrow dm-arrow--left" aria-hidden="true"
             ><span class="dm-arrow__shape"
               ><span class="dm-arrow__line"></span
-              ><svg class="dm-arrow__icon" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" /></svg></span
+              ><svg class="dm-arrow__icon" viewBox="0 0 24 24">
+                <path d="M15 6l-6 6 6 6" /></svg></span
           ></span>
         </a>
       </nav>
     </main>
-
     <script src="../js/eras-data.js"></script>
     <script src="../js/era.js"></script>
     <div id="site-footer"></div>

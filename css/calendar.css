@@ -15,7 +15,6 @@
   --card-bg: #fdfbf7;
   --text: #193b35;
   --text-muted: #71807c;
-
   --accent: var(--green);
   --accent-dark: var(--green-deep);
   --accent-soft: var(--cream-soft);
@@ -26,7 +25,6 @@
   --paper-back: #f3eddf;
   --line: rgba(6, 66, 57, 0.1);
   --fabric: #0b4a40;
-
   position: relative;
   direction: rtl;
   font-family: "Qomra", "Segoe UI", Tahoma, sans-serif;
@@ -35,23 +33,19 @@
   overflow-x: clip;
   background: #e6ddcf;
 }
-
 .cal-section *,
 .cal-section *::before,
 .cal-section *::after {
   box-sizing: border-box;
 }
-
 .cal-section :where(h1, h2, h3, p, ul) {
   margin: 0;
   padding: 0;
 }
-
 :where(.cal-section) button {
   font: inherit;
   color: inherit;
 }
-
 .cal-section .cal-scene {
   position: absolute;
   inset: 0;
@@ -59,12 +53,16 @@
   overflow: hidden;
   pointer-events: none;
 }
-
 .cal-section .cal-scene::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 85% 80% at 60% 42%, rgba(60, 45, 20, 0) 50%, rgba(60, 45, 20, 0.22) 100%),
+  background:
+    radial-gradient(
+      ellipse 85% 80% at 60% 42%,
+      rgba(60, 45, 20, 0) 50%,
+      rgba(60, 45, 20, 0.22) 100%
+    ),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
   background-size:
     auto,
@@ -72,16 +70,27 @@
   opacity: 0.85;
   mix-blend-mode: multiply;
 }
-
 .cal-section .backdrop {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 55% 62% at 82% 10%, rgba(255, 252, 244, 0.95) 0%, rgba(255, 252, 244, 0) 70%),
-    radial-gradient(ellipse 50% 45% at 64% 40%, rgba(250, 246, 238, 0.7) 0%, rgba(250, 246, 238, 0) 70%),
-    radial-gradient(ellipse 70% 60% at 10% 96%, rgba(90, 70, 40, 0.18) 0%, rgba(90, 70, 40, 0) 70%),
+  background:
+    radial-gradient(
+      ellipse 55% 62% at 82% 10%,
+      rgba(255, 252, 244, 0.95) 0%,
+      rgba(255, 252, 244, 0) 70%
+    ),
+    radial-gradient(
+      ellipse 50% 45% at 64% 40%,
+      rgba(250, 246, 238, 0.7) 0%,
+      rgba(250, 246, 238, 0) 70%
+    ),
+    radial-gradient(
+      ellipse 70% 60% at 10% 96%,
+      rgba(90, 70, 40, 0.18) 0%,
+      rgba(90, 70, 40, 0) 70%
+    ),
     linear-gradient(180deg, #ece5d9 0%, #e5dccd 58%, #d8ccba 100%);
 }
-
 .cal-section .wall-glow {
   position: absolute;
   left: calc(var(--tent-left, 50%) - var(--tent-width, 400px) * 0.1);
@@ -96,7 +105,6 @@
   );
   filter: blur(8px);
 }
-
 .cal-section .cal-layout {
   position: relative;
   z-index: 2;
@@ -107,17 +115,14 @@
   gap: clamp(28px, 5vw, 72px);
   align-items: center;
 }
-
 .cal-section .cal-side {
   align-self: center;
 }
-
 .cal-section .cal-stage {
   padding: 60px 70px 110px 10px;
   display: flex;
   justify-content: center;
 }
-
 .cal-section .tent {
   position: relative;
   width: 100%;
@@ -125,20 +130,17 @@
   perspective: 1700px;
   perspective-origin: 50% -35%;
 }
-
 .cal-section .tent:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 26px;
   border-radius: 12px;
 }
-
 .cal-section .tent-float {
   position: relative;
   transform-style: preserve-3d;
   pointer-events: none;
   animation: cal-tentFloat 6s ease-in-out infinite;
 }
-
 @keyframes cal-tentFloat {
   0%,
   100% {
@@ -148,13 +150,11 @@
     transform: translateY(-12px);
   }
 }
-
 .cal-section .tent-3d {
   position: relative;
   transform-style: preserve-3d;
   transform: rotateZ(5deg) rotateY(-30deg);
 }
-
 .cal-section .float-shadow {
   position: absolute;
   left: -4%;
@@ -162,7 +162,6 @@
   bottom: -116px;
   height: 92px;
   border-radius: 50%;
-
   background: radial-gradient(
     ellipse at 46% 52%,
     rgba(34, 38, 20, 0.4) 0%,
@@ -173,7 +172,6 @@
   transform: rotate(4deg);
   animation: cal-floatShadow 6s ease-in-out infinite;
 }
-
 .cal-section .float-shadow::after {
   content: "";
   position: absolute;
@@ -182,10 +180,13 @@
   top: 34%;
   bottom: 30%;
   border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 50%, rgba(8, 26, 20, 0.6) 0%, rgba(8, 26, 20, 0) 72%);
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(8, 26, 20, 0.6) 0%,
+    rgba(8, 26, 20, 0) 72%
+  );
   filter: blur(6px);
 }
-
 @keyframes cal-floatShadow {
   0%,
   100% {
@@ -197,7 +198,6 @@
     opacity: 0.7;
   }
 }
-
 .cal-section .tent-front {
   position: relative;
   padding: 8px 10px 18% 10px;
@@ -205,7 +205,6 @@
   transform: rotateX(12deg);
   transform-style: preserve-3d;
 }
-
 .cal-section .board,
 .cal-section .tent-back,
 .cal-section .tent-base,
@@ -223,19 +222,32 @@
     inset -3px 0 0 rgba(255, 236, 190, 0.18),
     inset 0 -2px 3px rgba(0, 0, 0, 0.25);
 }
-
 .cal-section .board::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 7px;
   pointer-events: none;
-  background: radial-gradient(ellipse 75% 95% at 96% 0%, rgba(255, 238, 200, 0.24) 0%, rgba(255, 238, 200, 0) 62%),
-    linear-gradient(115deg, rgba(255, 240, 210, 0) 56%, rgba(255, 240, 210, 0.07) 66%, rgba(255, 240, 210, 0) 76%),
-    linear-gradient(100deg, rgba(0, 0, 0, 0.36) 0%, rgba(0, 0, 0, 0.1) 42%, rgba(0, 0, 0, 0) 70%),
+  background:
+    radial-gradient(
+      ellipse 75% 95% at 96% 0%,
+      rgba(255, 238, 200, 0.24) 0%,
+      rgba(255, 238, 200, 0) 62%
+    ),
+    linear-gradient(
+      115deg,
+      rgba(255, 240, 210, 0) 56%,
+      rgba(255, 240, 210, 0.07) 66%,
+      rgba(255, 240, 210, 0) 76%
+    ),
+    linear-gradient(
+      100deg,
+      rgba(0, 0, 0, 0.36) 0%,
+      rgba(0, 0, 0, 0.1) 42%,
+      rgba(0, 0, 0, 0) 70%
+    ),
     linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.2) 100%);
 }
-
 .cal-section .pad-shadow {
   position: absolute;
   top: 8px;
@@ -247,7 +259,6 @@
     -9px 13px 16px rgba(0, 10, 6, 0.42),
     -2px 3px 4px rgba(0, 10, 6, 0.32);
 }
-
 .cal-section .board::before {
   content: "";
   position: absolute;
@@ -255,7 +266,6 @@
   border: 1.5px dashed rgba(200, 167, 106, 0.55);
   border-radius: 5px;
 }
-
 .cal-section .board-band {
   position: absolute;
   left: 0;
@@ -264,7 +274,6 @@
   z-index: 1;
   padding-top: 18%;
 }
-
 .cal-section .board-logo {
   position: absolute;
   left: 50%;
@@ -273,10 +282,10 @@
   aspect-ratio: 1184 / 1148;
   transform: translate(-50%, -46%);
   overflow: hidden;
-  filter: brightness(1.25) saturate(1.15) drop-shadow(0 0 6px rgba(236, 201, 136, 0.45))
+  filter: brightness(1.25) saturate(1.15)
+    drop-shadow(0 0 6px rgba(236, 201, 136, 0.45))
     drop-shadow(0 1px 0 rgba(0, 0, 0, 0.45));
 }
-
 .cal-section .board-logo img {
   position: absolute;
   width: 168.92%;
@@ -284,7 +293,6 @@
   top: -14.98%;
   max-width: none;
 }
-
 .cal-section .board-edge {
   position: absolute;
   top: 0;
@@ -297,7 +305,6 @@
   box-shadow: inset 0 0 0 1px rgba(255, 236, 190, 0.25);
   border-radius: 2px;
 }
-
 .cal-section .tent-back {
   position: absolute;
   left: 0;
@@ -313,7 +320,6 @@
     inset 0 90px 90px -30px rgba(0, 8, 5, 0.45),
     inset 0 0 0 3000px rgba(0, 16, 11, 0.34);
 }
-
 .cal-section .tent-base {
   position: absolute;
   left: 0;
@@ -331,7 +337,6 @@
     inset 0 -8px 8px rgba(0, 0, 0, 0.3),
     inset 0 0 0 3000px rgba(255, 244, 220, 0.09);
 }
-
 .cal-section .panel-edge {
   position: absolute;
   top: 0;
@@ -345,14 +350,12 @@
   box-shadow: inset 0 0 0 1px rgba(255, 236, 190, 0.35);
   border-radius: 2px;
 }
-
 .cal-section .sheet-area {
   position: relative;
   pointer-events: auto;
   transform: translateZ(var(--pad, 10px));
   transform-style: preserve-3d;
 }
-
 .cal-section .pad-edge {
   position: absolute;
   top: 0;
@@ -361,10 +364,13 @@
   width: var(--pad, 10px);
   transform-origin: 100% 50%;
   transform: rotateY(-90deg);
-  background: repeating-linear-gradient(90deg, #fffaf8 0 1.5px, #e7dbd6 1.5px 2.5px);
+  background: repeating-linear-gradient(
+    90deg,
+    #fffaf8 0 1.5px,
+    #e7dbd6 1.5px 2.5px
+  );
   border-radius: 0 0 2px 2px;
 }
-
 .cal-section .coils {
   position: absolute;
   left: 10px;
@@ -374,7 +380,6 @@
   transform-style: preserve-3d;
   pointer-events: none;
 }
-
 .cal-section .coil {
   position: absolute;
   top: 0;
@@ -383,7 +388,6 @@
   transform-style: preserve-3d;
   transform: translateZ(calc(var(--pad, 10px) / 2));
 }
-
 .cal-section .coil::before,
 .cal-section .coil::after {
   content: "";
@@ -393,20 +397,26 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: conic-gradient(from 200deg, #fff1c9, #b8912e, #f3d58f, #7d6331, #e6c47d, #fff1c9);
+  background: conic-gradient(
+    from 200deg,
+    #fff1c9,
+    #b8912e,
+    #f3d58f,
+    #7d6331,
+    #e6c47d,
+    #fff1c9
+  );
   -webkit-mask: radial-gradient(circle, transparent 12.6px, #000 13.3px);
   mask: radial-gradient(circle, transparent 12.6px, #000 13.3px);
-  filter: drop-shadow(0 0 3px rgba(255, 228, 160, 0.45)) drop-shadow(0 1px 1px rgba(40, 30, 10, 0.5));
+  filter: drop-shadow(0 0 3px rgba(255, 228, 160, 0.45))
+    drop-shadow(0 1px 1px rgba(40, 30, 10, 0.5));
 }
-
 .cal-section .coil::before {
   transform: translateX(-3.2px) rotateY(70deg);
 }
-
 .cal-section .coil::after {
   transform: translateX(3.2px) rotateY(70deg);
 }
-
 .cal-section .pages {
   position: relative;
   aspect-ratio: 1.42;
@@ -414,20 +424,17 @@
   perspective-origin: 50% -30%;
   user-select: none;
 }
-
 .cal-section .stack {
   position: absolute;
   inset: 0;
   border-radius: 4px;
   background: var(--paper);
 }
-
 .cal-section .page {
   position: absolute;
   inset: 0;
   transform-origin: 50% 0;
 }
-
 .cal-section .face {
   position: absolute;
   inset: 0;
@@ -438,24 +445,36 @@
   background: var(--paper);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
-
 .cal-section .back {
   transform: rotateY(180deg);
   background: var(--paper-back);
 }
-
 .cal-section .face.front::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 29;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(20, 30, 20, 0.18) 0, rgba(20, 30, 20, 0.06) 18px, rgba(20, 30, 20, 0) 34px),
-    linear-gradient(118deg, rgba(255, 255, 255, 0) 52%, rgba(255, 255, 255, 0.2) 62%, rgba(255, 255, 255, 0) 74%),
-    linear-gradient(225deg, rgba(255, 250, 235, 0.18) 0%, rgba(255, 250, 235, 0) 40%),
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20, 30, 20, 0.18) 0,
+      rgba(20, 30, 20, 0.06) 18px,
+      rgba(20, 30, 20, 0) 34px
+    ),
+    linear-gradient(
+      118deg,
+      rgba(255, 255, 255, 0) 52%,
+      rgba(255, 255, 255, 0.2) 62%,
+      rgba(255, 255, 255, 0) 74%
+    ),
+    linear-gradient(
+      225deg,
+      rgba(255, 250, 235, 0.18) 0%,
+      rgba(255, 250, 235, 0) 40%
+    ),
     linear-gradient(45deg, rgba(30, 40, 20, 0.14) 0%, rgba(30, 40, 20, 0) 46%);
 }
-
 .cal-section .holes {
   position: absolute;
   top: 9px;
@@ -465,7 +484,6 @@
   z-index: 30;
   pointer-events: none;
 }
-
 .cal-section .hole {
   position: absolute;
   top: 1px;
@@ -478,7 +496,6 @@
     inset 0 2px 2px rgba(0, 0, 0, 0.5),
     0 1px 0 rgba(255, 255, 255, 0.8);
 }
-
 .cal-section .hole::after {
   content: "";
   position: absolute;
@@ -490,7 +507,6 @@
   background: rgba(10, 22, 16, 0.3);
   filter: blur(2.5px);
 }
-
 .cal-section .ev {
   position: absolute;
   inset: 0;
@@ -498,17 +514,14 @@
   color: var(--green);
   background: linear-gradient(160deg, var(--cream-soft), var(--cream-dark));
 }
-
 .cal-section .ev-img {
   position: absolute;
   inset: 0;
   background: center / cover no-repeat;
 }
-
 .cal-section .ev-shade {
   position: absolute;
   inset: 0;
-
   background: linear-gradient(
     180deg,
     rgba(248, 246, 241, 0.8) 0%,
@@ -519,7 +532,6 @@
     rgba(245, 241, 232, 0.84) 100%
   );
 }
-
 .cal-section .ev-top {
   position: absolute;
   top: 32px;
@@ -531,12 +543,10 @@
   justify-content: space-between;
   gap: 10px;
 }
-
 .cal-section .ev-nav {
   display: flex;
   gap: 6px;
 }
-
 .cal-section .nav-btn {
   width: 38px;
   height: 38px;
@@ -554,7 +564,6 @@
     border-color 0.2s,
     transform 0.2s;
 }
-
 .cal-section .nav-btn svg {
   width: 18px;
   height: 18px;
@@ -564,22 +573,18 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-
 .cal-section .nav-btn:hover {
   background: var(--gold);
   border-color: var(--gold);
   color: var(--green-deep);
 }
-
 .cal-section .nav-btn:active {
   transform: scale(0.94);
 }
-
 .cal-section .nav-btn:disabled {
   opacity: 0.3;
   pointer-events: none;
 }
-
 .cal-section .ev-body {
   position: absolute;
   left: 28px;
@@ -590,13 +595,11 @@
   flex-direction: column;
   gap: 12px;
 }
-
 .cal-section .ev-date {
   display: flex;
   align-items: center;
   gap: 14px;
 }
-
 .cal-section .ev-day {
   font-size: clamp(46px, 6.4vw, 80px);
   font-weight: 900;
@@ -604,7 +607,6 @@
   color: var(--gold-accent);
   text-shadow: 0 2px 14px rgba(255, 255, 255, 0.7);
 }
-
 .cal-section .ev-month {
   display: flex;
   flex-direction: column;
@@ -612,19 +614,16 @@
   padding-inline-start: 14px;
   border-inline-start: 2px solid var(--gold);
 }
-
 .cal-section .ev-month strong {
   font-size: clamp(18px, 2.2vw, 26px);
   font-weight: 900;
   line-height: 1.2;
 }
-
 .cal-section .ev-month small {
   font-size: 13.5px;
   font-weight: 700;
   color: var(--green-medium);
 }
-
 .cal-section .ev-title {
   font-size: clamp(24px, 3.3vw, 42px);
   font-weight: 900;
@@ -632,7 +631,6 @@
   color: var(--green);
   text-shadow: 0 2px 16px rgba(255, 255, 255, 0.75);
 }
-
 .cal-section .ev-place {
   display: flex;
   flex-wrap: wrap;
@@ -641,13 +639,11 @@
   font-weight: 500;
   color: var(--green-medium);
 }
-
 .cal-section .ev-meta {
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
-
 .cal-section .ev-meta svg {
   flex: none;
   width: 15px;
@@ -658,14 +654,12 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-
 .cal-section .ev-empty .ev-body {
   bottom: 50%;
   transform: translateY(50%);
   text-align: center;
   align-items: center;
 }
-
 .cal-section .ev-foot {
   position: absolute;
   left: 0;
@@ -675,13 +669,11 @@
   height: 40px;
   cursor: grab;
 }
-
 .cal-section .nav-btn:focus-visible,
 .cal-section .curl:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 2px;
 }
-
 .cal-section .curl {
   position: absolute;
   bottom: 0;
@@ -706,16 +698,13 @@
     width 0.25s ease,
     height 0.25s ease;
 }
-
 .cal-section .curl:hover {
   width: 54px;
   height: 54px;
 }
-
 .cal-section .curl[hidden] {
   display: none;
 }
-
 .cal-section .back-print {
   position: absolute;
   inset: 38px 40px 30px;
@@ -723,40 +712,37 @@
   flex-direction: column;
   color: #b3ab9c;
 }
-
 .cal-section .back-print h4 {
   font-size: 15px;
   font-weight: 700;
   margin: 0 0 8px;
 }
-
 .cal-section .back-print .lines {
   flex: 1;
-  background: repeating-linear-gradient(180deg, transparent 0 31px, #ddd6c8 31px 32px);
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0 31px,
+    #ddd6c8 31px 32px
+  );
 }
-
 .cal-section .back-print .foot {
   font-size: 12px;
   text-align: center;
   padding-top: 8px;
 }
-
 .cal-section .cal-side {
   position: relative;
   display: flex;
   justify-content: center;
 }
-
 .cal-section .event-card {
   position: relative;
   width: 100%;
   max-width: 370px;
 }
-
 .cal-section .event-card > .card-in {
   animation: cal-stampIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
-
 @keyframes cal-stampIn {
   from {
     opacity: 0;
@@ -767,24 +753,20 @@
     transform: none;
   }
 }
-
 .cal-section .st {
   display: flex;
   flex-direction: column;
   gap: 22px;
 }
-
 .cal-section .st-stack {
   position: relative;
   padding: 20px 14px 8px;
   user-select: none;
   touch-action: pan-y;
 }
-
 .cal-section .st-stack.has-many {
   cursor: grab;
 }
-
 .cal-section .st-stack::after {
   content: "";
   position: absolute;
@@ -794,76 +776,82 @@
   bottom: -18px;
   height: 40px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 50%, rgba(40, 32, 15, 0.3) 0%, rgba(40, 32, 15, 0) 70%);
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(40, 32, 15, 0.3) 0%,
+    rgba(40, 32, 15, 0) 70%
+  );
   filter: blur(8px);
   pointer-events: none;
 }
-
 .cal-section .stamp {
   position: relative;
-
-  filter: drop-shadow(-5px 9px 10px rgba(40, 30, 15, 0.22)) drop-shadow(-1px 2px 2px rgba(40, 30, 15, 0.16));
+  filter: drop-shadow(-5px 9px 10px rgba(40, 30, 15, 0.22))
+    drop-shadow(-1px 2px 2px rgba(40, 30, 15, 0.16));
 }
-
 .cal-section .stamp--front {
   z-index: 3;
-
   transform: perspective(1100px) rotateX(5deg) rotateY(-7deg) rotate(-2.5deg);
-  filter: drop-shadow(-14px 26px 24px rgba(40, 30, 15, 0.3)) drop-shadow(-3px 6px 5px rgba(40, 30, 15, 0.2));
+  filter: drop-shadow(-14px 26px 24px rgba(40, 30, 15, 0.3))
+    drop-shadow(-3px 6px 5px rgba(40, 30, 15, 0.2));
 }
-
 .cal-section .stamp--front.shuffle {
   animation: cal-stampShuffle 0.5s cubic-bezier(0.3, 1.5, 0.5, 1);
 }
-
 @keyframes cal-stampShuffle {
   0% {
     transform: perspective(1100px) rotateX(5deg) rotateY(-7deg) rotate(-2.5deg);
   }
   40% {
-    transform: perspective(1100px) rotateX(2deg) rotateY(-3deg) rotate(1.5deg) translateY(-8px);
+    transform: perspective(1100px) rotateX(2deg) rotateY(-3deg) rotate(1.5deg)
+      translateY(-8px);
   }
   100% {
     transform: perspective(1100px) rotateX(5deg) rotateY(-7deg) rotate(-2.5deg);
   }
 }
-
 .cal-section .stamp--back {
   position: absolute;
   top: 20px;
   left: 14px;
   right: 14px;
 }
-
 .cal-section .stamp--b1 {
   z-index: 2;
   transform: rotate(5deg) translate(-16px, -12px);
 }
-
 .cal-section .stamp--b2 {
   z-index: 1;
   transform: rotate(-8deg) translate(18px, 6px);
 }
-
 .cal-section .stamp-paper {
   position: relative;
   padding: 15px;
   box-shadow: inset 0 0 10px rgba(80, 60, 30, 0.14);
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .5 0 0 0 0 .4 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"),
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .5 0 0 0 0 .4 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"),
     #fffdf7;
 }
-
 .cal-section .stamp-paper::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 5;
   pointer-events: none;
-  background: linear-gradient(225deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0) 34%),
-    linear-gradient(128deg, rgba(255, 255, 255, 0) 44%, rgba(255, 255, 255, 0.14) 52%, rgba(255, 255, 255, 0) 62%),
+  background:
+    linear-gradient(
+      225deg,
+      rgba(255, 255, 255, 0.42) 0%,
+      rgba(255, 255, 255, 0) 34%
+    ),
+    linear-gradient(
+      128deg,
+      rgba(255, 255, 255, 0) 44%,
+      rgba(255, 255, 255, 0.14) 52%,
+      rgba(255, 255, 255, 0) 62%
+    ),
     linear-gradient(45deg, rgba(70, 50, 20, 0.14) 0%, rgba(70, 50, 20, 0) 46%);
 }
-
 .cal-section .stamp-frame {
   position: relative;
   aspect-ratio: 4 / 5;
@@ -872,7 +860,6 @@
   outline: 2px solid var(--green);
   outline-offset: 0;
 }
-
 .cal-section .stamp-frame::before {
   content: "";
   position: absolute;
@@ -881,7 +868,6 @@
   border: 1px solid rgba(232, 208, 152, 0.9);
   pointer-events: none;
 }
-
 .cal-section .stamp-frame::after {
   content: "";
   position: absolute;
@@ -896,12 +882,10 @@
     rgba(3, 30, 26, 0.35) 100%
   );
 }
-
 .cal-section .stamp-photos {
   position: absolute;
   inset: 0;
 }
-
 .cal-section .cd-photo {
   position: absolute;
   inset: 0;
@@ -912,12 +896,10 @@
     opacity 0.6s ease,
     transform 5s ease;
 }
-
 .cal-section .cd-photo.show {
   opacity: 1;
   transform: scale(1);
 }
-
 .cal-section .stamp-country {
   position: absolute;
   top: 14px;
@@ -929,7 +911,6 @@
   letter-spacing: 0.2px;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
-
 .cal-section .stamp-value {
   position: absolute;
   top: 0;
@@ -943,19 +924,16 @@
   color: var(--green);
   border-bottom-right-radius: 14px;
 }
-
 .cal-section .stamp-value b {
   font-size: 22px;
   font-weight: 900;
   line-height: 1;
 }
-
 .cal-section .stamp-value small {
   font-size: 10.5px;
   font-weight: 700;
   color: var(--gold-dark);
 }
-
 .cal-section .stamp-caption {
   position: absolute;
   left: 0;
@@ -970,19 +948,16 @@
   background: var(--green);
   color: var(--gold-pale);
 }
-
 .cal-section .stamp-caption span {
   font-size: 16px;
   font-weight: 900;
   line-height: 1.3;
 }
-
 .cal-section .stamp-caption small {
   font-size: 12px;
   font-weight: 700;
   color: var(--gold);
 }
-
 .cal-section .postmark {
   position: absolute;
   z-index: 4;
@@ -996,14 +971,12 @@
   font-family: "Qomra", "Segoe UI", Tahoma, sans-serif;
   direction: ltr;
 }
-
 .cal-section .st-nav {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
 }
-
 .cal-section .st-btn {
   width: 42px;
   height: 42px;
@@ -1021,7 +994,6 @@
     color 0.2s,
     transform 0.2s;
 }
-
 .cal-section .st-btn svg {
   width: 18px;
   height: 18px;
@@ -1031,16 +1003,13 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-
 .cal-section .st-btn:hover {
   background: var(--gold);
   color: var(--green-deep);
 }
-
 .cal-section .st-btn:active {
   transform: scale(0.94);
 }
-
 .cal-section .st-count {
   font-size: 14px;
   font-weight: 700;
@@ -1048,12 +1017,10 @@
   min-width: 56px;
   text-align: center;
 }
-
 .cal-section .st-count b {
   font-weight: 900;
   color: var(--green);
 }
-
 .cal-section .st-text {
   display: flex;
   flex-direction: column;
@@ -1061,20 +1028,17 @@
   text-align: center;
   padding: 0 10px;
 }
-
 .cal-section .st-desc {
   font-size: 17px;
   font-weight: 700;
   line-height: 1.8;
   color: var(--green);
 }
-
 .cal-section .st-tag {
   font-size: 13px;
   font-weight: 500;
   color: var(--text-muted);
 }
-
 .cal-section .st-about {
   display: -webkit-box;
   max-width: 420px;
@@ -1088,36 +1052,53 @@
   -webkit-line-clamp: 3;
   line-clamp: 3;
 }
-
 .cal-section .st-btn:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 2px;
 }
-
 @media (prefers-reduced-motion: reduce) {
   .cal-section .event-card > .card-in,
   .cal-section .stamp--front.shuffle {
     animation: none;
   }
-
   .cal-section .cd-photo {
     transition: opacity 0.2s;
     transform: none;
   }
 }
-
 .cal-section .ev--plain {
-  background: repeating-linear-gradient(45deg, rgba(190, 156, 90, 0.18) 0 1px, transparent 1px 26px),
-    repeating-linear-gradient(-45deg, rgba(190, 156, 90, 0.18) 0 1px, transparent 1px 26px),
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(190, 156, 90, 0.18) 0 1px,
+      transparent 1px 26px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(190, 156, 90, 0.18) 0 1px,
+      transparent 1px 26px
+    ),
     radial-gradient(ellipse 70% 60% at 50% 45%, #fbf8f1 0%, #efe5d0 100%);
 }
-
 .cal-section .stamp--plain .stamp-photos {
-  background: repeating-linear-gradient(45deg, rgba(200, 167, 106, 0.16) 0 1px, transparent 1px 28px),
-    repeating-linear-gradient(-45deg, rgba(200, 167, 106, 0.16) 0 1px, transparent 1px 28px),
-    radial-gradient(ellipse 80% 60% at 50% 35%, #0f5a4c 0%, #064239 55%, #032d27 100%);
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(200, 167, 106, 0.16) 0 1px,
+      transparent 1px 28px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(200, 167, 106, 0.16) 0 1px,
+      transparent 1px 28px
+    ),
+    radial-gradient(
+      ellipse 80% 60% at 50% 35%,
+      #0f5a4c 0%,
+      #064239 55%,
+      #032d27 100%
+    );
 }
-
 .cal-section .ev-mark {
   position: absolute;
   left: 50%;
@@ -1127,135 +1108,109 @@
   opacity: 0.2;
   pointer-events: none;
 }
-
 .cal-section .stamp--plain .ev-mark {
   top: 36%;
   width: 56%;
   opacity: 0.28;
   filter: drop-shadow(0 0 18px rgba(236, 201, 136, 0.35));
 }
-
 @media (max-width: 960px) {
   .cal-section {
     padding-bottom: 60px;
   }
-
   .cal-section .cal-stage {
     padding-bottom: 100px;
   }
-
   .cal-section .cal-layout {
     grid-template-columns: 1fr;
     align-items: start;
   }
-
   .cal-section .tent {
     max-width: 600px;
   }
-
   .cal-section .cal-side {
     max-width: 560px;
     width: 100%;
     margin: 0 auto;
   }
 }
-
 @media (max-width: 600px) {
   .cal-section {
     padding: 44px 16px 50px;
   }
-
   .cal-section .tent-3d {
     transform: rotateZ(3deg) rotateY(-16deg);
   }
-
   .cal-section .pages,
   .cal-section .pad-shadow {
     aspect-ratio: 0.92;
   }
-
   .cal-section .nav-btn {
     width: 34px;
     height: 34px;
   }
-
   .cal-section .ev-top {
     top: 26px;
     left: 12px;
     right: 12px;
   }
-
   .cal-section .ev-body {
     left: 18px;
     right: 18px;
     bottom: 50px;
     gap: 8px;
   }
-
   .cal-section .ev-foot {
     font-size: 11px;
     padding-inline-start: 16px;
   }
-
   .cal-section .event-card {
     max-width: 340px;
   }
-
   .cal-section .postmark {
     left: -20px;
     width: 58%;
   }
-
   .cal-section .cal-stage {
     padding: 34px 18px 90px 10px;
   }
-
   .cal-section .float-shadow {
     bottom: -84px;
     height: 56px;
   }
-
   .cal-section .tent-front {
     padding-bottom: 26%;
   }
-
   .cal-section .board-band {
     padding-top: 26%;
   }
-
   .cal-section .board-logo {
     width: 12%;
     transform: translate(-50%, -40%);
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .cal-section .tent-float,
   .cal-section .float-shadow {
     animation: none;
   }
 }
-
 .cal-section {
   background: transparent;
   padding: clamp(40px, 6vh, 64px) 24px clamp(36px, 5vh, 64px);
 }
-
 .cal-section .backdrop {
   display: none;
 }
-
 .cal-section .cal-scene::after {
   content: none;
 }
-
 .cal-section .cal-head {
   position: relative;
   z-index: 2;
   margin: 0 auto;
   text-align: center;
 }
-
 .cal-section .cal-head h2 {
   position: relative;
   display: inline-block;
@@ -1266,7 +1221,6 @@
   line-height: 1.25;
   letter-spacing: -0.8px;
 }
-
 .cal-section .cal-head h2::after {
   content: "";
   position: absolute;
@@ -1278,16 +1232,13 @@
   background: #c7a568;
   transform: translateX(50%);
 }
-
 .cal-section .cal-head h2 span {
   color: #a58b5c;
 }
-
 @media (max-width: 600px) {
   .cal-section {
     padding: 40px 16px 44px;
   }
-
   .cal-section .cal-head h2 {
     font-size: 32px;
   }

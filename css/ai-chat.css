@@ -187,7 +187,6 @@
   background: #2d6e47;
   border-color: #fae5af;
 }
-
 #chat-messages {
   flex: 1;
   overflow-y: auto;
@@ -207,7 +206,6 @@
   background: #2d6e47;
   border-radius: 3px;
 }
-
 #ai-chat-panel .msg-row {
   display: flex;
   align-items: flex-end;
@@ -219,7 +217,6 @@
 #ai-chat-panel .msg-row.user {
   flex-direction: row-reverse;
 }
-
 #ai-chat-panel .msg-avatar {
   width: 30px;
   height: 30px;
@@ -239,7 +236,6 @@
   background: #2d6e47;
   color: #fff;
 }
-
 #ai-chat-panel .bubble {
   max-width: 78%;
   padding: 10px 14px;
@@ -260,7 +256,6 @@
   border-bottom-left-radius: 4px;
   font-weight: 600;
 }
-
 #ai-chat-panel .typing-bubble {
   background: #1a4d35;
   border: 1px solid #2d6e47;
@@ -294,7 +289,6 @@
     transform: translateY(-7px);
   }
 }
-
 #chat-input-area {
   padding: 12px 14px;
   border-top: 1px solid #1a4d35;
@@ -327,7 +321,6 @@
 #chat-input:focus {
   border-color: #fae5af;
 }
-
 #chat-send-btn {
   width: 42px;
   height: 42px;
@@ -352,14 +345,12 @@
   height: 18px;
   fill: #0d3b28;
 }
-
 #ai-chat-panel .msg-time {
   font-size: 0.62rem;
   color: #5a8a6e;
   text-align: center;
   margin: 4px 0 -4px;
 }
-
 @media (max-width: 520px) {
   #ai-chat-btn {
     left: 11px;
