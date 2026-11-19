@@ -133,9 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mapBar = page.querySelector("[data-map-bar]");
   const mapIsRtl = mapTrack && getComputedStyle(mapTrack).direction === "rtl";
 //
-const PAGE_SIZE = 3;
-  let activeCategory = "all";
-  let currentPage = 0;
+let activeCategory = "all";
 
   const getFilteredCards = () =>
     cards.filter((card) => activeCategory === "all" || card.dataset.category === activeCategory);
@@ -145,47 +143,25 @@ const PAGE_SIZE = 3;
 
     const filtered = getFilteredCards();
     const total = filtered.length;
-    const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
-
-    currentPage = clamp(currentPage, 0, totalPages - 1);
-
-    const start = currentPage * PAGE_SIZE;
-    const end = start + PAGE_SIZE;
 
     cards.forEach((card) => {
       card.hidden = true;
     });
-    filtered.slice(start, end).forEach((card) => {
+    filtered.forEach((card) => {
       card.hidden = false;
     });
 
-    const shownCount = total === 0 ? 0 : Math.min(end, total);
-    const progress = totalPages > 1 ? currentPage / (totalPages - 1) : 1;
-
-    if (mapBar) mapBar.style.transform = `scaleX(${progress})`;
-    if (mapCurrent) mapCurrent.textContent = pad(shownCount);
-    if (mapTotal) mapTotal.textContent = pad(total);
-    if (mapPrev) mapPrev.disabled = currentPage <= 0;
-    if (mapNext) mapNext.disabled = currentPage >= totalPages - 1;
+    if (mapCurrent) mapCurrent.textContent = pad(total);
+    if (mapTotal) mapTotal.textContent = pad(cards.length);
     if (mapEmpty) mapEmpty.hidden = total > 0;
   }
 
-  function moveMap(direction) {
-    const filtered = getFilteredCards();
-    const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
-    currentPage = clamp(currentPage + direction, 0, totalPages - 1);
-    updateMap();
-  }
-
   if (mapTrack) {
-    if (mapPrev) mapPrev.addEventListener("click", () => moveMap(-1));
-    if (mapNext) mapNext.addEventListener("click", () => moveMap(1));
     updateMap();
   }
 
   function applyFilter(key) {
     activeCategory = key;
-    currentPage = 0; // العودة لأول 3 بطاقات عند تغيير الفلتر
 
     if (oppFilters) {
       oppFilters.querySelectorAll(".inv-filter").forEach((button) => {
