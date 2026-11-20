@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
       status === "closed"
         ? `<p class="opd-closed-note"><i class="fa-solid fa-lock"></i> انتهى موعد التقديم على هذه الحقيبة.</p>`
         : `<a class="opd-btn opd-btn--primary" href="contact.html">
-             <span>${status === "upcoming" ? "سجّل اهتمامك بالحقيبة" : "تقدّم بطلب"}</span>
+             <span>${status === "upcoming" ? "سجّل اهتمامك بالحقيبة" : "الحصول على دفتر الشروط"}</span>
              <i class="fa-solid fa-arrow-left"></i>
            </a>`;
 
