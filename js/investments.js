@@ -126,12 +126,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (mapEmpty) mapEmpty.hidden = opportunities.length > 0;
 
   const cards = mapTrack ? Array.from(mapTrack.querySelectorAll(".inv-mcard")) : [];
-  const mapPrev = page.querySelector("[data-map-prev]");
-  const mapNext = page.querySelector("[data-map-next]");
   const mapCurrent = page.querySelector("[data-map-current]");
   const mapTotal = page.querySelector("[data-map-total]");
-  const mapBar = page.querySelector("[data-map-bar]");
-  const mapIsRtl = mapTrack && getComputedStyle(mapTrack).direction === "rtl";
+
 //
 let activeCategory = "all";
 
