@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>قد تكون الحقيبة حُذفت أو أن الرابط غير صحيح.</p>
           <a class="inv-btn" href="Investments.html#investment-opportunities">
             <span class="inv-btn__icon"><i class="fa-solid fa-arrow-left"></i></span>
-            <span>العودة إلى الحقائب الاستثمارية</span>
+            <span>العودة/span>
           </a>
         </div>
       </div>`;

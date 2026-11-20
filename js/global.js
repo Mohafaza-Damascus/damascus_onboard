@@ -16,10 +16,10 @@
     const navItems = [
       { label: "الرئيسية", href: `${base}index.html` },
       { label: "الأخبار", href: `${pagesPrefix}news-enas.html` },
-      { label: "النظرة الثقافية", href: `${pagesPrefix}Cultural-model-5.html` },
       { label: "الخدمات", aliases: ["الخدمات"], href: `${pagesPrefix}services-model-2.html` },
-      { label: "دليل دمشق", href: guideHref },
       { label: "الاستثمارات", href: `${pagesPrefix}Investments.html` },
+      { label: "ثقافة و سياحة", href: `${pagesPrefix}Cultural-model-5.html` },
+      { label: "دليل دمشق", href: guideHref },
     ];
 
     const navLinks = navItems
@@ -178,11 +178,7 @@
         </div>
       </div>
     </footer>
-    <div class="header-switcher" id="headerSwitcher" aria-label="تبديل تصميم الهيدر">
-      <button type="button" data-hmodel="1" title="النموذج 1">H1</button>
-      <button type="button" data-hmodel="2" title="النموذج 2">H2</button>
-      <button type="button" data-hmodel="3" title="النموذج 3">H3</button>
-    </div>`;
+  `;
   }
 
   function renderModals() {
@@ -503,4 +499,172 @@
       pill.classList.add("is-active");
     });
   });
+})();
+(() => {
+  const svgMap = document.getElementById("svgMap");
+  if (!svgMap) return;
+
+  const card = document.getElementById("explorerCard");
+  const cardImg = document.getElementById("cardImg");
+  const cardCredit = document.getElementById("cardCredit");
+  const cardName = document.getElementById("cardName");
+  const cardHoods = document.getElementById("cardHoods");
+  const cardPop = document.getElementById("cardPop");
+  const cardArea = document.getElementById("cardArea");
+  const cardType = document.getElementById("cardType");
+  const cardDesc = document.getElementById("cardDesc");
+
+  const SECTORS = {
+    "sector-1": {
+      name: "القطاع الأول",
+      hoodIds: ["berze", "qaboun", "jobar"],
+      hoodsText: "برزة، القابون، جوبر",
+      pop: "غير متوفرة",
+      area: "غير متوفرة",
+      type: "سكني / صناعي وتاريخي",
+      desc: "يضم الأحياء الشمالية الشرقية لدمشق ويشمل برزة والقابون وجوبر.",
+      img: "images/areas/berze.jpg",
+      credit: "",
+      creditUrl: "",
+    },
+    "sector-2": {
+      name: "القطاع الثاني",
+      hoodIds: ["muhajireen", "rukn", "salihiye", "sarouja"],
+      hoodsText: "المهاجرين، ركن الدين، الصالحية، ساروجة",
+      pop: "غير متوفرة",
+      area: "غير متوفرة",
+      type: "سكني / سفح قاسيون وتجاري",
+      desc: "يمتد على سفح جبل قاسيون ويشمل المهاجرين وركن الدين والصالحية وساروجة.",
+      img: "images/areas/salihiye.jpg",
+      credit: "",
+      creditUrl: "",
+    },
+    "sector-3": {
+      name: "القطاع الثالث",
+      hoodIds: ["olddam", "shaghour", "qanawat"],
+      hoodsText: "دمشق القديمة، الشاغور، القنوات",
+      pop: "غير متوفرة",
+      area: "غير متوفرة",
+      type: "تاريخي / تراثي ومركزي",
+      desc: "قلب دمشق التاريخي ويضم دمشق القديمة والشاغور والقنوات.",
+      img: "images/areas/olddam.jpg",
+      credit: "",
+      creditUrl: "",
+    },
+    "sector-4": {
+      name: "القطاع الرابع",
+      hoodIds: ["midan", "qadam", "yarmouk"],
+      hoodsText: "الميدان، القدم، اليرموك",
+      pop: "غير متوفرة",
+      area: "غير متوفرة",
+      type: "سكني / شعبي وتجاري",
+      desc: "يمتد في جنوب دمشق ويشمل الميدان والقدم واليرموك.",
+      img: "images/areas/midan.jpg",
+      credit: "",
+      creditUrl: "",
+    },
+    "sector-5": {
+      name: "القطاع الخامس",
+      hoodIds: ["mazza", "kafarsuseh"],
+      hoodsText: "المزة، كفرسوسة",
+      pop: "غير متوفرة",
+      area: "غير متوفرة",
+      type: "سكني / إداري وحديث",
+      desc: "يغطي الجهة الجنوبية الغربية ويشمل المزة وكفرسوسة.",
+      img: "images/areas/mazza.jpg",
+      credit: "",
+      creditUrl: "",
+    },
+    "sector-6": {
+      name: "القطاع السادس",
+      hoodIds: ["dummar", "new_damascus"],
+      hoodsText: "دُمَّر، الشام الجديدة",
+      pop: "غير متوفرة",
+      area: "غير متوفرة",
+      type: "سكني / ضواحٍ حديثة",
+      desc: "يمثل التوسع الغربي لدمشق ويشمل دُمَّر والشام الجديدة.",
+      img: "images/areas/dummar.jpg",
+      credit: "",
+      creditUrl: "",
+    },
+  };
+
+  // ربط كل data-id حيّ بقطاعه
+  const hoodToSector = {};
+  Object.entries(SECTORS).forEach(([sectorId, sector]) => {
+    sector.hoodIds.forEach((id) => {
+      hoodToSector[id] = sectorId;
+    });
+  });
+
+  const hoods = Array.from(svgMap.querySelectorAll(".dm-hood"));
+  const sectorLabels = Array.from(svgMap.querySelectorAll(".dm-sector-lbl"));
+  const sectorGroups = {};
+
+  hoods.forEach((hood) => {
+    const sectorId = hoodToSector[hood.dataset.id];
+    if (!sectorId) return;
+
+    hood.dataset.sector = sectorId;
+    hood.setAttribute("tabindex", "0");
+    hood.setAttribute("role", "button");
+    hood.setAttribute("aria-label", SECTORS[sectorId].name);
+
+    (sectorGroups[sectorId] ||= []).push(hood);
+  });
+
+  function setHoverSector(sectorId) {
+    hoods.forEach((h) =>
+      h.classList.toggle("is-sector-hover", Boolean(sectorId) && h.dataset.sector === sectorId),
+    );
+  }
+
+  function selectSector(sectorId) {
+    const data = SECTORS[sectorId];
+    if (!data) return;
+
+    hoods.forEach((h) => h.classList.toggle("is-active", h.dataset.sector === sectorId));
+    sectorLabels.forEach((lbl) =>
+      lbl.classList.toggle("is-active", lbl.dataset.sector === sectorId),
+    );
+    if (card) card.dataset.sector = sectorId;
+    if (cardImg) {
+      cardImg.src = data.img;
+      cardImg.alt = data.name;
+    }
+    if (cardName) cardName.textContent = data.name;
+    if (cardHoods) cardHoods.textContent = data.hoodsText;
+    if (cardPop) cardPop.textContent = data.pop;
+    if (cardArea) cardArea.textContent = data.area;
+    if (cardType) cardType.textContent = data.type;
+    if (cardDesc) cardDesc.textContent = data.desc;
+
+    if (cardCredit) {
+      if (data.credit && data.creditUrl) {
+        cardCredit.textContent = data.credit;
+        cardCredit.href = data.creditUrl;
+        cardCredit.hidden = false;
+      } else {
+        cardCredit.hidden = true;
+      }
+    }
+  }
+
+  hoods.forEach((hood) => {
+    const sectorId = hood.dataset.sector;
+    if (!sectorId) return;
+
+    hood.addEventListener("mouseenter", () => setHoverSector(sectorId));
+    hood.addEventListener("mouseleave", () => setHoverSector(null));
+    hood.addEventListener("click", () => selectSector(sectorId));
+    hood.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        selectSector(sectorId);
+      }
+    });
+  });
+
+  // القطاع المحدد افتراضياً عند فتح الصفحة
+  selectSector("sector-6");
 })();

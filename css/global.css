@@ -3238,3 +3238,60 @@ button {
 .nav__submenu-link {
   white-space: nowrap !important;
 }
+
+#svgMap .dm-hood[data-sector="sector-1"] { --sector-color: #1f6f5b; }
+#svgMap .dm-hood[data-sector="sector-2"] { --sector-color: #a58b5c; }
+#svgMap .dm-hood[data-sector="sector-3"] { --sector-color: #8c4a32; }
+#svgMap .dm-hood[data-sector="sector-4"] { --sector-color: #4f6d4a; }
+#svgMap .dm-hood[data-sector="sector-5"] { --sector-color: #2d5f73; }
+#svgMap .dm-hood[data-sector="sector-6"] { --sector-color: #7c5c3e; }
+
+#svgMap .dm-hood {
+  cursor: pointer;
+}
+
+#svgMap .dm-hood path {
+  fill: color-mix(in srgb, var(--sector-color, #064239) 24%, #f5f1e8);
+  stroke: #ffffff;
+  stroke-width: 2;
+  transition: fill 0.25s ease, filter 0.25s ease, stroke-width 0.25s ease;
+}
+
+#svgMap .dm-hood.is-sector-hover path {
+  fill: color-mix(in srgb, var(--sector-color, #064239) 62%, #ffffff);
+  stroke-width: 2.5;
+}
+
+#svgMap .dm-hood.is-active path {
+  fill: var(--sector-color, #064239);
+  stroke: #fffaf0;
+  stroke-width: 3;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+#svgMap .dm-hood.is-active .dm-lbl {
+  fill: #ffffff;
+  font-weight: 700;
+}
+#svgMap .dm-lbl {
+  display: none;
+}
+
+#svgMap .dm-sector-lbl {
+  pointer-events: none;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 22px;
+  font-weight: 700;
+  fill: #173d37;
+  paint-order: stroke;
+  stroke: rgba(255, 250, 240, 0.9);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  transition: fill 0.25s ease, stroke 0.25s ease;
+}
+
+#svgMap .dm-sector-lbl.is-active {
+  fill: #ffffff;
+  stroke: rgba(3, 45, 39, 0.55);
+}

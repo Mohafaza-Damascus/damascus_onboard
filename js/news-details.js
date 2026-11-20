@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="article-missing">
         <h1>الخبر غير موجود</h1>
         <p>ربما حُذف الخبر أو أن الرابط غير صحيح.</p>
-        <a href="news-enas.html">العودة إلى الأخبار</a>
+        <a href="news-enas.html">العودة/a>
       </div>`;
     document.getElementById("relatedNews").hidden = true;
   }
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <div style="margin-bottom: 20px;">
   <a href="news-enas.html" class="article-back-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding-inline: 20px; background-color: var(--green-900, #064239); color: #fff; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 0.9rem; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 10px 18px -10px rgba(120, 90, 30, 0.6); transition: background-color 200ms ease;">
-    <i class="fas fa-arrow-right" aria-hidden="true"></i> العودة للأخبار
+    <i class="fas fa-arrow-right" aria-hidden="true"></i> العودة
   </a>
 </div>
       <h1 class="article-title">${escapeHtml(title)}</h1>

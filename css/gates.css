@@ -157,7 +157,7 @@
   color: var(--ink-mute);
 }
 
-.damascus-gates-hero .hero__info {
+/* .damascus-gates-hero .hero__info {
   position: absolute;
   z-index: 4;
   inset-inline-end: var(--gutter);
@@ -165,6 +165,14 @@
   transform: translateY(-50%);
   width: min(24vw, 320px);
   pointer-events: none;
+} */
+
+.damascus-gates-hero .hero__copy .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    pointer-events: auto;
 }
 
 .damascus-gates-hero .desc {
@@ -477,4 +485,10 @@
   .damascus-gates-hero .gate__stack {
     transition: none;
   }
+}
+
+.damascus-gates-hero .hero__copy .btn {
+    pointer-events: auto;
+    position: relative;
+    z-index: 10;
 }
