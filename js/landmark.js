@@ -8,6 +8,23 @@
   if (index < 0) index = 0;
   const item = list[index];
 
+if (item.group === "damascus-gates") {
+    const backLink = document.querySelector(".lm__back");
+
+    if (backLink) {
+        backLink.href = "Cultural-model-5.html#damascus-gates";
+
+        const labelNode = Array.from(backLink.childNodes).find(
+            (node) =>
+                node.nodeType === Node.TEXT_NODE &&
+                node.textContent.trim()
+        );
+
+        if (labelNode) {
+            labelNode.textContent = "\n      العودة \n    ";
+        }
+    }
+}
   const svg = (d) =>
     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
   const ICONS = {
@@ -90,8 +107,9 @@
       btn.classList.toggle("is-active", k === current);
       btn.setAttribute("aria-current", String(k === current));
     });
-    $("lmCredit").innerHTML = `تصوير: <bdi>${photos[current].credit}</bdi> · ويكيميديا كومنز`;
-
+    $("lmCredit").textContent = photos[current].credit
+    ? `مصدر الصورة: ${photos[current].credit}`
+    : "";
     const left = current * (THUMB + GAP) + MARGIN - (thumbs.offsetWidth / 2 - THUMB_FULL / 2);
     thumbs.scrollTo({ left: rtl ? -left : left, behavior: "smooth" });
   }
@@ -177,10 +195,29 @@
   setPhoto(0);
   autoplay();
 
-  const prev = list[(index - 1 + list.length) % list.length];
-  const next = list[(index + 1) % list.length];
-  $("lmPrev").href = `landmark.html?id=${prev.id}`;
-  $("lmPrevName").textContent = prev.name;
-  $("lmNext").href = `landmark.html?id=${next.id}`;
-  $("lmNextName").textContent = next.name;
+const navigationList =
+    item.group === "damascus-gates"
+        ? list.filter((entry) => entry.group === "damascus-gates")
+        : list;
+
+const navigationIndex = navigationList.findIndex(
+    (entry) => entry.id === item.id
+);
+
+const prev =
+    navigationList[
+        (navigationIndex - 1 + navigationList.length) %
+        navigationList.length
+    ];
+
+const next =
+    navigationList[
+        (navigationIndex + 1) % navigationList.length
+    ];
+
+$("lmPrev").href = `landmark.html?id=${prev.id}`;
+$("lmPrevName").textContent = prev.name;
+
+$("lmNext").href = `landmark.html?id=${next.id}`;
+$("lmNextName").textContent = next.name;
 })();

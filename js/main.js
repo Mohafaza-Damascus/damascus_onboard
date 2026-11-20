@@ -38,7 +38,6 @@
   };
   const inOutCubic = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
   const lerp = (a, b, t) => a + (b - a) * t;
-  const pad = (n) => String(n).padStart(2, "0");
 
   const hero = document.getElementById("hero");
   const $ = (sel) => hero.querySelector(sel);
@@ -46,15 +45,12 @@
   let [gateCur, gateNext] = hero.querySelectorAll(".gate__img");
   const animEls = Array.from(hero.querySelectorAll("[data-anim]"));
   const ui = {
-    kicker: $('[data-field="kicker"]'),
-    name: $('[data-field="name"]'),
-    text: $('[data-field="text"]'),
-    link: $('[data-field="link"]'),
-    cur: $(".counter__cur"),
-    total: $(".counter__total"),
-    bullets: $(".bullets"),
-    arrow: $(".hint__arrow"),
-    live: $("#live"),
+      kicker: $('[data-field="kicker"]'),
+      name: $('[data-field="name"]'),
+      link: $('[data-field="link"]'),
+      bullets: $(".bullets"),
+      arrow: $(".hint__arrow"),
+      live: $("#live"),
   };
   let bullets = [];
 
@@ -310,13 +306,13 @@
 
   function fill(i) {
     const s = slides[i];
-    ui.kicker.textContent = s.kicker || "";
-    ui.name.textContent = s.name;
-    ui.text.textContent = s.text || "";
+    if (ui.kicker) {
+        ui.kicker.textContent = s.kicker || "";
+    }
+    ui.name.textContent = s.name || "";
     ui.link.href = s.link || "#";
-    ui.cur.textContent = pad(i + 1);
-    ui.live.textContent = s.name;
-  }
+    ui.live.textContent = s.name || "";
+}
 
   function updateNav(i) {
     bullets.forEach((b, j) => b.setAttribute("aria-current", j === i ? "true" : "false"));
@@ -574,18 +570,17 @@
     start = null;
   });
 
-  function buildBullets() {
+function buildBullets() {
     ui.bullets.innerHTML = "";
     bullets = slides.map((s, i) => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "bullet";
-      b.setAttribute("aria-label", s.name);
-      b.addEventListener("click", () => goTo(i));
-      ui.bullets.appendChild(b);
-      return b;
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "bullet";
+        b.setAttribute("aria-label", s.name);
+        b.addEventListener("click", () => goTo(i));
+        ui.bullets.appendChild(b);
+        return b;
     });
-    ui.total.textContent = "/" + pad(slides.length);
   }
 
   let measureQueued = false;

@@ -80,6 +80,9 @@ DG.slides = [
   },
 ];
 
+DG.slides.forEach((slide) => {
+    slide.link = `landmark.html?id=${encodeURIComponent(slide.id)}`;
+});
 DG.config = {
   assets: "../assets",
   timing: {
