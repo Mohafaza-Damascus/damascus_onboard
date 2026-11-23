@@ -402,10 +402,6 @@
     flex-wrap: wrap;
     gap: 12px;
   }
-
-  .back-home-link {
-    font-size: 13px;
-  }
 }
 
 @media (max-width: 380px) {
@@ -548,35 +544,10 @@
   margin: 0;
 }
 
-.back-home-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  color: #07473c;
-  text-decoration: none;
-  font-family: "ITF Qomra Arabic", sans-serif;
-  font-size: 15px;
-  white-space: nowrap;
-  transition: color 0.2s ease;
-  font-weight: 600;
-}
-
-.back-home-link i {
-  font-size: 14px;
-}
-
-.back-home-link:hover {
-  color: #be9c5a;
-}
-
 @media (max-width: 600px) {
   .detail-heading-row {
     flex-wrap: wrap;
     gap: 12px;
-  }
-
-  .back-home-link {
-    font-size: 13px;
   }
 }
 
@@ -592,22 +563,14 @@
   align-items: center;
   justify-content: center;
   color: #07473c;
+  gap: 10px;
   text-decoration: none;
   font-size: 15px;
   transition: color 0.2s ease;
 }
 
-.back-arrow:hover,
-.back-home-link:hover {
+.back-arrow:hover{
   color: #be9c5a;
-}
-
-.back-home-link {
-  color: #07473c;
-  text-decoration: none;
-  font-family: "ITF Qomra Arabic", sans-serif;
-  font-size: 15px;
-  white-space: nowrap;
 }
 
 .card-address {

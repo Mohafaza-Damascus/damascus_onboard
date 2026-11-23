@@ -14945,10 +14945,10 @@ html {
     transform 0.4s ease,
     color 0.4s ease;
 }
-#damascus-numbers .damascus-numbers__header:hover .damascus-numbers__quote-kicker {
+/* #damascus-numbers .damascus-numbers__header:hover .damascus-numbers__quote-kicker {
   color: #ffffff !important;
   text-shadow: 0 0 12px rgba(216, 189, 139, 0.5);
-}
+} */
 #damascus-numbers .damascus-numbers__header:hover .damascus-numbers__quote-kicker::before {
   transform: rotate(90deg) scale(1.2);
   color: #ffffff;
@@ -15067,4 +15067,79 @@ html {
   #damascus-intangible .dmi-card {
     grid-template-columns: minmax(0, 1fr) !important;
   }
+}
+#damascus-numbers .damascus-numbers__header {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: right !important;
+  width: fit-content !important;
+  max-width: 460px !important;
+  margin: 0 !important;
+  padding: 16px 24px !important;
+  border-radius: 16px !important;
+  background: transparent !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+#damascus-numbers .damascus-numbers__quote-text {
+  margin: 0 !important;
+  color: #fffaf0 !important;
+  font-size: clamp(23px, 2.3vw, 31px) !important;
+  font-weight: 800 !important;
+  line-height: 1.65 !important;
+  text-align: right !important;
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.75) !important;
+}
+
+#damascus-numbers .damascus-numbers__ornamental-line {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 240px !important;
+  height: 12px !important;
+  margin: 14px 0 !important;
+  background: transparent !important;
+}
+
+#damascus-numbers .damascus-numbers__ornamental-line::before {
+  content: "" !important;
+  position: absolute !important;
+  inset-inline: 0 !important;
+  height: 1px !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(216, 189, 139, 0.9) 25%,
+    rgba(216, 189, 139, 0.9) 75%,
+    transparent 100%
+  ) !important;
+}
+
+#damascus-numbers .damascus-numbers__ornamental-line::after {
+  content: "" !important;
+  position: relative !important;
+  z-index: 1 !important;
+  width: 9px !important;
+  height: 9px !important;
+  background: #d8bd8b !important;
+  transform: rotate(45deg) !important;
+  box-shadow: none !important;
+}
+
+#damascus-numbers .damascus-numbers__header:hover .damascus-numbers__ornamental-line {
+  width: 260px !important;
+}
+
+/* اسم السيد الرئيس بحجم أكبر وأوضح */
+#damascus-numbers .damascus-numbers__author-name {
+  margin: 9 !important;
+  color: #f3dfb9 !important;
+  font-size: clamp(20px, 1.95vw, 26px) !important;
+  font-weight: 800 !important;
+  line-height: 1.5 !important;
+  text-align: right !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9), 0 0 22px rgba(5, 25, 20, 0.85) !important;
 }

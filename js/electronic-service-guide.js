@@ -13,12 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.title = `دليل ${service.name} - محافظة دمشق`;
   document.getElementById("guideTitle").textContent = `دليل ${service.name}`;
-  document.getElementById("guideDescription").textContent = service.description || "لا يوجد وصف لهذه الخدمة.";
+  document.getElementById("guideDescription").textContent =
+    service.description || "لا يوجد وصف لهذه الخدمة.";
   document.getElementById("guideFacts").innerHTML = `
     <div class="sd-fact">
-      <dt><i class="fa-solid fa-sitemap"></i> المديرية</dt>
+      <dt>
+        <i class="fa-solid fa-sitemap"></i>
+        مديرية :
+      </dt>
       <dd>${escapeHtml(service.directorate || service.electronicDirectorate || "غير محددة")}</dd>
-    </div>`;
+    </div>
+  `;
 
   showList("guideFees", service.fees, "لم تتم إضافة الرسوم بعد.");
   showList("guidePapers", service.papers, "لم تتم إضافة الأوراق المطلوبة بعد.");

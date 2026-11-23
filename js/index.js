@@ -49,199 +49,84 @@
 })();
 
 (function () {
-  const hoods = document.querySelectorAll(".dm-hood");
+  const svgMap = document.getElementById("svgMap");
   const inner = document.querySelector(".map-explorer__inner");
   const card = document.getElementById("explorerCard");
-  if (!hoods.length || !card || !inner) return;
+  if (!svgMap || !inner || !card) return;
 
-  function roundSvgPolygonPath(d, radius = 10) {
-    const matches = [...d.matchAll(/([0-9.]+)\s*,\s*([0-9.]+)/g)];
-    if (matches.length < 3) return d;
-    const pts = matches.map((m) => ({ x: parseFloat(m[1]), y: parseFloat(m[2]) }));
-    const n = pts.length;
-    let out = "";
-
-    for (let i = 0; i < n; i++) {
-      const prev = pts[(i - 1 + n) % n];
-      const curr = pts[i];
-      const next = pts[(i + 1) % n];
-
-      const v1x = prev.x - curr.x;
-      const v1y = prev.y - curr.y;
-      const v2x = next.x - curr.x;
-      const v2y = next.y - curr.y;
-
-      const len1 = Math.hypot(v1x, v1y);
-      const len2 = Math.hypot(v2x, v2y);
-      const r = Math.min(radius, len1 * 0.35, len2 * 0.35);
-
-      const p1x = curr.x + (v1x / len1) * r;
-      const p1y = curr.y + (v1y / len1) * r;
-      const p2x = curr.x + (v2x / len2) * r;
-      const p2y = curr.y + (v2y / len2) * r;
-
-      out += i === 0 ? `M ${p1x.toFixed(1)},${p1y.toFixed(1)} ` : `L ${p1x.toFixed(1)},${p1y.toFixed(1)} `;
-      out += `Q ${curr.x.toFixed(1)},${curr.y.toFixed(1)} ${p2x.toFixed(1)},${p2y.toFixed(1)} `;
-    }
-    return out + "Z";
-  }
-
-  hoods.forEach((hood) => {
-    const path = hood.querySelector("path");
-    if (path) {
-      path.setAttribute("d", roundSvgPolygonPath(path.getAttribute("d"), 11));
-    }
-  });
+  const sectors = Array.from(svgMap.querySelectorAll(".dm-sector"));
+  const sectorLabels = Array.from(svgMap.querySelectorAll(".dm-sector-lbl"));
 
   const cardImg = document.getElementById("cardImg");
   const cardName = document.getElementById("cardName");
+  const cardHoods = document.getElementById("cardHoods");
   const cardPop = document.getElementById("cardPop");
   const cardArea = document.getElementById("cardArea");
   const cardType = document.getElementById("cardType");
   const cardDesc = document.getElementById("cardDesc");
   const cardCredit = document.getElementById("cardCredit");
 
-  const data = {
-    dummar: {
-      name: "دُمَّر",
-      pop: "120,000",
-      area: "18 كم²",
-      type: "سكني / ضاحية",
-      desc: "ضاحية غرب دمشق تشتهر بالمساحات الخضراء والطبيعة الجبلية الخلابة.",
-      img: "images/areas/dummar.jpg",
-    },
-    mazza: {
-      name: "المزّة",
-      pop: "350,000",
-      area: "22 كم²",
-      type: "سكني / إداري",
-      desc: "من أكبر أحياء دمشق، تضم مؤسسات حكومية ومجمعات سكنية حديثة.",
-      img: "images/areas/mazza.jpg",
-    },
-    kafarsuseh: {
-      name: "كفرسوسة",
-      pop: "180,000",
-      area: "12 كم²",
-      type: "سكني / تجاري",
-      desc: "حي حيوي يمتد جنوب غرب دمشق ويضم أسواقاً ومراكز تجارية.",
-      img: "images/areas/kafarsuseh.jpg",
-    },
-    berze: {
-      name: "برزة",
-      pop: "200,000",
-      area: "15 كم²",
-      type: "سكني",
-      desc: "حي شمالي عريق يتميز بطابعه الشعبي وقربه من جبل قاسيون.",
+  const SECTORS = {
+    "sector-1": {
+      name: "قطاع 1",
+      areas: "برزة، القابون، جوبر",
+      pop: "390,000",
+      area: "30 كم²",
+      type: "سكني / صناعي وتاريخي",
+      desc: "يضم المناطق الشمالية الشرقية لدمشق، ويشمل برزة والقابون وجوبر.",
       img: "images/areas/berze.jpg",
     },
-    qaboun: {
-      name: "القابون",
-      pop: "100,000",
-      area: "8 كم²",
-      type: "صناعي / سكني",
-      desc: "منطقة صناعية وسكنية شمال شرق دمشق.",
-      img: "images/neighborhoods/skyline.jpg",
-      credit: {
-        text: "Samosyr at English Wikipedia · Public domain",
-        url: "https://commons.wikimedia.org/wiki/File:DamascusSkyline.jpg",
-      },
-    },
-    jobar: {
-      name: "جوبر",
-      pop: "90,000",
-      area: "7 كم²",
-      type: "سكني",
-      desc: "حي شرقي تاريخي كان يشتهر بزراعة المشمش والفواكه.",
-      img: "images/areas/jobar.jpg",
-    },
-    shaghour: {
-      name: "الشاغور",
-      pop: "250,000",
-      area: "10 كم²",
-      type: "سكني / تجاري",
-      desc: "من أعرق أحياء دمشق القديمة، يتميز بأسواقه الشعبية.",
-      img: "images/areas/shaghour.jpg",
-    },
-    rukn: {
-      name: "ركن الدين",
-      pop: "280,000",
-      area: "14 كم²",
-      type: "سكني",
-      desc: "حي سكني على سفح جبل قاسيون يتميز بإطلالته البانورامية.",
-      img: "images/areas/rukn.jpg",
-    },
-    salihiye: {
-      name: "الصالحية",
-      pop: "150,000",
-      area: "6 كم²",
-      type: "سكني / ثقافي",
-      desc: "حي تاريخي يضم معالم أثرية ومؤسسات تعليمية عريقة.",
+    "sector-2": {
+      name: "قطاع 2",
+      areas: "ركن الدين، الصالحية، المهاجرين، ساروجة",
+      pop: "620,000",
+      area: "32 كم²",
+      type: "سكني / ثقافي وتجاري",
+      desc: "يمتد على سفح جبل قاسيون ويضم أحياء عريقة ومعالم ثقافية ودبلوماسية.",
       img: "images/areas/salihiye.jpg",
     },
-    muhajireen: {
-      name: "المهاجرين",
-      pop: "130,000",
-      area: "9 كم²",
-      type: "سكني",
-      desc: "حي راقٍ على سفح قاسيون يضم سفارات ومقرات دبلوماسية.",
-      img: "images/areas/muhajireen.jpg",
-    },
-    sarouja: {
-      name: "ساروجة",
-      pop: "60,000",
-      area: "3 كم²",
-      type: "تاريخي / تجاري",
-      desc: "من أقدم أحياء دمشق، يتميز بعمارته العثمانية الفريدة.",
-      img: "images/areas/sarouja.jpg",
-    },
-    qanawat: {
-      name: "القنوات",
-      pop: "70,000",
-      area: "4 كم²",
-      type: "سكني / تاريخي",
-      desc: "حي وسطي يربط بين دمشق القديمة والأحياء الحديثة.",
-      img: "images/areas/qanawat.jpg",
-    },
-    olddam: {
-      name: "دمشق القديمة",
-      pop: "40,000",
-      area: "2 كم²",
-      type: "تاريخي / سياحي",
-      desc: "المدينة القديمة المسورة، أحد أقدم المدن المأهولة في العالم.",
+    "sector-3": {
+      name: "قطاع 3",
+      areas: "دمشق القديمة، الشاغور، القنوات",
+      pop: "360,000",
+      area: "16 كم²",
+      type: "تاريخي / تراثي ومركزي",
+      desc: "قلب دمشق التاريخي والتراثي، ويضم المدينة القديمة والشاغور والقنوات.",
       img: "images/areas/olddam.jpg",
     },
-    midan: {
-      name: "الميدان",
-      pop: "220,000",
-      area: "11 كم²",
-      type: "سكني / تجاري",
-      desc: "حي تجاري تاريخي يشتهر بأسواقه ومساجده العريقة.",
+    "sector-4": {
+      name: "قطاع 4",
+      areas: "الميدان، القدم، اليرموك",
+      pop: "520,000",
+      area: "25 كم²",
+      type: "سكني / تجاري وصناعي",
+      desc: "يمتد في جنوب دمشق ويجمع بين الأسواق العريقة والمناطق السكنية والصناعية.",
       img: "images/areas/midan.jpg",
     },
-    qadam: {
-      name: "القدم",
-      pop: "160,000",
-      area: "9 كم²",
-      type: "سكني / صناعي",
-      desc: "حي جنوبي يضم ورشاً صناعية ومناطق سكنية.",
-      img: "images/areas/qadam.jpg",
+    "sector-5": {
+      name: "قطاع 5",
+      areas: "المزّة، كفرسوسة",
+      pop: "530,000",
+      area: "34 كم²",
+      type: "سكني / إداري وحديث",
+      desc: "يغطي الجهة الجنوبية الغربية ويضم مؤسسات حكومية ومجمعات سكنية وتجارية حديثة.",
+      img: "images/areas/mazza.jpg",
     },
-    yarmouk: {
-      name: "اليرموك",
-      pop: "140,000",
-      area: "5 كم²",
-      type: "سكني",
-      desc: "حي جنوبي كان يُعرف بكثافته السكانية العالية.",
-      img: "images/areas/yarmouk.jpg",
+    "sector-6": {
+      name: "قطاع 6",
+      areas: "دُمَّر، الشام الجديدة",
+      pop: "120,000",
+      area: "18 كم²",
+      type: "سكني / ضواحٍ حديثة",
+      desc: "يمثل التوسع الغربي لدمشق ويشتهر بالمساحات الخضراء والطبيعة الجبلية.",
+      img: "images/areas/dummar.jpg",
     },
   };
 
-  let activeHood = null;
   let preloaded = null;
-
   const preloadPhotos = () => {
     if (preloaded) return;
-    preloaded = Object.values(data).map((info) => {
+    preloaded = Object.values(SECTORS).map((info) => {
       const img = new Image();
       img.src = info.img;
       img.decode().catch(() => {});
@@ -252,40 +137,73 @@
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (!entries.some((entry) => entry.isIntersecting)) return;
+        if (!entries.some((e) => e.isIntersecting)) return;
         observer.disconnect();
         preloadPhotos();
       },
       { rootMargin: "800px 0px" },
     );
-    observer.observe(inner || cardImg);
+    observer.observe(inner);
   } else {
     preloadPhotos();
   }
 
-  hoods.forEach((hood) => {
-    hood.addEventListener("mouseenter", () => {
-      const id = hood.dataset.id;
-      const info = data[id];
-      if (!info) return;
+  let pinnedSector = null;
 
-      if (activeHood) activeHood.classList.remove("is-active");
-      hood.classList.add("is-active");
-      activeHood = hood;
-      inner.classList.add("has-selection");
+  function updateCard(sectorId) {
+    const info = SECTORS[sectorId];
+    if (!info) return;
 
-      cardImg.src = info.img;
-      cardImg.alt = info.name;
-      if (cardCredit) {
-        cardCredit.hidden = !info.credit;
-        cardCredit.textContent = info.credit ? `الصورة: ${info.credit.text}` : "";
-        cardCredit.href = info.credit ? info.credit.url : "#";
+    inner.classList.add("has-selection");
+    card.dataset.sector = sectorId;
+    cardImg.src = info.img;
+    cardImg.alt = info.name;
+    cardName.textContent = info.name;
+    if (cardHoods) cardHoods.textContent = info.areas;
+    cardPop.textContent = info.pop;
+    cardArea.textContent = info.area;
+    cardType.textContent = info.type;
+    cardDesc.textContent = info.desc;
+    if (cardCredit) cardCredit.hidden = true;
+  }
+
+  function highlightSector(sectorId) {
+    sectors.forEach((sec) => sec.classList.toggle("is-active", sec.dataset.sector === sectorId));
+    sectorLabels.forEach((lbl) => lbl.classList.toggle("is-hidden", lbl.dataset.sector === sectorId));
+  }
+
+  sectors.forEach((sec) => {
+    const sectorId = sec.dataset.sector;
+    if (!SECTORS[sectorId]) return;
+
+    sec.setAttribute("tabindex", "0");
+    sec.setAttribute("role", "button");
+    sec.setAttribute("aria-label", SECTORS[sectorId].name);
+
+    sec.addEventListener("mouseenter", () => {
+      highlightSector(sectorId);
+      updateCard(sectorId);
+    });
+
+    sec.addEventListener("mouseleave", () => {
+      highlightSector(pinnedSector);
+      if (pinnedSector) updateCard(pinnedSector);
+    });
+
+    // دعم النقر للموبايل أو لتثبيت القطاع
+    sec.addEventListener("click", () => {
+      pinnedSector = pinnedSector === sectorId ? null : sectorId;
+      highlightSector(pinnedSector || sectorId);
+      updateCard(sectorId);
+    });
+
+    sec.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        pinnedSector = sectorId;
+        highlightSector(sectorId);
+        updateCard(sectorId);
       }
-      cardName.textContent = info.name;
-      cardPop.textContent = info.pop;
-      cardArea.textContent = info.area;
-      cardType.textContent = info.type;
-      cardDesc.textContent = info.desc;
     });
   });
 })();

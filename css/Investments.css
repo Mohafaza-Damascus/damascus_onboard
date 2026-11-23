@@ -812,7 +812,6 @@
   .inv-mcard {
     flex-basis: 80vw;
   }
-
   .inv-map__controls {
     gap: 14px;
   }
@@ -820,7 +819,6 @@
     grid-template-columns: 1fr;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .inv-js [data-reveal],
   .inv-js [data-split] .w > span {
@@ -828,10 +826,11 @@
     transform: none;
     transition: none;
   }
-
   .inv-hero__bg {
     animation: none;
     transform: none;
   }
-
+}
+.inv-hero__stage {
+  padding-top: calc(var(--header-h, 96px) + 90px);
 }

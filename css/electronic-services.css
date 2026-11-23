@@ -61,13 +61,12 @@ body {
   gap: 12px;
   padding-left: 50px;
 }
-
-.electronic-services__back-home,
 .electronic-services__back-arrow {
   display: inline-flex;
   align-items: center;
   color: var(--es-green);
   text-decoration: none;
+  gap: 10px;
   font-family: var(--es-font);
   font-size: 15px;
   font-weight: 600;
@@ -75,7 +74,6 @@ body {
   transition: color 0.2s ease;
 }
 
-.electronic-services__back-home:hover,
 .electronic-services__back-arrow:hover {
   color: var(--es-gold);
 }
@@ -128,7 +126,7 @@ body {
 
 .electronic-services__layout {
   display: grid;
-  grid-template-columns: 230px minmax(0, 1fr);
+  grid-template-columns: clamp(190px, 18vw, 240px) minmax(0, 1fr);
   gap: 28px;
   align-items: start;
 }
@@ -160,11 +158,11 @@ body {
 }
 
 .electronic-services__sidebar h2 {
-  margin: 0 0 10px;
-  padding: 5px 8px 12px;
+  margin: 0 0 clamp(6px, 1vh, 10px);
+  padding: 4px 8px clamp(8px, 1.1vh, 12px);
   border-bottom: 1px solid rgb(239 231 214 / 25%);
   color: #e8d098;
-  font-size: 16px;
+  font-size: clamp(14px, 1.6vh, 16px);
   font-weight: 600;
   text-align: center;
 }
@@ -172,7 +170,7 @@ body {
 .electronic-services__filters {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: clamp(2px, 0.5vh, 5px);
   width: 100%;
 }
 
@@ -181,15 +179,15 @@ body {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  min-height: 38px;
   margin: 0;
-  padding: 8px 10px;
+  padding: clamp(4px, 0.75vh, 8px) 10px;
   border: 1px solid transparent;
   border-radius: 8px;
   background: transparent;
   color: #efe7d6;
   font-family: var(--es-font);
-  font-size: 13px;
+  font-size: clamp(11.5px, 1.45vh, 13px);
+  line-height: 1.35;
   text-align: start;
   white-space: normal;
   cursor: pointer;
@@ -296,10 +294,6 @@ body {
     gap: 12px;
   }
 
-  .electronic-services__back-home {
-    font-size: 13px;
-  }
-
   .electronic-services__back-actions {
     padding-left: 0;
   }
@@ -315,6 +309,8 @@ body {
   .electronic-services__sidebar {
     position: static;
     max-height: none;
+    overflow: visible;
+    padding: clamp(8px, 1.2vh, 12px) 10px;
     margin-bottom: 20px;
     padding: 12px;
     border: 1px solid rgb(7 71 60 / 55%);
@@ -322,10 +318,10 @@ body {
   }
 
   .electronic-services__filters {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px;
-  }
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 6px;
+    }
 
   .service-filter {
     justify-content: center;

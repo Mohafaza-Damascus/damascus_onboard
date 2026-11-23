@@ -9,16 +9,40 @@
     const el = document.getElementById("site-header");
     if (!el) return;
 
-    const activePage = el.dataset.active || "";
+    const activePage = (el.dataset.active || "").trim();
 
     const savedModel = localStorage.getItem("dm-header-model") || el.dataset.headerModel || "2";
 
+    const currentPath = decodeURIComponent(location.pathname);
+
     const navItems = [
-      { label: "الرئيسية", href: `${base}index.html` },
-      { label: "الأخبار", href: `${pagesPrefix}news-enas.html` },
-      { label: "الخدمات", aliases: ["الخدمات"], href: `${pagesPrefix}services-model-2.html` },
-      { label: "الاستثمارات", href: `${pagesPrefix}Investments.html` },
-      { label: "ثقافة و سياحة", href: `${pagesPrefix}Cultural-model-5.html` },
+      {
+        label: "الرئيسية",
+        href: `${base}index.html`,
+        match: /^(?!.*\/pages\/).*\/(index\.html)?$/i,
+      },
+      {
+        label: "الأخبار",
+        href: `${pagesPrefix}news-enas.html`,
+        match: /news-(enas|details)/i,
+      },
+      {
+        label: "الخدمات",
+        aliases: ["الخدمات", "الخدمات الإلكترونية", "خدمات المواطنين", "خدمات"],
+        href: `${pagesPrefix}services-model-2.html`,
+        match: /(services-model-2|electronic-service|services_details)/i,
+      },
+      {
+        label: "الاستثمارات",
+        href: `${pagesPrefix}Investments.html`,
+        match: /(Investments|Opportunity-details)/i,
+      },
+      {
+        label: "ثقافة و سياحة",
+        aliases: ["ثقافة وسياحة", "الثقافة والسياحة", "النظرة الثقافية", "ثقافة"],
+        href: `${pagesPrefix}Cultural-model-5.html`,
+        match: /(Cultural-model-5|era|landmark|Damascus-album|Cultural-Details|Events-details)/i,
+      },
       { label: "دليل دمشق", href: guideHref },
     ];
 
@@ -27,7 +51,8 @@
         const isActive =
           item.label === activePage ||
           (item.aliases || []).includes(activePage) ||
-          (item.subItems || []).some((subItem) => subItem.label === activePage);
+          (item.subItems || []).some((subItem) => subItem.label === activePage) ||
+          (item.match && item.match.test(currentPath));
 
         if (!item.subItems) {
           return `<li class="nav__item"><a class="nav__link${isActive ? " is-active" : ""}" href="${item.href}"><span>${item.label}</span></a></li>`;
@@ -203,8 +228,8 @@
         <h2 class="auth-modal__title">تسجيل الدخول</h2>
         <form class="auth-form" onsubmit="return false">
           <div class="auth-field">
-            <label>البريد الإلكتروني</label>
-            <input type="email" placeholder="أدخل بريدك الإلكتروني" required />
+            <label>رقم الهاتف</label>
+            <input type="number" placeholder="********09"/>
           </div>
           <div class="auth-field">
             <label>كلمة المرور</label>
@@ -225,45 +250,49 @@
         <h2 class="auth-modal__title">إنشاء حساب جديد</h2>
         <p class="auth-modal__subtitle">أدخل بياناتك للتسجيل في بوابة محافظة دمشق</p>
         <form class="auth-form auth-form--grid" onsubmit="return false">
-          <div class="auth-field">
-            <label>الاسم الأول <span class="req">*</span></label>
-            <input type="text" required />
+          <div class="auth-field auth-field-full">
+            <label>الاسم والكنية <span class="req">*</span></label>
+            <input type="text" name="fullName" required />
           </div>
           <div class="auth-field">
-            <label>الاسم الأخير <span class="req">*</span></label>
-            <input type="text" required />
+            <label>اسم الأب <span class="req">*</span></label>
+            <input type="text" name="fatherName" required />
           </div>
           <div class="auth-field">
-            <label>البريد الإلكتروني <span class="req">*</span></label>
-            <input type="email" required />
+            <label>اسم الأم <span class="req">*</span></label>
+            <input type="text" name="motherName" required />
           </div>
           <div class="auth-field">
             <label>رقم الهاتف <span class="req">*</span></label>
-            <input type="tel" required />
+            <input type="number" placeholder="********09"/>
+          </div>
+          <div class="auth-field">
+            <label>البريد الإلكتروني </label>
+            <input type="email" name="email"/>
+          </div>
+          <div class="auth-field">
+            <label>القيد <span class="req">*</span></label>
+            <input type="text" name="registry" required />
+          </div>
+          <div class="auth-field">
+            <label>الرقم الوطني <span class="req">*</span></label>
+            <input type="text" name="nationalId" inputmode="numeric" maxlength="11" required />
           </div>
           <div class="auth-field auth-field-full">
-            <label>الصفة <span class="req">*</span></label>
-            <div class="role-selector">
-              <button type="button" class="role-pill">مواطن</button>
-              <button type="button" class="role-pill">موظف حكومي</button>
-              <button type="button" class="role-pill">مستثمر</button>
-              <button type="button" class="role-pill">إعلامي</button>
-            </div>
+            <label>وثيقة إثبات (صورة هوية أو جواز سفر...) <span class="req">*</span></label>
+            <label class="auth-file-upload" for="regDoc">
+              <input type="file" id="regDoc" name="idDocument" accept="image/*,.pdf" required />
+              <span class="auth-file-upload__btn">اختيار ملف</span>
+              <span class="auth-file-upload__name" id="regDocName">لم يتم اختيار ملف (صورة أو PDF)</span>
+            </label>
           </div>
           <div class="auth-field">
             <label>كلمة المرور <span class="req">*</span></label>
-            <input type="password" required />
+            <input type="password" name="password" required />
           </div>
           <div class="auth-field">
             <label>تأكيد كلمة المرور <span class="req">*</span></label>
-            <input type="password" required />
-          </div>
-          <div class="auth-field auth-field-full">
-            <label>المنطقة</label>
-            <button type="button" class="auth-btn--location">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              تحديد الموقع تلقائياً
-            </button>
+            <input type="password" name="confirmPassword" required />
           </div>
           <button type="submit" class="auth-btn auth-btn--primary auth-btn--submit">إنشاء الحساب</button>
         </form>
@@ -490,181 +519,11 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeAuth();
   });
-
-  document.querySelectorAll(".role-selector").forEach((selector) => {
-    selector.addEventListener("click", (e) => {
-      const pill = e.target.closest(".role-pill");
-      if (!pill) return;
-      selector.querySelectorAll(".role-pill").forEach((p) => p.classList.remove("is-active"));
-      pill.classList.add("is-active");
-    });
+const regDocInput = document.getElementById("regDoc");
+const regDocName = document.getElementById("regDocName");
+if (regDocInput && regDocName) {
+  regDocInput.addEventListener("change", () => {
+    regDocName.textContent = regDocInput.files?.[0]?.name || "لم يتم اختيار ملف (صورة أو PDF)";
   });
-})();
-(() => {
-  const svgMap = document.getElementById("svgMap");
-  if (!svgMap) return;
-
-  const card = document.getElementById("explorerCard");
-  const cardImg = document.getElementById("cardImg");
-  const cardCredit = document.getElementById("cardCredit");
-  const cardName = document.getElementById("cardName");
-  const cardHoods = document.getElementById("cardHoods");
-  const cardPop = document.getElementById("cardPop");
-  const cardArea = document.getElementById("cardArea");
-  const cardType = document.getElementById("cardType");
-  const cardDesc = document.getElementById("cardDesc");
-
-  const SECTORS = {
-    "sector-1": {
-      name: "القطاع الأول",
-      hoodIds: ["berze", "qaboun", "jobar"],
-      hoodsText: "برزة، القابون، جوبر",
-      pop: "غير متوفرة",
-      area: "غير متوفرة",
-      type: "سكني / صناعي وتاريخي",
-      desc: "يضم الأحياء الشمالية الشرقية لدمشق ويشمل برزة والقابون وجوبر.",
-      img: "images/areas/berze.jpg",
-      credit: "",
-      creditUrl: "",
-    },
-    "sector-2": {
-      name: "القطاع الثاني",
-      hoodIds: ["muhajireen", "rukn", "salihiye", "sarouja"],
-      hoodsText: "المهاجرين، ركن الدين، الصالحية، ساروجة",
-      pop: "غير متوفرة",
-      area: "غير متوفرة",
-      type: "سكني / سفح قاسيون وتجاري",
-      desc: "يمتد على سفح جبل قاسيون ويشمل المهاجرين وركن الدين والصالحية وساروجة.",
-      img: "images/areas/salihiye.jpg",
-      credit: "",
-      creditUrl: "",
-    },
-    "sector-3": {
-      name: "القطاع الثالث",
-      hoodIds: ["olddam", "shaghour", "qanawat"],
-      hoodsText: "دمشق القديمة، الشاغور، القنوات",
-      pop: "غير متوفرة",
-      area: "غير متوفرة",
-      type: "تاريخي / تراثي ومركزي",
-      desc: "قلب دمشق التاريخي ويضم دمشق القديمة والشاغور والقنوات.",
-      img: "images/areas/olddam.jpg",
-      credit: "",
-      creditUrl: "",
-    },
-    "sector-4": {
-      name: "القطاع الرابع",
-      hoodIds: ["midan", "qadam", "yarmouk"],
-      hoodsText: "الميدان، القدم، اليرموك",
-      pop: "غير متوفرة",
-      area: "غير متوفرة",
-      type: "سكني / شعبي وتجاري",
-      desc: "يمتد في جنوب دمشق ويشمل الميدان والقدم واليرموك.",
-      img: "images/areas/midan.jpg",
-      credit: "",
-      creditUrl: "",
-    },
-    "sector-5": {
-      name: "القطاع الخامس",
-      hoodIds: ["mazza", "kafarsuseh"],
-      hoodsText: "المزة، كفرسوسة",
-      pop: "غير متوفرة",
-      area: "غير متوفرة",
-      type: "سكني / إداري وحديث",
-      desc: "يغطي الجهة الجنوبية الغربية ويشمل المزة وكفرسوسة.",
-      img: "images/areas/mazza.jpg",
-      credit: "",
-      creditUrl: "",
-    },
-    "sector-6": {
-      name: "القطاع السادس",
-      hoodIds: ["dummar", "new_damascus"],
-      hoodsText: "دُمَّر، الشام الجديدة",
-      pop: "غير متوفرة",
-      area: "غير متوفرة",
-      type: "سكني / ضواحٍ حديثة",
-      desc: "يمثل التوسع الغربي لدمشق ويشمل دُمَّر والشام الجديدة.",
-      img: "images/areas/dummar.jpg",
-      credit: "",
-      creditUrl: "",
-    },
-  };
-
-  // ربط كل data-id حيّ بقطاعه
-  const hoodToSector = {};
-  Object.entries(SECTORS).forEach(([sectorId, sector]) => {
-    sector.hoodIds.forEach((id) => {
-      hoodToSector[id] = sectorId;
-    });
-  });
-
-  const hoods = Array.from(svgMap.querySelectorAll(".dm-hood"));
-  const sectorLabels = Array.from(svgMap.querySelectorAll(".dm-sector-lbl"));
-  const sectorGroups = {};
-
-  hoods.forEach((hood) => {
-    const sectorId = hoodToSector[hood.dataset.id];
-    if (!sectorId) return;
-
-    hood.dataset.sector = sectorId;
-    hood.setAttribute("tabindex", "0");
-    hood.setAttribute("role", "button");
-    hood.setAttribute("aria-label", SECTORS[sectorId].name);
-
-    (sectorGroups[sectorId] ||= []).push(hood);
-  });
-
-  function setHoverSector(sectorId) {
-    hoods.forEach((h) =>
-      h.classList.toggle("is-sector-hover", Boolean(sectorId) && h.dataset.sector === sectorId),
-    );
-  }
-
-  function selectSector(sectorId) {
-    const data = SECTORS[sectorId];
-    if (!data) return;
-
-    hoods.forEach((h) => h.classList.toggle("is-active", h.dataset.sector === sectorId));
-    sectorLabels.forEach((lbl) =>
-      lbl.classList.toggle("is-active", lbl.dataset.sector === sectorId),
-    );
-    if (card) card.dataset.sector = sectorId;
-    if (cardImg) {
-      cardImg.src = data.img;
-      cardImg.alt = data.name;
-    }
-    if (cardName) cardName.textContent = data.name;
-    if (cardHoods) cardHoods.textContent = data.hoodsText;
-    if (cardPop) cardPop.textContent = data.pop;
-    if (cardArea) cardArea.textContent = data.area;
-    if (cardType) cardType.textContent = data.type;
-    if (cardDesc) cardDesc.textContent = data.desc;
-
-    if (cardCredit) {
-      if (data.credit && data.creditUrl) {
-        cardCredit.textContent = data.credit;
-        cardCredit.href = data.creditUrl;
-        cardCredit.hidden = false;
-      } else {
-        cardCredit.hidden = true;
-      }
-    }
-  }
-
-  hoods.forEach((hood) => {
-    const sectorId = hood.dataset.sector;
-    if (!sectorId) return;
-
-    hood.addEventListener("mouseenter", () => setHoverSector(sectorId));
-    hood.addEventListener("mouseleave", () => setHoverSector(null));
-    hood.addEventListener("click", () => selectSector(sectorId));
-    hood.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        selectSector(sectorId);
-      }
-    });
-  });
-
-  // القطاع المحدد افتراضياً عند فتح الصفحة
-  selectSector("sector-6");
+}
 })();

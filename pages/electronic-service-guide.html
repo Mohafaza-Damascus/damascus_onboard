@@ -651,6 +651,21 @@
       .sd-aside-section {
         margin-top: 5px;
       }
+      .sd-fact {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sd-fact dt,
+.sd-fact dd {
+    margin: 0;
+    display: inline;
+}
+.sd-link {
+    font-size: 18px;
+    font-weight: 700;
+}
     </style>
     <script src="../js/i18n.js"></script>
   </head>
@@ -696,14 +711,9 @@
           <dl class="sd-facts" id="guideFacts"></dl>
 
           <section class="sd-aside-section">
-            <h2>
-              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-              تواصل معنا
-            </h2>
 
             <a class="sd-link" href="contact.html">
-              صفحة تواصل معنا
-              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+             للتعليقات والاقتراحات
             </a>
           </section>
 
@@ -749,11 +759,12 @@
             <i class="fa-regular fa-envelope" aria-hidden="true"></i>
           </span>
 
-          <h2 id="esgFeedbackTitle">التعليقات والاقتراحات</h2>
 
-          <p>لأي استفسار أو ملاحظات حول هذه الخدمة، يسعدنا تواصلك معنا.</p>
+          <p>لأي استفسار أو ملاحظات حول هذه الخدمة، يسعدنا تواصلك مع المساعد الالي.</p>
 
-          <a class="sd-btn sd-btn--primary" href="contact.html"> تواصل معنا </a>
+          <a class="sd-btn sd-btn--primary" href="#" id="open-ai-chat">
+              تواصل معنا
+          </a>
         </div>
       </section>
     </main>
@@ -764,5 +775,7 @@
     <script src="../js/load-data.js" data-file="services-form/services-list.js"></script>
     <script src="services-form/services-store.js"></script>
     <script src="../js/electronic-service-guide.js"></script>
+    <script src="../js/ai-chat.js"></script>
+    
   </body>
 </html>
