@@ -87,7 +87,7 @@
     <div class="header__row">
       <a href="${base}index.html" class="logo" aria-label="محافظة دمشق">
         <span class="logo__badge">
-          <img src="${base}images/logo.png" alt="شعار محافظة دمشق" />
+          <img src="${base}images/brand/logo.png" alt="شعار محافظة دمشق" />
         </span>
         <span class="logo__text">
           <strong class="logo__title">محافظة دمشــــــــــــــــق</strong>
@@ -147,7 +147,7 @@
           <div class="footer__brand">
             <div class="footer__identity">
               <a href="${base}index.html">
-                <img class="footer__logo" src="${base}images/damascus-emblem.png" alt="محافظة دمشق" title="محافظة دمشق" />
+                <img class="footer__logo" src="${base}images/brand/emblem.png" alt="محافظة دمشق" title="محافظة دمشق" />
               </a>
               <h2 class="footer__name">محافظة دمشق</h2>
             </div>
@@ -212,7 +212,7 @@
     <div class="auth-overlay" id="authOverlay">
       <div class="auth-modal" id="authWelcome">
         <button class="auth-modal__close" data-close>&times;</button>
-        <img class="auth-modal__logo" src="${base}images/logo.png" alt="محافظة دمشق" />
+        <img class="auth-modal__logo" src="${base}images/brand/logo.png" alt="محافظة دمشق" />
         <span class="auth-modal__brand-name">محافظة دمشق</span>
         <h2 class="auth-modal__title">مرحباً بك في البوابة الإلكترونية</h2>
         <p class="auth-modal__subtitle">سجّل دخولك أو أنشئ حساباً جديداً للوصول إلى جميع الخدمات</p>
@@ -224,7 +224,7 @@
 
       <div class="auth-modal" id="authLogin" style="display:none">
         <button class="auth-modal__close" data-close>&times;</button>
-        <img class="auth-modal__logo" src="${base}images/logo.png" alt="محافظة دمشق" />
+        <img class="auth-modal__logo" src="${base}images/brand/logo.png" alt="محافظة دمشق" />
         <h2 class="auth-modal__title">تسجيل الدخول</h2>
         <form class="auth-form" onsubmit="return false">
           <div class="auth-field">
@@ -246,7 +246,7 @@
 
       <div class="auth-modal auth-modal--register" id="authRegister" style="display:none">
         <button class="auth-modal__close" data-close>&times;</button>
-        <img class="auth-modal__logo" src="${base}images/logo.png" alt="محافظة دمشق" />
+        <img class="auth-modal__logo" src="${base}images/brand/logo.png" alt="محافظة دمشق" />
         <h2 class="auth-modal__title">إنشاء حساب جديد</h2>
         <p class="auth-modal__subtitle">أدخل بياناتك للتسجيل في بوابة محافظة دمشق</p>
         <form class="auth-form auth-form--grid" onsubmit="return false">

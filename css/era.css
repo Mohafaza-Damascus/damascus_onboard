@@ -81,13 +81,6 @@ body {
   padding: 72px clamp(16px, 5vw, 64px) 40px;
 }
 
-.era__kicker {
-  margin: 0 0 12px;
-  color: var(--gold);
-  font-size: 15px;
-  font-weight: 700;
-}
-
 .era__name {
   margin: 0;
   color: var(--green-dark);
@@ -101,18 +94,6 @@ body {
   color: var(--gold);
   font-size: clamp(18px, 2vw, 28px);
   font-weight: 700;
-}
-
-.era__hint {
-  margin: 36px 0 0;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.era__hint span {
-  display: inline-block;
-  margin-inline-start: 6px;
-  animation: era-bob 1.6s ease-in-out infinite;
 }
 
 @keyframes era-bob {
@@ -443,9 +424,6 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .era__hint span {
-    animation: none;
-  }
   .dm-arrow__shape,
   .dm-arrow__line,
   .dm-arrow__icon {

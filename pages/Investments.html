@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>الاستثمارات في دمشق - محافظة دمشق</title>
-    <link rel="icon" href="../images/logo.png" type="image/png" />
+    <link rel="icon" href="../images/brand/logo.png" type="image/png" />
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../css/Investments.css" />
@@ -18,7 +18,7 @@
         <div class="inv-hero__stage">
           <img
             class="inv-hero__bg"
-            src="../images/investments-hero.jpg"
+            src="../images/investments/hero.jpg"
             alt="تصوّر ليلي لممشى مشروع رحلة قاسيون المطلّ على دمشق"
           />
 
@@ -43,19 +43,32 @@
         </div>
       </section>
 
-    <section class="inv-intro">
+      <section class="inv-lmap" aria-label="خريطة التراخيص الموسمية">
         <div class="inv-wrap">
-          <h2 class="inv-statement inv-display" data-scroll-words>
-            محافظة دمشق تفتح أبواب العاصمة أمام الاستثمار، بمحفظة من المشاريع <em>التنموية</em> التي تعيد رسم ملامح
-            المدينة وتصنع شراكات <em>تدوم</em>
-          </h2>
+          <div class="inv-lmap__card">
+            <div class="inv-lmap__aside" data-reveal>
+              <a href="https://sam.tail8eb78e.ts.net/" class="inv-btn inv-btn--green" target="_blank" rel="noopener">
+                <span class="inv-btn__icon"><i class="fa-solid fa-arrow-left"></i></span>
+                <span>اكتشف التوزيع للتراخيص الموسمية عبر الخريطة التفاعلية</span>
+              </a>
 
-          <div class="inv-intro__action" data-reveal style="--d: 2">
-            <!-- الرابط الجديد بس يبعتو الاستاذ سامي  -->
-            <a href="https://sam.tail8eb78e.ts.net/" class="inv-btn inv-btn--green" target="_blank" rel="noopener">
-              <span class="inv-btn__icon"><i class="fa-solid fa-arrow-left"></i></span>
-              <span>اكتشف التوزيع للتراخيص الموسمية عبر الخريطة التفاعلية</span>
-            </a>
+              <p class="inv-lmap__legend">
+                <span class="inv-lmap__legend-dot" aria-hidden="true"></span>
+                مواقع التراخيص الموسمية
+              </p>
+            </div>
+
+            <div class="inv-lmap__map" data-reveal style="--d: 1">
+              <svg
+                class="inv-lmap__svg"
+                data-damascus-map
+                data-sector-labels="false"
+                data-license-map
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="خريطة دمشق مع مواقع التراخيص الموسمية"
+              ></svg>
+            </div>
           </div>
 
           <div class="inv-section-divider" aria-hidden="true">
@@ -69,7 +82,7 @@
       <section class="inv-opps" id="investment-opportunities">
         <div class="inv-wrap">
           <div class="inv-opps__head">
-            <h2 class="inv-opps__title inv-display" data-split> <em>استثمر معنا</em></h2>
+            <h2 class="inv-opps__title inv-display" data-split><em>استثمر معنا</em></h2>
           </div>
         </div>
 
@@ -88,8 +101,21 @@
               <i class="fa-regular fa-folder-open"></i>
               <p>لا توجد حقائب استثمارية متاحة حالياً. تابعونا للاطلاع على الحقائب القادمة.</p>
             </div>
+          </div>
+        </div>
+      </section>
 
-          
+      <!-- الصفحة المضمّنة آخر الصفحة: ضع رابطها في src (إذا بقي فارغاً يُخفى القسم تلقائياً) -->
+      <section class="inv-embed" data-embed>
+        <div class="inv-wrap">
+          <div class="inv-embed__frame">
+            <iframe
+              src=""
+              title="محتوى مضمّن"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
       </section>
@@ -97,6 +123,7 @@
 
     <div id="site-footer"></div>
     <script src="../js/global.js"></script>
+    <script src="../js/damascus-map.js"></script>
     <script src="../js/load-data.js" data-file="../js/opportunities-seed.js"></script>
     <script src="../js/opportunities-data.js"></script>
     <script src="../js/investments.js"></script>

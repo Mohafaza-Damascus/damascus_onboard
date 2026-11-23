@@ -7,3 +7,15 @@
 كيف أقدم شكوى؟	How do I file a complaint?
 ما هو الدفع الإلكتروني؟	What is e-payment?
 عن الشؤون المالية؟	About financial affairs?
+ترخيص مهنة	Profession license
+تصريح حفر	Excavation permit
+براءة ذمة	Clearance certificate
+قيد عقاري	Property record
+أنا مساعدك الذكي وخبير بخدمات المحافظة.	I'm your smart assistant and an expert on the governorate's services.
+اكتب اسم الخدمة التي تحتاجها، وسأشرحها لك وأرسل لك رابطها.	Write the name of the service you need, and I'll explain it and send you its link.
+لم أجد خدمة تطابق سؤالك تماماً 🙏	I couldn't find a service that exactly matches your question 🙏
+جرّب كتابة اسم الخدمة أو كلمة مفتاحية منها، مثل: **ترخيص مهنة**، **تصريح حفر**، **قيد عقاري**، **براءة ذمة**.	Try writing the service name or a keyword from it, such as: **profession license**, **excavation permit**, **property record**, **clearance certificate**.
+🕐 **أوقات الخدمة**	🕐 **Service hours**
+🔐 **تسجيل الدخول والحساب**	🔐 **Sign in and account**
+أهلاً وسهلاً! 👋 أنا مساعد البوابة الذكي.	Welcome! 👋 I'm the portal's smart assistant.
+اكتب اسم الخدمة التي تحتاجها، وسأشرح لك أوراقها ورسومها وخطواتها وأرسل لك رابط التقديم.	Write the name of the service you need, and I'll explain its documents, fees and steps and send you the application link.

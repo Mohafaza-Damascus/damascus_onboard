@@ -4,6 +4,7 @@
   "scripts": {
     "i18n:extract": "node tools/i18n/extract.mjs",
     "i18n:build": "node tools/i18n/build.mjs && node tools/i18n/ltr.mjs",
+    "images:organize": "node tools/images/organize.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

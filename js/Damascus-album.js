@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const data = [
     {
       title: "المدينة القديمة",
-      image: "../assets/damascus-heritage.jfif",
+      image: "../images/culture/history/heritage.jpg",
       description:
         "في أزقة دمشق القديمة تتجاور البيوت العربية والأفنية الداخلية والأسواق، وتبقى الذاكرة جزءاً من تفاصيل الحياة اليومية.",
       tag: "الذاكرة العمرانية",
@@ -40,35 +40,35 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       title: "الجامع الأموي",
-      image: "../assets/damascus-umayyad.jfif",
+      image: "../images/culture/history/umayyad.jpg",
       description: "في قلب دمشق يقف الجامع الأموي بوصفه أحد أبرز معالمها الدينية والعمرانية، وشاهداً على تعاقب العصور.",
       tag: "المكان والروح",
       quote: "«فسيفساءُ الذهبِ تحرسُ صحنَ التاريخ منذُ ثلاثة عشر قرناً»",
     },
     {
       title: "الأسواق الدمشقية",
-      image: "../assets/damascus-mamluk.jfif",
+      image: "../images/culture/history/mamluk.jpg",
       description: "مساحات للحرفة والتجارة والتعارف، تحفظ الأسواق تفاصيل الحياة الدمشقية وأصواتها وروائحها.",
       tag: "الحرفة والحياة اليومية",
       quote: "«تحتَ القناطرِ المسقوفةِ تلتقي اليدُ الصانعةُ بالذاكرةِ الحيّة»",
     },
     {
       title: "دمشق العثمانية",
-      image: "../assets/damascus-ottoman.jfif",
+      image: "../images/culture/history/ottoman.jpg",
       description: "تظهر آثار هذه المرحلة في العمارة وتنظيم الأسواق والتفاصيل التي تجمع بين الوظيفة والجمال.",
       tag: "طبقات التاريخ",
       quote: "«تناغمُ الحجرِ الأبلقِ بينَ الخاناتِ والقصورِ والتكايا»",
     },
     {
       title: "دمشق الحديثة",
-      image: "../assets/damascus-modern.jfif",
+      image: "../images/culture/history/modern.jpg",
       description: "اتسعت المدينة وتغيرت شوارعها وأحياؤها، بينما بقي الماضي حاضراً في ملامحها.",
       tag: "التحول العمراني",
       quote: "«مدينةٌ تمتدُّ نحوَ المستقبلِ وجذورُها راسخةٌ في التاريخ»",
     },
     {
       title: "دمشق اليوم",
-      image: "../assets/damascus-today.jfif",
+      image: "../images/culture/history/today.jpg",
       description: "مدينة تجمع بين الذاكرة والتغير، وبين الحكايات الموروثة والأفكار التي تصنعها كل يوم.",
       tag: "مدينة مستمرة",
       quote: "«أقدمُ عواصمِ العالم.. حكايةٌ تُكتَبُ فصولُها كلَّ صباح»",

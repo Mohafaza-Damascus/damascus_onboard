@@ -1,2 +1,6 @@
 ﻿تقدّم بطلب	Apply
 موضوع المقترح	Proposal subject
+مواقع التراخيص الموسمية	Seasonal license locations
+خريطة التراخيص الموسمية	Seasonal licenses map
+خريطة دمشق مع مواقع التراخيص الموسمية	Map of Damascus showing seasonal license locations
+محتوى مضمّن	Embedded content

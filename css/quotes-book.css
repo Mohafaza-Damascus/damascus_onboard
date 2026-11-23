@@ -163,20 +163,6 @@
   color: rgba(42, 33, 24, 0.62);
 }
 
-.qb-paper__num {
-  align-self: center;
-  font-size: clamp(10px, 3.2cqw, 13px);
-  font-weight: 700;
-  color: var(--qb-gold-deep);
-}
-
-.qb-paper__num::before,
-.qb-paper__num::after {
-  content: "—";
-  margin-inline: 0.5em;
-  opacity: 0.6;
-}
-
 .qb-paper--closing {
   align-items: center;
   justify-content: center;
@@ -187,12 +173,6 @@
 .qb-paper--closing .qb-star {
   width: 20%;
   stroke: var(--qb-gold-deep);
-}
-
-.qb-closing__word {
-  font-size: clamp(22px, 10cqw, 40px);
-  font-weight: 900;
-  color: var(--qb-green);
 }
 
 .qb-closing__line {
@@ -287,7 +267,7 @@
   height: 100%;
   background:
     linear-gradient(rgba(13, 58, 50, 0.84), rgba(13, 58, 50, 0.84)),
-    url("../images/pattern.png") center / 120px repeat,
+    url("../images/ui/pattern.png") center / 120px repeat,
     var(--qb-green);
 }
 
@@ -329,14 +309,6 @@
   height: 20px;
 }
 
-.quotes-book__counter {
-  min-width: 120px;
-  text-align: center;
-  font-weight: 700;
-  color: #fffaf0;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
-}
-
 .quotes-book:focus-visible .quotes-book__flip {
   outline: 2px solid var(--qb-gold);
   outline-offset: 8px;
@@ -373,20 +345,6 @@
 #damascus-numbers .damascus-numbers__header h2 {
   align-items: flex-start;
   text-align: start !important;
-}
-
-#damascus-numbers .damascus-numbers__header h2 .damascus-numbers__title-main {
-  font-size: clamp(32px, 3vw, 46px) !important;
-}
-
-#damascus-numbers .damascus-numbers__header h2 .damascus-numbers__title-sub {
-  margin-top: 2px !important;
-  font-size: clamp(20px, 1.8vw, 27px) !important;
-}
-
-#damascus-numbers .damascus-numbers__header:hover h2 .damascus-numbers__title-main,
-#damascus-numbers .damascus-numbers__header:hover h2 .damascus-numbers__title-sub {
-  transform: none;
 }
 
 #damascus-numbers .damascus-numbers__ornamental-line {

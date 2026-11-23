@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   page.classList.add("inv-js");
 
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
   function splitWords(root) {
     let index = 0;
@@ -57,20 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
   page.querySelectorAll("[data-reveal], [data-split]").forEach((el) => {
     revealObserver.observe(el);
   });
-
-  const statement = page.querySelector("[data-scroll-words]");
-  const statementWords = statement ? splitWords(statement) : [];
-
-  function updateStatement() {
-    if (!statement) return;
-
-    const rect = statement.getBoundingClientRect();
-    const viewport = window.innerHeight;
-    const progress = reduceMotion ? 1 : clamp((viewport * 0.85 - rect.top) / (rect.height + viewport * 0.35), 0, 1);
-    const lit = Math.round(progress * statementWords.length);
-
-    statementWords.forEach((word, index) => word.classList.toggle("is-lit", index < lit));
-  }
 
   const store = window.InvOpportunities;
   const statusOrder = { open: 0, upcoming: 1 };
@@ -129,8 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mapCurrent = page.querySelector("[data-map-current]");
   const mapTotal = page.querySelector("[data-map-total]");
 
-//
-let activeCategory = "all";
+  let activeCategory = "all";
 
   const getFilteredCards = () =>
     cards.filter((card) => activeCategory === "all" || card.dataset.category === activeCategory);
@@ -189,32 +172,61 @@ let activeCategory = "all";
       if (button) applyFilter(button.dataset.filter);
     });
   }
-//
 
+  // خريطة التراخيص الموسمية: نقاط خضراء موزعة داخل حدود الأحياء
+  const licenseMap = page.querySelector("[data-license-map]");
 
-  let ticking = false;
+  function placeLicenseDots(svg) {
+    const NS = "http://www.w3.org/2000/svg";
+    const paths = Array.from(svg.querySelectorAll(".dm-hood path"));
+    const layer = document.createElementNS(NS, "g");
+    layer.setAttribute("class", "inv-lmap__dots");
+    layer.setAttribute("aria-hidden", "true");
 
-  function onScroll() {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      updateStatement();
-      ticking = false;
-    });
+    // توزيع شبه عشوائي ثابت (نفس المواقع بكل زيارة)
+    let seed = 7;
+    const random = () => ((seed = (seed * 16807) % 2147483647) - 1) / 2147483646;
+    const inside = (x, y) => {
+      const point = new DOMPoint(x, y);
+      return paths.some((path) => path.isPointInFill(point));
+    };
+    const STEP = 74;
+    const EDGE = 16;
+
+    for (let y = STEP / 2; y < 760; y += STEP) {
+      for (let x = STEP / 2; x < 1000; x += STEP) {
+        const px = x + (random() - 0.5) * STEP * 0.7;
+        const py = y + (random() - 0.5) * STEP * 0.7;
+        const safe = [[0, 0], [EDGE, 0], [-EDGE, 0], [0, EDGE], [0, -EDGE]].every(([dx, dy]) => inside(px + dx, py + dy));
+        if (!safe || random() < 0.25) continue;
+
+        const dot = document.createElementNS(NS, "g");
+        dot.setAttribute("class", "inv-lmap__dot");
+        dot.setAttribute("transform", `translate(${px.toFixed(1)} ${py.toFixed(1)})`);
+        dot.style.setProperty("--delay", `${(random() * 3.2).toFixed(2)}s`);
+        dot.style.setProperty("--dur", `${(2.4 + random() * 1.6).toFixed(2)}s`);
+        dot.innerHTML = '<circle class="inv-lmap__ring" r="11" /><circle class="inv-lmap__core" r="6" />';
+        layer.appendChild(dot);
+      }
+    }
+
+    svg.appendChild(layer);
   }
 
-  let resizeTimer = null;
-  function onResize() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      updateMap();
-      onScroll();
-    }, 120);
+  if (licenseMap && typeof DOMPoint === "function") {
+    try {
+      placeLicenseDots(licenseMap);
+    } catch (error) {
+      console.warn("License map dots:", error);
+    }
   }
 
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onResize);
-
-  window.addEventListener("load", onResize);
+  // القسم المضمّن: يُخفى إذا لم يُحدَّد رابط
+  const embed = page.querySelector("[data-embed]");
+  if (embed) {
+    const frame = embed.querySelector("iframe");
+    const src = frame ? frame.getAttribute("src").trim() : "";
+    if (!src || src === "about:blank") embed.hidden = true;
+    else frame.addEventListener("load", () => embed.classList.add("is-loaded"), { once: true });
+  }
 });

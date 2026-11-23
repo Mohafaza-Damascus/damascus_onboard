@@ -18,7 +18,7 @@ window.DM_HERITAGE = [
     professions: [
     ],
     unesco: [],
-    image: "../assets/heritage-cuisine.jpg",
+    image: "../images/culture/heritage/cuisine.jpg",
   },
   {
     id: "crafts",
@@ -37,7 +37,7 @@ window.DM_HERITAGE = [
     ],
     professions: [],
     unesco: [],
-    image: "../assets/heritage-crafts.jpg",
+    image: "../images/culture/heritage/crafts.jpg",
   },
   {
     id: "arts",
@@ -54,7 +54,7 @@ window.DM_HERITAGE = [
     ],
     professions: [],
     unesco: [],
-    image: "../assets/heritage-arts.jpg",
+    image: "../images/culture/heritage/arts.jpg",
   },
   {
     id: "customs",
@@ -74,7 +74,7 @@ window.DM_HERITAGE = [
     ],
     professions: [],
     unesco: [],
-    image: "../assets/heritage-customs.jpg",
+    image: "../images/culture/heritage/customs.jpg",
   },
   {
     id: "oral",
@@ -93,7 +93,7 @@ window.DM_HERITAGE = [
     ],
     professions: [],
     unesco: [],
-    image: "../assets/heritage-oral.jpg",
+    image: "../images/culture/heritage/oral.jpg",
   },
   {
     id: "knowledge",
@@ -111,6 +111,6 @@ window.DM_HERITAGE = [
     ],
     professions: [],
     unesco: [],
-    image: "../assets/heritage-knowledge.jpg",
+    image: "../images/culture/heritage/knowledge.jpg",
   },
 ];

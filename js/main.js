@@ -104,7 +104,7 @@
     return { el, w: el.width, h: el.height, isVideo: false };
   }
 
-  const ASSETS = cfg.assets || "assets";
+  const ASSETS = cfg.assets || "../images/culture/gates";
   const MEDIA_EXT = [
     ["image", "jpg"],
     ["image", "jpeg"],

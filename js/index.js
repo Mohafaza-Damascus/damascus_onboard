@@ -74,7 +74,7 @@
       area: "30 كم²",
       type: "سكني / صناعي وتاريخي",
       desc: "يضم المناطق الشمالية الشرقية لدمشق، ويشمل برزة والقابون وجوبر.",
-      img: "images/areas/berze.jpg",
+      img: "images/home/areas/berze.jpg",
     },
     "sector-2": {
       name: "قطاع 2",
@@ -83,7 +83,7 @@
       area: "32 كم²",
       type: "سكني / ثقافي وتجاري",
       desc: "يمتد على سفح جبل قاسيون ويضم أحياء عريقة ومعالم ثقافية ودبلوماسية.",
-      img: "images/areas/salihiye.jpg",
+      img: "images/home/areas/salihiye.jpg",
     },
     "sector-3": {
       name: "قطاع 3",
@@ -92,7 +92,7 @@
       area: "16 كم²",
       type: "تاريخي / تراثي ومركزي",
       desc: "قلب دمشق التاريخي والتراثي، ويضم المدينة القديمة والشاغور والقنوات.",
-      img: "images/areas/olddam.jpg",
+      img: "images/home/areas/olddam.jpg",
     },
     "sector-4": {
       name: "قطاع 4",
@@ -101,7 +101,7 @@
       area: "25 كم²",
       type: "سكني / تجاري وصناعي",
       desc: "يمتد في جنوب دمشق ويجمع بين الأسواق العريقة والمناطق السكنية والصناعية.",
-      img: "images/areas/midan.jpg",
+      img: "images/home/areas/midan.jpg",
     },
     "sector-5": {
       name: "قطاع 5",
@@ -110,7 +110,7 @@
       area: "34 كم²",
       type: "سكني / إداري وحديث",
       desc: "يغطي الجهة الجنوبية الغربية ويضم مؤسسات حكومية ومجمعات سكنية وتجارية حديثة.",
-      img: "images/areas/mazza.jpg",
+      img: "images/home/areas/mazza.jpg",
     },
     "sector-6": {
       name: "قطاع 6",
@@ -119,7 +119,7 @@
       area: "18 كم²",
       type: "سكني / ضواحٍ حديثة",
       desc: "يمثل التوسع الغربي لدمشق ويشتهر بالمساحات الخضراء والطبيعة الجبلية.",
-      img: "images/areas/dummar.jpg",
+      img: "images/home/areas/dummar.jpg",
     },
   };
 
@@ -246,13 +246,13 @@
   newsGrid.innerHTML = latestSix
     .map((item) => {
       const tag = typeConfig[item.type] || typeConfig.news;
-      const imgSrc = (item.image || "images/Damascus.png").replace(/^\.\.\//, "");
+      const imgSrc = (item.image || "images/news/placeholder.png").replace(/^\.\.\//, "");
       const excerpt = item.desc || item.body || "";
 
       return `
         <a href="pages/news-details.html?id=${encodeURIComponent(item.id)}" class="news-card">
           <figure class="news-card__img">
-            <img src="${imgSrc}" alt="${item.title}" loading="lazy" onerror="this.src='images/Damascus.png'" />
+            <img src="${imgSrc}" alt="${item.title}" loading="lazy" onerror="this.src='images/news/placeholder.png'" />
           </figure>
           <div class="news-card__body">
             <div class="news-card__top">

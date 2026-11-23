@@ -2,7 +2,7 @@ window.InvOpportunities = (function () {
   "use strict";
 
   const BRIEFS_DIR = "../assets/docs/investments/";
-  const IMAGES_DIR = "../images/";
+  const IMAGES_DIR = "../images/investments/";
 
   const categories = {
     tourism: { label: "سياحة وفنادق", icon: "fa-hotel" },

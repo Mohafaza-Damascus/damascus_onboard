@@ -40,7 +40,8 @@ css/                     الأنماط (global.css مشترك)
 js/                      السكربتات (global.js مشترك) وملفات البيانات الأولية
   i18n/                  قواميس الترجمة (ملفات مولّدة، لا تُعدّل يدوياً)
   vendor/                مكتبات خارجية
-images/, assets/         الصور والخطوط والفيديو وملفات PDF
+images/                  كل صور الموقع (انظر «الصور» أدناه)
+assets/                  الخطوط والفيديو وملفات PDF
 dalil/                   دليل دمشق (تطبيق Next.js مبني مسبقاً)
 netlify/functions/       الواجهة البرمجية (api.mjs)
 tools/                   أدوات سحب البيانات والترجمة
@@ -144,17 +145,20 @@ npm run i18n:build     # بناء js/i18n/*.js و css/ltr.css
 | رابط دليل دمشق | `js/global.js` ← `guideHref` |
 | الفوتر وروابط التواصل الاجتماعي | `js/global.js` ← `renderFooter`؛ الروابط مكررة في `news-enas.html` (`follow-link`) و`contact.html` (`contact-social-btn`) |
 | لون الخلفية وشفافية النقش | `css/global.css` ← `--page-bg` و`body::before`؛ ولوحة التحكم في `css/dashboards.css` |
-| أسئلة المساعد الذكي | `js/ai-chat.js` ← `KB` |
+| المساعد الذكي | `js/ai-chat.js`: يقرأ الخدمات من `services-list.js` ويشرحها مع رابطها؛ الأسئلة العامة في `KB` |
 | خادم دليل دمشق | `_redirects` و`server.js` ← `DALIL_API` |
 | قطاعات الاستثمار وحالات الحقائب | `js/opportunities-data.js` ← `categories` و`statusLabels` |
+| خريطة قطاعات دمشق (الرئيسية والاستثمارات) | `js/damascus-map.js`؛ أي `<svg data-damascus-map>` يُرسم تلقائياً |
+| رابط الخريطة التفاعلية للتراخيص الموسمية | `pages/Investments.html` ← `.inv-lmap` |
+| الصفحة المضمّنة آخر صفحة الاستثمارات | `pages/Investments.html` ← `src` في `.inv-embed iframe` (فارغ = القسم مخفي) |
 | مديريات المحافظة (حقل إلزامي للخدمة) | `js/dashboard.js` ← `GOVERNORATE_DIRECTORATES` |
 | تصنيفات الخدمات الإلكترونية | ثلاثة مواضع يجب أن تتطابق: `js/dashboard.js` ← `DIRECTORATES`، و`js/electronic-services.js` ← `getCategory`، وأزرار `data-filter` في `pages/electronic-services.html` |
 | تصنيفات الفعاليات | `js/dashboard.js` ← `EVENT_TYPES` و`js/calendar.js` ← `TYPES` |
 | الصور الافتراضية للخدمات | `netlify/functions/api.mjs` ← `SERVICE_IMAGES` و`SERVICE_GROUP_IMAGES` |
-| صور «استكشف أحياء دمشق» | `js/index.js` ← `data[].img`، والملفات في `images/areas/` (840×880) |
+| صور «استكشف أحياء دمشق» | `js/index.js` ← `data[].img`، والملفات في `images/home/areas/` (840×880) |
 | أسماء «كانوا ينادونها» | `pages/Cultural-model-5.html` ← `dm-tunnel__card`؛ التوقيت في `js/Cultural-model-5.js` ← `DURATION` و`NUDGE` |
 | حقب «دمشق عبر العصور» | `js/Cultural-model-5.js` ← `data`، وتفاصيل الحقبة في `js/eras-data.js` (نفس `id`) |
-| أبواب دمشق | الصور في `assets/gates/` والنصوص و`gateBox` في `js/slides.js` |
+| أبواب دمشق | الصور في `images/culture/gates/` والنصوص و`gateBox` في `js/slides.js` |
 | كتاب «قالوا عنها» | `js/quotes-data.js`، والتقليب في `js/quotes-book.js` ← `TICK` |
 | معرض صور المعلم | `js/landmark.js` ← `AUTO` |
 
@@ -178,6 +182,25 @@ npx next build
 ثم يُستبدل محتوى `dalil/` بمجلد `out`. البناء الحالي يتضمن تعديلات على المصدر (`output: "export"`، طبقة `static-api.ts`، إظهار الحدود الإدارية حتى zoom 12.8، زر العودة للرئيسية، تسميات دوائر الخدمات)، ويجب إعادة تطبيقها عند البناء من مصدر جديد.
 
 يتحقق التطبيق عند التشغيل من `/dalil/api/health/` (مهلة 4 ثوانٍ). إن لم يستجب الخادم يعمل من البيانات الثابتة في `dalil/api-static/` بوظائف محدودة: الحدود الإدارية والشوارع وخطوط النقل والمعالم الثابتة، دون قاعدة الأماكن الكاملة الموجودة على الخادم فقط.
+
+## الصور
+
+كل الصور داخل `images/` بأسماء صغيرة مفصولة بشرطة (`kebab-case`):
+
+```
+images/
+  brand/        الشعار والختم
+  ui/           النقش، الأيقونات، أيقونات التواصل
+  home/         صور الرئيسية (areas/ لقطاعات الخريطة)
+  news/         صور الأخبار <التاريخ>-<الرقم>.jpg
+  culture/      eras/ history/ heritage/ landmarks/ gates/
+  services/     صور الخدمات
+  investments/  صور الحقائب الاستثمارية (تُكتب في البيانات باسم الملف فقط)
+  uploads/      ما يُرفع من لوحة التحكم
+  unused/       صور غير مستخدمة في الكود، للمراجعة والحذف
+```
+
+نُقلت الصور من المسارات القديمة بالسكربت `npm run images:organize` (يقرأ `tools/images/rename-map.json`، ويُشغَّل مرة واحدة؛ `-- --dry-run` للتجربة).
 
 ## ملاحظات
 

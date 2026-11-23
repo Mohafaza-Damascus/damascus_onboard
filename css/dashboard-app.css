@@ -116,11 +116,6 @@ button.icon-btn {
 .dash-toast.is-error {
   background: var(--red);
 }
-
-.item--plain {
-  grid-template-columns: 1fr auto;
-  padding: 18px 22px;
-}
 .item-img--icon {
   display: grid;
   place-items: center;
@@ -347,9 +342,6 @@ select.input {
   }
   .pair .input:first-child {
     grid-column: 1 / -1;
-  }
-  .item--plain {
-    grid-template-columns: 1fr;
   }
   .types {
     flex-wrap: wrap;

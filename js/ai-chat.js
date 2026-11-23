@@ -1,6 +1,10 @@
 (function () {
   if (document.getElementById("ai-chat-btn")) return;
 
+  const ROOT = new URL("../", document.currentScript.src).href;
+  const english = Boolean(window.I18N && window.I18N.lang === "en");
+  const tr = (text) => (english && window.I18N ? window.I18N.t(text) : text);
+
   document.body.insertAdjacentHTML(
     "beforeend",
     `
@@ -25,10 +29,11 @@
 
   <div id="chat-chips">
     <span class="chip" data-q="ما هي خدماتكم؟">خدماتنا</span>
-    <span class="chip" data-q="كيف أتقدم بطلب رخصة؟">المهن والرخص</span>
-    <span class="chip" data-q="كيف أقدم شكوى؟">الشكاوى</span>
-    <span class="chip" data-q="ما هو الدفع الإلكتروني؟">الدفع</span>
-    <span class="chip" data-q="عن الشؤون المالية؟">الشؤون المالية</span>
+    <span class="chip" data-q="طلب ترخيص مهنة جديدة">ترخيص مهنة</span>
+    <span class="chip" data-q="تصريح حفر">تصريح حفر</span>
+    <span class="chip" data-q="براءة ذمة">براءة ذمة</span>
+    <span class="chip" data-q="قيد عقاري">قيد عقاري</span>
+    <span class="chip" data-q="تقديم شكوى">الشكاوى</span>
   </div>
 
   <div id="chat-messages"></div>
@@ -42,66 +47,347 @@
 </div>`,
   );
 
+  /* ---------- قاعدة بيانات الخدمات ---------- */
+
+  let servicesReady = null;
+
+  function loadScript(src) {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = resolve;
+      document.head.appendChild(script);
+    });
+  }
+
+  // بيانات الخدمات نفسها التي تديرها لوحة التحكم (تُحمّل عند الحاجة فقط)
+  function ensureServices() {
+    if (!servicesReady) {
+      servicesReady = (async () => {
+        if (!Array.isArray(window.DAMASCUS_SERVICES)) await loadScript(`${ROOT}pages/services-form/services-list.js`);
+        buildIndex(window.DAMASCUS_SERVICES || []);
+      })();
+    }
+    return servicesReady;
+  }
+
+  const STOP = new Set(
+    (
+      "بدي بدنا ابي ابغي اريد نريد اود بدك كيف شلون شو ايش ماذا ما ماهي هي هو هل متي وين اين عن حول بخصوص من في " +
+      "علي الي لي انا نحن لو سمحت ممكن رجاء اعرف عرفني اشرح شرح معلومات تفاصيل عندي عنا خدمه خدمات خدماتكم الخدمه " +
+      "اطلع طلع احصل الحصول اعمل اسوي كيفيه طريقه اقدم تقديم مع او و يا مرحبا اهلا السلام عليكم الو اللي التي الذي " +
+      "دمشق محافظه المحافظه بوابه البوابه"
+    ).split(" "),
+  );
+
+  function normalize(text) {
+    return String(text || "")
+      .toLowerCase()
+      .replace(/[ً-ٰٟـ]/g, "")
+      .replace(/[أإآٱ]/g, "ا")
+      .replace(/ة/g, "ه")
+      .replace(/ى/g, "ي")
+      .replace(/ؤ/g, "و")
+      .replace(/ئ/g, "ي")
+      .replace(/[٠-٩]/g, (d) => "٠١٢٣٤٥٦٧٨٩".indexOf(d))
+      .replace(/[^\p{L}\p{N}]+/gu, " ")
+      .trim();
+  }
+
+  // توحيد صيغ الكلمات الشائعة (مفرد/جمع/عامية) لجذر واحد
+  const ROOTS = [
+    [/^(ت?رخيص|تراخيص|رخص(ه|تي|ات)?)$/, "رخص"],
+    [/^([باني]?جدد|تجديد)$/, "تجديد"],
+    [/^(تصاريح|تصريح(ات)?)$/, "تصريح"],
+    [/^(شكو(ي|اي)|شكاوي)$/, "شكوي"],
+    [/^(مهن(ه|ي|تي)?)$/, "مهنه"],
+    [/^(الغاء|[با]?لغي)$/, "الغاء"],
+  ];
+
+  function stem(word) {
+    const m = word.match(/^(وال|بال|فال|كال|لل|ال)(.{3,})$/);
+    const base = m ? m[2] : word;
+    const root = ROOTS.find(([re]) => re.test(base));
+    return root ? root[1] : base;
+  }
+
+  function tokenize(text, keepStop = false) {
+    return normalize(text)
+      .split(" ")
+      .filter(Boolean)
+      .map(stem)
+      .filter((w) => w.length > 1 && (keepStop || !STOP.has(w)));
+  }
+
+  const same = (a, b) =>
+    a === b || (Math.min(a.length, b.length) >= 3 && Math.abs(a.length - b.length) <= 2 && (a.startsWith(b) || b.startsWith(a)));
+
+  const has = (tokens, word) => tokens.some((t) => same(t, word));
+
+  let INDEX = [];
+  let CATEGORIES = [];
+
+  function field(service, key) {
+    return (english && service[`${key}_en`]) || service[key] || "";
+  }
+
+  function categoryOf(service) {
+    return String(
+      service.requestPlace === "إلكتروني" ? service.electronicDirectorate : service.address || service.directorate,
+    ).trim();
+  }
+
+  function buildIndex(services) {
+    INDEX = services.map((service) => ({
+      service,
+      name: tokenize(service.name),
+      body: tokenize(`${service.description} ${categoryOf(service)}`),
+      fullName: normalize(service.name),
+    }));
+
+    const groups = new Map();
+    INDEX.forEach((entry) => {
+      const key = categoryOf(entry.service);
+      if (!key) return;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(entry.service);
+    });
+    CATEGORIES = Array.from(groups, ([name, items]) => ({
+      name,
+      tokens: tokenize(name).filter((t) => t !== "مديريه"),
+      items,
+    }));
+  }
+
+  function idf(word) {
+    const df = INDEX.filter((e) => has(e.name, word) || has(e.body, word)).length;
+    return df ? Math.log(1 + INDEX.length / df) : 0;
+  }
+
+  function rankServices(tokens, rawQuery) {
+    const weights = tokens.map(idf);
+    const query = normalize(rawQuery);
+
+    return INDEX.map((entry) => {
+      let score = 0;
+      let nameHits = 0;
+      tokens.forEach((t, i) => {
+        if (has(entry.name, t)) {
+          score += 3 * weights[i];
+          nameHits++;
+        } else if (has(entry.body, t)) {
+          score += weights[i];
+        }
+      });
+      if (entry.fullName.length > 4 && query.includes(entry.fullName)) score += 6;
+      // تفضيل الخدمة التي تغطي أسماؤها كلمات السؤال بأكبر نسبة
+      score *= 0.6 + 0.4 * (nameHits / Math.max(entry.name.length, 1));
+      return { service: entry.service, score, nameHits };
+    })
+      .filter((r) => r.score > 0)
+      .sort((a, b) => b.score - a.score);
+  }
+
+  /* ---------- صياغة الإجابات ---------- */
+
+  const countAr = (n) => (n === 1 ? "خدمة واحدة" : n === 2 ? "خدمتان" : n <= 10 ? `${n} خدمات` : `${n} خدمة`);
+
+  const L = english
+    ? {
+        how: "How to apply",
+        online: "Online, through the governorate portal",
+        inPerson: "In person",
+        papers: "Required documents",
+        fees: "Fees",
+        steps: "Steps",
+        more: "and more steps in the full guide",
+        start: "Start the service now",
+        guide: "Full service guide",
+        soon: "The online link for this service is coming soon.",
+        related: "Related services",
+        pick: "I found several services that match your request. Which one do you mean?",
+        explain: "Explain",
+        open: "Open",
+        catIntro: (name, n) => `**${name}**: ${n} services. Here are some of them:`,
+        all: "All e-services",
+        allPhysical: "Transactions guide",
+        overview: (n) => `The portal offers **${n} services**, grouped as follows:`,
+        overviewEnd: "Write the name of the service you need and I will explain it and send you its link.",
+      }
+    : {
+        how: "طريقة التقديم",
+        online: "إلكترونياً عبر بوابة المحافظة",
+        inPerson: "حضورياً",
+        papers: "الأوراق المطلوبة",
+        fees: "الرسوم",
+        steps: "الخطوات",
+        more: "وخطوات أخرى في الدليل الكامل",
+        start: "ابدأ الخدمة الآن",
+        guide: "دليل الخدمة الكامل",
+        soon: "رابط التقديم الإلكتروني لهذه الخدمة سيتوفر قريباً.",
+        related: "خدمات قريبة",
+        pick: "وجدت أكثر من خدمة تناسب طلبك، أيها تقصد؟",
+        explain: "اشرح",
+        open: "فتح",
+        catIntro: (name, n) => `**${name}**: ${countAr(n)}، منها:`,
+        all: "جميع الخدمات الإلكترونية",
+        allPhysical: "دليل المعاملات",
+        overview: (n) => `تقدّم البوابة **${countAr(n)}** موزعة على الأقسام التالية:`,
+        overviewEnd: "اكتب اسم الخدمة التي تحتاجها وسأشرحها لك وأرسل لك رابطها.",
+      };
+
+  const esc = (text) =>
+    String(text ?? "").replace(
+      /[&<>"']/g,
+      (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c],
+    );
+
+  const lines = (text) =>
+    String(text || "")
+      .split("\n")
+      .map((l) => l.replace(/^\s*[\d٠-٩]+\s*[-.)]\s*/, "").trim())
+      .filter((l) => l && l !== "لا يوجد");
+
+  const isOnline = (service) => service.requestPlace === "إلكتروني";
+
+  function guideUrl(service) {
+    const id = encodeURIComponent(service.id);
+    return isOnline(service)
+      ? `${ROOT}pages/electronic-service-guide.html?id=${id}`
+      : `${ROOT}pages/services_details/guide-details.html?id=${id}`;
+  }
+
+  const link = (href, label, external) =>
+    `<a class="chat-link${external ? " chat-link--primary" : ""}" href="${esc(href)}"${
+      external ? ' target="_blank" rel="noopener"' : ""
+    }>${esc(label)}</a>`;
+
+  const askButton = (service) =>
+    `<button type="button" class="chat-ask" data-q="${esc(service.name)}">${esc(field(service, "name"))}</button>`;
+
+  function serviceAnswer(service, related) {
+    const papers = lines(field(service, "papers"));
+    const steps = lines(field(service, "stages"));
+    const place = isOnline(service)
+      ? L.online
+      : `${L.inPerson}${service.physicalPlace || service.address ? `: ${esc(field(service, "physicalPlace") || field(service, "address"))}` : ""}`;
+
+    let html = `<strong class="chat-title">${esc(field(service, "name"))}</strong>`;
+    if (field(service, "description")) html += `<p>${esc(field(service, "description"))}</p>`;
+    html += `<p><strong>${L.how}:</strong> ${place}</p>`;
+    if (papers.length) html += `<p><strong>${L.papers}:</strong></p><ul>${papers.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>`;
+    if (field(service, "fees")) html += `<p><strong>${L.fees}:</strong> ${esc(field(service, "fees"))}</p>`;
+    if (steps.length) {
+      html += `<p><strong>${L.steps}:</strong></p><ol>${steps
+        .slice(0, 5)
+        .map((s) => `<li>${esc(s)}</li>`)
+        .join("")}</ol>`;
+      if (steps.length > 5) html += `<p class="chat-muted">${L.more}</p>`;
+    }
+
+    html += `<div class="chat-actions">`;
+    if (isOnline(service) && service.serviceUrl) html += link(service.serviceUrl, L.start, true);
+    html += link(guideUrl(service), L.guide);
+    html += `</div>`;
+    if (isOnline(service) && !service.serviceUrl) html += `<p class="chat-muted">${L.soon}</p>`;
+
+    if (related.length)
+      html += `<p class="chat-muted">${L.related}:</p><div class="chat-options">${related.map(askButton).join("")}</div>`;
+    return html;
+  }
+
+  function optionsAnswer(intro, services, footer = "") {
+    return `<p>${intro}</p><div class="chat-options">${services.map(askButton).join("")}</div>${footer}`;
+  }
+
+  function categoryAnswer(category) {
+    const online = category.items.some(isOnline);
+    const footer = `<div class="chat-actions">${link(
+      `${ROOT}pages/${online ? "electronic-services.html" : "services_details/transactions-guide.html"}`,
+      online ? L.all : L.allPhysical,
+    )}</div>`;
+    return optionsAnswer(
+      formatText(esc(L.catIntro(tr(category.name), category.items.length))),
+      category.items.slice(0, 6),
+      footer,
+    );
+  }
+
+  function overviewAnswer() {
+    const list = CATEGORIES.slice()
+      .sort((a, b) => b.items.length - a.items.length)
+      .map((c) => `<li>${esc(tr(c.name))} (${c.items.length})</li>`)
+      .join("");
+    return `<p>${formatText(esc(L.overview(INDEX.length)))}</p><ul>${list}</ul><p>${L.overviewEnd}</p><div class="chat-actions">${link(
+      `${ROOT}pages/electronic-services.html`,
+      L.all,
+    )}${link(`${ROOT}pages/services_details/transactions-guide.html`, L.allPhysical)}</div>`;
+  }
+
+  /* ---------- أسئلة عامة ---------- */
+
   const KB = [
     {
-      keywords: ["خدمات", "تقدم", "ماذا", "ما هي", "عن الموقع", "تعرف", "نبذة"],
-      answer: `مرحباً! 👋 تقدم البوابة مجموعة من الخدمات الإلكترونية الحكومية، تشمل:\n\n• **الشؤون المالية** – إدارة المدفوعات والرسوم\n• **التنظيم والتخطيط العمراني** – تراخيص البناء والتخطيط\n• **المهن والرخص** – استخراج وتجديد التراخيص المهنية\n• **الشكاوى** – تقديم وتتبع الشكاوى\n• **الخدمات الخارجية** – خدمات متنوعة للمتعاملين الخارجيين\n• **الدفع الإلكتروني** – سداد الرسوم بأمان\n• **المرسوم 66** – خدمات مرتبطة بالمرسوم التنظيمي رقم 66\n• **السجل المؤقت** – تسجيل مؤقت للمنشآت والأنشطة\n• **تصريح فعالية** – استخراج تصاريح إقامة الفعاليات\n\nهل تريد التفاصيل عن خدمة بعينها؟`,
+      keywords: ["ساعات", "دوام", "اوقات", "hour", "time", "open"],
+      answer: `🕐 **أوقات الخدمة**\n\nالبوابة الإلكترونية متاحة **24 ساعة / 7 أيام** طوال الأسبوع.\n\nأما الدعم البشري فيعمل خلال:\n• الأحد – الخميس: 8 صباحاً – 3 مساءً`,
     },
     {
-      keywords: ["مالية", "شؤون مالية", "رسوم", "مدفوعات"],
-      answer: `💰 **الشؤون المالية**\n\nتتيح لك هذه الخدمة:\n• الاطلاع على الرسوم والمستحقات المالية\n• سداد الفواتير الحكومية\n• الاستعلام عن حالة الدفعات\n• طباعة الإيصالات والفواتير\n\nيمكنك الوصول إلى هذه الخدمة مباشرةً من لوحة الخدمات الرئيسية. هل تحتاج مساعدة إضافية؟`,
+      keywords: ["حساب", "كلمه مرور", "كلمه السر", "تسجيل دخول", "تسجيل الدخول", "login", "account", "password"],
+      answer: `🔐 **تسجيل الدخول والحساب**\n\n1. اضغط "تسجيل الدخول" في أعلى الصفحة\n2. أدخل اسم المستخدم وكلمة المرور\n3. أو سجّل حساباً جديداً إن كنت تزور البوابة لأول مرة`,
     },
     {
-      keywords: ["تخطيط", "عمراني", "تنظيم", "بناء"],
-      answer: `🏙️ **التنظيم والتخطيط العمراني**\n\nتشمل هذه الخدمة:\n• طلبات تراخيص البناء والهدم\n• الاستعلام عن مخططات التنظيم\n• اعتماد المخططات الهندسية\n• متابعة طلبات التخطيط العمراني\n\nيرجى تجهيز المستندات اللازمة (الهوية، عقد الملكية، المخططات) عند تقديم طلبك.`,
-    },
-    {
-      keywords: ["رخصة", "ترخيص", "مهن", "رخص", "تجديد رخصة", "مهنة"],
-      answer: `📄 **المهن والرخص**\n\nمن خلال هذه الخدمة يمكنك:\n• تقديم طلب استخراج رخصة مهنية جديدة\n• تجديد رخصة قائمة\n• الاستعلام عن حالة الطلب\n• دفع رسوم الترخيص إلكترونياً\n\n**الخطوات:**\n1. تسجيل الدخول بحساب المتعامل\n2. اختيار "المهن والرخص"\n3. تعبئة النموذج ورفع المستندات\n4. سداد الرسوم والمتابعة\n\nهل لديك استفسار محدد؟`,
-    },
-    {
-      keywords: ["شكوى", "شكاوى", "تقديم شكوى", "بلاغ"],
-      answer: `📋 **الشكاوى والبلاغات**\n\nيتيح نظام الشكاوى:\n• تقديم شكوى جديدة بسهولة\n• متابعة حالة الشكوى المقدمة\n• تلقّي إشعارات بآخر المستجدات\n• إرفاق المستندات والصور الداعمة\n\n**للتقديم:** اضغط على خدمة "الشكاوى" من الصفحة الرئيسية، أدخل بياناتك واشرح مشكلتك بالتفصيل.\n\nملاحظة: سيتم الرد خلال 5–7 أيام عمل.`,
-    },
-    {
-      keywords: ["دفع", "الدفع الإلكتروني", "بطاقة", "سداد", "فاتورة"],
-      answer: `💳 **الدفع الإلكتروني**\n\nنوفر بيئة دفع آمنة تدعم:\n• **بطاقات الائتمان والخصم** (Visa / MasterCard)\n• **التحويل البنكي** المباشر\n• **محافظ الدفع الإلكتروني**\n\nجميع المعاملات مشفّرة ومؤمّنة. يمكنك طباعة الإيصال فور اكتمال الدفع.\n\nهل تواجه مشكلة في عملية الدفع؟`,
-    },
-    {
-      keywords: ["مرسوم", "66", "مرسوم 66"],
-      answer: `📜 **المرسوم 66**\n\nيُنظّم هذا المرسوم عدداً من الأنشطة والمنشآت. تتيح لك الخدمة:\n• الاطلاع على نص المرسوم ولوائحه التنفيذية\n• تقديم طلبات مرتبطة بالمرسوم\n• الاستعلام عن الامتثال والاشتراطات\n• تسجيل المنشأة وفق أحكام المرسوم\n\nللمزيد من التفاصيل يُرجى التواصل مع الجهة المختصة أو زيارة الخدمة مباشرةً.`,
-    },
-    {
-      keywords: ["سجل", "مؤقت", "السجل المؤقت", "تسجيل مؤقت"],
-      answer: `🗂️ **السجل المؤقت**\n\nيُتيح لك هذا السجل:\n• تسجيل منشأة أو نشاط تجاري بصورة مؤقتة ريثما تكتمل الإجراءات الرسمية\n• الحصول على رقم سجل للتعامل مع الجهات الأخرى\n• تحديث البيانات وإكمال التسجيل الدائم لاحقاً\n\nمدة السجل المؤقت قابلة للتمديد وفق اللوائح المعمول بها.`,
-    },
-    {
-      keywords: ["فعالية", "تصريح", "حفل", "مناسبة", "مهرجان", "ترخيص فعالية"],
-      answer: `🎪 **تصريح فعالية**\n\nهل تخطط لإقامة فعالية؟ الخدمة تتيح لك:\n• تقديم طلب تصريح لإقامة فعاليات عامة أو خاصة\n• تحديد تفاصيل الفعالية (النوع، الموقع، المدة)\n• رفع الوثائق الداعمة (تأمين، خطط الأمن، وغيرها)\n• استلام التصريح إلكترونياً عند الموافقة\n\nيُنصح بتقديم الطلب قبل موعد الفعالية بـ 14 يوم عمل على الأقل.`,
-    },
-    {
-      keywords: ["خارجية", "خدمات خارجية"],
-      answer: `🌐 **الخدمات الخارجية**\n\nتشمل هذه الخدمة:\n• التعامل مع الجهات والشركاء الخارجيين\n• خدمات للمقيمين والزوار من خارج النطاق المحلي\n• ربط الإجراءات مع جهات حكومية أخرى\n\nيُرجى تجهيز الوثائق اللازمة وتسجيل الدخول للاستفادة من هذه الخدمات.`,
-    },
-    {
-      keywords: ["ساعات", "وقت", "دوام", "متاح", "عمل"],
-      answer: `🕐 **أوقات الخدمة**\n\nالبوابة الإلكترونية متاحة **24 ساعة / 7 أيام** طوال الأسبوع.\n\nأما الدعم البشري فيعمل خلال:\n• الأحد – الخميس: 8 صباحاً – 3 مساءً\n\nللطوارئ تواصل عبر البريد الإلكتروني أو الخط الساخن.`,
-    },
-    {
-      keywords: ["تسجيل", "حساب", "اشتراك", "دخول", "كلمة مرور"],
-      answer: `🔐 **تسجيل الدخول والحساب**\n\nللاستفادة من الخدمات:\n1. اضغط "تسجيل الدخول" في أعلى الصفحة\n2. أدخل اسم المستخدم وكلمة المرور\n3. أو سجّل حساباً جديداً إن كنت تزور البوابة لأول مرة\n\nإذا نسيت كلمة المرور، استخدم خيار "نسيت كلمة المرور" وسيصلك رمز التحقق على الجوال.`,
-    },
-    {
-      keywords: ["شكرا", "شكراً", "ممتاز", "رائع", "جيد", "حسنا", "حسناً"],
+      keywords: ["شكرا", "ممتاز", "رائع", "يعطيك العافيه", "thank", "great"],
       answer: `😊 على الرحب والسعة! يسعدنا خدمتك دائماً.\nإذا كان لديك أي استفسار آخر فلا تتردد في السؤال. 🌟`,
     },
     {
-      keywords: ["مرحبا", "مرحباً", "السلام", "اهلا", "أهلاً", "هلا", "هاي", "hi", "hello"],
-      answer: `أهلاً وسهلاً! 👋 أنا مساعد البوابة الذكي.\nيمكنني مساعدتك في:\n• التعرف على خدمات البوابة\n• الإرشاد لكيفية تقديم الطلبات\n• الإجابة على أسئلتك حول الرسوم والإجراءات\n\nما الذي يمكنني مساعدتك به اليوم؟`,
+      keywords: ["مرحبا", "السلام", "اهلا", "هلا", "مساء الخير", "صباح الخير", "hi", "hello", "hey"],
+      answer: `أهلاً وسهلاً! 👋 أنا مساعد البوابة الذكي.\nاكتب اسم الخدمة التي تحتاجها، وسأشرح لك أوراقها ورسومها وخطواتها وأرسل لك رابط التقديم.`,
     },
   ];
 
-  const FALLBACK = `شكراً على سؤالك 🙏\nلم أتمكن من فهم استفساركم بشكل كامل، لكن يمكنني مساعدتك في الخدمات التالية:\n\n• المهن والرخص\n• الشكاوى\n• الدفع الإلكتروني\n• التنظيم العمراني\n• المرسوم 66\n• تصريح فعالية\n\nيُرجى إعادة صياغة سؤالك أو اختيار إحدى الخدمات أعلاه.`;
+  const FALLBACK = `لم أجد خدمة تطابق سؤالك تماماً 🙏\nجرّب كتابة اسم الخدمة أو كلمة مفتاحية منها، مثل: **ترخيص مهنة**، **تصريح حفر**، **قيد عقاري**، **براءة ذمة**.`;
+
+  function matchKB(query) {
+    const q = ` ${normalize(query)} `;
+    const entry = KB.find((e) => e.keywords.some((kw) => q.includes(` ${normalize(kw)}`)));
+    return entry ? formatText(translateLines(entry.answer)) : null;
+  }
+
+  async function getBotAnswer(query) {
+    await ensureServices();
+    const tokens = tokenize(query);
+
+    if (!tokens.length) {
+      if (/خدم|service/i.test(normalize(query)) && INDEX.length) return overviewAnswer();
+      return matchKB(query) || formatText(translateLines(FALLBACK));
+    }
+
+    const ranked = rankServices(tokens, query);
+    const [best, second] = ranked;
+
+    // سؤال عن قسم كامل (مثل: المالية، السجل المؤقت، الطاقة الشمسية) ما لم يطابق اسم خدمة بعينها
+    const category = CATEGORIES.find((c) => tokens.every((t) => has(c.tokens, t)));
+    const serviceCovers = best && best.nameHits === tokens.length;
+    if (category && !serviceCovers)
+      return category.items.length === 1 ? serviceAnswer(category.items[0], []) : categoryAnswer(category);
+
+    if (best && best.score >= 2.5) {
+      if (!second || best.score >= 1.3 * second.score) {
+        const related = ranked
+          .slice(1, 4)
+          .filter((r) => r.score >= best.score * 0.45)
+          .map((r) => r.service);
+        return serviceAnswer(best.service, related);
+      }
+      const close = ranked.filter((r) => r.score >= best.score * 0.6).slice(0, 6);
+      return optionsAnswer(L.pick, close.map((r) => r.service));
+    }
+
+    return matchKB(query) || formatText(translateLines(FALLBACK));
+  }
+
+  /* ---------- واجهة المحادثة ---------- */
 
   const btn = document.getElementById("ai-chat-btn");
   const panel = document.getElementById("ai-chat-panel");
@@ -115,43 +401,19 @@
   let isOpen = false;
   let isTyping = false;
 
-  const english = Boolean(window.I18N && window.I18N.lang === "en");
-
-  const EN_KEYWORDS = [
-    ["service", "about", "what do you", "offer"],
-    ["financ", "fee", "payment due"],
-    ["planning", "urban", "zoning", "building"],
-    ["licen", "profession", "permit renewal"],
-    ["complain", "report"],
-    ["pay", "card", "bill", "invoice"],
-    ["decree", "66"],
-    ["temporary", "register"],
-    ["event", "festival", "party"],
-    ["external"],
-    ["hour", "time", "open", "working"],
-    ["sign in", "login", "log in", "account", "password", "sign up"],
-    ["thank", "great", "good", "ok"],
-    ["hello", "hi", "hey", "welcome"],
-  ];
-  if (english)
-    KB.forEach((entry, i) => {
-      entry.keywords = entry.keywords.concat(EN_KEYWORDS[i] || []);
-    });
-
   function translateLines(text) {
     if (!english) return text;
     return text
       .split("\n")
       .map((line) => {
-        const m = line.match(/^(\s*•\s+)?(.*)$/);
+        const m = line.match(/^(\s*(?:•|\d+\.)\s+)?(.*)$/);
         return (m[1] || "") + window.I18N.t(m[2]);
       })
       .join("\n");
   }
 
   function getTime() {
-    const d = new Date();
-    return d.toLocaleTimeString(english ? "en-GB" : "ar-SA", { hour: "2-digit", minute: "2-digit" });
+    return new Date().toLocaleTimeString(english ? "en-GB" : "ar-SY-u-nu-latn", { hour: "2-digit", minute: "2-digit" });
   }
 
   function scrollToBottom() {
@@ -160,25 +422,12 @@
     }, 50);
   }
 
-  function appendTimestamp() {
-    const t = document.createElement("div");
-    t.className = "msg-time";
-    t.textContent = getTime();
-    messagesEl.appendChild(t);
-  }
-
   function formatText(text) {
     return text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>").replace(/\n/g, "<br>");
   }
 
-  function escapeHtml(text) {
-    return text.replace(
-      /[&<>"']/g,
-      (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c],
-    );
-  }
-
-  function addMessage(text, sender) {
+  // html: نص منسّق جاهز (إجابات البوت)، أما رسائل المستخدم فتُعرض كنص عادي
+  function addMessage(content, sender) {
     const row = document.createElement("div");
     row.className = `msg-row ${sender}`;
 
@@ -188,12 +437,15 @@
 
     const bubble = document.createElement("div");
     bubble.className = `bubble ${sender}`;
-    bubble.innerHTML = formatText(sender === "bot" ? translateLines(text) : escapeHtml(text));
+    bubble.innerHTML = sender === "bot" ? content : formatText(esc(content));
 
-    row.appendChild(av);
-    row.appendChild(bubble);
+    row.append(av, bubble);
     messagesEl.appendChild(row);
-    appendTimestamp();
+
+    const time = document.createElement("div");
+    time.className = "msg-time";
+    time.textContent = getTime();
+    messagesEl.appendChild(time);
     scrollToBottom();
   }
 
@@ -201,17 +453,7 @@
     const row = document.createElement("div");
     row.className = "msg-row bot";
     row.id = "typing-indicator";
-
-    const av = document.createElement("div");
-    av.className = "msg-avatar bot-av";
-    av.textContent = "🤖";
-
-    const typing = document.createElement("div");
-    typing.className = "typing-bubble";
-    typing.innerHTML = "<span></span><span></span><span></span>";
-
-    row.appendChild(av);
-    row.appendChild(typing);
+    row.innerHTML = `<div class="msg-avatar bot-av">🤖</div><div class="typing-bubble"><span></span><span></span><span></span></div>`;
     messagesEl.appendChild(row);
     scrollToBottom();
   }
@@ -221,45 +463,44 @@
     if (el) el.remove();
   }
 
-  function getBotAnswer(query) {
-    const q = query.toLowerCase().trim();
-    for (const entry of KB) {
-      if (entry.keywords.some((kw) => q.includes(kw.toLowerCase()))) {
-        return entry.answer;
-      }
+  async function botRespond(userText) {
+    isTyping = true;
+    showTyping();
+
+    const delay = new Promise((resolve) => setTimeout(resolve, 700 + Math.random() * 500));
+    let answer;
+    try {
+      [answer] = await Promise.all([getBotAnswer(userText), delay]);
+    } catch (error) {
+      console.warn("AI chat:", error);
+      answer = formatText(translateLines(FALLBACK));
     }
-    return FALLBACK;
+
+    hideTyping();
+    addMessage(answer, "bot");
+    isTyping = false;
   }
 
-  function botRespond(userText) {
-    if (isTyping) return;
-    isTyping = true;
-
-    showTyping();
-    const delay = 900 + Math.random() * 700;
-
-    setTimeout(() => {
-      hideTyping();
-      const answer = getBotAnswer(userText);
-      addMessage(answer, "bot");
-      isTyping = false;
-    }, delay);
+  function ask(text) {
+    text = text.trim();
+    if (!text || isTyping) return;
+    addMessage(text, "user");
+    botRespond(text);
   }
 
   function sendMessage() {
-    const text = inputEl.value.trim();
-    if (!text || isTyping) return;
-
-    addMessage(text, "user");
+    const text = inputEl.value;
+    if (!text.trim() || isTyping) return;
     inputEl.value = "";
     inputEl.style.height = "auto";
-    botRespond(text);
+    ask(text);
   }
 
   function openPanel() {
     panel.classList.add("open");
     isOpen = true;
     if (notifDot) notifDot.style.display = "none";
+    ensureServices();
     setTimeout(() => inputEl.focus(), 300);
   }
 
@@ -268,11 +509,8 @@
     isOpen = false;
   }
 
-  btn.addEventListener("click", () => {
-    isOpen ? closePanel() : openPanel();
-  });
+  btn.addEventListener("click", () => (isOpen ? closePanel() : openPanel()));
   closeBtn.addEventListener("click", closePanel);
-
   sendBtn.addEventListener("click", sendMessage);
 
   inputEl.addEventListener("keydown", (e) => {
@@ -289,34 +527,27 @@
 
   chipsEl.addEventListener("click", (e) => {
     const chip = e.target.closest(".chip");
-    if (!chip) return;
-    const q = chip.dataset.q;
-    inputEl.value = q;
-    sendMessage();
+    if (chip) ask(chip.dataset.q);
   });
 
-document.addEventListener("click", (e) => {
-  const target = e.target;
+  messagesEl.addEventListener("click", (e) => {
+    const option = e.target.closest(".chat-ask");
+    if (option) ask(option.dataset.q);
+  });
 
-  // زر تواصل معنا داخل الصفحة
-  const inlineTrigger = target.closest?.("#open-ai-chat");
+  document.addEventListener("click", (e) => {
+    const target = e.target;
 
-  if (inlineTrigger) {
-    e.preventDefault();
-    openPanel();
-    return;
-  }
+    // زر «تواصل معنا» داخل الصفحة
+    if (target.closest?.("#open-ai-chat")) {
+      e.preventDefault();
+      openPanel();
+      return;
+    }
 
-  // إغلاق المساعد عند الضغط خارج النافذة
-  if (
-    isOpen &&
-    !panel.contains(target) &&
-    target !== btn &&
-    !btn.contains(target)
-  ) {
-    closePanel();
-  }
-});
+    // إغلاق المساعد عند الضغط خارج النافذة
+    if (isOpen && target.isConnected && !panel.contains(target) && !btn.contains(target)) closePanel();
+  });
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && isOpen) closePanel();
@@ -324,7 +555,11 @@ document.addEventListener("click", (e) => {
 
   setTimeout(() => {
     addMessage(
-      "أهلاً بك في البوابة الإلكترونية! 👋\nأنا مساعدك الذكي، يمكنني الإجابة على أسئلتك حول خدماتنا.\nاضغط على أحد الاختيارات أدناه أو اكتب سؤالك مباشرةً.",
+      formatText(
+        translateLines(
+          "أهلاً بك في البوابة الإلكترونية! 👋\nأنا مساعدك الذكي وخبير بخدمات المحافظة.\nاكتب اسم الخدمة التي تحتاجها، وسأشرحها لك وأرسل لك رابطها.",
+        ),
+      ),
       "bot",
     );
   }, 400);

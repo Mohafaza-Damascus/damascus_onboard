@@ -351,6 +351,78 @@
   text-align: center;
   margin: 4px 0 -4px;
 }
+/* محتوى إجابات الخدمات */
+#ai-chat-panel .bubble.bot {
+  max-width: 86%;
+}
+#ai-chat-panel .bubble.bot p + p,
+#ai-chat-panel .bubble.bot p + ul,
+#ai-chat-panel .bubble.bot p + ol,
+#ai-chat-panel .bubble.bot ul + p,
+#ai-chat-panel .bubble.bot ol + p {
+  margin-top: 6px;
+}
+#ai-chat-panel .bubble.bot ul,
+#ai-chat-panel .bubble.bot ol {
+  padding-inline-start: 18px;
+  margin-top: 2px;
+}
+#ai-chat-panel .bubble.bot li + li {
+  margin-top: 2px;
+}
+#ai-chat-panel .chat-title {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+  color: #fae5af;
+}
+#ai-chat-panel .chat-muted {
+  font-size: 0.75rem;
+  color: #9cc2ad;
+}
+#ai-chat-panel .chat-actions,
+#ai-chat-panel .chat-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+#ai-chat-panel .chat-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border: 1px solid #fae5af;
+  border-radius: 999px;
+  color: #fae5af;
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+#ai-chat-panel .chat-link:hover,
+#ai-chat-panel .chat-link--primary {
+  background: #fae5af;
+  color: #0d3b28;
+}
+#ai-chat-panel .chat-link--primary:hover {
+  background: #fff3d0;
+}
+#ai-chat-panel .chat-ask {
+  padding: 4px 10px;
+  border: 1px solid #2d6e47;
+  border-radius: 10px;
+  background: rgba(13, 59, 40, 0.6);
+  color: #e8f5ee;
+  font: inherit;
+  font-size: 0.75rem;
+  text-align: start;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+#ai-chat-panel .chat-ask:hover {
+  border-color: #fae5af;
+  background: #2d6e47;
+}
 @media (max-width: 520px) {
   #ai-chat-btn {
     left: 11px;

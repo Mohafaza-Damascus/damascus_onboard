@@ -92,7 +92,7 @@ window.DAMASCUS_SERVICES = [
     "id": "483f2b2f-e479-4af6-a11d-ac6df51e4ba6",
     "createdAt": "2026-11-02T09:45:45.062Z",
     "updatedAt": "2026-11-02T09:49:12.776Z",
-    "image": "/images/services/Removing-the-seal-from-an-illegal-construction-site.jpeg"
+    "image": "/images/services/removing-the-seal-from-an-illegal-construction-site.jpg"
   },
   {
     "name": "فضّ الختم - ترميم بدون اذن ترميم",
@@ -108,7 +108,7 @@ window.DAMASCUS_SERVICES = [
     "id": "11638f3e-1058-48be-a567-d7994dffef05",
     "createdAt": "2026-11-02T09:55:02.321Z",
     "updatedAt": "2026-11-02T09:55:02.321Z",
-    "image": "/images/services/Removing-the-seal-from-an-illegal-construction-site.jpeg"
+    "image": "/images/services/removing-the-seal-from-an-illegal-construction-site.jpg"
   },
   {
     "name": "الأسطح والوجائب والتراسات الخاصة",
@@ -124,7 +124,7 @@ window.DAMASCUS_SERVICES = [
     "id": "3a387276-cc9b-4b06-955d-0103beee296a",
     "createdAt": "2026-11-02T10:24:23.364Z",
     "updatedAt": "2026-11-02T10:24:23.364Z",
-    "image": "/images/services/Solar-energy.jpg"
+    "image": "/images/services/solar-energy.jpg"
   },
   {
     "name": "الأسطح المشتركة والوجائب المشتركة",
@@ -140,7 +140,7 @@ window.DAMASCUS_SERVICES = [
     "id": "b4586dd7-0598-477d-a448-c4ea886d4315",
     "createdAt": "2026-11-02T10:35:05.552Z",
     "updatedAt": "2026-11-02T10:35:05.552Z",
-    "image": "/images/services/Solar-energy.jpg"
+    "image": "/images/services/solar-energy.jpg"
   },
   {
     "name": "منح الترخيص لأول مرة",
@@ -204,7 +204,7 @@ window.DAMASCUS_SERVICES = [
     "id": "fb6ec451-99a5-499a-8fe9-d202f80e2f99",
     "createdAt": "2026-11-02T11:18:14.512Z",
     "updatedAt": "2026-11-02T11:18:14.512Z",
-    "image": "/images/services/Street-stalls.jpg"
+    "image": "/images/services/street-stalls.jpg"
   },
   {
     "name": "أذن صب",
@@ -399,7 +399,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية المجالس",
     "serviceUrl": "../../home/service.html?id=80",
     "physicalPlace": "",
-    "image": "/images/services/copy-of-an-executive-office-decision.jpeg"
+    "image": "/images/services/copy-of-an-executive-office-decision.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -415,7 +415,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية المالية",
     "serviceUrl": "../../home/service.html?id=81",
     "physicalPlace": "",
-    "image": "/images/services/Completing-lease-agreement-details.jpg"
+    "image": "/images/services/completing-lease-agreement-details.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -431,7 +431,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية المالية",
     "serviceUrl": "../../home/service.html?id=40",
     "physicalPlace": "",
-    "image": "/images/services/Commercial-Lease-Agreement.jpeg"
+    "image": "/images/services/commercial-lease-agreement.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -447,7 +447,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية التنظيم والتخطيط العمراني",
     "serviceUrl": "../../home/service.html?id=44",
     "physicalPlace": "",
-    "image": "/images/services/Evacuation-alert.jpg"
+    "image": "/images/services/evacuation-alert.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -463,7 +463,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية التنظيم والتخطيط العمراني",
     "serviceUrl": "../../home/service.html?id=45",
     "physicalPlace": "",
-    "image": "/images/services/Shareholding.png"
+    "image": "/images/services/shareholding.png"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -479,7 +479,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية التنظيم والتخطيط العمراني",
     "serviceUrl": "../../home/service.html?id=46",
     "physicalPlace": "",
-    "image": "/images/services/Architectural-plan.jpg"
+    "image": "/images/services/architectural-plan.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -527,7 +527,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية التنظيم والتخطيط العمراني",
     "serviceUrl": "../../home/service.html?id=41",
     "physicalPlace": "",
-    "image": "/images/services/Property-Status-Statement.jpg"
+    "image": "/images/services/property-status-statement.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -559,7 +559,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية التنظيم والتخطيط العمراني",
     "serviceUrl": "../../home/service.html?id=51",
     "physicalPlace": "",
-    "image": "/images/services/History-of-Demolition.jpg"
+    "image": "/images/services/history-of-demolition.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -575,7 +575,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية التنظيم والتخطيط العمراني",
     "serviceUrl": "../../home/service.html?id=52",
     "physicalPlace": "",
-    "image": "/images/services/Residential-apartment.jpg"
+    "image": "/images/services/residential-apartment.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -607,7 +607,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية التنظيم والتخطيط العمراني",
     "serviceUrl": "../../home/service.html?id=54",
     "physicalPlace": "",
-    "image": "/images/services/Architectural-plan-current-status.jpg"
+    "image": "/images/services/architectural-plan-current-status.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -623,7 +623,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مكتب دفن الموتى",
     "serviceUrl": "../../home/service.html?id=89",
     "physicalPlace": "",
-    "image": "/images/services/Statement-of-Grave-Ownership.jpg"
+    "image": "/images/services/statement-of-grave-ownership.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -639,7 +639,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية المالية",
     "serviceUrl": "../../home/service.html?id=39",
     "physicalPlace": "",
-    "image": "/images/services/Payment-process.jpg"
+    "image": "/images/services/payment-process.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -671,7 +671,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية المالية",
     "serviceUrl": "../../home/service.html?id=55",
     "physicalPlace": "",
-    "image": "/images/services/Real-Estate-Auction.jpg"
+    "image": "/images/services/real-estate-auction.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -687,7 +687,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية المالية",
     "serviceUrl": "../../home/service.html?id=56",
     "physicalPlace": "",
-    "image": "/images/services/Investment.jpg"
+    "image": "/images/services/investment.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -703,7 +703,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية المالية",
     "serviceUrl": "../../home/service.html?id=57",
     "physicalPlace": "",
-    "image": "/images/services/Payment-process.jpg"
+    "image": "/images/services/payment-process.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -719,7 +719,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية المالية",
     "serviceUrl": "../../home/service.html?id=58",
     "physicalPlace": "",
-    "image": "/images/services/Payment-process.jpg"
+    "image": "/images/services/payment-process.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",
@@ -735,7 +735,7 @@ window.DAMASCUS_SERVICES = [
     "electronicDirectorate": "مديرية المالية",
     "serviceUrl": "../../home/service.html?id=59",
     "physicalPlace": "",
-    "image": "/images/services/Payment-order-for-drivers.jpg"
+    "image": "/images/services/payment-order-for-drivers.jpg"
   },
   {
     "createdAt": "2026-11-10T20:27:55.695839Z",

@@ -29,7 +29,7 @@ const timelineData = [
 
     identityPoints: ["الموقع الجغرافي والتجاري", "النمو الحضري والعمراني", "التفاعل الثقافي"],
 
-    image: "../assets/damascus-ancient.jfif",
+    image: "../images/culture/history/ancient.jpg",
   },
 
   {
@@ -61,7 +61,7 @@ const timelineData = [
 
     identityPoints: ["المملكة الآرامية", "النشاط السياسي", "التبادل التجاري"],
 
-    image: "../assets/damascus-aram.jfif",
+    image: "../images/culture/history/aram.jpg",
   },
 
   {
@@ -92,7 +92,7 @@ const timelineData = [
 
     identityPoints: ["النفوذ الإقليمي", "التحولات السياسية", "الموقع الاستراتيجي"],
 
-    image: "../assets/damascus-assyrian.jfif",
+    image: "../images/culture/history/assyrian.jpg",
   },
 
   {
@@ -123,7 +123,7 @@ const timelineData = [
 
     identityPoints: ["التبادل الثقافي", "التأثيرات الهلنستية", "التنوع الحضاري"],
 
-    image: "../assets/damascus-hellenistic.jfif",
+    image: "../images/culture/history/hellenistic.jpg",
   },
 
   {
@@ -155,7 +155,7 @@ const timelineData = [
 
     identityPoints: ["الطرق الرومانية", "التجارة والأسواق", "التوسع العمراني"],
 
-    image: "../assets/damascus-roman.jfif",
+    image: "../images/culture/history/roman.jpg",
   },
 
   {
@@ -185,7 +185,7 @@ const timelineData = [
 
     identityPoints: ["الاستمرارية الحضرية", "التجارة", "التنوع الثقافي"],
 
-    image: "../assets/damascus-byzantine.jfif",
+    image: "../images/culture/history/byzantine.jpg",
   },
 
   {
@@ -215,7 +215,7 @@ const timelineData = [
 
     identityPoints: ["التحول السياسي", "التحول الحضاري", "الاندماج في العالم الإسلامي"],
 
-    image: "../assets/damascus-islamic.jfif",
+    image: "../images/culture/history/islamic.jpg",
   },
 
   {
@@ -248,7 +248,7 @@ const timelineData = [
 
     identityPoints: ["العاصمة الأموية", "العمران والعمارة", "المركز الثقافي والسياسي"],
 
-    image: "../assets/damascus-umayyad.jfif",
+    image: "../images/culture/history/umayyad.jpg",
   },
 
   {
@@ -278,7 +278,7 @@ const timelineData = [
 
     identityPoints: ["المركز السياسي", "المنشآت العمرانية", "الدور العسكري"],
 
-    image: "../assets/damascus-ayyubid.jfif",
+    image: "../images/culture/history/ayyubid.jpg",
   },
 
   {
@@ -309,7 +309,7 @@ const timelineData = [
 
     identityPoints: ["المدارس", "الأسواق والخانات", "العمارة الدينية"],
 
-    image: "../assets/damascus-mamluk.jfif",
+    image: "../images/culture/history/mamluk.jpg",
   },
 
   {
@@ -339,7 +339,7 @@ const timelineData = [
 
     identityPoints: ["التجارة والقوافل", "الأسواق", "الحياة الاجتماعية"],
 
-    image: "../assets/damascus-ottoman.jfif",
+    image: "../images/culture/history/ottoman.jpg",
   },
 
   {
@@ -370,7 +370,7 @@ const timelineData = [
 
     identityPoints: ["التحول العمراني", "التحديث الإداري", "التغير الاجتماعي"],
 
-    image: "../assets/damascus-modern.jfif",
+    image: "../images/culture/history/modern.jpg",
   },
 
   {
@@ -402,7 +402,7 @@ const timelineData = [
 
     identityPoints: ["عاصمة الدولة", "المؤسسات الوطنية", "التوسع الحضري"],
 
-    image: "../assets/damascus-independence.jfif",
+    image: "../images/culture/history/independence.jpg",
   },
 
   {
@@ -433,7 +433,7 @@ const timelineData = [
 
     identityPoints: ["المدينة القديمة", "التراث العمراني", "الذاكرة الثقافية"],
 
-    image: "../assets/damascus-heritage.jfif",
+    image: "../images/culture/history/heritage.jpg",
   },
 
   {
@@ -464,7 +464,7 @@ const timelineData = [
 
     identityPoints: ["الإرث التاريخي", "الحياة المعاصرة", "الهوية الثقافية"],
 
-    image: "../assets/damascus-today.jfif",
+    image: "../images/culture/history/today.jpg",
   },
 ];
 
