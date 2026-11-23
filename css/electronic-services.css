@@ -61,8 +61,6 @@ body {
   gap: 12px;
   padding-left: 50px;
 }
-
-.electronic-services__back-home,
 .electronic-services__back-arrow {
   display: inline-flex;
   align-items: center;
@@ -76,7 +74,6 @@ body {
   transition: color 0.2s ease;
 }
 
-.electronic-services__back-home:hover,
 .electronic-services__back-arrow:hover {
   color: var(--es-gold);
 }
@@ -295,10 +292,6 @@ body {
   .electronic-services__heading-row {
     flex-wrap: wrap;
     gap: 12px;
-  }
-
-  .electronic-services__back-home {
-    font-size: 13px;
   }
 
   .electronic-services__back-actions {
