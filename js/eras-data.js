@@ -5,7 +5,7 @@
 //     period: "الألف الأول ق.م",
 //     intro:
 //       "في الألف الأول قبل الميلاد صارت دمشق عاصمة لمملكة آرامية قوية، وأقام أهلها معبداً لإلههم حدد في قلب المدينة.",
-//     image: "../assets/era-aramean.jpg",
+//     image: "../images/culture/eras/aramean.jpg",
 //     events: [
 //       {
 //         year: "منذ آلاف السنين",
@@ -34,7 +34,7 @@
 //     name: "العصر الهلنستي",
 //     period: "333 – 64 ق.م",
 //     intro: "بعد فتوحات الإسكندر المقدوني دخلت دمشق العالم الإغريقي، وأُعيد تنظيم شوارعها على الطراز اليوناني.",
-//     image: "../assets/era-hellenistic.jpg",
+//     image: "../images/culture/eras/hellenistic.jpg",
 //     events: [
 //       {
 //         year: "333 ق.م",
@@ -58,7 +58,7 @@
 //     name: "العصر الروماني",
 //     period: "64 ق.م – 395م",
 //     intro: "في العهد الروماني ازدهرت دمشق، فتوسّع معبدها الكبير، وشُقّ الشارع المستقيم، وأحاطت بها الأسوار والأبواب.",
-//     image: "../assets/era-roman.jpg",
+//     image: "../images/culture/eras/roman.jpg",
 //     events: [
 //       {
 //         year: "64 ق.م",
@@ -92,7 +92,7 @@
 //     name: "العصر البيزنطي",
 //     period: "395 – 634م",
 //     intro: "صارت دمشق مركزاً مسيحياً مهماً، وتحوّل معبدها الكبير إلى كنيسة كُرّست ليوحنا المعمدان.",
-//     image: "../assets/era-byzantine.jpg",
+//     image: "../images/culture/eras/byzantine.jpg",
 //     events: [
 //       {
 //         year: "أواخر القرن الرابع",
@@ -116,7 +116,7 @@
 //     name: "العصر الأموي",
 //     period: "661 – 750م",
 //     intro: "صارت دمشق عاصمة لأكبر دولة عرفها عصرها، وفيها بُني الجامع الأموي بفسيفسائه الذهبية.",
-//     image: "../assets/era-umayyad.jpg",
+//     image: "../images/culture/eras/umayyad.jpg",
 //     events: [
 //       {
 //         year: "661م",
@@ -145,7 +145,7 @@
 //     name: "العباسيون والفاطميون",
 //     period: "750 – 1154م",
 //     intro: "بعد أن كانت عاصمة، صارت دمشق ولاية تتنازعها الدول: العباسيون ثم الفاطميون ثم السلاجقة.",
-//     image: "../assets/era-abbasid-fatimid.jpg",
+//     image: "../images/culture/eras/abbasid-fatimid.jpg",
 //     events: [
 //       {
 //         year: "750م",
@@ -174,7 +174,7 @@
 //     name: "الزنكيون والأيوبيون",
 //     period: "1154 – 1260م",
 //     intro: "مع نور الدين زنكي ثم صلاح الدين عادت دمشق مركزاً للحكم، وامتلأت بالمدارس والمستشفيات.",
-//     image: "../assets/era-ayyubid.jpg",
+//     image: "../images/culture/eras/ayyubid.jpg",
 //     events: [
 //       {
 //         year: "1154م",
@@ -203,7 +203,7 @@
 //     name: "العصر المملوكي",
 //     period: "1260 – 1516م",
 //     intro: "في عهد المماليك ازدهرت المدارس والحمّامات والأسواق، رغم المحن التي مرّت بالمدينة.",
-//     image: "../assets/era-mamluk.jpg",
+//     image: "../images/culture/eras/mamluk.jpg",
 //     events: [
 //       {
 //         year: "1260م",
@@ -232,7 +232,7 @@
 //     name: "العصر العثماني",
 //     period: "1516 – 1918م",
 //     intro: "أربعة قرون صارت فيها دمشق محطة كبرى لقوافل الحج، وبُنيت فيها التكايا والخانات والقصور.",
-//     image: "../assets/era-ottoman.jpg",
+//     image: "../images/culture/eras/ottoman.jpg",
 //     events: [
 //       {
 //         year: "1516م",
@@ -267,7 +267,7 @@
 //     period: "1918 – 1970م",
 //     intro:
 //       "بعد خروج العثمانيين قامت في دمشق أول حكومة عربية، ثم قاومت المدينة الانتداب الفرنسي حتى نالت سوريا استقلالها عام 1946، لتبدأ مرحلة الجمهورية وما تلاها من انقلابات.",
-//     image: "../assets/damascus-independence.jfif",
+//     image: "../images/culture/history/independence.jpg",
 //     events: [
 //       {
 //         year: "1 تشرين الأول 1918م",
@@ -312,7 +312,7 @@
 //     period: "1970 – 2011م",
 //     intro:
 //       "حقبة استيلاء حافظ الأسد على السلطة بانقلاب عام 1970، وما تلاها من حكم أمني ومجازر وتوريث للسلطة، حتى انطلقت الثورة السورية عام 2011.",
-//     image: "../assets/damascus-today.jfif",
+//     image: "../images/culture/history/today.jpg",
 //     events: [
 //       {
 //         year: "1970م",
@@ -337,7 +337,7 @@
 //     period: "2011 – 2024م",
 //     intro:
 //       "في آذار 2011 انطلقت الثورة السورية مطالبةً بالحرية والكرامة، وصمد السوريون قرابة أربعة عشر عاماً في وجه القمع والحصار والتهجير، حتى انتصرت الثورة بتحرير دمشق في الثامن من كانون الأول 2024.",
-//     image: "../assets/place-hamidiyah-souk.jpg",
+//     image: "../images/culture/landmarks/hamidiyah-souk-1.jpg",
 //     events: [
 //       {
 //         year: "15 آذار 2011م",
@@ -377,7 +377,7 @@
 //     period: "2024م – اليوم",
 //     intro:
 //       "في الثامن من كانون الأول عام 2024 أشرقت شمس الحرية على دمشق بسقوط نظام الأسد، لتبدأ العاصمة صفحة جديدة من التعافي والحرية والبناء.",
-//     image: "../assets/era-modern.jpg",
+//     image: "../images/culture/eras/modern.jpg",
 //     events: [
 //       {
 //         year: "8 كانون الأول 2024م",
@@ -400,7 +400,7 @@ window.DM_ERAS = [
     period: "الألف الأول ق.م",
     intro:
       "في الألف الأول قبل الميلاد صارت دمشق عاصمة لمملكة آرامية قوية، وأقام أهلها معبداً لإلههم حدد في قلب المدينة.",
-    image: "../assets/era-aramean.jpg",
+    image: "../images/culture/eras/aramean.jpg",
     events: [
       {
         year: "منذ آلاف السنين",
@@ -429,7 +429,7 @@ window.DM_ERAS = [
     name: "العصر الهلنستي",
     period: "333 – 64 ق.م",
     intro: "بعد فتوحات الإسكندر المقدوني دخلت دمشق العالم الإغريقي، وأُعيد تنظيم شوارعها على الطراز اليوناني.",
-    image: "../assets/era-hellenistic.jpg",
+    image: "../images/culture/eras/hellenistic.jpg",
     events: [
       {
         year: "333 ق.م",
@@ -458,7 +458,7 @@ window.DM_ERAS = [
     name: "العصر الروماني",
     period: "64 ق.م – 395م",
     intro: "في العهد الروماني ازدهرت دمشق، فتوسّع معبدها الكبير، وشُقّ الشارع المستقيم، وأحاطت بها الأسوار والأبواب.",
-    image: "../assets/era-roman.jpg",
+    image: "../images/culture/eras/roman.jpg",
     events: [
       {
         year: "64 ق.م",
@@ -487,7 +487,7 @@ window.DM_ERAS = [
     name: "العصر البيزنطي",
     period: "395 – 634م",
     intro: "صارت دمشق مركزاً مسيحياً مهماً، وتحوّل معبدها الكبير إلى كنيسة كُرّست ليوحنا المعمدان.",
-    image: "../assets/era-byzantine.jpg",
+    image: "../images/culture/eras/byzantine.jpg",
     events: [
       {
         year: "أواخر القرن الرابع",
@@ -521,7 +521,7 @@ window.DM_ERAS = [
     name: "العصر الأموي",
     period: "661 – 750م",
     intro: "صارت دمشق عاصمة لأكبر دولة عرفها عصرها، وفيها بُني الجامع الأموي بفسيفسائه الذهبية.",
-    image: "../assets/era-umayyad.jpg",
+    image: "../images/culture/eras/umayyad.jpg",
     events: [
       {
         year: "661م",
@@ -550,7 +550,7 @@ window.DM_ERAS = [
     name: "العباسيون والفاطميون",
     period: "750 – 1154م",
     intro: "بعد أن كانت عاصمة، صارت دمشق ولاية تتنازعها الدول: العباسيون ثم الفاطميون ثم السلاجقة.",
-    image: "../assets/era-abbasid-fatimid.jpg",
+    image: "../images/culture/eras/abbasid-fatimid.jpg",
     events: [
       {
         year: "750م",
@@ -584,7 +584,7 @@ window.DM_ERAS = [
     name: "الزنكيون والأيوبيون",
     period: "1154 – 1260م",
     intro: "مع نور الدين زنكي ثم صلاح الدين عادت دمشق مركزاً للحكم، وامتلأت بالمدارس والمستشفيات.",
-    image: "../assets/era-ayyubid.jpg",
+    image: "../images/culture/eras/ayyubid.jpg",
     events: [
       {
         year: "1154م",
@@ -618,7 +618,7 @@ window.DM_ERAS = [
     name: "العصر المملوكي",
     period: "1260 – 1516م",
     intro: "في عهد المماليك ازدهرت المدارس والحمّامات والأسواق، رغم المحن التي مرّت بالمدينة.",
-    image: "../assets/era-mamluk.jpg",
+    image: "../images/culture/eras/mamluk.jpg",
     events: [
       {
         year: "1260م",
@@ -652,7 +652,7 @@ window.DM_ERAS = [
     name: "العصر العثماني",
     period: "1516 – 1918م",
     intro: "أربعة قرون صارت فيها دمشق محطة كبرى لقوافل الحج، وبُنيت فيها التكايا والخانات والقصور.",
-    image: "../assets/era-ottoman.jpg",
+    image: "../images/culture/eras/ottoman.jpg",
     events: [
       {
         year: "1516م",
@@ -687,7 +687,7 @@ window.DM_ERAS = [
     period: "1918 – 1970م",
     intro:
       "بعد خروج العثمانيين قامت في دمشق أول حكومة عربية، ثم قاومت المدينة الانتداب الفرنسي حتى نالت سوريا استقلالها عام 1946، لتبدأ مرحلة الجمهورية وما تلاها من انقلابات.",
-    image: "../assets/era-independence.jpg",
+    image: "../images/culture/eras/independence.jpg",
     events: [
       {
         year: "1918م",
@@ -732,7 +732,7 @@ window.DM_ERAS = [
     period: "1970 – 2011م",
     intro:
       "حقبة استيلاء حافظ الأسد على السلطة بانقلاب عام 1970، وما تلاها من حكم أمني ومجازر وتوريث للسلطة، حتى انطلقت الثورة السورية عام 2011.",
-    image: "../assets/era-assad-regime.webp",
+    image: "../images/culture/eras/assad-regime.webp",
     events: [
       {
         year: "1970م",
@@ -772,7 +772,7 @@ window.DM_ERAS = [
     period: "2011 – 2024م",
     intro:
       "في آذار 2011 انطلقت الثورة السورية مطالبةً بالحرية والكرامة، وصمد السوريون قرابة أربعة عشر عاماً في وجه القمع والحصار والتهجير، حتى انتصرت الثورة بتحرير دمشق في الثامن من كانون الأول 2024.",
-    image: "../assets/place-hamidiyah-souk.jpg",
+    image: "../images/culture/landmarks/hamidiyah-souk-1.jpg",
     events: [
       {
         year: "15 آذار 2011م",
@@ -812,7 +812,7 @@ window.DM_ERAS = [
     period: "2024م – اليوم",
     intro:
       "في الثامن من كانون الأول عام 2024 أشرقت شمس الحرية على دمشق بسقوط نظام الأسد، لتبدأ العاصمة صفحة جديدة من التعافي والحرية والبناء.",
-    image: "../assets/era-modern.jpg",
+    image: "../images/culture/eras/modern.jpg",
     events: [
       {
         year: "8 كانون الأول 2024م",

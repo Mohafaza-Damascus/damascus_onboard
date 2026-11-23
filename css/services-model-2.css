@@ -50,55 +50,9 @@ body {
   transform: translateY(-20px);
 }
 
-.services-model-2__back {
-  grid-column: 3;
-  justify-self: start;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #07473c;
-  text-decoration: none;
-  font-family: "ITF Qomra Arabic", sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  transition:
-    color 0.2s ease,
-    gap 0.2s ease;
-}
-
-.services-model-2__back i {
-  font-size: 14px;
-}
-
-.services-model-2__back .back-arrow {
-  color: #07473c;
-  transition: color 0.2s ease;
-  transform: translate(-250px, -30px);
-}
-
-.services-model-2__back .home-link {
-  color: #07473c;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  transform: translate(-250px, -30px);
-}
-
-.services-model-2__back .back-arrow:hover,
-.services-model-2__back .home-link:hover {
-  color: #be9c5a;
-}
-
 .services-model-2__heading {
   margin-bottom: 10px;
   text-align: center;
-}
-
-.services-model-2__eyebrow {
-  display: inline-block;
-  margin-bottom: 12px;
-  color: var(--sm2-gold);
-  font-size: 15px;
-  font-weight: 700;
 }
 
 .services-model-2__heading h1 {
@@ -280,17 +234,6 @@ body {
     transform: none;
   }
 
-  .services-model-2__back {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: end;
-  }
-
-  .services-model-2__back .back-arrow,
-  .services-model-2__back .home-link {
-    transform: none;
-  }
-
   .services-model-2__heading {
     margin-bottom: 28px;
   }
@@ -312,11 +255,6 @@ body {
 
   .services-model-2__page-title {
     font-size: 28px;
-  }
-
-  .services-model-2__back {
-    font-size: 13px;
-    gap: 7px;
   }
 
   .services-model-2__heading p {
@@ -343,10 +281,7 @@ body {
   .services-model-2__card,
   .services-model-2__card::before,
   .services-model-2__icon,
-  .services-model-2__link,
-  .services-model-2__back,
-  .services-model-2__back .back-arrow,
-  .services-model-2__back .home-link {
+  .services-model-2__link {
     transition: none;
   }
 }

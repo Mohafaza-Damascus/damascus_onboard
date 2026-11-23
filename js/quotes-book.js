@@ -57,7 +57,7 @@
       </div>
     </div>`;
 
-  const logo = root.dataset.logo || "../images/logo.png";
+  const logo = root.dataset.logo || "../images/brand/logo.png";
   const cycle = quotes.map((q) => ({ html: quotePage(q) }));
   if (cycle.length % 2) cycle.push({ html: ornament() });
 

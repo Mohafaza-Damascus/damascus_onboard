@@ -1,5 +1,5 @@
 const SITE_ROOT = new URL("../../", document.currentScript.src).href;
-const DEFAULT_SERVICE_IMAGE = SITE_ROOT + "images/mohafaza.png";
+const DEFAULT_SERVICE_IMAGE = SITE_ROOT + "images/brand/governorate.png";
 
 function getServices() {
   return window.DAMASCUS_SERVICES || [];

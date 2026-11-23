@@ -5,16 +5,7 @@ html[dir="ltr"] body *:not([lang="ar"]):not([data-i18n-skip]) {
 
 html[dir="ltr"] .fa-arrow-left,
 html[dir="ltr"] .fa-arrow-right,
-html[dir="ltr"] .fa-arrow-left-long,
-html[dir="ltr"] .fa-arrow-right-long,
-html[dir="ltr"] .fa-chevron-left,
-html[dir="ltr"] .fa-chevron-right,
-html[dir="ltr"] .fa-angle-left,
-html[dir="ltr"] .fa-angle-right,
-html[dir="ltr"] .fa-caret-left,
-html[dir="ltr"] .fa-caret-right,
-html[dir="ltr"] .fa-arrow-left-from-bracket,
-html[dir="ltr"] .fa-arrow-right-to-bracket {
+html[dir="ltr"] .fa-chevron-left {
   scale: -1 1;
 }
 
@@ -32,36 +23,20 @@ html[dir="ltr"] a[class$="__back"] > span[aria-hidden="true"] {
 
 html[dir="ltr"] .period-navigation.previous { text-align: left !important; }
 html[dir="ltr"] .period-navigation.next { text-align: right !important; }
-html[dir="ltr"] .calendar-event-preview { text-align: left !important; }
-html[dir="ltr"] .damascus-landmarks__item { text-align: left !important; }
-html[dir="ltr"] .landmark-card__facts div strong { text-align: right !important; }
-html[dir="ltr"] .landmark-card__facts div strong { text-align: right !important; }
-html[dir="ltr"] #damascus-landmarks .damascus-landmarks__info-column { text-align: left !important; }
-html[dir="ltr"] #damascus-agenda .agenda-day-stamp { text-align: left !important; }
-html[dir="ltr"] .intangible-craft-tab { text-align: left !important; }
-html[dir="ltr"] .dm-stats__num { text-align: right !important; }
 html[dir="ltr"] #damascus-history .damascus-timeline__intro { text-align: left !important; }
 html[dir="ltr"] #damascus-history .damascus-timeline__curved-title { text-align: left !important; }
-html[dir="ltr"] #damascus-intangible .dm-heritage__row.is-open { text-align: left !important; }
-html[dir="ltr"] #damascus-quotes .dm-book__page-frame,
-html[dir="ltr"] #damascus-quotes .dm-book__right-frame { text-align: left !important; }
-html[dir="ltr"] #damascus-intangible .dm-heritage__row.is-open { text-align: left !important; }
 html[dir="ltr"] #damascus-history .damascus-timeline__title-main { text-align: left !important; }
 html[dir="ltr"] #damascus-history .damascus-timeline__title-sub { text-align: left !important; }
 html[dir="ltr"] #damascus-numbers .damascus-numbers__header { text-align: left !important; }
 html[dir="ltr"] #damascus-numbers .damascus-numbers__header h2 { text-align: left !important; }
-html[dir="ltr"] #damascus-numbers .damascus-numbers__book-hint { text-align: left !important; }
-html[dir="ltr"] #damascus-numbers .dm-book__page-frame,
-html[dir="ltr"] #damascus-numbers .dm-book__right-frame { text-align: left !important; }
 html[dir="ltr"] #damascus-intangible .damascus-intangible__header { text-align: left !important; }
 html[dir="ltr"] #damascus-intangible .dmi-card__visual-label { text-align: left !important; }
 html[dir="ltr"] #damascus-intangible .dmi-card__content { text-align: left !important; }
 html[dir="ltr"] #damascus-intangible .dmi-item { text-align: left !important; }
-html[dir="ltr"] #damascus-agenda .stamp-card__body { text-align: left !important; }
-html[dir="ltr"] #damascus-agenda .agenda-v2__single-event { text-align: left !important; }
+html[dir="ltr"] #damascus-numbers .damascus-numbers__header { text-align: left !important; }
+html[dir="ltr"] #damascus-numbers .damascus-numbers__quote-text { text-align: left !important; }
+html[dir="ltr"] #damascus-numbers .damascus-numbers__author-name { text-align: left !important; }
 html[dir="ltr"] .gallery-card-caption { text-align: left !important; }
-html[dir="ltr"] .era-journey__line { transform-origin: left center !important; }
-html[dir="ltr"] .era__pager-link--next { text-align: right !important; }
 html[dir="ltr"] .calendar-day { text-align: left !important; }
 html[dir="ltr"] .event-location { text-align: right !important; }
 @media (max-width: 900px) {
@@ -70,19 +45,17 @@ html[dir="ltr"] .event-location { text-align: left !important; }
 @media (max-width: 600px) {
 html[dir="ltr"] .event-location { text-align: left !important; }
 }
+html[dir="ltr"] .era-journey__line { transform-origin: left center !important; }
+html[dir="ltr"] .era__pager-link--next { text-align: right !important; }
 html[dir="ltr"] .gov-section__label { text-align: left !important; }
 html[dir="ltr"] .nav__link--menu { text-align: left !important; }
 html[dir="ltr"] .nav__submenu { transform-origin: top left !important; }
-html[dir="ltr"] .inv-map__progress span { transform-origin: left center !important; }
 html[dir="ltr"] .lm__pager-link--next { text-align: right !important; }
 html[dir="ltr"] .follow-us { text-align: left !important; }
 html[dir="ltr"] .follow-us { text-align: left !important; }
 html[dir="ltr"] .svc-card__title { text-align: left !important; }
 html[dir="ltr"] .svc-card__desc { text-align: left !important; }
-html[dir="ltr"] .page-heading { text-align: left !important; }
 html[dir="ltr"] .detail-title { text-align: left !important; }
-html[dir="ltr"] .detail-subtitle { text-align: left !important; }
-html[dir="ltr"] .card-description { text-align: left !important; }
 @media (max-width: 380px) {
 html[dir="ltr"] .detail-title { text-align: left !important; }
 }

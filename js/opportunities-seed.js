@@ -24,7 +24,7 @@ window.OPPORTUNITIES_DATA = [
       ]
     ],
     "images": [
-      "hammam-aljoura.jfif"
+      "hammam-aljoura.jpg"
     ]
   },
   {
@@ -95,8 +95,8 @@ window.OPPORTUNITIES_DATA = [
     ],
     "brief": "موجز لمقترح استثمار حديقة المدفع.pdf",
     "images": [
-      "opportunities/madfaa.jpg",
-      "opportunities/madfaa-site.jpg"
+      "madfaa.jpg",
+      "madfaa-site.jpg"
     ]
   },
   {
@@ -189,8 +189,8 @@ window.OPPORTUNITIES_DATA = [
     ],
     "brief": "موجز لمقترح استثمار حديقة أطفال البرامكة.pdf",
     "images": [
-      "opportunities/baramkeh-site.jpg",
-      "opportunities/baramkeh-section.jpg"
+      "baramkeh-site.jpg",
+      "baramkeh-section.jpg"
     ]
   },
   {
@@ -332,9 +332,9 @@ window.OPPORTUNITIES_DATA = [
     ],
     "brief": "موجز فندق الفيحاء لكشري.pdf",
     "images": [
-      "opportunities/firdaws-site.jpg",
-      "opportunities/firdaws-program.jpg",
-      "opportunities/firdaws-section.jpg"
+      "firdaws-site.jpg",
+      "firdaws-program.jpg",
+      "firdaws-section.jpg"
     ]
   },
   {
@@ -469,8 +469,8 @@ window.OPPORTUNITIES_DATA = [
     ],
     "brief": "موجز فندق الشام الملكي.pdf",
     "images": [
-      "opportunities/dummar-b-render.jpg",
-      "opportunities/dummar-b-site.jpg"
+      "dummar-b-render.jpg",
+      "dummar-b-site.jpg"
     ]
   },
   {
@@ -620,8 +620,8 @@ window.OPPORTUNITIES_DATA = [
     ],
     "brief": "موجز المقسم 63,64.pdf",
     "images": [
-      "opportunities/plot63-render.jpg",
-      "opportunities/plot64-render.jpg"
+      "plot63-render.jpg",
+      "plot64-render.jpg"
     ]
   },
   {
@@ -735,8 +735,8 @@ window.OPPORTUNITIES_DATA = [
     ],
     "brief": "موجز مقترح استثمار مقسم 106.pdf",
     "images": [
-      "opportunities/plot106-render.jpg",
-      "opportunities/plot106-site.jpg"
+      "plot106-render.jpg",
+      "plot106-site.jpg"
     ]
   },
   {
@@ -765,7 +765,7 @@ window.OPPORTUNITIES_DATA = [
       ]
     ],
     "images": [
-      "hotel-arnous-14.jfif"
+      "hotel-arnous-14.jpg"
     ]
   },
   {
@@ -848,8 +848,8 @@ window.OPPORTUNITIES_DATA = [
     ],
     "brief": "موجز لمقترح استثمار مول عمر بيتك.pdf",
     "images": [
-      "opportunities/omar-render.jpg",
-      "opportunities/omar-site.jpg"
+      "omar-render.jpg",
+      "omar-site.jpg"
     ]
   },
   {
@@ -877,7 +877,7 @@ window.OPPORTUNITIES_DATA = [
       ]
     ],
     "images": [
-      "hotel-apartments-dummar.jfif"
+      "hotel-apartments-dummar.jpg"
     ]
   },
   {
@@ -901,7 +901,7 @@ window.OPPORTUNITIES_DATA = [
       ]
     ],
     "images": [
-      "garage-aljihaad.jfif"
+      "garage-aljihaad.jpg"
     ]
   },
   {
@@ -925,7 +925,7 @@ window.OPPORTUNITIES_DATA = [
       ]
     ],
     "images": [
-      "garage-alsoufaniya.jfif"
+      "garage-alsoufaniya.jpg"
     ]
   },
   {
@@ -940,7 +940,7 @@ window.OPPORTUNITIES_DATA = [
     "deadline": null,
     "facts": [],
     "images": [
-      "garage-thawra-10.jfif"
+      "garage-thawra-10.jpg"
     ]
   },
   {
@@ -955,7 +955,7 @@ window.OPPORTUNITIES_DATA = [
     "deadline": null,
     "facts": [],
     "images": [
-      "garage-thawra-12.jfif"
+      "garage-thawra-12.jpg"
     ]
   },
   {
@@ -975,7 +975,7 @@ window.OPPORTUNITIES_DATA = [
       ]
     ],
     "images": [
-      "garage-bahsa.jfif"
+      "garage-bahsa.jpg"
     ]
   },
   {
@@ -1038,9 +1038,9 @@ window.OPPORTUNITIES_DATA = [
     ],
     "brief": "موجز لمقترح استثمار حديقة ابن عساكر.pdf",
     "images": [
-      "opportunities/ibn-asakir-garden.jpg",
-      "opportunities/ibn-asakir-plan.jpg",
-      "opportunities/ibn-asakir-site.jpg"
+      "ibn-asakir-garden.jpg",
+      "ibn-asakir-plan.jpg",
+      "ibn-asakir-site.jpg"
     ]
   }
 ];

@@ -4,7 +4,7 @@ window.DM_LANDMARKS = [
     name: "الجامع الأموي",
     category: "معلم أثري",
     type: "معلم ديني وتاريخي",
-    image: "../assets/place-umayyad-mosque.jpg",
+    image: "../images/culture/landmarks/umayyad-mosque-1.jpg",
     alt: "الجامع الأموي في دمشق",
     intro: "تحفة معمارية بارزة تجمع بين عراقة التاريخ وروح المدينة القديمة.",
     description:
@@ -30,28 +30,28 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/place-umayyad-mosque.jpg",
+        src: "../images/culture/landmarks/umayyad-mosque-1.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_courtyard_of_Umayyad_Mosque_from_west_side_5569.jpg",
       },
       {
-        src: "../assets/gallery/umayyad-mosque-2.jpg",
+        src: "../images/culture/landmarks/umayyad-mosque-2.jpg",
         credit: "Vyacheslav Argenberg — CC BY 4.0",
         source:
           "https://commons.wikimedia.org/wiki/File:Damascus%2C_Syria%2C_The_Umayyad_Mosque%2C_The_Courtyard%2C_Islamic_Art.jpg",
       },
       {
-        src: "../assets/gallery/umayyad-mosque-3.jpg",
+        src: "../images/culture/landmarks/umayyad-mosque-3.jpg",
         credit: "Livioandronico2013 — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Archbasilica_of_St._John_Lateran_HD.jpg",
       },
       {
-        src: "../assets/gallery/umayyad-mosque-4.jpg",
+        src: "../images/culture/landmarks/umayyad-mosque-4.jpg",
         credit: "High Contrast — CC BY 3.0 de",
         source: "https://commons.wikimedia.org/wiki/File:Qubbat_al-Khazna_-_Umayyad_Mosque_-_Syria.jpg",
       },
       {
-        src: "../assets/gallery/umayyad-mosque-5.jpg",
+        src: "../images/culture/landmarks/umayyad-mosque-5.jpg",
         credit: "Vyacheslav Argenberg — CC BY 4.0",
         source: "https://commons.wikimedia.org/wiki/File:The_Umayyad_Mosque%2C_Damascus%2C_Syria.jpg",
       },
@@ -63,7 +63,7 @@ window.DM_LANDMARKS = [
     name: "قصر العظم",
     category: "معلم أثري",
     type: "قصر ومتحف تراثي",
-    image: "../assets/place-azem-palace.jpg",
+    image: "../images/culture/landmarks/azem-palace-1.jpg",
     alt: "قصر العظم في دمشق القديمة",
     intro: "تفاصيل الحياة الدمشقية القديمة في فناء تتوسطه المياه وتحيط به الزخارف.",
     description:
@@ -89,27 +89,27 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/place-azem-palace.jpg",
+        src: "../images/culture/landmarks/azem-palace-1.jpg",
         credit: "Hanin Jamal Batikh — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Al-Azm_Palace_fountain.jpg",
       },
       {
-        src: "../assets/gallery/azem-palace-2.jpg",
+        src: "../images/culture/landmarks/azem-palace-2.jpg",
         credit: "Hanin Jamal Batikh — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Al-Azm_Palace_photo1.jpg",
       },
       {
-        src: "../assets/gallery/azem-palace-3.jpg",
+        src: "../images/culture/landmarks/azem-palace-3.jpg",
         credit: "Hanin Jamal Batikh — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Al-Azm_Palace_photo2.jpg",
       },
       {
-        src: "../assets/gallery/azem-palace-4.jpg",
+        src: "../images/culture/landmarks/azem-palace-4.jpg",
         credit: "Hanin Jamal Batikh — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Al-Azm_palace_garden.jpg",
       },
       {
-        src: "../assets/gallery/azem-palace-5.jpg",
+        src: "../images/culture/landmarks/azem-palace-5.jpg",
         credit: "Hanin Jamal Batikh — CC BY-SA 4.0",
         source:
           "https://commons.wikimedia.org/wiki/File:Al-Azm_Palace_%D9%82%D8%B5%D8%B1_%D8%A7%D9%84%D8%B9%D8%B8%D9%85.jpg",
@@ -122,7 +122,7 @@ window.DM_LANDMARKS = [
     name: "قلعة دمشق",
     category: "معلم أثري",
     type: "حصن تاريخي",
-    image: "../assets/place-citadel.jpg",
+    image: "../images/culture/landmarks/citadel-1.jpg",
     alt: "قلعة دمشق التاريخية",
     intro: "أسوار وأبراج تحكي فصولاً من تاريخ الدفاع عن المدينة ومكانتها السياسية.",
     description:
@@ -148,27 +148,27 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/place-citadel.jpg",
+        src: "../images/culture/landmarks/citadel-1.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_north-western_tower_of_the_Citadel_1410.jpg",
       },
       {
-        src: "../assets/gallery/citadel-2.jpg",
+        src: "../images/culture/landmarks/citadel-2.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_north_flank_of_Citadel_7940.jpg",
       },
       {
-        src: "../assets/gallery/citadel-3.jpg",
+        src: "../images/culture/landmarks/citadel-3.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_eastern_gate_of_the_Citadel_7935.jpg",
       },
       {
-        src: "../assets/gallery/citadel-4.jpg",
+        src: "../images/culture/landmarks/citadel-4.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_north-western_tower_of_the_Citadel_7937.jpg",
       },
       {
-        src: "../assets/gallery/citadel-5.jpg",
+        src: "../images/culture/landmarks/citadel-5.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_Citadel_tower_5648.jpg",
       },
@@ -180,7 +180,7 @@ window.DM_LANDMARKS = [
     name: "سوق الحميدية",
     category: "معلم أثري",
     type: "سوق تراثي",
-    image: "../assets/place-hamidiyah-souk.jpg",
+    image: "../images/culture/landmarks/hamidiyah-souk-1.jpg",
     alt: "سوق الحميدية في دمشق",
     intro: "ممر تجاري نابض بالحياة، تتجاور فيه الذاكرة الشعبية مع الحرف والمنتجات.",
     description:
@@ -206,27 +206,27 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/place-hamidiyah-souk.jpg",
+        src: "../images/culture/landmarks/hamidiyah-souk-1.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_leaving_Al-Hamidiyah_Souq_0382.jpg",
       },
       {
-        src: "../assets/gallery/hamidiyah-souk-2.jpg",
+        src: "../images/culture/landmarks/hamidiyah-souk-2.jpg",
         credit: "Bernard Gagnon — CC BY-SA 3.0",
         source: "https://commons.wikimedia.org/wiki/File:Al-Hamidiyah_Souq_02.jpg",
       },
       {
-        src: "../assets/gallery/hamidiyah-souk-3.jpg",
+        src: "../images/culture/landmarks/hamidiyah-souk-3.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_Al-Hamidiyah_Souq_5045.jpg",
       },
       {
-        src: "../assets/gallery/hamidiyah-souk-4.jpg",
+        src: "../images/culture/landmarks/hamidiyah-souk-4.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_Al-Hamidiyah_Souq_5039.jpg",
       },
       {
-        src: "../assets/gallery/hamidiyah-souk-5.jpg",
+        src: "../images/culture/landmarks/hamidiyah-souk-5.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_Al-Hamidiyah_Souq_5049.jpg",
       },
@@ -238,7 +238,7 @@ window.DM_LANDMARKS = [
     name: "خان أسعد باشا",
     category: "معلم أثري",
     type: "خان تجاري تاريخي",
-    image: "../assets/place-khan-asad-pasha.jpg",
+    image: "../images/culture/landmarks/khan-asad-pasha-1.jpg",
     alt: "خان أسعد باشا في دمشق القديمة",
     intro: "مساحة معمارية صُمّمت لاستقبال التجار والقوافل وتبادل البضائع.",
     description:
@@ -264,27 +264,27 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/place-khan-asad-pasha.jpg",
+        src: "../images/culture/landmarks/khan-asad-pasha-1.jpg",
         credit: "Bassel Khabbaz — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Khan_As'ad_Pasha_Panorama.jpg",
       },
       {
-        src: "../assets/gallery/khan-asad-pasha-2.jpg",
+        src: "../images/culture/landmarks/khan-asad-pasha-2.jpg",
         credit: "Vyacheslav Argenberg — CC BY 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus%2C_Syria%2C_Khan_As'ad_Pasha_Roof.jpg",
       },
       {
-        src: "../assets/gallery/khan-asad-pasha-3.jpg",
+        src: "../images/culture/landmarks/khan-asad-pasha-3.jpg",
         credit: "Umbertod — CC BY-SA 3.0",
         source: "https://commons.wikimedia.org/wiki/File:Khan_As'ad_Pasha_courtyard.JPG",
       },
       {
-        src: "../assets/gallery/khan-asad-pasha-4.jpg",
+        src: "../images/culture/landmarks/khan-asad-pasha-4.jpg",
         credit: "Umbertod — CC BY-SA 3.0",
         source: "https://commons.wikimedia.org/wiki/File:Khan_As'ad_Pasha_fountain.JPG",
       },
       {
-        src: "../assets/gallery/khan-asad-pasha-5.jpg",
+        src: "../images/culture/landmarks/khan-asad-pasha-5.jpg",
         credit: "Alaaalyaseen — CC BY-SA 3.0",
         source: "https://commons.wikimedia.org/wiki/File:Khan_As'ad_Pasha_water!.JPG",
       },
@@ -296,7 +296,7 @@ window.DM_LANDMARKS = [
     name: "المتحف الوطني بدمشق",
     category: "متحف",
     type: "متحف أثري وثقافي",
-    image: "../assets/place-national-museum.jpg",
+    image: "../images/culture/landmarks/national-museum-1.jpg",
     alt: "المتحف الوطني بدمشق",
     intro: "رحلة بين آثار سورية، من الحضارات القديمة حتى الفنون الإسلامية.",
     description:
@@ -322,28 +322,28 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/place-national-museum.jpg",
+        src: "../images/culture/landmarks/national-museum-1.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source:
           "https://commons.wikimedia.org/wiki/File:Damascus_National_Museum_Qasr_al-Heir_al-Gharbi_(gateway)_5325.jpg",
       },
       {
-        src: "../assets/gallery/national-museum-2.jpg",
+        src: "../images/culture/landmarks/national-museum-2.jpg",
         credit: "User:Aziz1005 — Public domain",
         source: "https://commons.wikimedia.org/wiki/File:Damascus-National-Museum.JPG",
       },
       {
-        src: "../assets/gallery/national-museum-3.jpg",
+        src: "../images/culture/landmarks/national-museum-3.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_National_Museum_miniature_5292.jpg",
       },
       {
-        src: "../assets/gallery/national-museum-4.jpg",
+        src: "../images/culture/landmarks/national-museum-4.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_National_Museum_miniature_5293.jpg",
       },
       {
-        src: "../assets/gallery/national-museum-5.jpg",
+        src: "../images/culture/landmarks/national-museum-5.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_National_Museum_earthenware_5290.jpg",
       },
@@ -355,7 +355,7 @@ window.DM_LANDMARKS = [
     name: "معبد جوبيتر الدمشقي",
     category: "معلم أثري",
     type: "أطلال معبد روماني",
-    image: "../assets/gallery/temple-jupiter-1.jpg",
+    image: "../images/culture/landmarks/temple-jupiter-1.jpg",
     alt: "معبد جوبيتر الدمشقي",
     intro: "أعمدة رومانية شاهقة تستقبل الخارج من سوق الحميدية نحو الجامع الأموي.",
     description:
@@ -381,12 +381,12 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/gallery/temple-jupiter-1.jpg",
+        src: "../images/culture/landmarks/temple-jupiter-1.jpg",
         credit: "Ai@ce — CC BY 2.0",
         source: "https://commons.wikimedia.org/wiki/File:The_Jupiter_temple_in_Damascus.jpg",
       },
       {
-        src: "../assets/era-aramean.jpg",
+        src: "../images/culture/eras/aramean.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
       },
     ],
@@ -398,7 +398,7 @@ window.DM_LANDMARKS = [
     category: "معلم أثري",
     type: "باب روماني",
     group: "damascus-gates",
-    image: "../assets/gallery/bab-sharqi-1.jpg",
+    image: "../images/culture/landmarks/bab-sharqi-1.jpg",
     alt: "الباب الشرقي",
     intro: "البوابة الشرقية لدمشق القديمة في نهاية الشارع المستقيم.",
     description:
@@ -424,22 +424,22 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/gallery/bab-sharqi-1.jpg",
+        src: "../images/culture/landmarks/bab-sharqi-1.jpg",
         credit: "Bernard Gagnon — CC BY-SA 3.0",
         source: "https://commons.wikimedia.org/wiki/File:Bab_Sharqi%2C_Damascus.jpg",
       },
       {
-        src: "../assets/gallery/bab-sharqi-2.jpg",
+        src: "../images/culture/landmarks/bab-sharqi-2.jpg",
         credit: "Bryn Pinzgauer — CC BY 2.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_bab_Sharqi_at_night.jpg",
       },
       {
-        src: "../assets/gallery/bab-sharqi-3.jpg",
+        src: "../images/culture/landmarks/bab-sharqi-3.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_Bab_Sharqi_(Eastern_Gate)_8210.jpg",
       },
       {
-        src: "../assets/gallery/bab-sharqi-4.jpg",
+        src: "../images/culture/landmarks/bab-sharqi-4.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_Bab_Sharqi_(Eastern_Gate)_8208.jpg",
       },
@@ -451,7 +451,7 @@ window.DM_LANDMARKS = [
     name: "باب كيسان",
     category: "معلم أثري",
     type: "باب تاريخي",
-    image: "../assets/gates/bab-kisan.jpg",
+    image: "../images/culture/gates/bab-kisan.jpg",
     alt: "باب كيسان في دمشق القديمة",
     intro: "بوابة تاريخية عند الزاوية الجنوبية الشرقية من سور دمشق القديمة، ترتبط بذاكرة رومانية ومسيحية وإسلامية.",
     description:
@@ -477,7 +477,7 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
         {
-            src: "../assets/gates/bab-kisan.jpg",
+            src: "../images/culture/gates/bab-kisan.jpg",
             credit: "صورة من ملفات المشروع"
         }
     ]
@@ -488,7 +488,7 @@ window.DM_LANDMARKS = [
     name: "الباب الصغير",
     category: "معلم أثري",
     type: "باب تاريخي",
-    image: "../assets/gates/bab-saghir.jpg",
+    image: "../images/culture/gates/bab-saghir.jpg",
     alt: "الباب الصغير في دمشق",
     intro: "أحد أبواب دمشق الجنوبية، ارتبط اسمه بصغر حجمه وبالمقبرة التاريخية المجاورة له.",
     description:
@@ -514,7 +514,7 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
         {
-            src: "../assets/gates/bab-saghir.jpg",
+            src: "../images/culture/gates/bab-saghir.jpg",
             credit: "صورة من ملفات المشروع"
         }
     ]
@@ -525,7 +525,7 @@ window.DM_LANDMARKS = [
     name: "باب الجابية",
     category: "معلم أثري",
     type: "باب تاريخي",
-    image: "../assets/gates/bab-jabiya.jpg",
+    image: "../images/culture/gates/bab-jabiya.jpg",
     alt: "باب الجابية في دمشق القديمة",
     intro: "المدخل الغربي التاريخي للمدينة، وبداية القسم الغربي من الشارع المستقيم.",
     description:
@@ -551,7 +551,7 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
         {
-            src: "../assets/gates/bab-jabiya.jpg",
+            src: "../images/culture/gates/bab-jabiya.jpg",
             credit: "صورة من ملفات المشروع"
         }
     ]
@@ -562,7 +562,7 @@ window.DM_LANDMARKS = [
     name: "باب الفراديس",
     category: "معلم أثري",
     type: "باب تاريخي",
-    image: "../assets/gates/bab-faradis.jpg",
+    image: "../images/culture/gates/bab-faradis.jpg",
     alt: "باب الفراديس في دمشق القديمة",
     intro: "باب شمالي تاريخي عُرف أيضاً باسم باب العمارة، ويحمل اسمه ذكرى بساتين دمشق القديمة.",
     description:
@@ -588,7 +588,7 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
         {
-            src: "../assets/gates/bab-faradis.jpg",
+            src: "../images/culture/gates/bab-faradis.jpg",
             credit: "صورة من ملفات المشروع"
         }
     ]
@@ -599,7 +599,7 @@ window.DM_LANDMARKS = [
     name: "باب السلام",
     category: "معلم أثري",
     type: "باب تاريخي",
-    image: "../assets/gates/bab-salam.jpg",
+    image: "../images/culture/gates/bab-salam.jpg",
     alt: "باب السلام في دمشق القديمة",
     intro: "باب يقع في الجهة الشمالية من دمشق القديمة، بين باب توما وباب الفراديس.",
     description:
@@ -625,7 +625,7 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
         {
-            src: "../assets/gates/bab-salam.jpg",
+            src: "../images/culture/gates/bab-salam.jpg",
             credit: "صورة من ملفات المشروع"
         }
     ]
@@ -636,7 +636,7 @@ window.DM_LANDMARKS = [
     name: "باب توما",
     category: "معلم أثري",
     type: "باب تاريخي",
-    image: "../assets/gates/bab-touma.jpg",
+    image: "../images/culture/gates/bab-touma.jpg",
     alt: "باب توما في دمشق القديمة",
     intro: "بوابة تاريخية في الزاوية الشمالية الشرقية من سور دمشق، تحمل اسم القديس توما.",
     description:
@@ -662,7 +662,7 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
         {
-            src: "../assets/gates/bab-touma.jpg",
+            src: "../images/culture/gates/bab-touma.jpg",
             credit: "صورة من ملفات المشروع"
         }
     ]
@@ -672,7 +672,7 @@ window.DM_LANDMARKS = [
     name: "ضريح صلاح الدين الأيوبي",
     category: "معلم أثري",
     type: "ضريح تاريخي",
-    image: "../assets/gallery/saladin-mausoleum-1.jpg",
+    image: "../images/culture/landmarks/saladin-mausoleum-1.jpg",
     alt: "ضريح صلاح الدين الأيوبي",
     intro: "القبة التي تحتضن قبر محرّر القدس بجوار الجامع الأموي.",
     description:
@@ -698,22 +698,22 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/gallery/saladin-mausoleum-1.jpg",
+        src: "../images/culture/landmarks/saladin-mausoleum-1.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_mausoleum_of_Sultan_Saladin_8145.jpg",
       },
       {
-        src: "../assets/gallery/saladin-mausoleum-2.jpg",
+        src: "../images/culture/landmarks/saladin-mausoleum-2.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_mausoleum_of_Sultan_Saladin_8144.jpg",
       },
       {
-        src: "../assets/gallery/saladin-mausoleum-3.jpg",
+        src: "../images/culture/landmarks/saladin-mausoleum-3.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_mausoleum_of_Sultan_Saladin_8147.jpg",
       },
       {
-        src: "../assets/gallery/saladin-mausoleum-4.jpg",
+        src: "../images/culture/landmarks/saladin-mausoleum-4.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_mausoleum_of_Sultan_Saladin_8146.jpg",
       },
@@ -725,7 +725,7 @@ window.DM_LANDMARKS = [
     name: "البيمارستان النوري",
     category: "معلم أثري",
     type: "مستشفى تاريخي ومتحف",
-    image: "../assets/gallery/bimaristan-nuri-1.jpg",
+    image: "../images/culture/landmarks/bimaristan-nuri-1.jpg",
     alt: "البيمارستان النوري",
     intro: "أحد أقدم مستشفيات العالم الإسلامي، ومدرسة للطب منذ القرن الثاني عشر.",
     description: "مستشفى ومدرسة للطب أسسه نور الدين زنكي، ويضم اليوم متحف الطب والعلوم عند العرب.",
@@ -750,22 +750,22 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/gallery/bimaristan-nuri-1.jpg",
+        src: "../images/culture/landmarks/bimaristan-nuri-1.jpg",
         credit: "JYB Devot — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damas_Bimaristan_P1014401mod.jpg",
       },
       {
-        src: "../assets/gallery/bimaristan-nuri-2.jpg",
+        src: "../images/culture/landmarks/bimaristan-nuri-2.jpg",
         credit: "TheRealHuldra — Public domain",
         source: "https://commons.wikimedia.org/wiki/File:Nur_al-Din_Bimaristan014.JPG",
       },
       {
-        src: "../assets/gallery/bimaristan-nuri-3.jpg",
+        src: "../images/culture/landmarks/bimaristan-nuri-3.jpg",
         credit: "TheRealHuldra — Public domain",
         source: "https://commons.wikimedia.org/wiki/File:Nur_al-Din_Bimaristan012.JPG",
       },
       {
-        src: "../assets/gallery/bimaristan-nuri-4.jpg",
+        src: "../images/culture/landmarks/bimaristan-nuri-4.jpg",
         credit: "Nizam Alden Enayeh — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Al-BIMARISTAN_AN-NOURI_23.jpg",
       },
@@ -777,7 +777,7 @@ window.DM_LANDMARKS = [
     name: "التكية السليمانية",
     category: "معلم أثري",
     type: "مجمّع عثماني",
-    image: "../assets/gallery/takiyya-1.jpg",
+    image: "../images/culture/landmarks/takiyya-1.jpg",
     alt: "التكية السليمانية",
     intro: "مجمّع عثماني على ضفة بردى بتوقيع المعمار سنان.",
     description:
@@ -803,22 +803,22 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/gallery/takiyya-1.jpg",
+        src: "../images/culture/landmarks/takiyya-1.jpg",
         credit: "Bernard Gagnon — CC BY-SA 3.0",
         source: "https://commons.wikimedia.org/wiki/File:Takiyya_as-S%C3%BCleimaniyya_Mosque_01.jpg",
       },
       {
-        src: "../assets/gallery/takiyya-2.jpg",
+        src: "../images/culture/landmarks/takiyya-2.jpg",
         credit: "Zain Almasri — CC BY-SA 3.0",
         source: "https://commons.wikimedia.org/wiki/File:Sulaymaniyya_Takiyya_4.jpg",
       },
       {
-        src: "../assets/gallery/takiyya-3.jpg",
+        src: "../images/culture/landmarks/takiyya-3.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_Sulaymaniyya_Takiyya_tombs_7885.jpg",
       },
       {
-        src: "../assets/gallery/takiyya-4.jpg",
+        src: "../images/culture/landmarks/takiyya-4.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_Sulaymaniyya_Takiyya_tombs_7888.jpg",
       },
@@ -830,7 +830,7 @@ window.DM_LANDMARKS = [
     name: "محطة الحجاز",
     category: "معلم أثري",
     type: "محطة قطارات تاريخية",
-    image: "../assets/gallery/hejaz-station-1.jpg",
+    image: "../images/culture/landmarks/hejaz-station-1.jpg",
     alt: "محطة الحجاز",
     intro: "بوابة دمشق إلى المدينة المنورة في زمن سكة حديد الحجاز.",
     description:
@@ -856,22 +856,22 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/gallery/hejaz-station-1.jpg",
+        src: "../images/culture/landmarks/hejaz-station-1.jpg",
         credit: "Heretiq — CC BY-SA 3.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus-Hejaz_station.jpg",
       },
       {
-        src: "../assets/gallery/hejaz-station-2.jpg",
+        src: "../images/culture/landmarks/hejaz-station-2.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_Hejaz_railway_station_7616.jpg",
       },
       {
-        src: "../assets/gallery/hejaz-station-3.jpg",
+        src: "../images/culture/landmarks/hejaz-station-3.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_Hejaz_railway_station_7638.jpg",
       },
       {
-        src: "../assets/gallery/hejaz-station-4.jpg",
+        src: "../images/culture/landmarks/hejaz-station-4.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_Hejaz_railway_station_7621.jpg",
       },
@@ -883,7 +883,7 @@ window.DM_LANDMARKS = [
     name: "مكتب عنبر",
     category: "معلم أثري",
     type: "بيت دمشقي تاريخي",
-    image: "../assets/gallery/maktab-anbar-1.jpg",
+    image: "../images/culture/landmarks/maktab-anbar-1.jpg",
     alt: "مكتب عنبر",
     intro: "دار دمشقية فخمة تحوّلت إلى مدرسة خرّجت أجيالاً من رجالات سوريا.",
     description: "بيت دمشقي واسع بباحات متعددة وزخارف خشبية وحجرية غنية، وهو اليوم مقر للجنة حماية مدينة دمشق القديمة.",
@@ -908,23 +908,23 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/gallery/maktab-anbar-1.jpg",
+        src: "../images/culture/landmarks/maktab-anbar-1.jpg",
         credit: "Dudley Miles — Public domain",
         source: "https://commons.wikimedia.org/wiki/File:Damascus%2C_Maktab_Anbar%2C_reception_courtyard.JPG",
       },
       {
-        src: "../assets/gallery/maktab-anbar-2.jpg",
+        src: "../images/culture/landmarks/maktab-anbar-2.jpg",
         credit: "Verity Cridland — CC BY 2.0",
         source: "https://commons.wikimedia.org/wiki/File:Maktab_Anbar_Damascus.jpg",
       },
       {
-        src: "../assets/gallery/maktab-anbar-3.jpg",
+        src: "../images/culture/landmarks/maktab-anbar-3.jpg",
         credit: "Yazan.refai — CC BY-SA 3.0",
         source:
           "https://commons.wikimedia.org/wiki/File:%D9%85%D9%83%D8%AA%D8%A8_%D8%B9%D9%86%D8%A8%D8%B1_-_Maktab_Anbar.jpg",
       },
       {
-        src: "../assets/gallery/maktab-anbar-4.jpg",
+        src: "../images/culture/landmarks/maktab-anbar-4.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_Maktab_Anbar_entrance_4741.jpg",
       },
@@ -936,7 +936,7 @@ window.DM_LANDMARKS = [
     name: "كنيسة حنانيا",
     category: "معلم أثري",
     type: "كنيسة تاريخية",
-    image: "../assets/gallery/ananias-1.jpg",
+    image: "../images/culture/landmarks/ananias-1.jpg",
     alt: "كنيسة حنانيا",
     intro: "كنيسة تحت الأرض في حي باب توما يُعتقد أنها بيت القديس حنانيا.",
     description:
@@ -962,23 +962,23 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/gallery/ananias-1.jpg",
+        src: "../images/culture/landmarks/ananias-1.jpg",
         credit: "Bernard Gagnon — CC BY-SA 3.0",
         source: "https://commons.wikimedia.org/wiki/File:Chapel_of_Saint_Ananias_02.jpg",
       },
       {
-        src: "../assets/gallery/ananias-2.jpg",
+        src: "../images/culture/landmarks/ananias-2.jpg",
         credit: "Bernard Gagnon — CC BY-SA 3.0",
         source: "https://commons.wikimedia.org/wiki/File:Chapel_of_Saint_Ananias_01.jpg",
       },
       {
-        src: "../assets/gallery/ananias-3.jpg",
+        src: "../images/culture/landmarks/ananias-3.jpg",
         credit: "Frank Kidner — CC BY-SA 4.0",
         source:
           "https://commons.wikimedia.org/wiki/File:House_of_Ananias%2C_Damascus_(%D8%AF%D9%85%D8%B4%D9%82)%2C_Syria_-_Chapel_east_end_-_PHBZ024_2016_0089_-_Dumbarton_Oaks.jpg",
       },
       {
-        src: "../assets/gallery/ananias-4.jpg",
+        src: "../images/culture/landmarks/ananias-4.jpg",
         credit: "Frank Kidner — CC BY-SA 4.0",
         source:
           "https://commons.wikimedia.org/wiki/File:House_of_Ananias%2C_Damascus_(%D8%AF%D9%85%D8%B4%D9%82)%2C_Syria_-_Chapel_east_end_-_PHBZ024_2016_0086_-_Dumbarton_Oaks.jpg",
@@ -991,7 +991,7 @@ window.DM_LANDMARKS = [
     name: "نصب ساحة المرجة",
     category: "نصب تذكاري",
     type: "عمود تذكاري",
-    image: "../assets/gallery/marjeh-column-1.jpg",
+    image: "../images/culture/landmarks/marjeh-column-1.jpg",
     alt: "نصب ساحة المرجة",
     intro: "عمود برونزي في قلب ساحة المرجة يخلّد وصول خط البرق بين دمشق والمدينة المنورة.",
     description:
@@ -1017,22 +1017,22 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/gallery/marjeh-column-1.jpg",
+        src: "../images/culture/landmarks/marjeh-column-1.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_Al_Merjeh_or_Martyrs_Square_0360.jpg",
       },
       {
-        src: "../assets/gallery/marjeh-column-2.jpg",
+        src: "../images/culture/landmarks/marjeh-column-2.jpg",
         credit: "yeowatzup — CC BY 2.0",
         source: "https://commons.wikimedia.org/wiki/File:Marjeh_Tower_Damascus1.jpg",
       },
       {
-        src: "../assets/gallery/marjeh-column-3.jpg",
+        src: "../images/culture/landmarks/marjeh-column-3.jpg",
         credit: "Ankara — CC BY-SA 3.0",
         source: "https://commons.wikimedia.org/wiki/File:Marjeh_square_2009.jpg",
       },
       {
-        src: "../assets/gallery/marjeh-column-4.jpg",
+        src: "../images/culture/landmarks/marjeh-column-4.jpg",
         credit: "FOTO:Fortepan — ID 28417: Adományozó/Donor: MZSL/Ofner Károl — CC BY-SA 3.0",
         source: "https://commons.wikimedia.org/wiki/File:Marjeh_t%C3%A9r._Fortepan_28417.jpg",
       },
@@ -1044,7 +1044,7 @@ window.DM_LANDMARKS = [
     name: "ساحة يوسف العظمة",
     category: "نصب تذكاري",
     type: "ساحة ونصب تذكاري",
-    image: "../assets/gallery/yusuf-azma-1.jpg",
+    image: "../images/culture/landmarks/yusuf-azma-1.jpg",
     alt: "ساحة يوسف العظمة",
     intro: "ساحة في قلب دمشق الحديثة يتوسطها تمثال وزير الحربية يوسف العظمة.",
     description:
@@ -1070,17 +1070,17 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/gallery/yusuf-azma-1.jpg",
+        src: "../images/culture/landmarks/yusuf-azma-1.jpg",
         credit: "Vyacheslav Argenberg — CC BY 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus%2C_Syria%2C_The_city_square.jpg",
       },
       {
-        src: "../assets/gallery/yusuf-azma-2.jpg",
+        src: "../images/culture/landmarks/yusuf-azma-2.jpg",
         credit: "Jacky Lee — CC BY 3.0",
         source: "https://commons.wikimedia.org/wiki/File:Dawn_of_Youssef_Al_Azmah_Square_-_panoramio.jpg",
       },
       {
-        src: "../assets/gallery/yusuf-azma-3.jpg",
+        src: "../images/culture/landmarks/yusuf-azma-3.jpg",
         credit: "Valdemar Bednarz — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Yusuf_al-Azma_Square%2C_Damascus_1995_02.jpg",
       },
@@ -1092,7 +1092,7 @@ window.DM_LANDMARKS = [
     name: "تمثال صلاح الدين الأيوبي",
     category: "نصب تذكاري",
     type: "تمثال برونزي",
-    image: "../assets/gallery/saladin-statue-1.jpg",
+    image: "../images/culture/landmarks/saladin-statue-1.jpg",
     alt: "تمثال صلاح الدين الأيوبي",
     intro: "فارس حطين على صهوة جواده أمام قلعة دمشق.",
     description:
@@ -1118,22 +1118,22 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/gallery/saladin-statue-1.jpg",
+        src: "../images/culture/landmarks/saladin-statue-1.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_statue_for_Saladin_0367.jpg",
       },
       {
-        src: "../assets/gallery/saladin-statue-2.jpg",
+        src: "../images/culture/landmarks/saladin-statue-2.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_statue_for_Saladin_0368.jpg",
       },
       {
-        src: "../assets/gallery/saladin-statue-3.jpg",
+        src: "../images/culture/landmarks/saladin-statue-3.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_statue_for_Saladin_0370.jpg",
       },
       {
-        src: "../assets/gallery/saladin-statue-4.jpg",
+        src: "../images/culture/landmarks/saladin-statue-4.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_statue_for_Saladin_7927.jpg",
       },
@@ -1145,7 +1145,7 @@ window.DM_LANDMARKS = [
     name: "المتحف الوطني بدمشق",
     category: "متحف",
     type: "متحف أثري وثقافي",
-    image: "../assets/place-national-museum.jpg",
+    image: "../images/culture/landmarks/national-museum-1.jpg",
     alt: "المتحف الوطني بدمشق",
     intro: "رحلة بين آثار سورية، من الحضارات القديمة حتى الفنون الإسلامية.",
     description:
@@ -1171,28 +1171,28 @@ window.DM_LANDMARKS = [
     ],
     gallery: [
       {
-        src: "../assets/place-national-museum.jpg",
+        src: "../images/culture/landmarks/national-museum-1.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source:
           "https://commons.wikimedia.org/wiki/File:Damascus_National_Museum_Qasr_al-Heir_al-Gharbi_(gateway)_5325.jpg",
       },
       {
-        src: "../assets/gallery/national-museum-2.jpg",
+        src: "../images/culture/landmarks/national-museum-2.jpg",
         credit: "User:Aziz1005 — Public domain",
         source: "https://commons.wikimedia.org/wiki/File:Damascus-National-Museum.JPG",
       },
       {
-        src: "../assets/gallery/national-museum-3.jpg",
+        src: "../images/culture/landmarks/national-museum-3.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_National_Museum_miniature_5292.jpg",
       },
       {
-        src: "../assets/gallery/national-museum-4.jpg",
+        src: "../images/culture/landmarks/national-museum-4.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_National_Museum_miniature_5293.jpg",
       },
       {
-        src: "../assets/gallery/national-museum-5.jpg",
+        src: "../images/culture/landmarks/national-museum-5.jpg",
         credit: "Dosseman — CC BY-SA 4.0",
         source: "https://commons.wikimedia.org/wiki/File:Damascus_National_Museum_earthenware_5290.jpg",
       },

@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (/^(https?:|data:|blob:)/.test(src)) return src;
     return "../../" + src.replace(/^(\.\.\/|\/)+/, "");
   };
-  const oppImage = (src) => (/^(https?:|data:|blob:|\/|\.\.\/)/.test(src || "") ? siteUrl(src) : `../../images/${src}`);
+  const oppImage = (src) => (/^(https?:|data:|blob:|\/|\.\.\/)/.test(src || "") ? siteUrl(src) : `../../images/investments/${src}`);
 
   const data = { news: null, opportunities: null, events: null };
 

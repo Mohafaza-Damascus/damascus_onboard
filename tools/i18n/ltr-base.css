@@ -5,16 +5,7 @@ html[dir="ltr"] body *:not([lang="ar"]):not([data-i18n-skip]) {
 
 html[dir="ltr"] .fa-arrow-left,
 html[dir="ltr"] .fa-arrow-right,
-html[dir="ltr"] .fa-arrow-left-long,
-html[dir="ltr"] .fa-arrow-right-long,
-html[dir="ltr"] .fa-chevron-left,
-html[dir="ltr"] .fa-chevron-right,
-html[dir="ltr"] .fa-angle-left,
-html[dir="ltr"] .fa-angle-right,
-html[dir="ltr"] .fa-caret-left,
-html[dir="ltr"] .fa-caret-right,
-html[dir="ltr"] .fa-arrow-left-from-bracket,
-html[dir="ltr"] .fa-arrow-right-to-bracket {
+html[dir="ltr"] .fa-chevron-left {
   scale: -1 1;
 }
 

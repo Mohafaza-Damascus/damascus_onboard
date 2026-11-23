@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         period: "الألف الأول ق.م",
         title: "دمشق الآرامية",
         description: "في الألف الأول قبل الميلاد صارت دمشق عاصمة لمملكة آرامية قوية.",
-        image: "../assets/era-aramean.jpg",
+        image: "../images/culture/eras/aramean.jpg",
         link: "era.html?id=aramean",
       },
       {
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
         period: "333 – 64 ق.م",
         title: "الحقبة الهلنستية",
         description: "بعد فتوحات الإسكندر المقدوني دخلت دمشق العالم الإغريقي.",
-        image: "../assets/era-hellenistic.jpg",
+        image: "../images/culture/eras/hellenistic.jpg",
         link: "era.html?id=hellenistic",
       },
       {
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
         period: "64 ق.م – 395م",
         title: "العهد الروماني",
         description: "في العهد الروماني ازدهرت دمشق وشُقّ الشارع المستقيم.",
-        image: "../assets/era-roman.jpg",
+        image: "../images/culture/eras/roman.jpg",
         link: "era.html?id=roman",
       },
       {
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
         period: "395 – 634م",
         title: "العهد البيزنطي",
         description: "صارت دمشق مركزاً مسيحياً مهماً وتحوّل معبدها إلى كنيسة.",
-        image: "../assets/era-byzantine.jpg",
+        image: "../images/culture/eras/byzantine.jpg",
         link: "era.html?id=byzantine",
       },
       {
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
         period: "661 – 750م",
         title: "الدولة الأموية",
         description: "صارت دمشق عاصمة لأكبر دولة وبُني الجامع الأموي.",
-        image: "../assets/era-umayyad.jpg",
+        image: "../images/culture/eras/umayyad.jpg",
         link: "era.html?id=umayyad",
       },
       {
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
         period: "750 – 1154م",
         title: "العباسيون والفاطميون",
         description: "صارت دمشق ولاية تتنازعها الدول العباسية والفاطمية والسلاجقة.",
-        image: "../assets/era-abbasid-fatimid.jpg",
+        image: "../images/culture/eras/abbasid-fatimid.jpg",
         link: "era.html?id=abbasid-fatimid",
       },
       {
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
         period: "1154 – 1260م",
         title: "الزنكيون والأيوبيون",
         description: "عادت دمشق مركزاً للحكم مع نور الدين زنكي وصلاح الدين.",
-        image: "../assets/era-ayyubid.jpg",
+        image: "../images/culture/eras/ayyubid.jpg",
         link: "era.html?id=ayyubid",
       },
       {
@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
         period: "1260 – 1516م",
         title: "السلطنة المملوكية",
         description: "ازدهرت المدارس والحمّامات والأسواق في عهد المماليك.",
-        image: "../assets/era-mamluk.jpg",
+        image: "../images/culture/eras/mamluk.jpg",
         link: "era.html?id=mamluk",
       },
       {
@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
         period: "1516 – 1918م",
         title: "العهد العثماني",
         description: "محطة كبرى لقوافل الحج وبُنيت فيها التكايا والخانات.",
-        image: "../assets/era-ottoman.jpg",
+        image: "../images/culture/eras/ottoman.jpg",
         link: "era.html?id=ottoman",
       },
       {
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
         period: "1918 – 1970م",
         title: "الحكومة العربية والاستقلال",
         description: "أول حكومة عربية في دمشق، ثم الانتداب الفرنسي وميسلون والثورة الكبرى، حتى الجلاء عام 1946.",
-        image: "../assets/damascus-independence.jfif",
+        image: "../images/culture/history/independence.jpg",
         link: "era.html?id=independence",
       },
       {
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
         period: "1970 – 2011م",
         title: "انقلاب الأسد على الحكم",
         description: "انقلاب حافظ الأسد عام 1970 وعقود من القمع والمجازر وتوريث الحكم لابنه.",
-        image: "../assets/damascus-today.jfif",
+        image: "../images/culture/history/today.jpg",
         link: "era.html?id=assad-regime",
       },
       {
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
         period: "2011 – 2024م",
         title: "الثورة السورية وانتصارها",
         description: "من مظاهرة سوق الحميدية عام 2011 إلى تحرير دمشق وسقوط النظام في الثامن من كانون الأول 2024.",
-        image: "../assets/place-hamidiyah-souk.jpg",
+        image: "../images/culture/landmarks/hamidiyah-souk-1.jpg",
         link: "era.html?id=revolution",
       },
       {
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
         period: "2024م – اليوم",
         title: "دمشق الحديثة",
         description: "دمشق الحرة بعد التحرير، ومرحلة جديدة من التعافي وإعادة البناء.",
-        image: "../assets/era-modern.jpg",
+        image: "../images/culture/eras/modern.jpg",
         link: "era.html?id=modern",
       },
     ];
