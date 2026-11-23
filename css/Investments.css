@@ -357,7 +357,7 @@
   padding: var(--sp-section) 0;
   text-align: center;
 }
-
+/* 
 .inv-page .inv-statement {
   max-width: 30ch;
   margin-inline: auto;
@@ -379,7 +379,7 @@
 .inv-page .inv-statement em .w:not(.is-lit),
 .inv-page .inv-statement em .w:not(.is-lit) span {
   color: rgba(5, 66, 57, 0.2);
-}
+} */
 
 .inv-intro__action {
   margin-top: 36px;

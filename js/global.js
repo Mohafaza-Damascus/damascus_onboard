@@ -1,6 +1,8 @@
 (function () {
   const cssLink = document.querySelector('link[href*="global.css"]');
-  const base = cssLink ? cssLink.getAttribute("href").replace("css/global.css", "") : "";
+  const base = cssLink
+    ? cssLink.getAttribute("href").replace("css/global.css", "")
+    : "";
   const pagesPrefix = base + "pages/";
 
   const guideHref = "https://desktop-5kc9l5q.tail7e5653.ts.net/";
@@ -11,12 +13,17 @@
 
     const activePage = el.dataset.active || "";
 
-    const savedModel = localStorage.getItem("dm-header-model") || el.dataset.headerModel || "2";
+    const savedModel =
+      localStorage.getItem("dm-header-model") || el.dataset.headerModel || "2";
 
     const navItems = [
       { label: "الرئيسية", href: `${base}index.html` },
-      { label: "الأخبار", href: `${pagesPrefix}news-enas.html` },
-      { label: "الخدمات", aliases: ["الخدمات"], href: `${pagesPrefix}services-model-2.html` },
+      { label: "الأخبار", href: `${pagesPrefix}news.html` },
+      {
+        label: "الخدمات",
+        aliases: ["الخدمات"],
+        href: `${pagesPrefix}services-model-2.html`,
+      },
       { label: "الاستثمارات", href: `${pagesPrefix}Investments.html` },
       { label: "ثقافة و سياحة", href: `${pagesPrefix}Cultural-model-5.html` },
       { label: "دليل دمشق", href: guideHref },
@@ -34,7 +41,10 @@
         }
 
         const subLinks = item.subItems
-          .map((subItem) => `<li><a class="nav__submenu-link" href="${subItem.href}">${subItem.label}</a></li>`)
+          .map(
+            (subItem) =>
+              `<li><a class="nav__submenu-link" href="${subItem.href}">${subItem.label}</a></li>`,
+          )
           .join("");
 
         return `
@@ -140,7 +150,7 @@
               <h3 class="footer__title">روابط سريعة</h3>
               <ul class="footer__list">
                 <li><a href="${base}index.html">الرئيسية</a></li>
-                <li><a href="${pagesPrefix}news-enas.html">الأخبار</a></li>
+                <li><a href="${pagesPrefix}news.html">الأخبار</a></li>
                 <li><a href="${pagesPrefix}Cultural-model-5.html">النظرة الثقافية</a></li>
                 <li><a href="${guideHref}">دليل دمشق</a></li>
                 <li><a href="${pagesPrefix}Investments.html">الاستثمارات</a></li>
@@ -296,17 +306,28 @@
 
   const setHeaderHeight = () => {
     if (!header) return;
-    document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
+    document.documentElement.style.setProperty(
+      "--header-h",
+      header.offsetHeight + "px",
+    );
   };
 
   function applyHeaderModel(modelNum) {
     if (!header) return;
-    header.classList.remove("header--model-1", "header--model-2", "header--model-3", "header--model-4");
+    header.classList.remove(
+      "header--model-1",
+      "header--model-2",
+      "header--model-3",
+      "header--model-4",
+    );
     header.classList.add(`header--model-${modelNum}`);
     localStorage.setItem("dm-header-model", String(modelNum));
     if (switcher) {
       switcher.querySelectorAll("button").forEach((btn) => {
-        btn.classList.toggle("is-active", btn.dataset.hmodel === String(modelNum));
+        btn.classList.toggle(
+          "is-active",
+          btn.dataset.hmodel === String(modelNum),
+        );
       });
     }
     setHeaderHeight();
@@ -471,7 +492,8 @@
       e.preventDefault();
       showView(authLogin);
     });
-  if (goRegister) goRegister.addEventListener("click", () => showView(authRegister));
+  if (goRegister)
+    goRegister.addEventListener("click", () => showView(authRegister));
   if (goRegister2)
     goRegister2.addEventListener("click", (e) => {
       e.preventDefault();
@@ -495,7 +517,9 @@
     selector.addEventListener("click", (e) => {
       const pill = e.target.closest(".role-pill");
       if (!pill) return;
-      selector.querySelectorAll(".role-pill").forEach((p) => p.classList.remove("is-active"));
+      selector
+        .querySelectorAll(".role-pill")
+        .forEach((p) => p.classList.remove("is-active"));
       pill.classList.add("is-active");
     });
   });
@@ -615,7 +639,10 @@
 
   function setHoverSector(sectorId) {
     hoods.forEach((h) =>
-      h.classList.toggle("is-sector-hover", Boolean(sectorId) && h.dataset.sector === sectorId),
+      h.classList.toggle(
+        "is-sector-hover",
+        Boolean(sectorId) && h.dataset.sector === sectorId,
+      ),
     );
   }
 
@@ -623,7 +650,9 @@
     const data = SECTORS[sectorId];
     if (!data) return;
 
-    hoods.forEach((h) => h.classList.toggle("is-active", h.dataset.sector === sectorId));
+    hoods.forEach((h) =>
+      h.classList.toggle("is-active", h.dataset.sector === sectorId),
+    );
     sectorLabels.forEach((lbl) =>
       lbl.classList.toggle("is-active", lbl.dataset.sector === sectorId),
     );

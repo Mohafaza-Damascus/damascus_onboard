@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const NEWS_TYPES = { news: "خبر", activity: "أنشطة المحافظة", decision: "قرار" };
+  const NEWS_TYPES = {
+    news: "خبر",
+    activity: "أنشطة المحافظة",
+    decision: "قرار",
+  };
   const SIDEBAR_COUNT = 5;
   const RELATED_COUNT = 4;
   const FONT_KEY = "news-article-font-size";
@@ -7,7 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const escapeHtml = (value) =>
     String(value ?? "").replace(
       /[&<>"']/g,
-      (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch],
+      (ch) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        })[ch],
     );
 
   const parseDate = (value) => {
@@ -18,7 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const formatDate = (date) => {
-    const gregorian = date.toLocaleDateString("ar-SY-u-nu-latn", { day: "numeric", month: "long", year: "numeric" });
+    const gregorian = date.toLocaleDateString("ar-SY-u-nu-latn", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
     let hijri = "";
     try {
       hijri = new Intl.DateTimeFormat("ar-SA-u-ca-islamic-umalqura-nu-latn", {
@@ -30,7 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return hijri ? `${gregorian} م ـ ${hijri}` : `${gregorian} م`;
   };
 
-  const detailsUrl = (item) => `news-details.html?id=${encodeURIComponent(item.id)}`;
+  const detailsUrl = (item) =>
+    `news-details.html?id=${encodeURIComponent(item.id)}`;
   const typeLabel = (item) => NEWS_TYPES[item.type] || item.type || "";
   const typeBadge = (item) =>
     `<span class="news-type" data-kind="${escapeHtml(item.type)}">${escapeHtml(typeLabel(item))}</span>`;
@@ -49,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="article-missing">
         <h1>الخبر غير موجود</h1>
         <p>ربما حُذف الخبر أو أن الرابط غير صحيح.</p>
-        <a href="news-enas.html">العودة/a>
+        <a href="news.html">العودة/a>
       </div>`;
     document.getElementById("relatedNews").hidden = true;
   }
@@ -60,14 +76,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const pageUrl = window.location.href;
 
     document.title = `${title} - محافظة دمشق`;
-    document.querySelector('meta[name="description"]')?.setAttribute("content", item.desc || title);
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute("content", item.desc || title);
 
     const bodyHtml = String(item.body || "")
       .split(/\r?\n/)
       .map((line) => line.trim())
       .filter(Boolean)
       .map((line) =>
-        line.startsWith("##") ? `<h2>${escapeHtml(line.replace(/^#+\s*/, ""))}</h2>` : `<p>${escapeHtml(line)}</p>`,
+        line.startsWith("##")
+          ? `<h2>${escapeHtml(line.replace(/^#+\s*/, ""))}</h2>`
+          : `<p>${escapeHtml(line)}</p>`,
       )
       .join("");
 
@@ -81,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     articleEl.innerHTML = `
 
 <div style="margin-bottom: 20px;">
-  <a href="news-enas.html" class="article-back-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding-inline: 20px; background-color: var(--green-900, #064239); color: #fff; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 0.9rem; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 10px 18px -10px rgba(120, 90, 30, 0.6); transition: background-color 200ms ease;">
+  <a href="news.html" class="article-back-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding-inline: 20px; background-color: var(--green-900, #064239); color: #fff; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 0.9rem; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 10px 18px -10px rgba(120, 90, 30, 0.6); transition: background-color 200ms ease;">
     <i class="fas fa-arrow-right" aria-hidden="true"></i> العودة
   </a>
 </div>
@@ -136,18 +156,22 @@ document.addEventListener("DOMContentLoaded", () => {
     document.head.appendChild(jsonLd);
 
     const copyStatus = document.getElementById("copyStatus");
-    document.getElementById("copyLinkBtn").addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(pageUrl);
-        copyStatus.textContent = "تم نسخ الرابط";
-      } catch {
-        copyStatus.textContent = "تعذّر نسخ الرابط";
-      }
-      setTimeout(() => {
-        copyStatus.textContent = "";
-      }, 2500);
-    });
-    document.getElementById("printBtn").addEventListener("click", () => window.print());
+    document
+      .getElementById("copyLinkBtn")
+      .addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(pageUrl);
+          copyStatus.textContent = "تم نسخ الرابط";
+        } catch {
+          copyStatus.textContent = "تعذّر نسخ الرابط";
+        }
+        setTimeout(() => {
+          copyStatus.textContent = "";
+        }, 2500);
+      });
+    document
+      .getElementById("printBtn")
+      .addEventListener("click", () => window.print());
 
     const body = document.getElementById("articleBody");
     const range = document.getElementById("fontSizeRange");
@@ -170,7 +194,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (savedSize) applySize(savedSize, false);
     else {
-      const defaultSize = Math.round(parseFloat(getComputedStyle(body).fontSize));
+      const defaultSize = Math.round(
+        parseFloat(getComputedStyle(body).fontSize),
+      );
       range.value = defaultSize;
       output.textContent = defaultSize;
     }
