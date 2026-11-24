@@ -279,12 +279,46 @@
             <input type="text" name="nationalId" inputmode="numeric" maxlength="11" required />
           </div>
           <div class="auth-field auth-field-full">
-            <label>وثيقة إثبات (صورة هوية أو جواز سفر...) <span class="req">*</span></label>
-            <label class="auth-file-upload" for="regDoc">
-              <input type="file" id="regDoc" name="idDocument" accept="image/*,.pdf" required />
+            <label for="regDocType">وثيقة الإثبات <span class="req">*</span></label>
+            <select id="regDocType" name="docType" required>
+              <option value="" disabled selected>اختر نوع وثيقة الإثبات</option>
+              <option value="id_card">الهوية الشخصية</option>
+              <option value="civil_extract">إخراج قيد</option>
+              <option value="passport">جواز سفر</option>
+            </select>
+          </div>
+
+          <!-- خيار الهوية: وجه أمامي + وجه خلفي -->
+          <div class="auth-field-full auth-doc-grid" id="docUploadId" hidden>
+            <div class="auth-field">
+              <label>صورة الوجه الأمامي <span class="req">*</span></label>
+              <label class="auth-file-upload" for="regDocFront">
+                <input type="file" id="regDocFront" name="idFront" accept="image/*,.pdf" />
+                <span class="auth-file-upload__btn">اختيار ملف</span>
+                <span class="auth-file-upload__name" id="regDocFrontName">ارفع الوجه الأمامي</span>
+              </label>
+            </div>
+            <div class="auth-field">
+              <label>صورة الوجه الخلفي <span class="req">*</span></label>
+              <label class="auth-file-upload" for="regDocBack">
+                <input type="file" id="regDocBack" name="idBack" accept="image/*,.pdf" />
+                <span class="auth-file-upload__btn">اختيار ملف</span>
+                <span class="auth-file-upload__name" id="regDocBackName">ارفع الوجه الخلفي</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- خيار إخراج القيد أو جواز السفر: صورة واحدة -->
+          <div class="auth-field auth-field-full auth-doc-group" id="docUploadSingle" hidden>
+            <label id="regDocSingleLabel">صورة الوثيقة <span class="req">*</span></label>
+            <label class="auth-file-upload" for="regDocSingle">
+              <input type="file" id="regDocSingle" name="singleDoc" accept="image/*,.pdf" />
               <span class="auth-file-upload__btn">اختيار ملف</span>
-              <span class="auth-file-upload__name" id="regDocName">لم يتم اختيار ملف (صورة أو PDF)</span>
+              <span class="auth-file-upload__name" id="regDocSingleName">لم يتم اختيار ملف (صورة أو PDF)</span>
             </label>
+            <p class="auth-doc-note" id="regDocNote" hidden>
+              ملاحظة: يجب أن تكون ورقة إخراج القيد صالحة وسارية المفعول.
+            </p>
           </div>
           <div class="auth-field">
             <label>كلمة المرور <span class="req">*</span></label>
@@ -519,11 +553,52 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeAuth();
   });
-const regDocInput = document.getElementById("regDoc");
-const regDocName = document.getElementById("regDocName");
-if (regDocInput && regDocName) {
-  regDocInput.addEventListener("change", () => {
-    regDocName.textContent = regDocInput.files?.[0]?.name || "لم يتم اختيار ملف (صورة أو PDF)";
+const docTypeSelect = document.getElementById("regDocType");
+const docUploadId = document.getElementById("docUploadId");
+const docUploadSingle = document.getElementById("docUploadSingle");
+const regDocFront = document.getElementById("regDocFront");
+const regDocBack = document.getElementById("regDocBack");
+const regDocSingle = document.getElementById("regDocSingle");
+const regDocSingleLabel = document.getElementById("regDocSingleLabel");
+const regDocNote = document.getElementById("regDocNote");
+
+function bindFileName(inputId, nameId, fallback) {
+  const input = document.getElementById(inputId);
+  const label = document.getElementById(nameId);
+  if (!input || !label) return;
+  input.addEventListener("change", () => {
+    label.textContent = input.files?.[0]?.name || fallback;
+  });
+}
+
+bindFileName("regDocFront", "regDocFrontName", "ارفع الوجه الأمامي");
+bindFileName("regDocBack", "regDocBackName", "ارفع الوجه الخلفي");
+bindFileName("regDocSingle", "regDocSingleName", "لم يتم اختيار ملف (صورة أو PDF)");
+
+if (docTypeSelect && docUploadId && docUploadSingle) {
+  docTypeSelect.addEventListener("change", () => {
+    const val = docTypeSelect.value;
+    const isId = val === "id_card";
+    const isExtract = val === "civil_extract";
+    const isPassport = val === "passport";
+
+    docUploadId.hidden = !isId;
+    docUploadSingle.hidden = !(isExtract || isPassport);
+
+    regDocFront.required = isId;
+    regDocBack.required = isId;
+    regDocSingle.required = isExtract || isPassport;
+
+    if (isExtract) {
+      regDocSingleLabel.innerHTML = 'صورة إخراج القيد <span class="req">*</span>';
+      regDocNote.hidden = false;
+    } else if (isPassport) {
+      regDocSingleLabel.innerHTML = 'صورة جواز السفر <span class="req">*</span>';
+      regDocNote.hidden = true;
+    }
+    regDocSingle.value = "";
+    const singleName = document.getElementById("regDocSingleName");
+    if (singleName) singleName.textContent = "لم يتم اختيار ملف (صورة أو PDF)";
   });
 }
 })();
