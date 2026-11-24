@@ -991,11 +991,8 @@ body,
   color: var(--dl-ink);
 }
 
-.damascus-landmarks *,
-.damascus-landmarks *::before,
-.damascus-landmarks *::after {
-  box-sizing: border-box;
-}
+
+
 
 .damascus-landmarks button {
   font: inherit;
@@ -1021,60 +1018,6 @@ body,
   }
 }
 
-@media (max-width: 760px) {
-  .damascus-landmarks {
-    padding: 75px 0 55px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .damascus-landmarks *,
-  .damascus-landmarks *::before,
-  .damascus-landmarks *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-.damascus-landmarks {
-  --landmark-cream: #f5efe3;
-  --landmark-paper: #fffaf1;
-  --landmark-gold: #b9955c;
-  --landmark-gold-light: #d8bd8b;
-  --landmark-brown: #30291f;
-  --landmark-muted: #817665;
-
-  position: relative;
-  overflow: hidden;
-  padding: 110px 24px 100px;
-  background: radial-gradient(circle at 50% 45%, rgba(216, 189, 139, 0.17), transparent 45%), var(--landmark-cream);
-  color: var(--landmark-brown);
-  isolation: isolate;
-}
-
-.damascus-landmarks *,
-.damascus-landmarks *::before,
-.damascus-landmarks *::after {
-  box-sizing: border-box;
-}
-
-@media (max-width: 760px) {
-  .damascus-landmarks {
-    padding: 75px 15px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .damascus-landmarks *,
-  .damascus-landmarks *::before,
-  .damascus-landmarks *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-  }
-}
 
 .damascus-landmarks {
   --landmark-cream: #f5efe3;
@@ -2754,10 +2697,7 @@ body,
   transform: translate3d(calc(-50% + min(var(--timeline-card-width) * 1.95, 140cqh)), calc(-50% + 12cqh), 0)
     rotate(11deg) scale(0.78) !important;
 }
-#damascus-intangible,
-#damascus-intangible .damascus-intangible__container {
-  overflow: visible;
-}
+
 @keyframes smoothSingleArcFlip {
   0% {
     transform: rotateY(-30deg);
@@ -2775,10 +2715,7 @@ body,
     opacity: 1;
   }
 }
-#damascus-intangible,
-#damascus-intangible .damascus-intangible__container {
-  overflow: visible !important;
-}
+
 #damascus-numbers {
   --dn-gold: #d8bd8b;
   --dn-cream: #fffaf0;
@@ -2864,13 +2801,7 @@ body,
   text-wrap: pretty;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
-#damascus-numbers .damascus-numbers__ornamental-line {
-  display: block;
-  width: 76px;
-  height: 2px;
-  margin: 26px auto 0;
-  background: linear-gradient(90deg, transparent, var(--dn-gold), transparent);
-}
+
 #damascus-numbers .damascus-number-card {
   position: relative;
   isolation: isolate;
@@ -2975,9 +2906,7 @@ body,
     font-size: 13px;
     line-height: 2;
   }
-  #damascus-numbers .damascus-numbers__ornamental-line {
-    margin-top: 19px;
-  }
+ 
   #damascus-numbers .damascus-number-card {
     min-height: 98px;
     padding: 13px 8px;
@@ -3178,9 +3107,7 @@ body,
 #damascus-landmarks .dm-places__layout--fan .dm-fan {
   --fan-w: clamp(235px, 41vh, 345px) !important;
 }
-html {
-  scroll-behavior: smooth;
-}
+
 .cultural-model-5 > .dm-stack-card {
   position: sticky !important;
   will-change: transform, filter;
@@ -3340,24 +3267,8 @@ html {
   flex-direction: column;
   align-items: flex-start;
 }
-#damascus-numbers .damascus-numbers__quote-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-  color: var(--dn-gold, #d8bd8b);
-  font-size: clamp(28px, 2.28vw, 29px);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
-}
-#damascus-numbers .damascus-numbers__quote-kicker::before {
-  content: "";
-  width: 28px;
-  height: 1.5px;
-  background: var(--dn-gold, #d8bd8b);
-  opacity: 0.85;
-}
+
+
 #damascus-numbers .damascus-numbers__header h2 {
   margin: 0 !important;
   display: flex;
@@ -3366,12 +3277,7 @@ html {
   gap: 4px;
   text-align: right !important;
 }
-#damascus-numbers .damascus-numbers__ornamental-line {
-  width: 90px !important;
-  height: 2px !important;
-  margin: 18px 0 14px !important;
-  background: linear-gradient(270deg, var(--dn-gold, #d8bd8b), transparent) !important;
-}
+
 #damascus-numbers .damascus-numbers__book-stage {
   display: flex;
   align-items: center;
@@ -3417,17 +3323,8 @@ html {
     text-shadow 0.3s ease,
     transform 0.3s ease;
 }
-#damascus-numbers .damascus-numbers__quote-kicker:hover {
-  color: #f2d7a0;
-  text-shadow:
-    0 0 10px rgba(242, 215, 160, 0.4),
-    0 2px 14px rgba(0, 0, 0, 0.35);
-  transform: translateX(-3px);
-}
-#damascus-numbers .damascus-numbers__quote-kicker:hover::before {
-  background: #f2d7a0;
-  opacity: 1;
-}
+
+
 #damascus-landmarks .dm-fan__card.is-active,
 #damascus-landmarks .dm-fan__card.is-active:hover {
   opacity: 1 !important;
@@ -4166,29 +4063,10 @@ html {
     color 0.35s ease,
     text-shadow 0.35s ease;
 }
-#damascus-numbers .damascus-numbers__quote-kicker::before {
-  content: "✦";
-  color: #d8bd8b;
-  font-size: 14px;
-  transition:
-    transform 0.4s ease,
-    color 0.4s ease;
-}
-#damascus-numbers .damascus-numbers__header:hover .damascus-numbers__quote-kicker::before {
-  transform: rotate(90deg) scale(1.2);
-  color: #ffffff;
-}
-#damascus-numbers .damascus-numbers__ornamental-line {
-  width: 90px !important;
-  height: 3px !important;
-  margin: 18px 0 4px !important;
-  border-radius: 999px;
-  background: linear-gradient(270deg, #f3dfb9, #a58b5c, transparent) !important;
-  transition: width 0.45s ease !important;
-}
-#damascus-numbers .damascus-numbers__header:hover .damascus-numbers__ornamental-line {
-  width: 160px !important;
-}
+
+
+
+
 #damascus-numbers .damascus-numbers__header {
   position: relative;
   display: inline-block;
@@ -4202,10 +4080,7 @@ html {
   -webkit-backdrop-filter: blur(4px);
   transition: transform 0.4s ease;
 }
-#damascus-numbers .damascus-numbers__quote-kicker::before {
-  display: none !important;
-  content: none !important;
-}
+
 .cultural-model-5,
 .cultural-model-5 > .dm-stack-card:not(#damascus-gates) {
   background: transparent !important;
@@ -4276,53 +4151,58 @@ html {
   text-shadow: 0 3px 16px rgba(0, 0, 0, 0.75) !important;
 }
 
-#damascus-numbers .damascus-numbers__ornamental-line {
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 240px !important;
-  height: 12px !important;
-  margin: 14px 0 !important;
-  background: transparent !important;
-}
 
-#damascus-numbers .damascus-numbers__ornamental-line::before {
-  content: "" !important;
-  position: absolute !important;
-  inset-inline: 0 !important;
-  height: 1px !important;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(216, 189, 139, 0.9) 25%,
-    rgba(216, 189, 139, 0.9) 75%,
-    transparent 100%
-  ) !important;
-}
 
-#damascus-numbers .damascus-numbers__ornamental-line::after {
-  content: "" !important;
-  position: relative !important;
-  z-index: 1 !important;
-  width: 9px !important;
-  height: 9px !important;
-  background: #d8bd8b !important;
-  transform: rotate(45deg) !important;
-  box-shadow: none !important;
-}
 
-#damascus-numbers .damascus-numbers__header:hover .damascus-numbers__ornamental-line {
-  width: 260px !important;
-}
 
-/* اسم السيد الرئيس بحجم أكبر وأوضح */
+
+
+
 #damascus-numbers .damascus-numbers__author-name {
-  margin: 9 !important;
+  margin: 0 !important;
   color: #f3dfb9 !important;
   font-size: clamp(20px, 1.95vw, 26px) !important;
   font-weight: 800 !important;
   line-height: 1.5 !important;
   text-align: right !important;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9), 0 0 22px rgba(5, 25, 20, 0.85) !important;
+}
+
+.dm-quote-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 240px;
+  height: 12px;
+  margin: 14px auto;
+  background: none;
+}
+
+.dm-quote-divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  transform: translateY(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #a58b5c 35%,
+    #a58b5c 65%,
+    transparent 100%
+  );
+}
+
+.dm-quote-divider::after {
+  content: "";
+  position: relative;
+  z-index: 1;
+  width: 8px;
+  height: 8px;
+  background: #a58b5c;
+  transform: rotate(45deg);
 }
