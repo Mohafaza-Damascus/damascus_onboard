@@ -17,11 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
     service.description || "لا يوجد وصف لهذه الخدمة.";
   document.getElementById("guideFacts").innerHTML = `
     <div class="sd-fact">
+
+     <i class="fa-solid fa-sitemap"></i>
+
       <dt>
-        <i class="fa-solid fa-sitemap"></i>
-        مديرية :
+        مديرية ${escapeHtml(service.directorate || service.electronicDirectorate || "غير محددة")}
       </dt>
-      <dd>${escapeHtml(service.directorate || service.electronicDirectorate || "غير محددة")}</dd>
+      <dd></dd>
     </div>
   `;
 
