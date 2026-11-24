@@ -3,7 +3,7 @@
   const base = cssLink ? cssLink.getAttribute("href").replace("css/global.css", "") : "";
   const pagesPrefix = base + "pages/";
 
-  const guideHref = "https://desktop-5kc9l5q.tail7e5653.ts.net/";
+  const guideHref = "https://desktop-5kc9l5q.tail7e5653.ts.net/viewer";
 
   function renderHeader() {
     const el = document.getElementById("site-header");

@@ -543,7 +543,7 @@ body,
   width: 18px;
   height: 18px;
   background: var(--dt-accent);
-  box-shadow: 0 0 0 9px rgba(165, 139, 92, 0.16);
+  box-shadow: 0 0 0 9px rgba(161, 120, 43, 0.56);
 }
 .damascus-timeline__year.is-active span {
   font-weight: 700;
