@@ -1458,51 +1458,39 @@ button {
   color: #c0392b;
   margin-inline-start: 2px;
 }
-.role-selector {
+.auth-file-upload {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 2px;
-}
-.role-pill {
-  padding: 4px 14px;
-  border-radius: var(--r-full);
-  font-size: 12.5px;
-  font-weight: 500;
-  border: 1px solid var(--border);
-  color: var(--text);
-  background: transparent;
-  transition: all 0.2s;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border: 1.5px dashed var(--teal-600);
+  border-radius: var(--r-sm);
+  background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
 }
-.role-pill:hover {
-  border-color: var(--teal-600);
-  color: var(--teal-600);
+.auth-file-upload:hover {
+  border-color: var(--green-900);
+  background: rgba(255, 255, 255, 0.85);
 }
-.role-pill.is-active {
+.auth-file-upload input[type="file"] {
+  display: none;
+}
+.auth-file-upload__btn {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  border-radius: var(--r-full);
   background: var(--green-800);
   color: #fff;
-  border-color: var(--green-800);
-}
-.auth-btn--location {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  padding: 9px 20px;
-  border-radius: var(--r-full);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
-  background: linear-gradient(135deg, var(--green-800), var(--teal-600));
-  color: #fff;
-  transition:
-    transform 0.15s,
-    box-shadow 0.15s;
 }
-.auth-btn--location:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(6, 66, 57, 0.25);
+.auth-file-upload__name {
+  font-size: 12.5px;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .auth-btn--submit {
   grid-column: 1 / -1;
@@ -2238,24 +2226,24 @@ button {
   border-radius: inherit;
 }
 
-.dm-hood {
+/* .dm-hood {
   cursor: pointer;
   transform-box: fill-box;
   transform-origin: center;
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
-}
+} */
 
-.dm-hood path {
+/* .dm-hood path {
   fill: #e3d2b1;
   stroke: #064239;
   stroke-width: 2;
   stroke-linejoin: round;
   stroke-linecap: round;
   transition: fill 0.25s ease;
-}
-
+} */
+/* 
 .dm-hood:hover {
   transform: scale(1.025);
   filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.15));
@@ -2272,8 +2260,9 @@ button {
 
 .dm-hood.is-active path {
   fill: #c9a24a;
-}
+} */
 
+/* 
 .dm-lbl {
   fill: #101a35;
   font-size: 20px;
@@ -2284,9 +2273,9 @@ button {
   pointer-events: none;
   opacity: 1;
   transition: opacity 0.25s ease;
-}
+} */
 
-.dm-hood:hover .dm-lbl,
+/* .dm-hood:hover .dm-lbl,
 .dm-hood.is-active .dm-lbl {
   opacity: 1;
 }
@@ -2296,7 +2285,7 @@ button {
 .dm-hood[data-id="sarouja"] .dm-lbl,
 .dm-hood[data-id="yarmouk"] .dm-lbl {
   font-size: 15px;
-}
+} */
 
 .gov-section,
 .map-explorer-section {
@@ -2352,7 +2341,7 @@ button {
   user-select: none;
   transition: transform 0.45s ease;
 }
-
+/* 
 .dm-hood {
   cursor: pointer;
 }
@@ -2382,7 +2371,7 @@ button {
   dominant-baseline: central;
   pointer-events: none;
   transition: fill 0.25s ease;
-}
+} */
 
 .dm-lbl--xl {
   font-size: 36px;
@@ -3274,60 +3263,70 @@ button {
 .nav__submenu-link {
   white-space: nowrap !important;
 }
-
-#svgMap .dm-hood[data-sector="sector-1"] { --sector-color: #1f6f5b; }
-#svgMap .dm-hood[data-sector="sector-2"] { --sector-color: #a58b5c; }
-#svgMap .dm-hood[data-sector="sector-3"] { --sector-color: #8c4a32; }
-#svgMap .dm-hood[data-sector="sector-4"] { --sector-color: #4f6d4a; }
-#svgMap .dm-hood[data-sector="sector-5"] { --sector-color: #2d5f73; }
-#svgMap .dm-hood[data-sector="sector-6"] { --sector-color: #7c5c3e; }
-
-#svgMap .dm-hood {
+/* الحالة العادية: لون موحّد لجميع القطاعات بدون تقسيم داخلي */
+#svgMap .dm-sector {
   cursor: pointer;
+  filter: url(#sectorMerge);
+  transition: filter 0.25s ease;
 }
 
-#svgMap .dm-hood path {
-  fill: color-mix(in srgb, var(--sector-color, #064239) 24%, #f5f1e8);
-  stroke: #ffffff;
-  stroke-width: 2;
-  transition: fill 0.25s ease, filter 0.25s ease, stroke-width 0.25s ease;
+#svgMap .dm-sector .dm-hood path {
+  fill: #dfd2b5;
+  stroke: #dfd2b5;
+  stroke-width: 8px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  transition:
+    fill 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    stroke 0.28s ease,
+    stroke-width 0.28s ease;
 }
 
-#svgMap .dm-hood.is-sector-hover path {
-  fill: color-mix(in srgb, var(--sector-color, #064239) 62%, #ffffff);
-  stroke-width: 2.5;
-}
-
-#svgMap .dm-hood.is-active path {
-  fill: var(--sector-color, #064239);
-  stroke: #fffaf0;
-  stroke-width: 3;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
-}
-
-#svgMap .dm-hood.is-active .dm-lbl {
+/* أسماء المدن مخفية بالوضع العادي */
+#svgMap .dm-sector .dm-lbl {
   fill: #ffffff;
+  font-family: "ITF Qomra Arabic", system-ui, sans-serif;
   font-weight: 700;
-}
-#svgMap .dm-lbl {
-  display: none;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
+/* عند الهوفر أو التفعيل: لون خمري + ظهور التقسيم للمدن + ظهور أسماء المدن */
+#svgMap .dm-sector.is-active {
+  filter: drop-shadow(0 4px 10px rgba(107, 29, 36, 0.28));
+}
+
+#svgMap .dm-sector.is-active .dm-hood path {
+  fill: #6b1d24;
+  stroke: var(--cream-200);
+  stroke-width: 5px;
+}
+
+#svgMap .dm-sector.is-active .dm-lbl {
+  opacity: 1;
+}
+
+/* تسميات القطاعات (قطاع 1 - قطاع 2 ...) */
 #svgMap .dm-sector-lbl {
   pointer-events: none;
   text-anchor: middle;
-  dominant-baseline: middle;
-  font-size: 22px;
+  dominant-baseline: central;
+  font-family: "ITF Qomra Arabic", system-ui, sans-serif;
+  font-size: 24px;
   font-weight: 700;
-  fill: #173d37;
+  fill: #0f1e2e;
   paint-order: stroke;
-  stroke: rgba(255, 250, 240, 0.9);
+  stroke: rgba(242, 239, 231, 0.92);
   stroke-width: 4px;
   stroke-linejoin: round;
-  transition: fill 0.25s ease, stroke 0.25s ease;
+  opacity: 1;
+  transition: opacity 0.22s ease;
 }
 
-#svgMap .dm-sector-lbl.is-active {
-  fill: #ffffff;
-  stroke: rgba(3, 45, 39, 0.55);
+/* إخفاء اسم القطاع أثناء الهوفر عليه لتظهر أسماء المدن بوضوح */
+#svgMap .dm-sector-lbl.is-hidden {
+  opacity: 0;
 }

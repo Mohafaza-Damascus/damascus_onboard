@@ -592,6 +592,7 @@
   align-items: center;
   justify-content: center;
   color: #07473c;
+  gap: 10px;
   text-decoration: none;
   font-size: 15px;
   transition: color 0.2s ease;

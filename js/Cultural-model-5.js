@@ -848,7 +848,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!root || !details || !list || !data.length) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const pad = (number) => String(number).padStart(2, "0");
 
     const escapeHtml = (value) =>
       String(value ?? "").replace(
@@ -881,12 +880,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     list.innerHTML = data
       .map((item, index) => {
-        const items = Array.isArray(item.items) ? item.items : [];
-        const unesco = Array.isArray(item.unesco) ? item.unesco : [];
-        const meta = [`${items.length} ${items.length === 1 ? "عنصر" : "عناصر"}`, unesco.length ? "اليونسكو" : ""]
-          .filter(Boolean)
-          .join(" · ");
-
         return `
             <button
                 type="button"
@@ -898,13 +891,13 @@ document.addEventListener("DOMContentLoaded", () => {
             >
                 <span class="dmi-item__text">
                     <span class="dmi-item__title">${escapeHtml(item.title || "تراث دمشقي")}</span>
-                    <span class="dmi-item__meta">${escapeHtml(meta)}</span>
                 </span>
                 <span class="dmi-item__arrow">${arrowSvg}</span>
             </button>
         `;
       })
       .join("");
+
 
     const buttons = Array.from(list.querySelectorAll(".dmi-item"));
 
@@ -950,7 +943,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <div class="dmi-card__content" data-heritage-viewport>
                     <div class="dmi-card__scroll-inner" data-heritage-inner>
-                        <span class="dmi-card__number">${pad(index + 1)} / ${pad(data.length)}</span>
                         <h3 class="dmi-card__title" id="heritage-detail-title">${escapeHtml(item.title || "تراث دمشقي")}</h3>
                         <p class="dmi-card__summary">${escapeHtml(item.summary || "")}</p>
 

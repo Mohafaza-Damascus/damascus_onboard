@@ -295,11 +295,28 @@
     sendMessage();
   });
 
-  document.addEventListener("click", (e) => {
-    if (isOpen && !panel.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
-      closePanel();
-    }
-  });
+document.addEventListener("click", (e) => {
+  const target = e.target;
+
+  // زر تواصل معنا داخل الصفحة
+  const inlineTrigger = target.closest?.("#open-ai-chat");
+
+  if (inlineTrigger) {
+    e.preventDefault();
+    openPanel();
+    return;
+  }
+
+  // إغلاق المساعد عند الضغط خارج النافذة
+  if (
+    isOpen &&
+    !panel.contains(target) &&
+    target !== btn &&
+    !btn.contains(target)
+  ) {
+    closePanel();
+  }
+});
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && isOpen) closePanel();
