@@ -6,7 +6,8 @@ import { fileURLToPath } from "node:url";
 const here = path.dirname(fileURLToPath(import.meta.url));
 const portal = path.resolve(here, "../..");
 const outDir = path.join(here, "src");
-const SITE_URL = process.env.SITE_URL || "https://chipper-capybara-601cee.netlify.app";
+const SITE_URL =
+  process.env.SITE_URL || "https://chipper-capybara-601cee.netlify.app";
 const [importFile] = process.argv.slice(2);
 const AR = /[؀-ۿ]/;
 const norm = (s) => String(s).replace(/ /g, " ").replace(/\s+/g, " ").trim();
@@ -14,7 +15,12 @@ const norm = (s) => String(s).replace(/ /g, " ").replace(/\s+/g, " ").trim();
 const AREAS = {
   common: ["js/global.js", "js/ai-chat.js", "404.html"],
   home: ["index.html", "js/index.js"],
-  news: ["pages/news-enas.html", "js/news-enas.js", "pages/news-details.html", "js/news-details.js"],
+  news: [
+    "pages/news.html",
+    "js/news.js",
+    "pages/news-details.html",
+    "js/news-details.js",
+  ],
   cultural: [
     "pages/Cultural-model-5.html",
     "js/Cultural-model-5.js",
@@ -70,10 +76,13 @@ function fromHtml(src) {
     .replace(/<style\b[\s\S]*?<\/style>/gi, " ")
     .replace(/<!--[\s\S]*?-->/g, " ");
   for (const m of body.matchAll(/>([^<>]+)</g)) out.push(m[1]);
-  for (const m of body.matchAll(/\s(?:alt|title|placeholder|aria-label|content|data-label)\s*=\s*"([^"]*)"/gi))
+  for (const m of body.matchAll(
+    /\s(?:alt|title|placeholder|aria-label|content|data-label)\s*=\s*"([^"]*)"/gi,
+  ))
     out.push(m[1]);
   for (const m of src.matchAll(/<title>([\s\S]*?)<\/title>/gi)) out.push(m[1]);
-  for (const m of src.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)) out.push(...fromJs(m[1]));
+  for (const m of src.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi))
+    out.push(...fromJs(m[1]));
   return out.map((s) =>
     s
       .replace(/&nbsp;/g, " ")
@@ -111,7 +120,16 @@ function fromJs(src) {
         }
       }
       try {
-        out.push(JSON.parse('"' + s.replace(/\\'/g, "'").replace(/"/g, '\\"').replace(/\\\\"/g, '\\"') + '"'));
+        out.push(
+          JSON.parse(
+            '"' +
+              s
+                .replace(/\\'/g, "'")
+                .replace(/"/g, '\\"')
+                .replace(/\\\\"/g, '\\"') +
+              '"',
+          ),
+        );
       } catch {
         out.push(s);
       }
@@ -198,7 +216,12 @@ function dataStrings(value, set) {
   }
   if (value && typeof value === "object")
     for (const [k, v] of Object.entries(value)) {
-      if (!/^(id|image|images|url|link|pdf|createdAt|updatedAt|serviceUrl)$/i.test(k)) dataStrings(v, set);
+      if (
+        !/^(id|image|images|url|link|pdf|createdAt|updatedAt|serviceUrl)$/i.test(
+          k,
+        )
+      )
+        dataStrings(v, set);
     }
 }
 const load = (rel, name) => {
@@ -211,9 +234,14 @@ dataStrings(load("js/news-data.js", "NEWS_DATA"), contentNews);
 const contentOpp = new Set();
 dataStrings(load("js/opportunities-seed.js", "OPPORTUNITIES_DATA"), contentOpp);
 const contentSvc = new Set();
-const live = (await (await fetch(`${SITE_URL}/api/data/services`)).json()).items;
+const live = (await (await fetch(`${SITE_URL}/api/data/services`)).json())
+  .items;
 dataStrings(live, contentSvc);
-if (importFile) dataStrings(JSON.parse(fs.readFileSync(importFile, "utf8")).services, contentSvc);
+if (importFile)
+  dataStrings(
+    JSON.parse(fs.readFileSync(importFile, "utf8")).services,
+    contentSvc,
+  );
 result["content-news"] = contentNews;
 result["content-opportunities"] = contentOpp;
 result["content-services"] = contentSvc;
@@ -233,27 +261,42 @@ const order = [
 const existing = {};
 for (const area of order) {
   const file = path.join(outDir, `${area}.json`);
-  existing[area] = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : [];
+  existing[area] = fs.existsSync(file)
+    ? JSON.parse(fs.readFileSync(file, "utf8"))
+    : [];
   existing[area].forEach((s) => seen.set(s, area));
 }
 let total = 0,
   added = 0;
 for (const area of order) {
-  fs.writeFileSync(path.join(outDir, `${area}.all.json`), JSON.stringify([...result[area]], null, 1));
+  fs.writeFileSync(
+    path.join(outDir, `${area}.all.json`),
+    JSON.stringify([...result[area]], null, 1),
+  );
   const fresh = [...result[area]].filter((s) => {
     if (seen.has(s)) return false;
     seen.set(s, area);
     return true;
   });
   const list = existing[area].concat(fresh);
-  fs.writeFileSync(path.join(outDir, `${area}.json`), JSON.stringify(list, null, 1));
+  fs.writeFileSync(
+    path.join(outDir, `${area}.json`),
+    JSON.stringify(list, null, 1),
+  );
   total += list.length;
   added += fresh.length;
   console.log(
     area.padEnd(22),
     String(list.length).padStart(5),
     "strings",
-    fresh.length ? `(+${fresh.length} new from index ${existing[area].length})` : "",
+    fresh.length
+      ? `(+${fresh.length} new from index ${existing[area].length})`
+      : "",
   );
 }
-console.log("total".padEnd(22), String(total).padStart(5), "strings", `(+${added} new)`);
+console.log(
+  "total".padEnd(22),
+  String(total).padStart(5),
+  "strings",
+  `(+${added} new)`,
+);
