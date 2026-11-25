@@ -22,11 +22,11 @@ npm start
 - يمرّر طلبات `/api/*` إلى الموقع المنشور (`SITE_URL`)، فتعرض النسخة المحلية البيانات الحية نفسها.
 - يمرّر طلبات `/dalil/api/*` إلى خادم دليل دمشق (`DALIL_API`).
 
-| المتغير | الافتراضي |
-|---|---|
-| `PORT` | `5577` |
-| `SITE_URL` | `https://chipper-capybara-601cee.netlify.app` |
-| `DALIL_API` | `https://landmarx.dev/developer/dalil/api` |
+| المتغير     | الافتراضي                                     |
+| ----------- | --------------------------------------------- |
+| `PORT`      | `5577`                                        |
+| `SITE_URL`  | `https://chipper-capybara-601cee.netlify.app` |
+| `DALIL_API` | `https://landmarx.dev/developer/dalil/api`    |
 
 ## هيكلية المشروع
 
@@ -71,28 +71,28 @@ _redirects               توجيهات Netlify
 
 لوحة التحكم على `/pages/dashboard/` وتدير أربعة أقسام. الدخول بكلمة سر واحدة تُضبط في متغير البيئة `DASHBOARD_PASSWORD` على Netlify، ويلزم نشر جديد بعد تغييرها.
 
-| القسم | المتغير العام | البيانات الأولية | صفحات العرض |
-|---|---|---|---|
-| `news` | `NEWS_DATA` | `js/news-data.js` | الرئيسية، `news-enas.html`، `news-details.html` |
-| `events` | `EVENTS_DATA` | `js/events-data.js` | الروزنامة في `Cultural-model-5.html` |
-| `opportunities` | `OPPORTUNITIES_DATA` | `js/opportunities-seed.js` | `Investments.html`، `Opportunity-details.html` |
-| `services` | `DAMASCUS_SERVICES` | `pages/services-form/services-list.js` | صفحات الخدمات وأدلتها |
+| القسم           | المتغير العام        | البيانات الأولية                       | صفحات العرض                                    |
+| --------------- | -------------------- | -------------------------------------- | ---------------------------------------------- |
+| `news`          | `NEWS_DATA`          | `js/news-data.js`                      | الرئيسية، `news.html`، `news-details.html`     |
+| `events`        | `EVENTS_DATA`        | `js/events-data.js`                    | الروزنامة في `Cultural-model-5.html`           |
+| `opportunities` | `OPPORTUNITIES_DATA` | `js/opportunities-seed.js`             | `Investments.html`، `Opportunity-details.html` |
+| `services`      | `DAMASCUS_SERVICES`  | `pages/services-form/services-list.js` | صفحات الخدمات وأدلتها                          |
 
 **آلية التحميل:** تحمّل الصفحة ملف البيانات الأولية ثم `/api/data/<القسم>.js`، والثاني يستبدل المتغير العام إذا كانت هناك بيانات محفوظة. بدون اتصال بالخادم تبقى البيانات الأولية.
 
 **الواجهة البرمجية** (`netlify/functions/api.mjs`):
 
-| الطلب | الوصف | يتطلب كلمة السر |
-|---|---|---|
-| `GET /api/data/:name` | `{ items, stored }` | لا |
-| `GET /api/data/:name.js` | `window.<GLOBAL> = [...]`، فارغ إن لم تُحفظ بيانات بعد | لا |
-| `POST /api/data/:name` | إضافة عنصر، أو مصفوفة عناصر دفعة واحدة | نعم |
-| `PUT /api/data/:name/:id` | تعديل عنصر | نعم |
-| `DELETE /api/data/:name/:id` | حذف عنصر | نعم |
-| `POST /api/files` | رفع صورة (JPG/PNG/WEBP/GIF) أو PDF حتى 5MB، ويعيد `{ url }` | نعم |
-| `GET /api/files/:key` | الملف المرفوع | لا |
-| `GET /api/backup` | نسخة كاملة من البيانات | نعم |
-| `POST /api/login` | التحقق من كلمة السر | نعم |
+| الطلب                        | الوصف                                                       | يتطلب كلمة السر |
+| ---------------------------- | ----------------------------------------------------------- | --------------- |
+| `GET /api/data/:name`        | `{ items, stored }`                                         | لا              |
+| `GET /api/data/:name.js`     | `window.<GLOBAL> = [...]`، فارغ إن لم تُحفظ بيانات بعد      | لا              |
+| `POST /api/data/:name`       | إضافة عنصر، أو مصفوفة عناصر دفعة واحدة                      | نعم             |
+| `PUT /api/data/:name/:id`    | تعديل عنصر                                                  | نعم             |
+| `DELETE /api/data/:name/:id` | حذف عنصر                                                    | نعم             |
+| `POST /api/files`            | رفع صورة (JPG/PNG/WEBP/GIF) أو PDF حتى 5MB، ويعيد `{ url }` | نعم             |
+| `GET /api/files/:key`        | الملف المرفوع                                               | لا              |
+| `GET /api/backup`            | نسخة كاملة من البيانات                                      | نعم             |
+| `POST /api/login`            | التحقق من كلمة السر                                         | نعم             |
 
 - التخزين في Blobs store باسم `portal-data` (وفي بيئات المعاينة `portal-data-<context>`).
 - الكتابة تستخدم ETag مع إعادة المحاولة لتجنّب تضارب التعديلات المتزامنة.
@@ -139,28 +139,28 @@ npm run i18n:build     # بناء js/i18n/*.js و css/ltr.css
 
 ## نقاط الإعداد
 
-| الموضوع | الموقع |
-|---|---|
-| روابط شريط التنقل | `js/global.js` ← `navItems` |
-| رابط دليل دمشق | `js/global.js` ← `guideHref` |
-| الفوتر وروابط التواصل الاجتماعي | `js/global.js` ← `renderFooter`؛ الروابط مكررة في `news-enas.html` (`follow-link`) و`contact.html` (`contact-social-btn`) |
-| لون الخلفية وشفافية النقش | `css/global.css` ← `--page-bg` و`body::before`؛ ولوحة التحكم في `css/dashboards.css` |
-| المساعد الذكي | `js/ai-chat.js`: يقرأ الخدمات من `services-list.js` ويشرحها مع رابطها؛ الأسئلة العامة في `KB` |
-| خادم دليل دمشق | `_redirects` و`server.js` ← `DALIL_API` |
-| قطاعات الاستثمار وحالات الحقائب | `js/opportunities-data.js` ← `categories` و`statusLabels` |
-| خريطة قطاعات دمشق (الرئيسية والاستثمارات) | `js/damascus-map.js`؛ أي `<svg data-damascus-map>` يُرسم تلقائياً |
-| رابط الخريطة التفاعلية للتراخيص الموسمية | `pages/Investments.html` ← `.inv-lmap` |
-| الصفحة المضمّنة آخر صفحة الاستثمارات | `pages/Investments.html` ← `src` في `.inv-embed iframe` (فارغ = القسم مخفي) |
-| مديريات المحافظة (حقل إلزامي للخدمة) | `js/dashboard.js` ← `GOVERNORATE_DIRECTORATES` |
-| تصنيفات الخدمات الإلكترونية | ثلاثة مواضع يجب أن تتطابق: `js/dashboard.js` ← `DIRECTORATES`، و`js/electronic-services.js` ← `getCategory`، وأزرار `data-filter` في `pages/electronic-services.html` |
-| تصنيفات الفعاليات | `js/dashboard.js` ← `EVENT_TYPES` و`js/calendar.js` ← `TYPES` |
-| الصور الافتراضية للخدمات | `netlify/functions/api.mjs` ← `SERVICE_IMAGES` و`SERVICE_GROUP_IMAGES` |
-| صور «استكشف أحياء دمشق» | `js/index.js` ← `data[].img`، والملفات في `images/home/areas/` (840×880) |
-| أسماء «كانوا ينادونها» | `pages/Cultural-model-5.html` ← `dm-tunnel__card`؛ التوقيت في `js/Cultural-model-5.js` ← `DURATION` و`NUDGE` |
-| حقب «دمشق عبر العصور» | `js/Cultural-model-5.js` ← `data`، وتفاصيل الحقبة في `js/eras-data.js` (نفس `id`) |
-| أبواب دمشق | الصور في `images/culture/gates/` والنصوص و`gateBox` في `js/slides.js` |
-| كتاب «قالوا عنها» | `js/quotes-data.js`، والتقليب في `js/quotes-book.js` ← `TICK` |
-| معرض صور المعلم | `js/landmark.js` ← `AUTO` |
+| الموضوع                                   | الموقع                                                                                                                                                                |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| روابط شريط التنقل                         | `js/global.js` ← `navItems`                                                                                                                                           |
+| رابط دليل دمشق                            | `js/global.js` ← `guideHref`                                                                                                                                          |
+| الفوتر وروابط التواصل الاجتماعي           | `js/global.js` ← `renderFooter`؛ الروابط مكررة في `news.html` (`follow-link`) و`contact.html` (`contact-social-btn`)                                                  |
+| لون الخلفية وشفافية النقش                 | `css/global.css` ← `--page-bg` و`body::before`؛ ولوحة التحكم في `css/dashboards.css`                                                                                  |
+| المساعد الذكي                             | `js/ai-chat.js`: يقرأ الخدمات من `services-list.js` ويشرحها مع رابطها؛ الأسئلة العامة في `KB`                                                                         |
+| خادم دليل دمشق                            | `_redirects` و`server.js` ← `DALIL_API`                                                                                                                               |
+| قطاعات الاستثمار وحالات الحقائب           | `js/opportunities-data.js` ← `categories` و`statusLabels`                                                                                                             |
+| خريطة قطاعات دمشق (الرئيسية والاستثمارات) | `js/damascus-map.js`؛ أي `<svg data-damascus-map>` يُرسم تلقائياً                                                                                                     |
+| رابط الخريطة التفاعلية للتراخيص الموسمية  | `pages/Investments.html` ← `.inv-lmap`                                                                                                                                |
+| الصفحة المضمّنة آخر صفحة الاستثمارات      | `pages/Investments.html` ← `src` في `.inv-embed iframe` (فارغ = القسم مخفي)                                                                                           |
+| مديريات المحافظة (حقل إلزامي للخدمة)      | `js/dashboard.js` ← `GOVERNORATE_DIRECTORATES`                                                                                                                        |
+| تصنيفات الخدمات الإلكترونية               | ثلاثة مواضع يجب أن تتطابق: `js/dashboard.js` ← `DIRECTORATES`، و`js/electronic-services.js` ← `getCategory`، وأزرار `data-filter` في `pages/electronic-services.html` |
+| تصنيفات الفعاليات                         | `js/dashboard.js` ← `EVENT_TYPES` و`js/calendar.js` ← `TYPES`                                                                                                         |
+| الصور الافتراضية للخدمات                  | `netlify/functions/api.mjs` ← `SERVICE_IMAGES` و`SERVICE_GROUP_IMAGES`                                                                                                |
+| صور «استكشف أحياء دمشق»                   | `js/index.js` ← `data[].img`، والملفات في `images/home/areas/` (840×880)                                                                                              |
+| أسماء «كانوا ينادونها»                    | `pages/Cultural-model-5.html` ← `dm-tunnel__card`؛ التوقيت في `js/Cultural-model-5.js` ← `DURATION` و`NUDGE`                                                          |
+| حقب «دمشق عبر العصور»                     | `js/Cultural-model-5.js` ← `data`، وتفاصيل الحقبة في `js/eras-data.js` (نفس `id`)                                                                                     |
+| أبواب دمشق                                | الصور في `images/culture/gates/` والنصوص و`gateBox` في `js/slides.js`                                                                                                 |
+| كتاب «قالوا عنها»                         | `js/quotes-data.js`، والتقليب في `js/quotes-book.js` ← `TICK`                                                                                                         |
+| معرض صور المعلم                           | `js/landmark.js` ← `AUTO`                                                                                                                                             |
 
 ### ملاحظات على بعض الأقسام
 

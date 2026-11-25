@@ -1,6 +1,8 @@
 (function () {
   const cssLink = document.querySelector('link[href*="global.css"]');
-  const base = cssLink ? cssLink.getAttribute("href").replace("css/global.css", "") : "";
+  const base = cssLink
+    ? cssLink.getAttribute("href").replace("css/global.css", "")
+    : "";
   const pagesPrefix = base + "pages/";
 
   const guideHref = "https://desktop-5kc9l5q.tail7e5653.ts.net/viewer";
@@ -11,7 +13,8 @@
 
     const activePage = (el.dataset.active || "").trim();
 
-    const savedModel = localStorage.getItem("dm-header-model") || el.dataset.headerModel || "2";
+    const savedModel =
+      localStorage.getItem("dm-header-model") || el.dataset.headerModel || "2";
 
     const currentPath = decodeURIComponent(location.pathname);
 
@@ -23,7 +26,7 @@
       },
       {
         label: "الأخبار",
-        href: `${pagesPrefix}news-enas.html`,
+        href: `${pagesPrefix}news.html`,
         match: /news-(enas|details)/i,
       },
       {
@@ -39,9 +42,15 @@
       },
       {
         label: "ثقافة و سياحة",
-        aliases: ["ثقافة وسياحة", "الثقافة والسياحة", "النظرة الثقافية", "ثقافة"],
+        aliases: [
+          "ثقافة وسياحة",
+          "الثقافة والسياحة",
+          "النظرة الثقافية",
+          "ثقافة",
+        ],
         href: `${pagesPrefix}Cultural-model-5.html`,
-        match: /(Cultural-model-5|era|landmark|Damascus-album|Cultural-Details|Events-details)/i,
+        match:
+          /(Cultural-model-5|era|landmark|Damascus-album|Cultural-Details|Events-details)/i,
       },
       { label: "دليل دمشق", href: guideHref },
     ];
@@ -51,7 +60,9 @@
         const isActive =
           item.label === activePage ||
           (item.aliases || []).includes(activePage) ||
-          (item.subItems || []).some((subItem) => subItem.label === activePage) ||
+          (item.subItems || []).some(
+            (subItem) => subItem.label === activePage,
+          ) ||
           (item.match && item.match.test(currentPath));
 
         if (!item.subItems) {
@@ -59,7 +70,10 @@
         }
 
         const subLinks = item.subItems
-          .map((subItem) => `<li><a class="nav__submenu-link" href="${subItem.href}">${subItem.label}</a></li>`)
+          .map(
+            (subItem) =>
+              `<li><a class="nav__submenu-link" href="${subItem.href}">${subItem.label}</a></li>`,
+          )
           .join("");
 
         return `
@@ -165,7 +179,7 @@
               <h3 class="footer__title">روابط سريعة</h3>
               <ul class="footer__list">
                 <li><a href="${base}index.html">الرئيسية</a></li>
-                <li><a href="${pagesPrefix}news-enas.html">الأخبار</a></li>
+                <li><a href="${pagesPrefix}news.html">الأخبار</a></li>
                 <li><a href="${pagesPrefix}Cultural-model-5.html">النظرة الثقافية</a></li>
                 <li><a href="${guideHref}">دليل دمشق</a></li>
                 <li><a href="${pagesPrefix}Investments.html">الاستثمارات</a></li>
@@ -359,17 +373,28 @@
 
   const setHeaderHeight = () => {
     if (!header) return;
-    document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
+    document.documentElement.style.setProperty(
+      "--header-h",
+      header.offsetHeight + "px",
+    );
   };
 
   function applyHeaderModel(modelNum) {
     if (!header) return;
-    header.classList.remove("header--model-1", "header--model-2", "header--model-3", "header--model-4");
+    header.classList.remove(
+      "header--model-1",
+      "header--model-2",
+      "header--model-3",
+      "header--model-4",
+    );
     header.classList.add(`header--model-${modelNum}`);
     localStorage.setItem("dm-header-model", String(modelNum));
     if (switcher) {
       switcher.querySelectorAll("button").forEach((btn) => {
-        btn.classList.toggle("is-active", btn.dataset.hmodel === String(modelNum));
+        btn.classList.toggle(
+          "is-active",
+          btn.dataset.hmodel === String(modelNum),
+        );
       });
     }
     setHeaderHeight();
@@ -534,7 +559,8 @@
       e.preventDefault();
       showView(authLogin);
     });
-  if (goRegister) goRegister.addEventListener("click", () => showView(authRegister));
+  if (goRegister)
+    goRegister.addEventListener("click", () => showView(authRegister));
   if (goRegister2)
     goRegister2.addEventListener("click", (e) => {
       e.preventDefault();
@@ -553,52 +579,59 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeAuth();
   });
-const docTypeSelect = document.getElementById("regDocType");
-const docUploadId = document.getElementById("docUploadId");
-const docUploadSingle = document.getElementById("docUploadSingle");
-const regDocFront = document.getElementById("regDocFront");
-const regDocBack = document.getElementById("regDocBack");
-const regDocSingle = document.getElementById("regDocSingle");
-const regDocSingleLabel = document.getElementById("regDocSingleLabel");
-const regDocNote = document.getElementById("regDocNote");
+  const docTypeSelect = document.getElementById("regDocType");
+  const docUploadId = document.getElementById("docUploadId");
+  const docUploadSingle = document.getElementById("docUploadSingle");
+  const regDocFront = document.getElementById("regDocFront");
+  const regDocBack = document.getElementById("regDocBack");
+  const regDocSingle = document.getElementById("regDocSingle");
+  const regDocSingleLabel = document.getElementById("regDocSingleLabel");
+  const regDocNote = document.getElementById("regDocNote");
 
-function bindFileName(inputId, nameId, fallback) {
-  const input = document.getElementById(inputId);
-  const label = document.getElementById(nameId);
-  if (!input || !label) return;
-  input.addEventListener("change", () => {
-    label.textContent = input.files?.[0]?.name || fallback;
-  });
-}
+  function bindFileName(inputId, nameId, fallback) {
+    const input = document.getElementById(inputId);
+    const label = document.getElementById(nameId);
+    if (!input || !label) return;
+    input.addEventListener("change", () => {
+      label.textContent = input.files?.[0]?.name || fallback;
+    });
+  }
 
-bindFileName("regDocFront", "regDocFrontName", "ارفع الوجه الأمامي");
-bindFileName("regDocBack", "regDocBackName", "ارفع الوجه الخلفي");
-bindFileName("regDocSingle", "regDocSingleName", "لم يتم اختيار ملف (صورة أو PDF)");
+  bindFileName("regDocFront", "regDocFrontName", "ارفع الوجه الأمامي");
+  bindFileName("regDocBack", "regDocBackName", "ارفع الوجه الخلفي");
+  bindFileName(
+    "regDocSingle",
+    "regDocSingleName",
+    "لم يتم اختيار ملف (صورة أو PDF)",
+  );
 
-if (docTypeSelect && docUploadId && docUploadSingle) {
-  docTypeSelect.addEventListener("change", () => {
-    const val = docTypeSelect.value;
-    const isId = val === "id_card";
-    const isExtract = val === "civil_extract";
-    const isPassport = val === "passport";
+  if (docTypeSelect && docUploadId && docUploadSingle) {
+    docTypeSelect.addEventListener("change", () => {
+      const val = docTypeSelect.value;
+      const isId = val === "id_card";
+      const isExtract = val === "civil_extract";
+      const isPassport = val === "passport";
 
-    docUploadId.hidden = !isId;
-    docUploadSingle.hidden = !(isExtract || isPassport);
+      docUploadId.hidden = !isId;
+      docUploadSingle.hidden = !(isExtract || isPassport);
 
-    regDocFront.required = isId;
-    regDocBack.required = isId;
-    regDocSingle.required = isExtract || isPassport;
+      regDocFront.required = isId;
+      regDocBack.required = isId;
+      regDocSingle.required = isExtract || isPassport;
 
-    if (isExtract) {
-      regDocSingleLabel.innerHTML = 'صورة إخراج القيد <span class="req">*</span>';
-      regDocNote.hidden = false;
-    } else if (isPassport) {
-      regDocSingleLabel.innerHTML = 'صورة جواز السفر <span class="req">*</span>';
-      regDocNote.hidden = true;
-    }
-    regDocSingle.value = "";
-    const singleName = document.getElementById("regDocSingleName");
-    if (singleName) singleName.textContent = "لم يتم اختيار ملف (صورة أو PDF)";
-  });
-}
+      if (isExtract) {
+        regDocSingleLabel.innerHTML =
+          'صورة إخراج القيد <span class="req">*</span>';
+        regDocNote.hidden = false;
+      } else if (isPassport) {
+        regDocSingleLabel.innerHTML =
+          'صورة جواز السفر <span class="req">*</span>';
+        regDocNote.hidden = true;
+      }
+      regDocSingle.value = "";
+      const singleName = document.getElementById("regDocSingleName");
+      if (singleName)
+        singleName.textContent = "لم يتم اختيار ملف (صورة أو PDF)";
+    });
+  }
 })();
