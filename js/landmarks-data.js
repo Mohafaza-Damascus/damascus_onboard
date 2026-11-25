@@ -40,11 +40,11 @@ window.DM_LANDMARKS = [
         source:
           "https://commons.wikimedia.org/wiki/File:Damascus%2C_Syria%2C_The_Umayyad_Mosque%2C_The_Courtyard%2C_Islamic_Art.jpg",
       },
-      {
-        src: "../images/culture/landmarks/umayyad-mosque-3.jpg",
-        credit: "Livioandronico2013 — CC BY-SA 4.0",
-        source: "https://commons.wikimedia.org/wiki/File:Archbasilica_of_St._John_Lateran_HD.jpg",
-      },
+      // {
+      //   src: "../images/culture/landmarks/umayyad-mosque-3.jpg",
+      //   credit: "Livioandronico2013 — CC BY-SA 4.0",
+      //   source: "https://commons.wikimedia.org/wiki/File:Archbasilica_of_St._John_Lateran_HD.jpg",
+      // },
       {
         src: "../images/culture/landmarks/umayyad-mosque-4.jpg",
         credit: "High Contrast — CC BY 3.0 de",

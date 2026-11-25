@@ -2566,7 +2566,7 @@ button {
 .nav__submenu-link {
   white-space: nowrap !important;
 }
-/* الحالة العادية: لون موحّد لجميع القطاعات بدون تقسيم داخلي */
+
 #svgMap .dm-sector {
   cursor: pointer;
   filter: url(#sectorMerge);
@@ -2585,7 +2585,6 @@ button {
     stroke-width 0.28s ease;
 }
 
-/* أسماء المدن مخفية بالوضع العادي */
 #svgMap .dm-sector .dm-lbl {
   fill: #ffffff;
   font-family: "ITF Qomra Arabic", system-ui, sans-serif;
@@ -2597,7 +2596,6 @@ button {
   transition: opacity 0.25s ease;
 }
 
-/* عند الهوفر أو التفعيل: لون خمري + ظهور التقسيم للمدن + ظهور أسماء المدن */
 #svgMap .dm-sector.is-active {
   filter: drop-shadow(0 4px 10px rgba(107, 29, 36, 0.28));
 }
@@ -2612,7 +2610,6 @@ button {
   opacity: 1;
 }
 
-/* تسميات القطاعات (قطاع 1 - قطاع 2 ...) */
 #svgMap .dm-sector-lbl {
   pointer-events: none;
   text-anchor: middle;
@@ -2629,7 +2626,16 @@ button {
   transition: opacity 0.22s ease;
 }
 
-/* إخفاء اسم القطاع أثناء الهوفر عليه لتظهر أسماء المدن بوضوح */
 #svgMap .dm-sector-lbl.is-hidden {
   opacity: 0;
+}
+
+#svgMap .dm-sector {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#svgMap .dm-sector:focus,
+#svgMap .dm-sector:focus-visible {
+  outline: none;
 }
