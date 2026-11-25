@@ -68,7 +68,7 @@
 
   const SECTORS = {
     "sector-1": {
-      name: "قطاع 1",
+      name: "القطاع 1",
       areas: "برزة، القابون، جوبر",
       pop: "390,000",
       area: "30 كم²",
@@ -77,7 +77,7 @@
       img: "images/home/areas/berze.jpg",
     },
     "sector-2": {
-      name: "قطاع 2",
+      name: "القطاع 2",
       areas: "ركن الدين، الصالحية، المهاجرين، ساروجة",
       pop: "620,000",
       area: "32 كم²",
@@ -86,7 +86,7 @@
       img: "images/home/areas/salihiye.jpg",
     },
     "sector-3": {
-      name: "قطاع 3",
+      name: "القطاع 3",
       areas: "دمشق القديمة، الشاغور، القنوات",
       pop: "360,000",
       area: "16 كم²",
@@ -95,7 +95,7 @@
       img: "images/home/areas/olddam.jpg",
     },
     "sector-4": {
-      name: "قطاع 4",
+      name: "القطاع 4",
       areas: "الميدان، القدم، اليرموك",
       pop: "520,000",
       area: "25 كم²",
@@ -104,7 +104,7 @@
       img: "images/home/areas/midan.jpg",
     },
     "sector-5": {
-      name: "قطاع 5",
+      name: "القطاع 5",
       areas: "المزّة، كفرسوسة",
       pop: "530,000",
       area: "34 كم²",
@@ -113,7 +113,7 @@
       img: "images/home/areas/mazza.jpg",
     },
     "sector-6": {
-      name: "قطاع 6",
+      name: "القطاع 6",
       areas: "دُمَّر، الشام الجديدة",
       pop: "120,000",
       area: "18 كم²",

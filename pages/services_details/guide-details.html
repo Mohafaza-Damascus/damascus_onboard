@@ -37,39 +37,7 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .sd-breadcrumb ol {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 8px;
-        list-style: none;
-        font-size: 13px;
-        color: var(--sd-muted);
-      }
-
-      .sd-breadcrumb li {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .sd-breadcrumb li + li::before {
-        content: "\f053";
-        font-family: "Font Awesome 6 Free";
-        font-size: 9px;
-        font-weight: 900;
-      }
-
-      .sd-breadcrumb a {
-        color: var(--sd-primary);
-        transition: color 0.2s ease;
-      }
-
-      .sd-breadcrumb a:hover {
-        color: var(--sd-accent);
-        text-decoration: underline;
-      }
-
+     
       .sd-hero__head {
         display: flex;
         align-items: flex-start;
@@ -557,13 +525,7 @@
     <main>
       <div class="container sd-layout" id="serviceLayout">
         <header class="sd-hero">
-          <nav class="sd-breadcrumb" aria-label="مسار التنقل">
-            <ol>
-              <li><a href="../../index.html">الرئيسية</a></li>
-              <li><a href="transactions-guide.html">دليل المعاملات الورقية</a></li>
-              <li aria-current="page">شرح الخدمة</li>
-            </ol>
-          </nav>
+         
 
           <div class="sd-hero__head">
             <div class="sd-hero__title-group">
@@ -586,25 +548,27 @@
         </header>
 
         <aside class="sd-aside" aria-label="معلومات الخدمة">
-          <dl class="sd-facts" id="serviceFacts"></dl>
-
-          <section class="sd-aside-section">
-            <h2>
-              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-              تواصل معنا
-            </h2>
-            <a class="sd-link" href="../contact.html">
-              صفحة تواصل معنا
-              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-            </a>
-          </section>
-
-          <hr class="sd-divider" />
-
-          <a class="sd-btn sd-btn--soft sd-back" href="transactions-guide.html">
+           <a class="sd-btn sd-btn--soft sd-back" href="transactions-guide.html">
             <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             العودة
           </a>
+          <hr class="sd-divider" />
+          <dl class="sd-facts" id="serviceFacts"></dl>
+
+           <section class="sd-aside-section">
+            <h2>
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              
+                <a class="sd-link" href="contact.html">
+               التعليقات والاقتراحات
+            </a>
+            </h2>
+          
+           
+          </section>
+
+         
+
         </aside>
 
         <section class="sd-main" aria-label="تفاصيل المعاملة">
@@ -635,14 +599,15 @@
         </section>
       </div>
 
-      <section class="container" aria-labelledby="feedbackTitle">
+      <section class="container" aria-labelledby="esgFeedbackTitle">
         <div class="sd-feedback">
           <span class="sd-feedback__icon">
             <i class="fa-regular fa-envelope" aria-hidden="true"></i>
           </span>
-          <h2 id="feedbackTitle">التعليقات والاقتراحات</h2>
-          <p>لأي استفسار أو ملاحظات حول هذه الخدمة، يسعدنا تواصلك معنا.</p>
-          <a class="sd-btn sd-btn--primary" href="../contact.html">تواصل معنا</a>
+          <p>لأي استفسار أو ملاحظات حول هذه الخدمة، يسعدنا تواصلك مع المساعد الذكي.</p>
+          <a class="sd-btn sd-btn--primary" href="#" id="open-ai-chat">
+            المساعد الذكي
+          </a>
         </div>
       </section>
     </main>

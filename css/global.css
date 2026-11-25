@@ -1103,6 +1103,47 @@ button {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.auth-field select {
+  border: none;
+  border-bottom: 1.5px solid var(--teal-600);
+  background: transparent;
+  padding: 6px 0;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.auth-field select:focus {
+  border-bottom-color: var(--green-900);
+}
+.auth-doc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+}
+.auth-doc-grid[hidden],
+.auth-doc-group[hidden],
+.auth-doc-note[hidden] {
+  display: none;
+}
+.auth-doc-note {
+  margin-top: 4px;
+  padding: 6px 10px;
+  border-radius: var(--r-sm);
+  background: rgba(201, 162, 74, 0.14);
+  border-inline-start: 3px solid var(--gold);
+  color: #7a5c18;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+@media (max-width: 700px) {
+  .auth-doc-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .auth-btn--submit {
   grid-column: 1 / -1;
   padding: 10px 24px;
@@ -2525,7 +2566,7 @@ button {
 .nav__submenu-link {
   white-space: nowrap !important;
 }
-/* الحالة العادية: لون موحّد لجميع القطاعات بدون تقسيم داخلي */
+
 #svgMap .dm-sector {
   cursor: pointer;
   filter: url(#sectorMerge);
@@ -2544,7 +2585,6 @@ button {
     stroke-width 0.28s ease;
 }
 
-/* أسماء المدن مخفية بالوضع العادي */
 #svgMap .dm-sector .dm-lbl {
   fill: #ffffff;
   font-family: "ITF Qomra Arabic", system-ui, sans-serif;
@@ -2556,7 +2596,6 @@ button {
   transition: opacity 0.25s ease;
 }
 
-/* عند الهوفر أو التفعيل: لون خمري + ظهور التقسيم للمدن + ظهور أسماء المدن */
 #svgMap .dm-sector.is-active {
   filter: drop-shadow(0 4px 10px rgba(107, 29, 36, 0.28));
 }
@@ -2571,7 +2610,6 @@ button {
   opacity: 1;
 }
 
-/* تسميات القطاعات (قطاع 1 - قطاع 2 ...) */
 #svgMap .dm-sector-lbl {
   pointer-events: none;
   text-anchor: middle;
@@ -2588,7 +2626,16 @@ button {
   transition: opacity 0.22s ease;
 }
 
-/* إخفاء اسم القطاع أثناء الهوفر عليه لتظهر أسماء المدن بوضوح */
 #svgMap .dm-sector-lbl.is-hidden {
   opacity: 0;
+}
+
+#svgMap .dm-sector {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#svgMap .dm-sector:focus,
+#svgMap .dm-sector:focus-visible {
+  outline: none;
 }
