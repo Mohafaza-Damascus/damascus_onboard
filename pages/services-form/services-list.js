@@ -1368,7 +1368,7 @@ window.DAMASCUS_SERVICES = [
     "fees": "رسوم خدمة",
     "stages": "لا يوجد",
     "requestPlace": "إلكتروني",
-    "electronicDirectorate": "مديرية الأملاك",
+    "electronicDirectorate": "هندسة المرور ",
     "serviceUrl": "../../home/service.html?id=90",
     "physicalPlace": "",
     "image": "/images/services/Parking.jpg"
