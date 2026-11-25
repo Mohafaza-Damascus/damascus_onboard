@@ -57,6 +57,16 @@ body,
   color: var(--culture-text);
 }
 
+.section-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--culture-muted);
+
+  font-size: 13px;
+}
+
 .calendar-header-actions {
   display: flex;
   align-items: center;
@@ -121,7 +131,175 @@ body,
   transform: translateY(-2px);
 }
 
+.cultural-calendar {
+  width: 100%;
+}
 
+.calendar-weekdays {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 8px;
+
+  margin-bottom: 8px;
+}
+
+.calendar-weekdays > div {
+  padding: 12px 8px;
+
+  color: var(--culture-muted);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-align: center;
+}
+
+.calendar-grid {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 8px;
+}
+
+.calendar-day {
+  position: relative;
+
+  min-height: 125px;
+
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  background: var(--culture-cream);
+
+  border: 1px solid transparent;
+
+  color: var(--culture-green);
+
+  text-decoration: none;
+
+  cursor: default;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.calendar-day-number {
+  align-self: flex-start;
+
+  font-size: 27px;
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+@media (max-width: 1000px) {
+  .calendar-day {
+    min-height: 105px;
+
+    padding: 14px;
+  }
+
+  .calendar-day-number {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 700px) {
+  .calendar-header-actions {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .calendar-month-title {
+    min-width: auto;
+  }
+
+  .calendar-weekdays {
+    gap: 4px;
+  }
+
+  .calendar-grid {
+    gap: 4px;
+  }
+
+  .calendar-weekdays > div {
+    padding: 8px 2px;
+
+    font-size: 9px;
+  }
+
+  .calendar-day {
+    min-height: 80px;
+
+    padding: 9px;
+  }
+
+  .calendar-day-number {
+    font-size: 18px;
+  }
+}
+
+.story-image {
+  height: 290px;
+
+  overflow: hidden;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+.story-content {
+  padding-top: 20px;
+}
+
+.story-content > span {
+  color: var(--culture-gold);
+
+  font-size: 12px;
+}
+
+.story-content h3 {
+  margin: 8px 0 12px;
+
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.story-content p {
+  color: var(--culture-muted);
+
+  line-height: 1.8;
+}
+
+.story-content strong {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+@media (max-width: 700px) {
+
+  .story-image {
+    height: 300px;
+  }
+}
 
 @keyframes timelineTextReveal {
   from {
@@ -135,6 +313,19 @@ body,
   }
 }
 
+.damascus-gates {
+  padding: 110px 0;
+
+  background: #fff;
+
+  transition: background-color 0.45s ease;
+}
+
+@media (max-width: 700px) {
+  .damascus-gates {
+    padding: 80px 20px;
+  }
+}
 
 .damascus-timeline {
   --timeline-curve-depth: 520px;
@@ -649,6 +840,10 @@ body,
   transform: scaleX(1);
 }
 
+.damascus-number-card__count {
+  display: inline-block;
+}
+
 .damascus-number-card h3 {
   margin: 15px 0 9px;
   color: #fff;
@@ -820,6 +1015,45 @@ body,
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+.damascus-landmarks {
+  --landmark-cream: #f5efe3;
+  --landmark-paper: #fffaf1;
+  --landmark-gold: #b9955c;
+  --landmark-gold-light: #d8bd8b;
+  --landmark-brown: #30291f;
+  --landmark-muted: #817665;
+
+  position: relative;
+  overflow: hidden;
+  padding: 110px 24px 100px;
+  background: radial-gradient(circle at 50% 45%, rgba(216, 189, 139, 0.17), transparent 45%), var(--landmark-cream);
+  color: var(--landmark-brown);
+  isolation: isolate;
+}
+
+.damascus-landmarks *,
+.damascus-landmarks *::before,
+.damascus-landmarks *::after {
+  box-sizing: border-box;
+}
+
+@media (max-width: 760px) {
+  .damascus-landmarks {
+    padding: 75px 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .damascus-landmarks *,
+  .damascus-landmarks *::before,
+  .damascus-landmarks *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }
 
@@ -1175,6 +1409,9 @@ body,
   margin-bottom: 0;
 }
 
+.damascus-gates-hero + section {
+  margin-top: 0;
+}
 
 #damascus-history,
 #damascus-numbers,
@@ -1182,6 +1419,50 @@ body,
 #damascus-agenda,
 #damascus-intangible {
   background: #edebe0 !important;
+}
+
+.damascus-intangible {
+  position: relative;
+  overflow: hidden;
+  padding: 115px 24px 125px;
+  background-color: #f4efe4;
+  color: #263b32;
+  isolation: isolate;
+}
+
+.damascus-intangible__container {
+  width: min(1380px, 100%);
+  margin-inline: auto;
+}
+
+.damascus-intangible__header {
+  max-width: 720px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.damascus-intangible__header h2 {
+  margin: 0;
+  color: #064239;
+  font-size: clamp(34px, 4.5vw, 54px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.damascus-intangible__header h2 span {
+  display: block;
+  margin-top: 6px;
+  color: #a58450;
+  font-size: clamp(20px, 2.5vw, 30px);
+  font-weight: 600;
+}
+
+.damascus-intangible__header p {
+  margin: 18px auto 0;
+  max-width: 620px;
+  color: #6f6759;
+  font-size: 15px;
+  line-height: 2;
 }
 
 @keyframes intangibleFade {
@@ -1704,7 +1985,7 @@ body,
   grid-column: 3;
 }
 
- :is(#damascus-history, #damascus-agenda, #damascus-intangible, #damascus-landmarks) .dm-arrow {
+:is(#damascus-history, #damascus-agenda, #damascus-intangible, #damascus-landmarks) .dm-arrow {
   --size: 56px;
   --grow: 104px;
   position: relative;
@@ -1731,7 +2012,7 @@ body,
 :is(#damascus-history, #damascus-agenda, #damascus-intangible, #damascus-landmarks) .dm-arrow:disabled {
   opacity: 0.3;
   cursor: default;
-} 
+}
 
 #damascus-agenda .dm-arrow,
 #damascus-intangible .dm-arrow {
@@ -2047,24 +2328,49 @@ body,
 }
 
 .dm-tunnel__card {
+  --w: clamp(180px, 18vw, 270px);
   position: absolute;
   top: 50%;
   left: 50%;
-  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: var(--w);
+  aspect-ratio: 4 / 5;
+  padding: 18px 20px 22px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(160deg, #fbfaf7 0%, #efe9da 100%);
+  box-shadow:
+    0 8px 16px -4px rgba(0, 0, 0, 0.08),
+    0 4px 8px -4px rgba(0, 0, 0, 0.12),
+    0 30px 60px rgba(6, 66, 57, 0.18);
+  outline: 1px solid rgba(165, 139, 92, 0.35);
   opacity: 0;
   will-change: transform, opacity;
 }
 
+.dm-tunnel__card::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(165, 139, 92, 0.3);
+  border-radius: 14px;
+  pointer-events: none;
+}
+
 .dm-tunnel__num {
-  display: none;
+  color: var(--culture-gold);
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .dm-tunnel__card strong {
-  color: #9a6b2f;
-  font-size: clamp(38px, 4.6vw, 76px);
+  color: var(--culture-green-dark);
+  font-size: clamp(34px, 3.6vw, 58px);
   font-weight: 900;
   line-height: 1.2;
-  text-shadow: 0 2px 18px rgba(237, 235, 224, 0.9);
 }
 
 .dm-tunnel__sr {
@@ -2080,15 +2386,34 @@ body,
   .dm-tunnel__stage {
     perspective: 900px;
   }
+  .dm-tunnel__card {
+    --w: clamp(130px, 38vw, 180px);
+    padding: 12px 14px 16px;
+  }
 }
 
-.dm-tunnel__sr {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
+.dm-tunnel__card {
+  --w: auto;
+  width: auto;
+  aspect-ratio: auto;
+  padding: 0;
+  overflow: visible;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  outline: none;
   white-space: nowrap;
+}
+
+.dm-tunnel__card::after,
+.dm-tunnel__num {
+  display: none;
+}
+
+.dm-tunnel__card strong {
+  color: #9a6b2f;
+  font-size: clamp(38px, 4.6vw, 76px);
+  text-shadow: 0 2px 18px rgba(237, 235, 224, 0.9);
 }
 
 #damascus-history .damascus-timeline__card.is-active {
@@ -2116,6 +2441,8 @@ body,
   box-shadow: 0 -24px 60px -24px rgba(3, 45, 39, 0.45);
 }
 
+#damascus-oldest.dm-stack-card,
+#damascus-numbers.dm-stack-card,
 #damascus-gates.dm-stack-card,
 #damascus-landmarks.dm-stack-card {
   overflow: clip;
@@ -2142,7 +2469,117 @@ body,
     transform: translateY(24px);
   }
 }
-
+.damascus-numbers {
+  --numbers-gold: #d8bd8b;
+  --numbers-bg: #002b26;
+  --numbers-card: #04342e;
+  --numbers-border: rgba(216, 189, 139, 0.2);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 36px 40px 55px;
+  color: #fff;
+  background-image: var(--damascus-pattern-svg),
+    radial-gradient(circle at 50% 0%, rgba(165, 139, 92, 0.14), transparent 60%) !important;
+  background-size:
+    80px 80px,
+    100% 100% !important;
+  background-repeat: repeat, no-repeat !important;
+}
+.damascus-numbers__container {
+  position: relative;
+  z-index: 2;
+  width: min(1380px, 100%);
+  margin-inline: auto;
+}
+.damascus-numbers__header {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+.damascus-numbers__header h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(30px, 4vw, 49px);
+  font-weight: 700;
+  line-height: 1.65;
+}
+.damascus-numbers__header h2 span {
+  display: block;
+  color: var(--numbers-gold);
+}
+.damascus-number-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 26px;
+  overflow: hidden;
+  text-align: center;
+  background: transparent;
+  border: 0;
+  border-left: 1px solid rgba(165, 138, 88, 0.28);
+  transition: transform 0.4s ease;
+}
+.damascus-number-card:last-child {
+  border-left: 0;
+}
+.damascus-number-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.damascus-number-card.is-visible:hover {
+  transform: translateY(-6px);
+}
+.damascus-number-card h3 {
+  margin: 15px 0 9px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.8;
+}
+.damascus-number-card p {
+  max-width: 260px;
+  margin: 0;
+  color: #d6c5a5;
+  font-size: 13px;
+  line-height: 1.9;
+}
+@media (max-width: 1050px) {
+  .damascus-number-card {
+    border-left: 0;
+    border-bottom: 1px solid rgba(165, 138, 88, 0.22);
+    padding: 28px 16px;
+  }
+}
+#damascus-numbers .damascus-number-card {
+  min-height: auto !important;
+  padding: 20px 26px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-left: 1px solid rgba(165, 138, 88, 0.28) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+#damascus-numbers .damascus-number-card:last-child {
+  border-left: 0 !important;
+}
+#damascus-numbers .damascus-number-card::before {
+  display: none !important;
+}
+#damascus-numbers .damascus-number-card.is-visible:hover {
+  background: transparent !important;
+  border-color: rgba(165, 138, 88, 0.28) !important;
+  box-shadow: none !important;
+  transform: translateY(-6px) !important;
+}
+@media (max-width: 1050px) {
+  #damascus-numbers .damascus-number-card {
+    border-left: 0 !important;
+    border-bottom: 1px solid rgba(165, 138, 88, 0.22) !important;
+    padding: 28px 16px !important;
+  }
+}
 .dm-places__layout--fan .dm-fan__card::after {
   opacity: 1 !important;
   background: linear-gradient(
@@ -2279,6 +2716,248 @@ body,
   }
 }
 
+#damascus-numbers {
+  --dn-gold: #d8bd8b;
+  --dn-cream: #fffaf0;
+  --dn-green: #082720;
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 760px;
+  padding: clamp(52px, 6vw, 84px) 24px 24px;
+  overflow: hidden;
+  background: var(--dn-green);
+  color: var(--dn-cream);
+}
+#damascus-numbers .damascus-numbers__background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+#damascus-numbers .damascus-numbers__background img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  transform: scale(1.015);
+}
+#damascus-numbers::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 25, 20, 0.42) 0%,
+    rgba(5, 25, 20, 0.28) 28%,
+    rgba(5, 25, 20, 0.62) 56%,
+    rgba(5, 25, 20, 0.94) 100%
+  );
+}
+#damascus-numbers .damascus-numbers__container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: min(1320px, 100%);
+  min-height: 680px;
+  margin-inline: auto;
+}
+#damascus-numbers .damascus-numbers__header {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  padding: 20px 0 28px;
+  text-align: center;
+}
+#damascus-numbers .damascus-numbers__header h2 {
+  margin: 0;
+  color: var(--dn-cream);
+  font-size: clamp(36px, 5.2vw, 68px);
+  font-weight: 800;
+  line-height: 1.35;
+  text-wrap: balance;
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.3);
+}
+#damascus-numbers .damascus-numbers__header h2 span {
+  display: block;
+  margin-top: 8px;
+  color: var(--dn-gold);
+  font-size: clamp(19px, 2.35vw, 29px);
+  font-weight: 500;
+  line-height: 1.7;
+}
+#damascus-numbers .damascus-numbers__header > p {
+  max-width: 760px;
+  margin: 22px auto 0;
+  color: rgba(255, 250, 240, 0.91);
+  font-size: clamp(14px, 1.15vw, 17px);
+  font-weight: 400;
+  line-height: 2.1;
+  text-wrap: pretty;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+#damascus-numbers .damascus-number-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 124px;
+  padding: 18px 12px;
+  overflow: hidden;
+  color: var(--dn-cream);
+  background: rgba(8, 39, 32, 0.62);
+  border: 1px solid rgba(216, 189, 139, 0.33);
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.13);
+  opacity: 0;
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(14px);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition:
+    opacity 0.65s ease,
+    transform 0.16s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+#damascus-numbers .damascus-number-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(255, 250, 240, 0.08), transparent 58%);
+  pointer-events: none;
+}
+#damascus-numbers .damascus-number-card.is-visible {
+  opacity: 1;
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(0);
+}
+#damascus-numbers .damascus-number-card:hover {
+  background: rgba(12, 53, 43, 0.82);
+  border-color: rgba(216, 189, 139, 0.75);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.23);
+}
+#damascus-numbers .damascus-number-card h3 {
+  margin: 0;
+  color: rgba(255, 250, 240, 0.92);
+  font-size: clamp(12px, 1.15vw, 15px);
+  font-weight: 600;
+  line-height: 1.7;
+  text-align: center;
+}
+#damascus-numbers .damascus-number-card__count {
+  display: inline-block;
+  color: var(--dn-gold);
+  font-size: clamp(27px, 2.7vw, 38px);
+  font-weight: 800;
+  line-height: 1.2;
+  direction: ltr;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.22);
+}
+@media (max-width: 900px) {
+  #damascus-numbers {
+    min-height: 730px;
+    padding-inline: 20px;
+  }
+  #damascus-numbers .damascus-numbers__container {
+    min-height: 660px;
+  }
+  #damascus-numbers .damascus-number-card {
+    min-height: 108px;
+  }
+  #damascus-numbers .damascus-numbers__header {
+    padding-top: 10px;
+  }
+}
+@media (max-width: 520px) {
+  #damascus-numbers {
+    min-height: 0;
+    padding: 56px 16px 20px;
+  }
+  #damascus-numbers .damascus-numbers__container {
+    min-height: 0;
+  }
+  #damascus-numbers .damascus-numbers__header {
+    padding: 0 0 24px;
+  }
+  #damascus-numbers .damascus-numbers__header h2 {
+    font-size: clamp(31px, 8.5vw, 43px);
+    line-height: 1.45;
+  }
+  #damascus-numbers .damascus-numbers__header h2 span {
+    margin-top: 8px;
+    font-size: clamp(17px, 4.8vw, 22px);
+  }
+  #damascus-numbers .damascus-numbers__header > p {
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 2;
+  }
+ 
+  #damascus-numbers .damascus-number-card {
+    min-height: 98px;
+    padding: 13px 8px;
+    border-radius: 13px;
+  }
+  #damascus-numbers .damascus-number-card h3 {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  #damascus-numbers .damascus-number-card__count {
+    font-size: clamp(24px, 7vw, 31px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #damascus-numbers .damascus-number-card {
+    transition: opacity 0.2s ease;
+    transform: none !important;
+  }
+  #damascus-numbers .damascus-number-card.is-visible {
+    transform: none !important;
+  }
+}
+#damascus-numbers .damascus-number-card h3 {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+}
+#damascus-numbers .damascus-number-card:hover {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+#damascus-numbers .damascus-number-card:hover h3 {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-7px);
+}
+#damascus-numbers .damascus-number-card:hover::before {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  #damascus-numbers .damascus-number-card h3 {
+    transition: none;
+  }
+}
 #damascus-history .damascus-timeline__curved-title {
   display: flex;
   flex-direction: column;
@@ -2306,9 +2985,9 @@ body,
     #damascus-numbers,
     #damascus-gates,
     #damascus-landmarks,
-     #damascus-agenda, 
-     #damascus-intangible, 
-  
+    #damascus-agenda,
+    #damascus-intangible,
+    #damascus-quotes
   ) {
   height: 100vh !important;
   height: 100svh !important;
@@ -2388,7 +3067,34 @@ body,
   flex: 0 0 auto !important;
   margin-top: clamp(6px, 1.2vh, 14px) !important;
 }
-
+#damascus-intangible.damascus-intangible {
+  padding: clamp(14px, 2.2vh, 24px) 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+#damascus-intangible .damascus-intangible__container {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  overflow: hidden !important;
+}
+#damascus-intangible .damascus-intangible__header {
+  flex: 0 0 auto !important;
+  max-width: 900px !important;
+  margin: 0 auto clamp(6px, 1.2vh, 12px) !important;
+}
+#damascus-intangible .damascus-intangible__header h2 {
+  font-size: clamp(32px, 4.6vh, 50px) !important;
+}
+#damascus-intangible .damascus-intangible__header p {
+  margin: 4px auto 0 !important;
+  font-size: clamp(13px, 1.75vh, 15px) !important;
+  line-height: 1.6 !important;
+}
 #damascus-landmarks .dm-places__container,
 #damascus-landmarks .dm-places__layout--fan,
 #damascus-landmarks .dm-places__stack-wrap,
@@ -2611,7 +3317,12 @@ html {
   width: 100%;
   height: 100%;
 }
-
+#damascus-numbers .damascus-numbers__quote-kicker {
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease,
+    transform 0.3s ease;
+}
 
 
 #damascus-landmarks .dm-fan__card.is-active,
@@ -2634,7 +3345,544 @@ html {
 #damascus-landmarks .dm-fan__card.is-active {
   z-index: 30 !important;
 }
-
+#damascus-intangible {
+  --dmi-green: #064239;
+  --dmi-green-dark: #032f29;
+  --dmi-gold: #c7a568;
+  --dmi-gold-light: #f2e7d1;
+  --dmi-text: #243a34;
+  --dmi-muted: #77847e;
+  --dmi-border: rgba(6, 66, 57, 0.12);
+  --dmi-surface: #ffffff;
+  --dmi-section-bg: #f8f7f2;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  padding: clamp(55px, 7vw, 100px) 24px;
+  background: var(--dmi-section-bg);
+  direction: rtl;
+  overflow: hidden;
+}
+#damascus-intangible *,
+#damascus-intangible *::before,
+#damascus-intangible *::after {
+  box-sizing: border-box;
+}
+#damascus-intangible .damascus-intangible__container {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+#damascus-intangible .damascus-intangible__header {
+  position: relative;
+  max-width: 780px;
+  margin: 0 0 38px auto;
+  text-align: right;
+}
+#damascus-intangible .damascus-intangible__header h2 {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 18px;
+  color: var(--dmi-green);
+  font-size: clamp(30px, 3.2vw, 46px);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.8px;
+}
+#damascus-intangible .damascus-intangible__header h2::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -9px;
+  width: 66px;
+  height: 3px;
+  border-radius: 10px;
+  background: var(--dmi-gold);
+}
+#damascus-intangible .damascus-intangible__header p {
+  max-width: 740px;
+  margin: 0;
+  color: #69766f;
+  font-size: clamp(14px, 1.15vw, 16px);
+  font-weight: 400;
+  line-height: 2.1;
+}
+#damascus-intangible .dmi-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.85fr) minmax(270px, 1fr);
+  grid-template-areas: "details list";
+  align-items: stretch;
+  gap: clamp(20px, 3vw, 38px);
+  width: 100%;
+  direction: ltr;
+}
+#damascus-intangible .dmi-details {
+  grid-area: details;
+  min-width: 0;
+  direction: rtl;
+}
+#damascus-intangible .dmi-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  min-height: 440px;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--dmi-border);
+  border-radius: 26px;
+  background: var(--dmi-surface);
+  box-shadow:
+    0 18px 50px rgba(19, 47, 39, 0.07),
+    0 3px 12px rgba(19, 47, 39, 0.025);
+  direction: ltr;
+  animation: dmi-card-enter 0.55s ease both;
+}
+#damascus-intangible .dmi-card__visual {
+  position: relative;
+  min-width: 0;
+  min-height: 100%;
+  overflow: hidden;
+  background: linear-gradient(145deg, #d9dfd4, #b5c4b5);
+}
+#damascus-intangible .dmi-card__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(3, 47, 41, 0.02) 30%, rgba(3, 47, 41, 0.48) 100%);
+}
+#damascus-intangible .dmi-card__image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s ease;
+}
+#damascus-intangible .dmi-card:hover .dmi-card__image {
+  transform: scale(1.045);
+}
+#damascus-intangible .dmi-card__visual-label {
+  position: absolute;
+  z-index: 1;
+  right: 22px;
+  bottom: 22px;
+  left: 22px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.8;
+  text-align: right;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+#damascus-intangible .dmi-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+  padding: clamp(24px, 3vw, 42px);
+  direction: rtl;
+  text-align: right;
+}
+#damascus-intangible .dmi-card__title {
+  margin: 0 0 17px;
+  color: var(--dmi-green);
+  font-size: clamp(23px, 2.15vw, 32px);
+  font-weight: 800;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+#damascus-intangible .dmi-card__summary {
+  margin: 0 0 24px;
+  color: #62716a;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2.05;
+  overflow-wrap: anywhere;
+}
+#damascus-intangible .dmi-card__section-title {
+  margin: 0 0 12px;
+  color: #344b42;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.7;
+}
+#damascus-intangible .dmi-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+#damascus-intangible .dmi-card__chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 8px 12px;
+  border: 1px solid rgba(6, 66, 57, 0.09);
+  border-radius: 9px;
+  background: #f5f7f3;
+  color: #3e5b4e;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+#damascus-intangible .dmi-card__professions {
+  width: 100%;
+  margin: 0 0 18px;
+  color: #6b776f;
+  font-size: 12px;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+#damascus-intangible .dmi-card__professions strong {
+  color: var(--dmi-green);
+  font-weight: 800;
+}
+#damascus-intangible .dmi-card__unesco {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-top: auto;
+}
+#damascus-intangible .dmi-card__unesco-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 11px 12px;
+  border: 1px solid rgba(199, 165, 104, 0.32);
+  border-radius: 10px;
+  background: #fcf8f0;
+  color: #806437;
+  font-size: 11px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+#damascus-intangible .dmi-card__unesco-item::before {
+  content: "✦";
+  flex: 0 0 auto;
+  color: #b28c4e;
+  font-size: 13px;
+}
+#damascus-intangible .dmi-list-panel {
+  grid-area: list;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 23px 18px;
+  border: 1px solid var(--dmi-border);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 12px 36px rgba(19, 47, 39, 0.045);
+  direction: rtl;
+}
+#damascus-intangible .dmi-items {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+  max-height: 510px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 0 2px;
+  scrollbar-width: thin;
+  scrollbar-color: #c7b58e transparent;
+}
+#damascus-intangible .dmi-items::-webkit-scrollbar {
+  width: 5px;
+}
+#damascus-intangible .dmi-items::-webkit-scrollbar-track {
+  background: transparent;
+}
+#damascus-intangible .dmi-items::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #c7b58e;
+}
+#damascus-intangible .dmi-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) 26px;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 72px;
+  margin: 0;
+  padding: 12px 12px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  background: transparent;
+  color: var(--dmi-text);
+  cursor: pointer;
+  text-align: right;
+  font: inherit;
+  direction: rtl;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+#damascus-intangible .dmi-item:hover {
+  border-color: rgba(6, 66, 57, 0.1);
+  background: #f7f8f4;
+  transform: translateX(-2px);
+}
+#damascus-intangible .dmi-item:focus-visible {
+  outline: 3px solid rgba(199, 165, 104, 0.7);
+  outline-offset: 3px;
+}
+#damascus-intangible .dmi-item__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  min-width: 0;
+}
+#damascus-intangible .dmi-item__title {
+  display: block;
+  width: 100%;
+  color: #30473d;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  transition: color 0.25s ease;
+}
+#damascus-intangible .dmi-item__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: #8b9a91;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+#damascus-intangible .dmi-item__arrow svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+#damascus-intangible .dmi-item.is-active {
+  border-color: rgba(199, 165, 104, 0.42);
+  background: linear-gradient(110deg, #f8f4e9 0%, #fffdf8 100%);
+  box-shadow: 0 5px 16px rgba(19, 47, 39, 0.045);
+}
+#damascus-intangible .dmi-item.is-active .dmi-item__title {
+  color: var(--dmi-green);
+  font-weight: 800;
+}
+#damascus-intangible .dmi-item.is-active .dmi-item__arrow {
+  background: var(--dmi-green);
+  color: #fff;
+  transform: translateX(-2px);
+}
+@keyframes dmi-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 1050px) {
+  #damascus-intangible .dmi-layout {
+    grid-template-columns: minmax(0, 1.55fr) minmax(245px, 1fr);
+    gap: 20px;
+  }
+  #damascus-intangible .dmi-card {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    min-height: 410px;
+  }
+  #damascus-intangible .dmi-card__content {
+    padding: 25px;
+  }
+  #damascus-intangible .dmi-list-panel {
+    padding: 18px 13px;
+  }
+  #damascus-intangible .dmi-item {
+    grid-template-columns: 32px minmax(0, 1fr) 22px;
+    gap: 8px;
+    padding: 10px 8px;
+  }
+}
+@media (max-width: 800px) {
+  #damascus-intangible {
+    padding: 60px 20px;
+  }
+  #damascus-intangible .damascus-intangible__header {
+    margin-bottom: 28px;
+  }
+  #damascus-intangible .dmi-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "details"
+      "list";
+    gap: 22px;
+  }
+  #damascus-intangible .dmi-card {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    min-height: 380px;
+  }
+  #damascus-intangible .dmi-items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    max-height: none;
+    overflow: visible;
+  }
+  #damascus-intangible .dmi-list-panel {
+    padding: 20px;
+  }
+  #damascus-intangible .dmi-item {
+    min-height: 70px;
+  }
+}
+@media (max-width: 560px) {
+  #damascus-intangible {
+    padding: 46px 15px;
+  }
+  #damascus-intangible .damascus-intangible__header h2 {
+    font-size: 29px;
+  }
+  #damascus-intangible .damascus-intangible__header p {
+    font-size: 13px;
+    line-height: 2;
+  }
+  #damascus-intangible .dmi-card {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    direction: rtl;
+  }
+  #damascus-intangible .dmi-card__visual {
+    min-height: 225px;
+    aspect-ratio: 16 / 9;
+  }
+  #damascus-intangible .dmi-card__content {
+    padding: 25px 21px;
+  }
+  #damascus-intangible .dmi-card__title {
+    font-size: 25px;
+  }
+  #damascus-intangible .dmi-card__summary {
+    font-size: 13px;
+  }
+  #damascus-intangible .dmi-list-panel {
+    padding: 16px 12px;
+    border-radius: 19px;
+  }
+  #damascus-intangible .dmi-items {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 7px;
+  }
+  #damascus-intangible .dmi-item {
+    grid-template-columns: 34px minmax(0, 1fr) 26px;
+    min-height: 64px;
+    padding: 10px;
+  }
+  #damascus-intangible .dmi-item__title {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #damascus-intangible *,
+  #damascus-intangible *::before,
+  #damascus-intangible *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+#damascus-intangible .dmi-list-panel {
+  padding-top: 16px;
+}
+#damascus-intangible .dmi-item {
+  grid-template-columns: minmax(0, 1fr) 26px;
+}
+#damascus-intangible .dmi-item__text {
+  grid-column: 1;
+}
+#damascus-intangible .dmi-item__arrow {
+  grid-column: 2;
+}
+@media (max-width: 1050px) {
+  #damascus-intangible .dmi-item {
+    grid-template-columns: minmax(0, 1fr) 22px;
+  }
+}
+@media (max-width: 560px) {
+  #damascus-intangible .dmi-item {
+    grid-template-columns: minmax(0, 1fr) 26px;
+  }
+}
+#damascus-intangible .dmi-details {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  min-width: 0;
+  height: fit-content;
+}
+#damascus-intangible .dmi-card {
+  height: 520px;
+  min-height: 520px;
+  max-height: 520px;
+  overflow: hidden;
+}
+#damascus-intangible .dmi-card__content {
+  min-height: 0;
+  max-height: 520px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #c7b58e transparent;
+}
+#damascus-intangible .dmi-card__visual {
+  height: 100%;
+  min-height: 0;
+}
+@media (max-width: 1050px) and (min-width: 801px) {
+  #damascus-intangible .dmi-card {
+    height: 480px;
+    min-height: 480px;
+    max-height: 480px;
+  }
+  #damascus-intangible .dmi-card__content {
+    max-height: 480px;
+  }
+}
+@media (max-width: 800px) {
+  #damascus-intangible .dmi-details {
+    position: static;
+  }
+  #damascus-intangible .dmi-card {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+  }
+  #damascus-intangible .dmi-card__visual {
+    height: auto;
+    min-height: 225px;
+  }
+  #damascus-intangible .dmi-card__content {
+    max-height: none;
+    overflow: visible;
+  }
+}
 #damascus-landmarks.dm-places {
   padding-top: clamp(46px, 6.5vh, 76px) !important;
   padding-bottom: clamp(14px, 2.2vh, 26px) !important;
@@ -2651,7 +3899,70 @@ html {
 #damascus-landmarks .dm-places__layout--fan .dm-fan {
   --fan-w: clamp(215px, 36vh, 320px) !important;
 }
-
+#damascus-intangible.damascus-intangible {
+  padding-top: clamp(46px, 6.5vh, 76px) !important;
+  padding-bottom: clamp(16px, 2.4vh, 28px) !important;
+}
+#damascus-intangible .damascus-intangible__header {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  max-width: 820px !important;
+  margin: 0 auto clamp(16px, 2.4vh, 26px) !important;
+  text-align: center !important;
+}
+#damascus-intangible .damascus-intangible__header h2 {
+  font-size: clamp(38px, 5.5vh, 60px) !important;
+  line-height: 1.25 !important;
+  margin: 0 auto 14px !important;
+  text-align: center !important;
+}
+#damascus-intangible .damascus-intangible__header h2::after {
+  right: 50% !important;
+  transform: translateX(50%) !important;
+  bottom: -8px !important;
+  width: 72px !important;
+}
+#damascus-intangible .damascus-intangible__header p {
+  margin: 4px auto 0 !important;
+  text-align: center !important;
+}
+#damascus-intangible .dmi-layout {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  align-items: start !important;
+}
+#damascus-intangible .dmi-card {
+  height: clamp(390px, 54vh, 480px) !important;
+  min-height: clamp(390px, 54vh, 480px) !important;
+  max-height: clamp(390px, 54vh, 480px) !important;
+}
+#damascus-intangible .dmi-items {
+  max-height: clamp(360px, 50vh, 445px) !important;
+}
+#damascus-intangible .dmi-card__content {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  max-height: clamp(390px, 54vh, 480px) !important;
+  padding: clamp(22px, 2.8vh, 32px) clamp(24px, 3vw, 38px) !important;
+}
+#damascus-intangible .dmi-card__title {
+  margin-top: 0 !important;
+  margin-bottom: 12px !important;
+  flex-shrink: 0;
+}
+#damascus-intangible .dmi-card__unesco {
+  margin-top: 12px !important;
+}
+@media (max-width: 800px) {
+  #damascus-intangible .dmi-card,
+  #damascus-intangible .dmi-card__content {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+}
 #damascus-landmarks .dm-places__layout--fan .dm-fan {
   perspective: 1600px !important;
   transform-style: preserve-3d !important;
@@ -2671,7 +3982,57 @@ html {
   border-color: var(--culture-gold, #a58b5c) !important;
   box-shadow: 0 26px 55px rgba(3, 45, 39, 0.28) !important;
 }
-
+#damascus-intangible .dmi-layout {
+  grid-template-columns: minmax(0, 2.2fr) minmax(260px, 0.92fr) !important;
+  align-items: stretch !important;
+  gap: clamp(22px, 2.8vw, 34px) !important;
+}
+#damascus-intangible .dmi-list-panel {
+  height: fit-content !important;
+  align-self: start !important;
+  padding: 16px 14px !important;
+}
+#damascus-intangible .dmi-items {
+  max-height: none !important;
+  overflow: visible !important;
+  gap: 8px !important;
+}
+#damascus-intangible .dmi-item {
+  min-height: 62px !important;
+  padding: 10px 12px !important;
+}
+#damascus-intangible .dmi-details {
+  position: relative !important;
+  top: auto !important;
+  align-self: stretch !important;
+  height: auto !important;
+}
+#damascus-intangible .dmi-card {
+  height: var(--dmi-matched-height, 100%) !important;
+  min-height: 0 !important;
+  max-height: var(--dmi-matched-height, none) !important;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) !important;
+  overflow: hidden !important;
+}
+#damascus-intangible .dmi-card__content {
+  height: 100% !important;
+  max-height: 100% !important;
+  justify-content: flex-start !important;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+  scrollbar-width: none !important;
+  padding: clamp(22px, 2.5vw, 34px) !important;
+}
+#damascus-intangible .dmi-card__content::-webkit-scrollbar {
+  display: none !important;
+}
+#damascus-intangible .dmi-card__scroll-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  will-change: transform;
+}
 #damascus-numbers .damascus-numbers__header {
   position: relative;
   padding: 10px 0 !important;
@@ -2685,6 +4046,26 @@ html {
 #damascus-numbers .damascus-numbers__header:hover {
   transform: translateY(-2px);
 }
+#damascus-numbers .damascus-numbers__quote-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 4px 0;
+  background: transparent !important;
+  border: none !important;
+  color: #d8bd8b !important;
+  font-size: clamp(16px, 1.4vw, 19px) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+  cursor: default;
+  transition:
+    color 0.35s ease,
+    text-shadow 0.35s ease;
+}
+
+
+
 
 #damascus-numbers .damascus-numbers__header {
   position: relative;
@@ -2708,7 +4089,43 @@ html {
   background: none;
   filter: none;
 }
-
+#damascus-intangible.damascus-intangible {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding-bottom: clamp(28px, 4vh, 44px) !important;
+}
+#damascus-intangible .damascus-intangible__container,
+#damascus-intangible .dmi-layout {
+  flex: 0 0 auto !important;
+  height: auto !important;
+}
+.footer .footer__inner {
+  padding-top: clamp(40px, 6vh, 64px);
+}
+@media (max-width: 1100px) and (min-width: 801px) {
+  #damascus-intangible .dmi-card {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) !important;
+  }
+}
+@media (max-width: 800px) {
+  #damascus-intangible .dmi-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  #damascus-intangible .dmi-card,
+  #damascus-intangible .dmi-card__content {
+    height: auto !important;
+    max-height: none !important;
+  }
+  #damascus-intangible .dmi-card {
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.22fr) !important;
+  }
+}
+@media (max-width: 560px) {
+  #damascus-intangible .dmi-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
 #damascus-numbers .damascus-numbers__header {
   display: flex !important;
   flex-direction: column !important;
@@ -2726,6 +4143,7 @@ html {
 
 #damascus-numbers .damascus-numbers__quote-text {
   margin: 0 !important;
+  display: block !important;
   color: #fffaf0 !important;
   font-size: clamp(23px, 2.3vw, 31px) !important;
   font-weight: 800 !important;
@@ -2733,6 +4151,15 @@ html {
   text-align: right !important;
   text-shadow: 0 3px 16px rgba(0, 0, 0, 0.75) !important;
 }
+#damascus-numbers .damascus-numbers__quote-text::after {
+  content: "”";
+  display: inline-block;
+  margin-inline-start: 2px;
+  transform: translateY(0.92em);
+}
+
+
+
 
 #damascus-numbers .damascus-numbers__author-name {
   margin: 0 !important;
@@ -2781,764 +4208,4 @@ html {
   height: 8px;
   background: #a58b5c;
   transform: rotate(45deg);
-}   
-#damascus-numbers {
-  --dn-gold: #d8bd8b;
-  --dn-cream: #fffaf0;
-  --dn-green: #082720;
-
-  position: relative;
-  isolation: isolate;
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: clamp(28px, 4.5vh, 56px) 24px clamp(24px, 4vh, 42px);
-  overflow: hidden;
-  background: var(--dn-green);
-  color: var(--dn-cream);
-}
-
-#damascus-numbers .damascus-numbers__background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-#damascus-numbers .damascus-numbers__background img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 45%;
-  transform: scale(1.015);
-}
-
-#damascus-numbers::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(5, 25, 20, 0.42) 0%,
-    rgba(5, 25, 20, 0.28) 28%,
-    rgba(5, 25, 20, 0.62) 56%,
-    rgba(5, 25, 20, 0.94) 100%
-  );
-}
-
-#damascus-numbers .damascus-numbers__container {
-  position: relative;
-  z-index: 2;
-  flex: 1 1 auto;
-  min-height: 0;
-  width: min(1320px, 100%);
-  height: 100%;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: clamp(12px, 2vh, 24px);
-}
-
-#damascus-numbers .damascus-numbers__showcase {
-  flex: 1 1 auto;
-  min-height: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
-  align-items: center;
-  gap: clamp(28px, 4vw, 64px);
-}
-
-#damascus-numbers .damascus-numbers__header {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: right;
-  width: fit-content;
-  max-width: 460px;
-  margin: 0;
-  padding: 16px 24px;
-  border-radius: 16px;
-  background: transparent;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  transition: transform 0.4s ease;
-}
-
-#damascus-numbers .damascus-numbers__header:hover {
-  transform: translateY(-2px);
-}
-
-#damascus-numbers .damascus-numbers__quote-text {
-  margin: 0;
-  color: #fffaf0;
-  font-size: clamp(23px, 2.3vw, 31px);
-  font-weight: 800;
-  line-height: 1.65;
-  text-align: right;
-  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.75);
-}
-
-.dm-quote-divider {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  width: 240px;
-  height: 12px;
-  margin: 14px auto;
-  background: none;
-}
-
-.dm-quote-divider::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  height: 1px;
-  transform: translateY(-50%);
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #a58b5c 35%,
-    #a58b5c 65%,
-    transparent 100%
-  );
-}
-
-.dm-quote-divider::after {
-  content: "";
-  position: relative;
-  z-index: 1;
-  width: 8px;
-  height: 8px;
-  background: #a58b5c;
-  transform: rotate(45deg);
-}
-
-#damascus-numbers .damascus-numbers__author-name {
-  margin: 0;
-  color: #f3dfb9;
-  font-size: clamp(20px, 1.95vw, 26px);
-  font-weight: 800;
-  line-height: 1.5;
-  text-align: right;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9), 0 0 22px rgba(5, 25, 20, 0.85);
-}
-
-#damascus-numbers .damascus-numbers__book-stage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 0;
-}
-
-@media (max-width: 980px) {
-  #damascus-numbers .damascus-numbers__showcase {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    text-align: center;
-  }
-
-  #damascus-numbers .damascus-numbers__header {
-    align-items: center;
-    text-align: center;
-    margin-inline: auto;
-    max-width: 100%;
-  }
-
-  #damascus-numbers .damascus-numbers__quote-text,
-  #damascus-numbers .damascus-numbers__author-name {
-    text-align: center;
-  }
-}
-
-#damascus-intangible {
-  --dmi-green: #064239;
-  --dmi-green-dark: #032f29;
-  --dmi-gold: #c7a568;
-  --dmi-gold-light: #f2e7d1;
-  --dmi-text: #243a34;
-  --dmi-muted: #77847e;
-  --dmi-border: rgba(6, 66, 57, 0.12);
-  --dmi-surface: #ffffff;
-
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  padding: clamp(46px, 6.5vh, 76px) 24px clamp(28px, 4vh, 44px);
-  background: transparent;
-  color: #263b32;
-  direction: rtl;
-  overflow: hidden;
-}
-
-#damascus-intangible *,
-#damascus-intangible *::before,
-#damascus-intangible *::after {
-  box-sizing: border-box;
-}
-
-#damascus-intangible .damascus-intangible__container {
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1440px;
-  height: auto;
-  margin-inline: auto;
-  overflow: hidden;
-}
-
-#damascus-intangible .damascus-intangible__header {
-  position: relative;
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 820px;
-  margin: 0 auto clamp(16px, 2.4vh, 26px);
-  text-align: center;
-}
-
-#damascus-intangible .damascus-intangible__header h2 {
-  position: relative;
-  display: inline-block;
-  margin: 0 auto 14px;
-  color: var(--dmi-green);
-  font-size: clamp(38px, 5.5vh, 60px);
-  font-weight: 800;
-  line-height: 1.25;
-  letter-spacing: -0.8px;
-  text-align: center;
-}
-
-#damascus-intangible .damascus-intangible__header h2::after {
-  content: "";
-  position: absolute;
-  right: 50%;
-  bottom: -8px;
-  width: 72px;
-  height: 3px;
-  border-radius: 10px;
-  background: var(--dmi-gold);
-  transform: translateX(50%);
-}
-
-#damascus-intangible .dmi-layout {
-  flex: 0 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 2.2fr) minmax(260px, 0.92fr);
-  grid-template-areas: "details list";
-  align-items: stretch;
-  gap: clamp(22px, 2.8vw, 34px);
-  width: 100%;
-  height: auto;
-  direction: ltr;
-}
-
-/* بطاقة التفاصيل */
-#damascus-intangible .dmi-details {
-  grid-area: details;
-  position: relative;
-  align-self: stretch;
-  min-width: 0;
-  height: auto;
-  direction: rtl;
-}
-
-#damascus-intangible .dmi-card {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-  width: 100%;
-  height: var(--dmi-matched-height, 100%);
-  min-height: 0;
-  max-height: var(--dmi-matched-height, none);
-  overflow: hidden;
-  border: 1px solid var(--dmi-border);
-  border-radius: 26px;
-  background: var(--dmi-surface);
-  box-shadow:
-    0 18px 50px rgba(19, 47, 39, 0.07),
-    0 3px 12px rgba(19, 47, 39, 0.025);
-  direction: ltr;
-  animation: dmi-card-enter 0.55s ease both;
-}
-
-#damascus-intangible .dmi-card__visual {
-  position: relative;
-  min-width: 0;
-  height: 100%;
-  min-height: 0;
-  overflow: hidden;
-  background: linear-gradient(145deg, #d9dfd4, #b5c4b5);
-}
-
-#damascus-intangible .dmi-card__visual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(3, 47, 41, 0.02) 30%, rgba(3, 47, 41, 0.48) 100%);
-}
-
-#damascus-intangible .dmi-card__image {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.7s ease;
-}
-
-#damascus-intangible .dmi-card:hover .dmi-card__image {
-  transform: scale(1.045);
-}
-
-#damascus-intangible .dmi-card__visual-label {
-  position: absolute;
-  z-index: 1;
-  right: 22px;
-  bottom: 22px;
-  left: 22px;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.8;
-  text-align: right;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
-}
-
-#damascus-intangible .dmi-card__content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  min-width: 0;
-  height: 100%;
-  max-height: 100%;
-  padding: clamp(22px, 2.5vw, 34px);
-  direction: rtl;
-  text-align: right;
-  overflow: hidden;
-  scrollbar-width: none;
-}
-
-#damascus-intangible .dmi-card__content::-webkit-scrollbar {
-  display: none;
-}
-
-#damascus-intangible .dmi-card__scroll-inner {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  will-change: transform;
-}
-
-#damascus-intangible .dmi-card__title {
-  margin: 0 0 12px;
-  flex-shrink: 0;
-  color: var(--dmi-green);
-  font-size: clamp(23px, 2.15vw, 32px);
-  font-weight: 800;
-  line-height: 1.55;
-  overflow-wrap: anywhere;
-}
-
-#damascus-intangible .dmi-card__summary {
-  margin: 0 0 24px;
-  color: #62716a;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 2.05;
-  overflow-wrap: anywhere;
-}
-
-#damascus-intangible .dmi-card__section-title {
-  margin: 0 0 12px;
-  color: #344b42;
-  font-size: 13px;
-  font-weight: 800;
-  line-height: 1.7;
-}
-
-#damascus-intangible .dmi-card__chips {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  margin: 0 0 22px;
-  padding: 0;
-  list-style: none;
-}
-
-#damascus-intangible .dmi-card__chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  padding: 8px 12px;
-  border: 1px solid rgba(6, 66, 57, 0.09);
-  border-radius: 9px;
-  background: #f5f7f3;
-  color: #3e5b4e;
-  font-size: 12px;
-  line-height: 1.6;
-  overflow-wrap: anywhere;
-}
-
-#damascus-intangible .dmi-card__professions {
-  width: 100%;
-  margin: 0 0 18px;
-  color: #6b776f;
-  font-size: 12px;
-  line-height: 2;
-  overflow-wrap: anywhere;
-}
-
-#damascus-intangible .dmi-card__professions strong {
-  color: var(--dmi-green);
-  font-weight: 800;
-}
-
-#damascus-intangible .dmi-card__unesco {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-  margin-top: 12px;
-}
-
-#damascus-intangible .dmi-card__unesco-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 9px;
-  padding: 11px 12px;
-  border: 1px solid rgba(199, 165, 104, 0.32);
-  border-radius: 10px;
-  background: #fcf8f0;
-  color: #806437;
-  font-size: 11px;
-  line-height: 1.8;
-  overflow-wrap: anywhere;
-}
-
-#damascus-intangible .dmi-card__unesco-item::before {
-  content: "✦";
-  flex: 0 0 auto;
-  color: #b28c4e;
-  font-size: 13px;
-}
-
-/* القائمة الجانبية */
-#damascus-intangible .dmi-list-panel {
-  grid-area: list;
-  display: flex;
-  flex-direction: column;
-  align-self: start;
-  min-width: 0;
-  height: fit-content;
-  padding: 16px 14px;
-  border: 1px solid var(--dmi-border);
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 12px 36px rgba(19, 47, 39, 0.045);
-  direction: rtl;
-}
-
-#damascus-intangible .dmi-items {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-  max-height: none;
-  overflow: visible;
-  padding: 0 0 2px;
-}
-
-#damascus-intangible .dmi-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 26px;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  min-height: 62px;
-  margin: 0;
-  padding: 10px 12px;
-  border: 1px solid transparent;
-  border-radius: 14px;
-  background: transparent;
-  color: var(--dmi-text);
-  cursor: pointer;
-  text-align: right;
-  font: inherit;
-  direction: rtl;
-  transition:
-    background-color 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
-  -webkit-tap-highlight-color: transparent;
-}
-
-#damascus-intangible .dmi-item:hover {
-  border-color: rgba(6, 66, 57, 0.1);
-  background: #f7f8f4;
-  transform: translateX(-2px);
-}
-
-#damascus-intangible .dmi-item:focus-visible {
-  outline: 3px solid rgba(199, 165, 104, 0.7);
-  outline-offset: 3px;
-}
-
-#damascus-intangible .dmi-item__text {
-  grid-column: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  min-width: 0;
-}
-
-#damascus-intangible .dmi-item__title {
-  display: block;
-  width: 100%;
-  color: #30473d;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.8;
-  overflow-wrap: anywhere;
-  transition: color 0.25s ease;
-}
-
-#damascus-intangible .dmi-item__meta {
-  display: block;
-  color: #8b968f;
-  font-size: 11px;
-  font-weight: 400;
-  line-height: 1.6;
-}
-
-#damascus-intangible .dmi-item__arrow {
-  grid-column: 2;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  color: #8b9a91;
-  transition:
-    color 0.25s ease,
-    background-color 0.25s ease,
-    transform 0.25s ease;
-}
-
-#damascus-intangible .dmi-item__arrow svg {
-  display: block;
-  width: 16px;
-  height: 16px;
-}
-
-#damascus-intangible .dmi-item.is-active {
-  border-color: rgba(199, 165, 104, 0.42);
-  background: linear-gradient(110deg, #f8f4e9 0%, #fffdf8 100%);
-  box-shadow: 0 5px 16px rgba(19, 47, 39, 0.045);
-}
-
-#damascus-intangible .dmi-item.is-active .dmi-item__title {
-  color: var(--dmi-green);
-  font-weight: 800;
-}
-
-#damascus-intangible .dmi-item.is-active .dmi-item__arrow {
-  background: var(--dmi-green);
-  color: #fff;
-  transform: translateX(-2px);
-}
-
-@keyframes dmi-card-enter {
-  from {
-    opacity: 0;
-    transform: translateY(9px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* التجاوب */
-@media (max-width: 1100px) and (min-width: 801px) {
-  #damascus-intangible .dmi-card {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  }
-}
-
-@media (max-width: 1050px) {
-  #damascus-intangible .dmi-layout {
-    grid-template-columns: minmax(0, 1.55fr) minmax(245px, 1fr);
-    gap: 20px;
-  }
-
-  #damascus-intangible .dmi-card__content {
-    padding: 25px;
-  }
-
-  #damascus-intangible .dmi-list-panel {
-    padding: 18px 13px;
-  }
-
-  #damascus-intangible .dmi-item {
-    grid-template-columns: minmax(0, 1fr) 22px;
-    gap: 8px;
-    padding: 10px 8px;
-  }
-}
-
-@media (max-width: 800px) {
-  #damascus-intangible {
-    padding: 60px 20px;
-  }
-
-  #damascus-intangible .damascus-intangible__header {
-    margin-bottom: 28px;
-  }
-
-  #damascus-intangible .dmi-layout {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      "details"
-      "list";
-    gap: 22px;
-  }
-
-  #damascus-intangible .dmi-card {
-    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.22fr);
-    height: auto;
-    min-height: 0;
-    max-height: none;
-  }
-
-  #damascus-intangible .dmi-card__visual {
-    height: auto;
-    min-height: 225px;
-  }
-
-  #damascus-intangible .dmi-card__content {
-    height: auto;
-    max-height: none;
-    overflow: visible;
-  }
-
-  #damascus-intangible .dmi-items {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
-  }
-
-  #damascus-intangible .dmi-list-panel {
-    padding: 20px;
-  }
-
-  #damascus-intangible .dmi-item {
-    min-height: 70px;
-  }
-}
-
-@media (max-width: 560px) {
-  #damascus-intangible {
-    padding: 46px 15px;
-  }
-
-  #damascus-intangible .damascus-intangible__header h2 {
-    font-size: 29px;
-  }
-
-  #damascus-intangible .dmi-card {
-    grid-template-columns: minmax(0, 1fr);
-    direction: rtl;
-  }
-
-  #damascus-intangible .dmi-card__visual {
-    aspect-ratio: 16 / 9;
-  }
-#damascus-numbers .damascus-numbers__quote-text {
-  margin: 0 !important;
-  display: block !important;
-  color: #fffaf0 !important;
-  font-size: clamp(23px, 2.3vw, 31px) !important;
-  font-weight: 800 !important;
-  line-height: 1.65 !important;
-  text-align: right !important;
-  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.75) !important;
-}
-#damascus-numbers .damascus-numbers__quote-text::after {
-  content: "”";
-  display: inline-block;
-  margin-inline-start: 2px;
-  transform: translateY(0.92em);
-}
-
-  #damascus-intangible .dmi-card__content {
-    padding: 25px 21px;
-  }
-
-  #damascus-intangible .dmi-card__title {
-    font-size: 25px;
-  }
-
-  #damascus-intangible .dmi-card__summary {
-    font-size: 13px;
-  }
-
-  #damascus-intangible .dmi-list-panel {
-    padding: 16px 12px;
-    border-radius: 19px;
-  }
-
-  #damascus-intangible .dmi-items {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 7px;
-  }
-
-  #damascus-intangible .dmi-item {
-    grid-template-columns: minmax(0, 1fr) 26px;
-    min-height: 64px;
-    padding: 10px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #damascus-intangible *,
-  #damascus-intangible *::before,
-  #damascus-intangible *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
 }
