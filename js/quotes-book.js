@@ -46,7 +46,7 @@
   const ornament = () => `
     <div class="qb-paper qb-paper--closing">
       ${star}
-      <span class="qb-closing__line">قالوا عنها · محافظة دمشق</span>
+      <span class="qb-closing__line">قالوا عنها </span>
     </div>`;
 
   const backCover = (logo) => `

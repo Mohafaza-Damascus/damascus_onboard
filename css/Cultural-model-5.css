@@ -4143,6 +4143,7 @@ html {
 
 #damascus-numbers .damascus-numbers__quote-text {
   margin: 0 !important;
+  display: block !important;
   color: #fffaf0 !important;
   font-size: clamp(23px, 2.3vw, 31px) !important;
   font-weight: 800 !important;
@@ -4150,10 +4151,12 @@ html {
   text-align: right !important;
   text-shadow: 0 3px 16px rgba(0, 0, 0, 0.75) !important;
 }
-
-
-
-
+#damascus-numbers .damascus-numbers__quote-text::after {
+  content: "”";
+  display: inline-block;
+  margin-inline-start: 2px;
+  transform: translateY(0.92em);
+}
 
 
 

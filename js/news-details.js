@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="article-missing">
         <h1>الخبر غير موجود</h1>
         <p>ربما حُذف الخبر أو أن الرابط غير صحيح.</p>
-        <a href="news-enas.html">العودة/a>
+        <a href="news-enas.html">العودة</a>
       </div>`;
     document.getElementById("relatedNews").hidden = true;
   }
@@ -80,11 +80,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     articleEl.innerHTML = `
 
-<div style="margin-bottom: 20px;">
-  <a href="news-enas.html" class="article-back-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding-inline: 20px; background-color: var(--green-900, #064239); color: #fff; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 0.9rem; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 10px 18px -10px rgba(120, 90, 30, 0.6); transition: background-color 200ms ease;">
-    <i class="fas fa-arrow-right" aria-hidden="true"></i> العودة
-  </a>
-</div>
+      <div class="article-back-wrap">
+        <a href="news-enas.html" class="article-back-link" aria-label="العودة إلى صفحة الأخبار">
+          <span>العودة</span>
+          <svg class="article-back-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"></path>
+            <path d="m12 5-7 7 7 7"></path>
+          </svg>
+        </a>
+      </div>
+      
       <h1 class="article-title">${escapeHtml(title)}</h1>
       ${item.desc ? `<p class="article-lead">${escapeHtml(item.desc)}</p>` : ""}
 

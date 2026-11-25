@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
      <i class="fa-solid fa-sitemap"></i>
 
       <dt>
-        مديرية ${escapeHtml(service.directorate || service.electronicDirectorate || "غير محددة")}
+         ${escapeHtml(service.directorate || service.electronicDirectorate || "غير محددة")}
       </dt>
-      <dd></dd>
+      
     </div>
   `;
 
