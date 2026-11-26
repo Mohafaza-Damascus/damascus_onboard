@@ -7,18 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const id = new URLSearchParams(window.location.search).get("id");
   const item = id ? store.getById(id) : null;
 
-  const breadcrumb = (current) => `
-    <nav class="opd-crumbs" aria-label="مسار الصفحة">
-      <a href="Investments.html">الاستثمارات</a>
-      <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-      <a href="Investments.html#investment-opportunities">الحقائب الاستثمارية</a>
-      ${current ? `<i class="fa-solid fa-chevron-left" aria-hidden="true"></i><span aria-current="page">${escapeHtml(current)}</span>` : ""}
-    </nav>`;
+const breadcrumb = () => `
+  <div class="opd-back-actions">
+    <button type="button" class="opd-back-arrow" onclick="history.back()">
+     <span>العودة</span>
+      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </button>
+  </div>
+`;
 
   if (!item) {
     root.innerHTML = `
       <div class="inv-wrap opd-missing">
-        ${breadcrumb("")}
+       ${breadcrumb()}
         <div class="opd-missing__box">
           <i class="fa-regular fa-folder-open"></i>
           <h1 class="inv-display">لم نجد هذه الحقيبة</h1>
@@ -100,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     root.innerHTML = `
       <section class="opd-head">
         <div class="inv-wrap">
-          ${breadcrumb(item.title)}
+          ${breadcrumb()}
 
           <article class="opd-card">
             <div class="opd-card__text">
@@ -376,7 +377,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <section class="opd-related">
         <div class="inv-wrap">
           <div class="opd-related__head">
-            <h2 class="opd-section-title inv-display">حقائب <em>أخرى</em></h2>
+            <h2 class="opd-section-title inv-display"> حقائب أُخرى</h2>
             <a class="inv-link" href="Investments.html#investment-opportunities">كل الحقائب <i class="fa-solid fa-arrow-left"></i></a>
           </div>
           <div class="opd-related__grid">${cards}</div>

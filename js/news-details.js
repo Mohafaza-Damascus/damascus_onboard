@@ -100,15 +100,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     articleEl.innerHTML = `
 
-      <div class="article-back-wrap">
-        <a href="news.html" class="article-back-link" aria-label="العودة إلى صفحة الأخبار">
-          <span>العودة</span>
-          <svg class="article-back-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 12h14"></path>
-            <path d="m12 5-7 7 7 7"></path>
-          </svg>
-        </a>
-      </div>
+     <div class="article-back-wrap">
+  <a href="news.html" class="article-back-link" aria-label="العودة إلى صفحة الأخبار">
+    <span>العودة</span>
+    <svg class="article-back-icon" viewBox="0 0 24 24" width="18" height="18"
+      fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M5 12h14"></path>
+      <path d="m12 5 7 7-7 7"></path>
+    </svg>
+  </a>
+</div>
       
       <h1 class="article-title">${escapeHtml(title)}</h1>
       ${item.desc ? `<p class="article-lead">${escapeHtml(item.desc)}</p>` : ""}

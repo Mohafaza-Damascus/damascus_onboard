@@ -387,6 +387,7 @@
 .inv-page .opd-section-title {
   font-size: clamp(1.9rem, 3.4vw, 3rem);
   line-height: 1.25;
+  color: #1b2a24;
 }
 
 .opd-specs {
@@ -637,6 +638,7 @@
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 24px;
+
 }
 
 .opd-related__grid {
@@ -726,4 +728,37 @@
   .opd-overview__grid {
     grid-template-columns: 1fr;
   }
+}
+.inv-page .opd-back-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end !important;
+  width: 100%;
+  padding: 18px 0 26px;
+  box-sizing: border-box;
+    padding-right: 0;
+  padding-left: 20PX;
+}
+
+.inv-page .opd-back-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--inv-green) !important;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.inv-page .opd-back-arrow:hover,
+.inv-page .opd-back-arrow:hover span,
+.inv-page .opd-back-arrow:hover i {
+  color: #be9c5a !important;
 }
