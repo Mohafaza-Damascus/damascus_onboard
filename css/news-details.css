@@ -178,6 +178,7 @@
   background-color: #fff;
   border: 1px solid var(--border, #dfdace);
   box-shadow: var(--shadow-300);
+  transform: translateY(40px);
 }
 
 .sidebar-title {
@@ -353,6 +354,7 @@
   line-height: 1;
   text-decoration: none;
   transition: color 180ms ease, transform 180ms ease;
+  padding-right:1170PX;
 }
 
 .article-back-link:hover {
